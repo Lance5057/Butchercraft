@@ -1,18 +1,13 @@
-package com.Lance5057.ButcherCraft.core.meathook;
+package com.Lance5057.ButcherCraft.core.meatgrinder;
 
 import com.Lance5057.ButcherCraft.Butchercraft;
-import com.Lance5057.ButcherCraft.core.ItemCarcass;
-import com.Lance5057.ButcherCraft.core.tools.ItemButcherTool;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
@@ -25,26 +20,26 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class MeatHookBlock extends Block implements ITileEntityProvider {
+public class MeatGrinderBlock extends Block implements ITileEntityProvider {
 
-	public MeatHookBlock(Material materialIn) {
+	public MeatGrinderBlock(Material materialIn) {
 		super(materialIn);
 		setUnlocalizedName(Butchercraft.MODID + ".meathookblock");
 		setRegistryName("meathookblock");
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
-		GameRegistry.registerTileEntity(MeatHookTileEntity.class, Butchercraft.MODID + "_meathookblock");
+		GameRegistry.registerTileEntity(MeatGrinderTileEntity.class, Butchercraft.MODID + "_meathookblock");
 	}
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		// TODO Auto-generated method stub
-		return new MeatHookTileEntity();
+		return new MeatGrinderTileEntity();
 	}
 
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		ClientRegistry.bindTileEntitySpecialRenderer(MeatHookTileEntity.class, new MeatHookTESR());
+		ClientRegistry.bindTileEntitySpecialRenderer(MeatGrinderTileEntity.class, new MeatGrinderTESR());
 	}
 
 	@Override
@@ -63,29 +58,18 @@ public class MeatHookBlock extends Block implements ITileEntityProvider {
 	public boolean isOpaqueCube(IBlockState blockState) {
 		return false;
 	}
-
+	
 	@Override
-	public EnumBlockRenderType getRenderType(IBlockState state) {
-		return EnumBlockRenderType.MODEL;
-	}
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
+    }
 
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand,
 			EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
-			TileEntity te = world.getTileEntity(pos);
-			if (te instanceof MeatHookTileEntity) {
-				MeatHookTileEntity hook = (MeatHookTileEntity)te;
-				Item item = player.getHeldItem(hand).getItem();
-				if (item instanceof ItemCarcass) {
-					hook.addCarcass(item);
-					player.inventory.setInventorySlotContents(player.inventory.currentItem, new ItemStack(Blocks.AIR));
-					player.openContainer.detectAndSendChanges();
-				} 
-				else {
-					hook.useTool(item, player);
-				}
-			}
+
 		}
 		return true;
 	}

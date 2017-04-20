@@ -1,4 +1,4 @@
-package com.Lance5057.ButcherCraft.core.meathook;
+package com.Lance5057.ButcherCraft.core.meatgrinder;
 
 import com.Lance5057.ButcherCraft.Butchercraft;
 import com.Lance5057.ButcherCraft.core.meathook.carcassRenderers.ModelCowHooked;
@@ -7,22 +7,19 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 
-public class MeatHookTESR extends TileEntitySpecialRenderer<MeatHookTileEntity> {
+public class MeatGrinderTESR extends TileEntitySpecialRenderer<MeatGrinderTileEntity> {
 
 	public final ResourceLocation texture = new ResourceLocation(Butchercraft.MODID, "models/Hook.png");
 
-	public final MeatHookModel hook = new MeatHookModel();
+	public final MeatGrinderModel hook = new MeatGrinderModel();
 
 	// carcasses
 	public final ModelCowHooked cow = new ModelCowHooked();
 	public final ResourceLocation cowTexture = new ResourceLocation(Butchercraft.MODID, "models/cowHooked.png");
-	public final ResourceLocation cowSkinnedTexture = new ResourceLocation(Butchercraft.MODID,
-			"models/cowHookedSkinned.png");
-	public final ResourceLocation cowSkinnedDelimbedTexture = new ResourceLocation(Butchercraft.MODID,
-			"models/cowHookedSkinnedDelimbed.png");
+
 
 	@Override
-	public void renderTileEntityAt(MeatHookTileEntity te, double x, double y, double z, float partialTicks,
+	public void renderTileEntityAt(MeatGrinderTileEntity te, double x, double y, double z, float partialTicks,
 			int destroyStage) {
 		GlStateManager.pushMatrix();
 
@@ -35,21 +32,11 @@ public class MeatHookTESR extends TileEntitySpecialRenderer<MeatHookTileEntity> 
 		bindTexture(texture);
 		// only the last part matters
 		hook.doRender();
-		if (te.carcassType.compareTo("cow") == 0) {
+		if (te.carcassType.compareTo("cow") == 0)
+		{
 			GlStateManager.translate(0, 2, 0.4);
-
-			if (te.curStage == 0)
-			{
-				cow.normalMode();
-				bindTexture(cowTexture);
-			}
-			else if (te.curStage >= 1 && te.curStage < 3)
-				bindTexture(cowSkinnedTexture);
-			else if (te.curStage == 3)
-			{
-				cow.meatMode();
-				bindTexture(cowSkinnedDelimbedTexture);
-			}
+			
+			bindTexture(cowTexture);
 			cow.doRender();
 		}
 		GlStateManager.popMatrix();
