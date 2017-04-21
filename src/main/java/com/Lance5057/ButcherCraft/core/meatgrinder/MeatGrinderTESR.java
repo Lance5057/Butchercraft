@@ -9,14 +9,11 @@ import net.minecraft.util.ResourceLocation;
 
 public class MeatGrinderTESR extends TileEntitySpecialRenderer<MeatGrinderTileEntity> {
 
-	public final ResourceLocation texture = new ResourceLocation(Butchercraft.MODID, "models/Hook.png");
+	public final ResourceLocation texture = new ResourceLocation(Butchercraft.MODID, "models/meatgrinder.png");
+	public final ResourceLocation handleTexture = new ResourceLocation(Butchercraft.MODID, "models/meatgrinderhandle.png");
 
-	public final MeatGrinderModel hook = new MeatGrinderModel();
-
-	// carcasses
-	public final ModelCowHooked cow = new ModelCowHooked();
-	public final ResourceLocation cowTexture = new ResourceLocation(Butchercraft.MODID, "models/cowHooked.png");
-
+	public final MeatGrinderModel grinder = new MeatGrinderModel();
+	public final MeatGrinderHandleModel handle = new MeatGrinderHandleModel();
 
 	@Override
 	public void renderTileEntityAt(MeatGrinderTileEntity te, double x, double y, double z, float partialTicks,
@@ -27,18 +24,16 @@ public class MeatGrinderTESR extends TileEntitySpecialRenderer<MeatGrinderTileEn
 		GlStateManager.disableRescaleNormal();
 
 		GlStateManager.rotate(180, 1, 0, 0);
-		GlStateManager.translate(0.5, -1.5, -0.75);
+		GlStateManager.translate(0.5, -1.5, -0.5);
 
 		bindTexture(texture);
-		// only the last part matters
-		hook.doRender();
-		if (te.carcassType.compareTo("cow") == 0)
-		{
-			GlStateManager.translate(0, 2, 0.4);
-			
-			bindTexture(cowTexture);
-			cow.doRender();
-		}
+		grinder.doRender(te.extruderItem, te.casing, te.loaded, te.completion, te.grindItem);
+		
+		GlStateManager.translate(-1F, 0F, 0F);
+		
+		bindTexture(handleTexture);
+		handle.doRender(te.handleRot);
+		
 		GlStateManager.popMatrix();
 	}
 }

@@ -6,12 +6,15 @@ import com.Lance5057.ButcherCraft.core.food.ItemButcherFood;
 import com.Lance5057.ButcherCraft.core.tools.ItemButcherTool;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BCItems {
 
@@ -26,6 +29,8 @@ public class BCItems {
 	public static ItemButcherTool skinningKnife;
 	public static ItemButcherTool boneSaw;
 	public static ItemButcherTool spatula;
+	public static ItemButcherTool grindTip;
+	public static ItemButcherTool sausageTip;
 	
 	//Organs
 	public static ItemButcherFood brain;
@@ -84,6 +89,8 @@ public class BCItems {
 		skinningKnife = new ItemButcherTool("skinningknife");
 		boneSaw = new ItemButcherTool("bonesaw");
 		spatula = new ItemButcherTool("spatula");
+		grindTip = new ItemButcherTool("grindtip");
+		sausageTip = new ItemButcherTool("sausagetip");
 		
 		brain = new ItemButcherFood(3, 0.1F, true, false, "brain");
 		brainCooked = new ItemButcherFood(4, 0.2F, true, true, "braincooked");
@@ -138,6 +145,8 @@ public class BCItems {
 		skinningKnife.setCreativeTab(butcherTab);
 		boneSaw.setCreativeTab(butcherTab);
 		spatula.setCreativeTab(butcherTab);
+		grindTip.setCreativeTab(butcherTab);
+		sausageTip.setCreativeTab(butcherTab);
 		
 		brain.setCreativeTab(butcherTab);
 		brainCooked.setCreativeTab(butcherTab);
@@ -188,6 +197,56 @@ public class BCItems {
 	}
 
 	public void postInit(FMLPostInitializationEvent e) {
+		GameRegistry.addSmelting(brain, new ItemStack(brainCooked), 0F);
+		GameRegistry.addSmelting(heart, new ItemStack(heartCooked), 0F);
+		GameRegistry.addSmelting(kidney, new ItemStack(kidneyCooked), 0F);
+		GameRegistry.addSmelting(liver, new ItemStack(liverCooked), 0F);
+		GameRegistry.addSmelting(lung, new ItemStack(lungCooked), 0F);
+		GameRegistry.addSmelting(stomache, new ItemStack(stomacheCooked), 0F);
+		GameRegistry.addSmelting(tripe, new ItemStack(tripeCooked), 0F);
+		
+		GameRegistry.addSmelting(stewMeat, new ItemStack(stewMeatCooked), 0F);
+		GameRegistry.addSmelting(sausage, new ItemStack(sausageCooked), 0F);
+		GameRegistry.addSmelting(roast, new ItemStack(roastCooked), 0F);
+		GameRegistry.addSmelting(ribs, new ItemStack(ribsCooked), 0F);
+		GameRegistry.addSmelting(cubedMeat, new ItemStack(cubedMeatCooked), 0F);
+		GameRegistry.addSmelting(groundMeat, new ItemStack(groundMeatCooked), 0F);
+		GameRegistry.addSmelting(scrapMeat, new ItemStack(scrapMeatCooked), 0F);
+		
+		GameRegistry.addSmelting(burgerPatty, new ItemStack(burgerPattyCooked), 0F);
+		GameRegistry.addSmelting(kabob, new ItemStack(kabobCooked), 0F);
+		GameRegistry.addSmelting(potRoast, new ItemStack(potRoastCooked), 0F);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(this.sausageInBun,1), this.sausageCooked, Items.BREAD);
+		GameRegistry.addShapelessRecipe(new ItemStack(this.burger,1), this.burgerPattyCooked, Items.BREAD);
+		GameRegistry.addShapelessRecipe(new ItemStack(this.kabob,1), this.cubedMeat,this.cubedMeat, Items.CARROT,Items.POTATO, Items.STICK);
+		
+		GameRegistry.addRecipe(new ItemStack(this.potRoast,1),
+			     "---",
+			     "prc",
+			     "c-p",
+			     'p', Items.POTATO,
+			     'c', Items.CARROT,
+			     'r', this.roast
+			     );
+		GameRegistry.addRecipe(new ItemStack(this.stew,1),
+			     "---",
+			     "psm",
+			     "mbp",
+			     'p', Items.POTATO,
+			     'm', Blocks.BROWN_MUSHROOM,
+			     's', this.stewMeatCooked,
+			     'b', Items.BOWL
+			     );
+		GameRegistry.addRecipe(new ItemStack(this.stew,1),
+			     "---",
+			     "psm",
+			     "mbp",
+			     'p', Items.POTATO,
+			     'm', Blocks.RED_MUSHROOM,
+			     's', this.stewMeatCooked,
+			     'b', Items.BOWL
+			     );
 
 	}
 

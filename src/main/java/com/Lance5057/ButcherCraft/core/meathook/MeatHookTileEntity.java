@@ -46,7 +46,7 @@ public class MeatHookTileEntity extends TileEntity {
 			switch (curStage) {
 			case 0:
 				int leather = world.rand.nextInt(4) + 8;
-				int scrap = leather - 16 * 2;
+				int scrap = (16 - leather) * 2;
 				stageProgression(player, tool, BCItems.skinningKnife, "te.meathook.skinningMessage",
 						new ItemStack(Items.LEATHER, leather),
 						new ItemStack(BCItems.leatherScrap, scrap),

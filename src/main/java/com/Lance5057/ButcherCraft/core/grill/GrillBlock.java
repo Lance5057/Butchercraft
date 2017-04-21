@@ -1,8 +1,9 @@
-package com.Lance5057.ButcherCraft.core.meatgrinder;
+package com.Lance5057.ButcherCraft.core.grill;
 
 import com.Lance5057.ButcherCraft.Butchercraft;
 import com.Lance5057.ButcherCraft.core.ItemCarcass;
-import com.Lance5057.ButcherCraft.core.meathook.MeatHookTileEntity;
+import com.Lance5057.ButcherCraft.core.meatgrinder.MeatGrinderTileEntity;
+import com.Lance5057.ButcherCraft.core.tools.ItemButcherTool;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
@@ -26,26 +27,26 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class MeatGrinderBlock extends Block implements ITileEntityProvider {
+public class GrillBlock extends Block implements ITileEntityProvider {
 
-	public MeatGrinderBlock(Material materialIn) {
+	public GrillBlock(Material materialIn) {
 		super(materialIn);
-		setUnlocalizedName(Butchercraft.MODID + ".meatGrinderblock");
-		setRegistryName("meatGrinderblock");
+		setUnlocalizedName(Butchercraft.MODID + ".grillblock");
+		setRegistryName("grillblock");
 		GameRegistry.register(this);
 		GameRegistry.register(new ItemBlock(this), getRegistryName());
-		GameRegistry.registerTileEntity(MeatGrinderTileEntity.class, Butchercraft.MODID + "_meatGrinderblock");
+		GameRegistry.registerTileEntity(GrillTileEntity.class, Butchercraft.MODID + "_grillblock");
 	}
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		// TODO Auto-generated method stub
-		return new MeatGrinderTileEntity();
+		return new GrillTileEntity();
 	}
 
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		ClientRegistry.bindTileEntitySpecialRenderer(MeatGrinderTileEntity.class, new MeatGrinderTESR());
+		ClientRegistry.bindTileEntitySpecialRenderer(GrillTileEntity.class, new GrillTESR());
 	}
 
 	@Override
@@ -75,10 +76,10 @@ public class MeatGrinderBlock extends Block implements ITileEntityProvider {
 			EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
 			TileEntity te = world.getTileEntity(pos);
-			if (te instanceof MeatGrinderTileEntity) {
-				MeatGrinderTileEntity grinder = (MeatGrinderTileEntity) te;
+			if (te instanceof GrillTileEntity) {
+				GrillTileEntity grinder = (GrillTileEntity) te;
 				ItemStack item = player.getHeldItem(hand);
-				if (grinder.doGrind(item)) {
+				if (grinder.doGrill(item)) {
 					int stackSize = item.getCount()-1;
 					if(stackSize > 0)
 						item.setCount(stackSize);
@@ -88,14 +89,13 @@ public class MeatGrinderBlock extends Block implements ITileEntityProvider {
 					player.inventory.setInventorySlotContents(player.inventory.currentItem, item);
 					player.openContainer.detectAndSendChanges();
 				}
-
+				
 				te.markDirty();
 
 				if (te.getWorld() != null) {
 					IBlockState bState = world.getBlockState(te.getPos());
-					world.notifyBlockUpdate(te.getPos(), state, state, 3);
+					world.notifyBlockUpdate(te.getPos(), bState, bState, 3);
 				}
-
 			}
 		}
 		return true;

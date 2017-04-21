@@ -16,10 +16,15 @@ public class ClientProxy extends CommonProxy {
         super.preInit(e);
         
         BCBlocks.meatHook.initModel();
+        BCBlocks.meatGrinder.initModel();
+        BCBlocks.grill.initModel();
         
         registerItemRenderer(BCItems.butcherKnife, 0);
         registerItemRenderer(BCItems.skinningKnife, 0);
         registerItemRenderer(BCItems.spatula, 0);
+        registerItemRenderer(BCItems.boneSaw, 0);
+        registerItemRenderer(BCItems.grindTip, 0);
+        registerItemRenderer(BCItems.sausageTip, 0);
         
         registerItemRenderer(BCItems.brain, 0);
         registerItemRenderer(BCItems.brainCooked, 0);
@@ -48,6 +53,8 @@ public class ClientProxy extends CommonProxy {
 		registerItemRenderer(BCItems.cubedMeatCooked, 0);
 		registerItemRenderer(BCItems.groundMeat, 0);
 		registerItemRenderer(BCItems.groundMeatCooked, 0);
+		registerItemRenderer(BCItems.scrapMeat, 0);
+		registerItemRenderer(BCItems.scrapMeatCooked, 0);
 		
 		registerItemRenderer(BCItems.burgerPatty, 0);
 		registerItemRenderer(BCItems.burgerPattyCooked, 0);
@@ -59,9 +66,16 @@ public class ClientProxy extends CommonProxy {
 		registerItemRenderer(BCItems.potRoastCooked, 0);
 		registerItemRenderer(BCItems.sausageInBun, 0);
 		
+		registerItemRenderer(BCItems.fat, 0);
+		registerItemRenderer(BCItems.leatherCord, 0);
+		registerItemRenderer(BCItems.leatherScrap, 0);
+		registerItemRenderer(BCItems.sinew, 0);
+		
 		registerItemRenderer(BCItems.cowCarcass, 0);
 		
 		registerBlockRenderer(BCBlocks.meatHook, 0);
+		registerBlockRenderer(BCBlocks.meatGrinder, 0);
+		registerBlockRenderer(BCBlocks.grill, 0);
     }
 
     @Override

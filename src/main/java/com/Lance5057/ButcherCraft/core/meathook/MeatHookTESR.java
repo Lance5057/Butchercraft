@@ -47,6 +47,7 @@ public class MeatHookTESR extends TileEntitySpecialRenderer<MeatHookTileEntity> 
 				bindTexture(cowSkinnedTexture);
 			else if (te.curStage == 3)
 			{
+				GlStateManager.translate(0.0, -0.3, -0.0);
 				cow.meatMode();
 				bindTexture(cowSkinnedDelimbedTexture);
 			}

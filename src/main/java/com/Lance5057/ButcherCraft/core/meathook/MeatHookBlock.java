@@ -10,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -66,7 +67,7 @@ public class MeatHookBlock extends Block implements ITileEntityProvider {
 
 	@Override
 	public EnumBlockRenderType getRenderType(IBlockState state) {
-		return EnumBlockRenderType.MODEL;
+		return EnumBlockRenderType.INVISIBLE;
 	}
 
 	@Override
@@ -76,14 +77,20 @@ public class MeatHookBlock extends Block implements ITileEntityProvider {
 			TileEntity te = world.getTileEntity(pos);
 			if (te instanceof MeatHookTileEntity) {
 				MeatHookTileEntity hook = (MeatHookTileEntity)te;
-				Item item = player.getHeldItem(hand).getItem();
-				if (item instanceof ItemCarcass) {
-					hook.addCarcass(item);
-					player.inventory.setInventorySlotContents(player.inventory.currentItem, new ItemStack(Blocks.AIR));
+				ItemStack item = player.getHeldItem(hand);
+				if (item.getItem() instanceof ItemCarcass) {
+					hook.addCarcass(item.getItem());
+					int stackSize = item.getCount()-1;
+					if(stackSize > 0)
+						item.setCount(stackSize);
+					else
+						item = new ItemStack(Items.AIR);
+					
+					player.inventory.setInventorySlotContents(player.inventory.currentItem, item);
 					player.openContainer.detectAndSendChanges();
 				} 
 				else {
-					hook.useTool(item, player);
+					hook.useTool(item.getItem(), player);
 				}
 			}
 		}
