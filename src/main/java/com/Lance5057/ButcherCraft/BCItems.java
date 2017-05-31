@@ -107,19 +107,19 @@ public class BCItems {
 		tripe = new ItemButcherFood(3, 0.1F, true, false, "tripe");
 		tripeCooked = new ItemButcherFood(6, 0.2F, true, true, "tripeCooked");
 		
-		stewMeat = new ItemButcherFood(6, 0.2F, true, true, "stewMeat");
+		stewMeat = new ItemButcherFood(6, 0.2F, true, false, "stewMeat");
 		stewMeatCooked = new ItemButcherFood(6, 0.2F, true, true, "stewMeatCooked");
-		sausage = new ItemButcherFood(6, 0.2F, true, true, "sausage");
+		sausage = new ItemButcherFood(6, 0.2F, true, false, "sausage");
 		sausageCooked = new ItemButcherFood(6, 0.2F, true, true, "sausageCooked");
-		roast = new ItemButcherFood(6, 0.2F, true, true, "roast");
+		roast = new ItemButcherFood(6, 0.2F, true, false, "roast");
 		roastCooked = new ItemButcherFood(6, 0.2F, true, true, "roastCooked");
-		ribs = new ItemButcherFood(6, 0.2F, true, true, "ribs");
+		ribs = new ItemButcherFood(6, 0.2F, true, false, "ribs");
 		ribsCooked = new ItemButcherFood(6, 0.2F, true, true, "ribsCooked");
-		cubedMeat = new ItemButcherFood(6, 0.2F, true, true, "cubedMeat");
+		cubedMeat = new ItemButcherFood(6, 0.2F, true, false, "cubedMeat");
 		cubedMeatCooked = new ItemButcherFood(6, 0.2F, true, true, "cubedMeatCooked");
-		groundMeat = new ItemButcherFood(6, 0.2F, true, true, "groundMeat");
+		groundMeat = new ItemButcherFood(6, 0.2F, true, false, "groundMeat");
 		groundMeatCooked = new ItemButcherFood(6, 0.2F, true, true, "groundMeatCooked");
-		scrapMeat = new ItemButcherFood(6, 0.2F, true, true, "scrapMeat");
+		scrapMeat = new ItemButcherFood(6, 0.2F, true, false, "scrapMeat");
 		scrapMeatCooked = new ItemButcherFood(6, 0.2F, true, true, "scrapMeatCooked");
 		
 		burgerPatty = new ItemButcherFood(6, 0.2F, true, false, "burgerPatty");
