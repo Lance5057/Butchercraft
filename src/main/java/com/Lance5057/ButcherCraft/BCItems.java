@@ -132,10 +132,10 @@ public class BCItems {
 		potRoastCooked = new ItemButcherFood(6, 0.2F, false, true, "potRoastCooked");
 		sausageInBun = new ItemButcherFood(6, 0.2F, false, true, "sausageInBun");
 		
-		leatherScrap = new ItemMisc("leatherScrap", "itemString");
-		leatherCord = new ItemMisc("leatherCord", "itemString");
+		leatherScrap = new ItemMisc("leatherScrap", "string");
+		leatherCord = new ItemMisc("leatherCord", "string");
 		fat = new ItemMisc("fat", "slimeball");
-		sinew = new ItemMisc("sinew", "itemString");
+		sinew = new ItemMisc("sinew", "string");
 		
 		cowCarcass  = new ItemCarcass("cowcarcass");
 	}
