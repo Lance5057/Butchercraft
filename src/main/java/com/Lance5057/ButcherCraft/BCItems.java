@@ -221,6 +221,49 @@ public class BCItems {
 		GameRegistry.addShapelessRecipe(new ItemStack(this.burger,1), this.burgerPattyCooked, Items.BREAD);
 		GameRegistry.addShapelessRecipe(new ItemStack(this.kabob,1), this.cubedMeat,this.cubedMeat, Items.CARROT,Items.POTATO, Items.STICK);
 		
+		GameRegistry.addRecipe(new ItemStack(this.bonesaw,1),
+				       "---",
+				       "iis",
+				       "iis",
+				       'i', Items.iron_ingot,
+				       's', Items.stick
+				       );
+		GameRegistry.addRecipe(new ItemStack(this.bonesaw,1),
+				       "---",
+				       "sii",
+				       "sii",
+				       'i', Items.iron_ingot,
+				       's', Items.stick
+				       );
+		GameRegistry.addRecipe(new ItemStack(this.butcherKnife,1),
+				       "-ii",
+				       "-ii",
+				       "s--",
+				       'i', Items.iron_ingot,
+				       's', Items.stick
+				       );
+		GameRegistry.addRecipe(new ItemStack(this.butcherKnife,1),
+				       "ii-",
+				       "ii-",
+				       "--s",
+				       'i', Items.iron_ingot,
+				       's', Items.stick
+				       );
+		GameRegistry.addRecipe(new ItemStack(this.skinningKnife,1),
+				       "-ii",
+				       "-i-",
+				       "s--",
+				       'i', Items.iron_ingot,
+				       's', Items.stick
+				       );
+		GameRegistry.addRecipe(new ItemStack(this.skinningKnife,1),
+				       "ii-",
+				       "-i-",
+				       "--s",
+				       'i', Items.iron_ingot,
+				       's', Items.stick
+				       );
+		
 		GameRegistry.addRecipe(new ItemStack(this.potRoast,1),
 			     "---",
 			     "prc",
