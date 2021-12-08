@@ -1,16 +1,14 @@
 [
 {
-  "modid": "butchercraft",
-  "name": "ButcherCraft",
-  "description": "Indepth butchery mod",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["Lance5057"],
-  "credits": "",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
+ "modid": "compendium",
+ "name": "Compendium",
+ "description": "A massive expansion",
+ "version": "2.5.8a",
+ "mcversion": "1.16.4",
+ "url": "",
+ "authorList": ["Lance5057"],
+ "requiredMods": [],
+ "dependencies": [],
+ "useDependencyInformation": "true"
 }
 ]
