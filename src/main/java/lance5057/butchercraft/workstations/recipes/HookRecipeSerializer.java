@@ -8,22 +8,22 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 
 import javax.annotation.Nullable;
 
-public class RecipeHookSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
-        implements RecipeSerializer<RecipeHook> {
+public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
+        implements RecipeSerializer<HookRecipe> {
 
     @Override
-    public RecipeHook fromJson(ResourceLocation p_199425_1_, JsonObject p_199425_2_) {
+    public HookRecipe fromJson(ResourceLocation p_199425_1_, JsonObject p_199425_2_) {
         return null;
     }
 
     @Nullable
     @Override
-    public RecipeHook fromNetwork(ResourceLocation p_199426_1_, FriendlyByteBuf p_199426_2_) {
+    public HookRecipe fromNetwork(ResourceLocation p_199426_1_, FriendlyByteBuf p_199426_2_) {
         return null;
     }
 
     @Override
-    public void toNetwork(FriendlyByteBuf p_199427_1_, RecipeHook p_199427_2_) {
+    public void toNetwork(FriendlyByteBuf p_199427_1_, HookRecipe p_199427_2_) {
 
     }
 }

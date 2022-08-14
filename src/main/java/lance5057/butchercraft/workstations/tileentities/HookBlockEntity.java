@@ -1,7 +1,7 @@
 package lance5057.butchercraft.workstations.tileentities;
 
 import lance5057.butchercraft.ButchercraftBlockEntities;
-import lance5057.butchercraft.workstations.recipes.RecipeHook;
+import lance5057.butchercraft.workstations.recipes.HookRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -35,10 +35,10 @@ public class HookBlockEntity extends BlockEntity {
         return super.getCapability(cap, side);
     }
 
-    private RecipeHook matchRecipe(ItemStack stackInSlot) {
+    private HookRecipe matchRecipe(ItemStack stackInSlot) {
         if (this.level != null) {
-            return level.getRecipeManager().getRecipes().stream().filter(recipe -> recipe instanceof RecipeHook)
-                    .map(recipe -> (RecipeHook) recipe).filter(recipe -> recipe.matches(stackInSlot)).findFirst()
+            return level.getRecipeManager().getRecipes().stream().filter(recipe -> recipe instanceof HookRecipe)
+                    .map(recipe -> (HookRecipe) recipe).filter(recipe -> recipe.matches(stackInSlot)).findFirst()
                     .orElse(null);
         }
         return null;
@@ -59,7 +59,7 @@ public class HookBlockEntity extends BlockEntity {
 
             @Override
             public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-                RecipeHook r = matchRecipe(stack);
+                HookRecipe r = matchRecipe(stack);
                 return r != null && super.isItemValid(slot, stack);
             }
         };

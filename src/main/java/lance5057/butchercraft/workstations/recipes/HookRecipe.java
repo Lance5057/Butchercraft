@@ -11,14 +11,14 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-public class RecipeHook implements Recipe<RecipeHookWrapper> {
+public class HookRecipe implements Recipe<HookRecipeWrapper> {
 
     private final ResourceLocation id;
     private final Ingredient input;
     private final String group;
     private final NonNullList<RecipeItemUse> recipeTools;
 
-    public RecipeHook(ResourceLocation idIn, String groupIn, Ingredient input, NonNullList<RecipeItemUse> tools) {
+    public HookRecipe(ResourceLocation idIn, String groupIn, Ingredient input, NonNullList<RecipeItemUse> tools) {
         id = idIn;
         this.input = input;
         group = groupIn;
@@ -26,13 +26,13 @@ public class RecipeHook implements Recipe<RecipeHookWrapper> {
     }
 
     @Override
-    public boolean matches(RecipeHookWrapper p_77569_1_, Level p_77569_2_) {
+    public boolean matches(HookRecipeWrapper p_77569_1_, Level p_77569_2_) {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public ItemStack assemble(RecipeHookWrapper p_77572_1_) {
+    public ItemStack assemble(HookRecipeWrapper p_77572_1_) {
         // unused
         return ItemStack.EMPTY;
     }

@@ -5,11 +5,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-public class RecipeHookWrapper implements Container {
+public class HookRecipeWrapper implements Container {
 
     protected final IItemHandlerModifiable inv;
 
-    public RecipeHookWrapper(IItemHandlerModifiable i) {
+    public HookRecipeWrapper(IItemHandlerModifiable i) {
         this.inv = i;
     }
 
