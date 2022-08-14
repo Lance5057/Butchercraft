@@ -1,21 +1,21 @@
 package lance5057.butchercraft.recipes;
 
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.Container;
+import net.minecraft.world.item.ItemStack;
 
-public class ButcherKnifeWrapper implements IInventory {
+public class ButcherKnifeWrapper implements Container {
 
-    protected MobEntity entity;
+    protected Mob entity;
     protected ItemStack tool;
 
-    public ButcherKnifeWrapper(ItemStack tool, MobEntity entity) {
+    public ButcherKnifeWrapper(ItemStack tool, Mob entity) {
 	this.tool = tool;
 	this.entity = entity;
     }
     
-    public MobEntity getEntity()
+    public Mob getEntity()
     {
 	return entity;
     }
@@ -74,7 +74,7 @@ public class ButcherKnifeWrapper implements IInventory {
     }
 
     @Override
-    public boolean stillValid(PlayerEntity p_70300_1_) {
+    public boolean stillValid(Player p_70300_1_) {
 	// TODO Auto-generated method stub
 	return false;
     }

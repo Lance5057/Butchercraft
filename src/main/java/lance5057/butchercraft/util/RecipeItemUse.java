@@ -2,9 +2,9 @@ package lance5057.butchercraft.util;
 
 import com.google.gson.JsonObject;
 
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 
 public class RecipeItemUse {
 
@@ -37,7 +37,7 @@ public class RecipeItemUse {
 	return new RecipeItemUse(use, i, c, b, result);
     }
 
-    public static RecipeItemUse read(PacketBuffer buffer) {
+    public static RecipeItemUse read(FriendlyByteBuf buffer) {
 	int u = buffer.readVarInt();
 	//ItemStack stack = buffer.readItemStack();
 	Ingredient i = Ingredient.fromNetwork(buffer);
@@ -49,7 +49,7 @@ public class RecipeItemUse {
 	return new RecipeItemUse(u, i, c, b, s);
     }
 
-    public static void write(RecipeItemUse r, PacketBuffer buffer) {
+    public static void write(RecipeItemUse r, FriendlyByteBuf buffer) {
 	buffer.writeVarInt(r.uses);
 	r.tool.toNetwork(buffer);
 	buffer.writeVarInt(r.count);

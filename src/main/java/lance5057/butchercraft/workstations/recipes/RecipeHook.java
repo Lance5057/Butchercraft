@@ -2,16 +2,16 @@ package lance5057.butchercraft.workstations.recipes;
 
 import lance5057.butchercraft.ButchercraftRecipes;
 import lance5057.butchercraft.util.RecipeItemUse;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.core.NonNullList;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
 
-public class RecipeHook implements IRecipe<RecipeHookWrapper> {
+public class RecipeHook implements Recipe<RecipeHookWrapper> {
 
     private final ResourceLocation id;
     private final Ingredient input;
@@ -26,7 +26,7 @@ public class RecipeHook implements IRecipe<RecipeHookWrapper> {
     }
 
     @Override
-    public boolean matches(RecipeHookWrapper p_77569_1_, World p_77569_2_) {
+    public boolean matches(RecipeHookWrapper p_77569_1_, Level p_77569_2_) {
 	// TODO Auto-generated method stub
 	return false;
     }
@@ -55,12 +55,12 @@ public class RecipeHook implements IRecipe<RecipeHookWrapper> {
     }
 
     @Override
-    public IRecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<?> getSerializer() {
 	return ButchercraftRecipes.HOOK_SERIALIZER.get();
     }
 
     @Override
-    public IRecipeType<?> getType() {
+    public RecipeType<?> getType() {
 	return ButchercraftRecipes.HOOK;
     }
 

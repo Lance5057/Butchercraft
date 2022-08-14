@@ -5,18 +5,18 @@ import javax.annotation.Nullable;
 
 import lance5057.butchercraft.ButchercraftTileEntities;
 import lance5057.butchercraft.workstations.recipes.RecipeHook;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class TileHook extends TileEntity {
+public class TileHook extends BlockEntity {
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(this::createHandler);
 
     public TileHook() {
@@ -64,7 +64,7 @@ public class TileHook extends TileEntity {
 	};
     }
 
-    public void extractInsertItem(PlayerEntity playerEntity, Hand hand) {
+    public void extractInsertItem(Player playerEntity, InteractionHand hand) {
 	handler.ifPresent(inventory -> {
 	    ItemStack held = playerEntity.getItemInHand(hand);
 	    if (!held.isEmpty()) {
@@ -76,7 +76,7 @@ public class TileHook extends TileEntity {
 	updateInventory();
     }
 
-    public void extractItem(PlayerEntity playerEntity, IItemHandler inventory) {
+    public void extractItem(Player playerEntity, IItemHandler inventory) {
 	if (!inventory.getStackInSlot(0).isEmpty()) {
 	    ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
 	    playerEntity.addItem(itemStack);
@@ -94,7 +94,7 @@ public class TileHook extends TileEntity {
     }
 
     // External extract handler
-    public void extractItem(PlayerEntity playerEntity) {
+    public void extractItem(Player playerEntity) {
 	handler.ifPresent(inventory -> {
 	    this.extractItem(playerEntity, inventory);
 	});

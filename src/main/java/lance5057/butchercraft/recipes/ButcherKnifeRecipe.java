@@ -1,26 +1,26 @@
 package lance5057.butchercraft.recipes;
 
-import net.minecraft.entity.MobEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
 
-public class ButcherKnifeRecipe implements IRecipe<ButcherKnifeWrapper> {
+public class ButcherKnifeRecipe implements Recipe<ButcherKnifeWrapper> {
     private final ResourceLocation id;
-    private final MobEntity entity;
+    private final Mob entity;
     private final ItemStack output;
 
-    public ButcherKnifeRecipe(ResourceLocation id, MobEntity entity, ItemStack output) {
+    public ButcherKnifeRecipe(ResourceLocation id, Mob entity, ItemStack output) {
 	this.id = id;
 	this.entity = entity;
 	this.output = output;
     }
 
     @Override
-    public boolean matches(ButcherKnifeWrapper wrapper, World world) {
+    public boolean matches(ButcherKnifeWrapper wrapper, Level world) {
 	if (wrapper.getEntity() == this.entity) {
 	    return true;
 	}
@@ -48,13 +48,13 @@ public class ButcherKnifeRecipe implements IRecipe<ButcherKnifeWrapper> {
     }
 
     @Override
-    public IRecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<?> getSerializer() {
 	// TODO Auto-generated method stub
 	return null;
     }
 
     @Override
-    public IRecipeType<?> getType() {
+    public RecipeType<?> getType() {
 	// TODO Auto-generated method stub
 	return null;
     }

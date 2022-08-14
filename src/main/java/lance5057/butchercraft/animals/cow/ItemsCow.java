@@ -1,7 +1,7 @@
 package lance5057.butchercraft.animals.cow;
 
 import lance5057.butchercraft.ButchercraftItems;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 
 public class ItemsCow {

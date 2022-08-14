@@ -2,9 +2,9 @@ package lance5057.butchercraft;
 
 import lance5057.butchercraft.animals.cow.ItemsCow;
 import lance5057.butchercraft.items.ItemButcherknife;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,7 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ButchercraftItems {
 
-    public static final ItemGroup GROUP_ITEMS = new ItemGroup("butchercraft.items") {
+    public static final CreativeModeTab GROUP_ITEMS = new CreativeModeTab("butchercraft.items") {
 	@Override
 	public ItemStack makeIcon() {
 	    return new ItemStack(ButchercraftItems.butcherKnife.get());

@@ -1,11 +1,11 @@
 package lance5057.butchercraft.workstations.recipes;
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.Container;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-public class RecipeHookWrapper implements IInventory {
+public class RecipeHookWrapper implements Container {
 
     protected final IItemHandlerModifiable inv;
     
@@ -62,7 +62,7 @@ public class RecipeHookWrapper implements IInventory {
     }
 
     @Override
-    public boolean stillValid(PlayerEntity p_70300_1_) {
+    public boolean stillValid(Player p_70300_1_) {
 	// TODO Auto-generated method stub
 	return false;
     }

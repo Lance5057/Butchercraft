@@ -4,17 +4,17 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import lance5057.butchercraft.workstations.tileentities.TileHook;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ToolType;
 
 public class BlockHook extends Block {
@@ -30,14 +30,14 @@ public class BlockHook extends Block {
 
     @Nullable
     @Override
-    public TileEntity createTileEntity(BlockState state, IBlockReader world) {
+    public BlockEntity createTileEntity(BlockState state, BlockGetter world) {
 	return new TileHook();
     }
 
     @Nonnull
     @Override
-    public ActionResultType use(@Nonnull BlockState blockState, World world, @Nonnull BlockPos blockPos,
-	    @Nonnull PlayerEntity playerEntity, @Nonnull Hand hand, @Nonnull BlockRayTraceResult blockRayTraceResult) {
+    public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
+	    @Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
 //	if (hand == Hand.MAIN_HAND) {
 //	    TileEntity entity = world.getTileEntity(blockPos);
 //	    if (entity instanceof SawhorseStationTE) {

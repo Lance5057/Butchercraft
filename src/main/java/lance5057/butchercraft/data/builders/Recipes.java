@@ -1,7 +1,7 @@
 package lance5057.butchercraft.data.builders;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.RecipeProvider;
+import net.minecraft.data.recipes.RecipeProvider;
 
 public class Recipes extends RecipeProvider {
 

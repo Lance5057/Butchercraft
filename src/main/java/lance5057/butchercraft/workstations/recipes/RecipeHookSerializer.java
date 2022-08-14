@@ -5,30 +5,27 @@ import javax.annotation.Nullable;
 
 import com.google.gson.JsonObject;
 
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
-public class RecipeHookSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>>
-	    implements IRecipeSerializer<RecipeHook> {
-	@Nonnull
-	@Override
-	public RecipeHook fromJson(@Nonnull ResourceLocation recipeId, JsonObject json) {
+public class RecipeHookSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
+	    implements RecipeSerializer<RecipeHook> {
 
-	    return new RecipeHook(result, s, null, recipeTools);
+	@Override
+	public RecipeHook fromJson(ResourceLocation p_199425_1_, JsonObject p_199425_2_) {
+		return null;
 	}
 
 	@Nullable
 	@Override
-	public RecipeHook fromNetwork(@Nonnull ResourceLocation recipeId, PacketBuffer buffer) {
-
-	    return new RecipeHook(result, s, null, recipeTools);
+	public RecipeHook fromNetwork(ResourceLocation p_199426_1_, FriendlyByteBuf p_199426_2_) {
+		return null;
 	}
 
 	@Override
-	public void toNetwork(PacketBuffer buffer, RecipeHook recipe) {
-
+	public void toNetwork(FriendlyByteBuf p_199427_1_, RecipeHook p_199427_2_) {
 
 	}
-    }
+}
