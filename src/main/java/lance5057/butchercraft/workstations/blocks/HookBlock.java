@@ -1,37 +1,30 @@
 package lance5057.butchercraft.workstations.blocks;
 
-import lance5057.butchercraft.workstations.tileentities.TileHook;
+import lance5057.butchercraft.workstations.tileentities.HookBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
-public class BlockHook extends Block {
+public class HookBlock extends BaseEntityBlock {
 
-    public BlockHook() {
-        super(Block.Properties.of(Material.METAL).harvestLevel(0).strength(3, 4).harvestTool(ToolType.PICKAXE).air());
+    public HookBlock() {
+        super(BlockBehaviour.Properties.of(Material.METAL).strength(3, 4).air());
     }
 
     @Override
-    public boolean hasTileEntity(BlockState state) {
-        return true;
-    }
-
-    @Nullable
-    @Override
-    public BlockEntity createTileEntity(BlockState state, BlockGetter world) {
-        return new TileHook();
+    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+        return new HookBlockEntity(pPos, pState);
     }
 
     @Nonnull

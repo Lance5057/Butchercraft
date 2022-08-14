@@ -1,12 +1,14 @@
 package lance5057.butchercraft.workstations.tileentities;
 
-import lance5057.butchercraft.ButchercraftTileEntities;
+import lance5057.butchercraft.ButchercraftBlockEntities;
 import lance5057.butchercraft.workstations.recipes.RecipeHook;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -16,11 +18,11 @@ import net.minecraftforge.items.ItemStackHandler;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class TileHook extends BlockEntity {
+public class HookBlockEntity extends BlockEntity {
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(this::createHandler);
 
-    public TileHook() {
-        super(ButchercraftTileEntities.HOOK_TILE_ENTITY.get());
+    public HookBlockEntity(BlockPos pPos, BlockState pState) {
+        super(ButchercraftBlockEntities.HOOK_TILE_ENTITY.get(), pPos, pState);
     }
 
     @Nonnull
