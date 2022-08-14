@@ -13,7 +13,9 @@ public class ButchercraftTileEntities {
 
     public static void register(IEventBus modBus) {
         TILE_ENTITIES.register(modBus);
-    }    public static final RegistryObject<BlockEntityType<TileHook>> HOOK_TILE_ENTITY = TILE_ENTITIES.register(
+    }
+
+    public static final RegistryObject<BlockEntityType<TileHook>> HOOK_TILE_ENTITY = TILE_ENTITIES.register(
             "hook_tile_entity",
             () -> BlockEntityType.Builder.of(TileHook::new, ButchercraftBlocks.BLOCK_HOOK.get()).build(null));
 

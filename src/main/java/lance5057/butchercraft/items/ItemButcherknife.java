@@ -23,7 +23,7 @@ public class ItemButcherknife extends DiggerItem {
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
 
         if (entity instanceof Mob mob) {
-			ButcherKnifeRecipe recipe = this.matchRecipe(player.level, stack, mob);
+            ButcherKnifeRecipe recipe = this.matchRecipe(player.level, stack, mob);
 
             if (recipe != null)
                 mob.kill();

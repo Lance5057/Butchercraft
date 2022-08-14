@@ -2,7 +2,8 @@ package lance5057.butchercraft.animals.cow;
 
 import lance5057.butchercraft.ButchercraftItems;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
+
 
 public class ItemsCow {
     public static final RegistryObject<Item> COW_CARCASS = ButchercraftItems.ITEMS.register("cow_carcass",

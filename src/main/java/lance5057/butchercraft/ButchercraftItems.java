@@ -6,24 +6,28 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ButchercraftItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
-            Butchercraft.MOD_ID);    public static final CreativeModeTab GROUP_ITEMS = new CreativeModeTab("butchercraft.items") {
+            Butchercraft.MOD_ID);
+    ItemsCow cow = new ItemsCow();    public static final CreativeModeTab GROUP_ITEMS = new CreativeModeTab("butchercraft.items") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(ButchercraftItems.butcherKnife.get());
         }
     };
-    ItemsCow cow = new ItemsCow();
 
     public static void register(IEventBus modBus) {
         ITEMS.register(modBus);
-    }    public static final RegistryObject<Item> butcherKnife = ITEMS.register("butcher_knife",
+    }
+
+
+
+    public static final RegistryObject<Item> butcherKnife = ITEMS.register("butcher_knife",
             () -> new ItemButcherknife(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
     public static final RegistryObject<Item> skinningKnife = ITEMS.register("skinning_knife",
             () -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
@@ -44,8 +48,6 @@ public class ButchercraftItems {
             () -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
     public static final RegistryObject<Item> sinew = ITEMS.register("sinew",
             () -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
-
-
 
 
 }
