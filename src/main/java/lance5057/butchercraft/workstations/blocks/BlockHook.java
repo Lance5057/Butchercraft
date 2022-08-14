@@ -1,43 +1,43 @@
 package lance5057.butchercraft.workstations.blocks;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import lance5057.butchercraft.workstations.tileentities.TileHook;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.ToolType;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class BlockHook extends Block {
 
     public BlockHook() {
-	super(Block.Properties.of(Material.METAL).harvestLevel(0).strength(3, 4).harvestTool(ToolType.PICKAXE).air());
+        super(Block.Properties.of(Material.METAL).harvestLevel(0).strength(3, 4).harvestTool(ToolType.PICKAXE).air());
     }
 
     @Override
     public boolean hasTileEntity(BlockState state) {
-	return true;
+        return true;
     }
 
     @Nullable
     @Override
     public BlockEntity createTileEntity(BlockState state, BlockGetter world) {
-	return new TileHook();
+        return new TileHook();
     }
 
     @Nonnull
     @Override
     public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
-	    @Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
+                                 @Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
 //	if (hand == Hand.MAIN_HAND) {
 //	    TileEntity entity = world.getTileEntity(blockPos);
 //	    if (entity instanceof SawhorseStationTE) {
@@ -79,7 +79,7 @@ public class BlockHook extends Block {
 //		}
 //	    }
 //	}
-	return super.use(blockState, world, blockPos, playerEntity, hand, blockRayTraceResult);
+        return super.use(blockState, world, blockPos, playerEntity, hand, blockRayTraceResult);
 
     }
 }

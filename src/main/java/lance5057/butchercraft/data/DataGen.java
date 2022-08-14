@@ -13,11 +13,11 @@ public class DataGen {
 
     @SubscribeEvent
     public static void gatherData(final GatherDataEvent event) {
-	Butchercraft.logger.info("Data Generator Started!");
+        Butchercraft.logger.info("Data Generator Started!");
 
-	DataGenerator generator = event.getGenerator();
+        DataGenerator generator = event.getGenerator();
 
-	generator.addProvider(new ItemModels(generator, event.getExistingFileHelper()));
-	generator.addProvider(new EnglishLoc(generator));
+        generator.addProvider(new ItemModels(generator, event.getExistingFileHelper()));
+        generator.addProvider(new EnglishLoc(generator));
     }
 }
