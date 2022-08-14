@@ -1,6 +1,6 @@
 modLoader = "javafml"
-loaderVersion = "[26,)"
-license = "GGPL3"
+loaderVersion = "[40,)"
+license = "MIT"
 issueTrackerURL = "https://github.com/Lance5057/Butchercraft/issues"
 [[mods]]
 modId = "butchercraft"
