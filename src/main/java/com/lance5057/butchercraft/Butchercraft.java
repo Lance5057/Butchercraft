@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.items.ButchercraftItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -17,22 +18,19 @@ public class Butchercraft {
 
     public static Logger logger = LogManager.getLogger();
 
-    private final ButchercraftBlocks blocks;
-    private final ButchercraftItems items;
-
     public Butchercraft() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModLoadingContext modLoadingContext = ModLoadingContext.get();
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.initialize());
+        // TODO Correct file name
         ButchercraftConfig.loadConfig(ButchercraftConfig.getInstance().getSpec(),
                 FMLPaths.CONFIGDIR.get().resolve("compendium-common.toml"));
 
-        blocks = new ButchercraftBlocks();
-        items = new ButchercraftItems();
-
         ButchercraftBlocks.register(modEventBus);
         ButchercraftItems.register(modEventBus);
+        ButchercraftRecipes.register(modEventBus);
+        ButchercraftBlockEntities.register(modEventBus);
     }
 
 

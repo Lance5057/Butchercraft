@@ -1,7 +1,7 @@
 package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
-import com.lance5057.butchercraft.ButchercraftItems;
+import com.lance5057.butchercraft.items.ButchercraftItems;
 import com.lance5057.butchercraft.animals.cow.ItemsCow;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;

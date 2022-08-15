@@ -12,9 +12,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.Level;
 
-public class ItemButcherknife extends DiggerItem {
+public class ButcherKnifeItem extends DiggerItem {
 
-    public ItemButcherknife(
+    public ButcherKnifeItem(
             Properties builderIn) {
         super(3, 1.6f, Tiers.IRON, null, builderIn);
     }
@@ -68,12 +68,10 @@ public class ItemButcherknife extends DiggerItem {
 
     private ButcherKnifeRecipe matchRecipe(Level world, ItemStack tool, Mob entity) {
         if (world != null) {
-            ButcherKnifeRecipe r = world.getRecipeManager().getRecipes().stream()
+            return world.getRecipeManager().getRecipes().stream()
                     .filter(recipe -> recipe instanceof ButcherKnifeRecipe).map(recipe -> (ButcherKnifeRecipe) recipe)
                     .filter(recipe -> recipe.matches(new ButcherKnifeWrapper(tool, entity), world)).findFirst()
                     .orElse(null);
-
-            return r;
         }
         return null;
     }

@@ -1,6 +1,6 @@
 package com.lance5057.butchercraft.animals.cow;
 
-import com.lance5057.butchercraft.ButchercraftItems;
+import com.lance5057.butchercraft.items.ButchercraftItems;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
 
