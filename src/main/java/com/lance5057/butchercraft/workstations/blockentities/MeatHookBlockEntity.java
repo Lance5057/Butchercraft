@@ -1,151 +1,153 @@
 package com.lance5057.butchercraft.workstations.blockentities;
 
+import java.util.Optional;
+
+import javax.annotation.Nonnull;
+
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
+import com.lance5057.butchercraft.ButchercraftRecipes;
+import com.lance5057.butchercraft.items.CarcassItem;
+import com.lance5057.butchercraft.workstations.blockentities.bases.MultiToolRecipeStation;
 import com.lance5057.butchercraft.workstations.recipes.HookRecipe;
+import com.lance5057.butchercraft.workstations.recipes.WorkstationRecipeWrapper;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+public class MeatHookBlockEntity extends MultiToolRecipeStation<HookRecipe> {
 
-public class MeatHookBlockEntity extends BlockEntity {
-    private final LazyOptional<IItemHandler> handler = LazyOptional.of(this::createHandler);
+	private ItemStack ghostStack = ItemStack.EMPTY;
 
-    public MeatHookBlockEntity(BlockPos pPos, BlockState pState) {
-        super(ButchercraftBlockEntities.MEAT_HOOK.get(), pPos, pState);
-    }
+	public MeatHookBlockEntity(BlockPos pos, BlockState state) {
+		super(1, 1, 1, ButchercraftBlockEntities.MEAT_HOOK.get(), pos, state);
+	}
 
-    @Nonnull
-    @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        if (side != Direction.DOWN)
-            if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-                return handler.cast();
-            }
-        return super.getCapability(cap, side);
-    }
+	public void setGhostStack(ItemStack i) {
+		this.ghostStack = i;
+	}
 
-    // Attempt to find a recipe that matches the tool and the item in its inventory
-    private HookRecipe matchRecipe(ItemStack butcheringTool) {
-        if (this.level != null) {
-            return level.getRecipeManager().getRecipes().stream().filter(recipe -> recipe instanceof HookRecipe)
-                    .map(recipe -> (HookRecipe) recipe).filter(recipe -> recipe.matches(getInsertedItem(), butcheringTool)).findFirst()
-                    .orElse(null);
-        }
-        return null;
-    }
+	public ItemStack getGhostStack() {
+		return this.ghostStack;
+	}
 
-    private IItemHandler createHandler() {
-        return new ItemStackHandler(1) {
-            @Override
-            protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
-                return stack.getMaxStackSize();
-            }
+	@Override
+	protected IItemHandlerModifiable createInteractionHandler() {
+		return new ItemStackHandler(1) {
+			@Override
+			public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
+				if (stack.getItem() instanceof CarcassItem) {
+					Optional<HookRecipe> recipe = matchRecipe();
 
-            @Override
-            protected void onContentsChanged(int slot) {
-                updateInventory();
-            }
+					if (recipe.isPresent()) {
+						if (recipe.get() != null)
+							return true;
+					}
+				}
+				return false;
+			}
 
-            @Override
-            public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-                // Item is only valid if it can find a recipe that uses the inserted item
-                boolean recipeWithInputExists = false;
-                if (level != null) {
-                    recipeWithInputExists = level.getRecipeManager().getRecipes().stream().filter(recipe -> recipe instanceof HookRecipe)
-                            .map(recipe -> (HookRecipe) recipe)
-                            .anyMatch(hookRecipe -> hookRecipe.getInput().test(stack));
-                }
-                return recipeWithInputExists && super.isItemValid(slot, stack);
-            }
-        };
-    }
+			@Override
+			protected void onContentsChanged(int slot) {
+				updateInventory();
+				zeroProgress();
+				Optional<HookRecipe> recipe = matchRecipe();
 
-    public ItemStack getInsertedItem() {
-        return handler.map(inventory-> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
-    }
+				setGhostStack(ItemStack.EMPTY);
 
-    public void extractInsertItem(Player playerEntity, InteractionHand hand) {
-        handler.ifPresent(inventory -> {
-            ItemStack held = playerEntity.getItemInHand(hand);
-            if (!held.isEmpty()) {
-                insertItem(inventory, held);
-            }
-            else {
-                extractItem(playerEntity, inventory);
-            }
-        });
-        updateInventory();
-    }
+				if (recipe.isPresent()) {
+					setGhostStack(recipe.get().getRecipeOutput().copy());
+					setRecipe(recipe);
+				}
+			}
+		};
+	}
 
-    public void extractItem(Player playerEntity, IItemHandler inventory) {
-        if (!inventory.getStackInSlot(0).isEmpty()) {
-            ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
-            playerEntity.addItem(itemStack);
-        }
-        updateInventory();
-    }
+	public void extractInsertItem(Player Player, InteractionHand InteractionHand) {
+		InteractionHandler.ifPresent(inventory -> {
+			ItemStack held = Player.getItemInHand(InteractionHand);
+			if (!held.isEmpty()) {
+				insertItem(inventory, held);
+			} else {
+				extractItem(Player, inventory);
+			}
+		});
+		updateInventory();
+	}
 
-    public void insertItem(IItemHandler inventory, ItemStack heldItem) {
-        if (inventory.isItemValid(0, heldItem))
-            if (!inventory.insertItem(0, heldItem, true).equals(heldItem, false)) {
-                final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
-                heldItem.setCount(leftover);
-            }
-        updateInventory();
-    }
+	public void extractItem(Player Player, IItemHandler inventory) {
+		if (!inventory.getStackInSlot(0).isEmpty()) {
+			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
+			Player.addItem(itemStack);
+		}
+		updateInventory();
+	}
 
-    public boolean isEmpty() {
-        return handler.map(inventory -> inventory.getStackInSlot(0).isEmpty()).orElse(false);
-    }
+	public void insertItem(IItemHandler inventory, ItemStack heldItem) {
+		if (inventory.isItemValid(0, heldItem))
+			if (!inventory.insertItem(0, heldItem, true).sameItem(heldItem)) {
+				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
+				heldItem.setCount(leftover);
+			}
+		updateInventory();
+	}
 
-    // External extract handler
-    public void extractItem(Player playerEntity) {
-        handler.ifPresent(inventory -> this.extractItem(playerEntity, inventory));
-    }
+	public void extractItem(Player Player) {
+		InteractionHandler.ifPresent(inventory -> {
+			this.extractItem(Player, inventory);
+		});
+	}
 
-    // External insert handler
-    public void insertItem(ItemStack heldItem) {
-        handler.ifPresent(inventory -> this.insertItem(inventory, heldItem));
-    }
+	public void insertItem(ItemStack heldItem) {
+		InteractionHandler.ifPresent(inventory -> {
+			this.insertItem(inventory, heldItem);
+		});
+	}
 
-    public void updateInventory() {
-        requestModelDataUpdate();
-        this.setChanged();
-        if (this.getLevel() != null) {
-            this.getLevel().sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
-        }
-    }
+	@Override
+	protected Optional<HookRecipe> matchRecipe() {
+		if (level != null) {
 
-    public void useTool(ItemStack butcheringTool, Player playerEntity) {
-        if (level != null && !level.isClientSide()) {
-            final LootContext pContext = new LootContext.Builder((ServerLevel) level)
-                    .withParameter(LootContextParams.TOOL, butcheringTool)
-                    .withParameter(LootContextParams.THIS_ENTITY, playerEntity)
-                    .withRandom(level.getRandom())
-                    .withLuck(playerEntity.getLuck() + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, butcheringTool))
-                    .create(LootContextParamSets.EMPTY);
-            final HookRecipe hookRecipe = matchRecipe(butcheringTool);
-            if (hookRecipe != null) {
-                hookRecipe.getButcheringDrops().getRandomItems(pContext).forEach(itemStack -> new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY(), getBlockPos().getZ(), itemStack));
-            }
-        }
-    }
+			Optional<HookRecipe> recipe = InteractionHandler.map(i -> {
+				return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.HOOK.get(),
+						new WorkstationRecipeWrapper(1, 1, i), level);
+			}).get();
+
+			return recipe;
+		}
+		return null;
+	}
+
+	@Override
+	public void addParticle() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void finishRecipe(Player Player, HookRecipe recipe) {
+		InteractionHandler.ifPresent(h -> {
+			ItemStack item = recipe.getRecipeOutput().copy();
+			BlockEntity te = level.getBlockEntity(this.getBlockPos().offset(0, -1, 0));
+			if (te != null) {
+				LazyOptional<IItemHandler> ih = te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY,
+						Direction.UP);
+
+				item = ih.map(h2 -> dropItemBelow(h2, recipe.getRecipeOutput().copy())).get();
+				if (item == null)
+					craft();
+
+			}
+		});
+	}
+
 }

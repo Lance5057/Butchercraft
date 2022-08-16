@@ -14,7 +14,7 @@ public class ButchercraftRecipes {
     public static final RegistryObject<RecipeType<HookRecipe>> KNIFE = createRecipeType("knife");
 
     private static <T extends Recipe<?>> RegistryObject<RecipeType<T>> createRecipeType(String name) {
-        return RECIPE_TYPES.register(name, () -> new RecipeType<>() {
+        return RECIPE_TYPES.register(name, () -> new RecipeType<T>() {
             @Override
             public String toString() {
                 return "meat_hook";

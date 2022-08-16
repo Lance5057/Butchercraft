@@ -1,0 +1,32 @@
+{
+  "type": "butchercraft:meat_hook",
+  "pattern": [],
+  "key": {},
+  "tools": {
+    "Step_0": {
+      "Uses": 6,
+      "Tool": {
+        "item": "butchercraft:skinning_knife"
+      },
+      "Count": 1,
+      "Damage": true,
+      "Loottable": "butchercraft:recipes/meathook/cow",
+      "models": [
+        {
+          "location": "minecraft:diamond_sword",
+          "animation": {
+            "location": {},
+            "rotation": {
+              "y": {
+                "max": 360.0,
+                "speed": 0.1,
+                "loop": true
+              }
+            },
+            "scale": {}
+          }
+        }
+      ]
+    }
+  }
+}

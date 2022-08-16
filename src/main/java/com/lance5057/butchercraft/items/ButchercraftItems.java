@@ -78,8 +78,8 @@ public class ButchercraftItems {
             () -> new Item(new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.COOKED_BRAIN)));
     public static final RegistryObject<Item> COW_BRAIN = ITEMS.register("cow_brain",
             () -> new Item(new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.BRAIN)));
-    public static final RegistryObject<Item> COW_CARCASS = ITEMS.register("cow_carcass",
-            () -> new Item(new Item.Properties().tab(GROUP_ITEMS)));
+    public static final RegistryObject<CarcassItem> COW_CARCASS = ITEMS.register("cow_carcass",
+            () -> new CarcassItem(new Item.Properties().tab(GROUP_ITEMS)));
     public static final RegistryObject<Item> BUTCHER_KNIFE = ITEMS.register("butcher_knife",
             () -> new ButcherKnifeItem(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
 
