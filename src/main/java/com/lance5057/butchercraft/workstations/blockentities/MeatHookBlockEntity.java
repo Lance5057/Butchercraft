@@ -1,17 +1,14 @@
 package com.lance5057.butchercraft.workstations.blockentities;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
-import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.recipes.HookRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.entity.BlockEntity;

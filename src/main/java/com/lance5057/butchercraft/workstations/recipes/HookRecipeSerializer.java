@@ -3,27 +3,36 @@ package com.lance5057.butchercraft.workstations.recipes;
 import com.google.gson.JsonObject;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.storage.loot.Deserializers;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraftforge.registries.ForgeRegistryEntry;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
         implements RecipeSerializer<HookRecipe> {
 
     @Override
-    public HookRecipe fromJson(ResourceLocation p_199425_1_, JsonObject p_199425_2_) {
-        return null;
+    public HookRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
+        final Ingredient carcassInput = Ingredient.fromJson(pSerializedRecipe.get("carcass"));
+        final Ingredient butcheringTool = Ingredient.fromJson(pSerializedRecipe.getAsJsonObject("tool"));
+        final int butcheringStage = pSerializedRecipe.get("stage").getAsInt();
+        final LootTable butcheringDrops = Deserializers.createLootTableSerializer().create().fromJson(pSerializedRecipe.get("output"), LootTable.class);
+        return new HookRecipe(pRecipeId, carcassInput, butcheringTool, butcheringStage, butcheringDrops);
     }
 
     @Nullable
     @Override
-    public HookRecipe fromNetwork(ResourceLocation p_199426_1_, FriendlyByteBuf p_199426_2_) {
+    public HookRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
         return null;
     }
 
     @Override
-    public void toNetwork(FriendlyByteBuf p_199427_1_, HookRecipe p_199427_2_) {
-
+    public void toNetwork(FriendlyByteBuf pBuffer, HookRecipe pRecipe) {
+        pRecipe.getInput().toNetwork(pBuffer);
+        pRecipe.getRecipeTools().toNetwork(pBuffer);
+        pBuffer.writeUtf(pRecipe.getGroup());
     }
 }

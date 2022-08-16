@@ -18,7 +18,7 @@ public class EnglishLoc extends LanguageProvider {
 
         this.add("itemGroup.butchercraft.items", "Butchercraft Items");
 
-        this.add(ButchercraftItems.boneSaw.get(), "Bone Saw");
+        this.add(ButchercraftItems.BONE_SAW.get(), "Bone Saw");
     }
 
 }

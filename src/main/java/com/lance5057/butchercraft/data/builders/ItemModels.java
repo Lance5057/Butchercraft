@@ -2,7 +2,6 @@ package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.items.ButchercraftItems;
-import com.lance5057.butchercraft.animals.cow.ItemsCow;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -32,46 +31,46 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
     protected void registerModels() {
         Butchercraft.logger.info("/tItem Models - ");
 
-        forItem(ButchercraftItems.boneSaw, "bonesaw");
-        forItem(ButchercraftItems.butcherKnife, "butcherknife");
-        forItem(ButchercraftItems.fat, "fat");
-        forItem(ButchercraftItems.grindTip, "grindtip");
-        forItem(ButchercraftItems.leatherCord, "leathercord");
-        forItem(ButchercraftItems.leatherScrap, "leatherscrap");
-        forItem(ButchercraftItems.sausageTip, "sausagetip");
-        forItem(ButchercraftItems.sinew, "sinew");
-        forItem(ButchercraftItems.skinningKnife, "skinningknife");
-        forItem(ButchercraftItems.spatula, "spatula");
+        forItem(ButchercraftItems.BONE_SAW, "bonesaw");
+        forItem(ButchercraftItems.BUTCHER_KNIFE, "butcherknife");
+        forItem(ButchercraftItems.FAT, "fat");
+        forItem(ButchercraftItems.GRINDER_TIP, "grindtip");
+        forItem(ButchercraftItems.LEATHER_CORD, "leathercord");
+        forItem(ButchercraftItems.LEATHER_SCRAP, "leatherscrap");
+        forItem(ButchercraftItems.EXTRUDER_TIP, "sausagetip");
+        forItem(ButchercraftItems.SINEW, "sinew");
+        forItem(ButchercraftItems.SKINNING_KNIFE, "skinningknife");
+        forItem(ButchercraftItems.SPATULA, "spatula");
 
-        forItem(ItemsCow.COW_CARCASS, "cow_carcass");
+        forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
 
-        forItem(ItemsCow.COW_BRAIN, "brain");
-        forItem(ItemsCow.COW_COOKED_BRAIN, "cooked_brain");
-        forItem(ItemsCow.COW_HEART, "heart");
-        forItem(ItemsCow.COW_COOKED_HEART, "cooked_heart");
-        forItem(ItemsCow.COW_KIDNEY, "kidney");
-        forItem(ItemsCow.COW_COOKED_KIDNEY, "cooked_kidney");
-        forItem(ItemsCow.COW_LIVER, "liver");
-        forItem(ItemsCow.COW_COOKED_LIVER, "cooked_liver");
-        forItem(ItemsCow.COW_LUNG, "lung");
-        forItem(ItemsCow.COW_COOKED_LUNG, "cooked_lung");
-        forItem(ItemsCow.COW_STOMACHE, "stomach");
-        forItem(ItemsCow.COW_COOKED_STOMACHE, "cooked_stomach");
-        forItem(ItemsCow.COW_TRIPE, "tripe");
-        forItem(ItemsCow.COW_COOKED_TRIPE, "cooked_tripe");
+        forItem(ButchercraftItems.COW_BRAIN, "brain");
+        forItem(ButchercraftItems.COW_COOKED_BRAIN, "cooked_brain");
+        forItem(ButchercraftItems.COW_HEART, "heart");
+        forItem(ButchercraftItems.COW_COOKED_HEART, "cooked_heart");
+        forItem(ButchercraftItems.COW_KIDNEY, "kidney");
+        forItem(ButchercraftItems.COW_COOKED_KIDNEY, "cooked_kidney");
+        forItem(ButchercraftItems.COW_LIVER, "liver");
+        forItem(ButchercraftItems.COW_COOKED_LIVER, "cooked_liver");
+        forItem(ButchercraftItems.COW_LUNG, "lung");
+        forItem(ButchercraftItems.COW_COOKED_LUNG, "cooked_lung");
+        forItem(ButchercraftItems.COW_STOMACHE, "stomach");
+        forItem(ButchercraftItems.COW_COOKED_STOMACHE, "cooked_stomach");
+        forItem(ButchercraftItems.COW_TRIPE, "tripe");
+        forItem(ButchercraftItems.COW_COOKED_TRIPE, "cooked_tripe");
 
-        forItem(ItemsCow.BEEF_STEWMEAT, "stew_beef");
-        forItem(ItemsCow.COOKED_BEEF_STEWMEAT, "cooked_stew_beef");
-        forItem(ItemsCow.BEEF_ROAST, "roast");
-        forItem(ItemsCow.COOKED_BEEF_ROAST, "cooked_roast");
-        forItem(ItemsCow.BEEF_RIBS, "ribs");
-        forItem(ItemsCow.COOKED_BEEF_RIBS, "cooked_ribs");
-        forItem(ItemsCow.CUBED_BEEF, "cubed_beef");
-        forItem(ItemsCow.COOKED_CUBED_BEEF, "cooked_cubed_beef");
-        forItem(ItemsCow.GROUND_BEEF, "ground_beef");
-        forItem(ItemsCow.COOKED_GROUND_BEEF, "cooked_ground_beef");
-        forItem(ItemsCow.BEEF_SCRAPS, "beef_scraps");
-        forItem(ItemsCow.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
+        forItem(ButchercraftItems.BEEF_STEWMEAT, "stew_beef");
+        forItem(ButchercraftItems.COOKED_BEEF_STEWMEAT, "cooked_stew_beef");
+        forItem(ButchercraftItems.BEEF_ROAST, "roast");
+        forItem(ButchercraftItems.COOKED_BEEF_ROAST, "cooked_roast");
+        forItem(ButchercraftItems.BEEF_RIBS, "ribs");
+        forItem(ButchercraftItems.COOKED_BEEF_RIBS, "cooked_ribs");
+        forItem(ButchercraftItems.CUBED_BEEF, "cubed_beef");
+        forItem(ButchercraftItems.COOKED_CUBED_BEEF, "cooked_cubed_beef");
+        forItem(ButchercraftItems.GROUND_BEEF, "ground_beef");
+        forItem(ButchercraftItems.COOKED_GROUND_BEEF, "cooked_ground_beef");
+        forItem(ButchercraftItems.BEEF_SCRAPS, "beef_scraps");
+        forItem(ButchercraftItems.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
     }
 
     public void forItem(RegistryObject<? extends Item> item, String name) {

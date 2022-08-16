@@ -29,7 +29,7 @@ public class Butchercraft {
 
         ButchercraftBlocks.register(modEventBus);
         ButchercraftItems.register(modEventBus);
-        ButchercraftRecipes.register(modEventBus);
+        ButchercraftRecipeSerializers.register(modEventBus);
         ButchercraftBlockEntities.register(modEventBus);
     }
 

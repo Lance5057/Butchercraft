@@ -1,39 +1,43 @@
 package com.lance5057.butchercraft.workstations.recipes;
 
+import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
-import com.lance5057.butchercraft.util.RecipeItemUse;
-import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.loot.LootTable;
 
-public class HookRecipe implements Recipe<HookRecipeWrapper> {
+public class HookRecipe implements Recipe<Container> {
 
     private final ResourceLocation id;
     private final Ingredient input;
-    private final String group;
-    private final NonNullList<RecipeItemUse> recipeTools;
-
-    public HookRecipe(ResourceLocation idIn, String groupIn, Ingredient input, NonNullList<RecipeItemUse> tools) {
+    private final Ingredient recipeTools;
+    private int butcheringStage;
+    private LootTable butcheringDrops;
+    public HookRecipe(ResourceLocation idIn, Ingredient input, Ingredient tools, int butcheringStage, LootTable butcheringDrops) {
         id = idIn;
         this.input = input;
-        group = groupIn;
         recipeTools = tools;
+        this.butcheringStage = butcheringStage;
+        this.butcheringDrops = butcheringDrops;
+    }
+
+    public Ingredient getRecipeTools() {
+        return recipeTools;
     }
 
     @Override
-    public boolean matches(HookRecipeWrapper p_77569_1_, Level p_77569_2_) {
-        // TODO Auto-generated method stub
+    public boolean matches(Container pContainer, Level pLevel) {
         return false;
     }
 
     @Override
-    public ItemStack assemble(HookRecipeWrapper p_77572_1_) {
-        // unused
+    public ItemStack assemble(Container pContainer) {
         return ItemStack.EMPTY;
     }
 
@@ -56,7 +60,7 @@ public class HookRecipe implements Recipe<HookRecipeWrapper> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return ButchercraftRecipes.HOOK_SERIALIZER.get();
+        return ButchercraftRecipeSerializers.HOOK_SERIALIZER.get();
     }
 
     @Override
@@ -68,15 +72,15 @@ public class HookRecipe implements Recipe<HookRecipeWrapper> {
         return input;
     }
 
-    public String getGroup() {
-        return group;
+    public boolean matches(ItemStack stackInSlot, ItemStack butcheringTool) {
+        return getInput().test(stackInSlot) && recipeTools.test(butcheringTool);
     }
 
-    public RecipeItemUse getRecipeTools(int stage) {
-        return recipeTools.get(stage);
+    public int getButcheringStage() {
+        return butcheringStage;
     }
 
-    public boolean matches(ItemStack stackInSlot) {
-        return getInput().test(stackInSlot);
+    public LootTable getButcheringDrops() {
+        return butcheringDrops;
     }
 }
