@@ -7,7 +7,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.storage.loot.Deserializers;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
@@ -19,7 +18,8 @@ public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>
         final Ingredient butcheringTool = Ingredient.fromJson(pSerializedRecipe.getAsJsonObject("tool"));
         final int butcheringStage = pSerializedRecipe.get("stage").getAsInt();
         final LootTable butcheringDrops = Deserializers.createLootTableSerializer().create().fromJson(pSerializedRecipe.get("output"), LootTable.class);
-        return new HookRecipe(pRecipeId, carcassInput, butcheringTool, butcheringStage, butcheringDrops);
+        final String group = pSerializedRecipe.get("group").getAsString();
+        return new HookRecipe(pRecipeId, carcassInput, butcheringTool, butcheringStage, butcheringDrops, group);
     }
 
     @Override

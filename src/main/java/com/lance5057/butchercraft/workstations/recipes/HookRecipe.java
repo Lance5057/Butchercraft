@@ -19,12 +19,15 @@ public class HookRecipe implements Recipe<Container> {
     private final Ingredient recipeTools;
     private int butcheringStage;
     private LootTable butcheringDrops;
-    public HookRecipe(ResourceLocation idIn, Ingredient input, Ingredient tools, int butcheringStage, LootTable butcheringDrops) {
+    private String group;
+
+    public HookRecipe(ResourceLocation idIn, Ingredient input, Ingredient tools, int butcheringStage, LootTable butcheringDrops, String group) {
         id = idIn;
         this.input = input;
         recipeTools = tools;
         this.butcheringStage = butcheringStage;
         this.butcheringDrops = butcheringDrops;
+        this.group = group;
     }
 
     public Ingredient getRecipeTools() {
