@@ -1,7 +1,6 @@
 package com.lance5057.butchercraft;
 
 import com.lance5057.butchercraft.workstations.recipes.HookRecipe;
-import com.lance5057.butchercraft.workstations.recipes.HookRecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

@@ -5,8 +5,8 @@ import net.minecraft.data.recipes.RecipeProvider;
 
 public class Recipes extends RecipeProvider {
 
-    public Recipes(DataGenerator p_i48262_1_) {
-        super(p_i48262_1_);
+    public Recipes(DataGenerator generator) {
+        super(generator);
         // TODO Auto-generated constructor stub
     }
 

@@ -74,7 +74,7 @@ public class MeatHookRecipeBuilder implements RecipeBuilder {
         private final Advancement.Builder advancement;
         private final ResourceLocation advancementId;
 
-        public FinishedMeatHookRecipe(ResourceLocation pRecipeId, LootTable output, String group, Ingredient input, Ingredient tool, int stage, Advancement.Builder advancement, ResourceLocation advancementId) {
+        public FinishedMeatHookRecipe(ResourceLocation pRecipeId, LootTable output, String group, Ingredient input, Ingredient tool, int stage, Advancement.Builder advancement, ResourceLocation advancementId)  {
             id = pRecipeId;
             this.output = output;
             this.group = group;
