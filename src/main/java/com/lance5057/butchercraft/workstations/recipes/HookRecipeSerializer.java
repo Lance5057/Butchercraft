@@ -9,7 +9,6 @@ import net.minecraft.world.level.storage.loot.Deserializers;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraftforge.registries.ForgeRegistryEntry;
-import org.jetbrains.annotations.Nullable;
 
 public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
         implements RecipeSerializer<HookRecipe> {
@@ -23,7 +22,6 @@ public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>
         return new HookRecipe(pRecipeId, carcassInput, butcheringTool, butcheringStage, butcheringDrops);
     }
 
-    @Nullable
     @Override
     public HookRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
         return null;

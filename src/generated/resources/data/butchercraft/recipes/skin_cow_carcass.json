@@ -6,6 +6,7 @@
   "tool": {
     "item": "butchercraft:butcher_knife"
   },
+  "group": "cow_butchering",
   "stage": 0,
   "output": {
     "pools": [

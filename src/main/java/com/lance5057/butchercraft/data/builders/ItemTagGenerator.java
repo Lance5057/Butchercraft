@@ -5,10 +5,9 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
 
 public class ItemTagGenerator extends BlockTagsProvider {
-    public ItemTagGenerator(DataGenerator generator, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+    public ItemTagGenerator(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
         super(generator, modId, existingFileHelper);
     }
 
