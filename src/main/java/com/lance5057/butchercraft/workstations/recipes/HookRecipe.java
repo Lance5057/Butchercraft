@@ -68,7 +68,7 @@ public class HookRecipe implements Recipe<Container> {
 
     @Override
     public RecipeType<?> getType() {
-        return ButchercraftRecipes.HOOK;
+        return ButchercraftRecipes.HOOK.get();
     }
 
     public Ingredient getInput() {

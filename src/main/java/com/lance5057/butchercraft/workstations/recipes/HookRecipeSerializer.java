@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft.workstations.recipes;
 
 import com.google.gson.JsonObject;
+import com.lance5057.butchercraft.workstations.recipes.HookRecipe;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -17,7 +18,8 @@ public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>
         final Ingredient carcassInput = Ingredient.fromJson(pSerializedRecipe.get("carcass"));
         final Ingredient butcheringTool = Ingredient.fromJson(pSerializedRecipe.getAsJsonObject("tool"));
         final int butcheringStage = pSerializedRecipe.get("stage").getAsInt();
-        final LootTable butcheringDrops = Deserializers.createLootTableSerializer().create().fromJson(pSerializedRecipe.get("output"), LootTable.class);
+        // TODO Deserialize this properly
+        final LootTable butcheringDrops = LootTable.EMPTY;
         final String group = pSerializedRecipe.get("group").getAsString();
         return new HookRecipe(pRecipeId, carcassInput, butcheringTool, butcheringStage, butcheringDrops, group);
     }
