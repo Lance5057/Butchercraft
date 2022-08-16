@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft;
+package com.lance5057.butchercraft.workstations.recipes;
 
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.workstations.recipes.HookRecipe;
@@ -18,6 +18,7 @@ public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>
         final Ingredient carcassInput = Ingredient.fromJson(pSerializedRecipe.get("carcass"));
         final Ingredient butcheringTool = Ingredient.fromJson(pSerializedRecipe.getAsJsonObject("tool"));
         final int butcheringStage = pSerializedRecipe.get("stage").getAsInt();
+        // TODO Deserialize this properly
         final LootTable butcheringDrops = LootTable.EMPTY;
         final String group = pSerializedRecipe.get("group").getAsString();
         return new HookRecipe(pRecipeId, carcassInput, butcheringTool, butcheringStage, butcheringDrops, group);
