@@ -1,0 +1,99 @@
+{
+  "type": "butchercraft:meat_hook",
+  "carcass": {
+    "item": "butchercraft:cow_carcass"
+  },
+  "tool": {
+    "item": "butchercraft:butcher_knife"
+  },
+  "group": "cow_butchering",
+  "stage": 0,
+  "output": {
+    "pools": [
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:leather"
+          }
+        ],
+        "functions": [
+          {
+            "function": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 8.0,
+              "max": 12.0
+            },
+            "add": false
+          }
+        ]
+      },
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "min": 8.0,
+                  "max": 16.0
+                },
+                "add": false
+              }
+            ],
+            "name": "butchercraft:leather_scrap"
+          }
+        ]
+      },
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "min": 4.0,
+                  "max": 12.0
+                },
+                "add": false
+              }
+            ],
+            "name": "butchercraft:fat"
+          }
+        ]
+      },
+      {
+        "rolls": 1.0,
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "function": "minecraft:set_count",
+                "count": {
+                  "type": "minecraft:uniform",
+                  "min": 4.0,
+                  "max": 12.0
+                },
+                "add": false
+              }
+            ],
+            "name": "butchercraft:sinew"
+          }
+        ]
+      }
+    ]
+  }
+}
