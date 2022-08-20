@@ -5,7 +5,7 @@ import com.lance5057.butchercraft.data.builders.EnglishLoc;
 import com.lance5057.butchercraft.data.builders.ItemModels;
 import com.lance5057.butchercraft.data.builders.ItemTagGenerator;
 import com.lance5057.butchercraft.data.builders.Loot;
-import com.lance5057.butchercraft.data.builders.Recipes;
+import com.lance5057.butchercraft.data.builders.ButchercraftRecipeProvider;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,7 +24,7 @@ public class DataGen {
         generator.addProvider(new ItemModels(generator, event.getExistingFileHelper()));
         generator.addProvider(new EnglishLoc(generator));
         generator.addProvider(new ItemTagGenerator(generator, Butchercraft.MOD_ID, event.getExistingFileHelper()));
-        generator.addProvider(new Recipes(generator));
+        generator.addProvider(new ButchercraftRecipeProvider(generator));
         
         generator.addProvider(new Loot(generator));
     }

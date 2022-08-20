@@ -16,7 +16,7 @@ public class AnimatedRecipeItemUse extends RecipeItemUse {
 
 	public final List<BlacklistedModel> model;
 
-	public static AnimatedRecipeItemUse EMPTY = new AnimatedRecipeItemUse(RecipeItemUse.EMPTY, BlacklistedModel.empty);
+	public static final AnimatedRecipeItemUse EMPTY = new AnimatedRecipeItemUse(RecipeItemUse.EMPTY, BlacklistedModel.empty);
 
 	public AnimatedRecipeItemUse(int uses, Ingredient tool, int count, boolean damage, ResourceLocation loottable,
 			BlacklistedModel... model) {
@@ -26,7 +26,7 @@ public class AnimatedRecipeItemUse extends RecipeItemUse {
 	}
 
 	public AnimatedRecipeItemUse(RecipeItemUse riu, BlacklistedModel... model) {
-		super(riu.uses, riu.tool, riu.count, riu.damageTool, riu.loottable);
+		super(riu.uses, riu.tool, riu.count, riu.damageTool, riu.lootTable);
 
 		this.model = List.of(model);
 	}
@@ -74,13 +74,13 @@ public class AnimatedRecipeItemUse extends RecipeItemUse {
 			BlacklistedModel.write(r.model.get(i), buffer);
 	}
 
-	public static JsonObject addProperty(AnimatedRecipeItemUse r) {
-		JsonObject o = RecipeItemUse.addProperty(r);
+	public static JsonObject addProperty(AnimatedRecipeItemUse recipeItemUse) {
+		JsonObject o = RecipeItemUse.addProperty(recipeItemUse);
 
-		if (r.model != null && !r.model.isEmpty()) {
+		if (recipeItemUse.model != null && !recipeItemUse.model.isEmpty()) {
 			JsonArray ja = new JsonArray();
-			for (int i = 0; i < r.model.size(); i++)
-				ja.add(BlacklistedModel.addProperty(r.model.get(i)));
+			for (int i = 0; i < recipeItemUse.model.size(); i++)
+				ja.add(BlacklistedModel.addProperty(recipeItemUse.model.get(i)));
 
 			o.add("models", ja);
 		}

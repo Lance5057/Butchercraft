@@ -22,7 +22,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
 		// TODO Auto-generated method stub
-		t.accept(new ResourceLocation(Butchercraft.MOD_ID, "recipes/meathook/cow"),
+		t.accept(new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/cow"),
 				LootTable.lootTable()
 						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.LEATHER))
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(8f, 12f))))

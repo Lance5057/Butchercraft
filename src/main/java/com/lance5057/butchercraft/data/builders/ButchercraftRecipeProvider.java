@@ -18,9 +18,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class Recipes extends RecipeProvider {
+public class ButchercraftRecipeProvider extends RecipeProvider {
 
-	public Recipes(DataGenerator generator) {
+	public ButchercraftRecipeProvider(DataGenerator generator) {
 		super(generator);
 		// TODO Auto-generated constructor stub
 	}
@@ -29,7 +29,7 @@ public class Recipes extends RecipeProvider {
 	protected void buildCraftingRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_CARCASS.get()).tool(
 				Ingredient.of(ButchercraftItems.SKINNING_KNIFE.get()), 6, true,
-				new ResourceLocation(Butchercraft.MOD_ID, "recipes/meathook/cow"),
+				new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/cow"),
 				new BlacklistedModel(Items.DIAMOND_SWORD,
 						new AnimationFloatTransform().setRotation(
 								new AnimatedFloatVector3().setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))

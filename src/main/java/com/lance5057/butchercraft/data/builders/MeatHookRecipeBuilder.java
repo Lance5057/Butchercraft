@@ -1,14 +1,12 @@
 package com.lance5057.butchercraft.data.builders;
 
-import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.client.BlacklistedModel;
 import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
-
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -20,118 +18,155 @@ import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
 
 public class MeatHookRecipeBuilder implements RecipeBuilder {
-	private final Item result;
-	private final int count;
-	private final List<String> pattern = Lists.newArrayList();
-	private final Map<Character, Ingredient> key = Maps.newLinkedHashMap();
-	private final List<AnimatedRecipeItemUse> tools = NonNullList.create();
-	private final Advancement.Builder advancementBuilder = Advancement.Builder.advancement();
-	private String group;
+    private final Item result;
+    private final List<String> pattern = Lists.newArrayList();
+    private final Map<Character, Ingredient> key = Maps.newLinkedHashMap();
+    private final List<AnimatedRecipeItemUse> tools = NonNullList.create();
+    private final Advancement.Builder advancementBuilder = Advancement.Builder.advancement();
+    private String group;
 
-	public MeatHookRecipeBuilder(Item resultIn, int countIn) {
-		this.result = resultIn;
-		this.count = countIn;
-	}
+    public MeatHookRecipeBuilder(Item carcassIn) {
+        this.result = carcassIn;
+    }
 
-	public static MeatHookRecipeBuilder shapedRecipe(Item resultIn) {
-		return new MeatHookRecipeBuilder(resultIn, 1);
-	}
+    public static MeatHookRecipeBuilder shapedRecipe(Item resultIn) {
+        return new MeatHookRecipeBuilder(resultIn);
+    }
 
-	public MeatHookRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage, ResourceLocation table,
-			BlacklistedModel... model) {
-		this.tools.add(new AnimatedRecipeItemUse(uses, tool, count, damage, table, model));
-		return this;
-	}
+    public MeatHookRecipeBuilder tool(Ingredient tool,
+                                      int count,
+                                      int uses,
+                                      boolean damage,
+                                      ResourceLocation table,
+                                      BlacklistedModel... model) {
+        this.tools.add(new AnimatedRecipeItemUse(uses, tool, count, damage, table, model));
+        return this;
+    }
 
-	public MeatHookRecipeBuilder tool(Ingredient tool, int uses, boolean damage, ResourceLocation table,
-			BlacklistedModel... model) {
-		this.tools.add(new AnimatedRecipeItemUse(uses, tool, 1, damage, table, model));
-		return this;
-	}
+    public MeatHookRecipeBuilder tool(Ingredient tool,
+                                      int uses,
+                                      boolean damage,
+                                      ResourceLocation table,
+                                      BlacklistedModel... model) {
+        this.tools.add(new AnimatedRecipeItemUse(uses, tool, 1, damage, table, model));
+        return this;
+    }
 
-	/**
-	 * Adds a criterion needed to unlock the recipe.
-	 */
-	public MeatHookRecipeBuilder addCriterion(String name, CriterionTriggerInstance criterionIn) {
-		this.advancementBuilder.addCriterion(name, criterionIn);
-		return this;
-	}
+    /**
+     * Makes sure that this recipe is valid and obtainable.
+     */
+    private void validate(ResourceLocation id) {
+//        if (this.advancementBuilder.getCriteria().isEmpty()) {
+//            throw new IllegalStateException("No way of obtaining recipe " + id);
+//        }
+        if (this.tools.isEmpty()) {
+            throw new IllegalStateException("No toolset is defined for shaped recipe %s!".formatted(id));
+        }
+    }
 
-	public MeatHookRecipeBuilder setGroup(String groupIn) {
-		this.group = groupIn;
-		return this;
-	}
+    /**
+     * Adds a criterion needed to unlock the recipe.
+     */
+    @Override
+    public RecipeBuilder unlockedBy(String pCriterionName, CriterionTriggerInstance pCriterionTrigger) {
+        this.advancementBuilder.addCriterion(pCriterionName, pCriterionTrigger);
+        return this;
+    }
 
-//	/**
-//	 * Builds this recipe into an {@link FinishedRecipe}.
-//	 */
-//	public void build(Consumer<FinishedRecipe> consumerIn) {
-//		this.build(consumerIn, this.result.);
-//	}
-//
-//	/**
-//	 * Builds this recipe into an {@link FinishedRecipe}. Use
-//	 * {@link #build(Consumer)} if save is the same as the ID for the result.
-//	 */
-//	public void build(Consumer<FinishedRecipe> consumerIn, String save) {
-//		ResourceLocation resourcelocation = Registry.ITEM.getKey(this.result);
-//		if ((new ResourceLocation(save)).equals(resourcelocation)) {
-//			throw new IllegalStateException("Shaped Recipe " + save + " should remove its 'save' argument");
-//		} else {
-//			this.build(consumerIn, new ResourceLocation(Reference.MOD_ID, save));
-//		}
-//	}
+    @Override
+    public RecipeBuilder group(String pGroupName) {
+        this.group = pGroupName;
+        return this;
+    }
 
-//	/**
-//	 * Builds this recipe into an {@link FinishedRecipe}.
-//	 */
-//	public void build(Consumer<FinishedRecipe> consumerIn, ResourceLocation id) {
-//		this.validate(id);
-//		this.advancementBuilder.parent(new ResourceLocation("recipes/root"))
-//				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
-//				.rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-//		consumerIn.accept(new CraftingAnvilRecipeProvider.AnvilResult(id, this.result, this.count, this.schematic,
-//				this.group == null ? "" : this.group, this.pattern, this.key, this.tools, this.advancementBuilder,
-//				new ResourceLocation(id.getNamespace(),
-//						"recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + id.getPath())));
-//	}
+    @Override
+    public Item getResult() {
+        return this.result;
+    }
 
-	/**
-	 * Makes sure that this recipe is valid and obtainable.
-	 */
-	private void validate(ResourceLocation id) {
-		if (this.tools.isEmpty()) {
-			throw new IllegalStateException("No toolset is defined for shaped recipe " + id + "!");
-		}
-	}
+    @Override
+    public void save(Consumer<FinishedRecipe> consumerIn, ResourceLocation pRecipeId) {
+        this.validate(pRecipeId);
+        this.advancementBuilder.parent(new ResourceLocation("recipes/root"))
+                .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId))
+                .rewards(AdvancementRewards.Builder.recipe(pRecipeId))
+                .requirements(RequirementsStrategy.OR);
+        consumerIn.accept(new Result(pRecipeId,
+                Ingredient.of(this.result),
+                this.group == null ? "" : this.group,
+                this.tools,
+                this.advancementBuilder,
+                new ResourceLocation(pRecipeId.getNamespace(), "recipes/meat_hook/" + pRecipeId.getPath())));
+    }
 
-	@Override
-	public RecipeBuilder unlockedBy(String p_176496_, CriterionTriggerInstance p_176497_) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public static class Result implements FinishedRecipe {
+        private final ResourceLocation id;
+        private final Ingredient carcass;
+        private final String group;
+        private final List<AnimatedRecipeItemUse> tools;
+        private final Advancement.Builder advancementBuilder;
+        private final ResourceLocation advancementId;
 
-	@Override
-	public RecipeBuilder group(String p_176495_) {
-		this.group = p_176495_;
-		return this;
-	}
+        public Result(ResourceLocation idIn,
+                      Ingredient carcassIn,
+                      String groupIn,
+                      List<AnimatedRecipeItemUse> toolsIn,
+                      Advancement.Builder advancementBuilderIn,
+                      ResourceLocation advancementIdIn) {
+            this.id = idIn;
+            // TODO Possibly restrict to items only
+            this.carcass = carcassIn;
+            this.group = groupIn;
+            this.advancementBuilder = advancementBuilderIn;
+            this.advancementId = advancementIdIn;
+            this.tools = toolsIn;
+        }
 
-	@Override
-	public Item getResult() {
-		return this.result;
-	}
+        @Override
+        public void serializeRecipeData(JsonObject json) {
+            json.addProperty("group", this.group);
+            JsonArray stepArray = new JsonArray();
+            this.tools.stream().map(AnimatedRecipeItemUse::addProperty).forEach(stepArray::add);
+            json.add("tools", stepArray);
+            json.add("carcass", carcass.toJson());
+        }
 
-	@Override
-	public void save(Consumer<FinishedRecipe> consumerIn, ResourceLocation id) {
-		this.validate(id);
-		this.advancementBuilder.parent(new ResourceLocation("recipes/root"))
-				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
-				.rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-		consumerIn.accept(new MeatHookRecipeProvider.Result(id, this.result, this.group == null ? "" : this.group,
-				this.pattern, this.key, this.tools, this.advancementBuilder, new ResourceLocation(id.getNamespace(),
-						"recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + id.getPath())));
-	}
+        public RecipeSerializer<?> getType() {
+            return ButchercraftRecipeSerializers.HOOK_SERIALIZER.get();
+        }
+
+        /**
+         * Gets the ID for the recipe.
+         */
+        public ResourceLocation getId() {
+            return this.id;
+        }
+
+        /**
+         * Gets the JSON for the advancement that unlocks this recipe. Null if there is
+         * no advancement.
+         */
+        @Nullable
+        @Override
+        public JsonObject serializeAdvancement() {
+            return this.advancementBuilder.serializeToJson();
+        }
+
+        /**
+         * Gets the ID for the advancement associated with this recipe. Should not be
+         * null if {@link #getAdvancementJson} is non-null.
+         */
+        @Nullable
+        public ResourceLocation getAdvancementId() {
+            return this.advancementId;
+        }
+    }
 }

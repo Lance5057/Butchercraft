@@ -1,16 +1,15 @@
 {
   "type": "butchercraft:meat_hook",
-  "pattern": [],
-  "key": {},
-  "tools": {
-    "Step_0": {
-      "Uses": 6,
-      "Tool": {
+  "group": "",
+  "tools": [
+    {
+      "uses": 6,
+      "tool": {
         "item": "butchercraft:skinning_knife"
       },
-      "Count": 1,
-      "Damage": true,
-      "Loottable": "butchercraft:recipes/meathook/cow",
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:recipes/meat_hook/cow",
       "models": [
         {
           "location": "minecraft:diamond_sword",
@@ -28,5 +27,8 @@
         }
       ]
     }
+  ],
+  "carcass": {
+    "item": "butchercraft:cow_carcass"
   }
 }
