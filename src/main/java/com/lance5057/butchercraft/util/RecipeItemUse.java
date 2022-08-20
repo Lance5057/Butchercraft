@@ -12,7 +12,9 @@ public class RecipeItemUse {
     public static final String COUNT_FIELD = "count";
     public static final String DAMAGE_FIELD = "damage";
     public static final String LOOT_TABLE_FIELD = "loot_table";
+
     public static final RecipeItemUse EMPTY = new RecipeItemUse(0, Ingredient.EMPTY, 1, false, new ResourceLocation(""));
+    // TODO Switch to private?
     public final int uses;
     public final Ingredient tool;
     public final int count;

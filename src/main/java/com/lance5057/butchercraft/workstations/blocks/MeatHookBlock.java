@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -34,7 +35,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public MeatHookBlock() {
-		super(Block.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
+		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
@@ -62,17 +63,15 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 			return InteractionResult.SUCCESS; // on client side, don't do anything
 
 		BlockEntity entity = world.getBlockEntity(blockPos);
-		if (entity instanceof MeatHookBlockEntity) {
+		if (entity instanceof MeatHookBlockEntity te) {
 
-			MeatHookBlockEntity te = ((MeatHookBlockEntity) entity);
 			// Get item in both InteractionHands
-			ItemStack heldmain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
-			// ItemStack heldoff = player.getHeldItem(InteractionHand.OFF_InteractionHand);
+			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
 
-			if (heldmain.getItem() instanceof CarcassItem)
-				te.insertItem(heldmain);
-			else if (heldmain != ItemStack.EMPTY)
-				te.hammer(playerEntity, heldmain);
+			if (heldMain.getItem() instanceof CarcassItem)
+				te.insertItem(heldMain);
+			else if (heldMain != ItemStack.EMPTY)
+				te.useTool(heldMain, playerEntity);
 		}
 
 		return InteractionResult.SUCCESS;
@@ -89,9 +88,8 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState ifluidstate = context.getLevel().getFluidState(context.getClickedPos());
 
-		BlockState blockstate = this.defaultBlockState()
+		return this.defaultBlockState()
 				.setValue(FACING, context.getHorizontalDirection().getOpposite())
-				.setValue(WATERLOGGED, Boolean.valueOf(ifluidstate.getType() == Fluids.WATER));
-		return blockstate;
+				.setValue(WATERLOGGED, ifluidstate.getType() == Fluids.WATER);
 	}
 }
