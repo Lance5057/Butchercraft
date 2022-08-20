@@ -17,13 +17,6 @@ public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>
 
 	@Override
 	public HookRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
-//		final Ingredient carcassInput = Ingredient.fromJson(pSerializedRecipe.get("carcass"));
-//		final Ingredient butcheringTool = Ingredient.fromJson(pSerializedRecipe.getAsJsonObject("tool"));
-//		final int butcheringStage = pSerializedRecipe.get("stage").getAsInt();
-//		// TODO Deserialize this properly
-//		final LootTable butcheringDrops = LootTable.EMPTY;
-//		final String group = pSerializedRecipe.get("group").getAsString();
-
 		String s = GsonHelper.getAsString(pSerializedRecipe, "group", "");
 		Map<String, Ingredient> map = HookRecipe.deserializeKey(GsonHelper.getAsJsonObject(pSerializedRecipe, "key"));
 		String[] astring = HookRecipe
