@@ -103,7 +103,7 @@ public class ButchercraftItems {
     public static final RegistryObject<Item> SINEW = ITEMS.register("sinew",
             () -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
 
-    public static final RegistryObject<Item> HOOK_BLOCK_ITEM = ITEMS.register("meat_hook", () -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties().tab(GROUP_ITEMS)));
+    public static final RegistryObject<BlockItem> HOOK_BLOCK_ITEM = ITEMS.register("meat_hook", () -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties().tab(GROUP_ITEMS)));
 
     public static void register(IEventBus modBus) {
         ITEMS.register(modBus);
