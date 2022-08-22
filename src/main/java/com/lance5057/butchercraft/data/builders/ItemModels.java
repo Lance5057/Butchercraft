@@ -60,7 +60,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COW_TRIPE, "tripe");
 		forItem(ButchercraftItems.COW_COOKED_TRIPE, "cooked_tripe");
 
-		forItem(ButchercraftItems.BEEF_STEWMEAT, "stew_beef");
+		forItem(ButchercraftItems.BEEF_STEW_MEAT, "stew_beef");
 		forItem(ButchercraftItems.COOKED_BEEF_STEWMEAT, "cooked_stew_beef");
 		forItem(ButchercraftItems.BEEF_ROAST, "roast");
 		forItem(ButchercraftItems.COOKED_BEEF_ROAST, "cooked_roast");
