@@ -47,7 +47,7 @@ public class ButchercraftItems {
     public static final RegistryObject<Item> COOKED_BEEF_STEWMEAT = ITEMS
             .register("cooked_beef_stewmeat", () -> new Item(
                     new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.COOKED_BEEF_STEWMEAT)));
-    public static final RegistryObject<Item> BEEF_STEWMEAT = ITEMS.register("beef_stewmeat",
+    public static final RegistryObject<Item> BEEF_STEW_MEAT = ITEMS.register("beef_stewmeat",
             () -> new Item(new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.BEEF_STEWMEAT)));
     public static final RegistryObject<Item> COW_COOKED_TRIPE = ITEMS.register("cooked_cow_tripe",
             () -> new Item(new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.COOKED_TRIPE)));
@@ -104,6 +104,7 @@ public class ButchercraftItems {
             () -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
 
     public static final RegistryObject<BlockItem> HOOK_BLOCK_ITEM = ITEMS.register("meat_hook", () -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties().tab(GROUP_ITEMS)));
+    public static final RegistryObject<BlockItem> COW_SKULL = ITEMS.register("cow_skill", () -> new BlockItem(ButchercraftBlocks.COW_SKULL.get(), new Item.Properties().tab(GROUP_ITEMS)));
 
     public static void register(IEventBus modBus) {
         ITEMS.register(modBus);
