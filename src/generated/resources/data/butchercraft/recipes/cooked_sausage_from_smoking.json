@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "butchercraft:sausage"
+  },
+  "result": "butchercraft:cooked_sausage",
+  "experience": 0.35,
+  "cookingtime": 100
+}

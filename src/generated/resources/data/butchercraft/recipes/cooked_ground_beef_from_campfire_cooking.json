@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "butchercraft:ground_beef"
+  },
+  "result": "butchercraft:cooked_ground_beef",
+  "experience": 0.35,
+  "cookingtime": 600
+}

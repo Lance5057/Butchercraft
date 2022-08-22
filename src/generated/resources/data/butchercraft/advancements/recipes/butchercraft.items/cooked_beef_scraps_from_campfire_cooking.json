@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_beef_scraps_from_campfire_cooking"
+    ]
+  },
+  "criteria": {
+    "has_beef_scraps": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:beef_scraps"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_beef_scraps_from_campfire_cooking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_beef_scraps",
+      "has_the_recipe"
+    ]
+  ]
+}

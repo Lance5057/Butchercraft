@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_beef_ribs_from_campfire_cooking"
+    ]
+  },
+  "criteria": {
+    "has_beef_ribs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:beef_ribs"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_beef_ribs_from_campfire_cooking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_beef_ribs",
+      "has_the_recipe"
+    ]
+  ]
+}
