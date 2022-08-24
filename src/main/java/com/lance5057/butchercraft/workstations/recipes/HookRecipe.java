@@ -77,7 +77,7 @@ public class HookRecipe implements Recipe<Container> {
 		return recipeToolsIn;
 	}
 
-	public boolean matches(ItemStack insertedItem, ItemStack butcheringTool) {
-		return carcassIn.test(insertedItem) && recipeToolsIn.stream().anyMatch(animatedRecipeItemUse -> animatedRecipeItemUse.tool.test(butcheringTool));
+	public boolean matches(ItemStack insertedItem) {
+		return carcassIn.test(insertedItem);
 	}
 }

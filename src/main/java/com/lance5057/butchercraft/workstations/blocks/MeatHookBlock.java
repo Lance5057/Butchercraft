@@ -71,7 +71,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 			if (heldMain.getItem() instanceof CarcassItem)
 				te.insertItem(heldMain);
 			else if (heldMain != ItemStack.EMPTY)
-				te.useTool(heldMain, playerEntity);
+				te.hammer(playerEntity, heldMain);
 		}
 
 		return InteractionResult.SUCCESS;
