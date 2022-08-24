@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "butchercraft:beef_ribs"
+  },
+  "result": "butchercraft:cooked_beef_ribs",
+  "experience": 0.35,
+  "cookingtime": 600
+}

@@ -47,6 +47,12 @@ public class ButchercraftItems {
     public static final RegistryObject<Item> COOKED_BEEF_STEWMEAT = ITEMS
             .register("cooked_beef_stewmeat", () -> new Item(
                     new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.COOKED_BEEF_STEWMEAT)));
+    public static final RegistryObject<Item> SAUSAGE = ITEMS
+            .register("sausage", () -> new Item(
+                    new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.SAUSAGE)));
+    public static final RegistryObject<Item> COOKED_SAUSAGE = ITEMS
+            .register("cooked_sausage", () -> new Item(
+                    new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.COOKED_SAUSAGE)));
     public static final RegistryObject<Item> BEEF_STEW_MEAT = ITEMS.register("beef_stewmeat",
             () -> new Item(new Item.Properties().tab(GROUP_ITEMS).food(FoodsCow.BEEF_STEWMEAT)));
     public static final RegistryObject<Item> COW_COOKED_TRIPE = ITEMS.register("cooked_cow_tripe",

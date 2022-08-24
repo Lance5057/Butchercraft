@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_ground_beef_from_smelting"
+    ]
+  },
+  "criteria": {
+    "has_ground_beef": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:ground_beef"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_ground_beef_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ground_beef",
+      "has_the_recipe"
+    ]
+  ]
+}
