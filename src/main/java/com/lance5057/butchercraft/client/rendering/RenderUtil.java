@@ -99,24 +99,24 @@ public class RenderUtil {
 
 	}
 
-	public static CompendiumModelPart.Cube cube = new CompendiumModelPart.Cube(1, 1, new Vector3f(0, 0, 0),
-			new Vector3f(1, 1, 1), new Vector3f(0, 0, 0), false,
-			new BlockElementFace(Direction.UP, -1, "textures/blank.png",
-					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
-			new BlockElementFace(Direction.DOWN, -1, "textures/blank.png",
-					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
-			new BlockElementFace(Direction.NORTH, -1, "textures/blank.png",
-					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
-			new BlockElementFace(Direction.SOUTH, -1, "textures/blank.png",
-					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
-			new BlockElementFace(Direction.WEST, -1, "textures/blank.png",
-					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
-			new BlockElementFace(Direction.EAST, -1, "textures/blank.png",
-					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
-			null);
-
-	public static CompendiumModelPart debugPart = new CompendiumModelPart(
-			new ArrayList<CompendiumModelPart.Cube>(List.of(cube)), Collections.emptyMap());
+//	public static CompendiumModelPart.Cube cube = new CompendiumModelPart.Cube(1, 1, new Vector3f(0, 0, 0),
+//			new Vector3f(1, 1, 1), new Vector3f(0, 0, 0), false,
+//			new BlockElementFace(Direction.UP, -1, "textures/blank.png",
+//					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
+//			new BlockElementFace(Direction.DOWN, -1, "textures/blank.png",
+//					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
+//			new BlockElementFace(Direction.NORTH, -1, "textures/blank.png",
+//					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
+//			new BlockElementFace(Direction.SOUTH, -1, "textures/blank.png",
+//					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
+//			new BlockElementFace(Direction.WEST, -1, "textures/blank.png",
+//					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
+//			new BlockElementFace(Direction.EAST, -1, "textures/blank.png",
+//					new BlockFaceUV(new float[] { 0, 0, 1, 1 }, 0)),
+//			null);
+//
+//	public static CompendiumModelPart debugPart = new CompendiumModelPart(
+//			new ArrayList<CompendiumModelPart.Cube>(List.of(cube)), Collections.emptyMap());
 
 	public static void loadModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,
 			int combinedOverlayIn, BlacklistedModel model, float timer) {

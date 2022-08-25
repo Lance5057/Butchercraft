@@ -13,7 +13,7 @@ public class ButchercraftBlockEntities {
 
     public static final RegistryObject<BlockEntityType<MeatHookBlockEntity>> MEAT_HOOK = BLOCK_ENTITIES.register(
             "meat_hook",
-            () -> BlockEntityType.Builder.of(MeatHookBlockEntity::new).build(null));
+            () -> BlockEntityType.Builder.of(MeatHookBlockEntity::new, ButchercraftBlocks.MEAT_HOOK.get()).build(null));
 
     public static void register(IEventBus modBus) {
         BLOCK_ENTITIES.register(modBus);

@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
@@ -19,8 +20,9 @@ public class Butchercraft {
     public static Logger logger = LogManager.getLogger();
 
     public Butchercraft() {
-        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+    	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    	modEventBus.addListener(this::setupClient);
+    	
         ModLoadingContext modLoadingContext = ModLoadingContext.get();
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.initialize());
         // TODO Correct file name
@@ -32,7 +34,14 @@ public class Butchercraft {
         ButchercraftRecipeSerializers.register(modEventBus);
         ButchercraftBlockEntities.register(modEventBus);
         ButchercraftRecipes.register(modEventBus);
+        
+        
     }
 
+    public void setupClient(FMLClientSetupEvent event) {
+    	event.enqueueWork(() -> {
+    		ButchercraftClient.setBERenderers();
+    	});
+    }
 
 }

@@ -82,7 +82,9 @@ public class MeatHookBlockEntity extends BlockEntity {
 
 	public AnimatedRecipeItemUse getCurrentTool() {
 		HookRecipe currentRecipe = matchRecipe();
-		return currentRecipe.getRecipeToolsIn().get(stage);
+		if (currentRecipe != null)
+			return currentRecipe.getRecipeToolsIn().get(stage);
+		return null;
 	}
 
 	protected void setupStage(HookRecipe r, int i) {

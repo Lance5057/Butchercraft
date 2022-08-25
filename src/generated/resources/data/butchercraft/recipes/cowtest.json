@@ -12,16 +12,11 @@
       "loot_table": "butchercraft:recipes/meat_hook/skin_cow",
       "models": [
         {
-          "location": "minecraft:diamond_sword",
+          "location": "butchercraft:recipe/cow",
+          "IsBlock": true,
           "animation": {
             "location": {},
-            "rotation": {
-              "y": {
-                "max": 360.0,
-                "speed": 0.1,
-                "loop": true
-              }
-            },
+            "rotation": {},
             "scale": {}
           }
         }
