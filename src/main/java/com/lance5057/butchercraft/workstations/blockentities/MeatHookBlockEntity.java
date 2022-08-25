@@ -5,17 +5,17 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import org.lwjgl.system.CallbackI.V;
-
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
 import com.lance5057.butchercraft.workstations.recipes.HookRecipe;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -36,11 +36,12 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 
 // TODO Track recipe stage and damage tool on use
 public class MeatHookBlockEntity extends BlockEntity {
-	private final LazyOptional<IItemHandler> handler = LazyOptional.of(this::createHandler);
+	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 
 	public boolean recipeLocked = false;
 	// public NonNullList<RecipeItemUse> toolList;
@@ -116,7 +117,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 
 	}
 
-	private IItemHandler createHandler() {
+	private IItemHandlerModifiable createHandler() {
 		return new ItemStackHandler(1) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
@@ -126,6 +127,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 			@Override
 			protected void onContentsChanged(int slot) {
 				updateInventory();
+				zeroProgress();
 			}
 
 			@Override
@@ -208,34 +210,61 @@ public class MeatHookBlockEntity extends BlockEntity {
 
 				if (this.progress >= this.maxProgress) {
 
-//						if (isFinalStage(r)) {
-//
+					if (isFinalStage(r)) {
+
 //							for (int i = 0; i < 5; i++) {
 //								addParticle();
 //							}
-					level.playSound(Player, worldPosition, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1, 0);
+						level.playSound(Player, worldPosition, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1, 0);
 
+						if (hammer.isDamageableItem())
+							hammer.hurtAndBreak(1, Player, null);
+						else
+							hammer.setCount(hammer.getCount() - this.toolCount);
+//
+						dropLoot(r.getRecipeToolsIn().get(stage), Player);
+						this.finishRecipe(Player, r);
+					} else {
+						dropLoot(r.getRecipeToolsIn().get(stage), Player);
+						setupStage(r, stage + 1);
+					}
+				} else {
 					if (hammer.isDamageableItem())
 						hammer.hurtAndBreak(1, Player, null);
 					else
 						hammer.setCount(hammer.getCount() - this.toolCount);
-//
-//							this.finishRecipe(Player, r);
-//						} else {
-					setupStage(r, stage + 1);
-				}
-			} else {
-				if (hammer.isDamageableItem())
-					hammer.hurtAndBreak(1, Player, null);
-				else
-					hammer.setCount(hammer.getCount() - this.toolCount);
 
-				progress++;
+					progress++;
+				}
+
+				this.updateInventory();
+
 			}
 
-		this.updateInventory();
-
 		return InteractionResult.SUCCESS;
+	}
+
+	private void dropLoot(AnimatedRecipeItemUse recipeToolsIn, Player player) {
+		if (level != null && !level.isClientSide()) {
+			final LootContext pContext = new LootContext.Builder((ServerLevel) level)
+					.withParameter(LootContextParams.TOOL, player.getMainHandItem())
+					.withParameter(LootContextParams.THIS_ENTITY, player).withRandom(level.getRandom())
+					.withLuck(player.getLuck() + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE,
+							player.getMainHandItem()))
+					.create(LootContextParamSets.EMPTY);
+			player.getServer().getLootTables().get(recipeToolsIn.lootTable).getRandomItems(pContext)
+					.forEach(itemStack -> new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY(),
+							getBlockPos().getZ(), itemStack).spawnAtLocation(itemStack));
+
+		}
+	}
+
+	public void finishRecipe(Player Player, HookRecipe r) {
+		// ItemStack item = r.getRecipeOutput().copy();
+//		BlockEntity te = level.getBlockEntity(this.getBlockPos().offset(0, -1, 0));
+//		if (te != null) {
+			handler.ifPresent((h -> h.setStackInSlot(0, ItemStack.EMPTY)));
+//		}
 	}
 
 	@Override

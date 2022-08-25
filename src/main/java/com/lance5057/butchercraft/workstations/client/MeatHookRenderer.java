@@ -38,14 +38,17 @@ public class MeatHookRenderer implements BlockEntityRenderer<MeatHookBlockEntity
 		timer++;
 	}
 
+	@Override
 	public boolean shouldRenderOffScreen(MeatHookBlockEntity pBlockEntity) {
 		return true;
 	}
 
+	@Override
 	public int getViewDistance() {
 		return 64;
 	}
 
+	@Override
 	public boolean shouldRender(MeatHookBlockEntity pBlockEntity, Vec3 pCameraPos) {
 		// return Vec3.atCenterOf(pBlockEntity.getBlockPos()).closerThan(pCameraPos,
 		// (double) this.getViewDistance());

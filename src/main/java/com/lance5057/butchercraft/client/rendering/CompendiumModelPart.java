@@ -73,7 +73,7 @@ public final class CompendiumModelPart {
 			return modelpart;
 		}
 	}
-	
+
 	public void setPos(Vector3f origin) {
 		setPos(origin.x(), origin.y(), origin.z());
 	}
@@ -349,10 +349,10 @@ public final class CompendiumModelPart {
 
 			case 180:
 
-				vertices[0] = vertices[0].remap(w, z);
-				vertices[1] = vertices[1].remap(y, z);
-				vertices[2] = vertices[2].remap(y, x);
-				vertices[3] = vertices[3].remap(w, x);
+				vertices[0] = vertices[0].remap(y, x);
+				vertices[1] = vertices[1].remap(w, x);
+				vertices[2] = vertices[2].remap(w, z);
+				vertices[3] = vertices[3].remap(y, z);
 				break;
 
 			case 270:
@@ -409,5 +409,4 @@ public final class CompendiumModelPart {
 		void visit(PoseStack.Pose p_171342_, String p_171343_, int p_171344_, CompendiumModelPart.Cube p_171345_);
 	}
 
-	
 }

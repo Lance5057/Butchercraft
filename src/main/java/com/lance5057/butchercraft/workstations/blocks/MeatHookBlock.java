@@ -29,14 +29,30 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
+	protected static final VoxelShape AABB = Block.box(0.0D, -32.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+
 	public MeatHookBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+		return AABB;
+	}
+
+	@Override
+	public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos,
+			CollisionContext pContext) {
+		return AABB;
 	}
 
 	@Override
@@ -88,8 +104,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState ifluidstate = context.getLevel().getFluidState(context.getClickedPos());
 
-		return this.defaultBlockState()
-				.setValue(FACING, context.getHorizontalDirection().getOpposite())
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
 				.setValue(WATERLOGGED, ifluidstate.getType() == Fluids.WATER);
 	}
 }
