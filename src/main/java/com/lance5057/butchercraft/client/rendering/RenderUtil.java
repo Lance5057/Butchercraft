@@ -208,6 +208,7 @@ public class RenderUtil {
 				CompendiumModelPart mp = new CompendiumModelPart(cubeList, Collections.emptyMap());
 
 				if (e.rotation != null) {
+//					mp.setPos(e.rotation.origin);
 					switch (e.rotation.axis) {
 					case X:
 						mp.setRotation(e.rotation.angle, 0, 0);
@@ -223,6 +224,8 @@ public class RenderUtil {
 						break;
 					}
 				}
+				
+				
 
 				mpl.add(mp);
 			}

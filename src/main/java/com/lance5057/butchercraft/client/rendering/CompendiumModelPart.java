@@ -14,6 +14,7 @@ import com.mojang.math.Matrix4f;
 import com.mojang.math.Vector3f;
 import com.mojang.math.Vector4f;
 
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -71,6 +72,10 @@ public final class CompendiumModelPart {
 		} else {
 			return modelpart;
 		}
+	}
+	
+	public void setPos(Vector3f origin) {
+		setPos(origin.x(), origin.y(), origin.z());
 	}
 
 	public void setPos(float p_104228_, float p_104229_, float p_104230_) {
@@ -178,7 +183,7 @@ public final class CompendiumModelPart {
 		public final float maxY;
 		public final float maxZ;
 
-		public Cube(int dunno, int dunno2, Vector3f from, Vector3f to, Vector3f scale, boolean dunno3,
+		public Cube(int pTexCoordU, int pTexCoordV, Vector3f from, Vector3f to, Vector3f scale, boolean mirror,
 				BlockElementFace up, BlockElementFace down, BlockElementFace north, BlockElementFace south,
 				BlockElementFace west, BlockElementFace east, Map<String, Either<Material, String>> textureMap) {
 			this.minX = from.x();
@@ -202,7 +207,7 @@ public final class CompendiumModelPart {
 			f += scale.x();
 			f1 += scale.y();
 			f2 += scale.z();
-			if (dunno3) {
+			if (mirror) {
 				float f6 = f;
 				f = from.x();
 				f3 = f6;
@@ -277,10 +282,10 @@ public final class CompendiumModelPart {
 			}
 		}
 
-		public void compile(PoseStack.Pose p_171333_, MultiBufferSource bufferIn, int p_171335_, int p_171336_,
+		public void compile(PoseStack.Pose pPose, MultiBufferSource bufferIn, int p_171335_, int p_171336_,
 				float p_171337_, float p_171338_, float p_171339_, float p_171340_) {
-			Matrix4f matrix4f = p_171333_.pose();
-			Matrix3f matrix3f = p_171333_.normal();
+			Matrix4f matrix4f = pPose.pose();
+			Matrix3f matrix3f = pPose.normal();
 
 			for (CompendiumModelPart.Polygon modelpart$polygon : this.polygons) {
 				if (modelpart$polygon != null) {
@@ -299,11 +304,12 @@ public final class CompendiumModelPart {
 								Vector4f vector4f = new Vector4f(f3, f4, f5, 1.0F);
 								vector4f.transform(matrix4f);
 								ResourceLocation s = new ResourceLocation(
-										modelpart$polygon.texture.left().get().texture().getNamespace(),
-										"textures/" + modelpart$polygon.texture.left().get().texture().getPath() + ".png");
+										modelpart$polygon.texture.left().get().texture().getNamespace(), "textures/"
+												+ modelpart$polygon.texture.left().get().texture().getPath() + ".png");
 								bufferIn.getBuffer(RenderType.entityCutoutNoCull(s)).vertex(vector4f.x(), vector4f.y(),
-										vector4f.z(), p_171337_, p_171338_, p_171339_, p_171340_, modelpart$vertex.u/16,
-										modelpart$vertex.v/16, p_171336_, p_171335_, f, f1, f2);
+										vector4f.z(), p_171337_, p_171338_, p_171339_, p_171340_,
+										modelpart$vertex.u / 16, modelpart$vertex.v / 16, p_171336_, p_171335_, f, f1,
+										f2);
 							}
 						}
 					}
@@ -334,15 +340,15 @@ public final class CompendiumModelPart {
 				break;
 
 			case 90:
-				
-				vertices[0] = vertices[0].remap(w, x);
-				vertices[1] = vertices[1].remap(w, z);
-				vertices[2] = vertices[2].remap(y, z);
-				vertices[3] = vertices[3].remap(y, x);
+
+				vertices[0] = vertices[0].remap(y, z);
+				vertices[1] = vertices[1].remap(y, x);
+				vertices[2] = vertices[2].remap(w, x);
+				vertices[3] = vertices[3].remap(w, z);
 				break;
 
 			case 180:
-				
+
 				vertices[0] = vertices[0].remap(w, z);
 				vertices[1] = vertices[1].remap(y, z);
 				vertices[2] = vertices[2].remap(y, x);
@@ -350,11 +356,11 @@ public final class CompendiumModelPart {
 				break;
 
 			case 270:
-				
-				vertices[0] = vertices[0].remap(y, z);
-				vertices[1] = vertices[1].remap(y, x);
-				vertices[2] = vertices[2].remap(w, x);
-				vertices[3] = vertices[3].remap(w, z);
+
+				vertices[0] = vertices[0].remap(w, x);
+				vertices[1] = vertices[1].remap(w, z);
+				vertices[2] = vertices[2].remap(y, z);
+				vertices[3] = vertices[3].remap(y, x);
 				break;
 			}
 
@@ -402,4 +408,6 @@ public final class CompendiumModelPart {
 	public interface Visitor {
 		void visit(PoseStack.Pose p_171342_, String p_171343_, int p_171344_, CompendiumModelPart.Cube p_171345_);
 	}
+
+	
 }

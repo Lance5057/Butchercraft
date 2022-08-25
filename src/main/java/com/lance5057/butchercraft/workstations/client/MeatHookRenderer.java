@@ -26,11 +26,15 @@ public class MeatHookRenderer implements BlockEntityRenderer<MeatHookBlockEntity
 			return;
 		}
 
-		if (pBlockEntity.getCurrentTool() != null) {
-			for (BlacklistedModel b : pBlockEntity.getCurrentTool().model)
-				RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer);
+		pPoseStack.pushPose();
+		{
+			pPoseStack.translate(0, -1, 0);
+			if (pBlockEntity.getCurrentTool() != null) {
+				for (BlacklistedModel b : pBlockEntity.getCurrentTool().model)
+					RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer);
+			}
 		}
-
+		pPoseStack.popPose();
 		timer++;
 	}
 
@@ -43,7 +47,8 @@ public class MeatHookRenderer implements BlockEntityRenderer<MeatHookBlockEntity
 	}
 
 	public boolean shouldRender(MeatHookBlockEntity pBlockEntity, Vec3 pCameraPos) {
-		//return Vec3.atCenterOf(pBlockEntity.getBlockPos()).closerThan(pCameraPos, (double) this.getViewDistance());
+		// return Vec3.atCenterOf(pBlockEntity.getBlockPos()).closerThan(pCameraPos,
+		// (double) this.getViewDistance());
 		return true;
 	}
 
