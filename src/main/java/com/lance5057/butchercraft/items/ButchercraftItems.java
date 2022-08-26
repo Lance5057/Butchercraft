@@ -107,7 +107,7 @@ public class ButchercraftItems {
 
 	public static final RegistryObject<BlockItem> HOOK_BLOCK_ITEM = ITEMS.register("meat_hook",
 			() -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties().tab(GROUP_ITEMS)));
-	public static final RegistryObject<BlockItem> COW_SKULL = ITEMS.register("cow_skill",
+	public static final RegistryObject<BlockItem> COW_SKULL = ITEMS.register("cow_skull",
 			() -> new BlockItem(ButchercraftBlocks.COW_SKULL.get(), new Item.Properties().tab(GROUP_ITEMS)));
 
 	public static void register(IEventBus modBus) {

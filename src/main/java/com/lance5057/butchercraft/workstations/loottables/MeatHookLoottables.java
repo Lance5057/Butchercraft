@@ -54,7 +54,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 				LootTable.lootTable()
 						.withPool(createPoolWithItem(ButchercraftItems.COW_BRAIN.get()))
 						.withPool(createPoolWithItem(ButchercraftItems.COW_SKULL.get())
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
 						.withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get())
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 4))))
 						.withPool(createPoolWithItem(ButchercraftItems.BEEF_SCRAPS.get())
