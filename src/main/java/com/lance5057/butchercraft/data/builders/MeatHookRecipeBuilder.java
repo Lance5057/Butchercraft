@@ -1,7 +1,5 @@
 package com.lance5057.butchercraft.data.builders;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
@@ -22,13 +20,10 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 
 public class MeatHookRecipeBuilder implements RecipeBuilder {
     private final Item result;
-    private final List<String> pattern = Lists.newArrayList();
-    private final Map<Character, Ingredient> key = Maps.newLinkedHashMap();
     private final List<AnimatedRecipeItemUse> tools = NonNullList.create();
     private final Advancement.Builder advancementBuilder = Advancement.Builder.advancement();
     private String group;

@@ -1,36 +1,40 @@
 package com.lance5057.butchercraft.items;
 
-import com.lance5057.butchercraft.recipes.ButcherKnifeRecipe;
-import com.lance5057.butchercraft.recipes.ButcherKnifeWrapper;
+import com.lance5057.butchercraft.ButchercraftRecipes;
+import com.lance5057.butchercraft.workstations.recipes.ButcherKnifeRecipe;
+import com.lance5057.butchercraft.workstations.recipes.ButcherKnifeWrapper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+
+import java.util.Optional;
 
 public class ButcherKnifeItem extends DiggerItem {
 
-    public ButcherKnifeItem(
-            Properties builderIn) {
+    public ButcherKnifeItem (Properties builderIn) {
         super(3, 1.6f, Tiers.IRON, null, builderIn);
     }
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
-
-        if (entity instanceof Mob mob) {
-            ButcherKnifeRecipe recipe = this.matchRecipe(player.level, stack, mob);
-
-            if (recipe != null)
-                mob.kill();
-        }
+            Optional<ButcherKnifeRecipe> recipe = this.matchRecipe(player.level, stack, entity);
+            if (recipe.isPresent()) {
+                entity.spawnAtLocation(recipe.get().getResultItem());
+                // TODO Remove other mob drops
+                return InteractionResult.SUCCESS;
+            }
 
         return InteractionResult.PASS;
     }
+
+
 
 //    @Override
 //    public ActionResultType useOn(ItemUseContext context) {
@@ -66,14 +70,8 @@ public class ButcherKnifeItem extends DiggerItem {
 //	return ActionResultType.FAIL;
 //    }
 
-    private ButcherKnifeRecipe matchRecipe(Level world, ItemStack tool, Mob entity) {
-        if (world != null) {
-            return world.getRecipeManager().getRecipes().stream()
-                    .filter(recipe -> recipe instanceof ButcherKnifeRecipe).map(recipe -> (ButcherKnifeRecipe) recipe)
-                    .filter(recipe -> recipe.matches(new ButcherKnifeWrapper(tool, entity), world)).findFirst()
-                    .orElse(null);
-        }
-        return null;
+    private Optional<ButcherKnifeRecipe> matchRecipe(Level world, ItemStack tool, Entity entity) {
+        return world.getRecipeManager().getRecipeFor(ButchercraftRecipes.KNIFE.get(), new ButcherKnifeWrapper(Ingredient.of(tool), entity.getType()), world);
     }
 
 }
