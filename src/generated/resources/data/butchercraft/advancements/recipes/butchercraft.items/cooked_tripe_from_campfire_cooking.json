@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_tripe_from_campfire_cooking"
+    ]
+  },
+  "criteria": {
+    "has_tripe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:tripe"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_tripe_from_campfire_cooking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tripe",
+      "has_the_recipe"
+    ]
+  ]
+}

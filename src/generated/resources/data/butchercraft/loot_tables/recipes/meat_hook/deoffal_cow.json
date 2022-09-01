@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_heart"
+          "name": "butchercraft:heart"
         }
       ]
     },
@@ -16,7 +16,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_kidney"
+          "name": "butchercraft:kidney"
         }
       ],
       "functions": [
@@ -33,7 +33,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_liver"
+          "name": "butchercraft:liver"
         }
       ]
     },
@@ -43,7 +43,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_stomache"
+          "name": "butchercraft:stomache"
         }
       ],
       "functions": [
@@ -60,7 +60,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_lung"
+          "name": "butchercraft:lung"
         }
       ],
       "functions": [
@@ -77,7 +77,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_tripe"
+          "name": "butchercraft:tripe"
         }
       ],
       "functions": [

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "butchercraft:heart"
+  },
+  "result": "butchercraft:cooked_heart",
+  "experience": 0.35,
+  "cookingtime": 600
+}

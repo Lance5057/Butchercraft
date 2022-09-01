@@ -41,24 +41,28 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.SKINNING_KNIFE, "skinningknife");
 		forItem(ButchercraftItems.SPATULA, "spatula");
 
-		//forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
+		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
 		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/cow")));
+		getBuilder(ButchercraftItems.PIG_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig")));
+		getBuilder(ButchercraftItems.SHEEP_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/sheep")));
 
-		forItem(ButchercraftItems.COW_BRAIN, "brain");
-		forItem(ButchercraftItems.COW_COOKED_BRAIN, "cooked_brain");
-		forItem(ButchercraftItems.COW_HEART, "heart");
-		forItem(ButchercraftItems.COW_COOKED_HEART, "cooked_heart");
-		forItem(ButchercraftItems.COW_KIDNEY, "kidney");
-		forItem(ButchercraftItems.COW_COOKED_KIDNEY, "cooked_kidney");
-		forItem(ButchercraftItems.COW_LIVER, "liver");
-		forItem(ButchercraftItems.COW_COOKED_LIVER, "cooked_liver");
-		forItem(ButchercraftItems.COW_LUNG, "lung");
-		forItem(ButchercraftItems.COW_COOKED_LUNG, "cooked_lung");
-		forItem(ButchercraftItems.COW_STOMACHE, "stomach");
-		forItem(ButchercraftItems.COW_COOKED_STOMACHE, "cooked_stomach");
-		forItem(ButchercraftItems.COW_TRIPE, "tripe");
-		forItem(ButchercraftItems.COW_COOKED_TRIPE, "cooked_tripe");
+		forItem(ButchercraftItems.BRAIN, "brain");
+		forItem(ButchercraftItems.COOKED_BRAIN, "cooked_brain");
+		forItem(ButchercraftItems.HEART, "heart");
+		forItem(ButchercraftItems.COOKED_HEART, "cooked_heart");
+		forItem(ButchercraftItems.KIDNEY, "kidney");
+		forItem(ButchercraftItems.COOKED_KIDNEY, "cooked_kidney");
+		forItem(ButchercraftItems.LIVER, "liver");
+		forItem(ButchercraftItems.COOKED_LIVER, "cooked_liver");
+		forItem(ButchercraftItems.LUNG, "lung");
+		forItem(ButchercraftItems.COOKED_LUNG, "cooked_lung");
+		forItem(ButchercraftItems.STOMACHE, "stomach");
+		forItem(ButchercraftItems.COOKED_STOMACHE, "cooked_stomach");
+		forItem(ButchercraftItems.TRIPE, "tripe");
+		forItem(ButchercraftItems.COOKED_TRIPE, "cooked_tripe");
 
 		forItem(ButchercraftItems.BEEF_STEW_MEAT, "stew_beef");
 		forItem(ButchercraftItems.COOKED_BEEF_STEWMEAT, "cooked_stew_beef");
@@ -72,7 +76,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_BEEF, "cooked_ground_beef");
 		forItem(ButchercraftItems.BEEF_SCRAPS, "beef_scraps");
 		forItem(ButchercraftItems.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
-		
+
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
 	}
 

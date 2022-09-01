@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:butcher_sheep"
+    ]
+  },
+  "criteria": {
+    "has_butcher_knife": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:butcher_knife"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:butcher_sheep"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_butcher_knife",
+      "has_the_recipe"
+    ]
+  ]
+}

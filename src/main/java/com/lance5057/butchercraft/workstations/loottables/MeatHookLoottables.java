@@ -41,18 +41,18 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12))))));
         t.accept(this.deoffalCow,
                 LootTable.lootTable()
-                        .withPool(createPoolWithItem(ButchercraftItems.COW_HEART.get()))
-                        .withPool(createPoolWithItem(ButchercraftItems.COW_KIDNEY.get())
+                        .withPool(createPoolWithItem(ButchercraftItems.HEART.get()))
+                        .withPool(createPoolWithItem(ButchercraftItems.KIDNEY.get())
 								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-						.withPool(createPoolWithItem(ButchercraftItems.COW_LIVER.get()))
-						.withPool(createPoolWithItem(ButchercraftItems.COW_STOMACHE.get())
+						.withPool(createPoolWithItem(ButchercraftItems.LIVER.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.STOMACHE.get())
 								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-						.withPool(createPoolWithItem(ButchercraftItems.COW_LUNG.get())
+						.withPool(createPoolWithItem(ButchercraftItems.LUNG.get())
 								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-						.withPool(createPoolWithItem(ButchercraftItems.COW_TRIPE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(8)))));
+						.withPool(createPoolWithItem(ButchercraftItems.TRIPE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(8)))));
 		t.accept(this.delimbCow,
 				LootTable.lootTable()
-						.withPool(createPoolWithItem(ButchercraftItems.COW_BRAIN.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.BRAIN.get()))
 						.withPool(createPoolWithItem(ButchercraftItems.COW_SKULL.get())
 								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
 						.withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get())

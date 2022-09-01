@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "butchercraft:cow_liver"
-  },
-  "result": "butchercraft:cooked_cow_liver",
-  "experience": 0.35,
-  "cookingtime": 200
-}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "butchercraft:cow_stomache"
-  },
-  "result": "butchercraft:cooked_cow_stomache",
-  "experience": 0.35,
-  "cookingtime": 100
-}

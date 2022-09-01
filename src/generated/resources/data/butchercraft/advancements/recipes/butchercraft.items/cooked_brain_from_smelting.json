@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_brain_from_smelting"
+    ]
+  },
+  "criteria": {
+    "has_brain": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:brain"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_brain_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_brain",
+      "has_the_recipe"
+    ]
+  ]
+}

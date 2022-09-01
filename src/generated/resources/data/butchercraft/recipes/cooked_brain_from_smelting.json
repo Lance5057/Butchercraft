@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "butchercraft:brain"
+  },
+  "result": "butchercraft:cooked_brain",
+  "experience": 0.35,
+  "cookingtime": 200
+}

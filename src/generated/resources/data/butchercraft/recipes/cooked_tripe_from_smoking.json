@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "butchercraft:tripe"
+  },
+  "result": "butchercraft:cooked_tripe",
+  "experience": 0.35,
+  "cookingtime": 100
+}

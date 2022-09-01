@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "butchercraft:liver"
+  },
+  "result": "butchercraft:cooked_liver",
+  "experience": 0.35,
+  "cookingtime": 100
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_liver_from_campfire_cooking"
+    ]
+  },
+  "criteria": {
+    "has_liver": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:liver"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_liver_from_campfire_cooking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_liver",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "butchercraft:kidney"
+  },
+  "result": "butchercraft:cooked_kidney",
+  "experience": 0.35,
+  "cookingtime": 600
+}

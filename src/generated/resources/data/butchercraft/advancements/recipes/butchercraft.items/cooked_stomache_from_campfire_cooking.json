@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_stomache_from_campfire_cooking"
+    ]
+  },
+  "criteria": {
+    "has_stomache": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:stomache"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_stomache_from_campfire_cooking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_stomache",
+      "has_the_recipe"
+    ]
+  ]
+}

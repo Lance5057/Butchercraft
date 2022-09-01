@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_lung_from_smoking"
+    ]
+  },
+  "criteria": {
+    "has_lung": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:lung"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_lung_from_smoking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lung",
+      "has_the_recipe"
+    ]
+  ]
+}
