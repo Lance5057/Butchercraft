@@ -1,0 +1,8 @@
+{
+  "type": "butchercraft:butcher_knife",
+  "group": "",
+  "entity": "minecraft:cow",
+  "result": {
+    "item": "butchercraft:cow_carcass"
+  }
+}
