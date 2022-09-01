@@ -5,6 +5,7 @@ import com.lance5057.butchercraft.workstations.recipes.ButcherKnifeRecipe;
 import com.lance5057.butchercraft.workstations.recipes.ButcherKnifeWrapper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -26,8 +27,9 @@ public class ButcherKnifeItem extends DiggerItem {
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
             Optional<ButcherKnifeRecipe> recipe = this.matchRecipe(player.level, stack, entity);
             if (recipe.isPresent()) {
-                entity.spawnAtLocation(recipe.get().getResultItem());
-                // TODO Remove other mob drops
+                //entity.spawnAtLocation(recipe.get().getResultItem());
+                entity.setLastHurtByPlayer(player);
+                entity.hurt(DamageSource.playerAttack(player), 99999);
                 return InteractionResult.SUCCESS;
             }
 

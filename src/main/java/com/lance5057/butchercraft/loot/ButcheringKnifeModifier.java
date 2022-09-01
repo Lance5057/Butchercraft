@@ -16,50 +16,52 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ButcheringKnifeModifier extends LootModifier {
-    private final Item output;
-    private final int count;
-    private final EntityType<?> entityType;
+	private final Item output;
+	private final int count;
+	private final EntityType<?> entityType;
 
-    /**
-     * Constructs a LootModifier.
-     *
-     * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
-     */
-    public ButcheringKnifeModifier(LootItemCondition[] conditionsIn, Item output, int count, EntityType<?> entityType) {
-        super(conditionsIn);
-        this.output = output;
-        this.count = count;
-        this.entityType = entityType;
-    }
+	/**
+	 * Constructs a LootModifier.
+	 *
+	 * @param conditionsIn the ILootConditions that need to be matched before the
+	 *                     loot is modified.
+	 */
+	public ButcheringKnifeModifier(LootItemCondition[] conditionsIn, Item output, int count, EntityType<?> entityType) {
+		super(conditionsIn);
+		this.output = output;
+		this.count = count;
+		this.entityType = entityType;
+	}
 
-    @NotNull
-    @Override
-    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
-        if (Arrays.stream(conditions).allMatch(lootItemCondition -> lootItemCondition.test(context))) {
-            generatedLoot = List.of(new ItemStack(output, count));
-        }
-        return generatedLoot;
-    }
+	@NotNull
+	@Override
+	protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+		if (Arrays.stream(conditions).allMatch(lootItemCondition -> lootItemCondition.test(context))) {
+			generatedLoot = List.of(new ItemStack(output, count));
+		}
+		return generatedLoot;
+	}
 
-    public static class Serializer extends GlobalLootModifierSerializer<ButcheringKnifeModifier> {
-        @Override
-        public ButcheringKnifeModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] lootItemConditions) {
-            Item item = Registry.ITEM.getOptional(new ResourceLocation(object.get("item").getAsString())).orElseThrow();
-            int count = object.has("count") ? object.get("count").getAsInt() : 1;
-            EntityType<?> mobType = EntityType.byString(object.get("entity_type").getAsString()).orElseThrow();
+	public static class Serializer extends GlobalLootModifierSerializer<ButcheringKnifeModifier> {
+		@Override
+		public ButcheringKnifeModifier read(ResourceLocation location, JsonObject object,
+				LootItemCondition[] lootItemConditions) {
+			Item item = Registry.ITEM.getOptional(new ResourceLocation(object.get("item").getAsString())).orElseThrow();
+			int count = object.has("count") ? object.get("count").getAsInt() : 1;
+			EntityType<?> mobType = EntityType.byString(object.get("entity_type").getAsString()).orElseThrow();
 
-            return new ButcheringKnifeModifier(lootItemConditions, item, count, mobType);
-        }
+			return new ButcheringKnifeModifier(lootItemConditions, item, count, mobType);
+		}
 
-        @Override
-        public JsonObject write(ButcheringKnifeModifier instance) {
-            JsonObject jsonObject = makeConditions(instance.conditions);
-            jsonObject.addProperty("item", Registry.ITEM.getKey(instance.output).toString());
-            if (instance.count > 1) {
-                jsonObject.addProperty("count", instance.count);
-            }
-            jsonObject.addProperty("entity_type", instance.entityType.getRegistryName().toString());
-            return jsonObject;
-        }
-    }
+		@Override
+		public JsonObject write(ButcheringKnifeModifier instance) {
+			JsonObject jsonObject = makeConditions(instance.conditions);
+			jsonObject.addProperty("item", Registry.ITEM.getKey(instance.output).toString());
+			if (instance.count > 1) {
+				jsonObject.addProperty("count", instance.count);
+			}
+			jsonObject.addProperty("entity_type", instance.entityType.getRegistryName().toString());
+			return jsonObject;
+		}
+	}
 }
