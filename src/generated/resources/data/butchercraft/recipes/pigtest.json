@@ -9,7 +9,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/skin_pig",
+      "loot_table": "butchercraft:meat_hook/skin_pig",
       "models": [
         {
           "location": "butchercraft:meathook/pig",
@@ -29,7 +29,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/deoffal_pig",
+      "loot_table": "butchercraft:meat_hook/deoffal_pig",
       "models": [
         {
           "location": "minecraft:diamond_sword",
@@ -54,7 +54,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/delimb_pig",
+      "loot_table": "butchercraft:meat_hook/delimb_pig",
       "models": [
         {
           "location": "minecraft:diamond_sword",
@@ -79,7 +79,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/butcher_pig",
+      "loot_table": "butchercraft:meat_hook/butcher_pig",
       "models": [
         {
           "location": "minecraft:diamond_sword",

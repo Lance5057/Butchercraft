@@ -1,10 +1,7 @@
 package com.lance5057.butchercraft.workstations.blocks;
 
-import javax.annotation.Nonnull;
-
 import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.workstations.blockentities.MeatHookBlockEntity;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -30,18 +27,21 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import javax.annotation.Nonnull;
 
 public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
+	// TODO Add boolean property for hooked
+	// TODO Maybe use double plant logic so that you can interact with bottom thirds of the block
 	protected static final VoxelShape AABB = Block.box(0.0D, -32.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 	public MeatHookBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.SOUTH));
 	}
 
 	@Override
@@ -83,11 +83,11 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 
 			// Get item in both InteractionHands
 			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
-
+			// TODO May want to disable insertion if there's not enough space under the hook
 			if (heldMain.getItem() instanceof CarcassItem)
 				te.insertItem(heldMain);
 			else if (heldMain != ItemStack.EMPTY)
-				te.hammer(playerEntity, heldMain);
+				return te.butcher(playerEntity, heldMain);
 		}
 
 		return InteractionResult.SUCCESS;
@@ -96,7 +96,6 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-		// TODO Auto-generated method stub
 		return new MeatHookBlockEntity(pPos, pState);
 	}
 

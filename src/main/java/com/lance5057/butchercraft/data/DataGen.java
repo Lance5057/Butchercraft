@@ -21,7 +21,7 @@ public class DataGen {
 		generator.addProvider(new EnglishLoc(generator));
 		generator.addProvider(new ItemTagGenerator(generator, Butchercraft.MOD_ID, event.getExistingFileHelper()));
 		generator.addProvider(new ButchercraftRecipeProvider(generator));
-		generator.addProvider(new LootModifier(generator));
-		generator.addProvider(new Loot(generator));
+		generator.addProvider(new ButchercraftLootTableProvider(generator));
+		generator.addProvider(new ButchercraftEntityTypeTagsProvider(generator, event.getExistingFileHelper()));
 	}
 }

@@ -1,21 +1,18 @@
 package com.lance5057.butchercraft.items;
 
-import com.lance5057.butchercraft.ButchercraftRecipes;
-import com.lance5057.butchercraft.workstations.recipes.ButcherKnifeRecipe;
-import com.lance5057.butchercraft.workstations.recipes.ButcherKnifeWrapper;
+import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.tags.ButchercraftEntityTags;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.Level;
-
-import java.util.Optional;
+import net.minecraft.world.level.storage.loot.LootTable;
 
 public class ButcherKnifeItem extends SwordItem {
 
@@ -25,13 +22,16 @@ public class ButcherKnifeItem extends SwordItem {
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
-            Optional<ButcherKnifeRecipe> recipe = this.matchRecipe(player.level, stack, entity);
-            if (recipe.isPresent()) {
-                //entity.spawnAtLocation(recipe.get().getResultItem());
+        final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID, "butcher_knife/" + entity.getType().getRegistryName().getPath());
+        if (player.getServer() != null) {
+            final LootTable lootTable = player.getServer().getLootTables().get(lootTableLocation);
+            if (entity.getType().is(ButchercraftEntityTags.CARCASSES) && entity instanceof Mob mob && lootTable != LootTable.EMPTY) {
+                mob.lootTable = lootTableLocation;
                 entity.setLastHurtByPlayer(player);
                 entity.hurt(DamageSource.playerAttack(player), 99999);
                 return InteractionResult.SUCCESS;
             }
+        }
 
         return InteractionResult.PASS;
     }
@@ -71,9 +71,4 @@ public class ButcherKnifeItem extends SwordItem {
 //	}
 //	return ActionResultType.FAIL;
 //    }
-
-    private Optional<ButcherKnifeRecipe> matchRecipe(Level world, ItemStack tool, Entity entity) {
-        return world.getRecipeManager().getRecipeFor(ButchercraftRecipes.KNIFE.get(), new ButcherKnifeWrapper(Ingredient.of(tool), entity.getType()), world);
-    }
-
 }

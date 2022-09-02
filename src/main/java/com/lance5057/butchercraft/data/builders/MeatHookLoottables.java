@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.workstations.loottables;
+package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.items.ButchercraftItems;
@@ -19,10 +19,10 @@ import java.util.function.Consumer;
 
 public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 
-    private final ResourceLocation skinCowLootTable = new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/skin_cow");
-    private final ResourceLocation deoffalCow = new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/deoffal_cow");
-    private final ResourceLocation delimbCow = new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/delimb_cow");
-    private final ResourceLocation butcherCow = new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/butcher_cow");
+    private final ResourceLocation skinCowLootTable = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_cow");
+    private final ResourceLocation deoffalCow = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_cow");
+    private final ResourceLocation delimbCow = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_cow");
+    private final ResourceLocation butcherCow = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_cow");
 
     @Override
     public void accept(BiConsumer<ResourceLocation, Builder> t) {

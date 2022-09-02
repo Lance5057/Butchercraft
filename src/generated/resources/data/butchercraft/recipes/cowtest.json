@@ -9,7 +9,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/skin_cow",
+      "loot_table": "butchercraft:meat_hook/skin_cow",
       "models": [
         {
           "location": "butchercraft:meathook/cow",
@@ -29,7 +29,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/deoffal_cow",
+      "loot_table": "butchercraft:meat_hook/deoffal_cow",
       "models": [
         {
           "location": "minecraft:diamond_sword",
@@ -54,7 +54,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/delimb_cow",
+      "loot_table": "butchercraft:meat_hook/delimb_cow",
       "models": [
         {
           "location": "minecraft:diamond_sword",
@@ -79,7 +79,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/butcher_cow",
+      "loot_table": "butchercraft:meat_hook/butcher_cow",
       "models": [
         {
           "location": "minecraft:diamond_sword",

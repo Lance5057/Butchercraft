@@ -11,8 +11,6 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 
@@ -33,21 +31,21 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	protected void buildCraftingRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
 		MeatHookRecipeBuilder.shapedRecipe(COW_CARCASS.get())
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/skin_cow"),
+						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_cow"),
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow"), null, true,
 								new AnimationFloatTransform()))
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/deoffal_cow"),
+						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_cow"),
 						new BlacklistedModel(DIAMOND_SWORD,
 								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
 				.tool(Ingredient.of(BONE_SAW.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/delimb_cow"),
+						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_cow"),
 						new BlacklistedModel(DIAMOND_SWORD,
 								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
 				.tool(Ingredient.of(BUTCHER_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/butcher_cow"),
+						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_cow"),
 						new BlacklistedModel(DIAMOND_SWORD,
 								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
@@ -55,21 +53,21 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 		MeatHookRecipeBuilder.shapedRecipe(SHEEP_CARCASS.get())
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/skin_sheep"),
+						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_sheep"),
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep"), null, true,
 								new AnimationFloatTransform()))
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/deoffal_sheep"),
+						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_sheep"),
 						new BlacklistedModel(DIAMOND_SWORD,
 								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
 				.tool(Ingredient.of(BONE_SAW.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/delimb_sheep"),
+						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_sheep"),
 						new BlacklistedModel(DIAMOND_SWORD,
 								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
 				.tool(Ingredient.of(BUTCHER_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/butcher_sheep"),
+						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_sheep"),
 						new BlacklistedModel(DIAMOND_SWORD,
 								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
@@ -77,21 +75,21 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		
 		MeatHookRecipeBuilder.shapedRecipe(PIG_CARCASS.get())
 		.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
-				new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/skin_pig"),
+				new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_pig"),
 				new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig"), null, true,
 						new AnimationFloatTransform()))
 		.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
-				new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/deoffal_pig"),
+				new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_pig"),
 				new BlacklistedModel(DIAMOND_SWORD,
 						new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 								.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
 		.tool(Ingredient.of(BONE_SAW.get()), 6, true,
-				new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/delimb_pig"),
+				new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_pig"),
 				new BlacklistedModel(DIAMOND_SWORD,
 						new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 								.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
 		.tool(Ingredient.of(BUTCHER_KNIFE.get()), 6, true,
-				new ResourceLocation(Butchercraft.MOD_ID, "recipes/meat_hook/butcher_pig"),
+				new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_pig"),
 				new BlacklistedModel(DIAMOND_SWORD,
 						new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
 								.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
@@ -122,16 +120,6 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		createFoodRecipe(Ingredient.of(CUBED_BEEF.get()), COOKED_CUBED_BEEF.get(), consumer);
 		createFoodRecipe(Ingredient.of(GROUND_BEEF.get()), COOKED_GROUND_BEEF.get(), consumer);
 		createFoodRecipe(Ingredient.of(BEEF_SCRAPS.get()), COOKED_BEEF_SCRAPS.get(), consumer);
-
-		ButcherKnifeRecipeBuilder.butcheringRecipe(new ItemStack(COW_CARCASS.get()), EntityType.COW)
-				.unlockedBy("has_butcher_knife", has(BUTCHER_KNIFE.get()))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_cow"));
-		ButcherKnifeRecipeBuilder.butcheringRecipe(new ItemStack(PIG_CARCASS.get()), EntityType.PIG)
-				.unlockedBy("has_butcher_knife", has(BUTCHER_KNIFE.get()))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_pig"));
-		ButcherKnifeRecipeBuilder.butcheringRecipe(new ItemStack(SHEEP_CARCASS.get()), EntityType.SHEEP)
-				.unlockedBy("has_butcher_knife", has(BUTCHER_KNIFE.get()))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_sheep"));
 	}
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer) {

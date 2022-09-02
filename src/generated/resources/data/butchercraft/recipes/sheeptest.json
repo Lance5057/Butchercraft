@@ -9,7 +9,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/skin_sheep",
+      "loot_table": "butchercraft:meat_hook/skin_sheep",
       "models": [
         {
           "location": "butchercraft:meathook/sheep",
@@ -29,7 +29,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/deoffal_sheep",
+      "loot_table": "butchercraft:meat_hook/deoffal_sheep",
       "models": [
         {
           "location": "minecraft:diamond_sword",
@@ -54,7 +54,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/delimb_sheep",
+      "loot_table": "butchercraft:meat_hook/delimb_sheep",
       "models": [
         {
           "location": "minecraft:diamond_sword",
@@ -79,7 +79,7 @@
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:recipes/meat_hook/butcher_sheep",
+      "loot_table": "butchercraft:meat_hook/butcher_sheep",
       "models": [
         {
           "location": "minecraft:diamond_sword",
