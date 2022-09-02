@@ -12,7 +12,6 @@ import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class ButcheringKnifeModifier extends LootModifier {
@@ -34,10 +33,7 @@ public class ButcheringKnifeModifier extends LootModifier {
 	@NotNull
 	@Override
 	protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
-		if (Arrays.stream(conditions).allMatch(lootItemCondition -> lootItemCondition.test(context))) {
-			generatedLoot = List.of(output);
-		}
-		return generatedLoot;
+		return List.of(output);
 	}
 
 	public static class Serializer extends GlobalLootModifierSerializer<ButcheringKnifeModifier> {

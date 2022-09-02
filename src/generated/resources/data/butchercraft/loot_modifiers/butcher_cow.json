@@ -8,12 +8,18 @@
       "entity": "this"
     },
     {
-      "condition": "minecraft:match_tool",
+      "condition": "minecraft:entity_properties",
       "predicate": {
-        "items": [
-          "butchercraft:butcher_knife"
-        ]
-      }
+        "type": "minecraft:player",
+        "equipment": {
+          "mainhand": {
+            "items": [
+              "butchercraft:butcher_knife"
+            ]
+          }
+        }
+      },
+      "entity": "killer"
     }
   ],
   "result": {
