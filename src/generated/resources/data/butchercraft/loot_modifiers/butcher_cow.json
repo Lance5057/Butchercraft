@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "predicate": {
+        "type": "minecraft:cow"
+      },
+      "entity": "this"
+    },
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "items": [
+          "butchercraft:butcher_knife"
+        ]
+      }
+    }
+  ],
+  "result": {
+    "item": "butchercraft:cow_carcass"
+  },
+  "entity_type": "minecraft:cow",
+  "type": "butchercraft:butchering_knife"
+}
