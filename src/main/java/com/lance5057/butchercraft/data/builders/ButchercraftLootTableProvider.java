@@ -26,7 +26,8 @@ public class ButchercraftLootTableProvider extends LootTableProvider {
     @Nonnull
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
         return List.of(Pair.of(MeatHookLoottables::new, LootContextParamSets.ALL_PARAMS),
-                Pair.of(ButcherKnifeLootTables::new, LootContextParamSets.ENTITY));
+                Pair.of(ButcherKnifeLootTables::new, LootContextParamSets.ENTITY),
+                Pair.of(ButchercraftBlockLootTables::new, LootContextParamSets.BLOCK));
     }
 
     @Override

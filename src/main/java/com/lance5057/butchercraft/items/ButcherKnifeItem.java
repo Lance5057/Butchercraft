@@ -17,7 +17,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 public class ButcherKnifeItem extends SwordItem {
 
     public ButcherKnifeItem (Properties builderIn) {
-        super(Tiers.IRON, 3, 1.6f, builderIn);
+        super(Tiers.IRON, 3, 0, builderIn);
     }
 
     @Override

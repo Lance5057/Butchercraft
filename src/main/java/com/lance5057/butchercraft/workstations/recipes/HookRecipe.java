@@ -2,10 +2,8 @@ package com.lance5057.butchercraft.workstations.recipes;
 
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
-
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -13,7 +11,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-public class HookRecipe implements Recipe<Container> {
+public class HookRecipe implements Recipe<HookRecipeContainer> {
 
 	private final ResourceLocation idIn;
 	private final String groupIn;
@@ -34,12 +32,12 @@ public class HookRecipe implements Recipe<Container> {
 	}
 
 	@Override
-	public boolean matches(Container pContainer, Level pLevel) {
-		return carcassIn.test(pContainer.getItem(0));
+	public boolean matches(HookRecipeContainer pContainer, Level pLevel) {
+		return carcassIn.test(pContainer.getInsertedItem());
 	}
 
 	@Override
-	public ItemStack assemble(Container pContainer) {
+	public ItemStack assemble(HookRecipeContainer pContainer) {
 		return null;
 	}
 
