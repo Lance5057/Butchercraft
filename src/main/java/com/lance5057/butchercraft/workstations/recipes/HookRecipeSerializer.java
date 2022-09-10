@@ -1,7 +1,6 @@
 package com.lance5057.butchercraft.workstations.recipes;
 
 import com.google.gson.JsonObject;
-
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -10,8 +9,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
-public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
-		implements RecipeSerializer<HookRecipe> {
+public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<HookRecipe> {
 
 	@Override
 	public HookRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
@@ -29,7 +27,6 @@ public class HookRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>
 
 		NonNullList<AnimatedRecipeItemUse> tools = NonNullList.withSize(listSize, AnimatedRecipeItemUse.EMPTY);
 		tools.replaceAll(ignored -> AnimatedRecipeItemUse.read(buffer));
-		ResourceLocation lootTableId = new ResourceLocation(buffer.readUtf());
 		return new HookRecipe(recipeId, group, carcassIn, tools);
 	}
 

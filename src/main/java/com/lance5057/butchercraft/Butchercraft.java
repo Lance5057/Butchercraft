@@ -34,7 +34,7 @@ public class Butchercraft {
         ButchercraftRecipeSerializers.register(modEventBus);
         ButchercraftBlockEntities.register(modEventBus);
         ButchercraftRecipes.register(modEventBus);
-        
+        ButchercraftLootModifiers.register(modEventBus);
         
     }
 

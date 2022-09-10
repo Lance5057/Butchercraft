@@ -1,10 +1,7 @@
 package com.lance5057.butchercraft.workstations.blocks;
 
-import javax.annotation.Nonnull;
-
 import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.workstations.blockentities.MeatHookBlockEntity;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -30,34 +27,36 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import javax.annotation.Nonnull;
 
 public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-
+	public static final BooleanProperty CARCASS_HOOKED = BooleanProperty.create("carcass_hooked");
+	// TODO Maybe use double plant logic so that you can interact with bottom thirds of the block
 	protected static final VoxelShape AABB = Block.box(0.0D, -32.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 	public MeatHookBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(CARCASS_HOOKED, false));
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-		return AABB;
+		return state.getValue(CARCASS_HOOKED) ? AABB : super.getShape(state, worldIn, pos, context);
 	}
 
 	@Override
 	public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos,
 			CollisionContext pContext) {
-		return AABB;
+		return pState.getValue(CARCASS_HOOKED) ? AABB : super.getCollisionShape(pState, pLevel, pPos, pContext);
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, WATERLOGGED);
+		builder.add(FACING, WATERLOGGED, CARCASS_HOOKED);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -73,30 +72,32 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 
 	@Nonnull
 	@Override
-	public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
-			@Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
-		if (world.isClientSide)
-			return InteractionResult.SUCCESS; // on client side, don't do anything
-
+	public InteractionResult use(@Nonnull BlockState blockState,
+								 Level world,
+								 @Nonnull BlockPos blockPos,
+								 @Nonnull Player playerEntity,
+								 @Nonnull InteractionHand hand,
+								 @Nonnull BlockHitResult blockRayTraceResult) {
 		BlockEntity entity = world.getBlockEntity(blockPos);
 		if (entity instanceof MeatHookBlockEntity te) {
 
 			// Get item in both InteractionHands
 			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
-
-			if (heldMain.getItem() instanceof CarcassItem)
+			// TODO May want to disable insertion if there's not enough space under the hook
+			if (heldMain.getItem() instanceof CarcassItem) {
+				// TODO Find a way to return SUCCESS on successful insertion
 				te.insertItem(heldMain);
+			}
 			else if (heldMain != ItemStack.EMPTY)
-				te.hammer(playerEntity, heldMain);
+				return te.butcher(playerEntity, heldMain);
 		}
 
-		return InteractionResult.SUCCESS;
+		return InteractionResult.PASS;
 
 	}
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-		// TODO Auto-generated method stub
 		return new MeatHookBlockEntity(pPos, pState);
 	}
 
@@ -104,7 +105,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState ifluidstate = context.getLevel().getFluidState(context.getClickedPos());
 
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getCounterClockWise())
 				.setValue(WATERLOGGED, ifluidstate.getType() == Fluids.WATER);
 	}
 }
