@@ -19,23 +19,24 @@
             "rotation": {},
             "scale": {}
           }
-        }
-      ]
-    },
-    {
-      "uses": 6,
-      "tool": {
-        "item": "butchercraft:skinning_knife"
-      },
-      "count": 1,
-      "damage": true,
-      "loot_table": "butchercraft:meat_hook/deoffal_cow",
-      "models": [
+        },
         {
-          "location": "butchercraft:meathook/cow_skinned",
-          "IsBlock": true,
+          "location": "butchercraft:skinning_knife",
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "min": -8.0,
+                "max": 8.0
+              },
+              "y": {
+                "min": -24.0,
+                "max": 24.0
+              },
+              "z": {
+                "min": -12.0,
+                "max": 12.0
+              }
+            },
             "rotation": {},
             "scale": {}
           }
@@ -52,10 +53,72 @@
       "loot_table": "butchercraft:meat_hook/delimb_cow",
       "models": [
         {
+          "location": "butchercraft:meathook/cow_skinned",
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          }
+        },
+        {
+          "location": "butchercraft:bone_saw",
+          "animation": {
+            "location": {
+              "x": {
+                "min": -8.0,
+                "max": 8.0
+              },
+              "y": {
+                "min": -24.0,
+                "max": 24.0
+              },
+              "z": {
+                "min": -12.0,
+                "max": 12.0
+              }
+            },
+            "rotation": {},
+            "scale": {}
+          }
+        }
+      ]
+    },
+    {
+      "uses": 6,
+      "tool": {
+        "item": "butchercraft:gut_knife"
+      },
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:meat_hook/deoffal_cow",
+      "models": [
+        {
           "location": "butchercraft:meathook/cow_gutted",
           "IsBlock": true,
           "animation": {
             "location": {},
+            "rotation": {},
+            "scale": {}
+          }
+        },
+        {
+          "location": "butchercraft:gut_knife",
+          "animation": {
+            "location": {
+              "x": {
+                "min": -8.0,
+                "max": 8.0
+              },
+              "y": {
+                "min": -24.0,
+                "max": 24.0
+              },
+              "z": {
+                "min": -12.0,
+                "max": 12.0
+              }
+            },
             "rotation": {},
             "scale": {}
           }
@@ -72,9 +135,31 @@
       "loot_table": "butchercraft:meat_hook/butcher_cow",
       "models": [
         {
-          "location": "minecraft:diamond_sword",
+          "location": "butchercraft:meathook/cow_bisected",
+          "IsBlock": true,
           "animation": {
             "location": {},
+            "rotation": {},
+            "scale": {}
+          }
+        },
+        {
+          "location": "butchercraft:butcher_knife",
+          "animation": {
+            "location": {
+              "x": {
+                "min": -8.0,
+                "max": 8.0
+              },
+              "y": {
+                "min": -24.0,
+                "max": 24.0
+              },
+              "z": {
+                "min": -12.0,
+                "max": 12.0
+              }
+            },
             "rotation": {},
             "scale": {}
           }

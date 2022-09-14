@@ -25,7 +25,7 @@
     {
       "uses": 6,
       "tool": {
-        "item": "butchercraft:skinning_knife"
+        "item": "butchercraft:gut_knife"
       },
       "count": 1,
       "damage": true,
