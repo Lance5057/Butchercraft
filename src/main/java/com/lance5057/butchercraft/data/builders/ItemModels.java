@@ -32,6 +32,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forItem(ButchercraftItems.BONE_SAW, "bonesaw");
 		forItem(ButchercraftItems.BUTCHER_KNIFE, "butcherknife");
+		forItem(ButchercraftItems.GUT_KNIFE, "gutknife");
 		forItem(ButchercraftItems.FAT, "fat");
 		forItem(ButchercraftItems.GRINDER_TIP, "grindtip");
 		forItem(ButchercraftItems.LEATHER_CORD, "leathercord");

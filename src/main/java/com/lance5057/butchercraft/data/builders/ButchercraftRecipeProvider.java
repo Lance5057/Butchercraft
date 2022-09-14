@@ -36,19 +36,16 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 								new AnimationFloatTransform()))
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
 						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_cow"),
-						new BlacklistedModel(DIAMOND_SWORD,
-								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
-										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
+						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_skinned"), null, true,
+								new AnimationFloatTransform()))
 				.tool(Ingredient.of(BONE_SAW.get()), 6, true,
 						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_cow"),
-						new BlacklistedModel(DIAMOND_SWORD,
-								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
-										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
+						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_gutted"), null, true,
+								new AnimationFloatTransform()))
 				.tool(Ingredient.of(BUTCHER_KNIFE.get()), 6, true,
 						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_cow"),
 						new BlacklistedModel(DIAMOND_SWORD,
-								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
-										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
+								new AnimationFloatTransform()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cowtest"));
 
 		MeatHookRecipeBuilder.shapedRecipe(SHEEP_CARCASS.get())

@@ -159,6 +159,8 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS).durability(250)));
 	public static final RegistryObject<Item> BONE_SAW = ITEMS.register("bone_saw",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS).durability(250)));
+	public static final RegistryObject<Item> GUT_KNIFE = ITEMS.register("gut_knife",
+			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS).durability(250)));
 	public static final RegistryObject<Item> SPATULA = ITEMS.register("spatula",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
 	public static final RegistryObject<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
