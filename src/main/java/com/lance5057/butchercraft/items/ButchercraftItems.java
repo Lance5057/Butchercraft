@@ -161,12 +161,12 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS).durability(250)));
 	public static final RegistryObject<Item> GUT_KNIFE = ITEMS.register("gut_knife",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS).durability(250)));
-	public static final RegistryObject<Item> SPATULA = ITEMS.register("spatula",
-			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
-	public static final RegistryObject<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
-			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
-	public static final RegistryObject<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
-			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
+//	public static final RegistryObject<Item> SPATULA = ITEMS.register("spatula",
+//			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
+//	public static final RegistryObject<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
+//			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
+//	public static final RegistryObject<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
+//			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
 	public static final RegistryObject<Item> LEATHER_SCRAP = ITEMS.register("leather_scrap",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
 

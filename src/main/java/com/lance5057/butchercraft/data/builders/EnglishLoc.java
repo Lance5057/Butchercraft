@@ -61,8 +61,8 @@ public class EnglishLoc extends LanguageProvider {
         this.add(LAMB_STEW_MEAT.get(), "Raw Lamb Stew Meat");
         this.add(COOKED_LAMB_STEWMEAT.get(), "Cooked Lamb Stew Meat");
         
-        this.add(COOKED_TRIPE.get(), "Cooked Tripe");
-        this.add(TRIPE.get(), "Raw Tripe");
+        this.add(COOKED_TRIPE.get(), "Cooked Intestines");
+        this.add(TRIPE.get(), "Raw Intestines");
         this.add(COOKED_STOMACHE.get(), "Cooked Stomach");
         this.add(STOMACHE.get(), "Raw Stomach");
         this.add(COOKED_LUNG.get(), "Cooked Lung");
@@ -81,10 +81,10 @@ public class EnglishLoc extends LanguageProvider {
         this.add(BUTCHER_KNIFE.get(), "Butcher Knife");
         this.add(SKINNING_KNIFE.get(), "Skinning Knife");
         this.add(BONE_SAW.get(), "Bone Saw");
-        this.add(SPATULA.get(), "Spatula");
-        
-        this.add(GRINDER_TIP.get(), "Grinder Tip");
-        this.add(EXTRUDER_TIP.get(), "Extruder Tip");
+//        this.add(SPATULA.get(), "Spatula");
+//        
+//        this.add(GRINDER_TIP.get(), "Grinder Tip");
+//        this.add(EXTRUDER_TIP.get(), "Extruder Tip");
         
         this.add(LEATHER_SCRAP.get(), "Leather Scrap");
         this.add(LEATHER_CORD.get(), "Leather Cord");

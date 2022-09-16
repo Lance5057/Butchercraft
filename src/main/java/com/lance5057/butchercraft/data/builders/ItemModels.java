@@ -34,13 +34,13 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.BUTCHER_KNIFE, "butcherknife");
 		forItem(ButchercraftItems.GUT_KNIFE, "gutknife");
 		forItem(ButchercraftItems.FAT, "fat");
-		forItem(ButchercraftItems.GRINDER_TIP, "grindtip");
+		//forItem(ButchercraftItems.GRINDER_TIP, "grindtip");
 		forItem(ButchercraftItems.LEATHER_CORD, "leathercord");
 		forItem(ButchercraftItems.LEATHER_SCRAP, "leatherscrap");
-		forItem(ButchercraftItems.EXTRUDER_TIP, "sausagetip");
+		//forItem(ButchercraftItems.EXTRUDER_TIP, "sausagetip");
 		forItem(ButchercraftItems.SINEW, "sinew");
 		forItem(ButchercraftItems.SKINNING_KNIFE, "skinningknife");
-		forItem(ButchercraftItems.SPATULA, "spatula");
+		//forItem(ButchercraftItems.SPATULA, "spatula");
 
 		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
 		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())
@@ -77,6 +77,9 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_BEEF, "cooked_ground_beef");
 		forItem(ButchercraftItems.BEEF_SCRAPS, "beef_scraps");
 		forItem(ButchercraftItems.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
+		
+		forItem(ButchercraftItems.SAUSAGE, "sausage");
+		forItem(ButchercraftItems.COOKED_SAUSAGE, "sausagecooked");
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
 	}
