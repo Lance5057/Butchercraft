@@ -1,0 +1,38 @@
+{
+  "parent": "butchercraft:hook",
+  "display": {
+    "icon": {
+      "item": "butchercraft:gut_knife",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.gutknife.name"
+    },
+    "description": {
+      "translate": "butchercraft.advancement.gutknife.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "gutknife": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:gut_knife"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "gutknife"
+    ]
+  ]
+}

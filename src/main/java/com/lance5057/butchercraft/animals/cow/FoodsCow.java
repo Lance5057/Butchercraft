@@ -13,6 +13,8 @@ public class FoodsCow {
     public static final FoodProperties COOKED_ROAST = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties BEEF_RIBS = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties COOKED_BEEF_RIBS = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
+    public static final FoodProperties BEEF_RIB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
+    public static final FoodProperties COOKED_BEEF_RIB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties CUBED_BEEF = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties COOKED_CUBED_BEEF = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties GROUND_BEEF = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();

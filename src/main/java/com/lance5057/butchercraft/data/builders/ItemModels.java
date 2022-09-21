@@ -71,12 +71,46 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_BEEF_ROAST, "cooked_roast");
 		forItem(ButchercraftItems.BEEF_RIBS, "ribs");
 		forItem(ButchercraftItems.COOKED_BEEF_RIBS, "cooked_ribs");
+		forItem(ButchercraftItems.BEEF_RIB, "beef_rib");
+		forItem(ButchercraftItems.COOKED_BEEF_RIB, "cooked_beef_rib");
 		forItem(ButchercraftItems.CUBED_BEEF, "cubed_beef");
 		forItem(ButchercraftItems.COOKED_CUBED_BEEF, "cooked_cubed_beef");
 		forItem(ButchercraftItems.GROUND_BEEF, "ground_beef");
 		forItem(ButchercraftItems.COOKED_GROUND_BEEF, "cooked_ground_beef");
 		forItem(ButchercraftItems.BEEF_SCRAPS, "beef_scraps");
 		forItem(ButchercraftItems.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
+		
+		forItem(ButchercraftItems.PORK_STEW_MEAT, "stew_pork");
+		forItem(ButchercraftItems.COOKED_PORK_STEWMEAT, "cooked_stew_pork");
+		forItem(ButchercraftItems.PORK_ROAST, "roast");
+		forItem(ButchercraftItems.COOKED_PORK_ROAST, "cooked_roast");
+		forItem(ButchercraftItems.PORK_RIBS, "pork_ribs");
+		forItem(ButchercraftItems.COOKED_PORK_RIBS, "cooked_pork_ribs");
+		forItem(ButchercraftItems.PORK_RIB, "pork_rib");
+		forItem(ButchercraftItems.COOKED_PORK_RIB, "cooked_pork_rib");
+		forItem(ButchercraftItems.CUBED_PORK, "cubed_pork");
+		forItem(ButchercraftItems.COOKED_CUBED_PORK, "cooked_cubed_pork");
+		forItem(ButchercraftItems.GROUND_PORK, "ground_pork");
+		forItem(ButchercraftItems.COOKED_GROUND_PORK, "cooked_ground_pork");
+		forItem(ButchercraftItems.PORK_SCRAPS, "pork_scraps");
+		forItem(ButchercraftItems.COOKED_PORK_SCRAPS, "cooked_pork_scraps");
+		forItem(ButchercraftItems.BACON, "bacon");
+		forItem(ButchercraftItems.COOKED_BACON, "cooked_bacon");
+		
+		forItem(ButchercraftItems.LAMB_STEW_MEAT, "stew_lamb");
+		forItem(ButchercraftItems.COOKED_LAMB_STEWMEAT, "cooked_stew_lamb");
+		forItem(ButchercraftItems.LAMB_ROAST, "roast");
+		forItem(ButchercraftItems.COOKED_LAMB_ROAST, "cooked_roast");
+		forItem(ButchercraftItems.LAMB_RIBS, "lamb_ribs");
+		forItem(ButchercraftItems.COOKED_LAMB_RIBS, "cooked_lamb_ribs");
+		forItem(ButchercraftItems.LAMB_RIB, "lamb_rib");
+		forItem(ButchercraftItems.COOKED_LAMB_RIB, "cooked_lamb_rib");
+		forItem(ButchercraftItems.CUBED_LAMB, "cubed_lamb");
+		forItem(ButchercraftItems.COOKED_CUBED_LAMB, "cooked_cubed_lamb");
+		forItem(ButchercraftItems.GROUND_LAMB, "ground_lamb");
+		forItem(ButchercraftItems.COOKED_GROUND_LAMB, "cooked_ground_lamb");
+		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
+		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
 		
 		forItem(ButchercraftItems.SAUSAGE, "sausage");
 		forItem(ButchercraftItems.COOKED_SAUSAGE, "sausagecooked");

@@ -1,0 +1,39 @@
+{
+  "parent": "butchercraft:butcherknife",
+  "display": {
+    "icon": {
+      "item": "minecraft:player_head"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.cannibalism.name"
+    },
+    "description": {
+      "translate": "butchercraft.advancement.cannibalism.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "cannibalism": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "minecraft:player"
+            },
+            "entity": "this"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cannibalism"
+    ]
+  ]
+}

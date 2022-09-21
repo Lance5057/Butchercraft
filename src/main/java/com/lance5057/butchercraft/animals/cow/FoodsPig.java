@@ -11,6 +11,8 @@ public class FoodsPig {
     public static final FoodProperties COOKED_ROAST = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties PORK_RIBS = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties COOKED_PORK_RIBS = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
+    public static final FoodProperties PORK_RIB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
+    public static final FoodProperties COOKED_PORK_RIB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties CUBED_PORK = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties COOKED_CUBED_PORK = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties GROUND_PORK = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();

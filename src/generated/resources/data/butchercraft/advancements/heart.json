@@ -1,0 +1,35 @@
+{
+  "parent": "butchercraft:butcherknife",
+  "display": {
+    "icon": {
+      "item": "butchercraft:heart"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.heart.name"
+    },
+    "description": {
+      "translate": "butchercraft.advancement.heart.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "heart": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:heart"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "heart"
+    ]
+  ]
+}

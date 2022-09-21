@@ -1,0 +1,37 @@
+{
+  "parent": "butchercraft:butcherknife",
+  "display": {
+    "icon": {
+      "item": "butchercraft:pig_carcass"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.pig.name"
+    },
+    "description": {
+      "translate": "butchercraft.advancement.pig.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "pig": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:pig_carcass"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "pig"
+    ]
+  ]
+}

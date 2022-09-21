@@ -11,6 +11,8 @@ public class FoodsSheep {
     public static final FoodProperties COOKED_ROAST = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties LAMB_RIBS = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties COOKED_LAMB_RIBS = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
+    public static final FoodProperties LAMB_RIB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
+    public static final FoodProperties COOKED_LAMB_RIB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties CUBED_LAMB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties COOKED_CUBED_LAMB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
     public static final FoodProperties GROUND_LAMB = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();

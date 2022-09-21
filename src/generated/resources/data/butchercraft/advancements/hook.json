@@ -1,0 +1,37 @@
+{
+  "parent": "butchercraft:root",
+  "display": {
+    "icon": {
+      "item": "butchercraft:meat_hook"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.hook.name"
+    },
+    "description": {
+      "translate": "butchercraft.advancement.hook.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "hook": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:meat_hook"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "hook"
+    ]
+  ]
+}
