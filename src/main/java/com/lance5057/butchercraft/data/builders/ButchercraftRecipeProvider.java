@@ -69,22 +69,35 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
 						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_sheep"),
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep"), null, true,
-								new AnimationFloatTransform()))
+								new AnimationFloatTransform()),
+						new BlacklistedModel(SKINNING_KNIFE.get(),
+								new AnimationFloatTransform()
+										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
+												.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.tool(Ingredient.of(GUT_KNIFE.get()), 6, true,
 						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_sheep"),
-						new BlacklistedModel(DIAMOND_SWORD,
-								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
-										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
+						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep_skinned"), null,
+								true, new AnimationFloatTransform()),
+						new BlacklistedModel(GUT_KNIFE.get(),
+								new AnimationFloatTransform()
+										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
+												.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.tool(Ingredient.of(BONE_SAW.get()), 6, true,
 						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_sheep"),
-						new BlacklistedModel(DIAMOND_SWORD,
-								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
-										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
+						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep_gutted"), null,
+								true, new AnimationFloatTransform()),
+						new BlacklistedModel(BONE_SAW.get(),
+								new AnimationFloatTransform()
+										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
+												.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.tool(Ingredient.of(BUTCHER_KNIFE.get()), 6, true,
 						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_sheep"),
-						new BlacklistedModel(DIAMOND_SWORD,
-								new AnimationFloatTransform().setRotation(new AnimatedFloatVector3()
-										.setY(new AnimatedFloat(0, 360, 0, 0.1f, true, false)))))
+						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep_bisected"), null,
+								true, new AnimationFloatTransform()),
+						new BlacklistedModel(BUTCHER_KNIFE.get(),
+								new AnimationFloatTransform()
+										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
+												.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheeptest"));
 
 		MeatHookRecipeBuilder.shapedRecipe(PIG_CARCASS.get())

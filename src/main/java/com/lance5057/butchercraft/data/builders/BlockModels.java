@@ -19,6 +19,9 @@ public class BlockModels extends BlockStateProvider {
 		// TODO Auto-generated method stub
 		this.horizontalBlock(ButchercraftBlocks.MEAT_HOOK.get(),
 				models().getExistingFile(modLoc("block/meat_hook")));
+		
+		this.simpleBlock(ButchercraftBlocks.BEEF_BLOCK.get());
+		this.simpleBlock(ButchercraftBlocks.COOKED_BEEF_BLOCK.get());
 	}
 
 }

@@ -18,6 +18,11 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<MeatHookBlock> MEAT_HOOK = BLOCKS.register("meat_hook", MeatHookBlock::new);
 	public static final RegistryObject<Block> COW_SKULL = BLOCKS.register("cow_skull",
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
+	
+	public static final RegistryObject<Block> BEEF_BLOCK = BLOCKS.register("beef_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_MAGENTA)));
+	public static final RegistryObject<Block> COOKED_BEEF_BLOCK = BLOCKS.register("cooked_beef_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)));
 
 	public static void register(IEventBus modBus) {
 

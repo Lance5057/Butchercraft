@@ -183,6 +183,8 @@ public class Advancements extends AdvancementProvider {
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_PORK.get()))
 				.addCriterion("whole_pig_ground",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
+				.addCriterion("whole_pig_bacon",
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BACON.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":whole_pig");
 
 		whole_sheep = Advancement.Builder.advancement().parent(sheep)
@@ -253,6 +255,8 @@ public class Advancements extends AdvancementProvider {
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_LAMB.get()))
 				.addCriterion("whole_sheep_ground",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_LAMB.get()))
+				.addCriterion("whole_pig_bacon",
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BACON.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":everything");
 
 		everything_plus = Advancement.Builder.advancement().parent(everything)
@@ -302,6 +306,8 @@ public class Advancements extends AdvancementProvider {
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_LAMB.get()))
 				.addCriterion("whole_sheep_ground",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_LAMB.get()))
+				.addCriterion("whole_pig_bacon",
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BACON.get()))
 				.addCriterion("everything_plus_brain",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BRAIN.get()))
 				.addCriterion("everything_plus_heart",

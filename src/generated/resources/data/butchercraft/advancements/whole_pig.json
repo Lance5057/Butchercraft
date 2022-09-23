@@ -85,6 +85,16 @@
           ]
         }
       }
+    },
+    "whole_pig_bacon": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_bacon"
+          ]
+        }
+      }
     }
   },
   "requirements": [
@@ -108,6 +118,9 @@
     ],
     [
       "whole_pig_ground"
+    ],
+    [
+      "whole_pig_bacon"
     ]
   ]
 }

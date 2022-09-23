@@ -116,6 +116,9 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_SAUSAGE, "sausagecooked");
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
+		
+		forBlockItem(ButchercraftItems.BEEF_BLOCK_ITEM, "beef_block");
+		forBlockItem(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM, "cooked_beef_block");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

@@ -62,7 +62,7 @@
           }
         },
         {
-          "location": "butchercraft:bone_saw",
+          "location": "butchercraft:gut_knife",
           "animation": {
             "location": {
               "x": {
@@ -103,7 +103,7 @@
           }
         },
         {
-          "location": "butchercraft:gut_knife",
+          "location": "butchercraft:bone_saw",
           "animation": {
             "location": {
               "x": {

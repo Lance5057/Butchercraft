@@ -194,6 +194,11 @@ public class ButchercraftItems {
 
 	public static final RegistryObject<BlockItem> COW_SKULL = ITEMS.register("cow_skull",
 			() -> new BlockItem(ButchercraftBlocks.COW_SKULL.get(), new Item.Properties().tab(GROUP_ITEMS)));
+	
+	public static final RegistryObject<BlockItem> BEEF_BLOCK_ITEM = ITEMS.register("beef_block_item",
+			() -> new BlockItem(ButchercraftBlocks.BEEF_BLOCK.get(), new Item.Properties().tab(GROUP_ITEMS)));
+	public static final RegistryObject<BlockItem> COOKED_BEEF_BLOCK_ITEM = ITEMS.register("cooked_beef_block_item",
+			() -> new BlockItem(ButchercraftBlocks.COOKED_BEEF_BLOCK.get(), new Item.Properties().tab(GROUP_ITEMS)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);

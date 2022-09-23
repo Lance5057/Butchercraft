@@ -226,6 +226,16 @@
         }
       }
     },
+    "whole_pig_bacon": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_bacon"
+          ]
+        }
+      }
+    },
     "everything_plus_brain": {
       "trigger": "minecraft:consume_item",
       "conditions": {
@@ -360,6 +370,9 @@
     ],
     [
       "whole_sheep_ground"
+    ],
+    [
+      "whole_pig_bacon"
     ],
     [
       "everything_plus_brain"
