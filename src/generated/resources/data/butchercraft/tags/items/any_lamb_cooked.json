@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "butchercraft:cooked_lamb_rib",
+    "butchercraft:cooked_lamb_ribs",
+    "butchercraft:cooked_lamb_roast",
+    "butchercraft:cooked_lamb_scraps",
+    "butchercraft:cooked_lamb_stewmeat",
+    "butchercraft:cooked_cubed_lamb",
+    "butchercraft:cooked_ground_lamb"
+  ]
+}

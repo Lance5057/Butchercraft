@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    },
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    },
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    },
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    },
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    },
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    },
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    },
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    },
+    {
+      "tag": "butchercraft:any_lamb_cooked"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:cooked_lamb_block_item"
+  }
+}

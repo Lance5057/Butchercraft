@@ -35,7 +35,7 @@ public class EnglishLoc extends LanguageProvider {
         this.add(SAUSAGE.get(), "Raw Sausage");
         this.add(COOKED_SAUSAGE.get(), "Cooked Sausage");
         this.add(BEEF_STEW_MEAT.get(), "Raw Beef Stew Meat");
-        this.add(COOKED_BEEF_STEWMEAT.get(), "Cooked Beef Stew Meat");
+        this.add(COOKED_BEEF_STEW_MEAT.get(), "Cooked Beef Stew Meat");
         
         this.add(COOKED_PORK_SCRAPS.get(), "Cooked Pork Straps");
         this.add(PORK_SCRAPS.get(), "Raw Pork Scraps");
@@ -50,7 +50,7 @@ public class EnglishLoc extends LanguageProvider {
         this.add(COOKED_PORK_ROAST.get(), "Cooked Pork Roast");
         this.add(PORK_ROAST.get(), "Raw Pork Roast");
         this.add(PORK_STEW_MEAT.get(), "Raw Pork Stew Meat");
-        this.add(COOKED_PORK_STEWMEAT.get(), "Cooked Pork Stew Meat");
+        this.add(COOKED_PORK_STEW_MEAT.get(), "Cooked Pork Stew Meat");
         
         this.add(COOKED_LAMB_SCRAPS.get(), "Cooked Lamb Straps");
         this.add(LAMB_SCRAPS.get(), "Raw Lamb Scraps");
@@ -65,7 +65,7 @@ public class EnglishLoc extends LanguageProvider {
         this.add(COOKED_LAMB_ROAST.get(), "Cooked Lamb Roast");
         this.add(LAMB_ROAST.get(), "Raw Lamb Roast");
         this.add(LAMB_STEW_MEAT.get(), "Raw Lamb Stew Meat");
-        this.add(COOKED_LAMB_STEWMEAT.get(), "Cooked Lamb Stew Meat");
+        this.add(COOKED_LAMB_STEW_MEAT.get(), "Cooked Lamb Stew Meat");
         
         this.add(COOKED_TRIPE.get(), "Cooked Intestines");
         this.add(TRIPE.get(), "Raw Intestines");

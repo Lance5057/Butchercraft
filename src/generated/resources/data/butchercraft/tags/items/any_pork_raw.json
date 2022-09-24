@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "butchercraft:pork_rib",
+    "butchercraft:pork_ribs",
+    "butchercraft:pork_roast",
+    "butchercraft:pork_scraps",
+    "butchercraft:pork_stewmeat",
+    "butchercraft:cubed_pork",
+    "butchercraft:ground_pork",
+    "butchercraft:bacon"
+  ]
+}

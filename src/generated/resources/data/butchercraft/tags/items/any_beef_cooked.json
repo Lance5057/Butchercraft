@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "butchercraft:cooked_beef_rib",
+    "butchercraft:cooked_beef_ribs",
+    "butchercraft:cooked_beef_roast",
+    "butchercraft:cooked_beef_scraps",
+    "butchercraft:cooked_beef_stewmeat",
+    "butchercraft:cooked_cubed_beef",
+    "butchercraft:cooked_ground_beef"
+  ]
+}

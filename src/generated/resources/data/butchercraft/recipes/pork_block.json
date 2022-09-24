@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "butchercraft:any_pork_raw"
+    },
+    {
+      "tag": "butchercraft:any_pork_raw"
+    },
+    {
+      "tag": "butchercraft:any_pork_raw"
+    },
+    {
+      "tag": "butchercraft:any_pork_raw"
+    },
+    {
+      "tag": "butchercraft:any_pork_raw"
+    },
+    {
+      "tag": "butchercraft:any_pork_raw"
+    },
+    {
+      "tag": "butchercraft:any_pork_raw"
+    },
+    {
+      "tag": "butchercraft:any_pork_raw"
+    },
+    {
+      "tag": "butchercraft:any_pork_raw"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:pork_block_item"
+  }
+}

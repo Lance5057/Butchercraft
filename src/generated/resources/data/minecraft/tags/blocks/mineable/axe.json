@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "butchercraft:beef_block",
+    "butchercraft:cooked_beef_block",
+    "butchercraft:pork_block",
+    "butchercraft:cooked_pork_block",
+    "butchercraft:lamb_block",
+    "butchercraft:cooked_lamb_block"
+  ]
+}

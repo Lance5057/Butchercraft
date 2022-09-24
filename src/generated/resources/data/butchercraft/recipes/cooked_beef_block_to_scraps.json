@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:cooked_beef_block_item"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:cooked_beef_scraps",
+    "count": 9
+  }
+}

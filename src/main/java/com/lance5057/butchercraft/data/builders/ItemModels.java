@@ -66,7 +66,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_TRIPE, "cooked_tripe");
 
 		forItem(ButchercraftItems.BEEF_STEW_MEAT, "stew_beef");
-		forItem(ButchercraftItems.COOKED_BEEF_STEWMEAT, "cooked_stew_beef");
+		forItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT, "cooked_stew_beef");
 		forItem(ButchercraftItems.BEEF_ROAST, "roast");
 		forItem(ButchercraftItems.COOKED_BEEF_ROAST, "cooked_roast");
 		forItem(ButchercraftItems.BEEF_RIBS, "ribs");
@@ -81,7 +81,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
 		
 		forItem(ButchercraftItems.PORK_STEW_MEAT, "stew_pork");
-		forItem(ButchercraftItems.COOKED_PORK_STEWMEAT, "cooked_stew_pork");
+		forItem(ButchercraftItems.COOKED_PORK_STEW_MEAT, "cooked_stew_pork");
 		forItem(ButchercraftItems.PORK_ROAST, "roast");
 		forItem(ButchercraftItems.COOKED_PORK_ROAST, "cooked_roast");
 		forItem(ButchercraftItems.PORK_RIBS, "pork_ribs");
@@ -98,7 +98,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_BACON, "cooked_bacon");
 		
 		forItem(ButchercraftItems.LAMB_STEW_MEAT, "stew_lamb");
-		forItem(ButchercraftItems.COOKED_LAMB_STEWMEAT, "cooked_stew_lamb");
+		forItem(ButchercraftItems.COOKED_LAMB_STEW_MEAT, "cooked_stew_lamb");
 		forItem(ButchercraftItems.LAMB_ROAST, "roast");
 		forItem(ButchercraftItems.COOKED_LAMB_ROAST, "cooked_roast");
 		forItem(ButchercraftItems.LAMB_RIBS, "lamb_ribs");
@@ -119,6 +119,10 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		
 		forBlockItem(ButchercraftItems.BEEF_BLOCK_ITEM, "beef_block");
 		forBlockItem(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM, "cooked_beef_block");
+		forBlockItem(ButchercraftItems.PORK_BLOCK_ITEM, "pork_block");
+		forBlockItem(ButchercraftItems.COOKED_PORK_BLOCK_ITEM, "cooked_pork_block");
+		forBlockItem(ButchercraftItems.LAMB_BLOCK_ITEM, "lamb_block");
+		forBlockItem(ButchercraftItems.COOKED_LAMB_BLOCK_ITEM, "cooked_lamb_block");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

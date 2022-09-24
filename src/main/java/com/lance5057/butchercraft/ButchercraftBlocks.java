@@ -20,8 +20,18 @@ public class ButchercraftBlocks {
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
 	
 	public static final RegistryObject<Block> BEEF_BLOCK = BLOCKS.register("beef_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_MAGENTA)));
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));
 	public static final RegistryObject<Block> COOKED_BEEF_BLOCK = BLOCKS.register("cooked_beef_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)));
+	
+	public static final RegistryObject<Block> PORK_BLOCK = BLOCKS.register("pork_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));
+	public static final RegistryObject<Block> COOKED_PORK_BLOCK = BLOCKS.register("cooked_pork_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)));
+	
+	public static final RegistryObject<Block> LAMB_BLOCK = BLOCKS.register("lamb_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));
+	public static final RegistryObject<Block> COOKED_LAMB_BLOCK = BLOCKS.register("cooked_lamb_block",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)));
 
 	public static void register(IEventBus modBus) {
