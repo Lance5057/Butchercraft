@@ -106,7 +106,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 		MeatHookRecipeBuilder.shapedRecipe(PIG_CARCASS.get())
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_pig"),
+						MeatHookLoottables.SKIN_PIG,
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig"), null, true,
 								new AnimationFloatTransform()),
 						new BlacklistedModel(SKINNING_KNIFE.get(),
@@ -114,7 +114,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
 												.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.tool(Ingredient.of(GUT_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_pig"),
+						MeatHookLoottables.DISEMBOWEL_PIG,
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig_skinned"), null,
 								true, new AnimationFloatTransform()),
 						new BlacklistedModel(GUT_KNIFE.get(),
@@ -122,7 +122,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
 												.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.tool(Ingredient.of(BONE_SAW.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_pig"),
+						MeatHookLoottables.BISECT_PIG,
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig_gutted"), null,
 								true, new AnimationFloatTransform()),
 						new BlacklistedModel(BONE_SAW.get(),
@@ -130,7 +130,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
 												.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.tool(Ingredient.of(BUTCHER_KNIFE.get()), 6, true,
-						new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_pig"),
+						MeatHookLoottables.BUTCHER_PIG,
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig_bisected"), null,
 								true, new AnimationFloatTransform()),
 						new BlacklistedModel(BUTCHER_KNIFE.get(),
@@ -155,7 +155,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		ShapedRecipeBuilder.shaped(HOOK_BLOCK_ITEM.get()).define('I', IRON_INGOT).define('C', Items.CHAIN)
 				.define('N', Items.IRON_NUGGET).pattern("III").pattern("NCN").pattern("NNN")
 				.unlockedBy("has_iron", has(IRON_INGOT))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "gut_knife"));
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "meat_hook"));
 
 		ShapelessRecipeBuilder.shapeless(BEEF_BLOCK_ITEM.get())
 				.requires(Ingredient.of(ButchercraftItemTags.ANY_BEEF_RAW), 9)

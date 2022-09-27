@@ -6,17 +6,23 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:leather"
+          "name": "butchercraft:heart"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:kidney"
         }
       ],
       "functions": [
         {
           "function": "minecraft:set_count",
-          "count": {
-            "type": "minecraft:uniform",
-            "min": 8.0,
-            "max": 12.0
-          },
+          "count": 2.0,
           "add": false
         }
       ]
@@ -27,17 +33,33 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:leather_scrap"
+          "name": "butchercraft:liver"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:stomache"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:lung"
         }
       ],
       "functions": [
         {
           "function": "minecraft:set_count",
-          "count": {
-            "type": "minecraft:uniform",
-            "min": 8.0,
-            "max": 16.0
-          },
+          "count": 2.0,
           "add": false
         }
       ]
@@ -48,17 +70,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:fat"
+          "name": "butchercraft:tripe"
         }
       ],
       "functions": [
         {
           "function": "minecraft:set_count",
-          "count": {
-            "type": "minecraft:uniform",
-            "min": 4.0,
-            "max": 12.0
-          },
+          "count": 8.0,
           "add": false
         }
       ]

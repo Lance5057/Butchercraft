@@ -1,8 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " II",
-    "S  "
+    "I  ",
+    " I ",
+    " S "
   ],
   "key": {
     "I": {
@@ -13,6 +14,6 @@
     }
   },
   "result": {
-    "item": "butchercraft:skinning_knife"
+    "item": "butchercraft:gut_knife"
   }
 }
