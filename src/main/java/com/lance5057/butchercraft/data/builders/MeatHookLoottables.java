@@ -4,7 +4,6 @@ import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.items.ButchercraftItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
@@ -17,71 +16,94 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+import static com.lance5057.butchercraft.items.ButchercraftItems.*;
+import static net.minecraft.world.item.Items.*;
+
 public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 
-    private final ResourceLocation skinCowLootTable = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_cow");
-    private final ResourceLocation deoffalCow = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_cow");
-    private final ResourceLocation delimbCow = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_cow");
-    private final ResourceLocation butcherCow = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_cow");
+    public static final ResourceLocation SKIN_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_cow");
+    public static final ResourceLocation DEOFFAL_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_cow");
+    public static final ResourceLocation DELIMB_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_cow");
+    public static final ResourceLocation BUTCHER_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_cow");
+    public static final ResourceLocation SKIN_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_pig");
+    public static final ResourceLocation DISEMBOWEL_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/disembowel_pig");
+    public static final ResourceLocation BISECT_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/bisect_pig");
+    public static final ResourceLocation BUTCHER_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_pig");
 
     @Override
     public void accept(BiConsumer<ResourceLocation, Builder> t) {
-        // TODO Auto-generated method stub
-        t.accept(this.skinCowLootTable,
+        t.accept(SKIN_COW,
                 LootTable.lootTable()
-                        .withPool(createPoolWithItem(Items.LEATHER)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(8f, 12f))))
-                        .withPool(LootPool.lootPool()
-                                .add(LootItem.lootTableItem(ButchercraftItems.LEATHER_SCRAP.get())
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(8, 16)))))
-                        .withPool(LootPool.lootPool()
-                                .add(LootItem.lootTableItem(ButchercraftItems.FAT.get())
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12)))))
-                        .withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.SINEW.get())
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12))))));
-        t.accept(this.deoffalCow,
+                        .withPool(createPoolWithItem(LEATHER, 8, 12))
+                        .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 8, 16))
+                        .withPool(createPoolWithItem(FAT.get(), 4, 12))
+                        .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
+        t.accept(DEOFFAL_COW,
                 LootTable.lootTable()
-                        .withPool(createPoolWithItem(ButchercraftItems.HEART.get()))
-                        .withPool(createPoolWithItem(ButchercraftItems.KIDNEY.get())
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-						.withPool(createPoolWithItem(ButchercraftItems.LIVER.get()))
-						.withPool(createPoolWithItem(ButchercraftItems.STOMACHE.get())
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-						.withPool(createPoolWithItem(ButchercraftItems.LUNG.get())
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-						.withPool(createPoolWithItem(ButchercraftItems.TRIPE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(8)))));
-		t.accept(this.delimbCow,
-				LootTable.lootTable()
-						.withPool(createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(createPoolWithItem(ButchercraftItems.COW_SKULL.get())
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-						.withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get())
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 4))))
-						.withPool(createPoolWithItem(ButchercraftItems.BEEF_SCRAPS.get())
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 8))))
-						.withPool(createPoolWithItem(Items.BONE)
-								.apply(SetItemCountFunction.setCount(ConstantValue.exactly(4)))));
-		t.accept(this.butcherCow,
-				LootTable.lootTable()
-						.withPool(createPoolWithItem(ButchercraftItems.BEEF_SCRAPS.get())
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 16))))
-						.withPool(LootPool.lootPool()
-								.add(LootItem.lootTableItem(ButchercraftItems.BEEF_RIBS.get())
-										.apply(SetItemCountFunction.setCount(ConstantValue.exactly(4)))))
-						.withPool(LootPool.lootPool()
-								.add(LootItem.lootTableItem(ButchercraftItems.BEEF_ROAST.get())
-										.apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12)))))
-						.withPool(LootPool.lootPool()
-								.add(LootItem.lootTableItem(ButchercraftItems.BEEF_STEW_MEAT.get())
-										.apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12)))))
-						.withPool(LootPool.lootPool()
-								.add(LootItem.lootTableItem(ButchercraftItems.CUBED_BEEF.get())
-										.apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12)))))
-						.withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.BEEF)
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12)))))
-						.withPool(LootPool.lootPool()
-								.add(LootItem.lootTableItem(Items.BONE)
-										.apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12))))));
+                        .withPool(createPoolWithItem(HEART.get()))
+                        .withPool(createPoolWithItem(KIDNEY.get(), 2))
+                        .withPool(createPoolWithItem(LIVER.get()))
+                        .withPool(createPoolWithItem(STOMACHE.get(), 4))
+                        .withPool(createPoolWithItem(LUNG.get(), 2))
+                        .withPool(createPoolWithItem(TRIPE.get(), 8)));
+        t.accept(DELIMB_COW,
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(BRAIN.get()))
+                        .withPool(createPoolWithItem(COW_SKULL.get()))
+                        .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 0, 4))
+                        .withPool(createPoolWithItem(BEEF_SCRAPS.get(), 0, 8))
+                        .withPool(createPoolWithItem(BEEF_STEW_MEAT.get(), 24))
+                        .withPool(createPoolWithItem(BONE, 4)));
+        t.accept(BUTCHER_COW,
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(BEEF_SCRAPS.get(), 29))
+                        .withPool(createPoolWithItem(BEEF_RIBS.get(), 6))
+                        .withPool(createPoolWithItem(BEEF_ROAST.get(), 21))
+                        .withPool(createPoolWithItem(CUBED_BEEF.get(), 9))
+                        .withPool(createPoolWithItem(BEEF, 81))
+                        .withPool(createPoolWithItem(BONE, 4, 12)));
+
+        t.accept(SKIN_PIG,
+                // TODO Replace with Pig Hide?
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(LEATHER, 8, 12))
+                        .withPool(createPoolWithItem(FAT.get(), 4, 12))
+                        .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
+        t.accept(DISEMBOWEL_PIG,
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(HEART.get()))
+                        .withPool(createPoolWithItem(KIDNEY.get(), 2))
+                        .withPool(createPoolWithItem(LIVER.get()))
+                        .withPool(createPoolWithItem(STOMACHE.get()))
+                        .withPool(createPoolWithItem(LUNG.get(), 2))
+                        .withPool(createPoolWithItem(TRIPE.get(), 8))
+                        .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
+        t.accept(BISECT_PIG,
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(ButchercraftItems.PIG_HOOVES.get()))
+                        .withPool(createPoolWithItem(SINEW.get(), 0, 8))
+                        .withPool(createPoolWithItem(PORK_STEW_MEAT.get(), 10))
+                        .withPool(createPoolWithItem(BONE, 4)));
+        t.accept(BUTCHER_PIG,
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(PORK_SCRAPS.get(), 10))
+                        .withPool(createPoolWithItem(PORK_RIBS.get(), 6))
+                        .withPool(createPoolWithItem(PORK_ROAST.get(), 10))
+                        .withPool(createPoolWithItem(CUBED_PORK.get(), 4))
+                        .withPool(createPoolWithItem(BACON.get(), 11))
+                        .withPool(createPoolWithItem(PORKCHOP, 14))
+                        .withPool(createPoolWithItem(BONE, 12)));
+
+    }
+
+    @NotNull
+    private static LootPool.Builder createPoolWithItem(Item item, int count) {
+        return LootPool.lootPool().add(LootItem.lootTableItem(item)).apply(SetItemCountFunction.setCount(ConstantValue.exactly(count)));
+    }
+
+    @NotNull
+    private static LootPool.Builder createPoolWithItem(Item item, int min, int max) {
+        return LootPool.lootPool().add(LootItem.lootTableItem(item)).apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max)));
     }
 
     @NotNull
