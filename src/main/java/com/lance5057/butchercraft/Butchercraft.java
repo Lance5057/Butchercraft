@@ -1,6 +1,12 @@
 package com.lance5057.butchercraft;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.lance5057.butchercraft.items.ButchercraftItems;
+
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -8,8 +14,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod(Butchercraft.MOD_ID)
 public class Butchercraft {
@@ -41,6 +45,8 @@ public class Butchercraft {
     public void setupClient(FMLClientSetupEvent event) {
     	event.enqueueWork(() -> {
     		ButchercraftClient.setBERenderers();
+    		
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.COW_HIDE_CARPET.get(), RenderType.cutout());
     	});
     }
 

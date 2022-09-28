@@ -6,23 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:pig_hooves"
-        }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 4.0,
-          "add": false
-        }
-      ]
-    },
-    {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
           "name": "butchercraft:sinew"
         }
       ],
@@ -32,7 +15,7 @@
           "count": {
             "type": "minecraft:uniform",
             "min": 0.0,
-            "max": 8.0
+            "max": 6.0
           },
           "add": false
         }
@@ -44,7 +27,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:pork_scraps"
+          "name": "butchercraft:lamb_scraps"
         }
       ],
       "functions": [
@@ -61,13 +44,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:pork_stewmeat"
+          "name": "butchercraft:lamb_stewmeat"
         }
       ],
       "functions": [
         {
           "function": "minecraft:set_count",
-          "count": 10.0,
+          "count": 6.0,
           "add": false
         }
       ]

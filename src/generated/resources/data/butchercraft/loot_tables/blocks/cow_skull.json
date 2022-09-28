@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_skull"
+          "name": "butchercraft:cow_skull_item"
         }
       ],
       "conditions": [

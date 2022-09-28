@@ -216,6 +216,18 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		createFoodRecipe(Ingredient.of(CUBED_BEEF.get()), COOKED_CUBED_BEEF.get(), consumer);
 		createFoodRecipe(Ingredient.of(GROUND_BEEF.get()), COOKED_GROUND_BEEF.get(), consumer);
 		createFoodRecipe(Ingredient.of(BEEF_SCRAPS.get()), COOKED_BEEF_SCRAPS.get(), consumer);
+		
+		ShapelessRecipeBuilder.shapeless(LEATHER, 12).requires(COW_HIDE.get()).requires(SKINNING_KNIFE.get())
+		.unlockedBy("has_cow_hide", has(COW_HIDE.get()))
+		.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide_to_leather"));
+		
+		ShapelessRecipeBuilder.shapeless(LEATHER, 8).requires(PIG_HIDE.get()).requires(SKINNING_KNIFE.get())
+		.unlockedBy("has_pig_hide", has(PIG_HIDE.get()))
+		.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pig_hide_to_leather"));
+		
+		ShapelessRecipeBuilder.shapeless(LEATHER, 6).requires(SHEEP_HIDE.get()).requires(SKINNING_KNIFE.get())
+		.unlockedBy("has_sheep_hide", has(SHEEP_HIDE.get()))
+		.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide_to_leather"));
 	}
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer) {

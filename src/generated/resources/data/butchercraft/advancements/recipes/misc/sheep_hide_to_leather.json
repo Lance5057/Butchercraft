@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:sheep_hide_to_leather"
+    ]
+  },
+  "criteria": {
+    "has_sheep_hide": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:sheep_hide"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:sheep_hide_to_leather"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sheep_hide",
+      "has_the_recipe"
+    ]
+  ]
+}

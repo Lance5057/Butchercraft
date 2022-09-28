@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "butchercraft:block/cow_hide_carpet"
+    },
+    "facing=south": {
+      "model": "butchercraft:block/cow_hide_carpet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "butchercraft:block/cow_hide_carpet",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "butchercraft:block/cow_hide_carpet",
+      "y": 90
+    }
+  }
+}

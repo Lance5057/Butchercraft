@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:pig_hide_to_leather"
+    ]
+  },
+  "criteria": {
+    "has_pig_hide": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:pig_hide"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:pig_hide_to_leather"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pig_hide",
+      "has_the_recipe"
+    ]
+  ]
+}

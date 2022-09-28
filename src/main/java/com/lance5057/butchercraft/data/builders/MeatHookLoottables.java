@@ -25,16 +25,22 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
     public static final ResourceLocation DEOFFAL_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_cow");
     public static final ResourceLocation DELIMB_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_cow");
     public static final ResourceLocation BUTCHER_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_cow");
+    
     public static final ResourceLocation SKIN_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_pig");
     public static final ResourceLocation DISEMBOWEL_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/disembowel_pig");
     public static final ResourceLocation BISECT_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/bisect_pig");
     public static final ResourceLocation BUTCHER_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_pig");
 
+    public static final ResourceLocation SKIN_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_sheep");
+    public static final ResourceLocation DISEMBOWEL_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/disembowel_sheep");
+    public static final ResourceLocation BISECT_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/bisect_sheep");
+    public static final ResourceLocation BUTCHER_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_sheep");
+
     @Override
     public void accept(BiConsumer<ResourceLocation, Builder> t) {
         t.accept(SKIN_COW,
                 LootTable.lootTable()
-                        .withPool(createPoolWithItem(LEATHER, 8, 12))
+                        .withPool(createPoolWithItem(COW_HIDE.get(), 1))
                         .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 8, 16))
                         .withPool(createPoolWithItem(FAT.get(), 4, 12))
                         .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
@@ -53,6 +59,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 0, 4))
                         .withPool(createPoolWithItem(BEEF_SCRAPS.get(), 0, 8))
                         .withPool(createPoolWithItem(BEEF_STEW_MEAT.get(), 24))
+                        .withPool(createPoolWithItem(HORN.get(), 2))
                         .withPool(createPoolWithItem(BONE, 4)));
         t.accept(BUTCHER_COW,
                 LootTable.lootTable()
@@ -66,7 +73,8 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
         t.accept(SKIN_PIG,
                 // TODO Replace with Pig Hide?
                 LootTable.lootTable()
-                        .withPool(createPoolWithItem(LEATHER, 8, 12))
+                        .withPool(createPoolWithItem(PIG_HIDE.get(), 1))
+                        .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 4, 8))
                         .withPool(createPoolWithItem(FAT.get(), 4, 12))
                         .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
         t.accept(DISEMBOWEL_PIG,
@@ -80,8 +88,9 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
         t.accept(BISECT_PIG,
                 LootTable.lootTable()
-                        .withPool(createPoolWithItem(ButchercraftItems.PIG_HOOVES.get()))
+                        .withPool(createPoolWithItem(ButchercraftItems.PIG_HOOVES.get(), 4))
                         .withPool(createPoolWithItem(SINEW.get(), 0, 8))
+                        .withPool(createPoolWithItem(PORK_SCRAPS.get(), 4))
                         .withPool(createPoolWithItem(PORK_STEW_MEAT.get(), 10))
                         .withPool(createPoolWithItem(BONE, 4)));
         t.accept(BUTCHER_PIG,
@@ -94,6 +103,36 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(PORKCHOP, 14))
                         .withPool(createPoolWithItem(BONE, 12)));
 
+        t.accept(SKIN_SHEEP,
+                // TODO Replace with Sheep Hide?
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(SHEEP_HIDE.get(), 1))
+                        .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 4, 8))
+                        .withPool(createPoolWithItem(FAT.get(), 4, 12))
+                        .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
+        t.accept(DISEMBOWEL_SHEEP,
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(HEART.get()))
+                        .withPool(createPoolWithItem(KIDNEY.get(), 2))
+                        .withPool(createPoolWithItem(LIVER.get()))
+                        .withPool(createPoolWithItem(STOMACHE.get()))
+                        .withPool(createPoolWithItem(LUNG.get(), 2))
+                        .withPool(createPoolWithItem(TRIPE.get(), 4))
+                        .withPool(createPoolWithItem(SINEW.get(), 4, 8)));
+        t.accept(BISECT_SHEEP,
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(SINEW.get(), 0, 6))
+                        .withPool(createPoolWithItem(LAMB_SCRAPS.get(), 4))
+                        .withPool(createPoolWithItem(LAMB_STEW_MEAT.get(), 6))
+                        .withPool(createPoolWithItem(BONE, 4)));
+        t.accept(BUTCHER_SHEEP,
+                LootTable.lootTable()
+                        .withPool(createPoolWithItem(LAMB_SCRAPS.get(), 5))
+                        .withPool(createPoolWithItem(LAMB_RIBS.get(), 2))
+                        .withPool(createPoolWithItem(LAMB_ROAST.get(), 7))
+                        .withPool(createPoolWithItem(CUBED_LAMB.get(), 2))
+                        .withPool(createPoolWithItem(MUTTON, 10))
+                        .withPool(createPoolWithItem(BONE, 9)));
     }
 
     @NotNull

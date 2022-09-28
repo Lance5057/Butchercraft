@@ -64,6 +64,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_STOMACHE, "cooked_stomach");
 		forItem(ButchercraftItems.TRIPE, "tripe");
 		forItem(ButchercraftItems.COOKED_TRIPE, "cooked_tripe");
+		forItem(ButchercraftItems.BEEF_TONGUE, "tongue");
+		forItem(ButchercraftItems.COOKED_BEEF_TONGUE, "cooked_tongue");
 
 		forItem(ButchercraftItems.BEEF_STEW_MEAT, "stew_beef");
 		forItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT, "cooked_stew_beef");
@@ -79,6 +81,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_BEEF, "cooked_ground_beef");
 		forItem(ButchercraftItems.BEEF_SCRAPS, "beef_scraps");
 		forItem(ButchercraftItems.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
+		forItem(ButchercraftItems.OXTAIL, "oxtail");
+		forItem(ButchercraftItems.COOKED_OXTAIL, "cooked_oxtail");
 		
 		forItem(ButchercraftItems.PORK_STEW_MEAT, "stew_pork");
 		forItem(ButchercraftItems.COOKED_PORK_STEW_MEAT, "cooked_stew_pork");
@@ -123,6 +127,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.COOKED_PORK_BLOCK_ITEM, "cooked_pork_block");
 		forBlockItem(ButchercraftItems.LAMB_BLOCK_ITEM, "lamb_block");
 		forBlockItem(ButchercraftItems.COOKED_LAMB_BLOCK_ITEM, "cooked_lamb_block");
+		
+		forItem(ButchercraftItems.COW_HIDE, "cow_hide");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

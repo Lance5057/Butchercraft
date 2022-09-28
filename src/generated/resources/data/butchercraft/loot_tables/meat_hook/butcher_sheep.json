@@ -6,13 +6,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:pig_hooves"
+          "name": "butchercraft:lamb_scraps"
         }
       ],
       "functions": [
         {
           "function": "minecraft:set_count",
-          "count": 4.0,
+          "count": 5.0,
           "add": false
         }
       ]
@@ -23,17 +23,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:sinew"
+          "name": "butchercraft:lamb_ribs"
         }
       ],
       "functions": [
         {
           "function": "minecraft:set_count",
-          "count": {
-            "type": "minecraft:uniform",
-            "min": 0.0,
-            "max": 8.0
-          },
+          "count": 2.0,
           "add": false
         }
       ]
@@ -44,13 +40,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:pork_scraps"
+          "name": "butchercraft:lamb_roast"
         }
       ],
       "functions": [
         {
           "function": "minecraft:set_count",
-          "count": 4.0,
+          "count": 7.0,
           "add": false
         }
       ]
@@ -61,7 +57,24 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:pork_stewmeat"
+          "name": "butchercraft:cubed_lamb"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 2.0,
+          "add": false
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mutton"
         }
       ],
       "functions": [
@@ -84,7 +97,7 @@
       "functions": [
         {
           "function": "minecraft:set_count",
-          "count": 4.0,
+          "count": 9.0,
           "add": false
         }
       ]

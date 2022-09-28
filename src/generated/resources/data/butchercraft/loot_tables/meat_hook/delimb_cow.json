@@ -16,7 +16,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_skull"
+          "name": "butchercraft:cow_skull_item"
         }
       ]
     },
@@ -75,6 +75,23 @@
         {
           "function": "minecraft:set_count",
           "count": 24.0,
+          "add": false
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:horn"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 2.0,
           "add": false
         }
       ]

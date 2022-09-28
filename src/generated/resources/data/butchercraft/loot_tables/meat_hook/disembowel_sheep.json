@@ -6,7 +6,71 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:pig_hooves"
+          "name": "butchercraft:heart"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:kidney"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 2.0,
+          "add": false
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:liver"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:stomache"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:lung"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 2.0,
+          "add": false
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:tripe"
         }
       ],
       "functions": [
@@ -31,60 +95,9 @@
           "function": "minecraft:set_count",
           "count": {
             "type": "minecraft:uniform",
-            "min": 0.0,
+            "min": 4.0,
             "max": 8.0
           },
-          "add": false
-        }
-      ]
-    },
-    {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "butchercraft:pork_scraps"
-        }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 4.0,
-          "add": false
-        }
-      ]
-    },
-    {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "butchercraft:pork_stewmeat"
-        }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 10.0,
-          "add": false
-        }
-      ]
-    },
-    {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:bone"
-        }
-      ],
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 4.0,
           "add": false
         }
       ]

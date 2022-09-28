@@ -17,4 +17,7 @@ public class FoodsGeneric {
     public static final FoodProperties COOKED_STOMACHE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2F).build();
     public static final FoodProperties TRIPE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.1F).build();
     public static final FoodProperties COOKED_TRIPE = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
+    
+    public static final FoodProperties SAUSAGE = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
+    public static final FoodProperties COOKED_SAUSAGE = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F).build();
 }

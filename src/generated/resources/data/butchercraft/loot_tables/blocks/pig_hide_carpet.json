@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:meat_hook_item"
+          "name": "butchercraft:pig_hide"
         }
       ],
       "conditions": [

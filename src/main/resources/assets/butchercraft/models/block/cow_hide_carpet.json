@@ -1,0 +1,19 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "butchercraft:block/cow_hide",
+		"particle": "butchercraft:block/cow_hide"
+	},
+	"elements": [
+		{
+			"from": [-8, 0.1, -8],
+			"to": [24, 0.1, 24],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		}
+	]
+}

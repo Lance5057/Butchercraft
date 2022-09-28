@@ -1,6 +1,8 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.blocks.HideBlock;
 import com.lance5057.butchercraft.workstations.blocks.MeatHookBlock;
+
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -18,6 +20,10 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<MeatHookBlock> MEAT_HOOK = BLOCKS.register("meat_hook", MeatHookBlock::new);
 	public static final RegistryObject<Block> COW_SKULL = BLOCKS.register("cow_skull",
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
+	public static final RegistryObject<Block> PIG_SKULL = BLOCKS.register("pig_skull",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
+	public static final RegistryObject<Block> SHEEP_SKULL = BLOCKS.register("sheep_skull",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
 	
 	public static final RegistryObject<Block> BEEF_BLOCK = BLOCKS.register("beef_block",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));
@@ -33,6 +39,13 @@ public class ButchercraftBlocks {
 			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));
 	public static final RegistryObject<Block> COOKED_LAMB_BLOCK = BLOCKS.register("cooked_lamb_block",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)));
+	
+	public static final RegistryObject<HideBlock> COW_HIDE_CARPET = BLOCKS.register("cow_hide_carpet",
+			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.COLOR_BROWN)));
+	public static final RegistryObject<HideBlock> PIG_HIDE_CARPET = BLOCKS.register("pig_hide_carpet",
+			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.COLOR_PINK)));
+	public static final RegistryObject<HideBlock> SHEEP_HIDE_CARPET = BLOCKS.register("sheep_hide_carpet",
+			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.TERRACOTTA_WHITE)));
 
 	public static void register(IEventBus modBus) {
 

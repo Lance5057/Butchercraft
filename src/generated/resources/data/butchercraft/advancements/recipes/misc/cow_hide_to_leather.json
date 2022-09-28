@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cow_hide_to_leather"
+    ]
+  },
+  "criteria": {
+    "has_cow_hide": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:cow_hide"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cow_hide_to_leather"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cow_hide",
+      "has_the_recipe"
+    ]
+  ]
+}

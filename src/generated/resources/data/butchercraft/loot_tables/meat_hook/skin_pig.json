@@ -6,7 +6,24 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:leather"
+          "name": "butchercraft:pig_hide"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 1.0,
+          "add": false
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:leather_scrap"
         }
       ],
       "functions": [
@@ -14,8 +31,8 @@
           "function": "minecraft:set_count",
           "count": {
             "type": "minecraft:uniform",
-            "min": 8.0,
-            "max": 12.0
+            "min": 4.0,
+            "max": 8.0
           },
           "add": false
         }

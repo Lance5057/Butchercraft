@@ -2,7 +2,7 @@
   "parent": "butchercraft:root",
   "display": {
     "icon": {
-      "item": "butchercraft:meat_hook"
+      "item": "butchercraft:meat_hook_item"
     },
     "title": {
       "translate": "butchercraft.advancement.hook.name"
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "butchercraft:meat_hook"
+              "butchercraft:meat_hook_item"
             ]
           }
         ]
