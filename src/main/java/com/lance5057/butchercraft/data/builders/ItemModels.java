@@ -34,13 +34,14 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.BUTCHER_KNIFE, "butcherknife");
 		forItem(ButchercraftItems.GUT_KNIFE, "gutknife");
 		forItem(ButchercraftItems.FAT, "fat");
-		//forItem(ButchercraftItems.GRINDER_TIP, "grindtip");
+		// forItem(ButchercraftItems.GRINDER_TIP, "grindtip");
 		forItem(ButchercraftItems.LEATHER_CORD, "leathercord");
 		forItem(ButchercraftItems.LEATHER_SCRAP, "leatherscrap");
-		//forItem(ButchercraftItems.EXTRUDER_TIP, "sausagetip");
+		// forItem(ButchercraftItems.EXTRUDER_TIP, "sausagetip");
 		forItem(ButchercraftItems.SINEW, "sinew");
 		forItem(ButchercraftItems.SKINNING_KNIFE, "skinningknife");
-		//forItem(ButchercraftItems.SPATULA, "spatula");
+		// forItem(ButchercraftItems.SPATULA, "spatula");
+		forItem(ButchercraftItems.HORN, "horn");
 
 		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
 		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())
@@ -83,7 +84,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
 		forItem(ButchercraftItems.OXTAIL, "oxtail");
 		forItem(ButchercraftItems.COOKED_OXTAIL, "cooked_oxtail");
-		
+
 		forItem(ButchercraftItems.PORK_STEW_MEAT, "stew_pork");
 		forItem(ButchercraftItems.COOKED_PORK_STEW_MEAT, "cooked_stew_pork");
 		forItem(ButchercraftItems.PORK_ROAST, "roast");
@@ -100,7 +101,10 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_PORK_SCRAPS, "cooked_pork_scraps");
 		forItem(ButchercraftItems.BACON, "bacon");
 		forItem(ButchercraftItems.COOKED_BACON, "cooked_bacon");
-		
+
+//		getBuilder(ButchercraftItems.PIG_HOOVES.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig_foot")));
+
 		forItem(ButchercraftItems.LAMB_STEW_MEAT, "stew_lamb");
 		forItem(ButchercraftItems.COOKED_LAMB_STEW_MEAT, "cooked_stew_lamb");
 		forItem(ButchercraftItems.LAMB_ROAST, "roast");
@@ -115,20 +119,22 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_LAMB, "cooked_ground_lamb");
 		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
 		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
-		
+
 		forItem(ButchercraftItems.SAUSAGE, "sausage");
 		forItem(ButchercraftItems.COOKED_SAUSAGE, "sausagecooked");
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
-		
+
 		forBlockItem(ButchercraftItems.BEEF_BLOCK_ITEM, "beef_block");
 		forBlockItem(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM, "cooked_beef_block");
 		forBlockItem(ButchercraftItems.PORK_BLOCK_ITEM, "pork_block");
 		forBlockItem(ButchercraftItems.COOKED_PORK_BLOCK_ITEM, "cooked_pork_block");
 		forBlockItem(ButchercraftItems.LAMB_BLOCK_ITEM, "lamb_block");
 		forBlockItem(ButchercraftItems.COOKED_LAMB_BLOCK_ITEM, "cooked_lamb_block");
-		
-		forItem(ButchercraftItems.COW_HIDE, "cow_hide");
+
+		forBlockItem(ButchercraftItems.COW_HIDE, "cow_hide");
+		forBlockItem(ButchercraftItems.PIG_HIDE, "pig_hide");
+		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

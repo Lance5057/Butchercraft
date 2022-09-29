@@ -4,6 +4,7 @@ import com.lance5057.butchercraft.blocks.HideBlock;
 import com.lance5057.butchercraft.workstations.blocks.MeatHookBlock;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SkullBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -18,12 +19,12 @@ public class ButchercraftBlocks {
 			Butchercraft.MOD_ID);
 
 	public static final RegistryObject<MeatHookBlock> MEAT_HOOK = BLOCKS.register("meat_hook", MeatHookBlock::new);
-	public static final RegistryObject<Block> COW_SKULL = BLOCKS.register("cow_skull",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
-	public static final RegistryObject<Block> PIG_SKULL = BLOCKS.register("pig_skull",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SHEEP_SKULL = BLOCKS.register("sheep_skull",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
+//	public static final RegistryObject<SkullBlock> COW_SKULL = BLOCKS.register("cow_skull",
+//			() -> new SkullBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
+//	public static final RegistryObject<SkullBlock> PIG_SKULL = BLOCKS.register("pig_skull",
+//			() -> new SkullBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
+//	public static final RegistryObject<SkullBlock> SHEEP_SKULL = BLOCKS.register("sheep_skull",
+//			() -> new SkullBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
 	
 	public static final RegistryObject<Block> BEEF_BLOCK = BLOCKS.register("beef_block",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));

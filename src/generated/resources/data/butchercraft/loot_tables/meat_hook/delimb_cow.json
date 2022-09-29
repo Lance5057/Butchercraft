@@ -16,16 +16,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:cow_skull_item"
-        }
-      ]
-    },
-    {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
           "name": "butchercraft:leather_scrap"
         }
       ],

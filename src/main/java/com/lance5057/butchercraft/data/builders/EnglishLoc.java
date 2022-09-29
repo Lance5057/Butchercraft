@@ -36,6 +36,8 @@ public class EnglishLoc extends LanguageProvider {
         this.add(COOKED_SAUSAGE.get(), "Cooked Sausage");
         this.add(BEEF_STEW_MEAT.get(), "Raw Beef Stew Meat");
         this.add(COOKED_BEEF_STEW_MEAT.get(), "Cooked Beef Stew Meat");
+        this.add(OXTAIL.get(), "Raw Oxtail");
+        this.add(COOKED_OXTAIL.get(), "Cooked Oxtail");
         
         this.add(COOKED_PORK_SCRAPS.get(), "Cooked Pork Straps");
         this.add(PORK_SCRAPS.get(), "Raw Pork Scraps");
@@ -51,6 +53,8 @@ public class EnglishLoc extends LanguageProvider {
         this.add(PORK_ROAST.get(), "Raw Pork Roast");
         this.add(PORK_STEW_MEAT.get(), "Raw Pork Stew Meat");
         this.add(COOKED_PORK_STEW_MEAT.get(), "Cooked Pork Stew Meat");
+        this.add(BACON.get(), "Raw Bacon");
+        this.add(COOKED_BACON.get(), "Cooked Bacon");
         
         this.add(COOKED_LAMB_SCRAPS.get(), "Cooked Lamb Straps");
         this.add(LAMB_SCRAPS.get(), "Raw Lamb Scraps");
@@ -81,12 +85,31 @@ public class EnglishLoc extends LanguageProvider {
         this.add(HEART.get(), "Raw Heart");
         this.add(COOKED_BRAIN.get(), "Cooked Brain");
         this.add(BRAIN.get(), "Raw Brain");
+        this.add(COOKED_BEEF_TONGUE.get(), "Cooked Tongue");
+        this.add(BEEF_TONGUE.get(), "Raw Tongue");
         
-        this.add(COW_CARCASS.get(), "Carcass");
+        this.add(COW_CARCASS.get(), "Cow Carcass");
+        this.add(PIG_CARCASS.get(), "Pig Carcass");
+        this.add(SHEEP_CARCASS.get(), "Sheep Carcass");
+        
+        this.add(BEEF_BLOCK_ITEM.get(), "Raw Beef Block");
+        this.add(PORK_BLOCK_ITEM.get(), "Raw Pork Block");
+        this.add(LAMB_BLOCK_ITEM.get(), "Raw Lamb Block");
+        
+        this.add(COOKED_BEEF_BLOCK_ITEM.get(), "Cooked Beef Block");
+        this.add(COOKED_PORK_BLOCK_ITEM.get(), "Cooked Pork Block");
+        this.add(COOKED_LAMB_BLOCK_ITEM.get(), "Cooked Lamb Block");
         
         this.add(BUTCHER_KNIFE.get(), "Butcher Knife");
         this.add(SKINNING_KNIFE.get(), "Skinning Knife");
         this.add(BONE_SAW.get(), "Bone Saw");
+        this.add(GUT_KNIFE.get(), "Gut Knife");
+        
+        this.add(COW_HIDE.get(), "Cow Hide");
+        this.add(PIG_HIDE.get(), "Pig Hide");
+        this.add(SHEEP_HIDE.get(), "Sheep Hide");
+        
+        this.add(HORN.get(), "Horn");
 //        this.add(SPATULA.get(), "Spatula");
 //        
 //        this.add(GRINDER_TIP.get(), "Grinder Tip");
@@ -98,7 +121,7 @@ public class EnglishLoc extends LanguageProvider {
         this.add(FAT.get(), "Fat");
         this.add(SINEW.get(), "Sinew");
         this.add(HOOK_BLOCK_ITEM.get(), "Meat Hook");
-        this.add(COW_SKULL.get(), "Cow Skull");
+//        this.add(COW_SKULL.get(), "Cow Skull");
         
         //Advancements
         this.add(Butchercraft.MOD_ID + ".advancement.root.name", "Butchercraft");

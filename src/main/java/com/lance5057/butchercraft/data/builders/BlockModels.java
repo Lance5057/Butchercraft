@@ -28,6 +28,8 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ButchercraftBlocks.COOKED_LAMB_BLOCK.get());
 		
 		this.horizontalBlock(ButchercraftBlocks.COW_HIDE_CARPET.get(), models().getExistingFile(modLoc("block/cow_hide_carpet")));
+		this.horizontalBlock(ButchercraftBlocks.PIG_HIDE_CARPET.get(), models().getExistingFile(modLoc("block/pig_hide_carpet")));
+		this.horizontalBlock(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(), models().getExistingFile(modLoc("block/sheep_hide_carpet")));
 	}
 
 }

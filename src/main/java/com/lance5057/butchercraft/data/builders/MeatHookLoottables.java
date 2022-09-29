@@ -55,7 +55,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
         t.accept(DELIMB_COW,
                 LootTable.lootTable()
                         .withPool(createPoolWithItem(BRAIN.get()))
-                        .withPool(createPoolWithItem(COW_SKULL.get()))
+//                        .withPool(createPoolWithItem(COW_SKULL.get()))
                         .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 0, 4))
                         .withPool(createPoolWithItem(BEEF_SCRAPS.get(), 0, 8))
                         .withPool(createPoolWithItem(BEEF_STEW_MEAT.get(), 24))
@@ -71,7 +71,6 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(BONE, 4, 12)));
 
         t.accept(SKIN_PIG,
-                // TODO Replace with Pig Hide?
                 LootTable.lootTable()
                         .withPool(createPoolWithItem(PIG_HIDE.get(), 1))
                         .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 4, 8))
@@ -88,7 +87,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
         t.accept(BISECT_PIG,
                 LootTable.lootTable()
-                        .withPool(createPoolWithItem(ButchercraftItems.PIG_HOOVES.get(), 4))
+//                        .withPool(createPoolWithItem(ButchercraftItems.PIG_HOOVES.get(), 4))
                         .withPool(createPoolWithItem(SINEW.get(), 0, 8))
                         .withPool(createPoolWithItem(PORK_SCRAPS.get(), 4))
                         .withPool(createPoolWithItem(PORK_STEW_MEAT.get(), 10))
@@ -104,7 +103,6 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(BONE, 12)));
 
         t.accept(SKIN_SHEEP,
-                // TODO Replace with Sheep Hide?
                 LootTable.lootTable()
                         .withPool(createPoolWithItem(SHEEP_HIDE.get(), 1))
                         .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 4, 8))

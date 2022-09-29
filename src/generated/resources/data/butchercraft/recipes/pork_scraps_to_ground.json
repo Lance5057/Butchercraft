@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:pork_scraps"
+    },
+    {
+      "item": "butchercraft:butcher_knife"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:ground_pork",
+    "count": 4
+  }
+}

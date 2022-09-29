@@ -8,6 +8,7 @@ import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ItemTagGenerator extends ItemTagsProvider {
@@ -49,5 +50,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				ButchercraftItems.COOKED_LAMB_RIBS.get(), ButchercraftItems.COOKED_LAMB_ROAST.get(),
 				ButchercraftItems.COOKED_LAMB_SCRAPS.get(), ButchercraftItems.COOKED_LAMB_STEW_MEAT.get(),
 				ButchercraftItems.COOKED_CUBED_LAMB.get(), ButchercraftItems.COOKED_GROUND_LAMB.get());
+		
+		tag(Tags.Items.SLIMEBALLS).add(ButchercraftItems.FAT.get());
+		tag(Tags.Items.STRING).add(ButchercraftItems.SINEW.get()).add(ButchercraftItems.LEATHER_SCRAP.get());
 	}
 }

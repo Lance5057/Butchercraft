@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_beef_ribs_to_rib"
+    ]
+  },
+  "criteria": {
+    "has_beef_cooked": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "butchercraft:any_beef_cooked"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_beef_ribs_to_rib"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_beef_cooked",
+      "has_the_recipe"
+    ]
+  ]
+}
