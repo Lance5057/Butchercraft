@@ -3,7 +3,7 @@
   "group": "",
   "tools": [
     {
-      "uses": 6,
+      "uses": 12,
       "tool": {
         "item": "butchercraft:skinning_knife"
       },
@@ -37,14 +37,22 @@
                 "max": 12.0
               }
             },
-            "rotation": {},
+            "rotation": {
+              "z": {
+                "min": -45.0,
+                "max": 45.0,
+                "speed": 0.05,
+                "loop": true,
+                "pingpong": true
+              }
+            },
             "scale": {}
           }
         }
       ]
     },
     {
-      "uses": 6,
+      "uses": 12,
       "tool": {
         "item": "butchercraft:bone_saw"
       },
@@ -78,14 +86,22 @@
                 "max": 12.0
               }
             },
-            "rotation": {},
+            "rotation": {
+              "z": {
+                "min": -45.0,
+                "max": 45.0,
+                "speed": 0.05,
+                "loop": true,
+                "pingpong": true
+              }
+            },
             "scale": {}
           }
         }
       ]
     },
     {
-      "uses": 6,
+      "uses": 12,
       "tool": {
         "item": "butchercraft:gut_knife"
       },
@@ -119,14 +135,22 @@
                 "max": 12.0
               }
             },
-            "rotation": {},
+            "rotation": {
+              "z": {
+                "min": -45.0,
+                "max": 45.0,
+                "speed": 0.05,
+                "loop": true,
+                "pingpong": true
+              }
+            },
             "scale": {}
           }
         }
       ]
     },
     {
-      "uses": 6,
+      "uses": 12,
       "tool": {
         "item": "butchercraft:butcher_knife"
       },
@@ -160,7 +184,15 @@
                 "max": 12.0
               }
             },
-            "rotation": {},
+            "rotation": {
+              "z": {
+                "min": -45.0,
+                "max": 45.0,
+                "speed": 0.05,
+                "loop": true,
+                "pingpong": true
+              }
+            },
             "scale": {}
           }
         }

@@ -14,7 +14,7 @@
     "show_toast": false,
     "announce_to_chat": false,
     "hidden": true,
-    "background": "minecraft:textures/block/stone_brick.png"
+    "background": "butchercraft:textures/background.png"
   },
   "criteria": {
     "tick": {

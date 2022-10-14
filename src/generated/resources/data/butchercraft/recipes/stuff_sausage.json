@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "butchercraft:any_ground_meat_raw"
+    },
+    {
+      "tag": "butchercraft:any_ground_meat_raw"
+    },
+    {
+      "tag": "butchercraft:any_ground_meat_raw"
+    },
+    {
+      "tag": "butchercraft:any_ground_meat_raw"
+    },
+    {
+      "item": "butchercraft:tripe"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:sausage",
+    "count": 4
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "butchercraft:cooked_beef_rib",
+    "butchercraft:cooked_beef_ribs",
+    "butchercraft:cooked_beef_roast",
+    "butchercraft:cooked_beef_scraps",
+    "butchercraft:cooked_beef_stewmeat",
+    "butchercraft:cooked_cubed_beef",
+    "butchercraft:cooked_ground_beef",
+    "butchercraft:cooked_pork_rib",
+    "butchercraft:cooked_pork_ribs",
+    "butchercraft:cooked_pork_roast",
+    "butchercraft:cooked_pork_scraps",
+    "butchercraft:cooked_pork_stewmeat",
+    "butchercraft:cooked_cubed_pork",
+    "butchercraft:cooked_ground_pork",
+    "butchercraft:cooked_bacon",
+    "butchercraft:cooked_lamb_rib",
+    "butchercraft:cooked_lamb_ribs",
+    "butchercraft:cooked_lamb_roast",
+    "butchercraft:cooked_lamb_scraps",
+    "butchercraft:cooked_lamb_stewmeat",
+    "butchercraft:cooked_cubed_lamb",
+    "butchercraft:cooked_ground_lamb"
+  ]
+}

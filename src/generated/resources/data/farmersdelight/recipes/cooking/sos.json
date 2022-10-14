@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "butchercraft:beef_scraps"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:sos"
+  },
+  "container": {
+    "item": "minecraft:bread"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

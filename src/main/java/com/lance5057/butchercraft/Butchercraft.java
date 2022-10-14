@@ -19,7 +19,7 @@ import net.minecraftforge.fml.loading.FMLPaths;
 public class Butchercraft {
 
     public final static String MOD_ID = "butchercraft";
-    public static final String VERSION = "2.0a";
+    public static final String VERSION = "2.0.2";
 
     public static Logger logger = LogManager.getLogger();
 
@@ -49,6 +49,12 @@ public class Butchercraft {
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.COW_HIDE_CARPET.get(), RenderType.cutout());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.PIG_HIDE_CARPET.get(), RenderType.cutout());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(), RenderType.cutout());
+    		
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.BBQ_JAR_BLOCK.get(), RenderType.cutout());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.STOCK_JAR_BLOCK.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.KETCHUP_JAR_BLOCK.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.GRAVY_BOAT.get(), RenderType.cutout());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.HASH_FEAST.get(), RenderType.cutout());
     	});
     }
 

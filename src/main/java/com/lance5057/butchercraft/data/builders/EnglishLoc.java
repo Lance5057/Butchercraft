@@ -171,6 +171,8 @@ public class EnglishLoc extends LanguageProvider {
         
         this.add(Butchercraft.MOD_ID + ".advancement.cannibalism.name", "This isn't RimWorld...");
         this.add(Butchercraft.MOD_ID + ".advancement.cannibalism.desc", "Try to butcher a human.");
+        
+        this.add(Butchercraft.MOD_ID + ".butcherknife.rightclick", "Right click to slaughter.");
     }
 
 }
