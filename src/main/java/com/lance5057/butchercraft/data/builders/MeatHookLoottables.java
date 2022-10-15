@@ -103,7 +103,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(BONE, 12)));
 
         t.accept(SKIN_SHEEP,
-                LootTable.lootTable()
+                LootTable.lootTable().setParamSet(null)
                         .withPool(createPoolWithItem(SHEEP_HIDE.get(), 1))
                         .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 4, 8))
                         .withPool(createPoolWithItem(FAT.get(), 4, 12))

@@ -3,7 +3,7 @@
   "group": "",
   "tools": [
     {
-      "uses": 6,
+      "uses": 12,
       "tool": {
         "item": "butchercraft:skinning_knife"
       },
@@ -37,20 +37,28 @@
                 "max": 12.0
               }
             },
-            "rotation": {},
+            "rotation": {
+              "z": {
+                "min": -45.0,
+                "max": 45.0,
+                "speed": 0.05,
+                "loop": true,
+                "pingpong": true
+              }
+            },
             "scale": {}
           }
         }
       ]
     },
     {
-      "uses": 6,
+      "uses": 12,
       "tool": {
-        "item": "butchercraft:gut_knife"
+        "item": "butchercraft:bone_saw"
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:meat_hook/deoffal_sheep",
+      "loot_table": "butchercraft:meat_hook/disembowel_sheep",
       "models": [
         {
           "location": "butchercraft:meathook/sheep_skinned",
@@ -78,20 +86,28 @@
                 "max": 12.0
               }
             },
-            "rotation": {},
+            "rotation": {
+              "z": {
+                "min": -45.0,
+                "max": 45.0,
+                "speed": 0.05,
+                "loop": true,
+                "pingpong": true
+              }
+            },
             "scale": {}
           }
         }
       ]
     },
     {
-      "uses": 6,
+      "uses": 12,
       "tool": {
-        "item": "butchercraft:bone_saw"
+        "item": "butchercraft:gut_knife"
       },
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:meat_hook/delimb_sheep",
+      "loot_table": "butchercraft:meat_hook/bisect_sheep",
       "models": [
         {
           "location": "butchercraft:meathook/sheep_gutted",
@@ -119,14 +135,22 @@
                 "max": 12.0
               }
             },
-            "rotation": {},
+            "rotation": {
+              "z": {
+                "min": -45.0,
+                "max": 45.0,
+                "speed": 0.05,
+                "loop": true,
+                "pingpong": true
+              }
+            },
             "scale": {}
           }
         }
       ]
     },
     {
-      "uses": 6,
+      "uses": 12,
       "tool": {
         "item": "butchercraft:butcher_knife"
       },
@@ -160,7 +184,15 @@
                 "max": 12.0
               }
             },
-            "rotation": {},
+            "rotation": {
+              "z": {
+                "min": -45.0,
+                "max": 45.0,
+                "speed": 0.05,
+                "loop": true,
+                "pingpong": true
+              }
+            },
             "scale": {}
           }
         }

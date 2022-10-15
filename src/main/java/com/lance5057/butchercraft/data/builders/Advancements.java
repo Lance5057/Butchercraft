@@ -66,7 +66,7 @@ public class Advancements extends AdvancementProvider {
 				.display(new DisplayInfo(new ItemStack(ButchercraftItems.BUTCHER_KNIFE.get()),
 						new TranslatableComponent(Butchercraft.MOD_ID + ".advancement.root.name"),
 						new TranslatableComponent(Butchercraft.MOD_ID + ".advancement.root.desc"),
-						new ResourceLocation("minecraft:textures/block/stone_brick.png"), FrameType.TASK, false, false,
+						new ResourceLocation("butchercraft:textures/background.png"), FrameType.TASK, false, false,
 						true))
 				.addCriterion("tick", new TickTrigger.TriggerInstance(EntityPredicate.Composite.ANY))
 				.save(consumer, Butchercraft.MOD_ID + ":root");

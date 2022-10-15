@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "tag": "forge:vegetables/tomato"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:bbq_jar_block_item"
+  },
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

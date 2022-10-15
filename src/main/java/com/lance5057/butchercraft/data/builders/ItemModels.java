@@ -42,6 +42,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.SKINNING_KNIFE, "skinningknife");
 		// forItem(ButchercraftItems.SPATULA, "spatula");
 		forItem(ButchercraftItems.HORN, "horn");
+		forItem(ButchercraftItems.LARD, "lard");
+		forItem(ButchercraftItems.SOAP, "soap");
 
 		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
 		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())
@@ -122,6 +124,12 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forItem(ButchercraftItems.SAUSAGE, "sausage");
 		forItem(ButchercraftItems.COOKED_SAUSAGE, "sausagecooked");
+		
+		forItem(ButchercraftItems.LAMB_STEW, "lamb_stew");
+		forItem(ButchercraftItems.PORK_STEW, "pork_stew");
+		
+		forItem(ButchercraftItems.SAUSAGE_ROLL, "sausage_roll");
+		forItem(ButchercraftItems.SOS, "sos");
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
 
@@ -135,6 +143,14 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.COW_HIDE, "cow_hide");
 		forBlockItem(ButchercraftItems.PIG_HIDE, "pig_hide");
 		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");
+		
+		forBlockItem(ButchercraftItems.BBQ_JAR_BLOCK_ITEM, "bbq_jar_block_item");
+		forBlockItem(ButchercraftItems.STOCK_JAR_BLOCK_ITEM, "stock_jar_block_item");
+		forBlockItem(ButchercraftItems.KETCHUP_JAR_BLOCK_ITEM, "ketchup_jar_block_item"); 
+		forBlockItem(ButchercraftItems.GRAVY_BOAT_ITEM, "gravy_boat_item");
+		
+		forBlockItem(ButchercraftItems.HASH_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/hash_block_stage0"));
+		forItem(ButchercraftItems.HASH, "hash");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

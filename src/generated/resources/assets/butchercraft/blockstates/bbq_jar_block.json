@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "butchercraft:block/bbq_jar_block",
+      "y": 0
+    },
+    "facing=south": {
+      "model": "butchercraft:block/bbq_jar_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "butchercraft:block/bbq_jar_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "butchercraft:block/bbq_jar_block",
+      "y": 90
+    }
+  }
+}
