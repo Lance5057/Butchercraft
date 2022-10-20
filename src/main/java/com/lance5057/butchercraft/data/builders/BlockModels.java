@@ -46,6 +46,8 @@ public class BlockModels extends BlockStateProvider {
 		this.horizontalBlock(ButchercraftBlocks.GRAVY_BOAT.get(), models().getExistingFile(modLoc("block/gravy_boat")));
 
 		this.feastBlock(ButchercraftBlocks.HASH_FEAST.get());
+		this.feastBlock(ButchercraftBlocks.POT_ROAST_FEAST.get());
+		this.feastBlock(ButchercraftBlocks.SALISBURY_STEAK_FEAST.get());
 	}
 
 	public void feastBlock(FeastBlock block) {

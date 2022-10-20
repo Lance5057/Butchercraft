@@ -3,8 +3,6 @@ package com.lance5057.butchercraft;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.lance5057.butchercraft.items.ButchercraftItems;
-
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -55,6 +53,10 @@ public class Butchercraft {
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.KETCHUP_JAR_BLOCK.get(), RenderType.translucent());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.GRAVY_BOAT.get(), RenderType.cutout());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.HASH_FEAST.get(), RenderType.cutout());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.BBQ_RIBS_FEAST.get(), RenderType.cutout());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.POT_ROAST_FEAST.get(), RenderType.cutout());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.SALISBURY_STEAK_FEAST.get(), RenderType.cutout());
+
     	});
     }
 

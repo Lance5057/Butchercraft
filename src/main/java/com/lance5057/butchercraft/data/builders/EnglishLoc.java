@@ -1,10 +1,10 @@
 package com.lance5057.butchercraft.data.builders;
 
+import static com.lance5057.butchercraft.ButchercraftItems.*;
+
 import com.lance5057.butchercraft.Butchercraft;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
-
-import static com.lance5057.butchercraft.items.ButchercraftItems.*;
 
 public class EnglishLoc extends LanguageProvider {
 

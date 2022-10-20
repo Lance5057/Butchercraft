@@ -2,7 +2,7 @@ package com.lance5057.butchercraft.data.builders;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.lance5057.butchercraft.items.ButchercraftItems;
+import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
 import net.minecraft.data.DataGenerator;

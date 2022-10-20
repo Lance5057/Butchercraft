@@ -1,11 +1,12 @@
-package com.lance5057.butchercraft.items;
+package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.Butchercraft;
-import com.lance5057.butchercraft.ButchercraftBlocks;
 import com.lance5057.butchercraft.animals.cow.FoodsCow;
 import com.lance5057.butchercraft.animals.cow.FoodsGeneric;
 import com.lance5057.butchercraft.animals.cow.FoodsPig;
 import com.lance5057.butchercraft.animals.cow.FoodsSheep;
+import com.lance5057.butchercraft.items.ButcherKnifeItem;
+import com.lance5057.butchercraft.items.CarcassItem;
+import com.lance5057.butchercraft.items.KnifeItem;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -246,9 +247,9 @@ public class ButchercraftItems {
 			() -> new BlockItem(ButchercraftBlocks.GRAVY_BOAT.get(), new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static final RegistryObject<Item> PORK_STEW = ITEMS.register("pork_stew",
-			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(16).tab(BUTCHER_TAB)));
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
 	public static final RegistryObject<Item> LAMB_STEW = ITEMS.register("lamb_stew",
-			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(16).tab(BUTCHER_TAB)));
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
 	
 	public static final RegistryObject<Item> SAUSAGE_ROLL = ITEMS.register("sausage_roll",
 			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).stacksTo(16).tab(BUTCHER_TAB)));
@@ -256,10 +257,22 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).stacksTo(16).tab(BUTCHER_TAB)));
 	
 	public static final RegistryObject<Item> HASH = ITEMS.register("hash",
-			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(16).tab(BUTCHER_TAB)));
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> POT_ROAST = ITEMS.register("potroast",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> SALISBURY_STEAK = ITEMS.register("salisbury_steak",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> BBQ_RIBS = ITEMS.register("bbq_ribs",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
 	
 	public static final RegistryObject<BlockItem> HASH_FEAST_ITEM = ITEMS.register("hash_block_item",
 			() -> new BlockItem(ButchercraftBlocks.HASH_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> POT_ROAST_FEAST_ITEM = ITEMS.register("pot_roast_block_item",
+			() -> new BlockItem(ButchercraftBlocks.POT_ROAST_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> SALISBURY_STEAK_FEAST_ITEM = ITEMS.register("salisbury_steak_block_item",
+			() -> new BlockItem(ButchercraftBlocks.SALISBURY_STEAK_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> BBQ_RIBS_FEAST_ITEM = ITEMS.register("bbq_ribs_block_item",
+			() -> new BlockItem(ButchercraftBlocks.BBQ_RIBS_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB)));
 //	public static final RegistryObject<Item> PIG_HOOVES = ITEMS.register("pig_hooves", () -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static void register(IEventBus modBus) {

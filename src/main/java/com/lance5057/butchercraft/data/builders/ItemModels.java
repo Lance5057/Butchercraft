@@ -1,7 +1,8 @@
 package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
-import com.lance5057.butchercraft.items.ButchercraftItems;
+import com.lance5057.butchercraft.ButchercraftItems;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -151,6 +152,15 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		
 		forBlockItem(ButchercraftItems.HASH_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/hash_block_stage0"));
 		forItem(ButchercraftItems.HASH, "hash");
+		
+		forBlockItem(ButchercraftItems.POT_ROAST_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/potroast_block_stage0"));
+		forItem(ButchercraftItems.POT_ROAST, "pot_roast");
+		
+		forBlockItem(ButchercraftItems.SALISBURY_STEAK_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/salisbury_steak_block_stage0"));
+		forItem(ButchercraftItems.SALISBURY_STEAK, "salisbury_steak");
+		
+		forBlockItem(ButchercraftItems.BBQ_RIBS_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/bbq_ribs_block_stage0"));
+		forItem(ButchercraftItems.BBQ_RIBS, "bbq_ribs");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

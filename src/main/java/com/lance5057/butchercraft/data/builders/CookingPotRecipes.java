@@ -4,7 +4,7 @@ import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
 
-import com.lance5057.butchercraft.items.ButchercraftItems;
+import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
 import net.minecraft.data.DataGenerator;

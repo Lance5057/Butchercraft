@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:lard_to_candle"
+    ]
+  },
+  "criteria": {
+    "has_lard": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:lard"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:lard_to_candle"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lard",
+      "has_the_recipe"
+    ]
+  ]
+}

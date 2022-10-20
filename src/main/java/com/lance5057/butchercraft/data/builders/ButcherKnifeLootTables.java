@@ -1,7 +1,8 @@
 package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
-import com.lance5057.butchercraft.items.ButchercraftItems;
+import com.lance5057.butchercraft.ButchercraftItems;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.storage.loot.LootPool;

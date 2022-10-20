@@ -9,7 +9,7 @@ import javax.annotation.Nonnull;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lance5057.butchercraft.Butchercraft;
-import com.lance5057.butchercraft.items.ButchercraftItems;
+import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.DisplayInfo;

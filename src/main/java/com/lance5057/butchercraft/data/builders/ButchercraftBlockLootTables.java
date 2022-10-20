@@ -33,6 +33,9 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.GRAVY_BOAT.get());
 
 		this.dropOther(ButchercraftBlocks.HASH_FEAST.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.POT_ROAST_FEAST.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.SALISBURY_STEAK_FEAST.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.BBQ_RIBS_FEAST.get(), Items.BOWL);
 	}
 
 	@Override

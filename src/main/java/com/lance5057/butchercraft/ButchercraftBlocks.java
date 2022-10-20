@@ -1,12 +1,13 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.blocks.BbqRibsBlock;
 import com.lance5057.butchercraft.blocks.HashBowlBlock;
 import com.lance5057.butchercraft.blocks.HideBlock;
 import com.lance5057.butchercraft.blocks.JarBlock;
-import com.lance5057.butchercraft.items.ButchercraftItems;
+import com.lance5057.butchercraft.blocks.PotRoastBlock;
+import com.lance5057.butchercraft.blocks.SalisburySteakBlock;
 import com.lance5057.butchercraft.workstations.blocks.MeatHookBlock;
 
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -64,6 +65,15 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<HashBowlBlock> HASH_FEAST = BLOCKS.register("hash_block",
 			() -> new HashBowlBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
 					ButchercraftItems.HASH, true));
+	public static final RegistryObject<PotRoastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
+			() -> new PotRoastBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ButchercraftItems.POT_ROAST, true));
+	public static final RegistryObject<SalisburySteakBlock> SALISBURY_STEAK_FEAST = BLOCKS.register("salisbury_steak_block",
+			() -> new SalisburySteakBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ButchercraftItems.SALISBURY_STEAK, true));
+	public static final RegistryObject<BbqRibsBlock> BBQ_RIBS_FEAST = BLOCKS.register("bbq_ribs_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ButchercraftItems.BBQ_RIBS, true)); 
 
 	public static void register(IEventBus modBus) {
 
