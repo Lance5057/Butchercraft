@@ -264,6 +264,12 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
 	public static final RegistryObject<Item> BBQ_RIBS = ITEMS.register("bbq_ribs",
 			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> MEAT_PIE_SLICE = ITEMS.register("meat_pie_slice",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> PULLED_PORK_SANDWICH = ITEMS.register("pulled_pork_sandwich",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BREAD).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> MASHED_POTATO_GRAVY = ITEMS.register("mashed_potato_gravy",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
 	
 	public static final RegistryObject<BlockItem> HASH_FEAST_ITEM = ITEMS.register("hash_block_item",
 			() -> new BlockItem(ButchercraftBlocks.HASH_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB)));
@@ -273,6 +279,12 @@ public class ButchercraftItems {
 			() -> new BlockItem(ButchercraftBlocks.SALISBURY_STEAK_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BlockItem> BBQ_RIBS_FEAST_ITEM = ITEMS.register("bbq_ribs_block_item",
 			() -> new BlockItem(ButchercraftBlocks.BBQ_RIBS_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> MEAT_PIE_BLOCK_ITEM = ITEMS.register("meat_pie_block_item",
+			() -> new BlockItem(ButchercraftBlocks.MEAT_PIE_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> PULLED_PORK_FEAST_ITEM = ITEMS.register("pulled_pork_block_item",
+			() -> new BlockItem(ButchercraftBlocks.PULLED_PORK_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB))); 
+	public static final RegistryObject<BlockItem> MASHED_POTATO_GRAVY_FEAST_ITEM = ITEMS.register("mashed_potato_gravy_block_item",
+			() -> new BlockItem(ButchercraftBlocks.MASHED_POTATO_GRAVY.get(), new Item.Properties().tab(BUTCHER_TAB))); 
 //	public static final RegistryObject<Item> PIG_HOOVES = ITEMS.register("pig_hooves", () -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static void register(IEventBus modBus) {

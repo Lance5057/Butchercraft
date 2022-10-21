@@ -161,6 +161,15 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		
 		forBlockItem(ButchercraftItems.BBQ_RIBS_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/bbq_ribs_block_stage0"));
 		forItem(ButchercraftItems.BBQ_RIBS, "bbq_ribs");
+		
+		forBlockItem(ButchercraftItems.MEAT_PIE_BLOCK_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/meat_pie"));
+		forItem(ButchercraftItems.MEAT_PIE_SLICE, "meat_pie_slice");
+		
+		forBlockItem(ButchercraftItems.PULLED_PORK_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/pulled_pork_block_stage0"));
+		forItem(ButchercraftItems.PULLED_PORK_SANDWICH, "pulled_pork_sandwich");
+		
+		forBlockItem(ButchercraftItems.MASHED_POTATO_GRAVY_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/mashed_potato_gravy_block_stage0"));
+		forItem(ButchercraftItems.MASHED_POTATO_GRAVY, "mashed_potato_gravy");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

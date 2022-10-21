@@ -16,6 +16,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 public class ButchercraftBlocks {
 
@@ -74,6 +75,16 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<BbqRibsBlock> BBQ_RIBS_FEAST = BLOCKS.register("bbq_ribs_block",
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
 					ButchercraftItems.BBQ_RIBS, true)); 
+	public static final RegistryObject<BbqRibsBlock> PULLED_PORK_FEAST = BLOCKS.register("pulled_pork_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ButchercraftItems.PULLED_PORK_SANDWICH, true)); 
+	public static final RegistryObject<BbqRibsBlock> MASHED_POTATO_GRAVY = BLOCKS.register("mashed_potato_gravy_block",
+			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ButchercraftItems.MASHED_POTATO_GRAVY, true)); 
+	
+	public static final RegistryObject<PieBlock> MEAT_PIE_BLOCK = BLOCKS.register("meat_pie",
+			() -> new PieBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
+					ButchercraftItems.BBQ_RIBS)); 
 
 	public static void register(IEventBus modBus) {
 

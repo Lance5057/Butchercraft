@@ -5,11 +5,13 @@ import com.lance5057.butchercraft.ButchercraftBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.block.FeastBlock;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 public class BlockModels extends BlockStateProvider {
 
@@ -48,6 +50,24 @@ public class BlockModels extends BlockStateProvider {
 		this.feastBlock(ButchercraftBlocks.HASH_FEAST.get());
 		this.feastBlock(ButchercraftBlocks.POT_ROAST_FEAST.get());
 		this.feastBlock(ButchercraftBlocks.SALISBURY_STEAK_FEAST.get());
+		this.feastBlock(ButchercraftBlocks.BBQ_RIBS_FEAST.get());
+		this.feastBlock(ButchercraftBlocks.PULLED_PORK_FEAST.get());
+		this.feastBlock(ButchercraftBlocks.MASHED_POTATO_GRAVY.get());
+		
+		this.pieBlock(ButchercraftBlocks.MEAT_PIE_BLOCK.get());
+	}
+
+	public void pieBlock(Block block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int bites = state.getValue(PieBlock.BITES);
+			String suffix = bites > 0 ? "_slice" + bites : "";
+			return ConfiguredModel.builder()
+					.modelFile(new ModelFile.ExistingModelFile(
+							new ResourceLocation(Butchercraft.MOD_ID,
+									"block/" + block.getRegistryName().getPath() + suffix),
+							models().existingFileHelper))
+					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
+		});
 	}
 
 	public void feastBlock(FeastBlock block) {
@@ -62,7 +82,8 @@ public class BlockModels extends BlockStateProvider {
 
 			return ConfiguredModel.builder()
 					.modelFile(new ModelFile.ExistingModelFile(
-							new ResourceLocation(Butchercraft.MOD_ID, "block/" + block.getRegistryName().getPath() + suffix),
+							new ResourceLocation(Butchercraft.MOD_ID,
+									"block/" + block.getRegistryName().getPath() + suffix),
 							models().existingFileHelper))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});

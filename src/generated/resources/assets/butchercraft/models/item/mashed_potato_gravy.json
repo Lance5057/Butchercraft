@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "butchercraft:item/mashed_potato_gravy"
+  }
+}
