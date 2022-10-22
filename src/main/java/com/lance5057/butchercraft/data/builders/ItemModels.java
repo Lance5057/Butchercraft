@@ -170,6 +170,18 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		
 		forBlockItem(ButchercraftItems.MASHED_POTATO_GRAVY_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/mashed_potato_gravy_block_stage0"));
 		forItem(ButchercraftItems.MASHED_POTATO_GRAVY, "mashed_potato_gravy");
+		
+		forBlockItem(ButchercraftItems.RACK_LAMB_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/rack_lamb_block_stage0"));
+		forItem(ButchercraftItems.RACK_LAMB, "rack_lamb");
+		
+		forBlockItem(ButchercraftItems.BEEF_WELLINGTON_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/beef_wellington_block_stage0"));
+		forItem(ButchercraftItems.BEEF_WELLINGTON, "beef_wellington");
+		
+		forBlockItem(ButchercraftItems.HAGGIS_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/haggis_block_stage0"));
+		forItem(ButchercraftItems.HAGGIS, "haggis");
+		
+		forBlockItem(ButchercraftItems.JELLY_WHITE_FEAST_ITEM, new ResourceLocation(Butchercraft.MOD_ID, "block/jelly_white_block_stage0"));
+		forItem(ButchercraftItems.JELLY_WHITE, "jelly_white");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

@@ -1,0 +1,50 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "farmersdelight:block/tray_bottom",
+		"1": "butchercraft:block/jelly_white",
+		"particle": "farmersdelight:block/tray_bottom"
+	},
+	"elements": [
+		{
+			"name": "plate",
+			"from": [1, 0, 1],
+			"to": [15, 2, 15],
+			"faces": {
+				"north": {"uv": [1, 11, 15, 13], "texture": "#0"},
+				"east": {"uv": [1, 11, 15, 13], "texture": "#0"},
+				"south": {"uv": [1, 11, 15, 13], "texture": "#0"},
+				"west": {"uv": [1, 11, 15, 13], "texture": "#0"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#0"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"from": [3, 2, 3],
+			"to": [13, 8, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 2, -1]},
+			"faces": {
+				"north": {"uv": [10, 0, 16, 4], "texture": "#1"},
+				"east": {"uv": [10, 0, 14, 4], "texture": "#1"},
+				"south": {"uv": [12, 0, 16, 4], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 0], "texture": "#1"},
+				"up": {"uv": [10, 0, 16, 4], "texture": "#1"},
+				"down": {"uv": [10, 0, 16, 4], "texture": "#1"}
+			}
+		},
+		{
+			"from": [4, 3, 4],
+			"to": [12, 7, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 3, -1]},
+			"faces": {
+				"north": {"uv": [0, 0, 6, 4], "texture": "#1"},
+				"east": {"uv": [0, 0, 4, 4], "texture": "#1"},
+				"south": {"uv": [0, 0, 4, 4], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 0], "texture": "#1"},
+				"up": {"uv": [0, 0, 6, 4], "texture": "#1"},
+				"down": {"uv": [0, 0, 6, 4], "texture": "#1"}
+			}
+		}
+	]
+}

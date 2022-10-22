@@ -53,7 +53,13 @@ public class BlockModels extends BlockStateProvider {
 		this.feastBlock(ButchercraftBlocks.BBQ_RIBS_FEAST.get());
 		this.feastBlock(ButchercraftBlocks.PULLED_PORK_FEAST.get());
 		this.feastBlock(ButchercraftBlocks.MASHED_POTATO_GRAVY.get());
-		
+		this.feastBlock(ButchercraftBlocks.RACK_LAMB.get());
+		this.feastBlock(ButchercraftBlocks.STIRFRY.get());
+		this.feastBlock(ButchercraftBlocks.BEEF_WELLINGTON.get());
+		this.feastBlock(ButchercraftBlocks.HAGGIS.get());
+
+		this.jellyBlock(ButchercraftBlocks.JELLY_WHITE.get(), "white");
+
 		this.pieBlock(ButchercraftBlocks.MEAT_PIE_BLOCK.get());
 	}
 
@@ -85,6 +91,25 @@ public class BlockModels extends BlockStateProvider {
 							new ResourceLocation(Butchercraft.MOD_ID,
 									"block/" + block.getRegistryName().getPath() + suffix),
 							models().existingFileHelper))
+					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public void jellyBlock(FeastBlock block, String color) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int servings = state.getValue(FeastBlock.SERVINGS);
+
+			String suffix = "_stage" + (block.getMaxServings() - servings);
+
+			if (servings == 0) {
+				suffix = block.hasLeftovers ? "_leftover" : "_stage3";
+			}
+
+			ModelFile jellyModel = models()
+					.withExistingParent("jelly_" + color + "_block" + suffix, modLoc("block/jelly_block" + suffix))
+					.texture("rod", new ResourceLocation(Butchercraft.MOD_ID, "block/jelly_" + color + suffix));
+
+			return ConfiguredModel.builder().modelFile(jellyModel)
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}

@@ -17,6 +17,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ButchercraftItems {
 
@@ -270,6 +271,17 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BREAD).stacksTo(4).tab(BUTCHER_TAB)));
 	public static final RegistryObject<Item> MASHED_POTATO_GRAVY = ITEMS.register("mashed_potato_gravy",
 			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> RACK_LAMB = ITEMS.register("rack_lamb",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> STIRFRY = ITEMS.register("stirfry",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(ModItems.COOKED_RICE.get()).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> BEEF_WELLINGTON = ITEMS.register("beef_wellington",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> HAGGIS = ITEMS.register("haggis",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
+	
+	public static final RegistryObject<Item> JELLY_WHITE = ITEMS.register("jelly_white",
+			() -> new Item(new Item.Properties().food(FoodsGeneric.BRAIN).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
 	
 	public static final RegistryObject<BlockItem> HASH_FEAST_ITEM = ITEMS.register("hash_block_item",
 			() -> new BlockItem(ButchercraftBlocks.HASH_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB)));
@@ -285,7 +297,17 @@ public class ButchercraftItems {
 			() -> new BlockItem(ButchercraftBlocks.PULLED_PORK_FEAST.get(), new Item.Properties().tab(BUTCHER_TAB))); 
 	public static final RegistryObject<BlockItem> MASHED_POTATO_GRAVY_FEAST_ITEM = ITEMS.register("mashed_potato_gravy_block_item",
 			() -> new BlockItem(ButchercraftBlocks.MASHED_POTATO_GRAVY.get(), new Item.Properties().tab(BUTCHER_TAB))); 
-//	public static final RegistryObject<Item> PIG_HOOVES = ITEMS.register("pig_hooves", () -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> RACK_LAMB_FEAST_ITEM = ITEMS.register("rack_lamb_block_item",
+			() -> new BlockItem(ButchercraftBlocks.RACK_LAMB.get(), new Item.Properties().tab(BUTCHER_TAB))); 
+	public static final RegistryObject<BlockItem> STIRFRY_FEAST_ITEM = ITEMS.register("stirfry_block_item",
+			() -> new BlockItem(ButchercraftBlocks.STIRFRY.get(), new Item.Properties().tab(BUTCHER_TAB))); 
+	public static final RegistryObject<BlockItem> BEEF_WELLINGTON_FEAST_ITEM = ITEMS.register("beef_wellington_block_item",
+			() -> new BlockItem(ButchercraftBlocks.BEEF_WELLINGTON.get(), new Item.Properties().tab(BUTCHER_TAB))); 
+	public static final RegistryObject<BlockItem> HAGGIS_FEAST_ITEM = ITEMS.register("haggis_block_item",
+			() -> new BlockItem(ButchercraftBlocks.HAGGIS.get(), new Item.Properties().tab(BUTCHER_TAB))); 
+	
+	public static final RegistryObject<BlockItem> JELLY_WHITE_FEAST_ITEM = ITEMS.register("jelly_white_block_item",
+			() -> new BlockItem(ButchercraftBlocks.JELLY_WHITE.get(), new Item.Properties().tab(BUTCHER_TAB))); 
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);
