@@ -1,7 +1,10 @@
 package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.ButchercraftBlocks;
+import com.lance5057.butchercraft.food.FoodsGeneric;
+
 import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
@@ -44,6 +47,21 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		this.dropOther(ButchercraftBlocks.HAGGIS.get(), Items.BOWL);
 		
 		this.dropOther(ButchercraftBlocks.JELLY_WHITE.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_ORANGE.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_MAGENTA.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_LIGHT_BLUE.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_YELLOW.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_LIME.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_PINK.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_GREY.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_LIGHT_GREY.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_CYAN.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_PURPLE.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_BLUE.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_BROWN.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_GREEN.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_RED.get(), Items.BOWL);
+		this.dropOther(ButchercraftBlocks.JELLY_BLACK.get(), Items.BOWL);
 		
 		this.dropOther(ButchercraftBlocks.MEAT_PIE_BLOCK.get(), Items.AIR);
 	}

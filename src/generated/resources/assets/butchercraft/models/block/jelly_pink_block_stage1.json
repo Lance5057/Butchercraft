@@ -1,0 +1,6 @@
+{
+  "parent": "butchercraft:block/jelly_block_stage1",
+  "textures": {
+    "1": "butchercraft:block/jelly_pink"
+  }
+}

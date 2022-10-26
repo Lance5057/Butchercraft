@@ -59,6 +59,21 @@ public class BlockModels extends BlockStateProvider {
 		this.feastBlock(ButchercraftBlocks.HAGGIS.get());
 
 		this.jellyBlock(ButchercraftBlocks.JELLY_WHITE.get(), "white");
+		this.jellyBlock(ButchercraftBlocks.JELLY_ORANGE.get(), "orange");
+		this.jellyBlock(ButchercraftBlocks.JELLY_MAGENTA.get(), "magenta");
+		this.jellyBlock(ButchercraftBlocks.JELLY_LIGHT_BLUE.get(), "light_blue");
+		this.jellyBlock(ButchercraftBlocks.JELLY_YELLOW.get(), "yellow");
+		this.jellyBlock(ButchercraftBlocks.JELLY_LIME.get(), "lime");
+		this.jellyBlock(ButchercraftBlocks.JELLY_PINK.get(), "pink");
+		this.jellyBlock(ButchercraftBlocks.JELLY_GREY.get(), "grey");
+		this.jellyBlock(ButchercraftBlocks.JELLY_LIGHT_GREY.get(), "light_grey");
+		this.jellyBlock(ButchercraftBlocks.JELLY_CYAN.get(), "cyan");
+		this.jellyBlock(ButchercraftBlocks.JELLY_PURPLE.get(), "purple");
+		this.jellyBlock(ButchercraftBlocks.JELLY_BLUE.get(), "blue");
+		this.jellyBlock(ButchercraftBlocks.JELLY_BROWN.get(), "brown");
+		this.jellyBlock(ButchercraftBlocks.JELLY_GREEN.get(), "green");
+		this.jellyBlock(ButchercraftBlocks.JELLY_RED.get(), "red");
+		this.jellyBlock(ButchercraftBlocks.JELLY_BLACK.get(), "black");
 
 		this.pieBlock(ButchercraftBlocks.MEAT_PIE_BLOCK.get());
 	}
@@ -107,7 +122,7 @@ public class BlockModels extends BlockStateProvider {
 
 			ModelFile jellyModel = models()
 					.withExistingParent("jelly_" + color + "_block" + suffix, modLoc("block/jelly_block" + suffix))
-					.texture("rod", new ResourceLocation(Butchercraft.MOD_ID, "block/jelly_" + color + suffix));
+					.texture("1", new ResourceLocation(Butchercraft.MOD_ID, "block/jelly_" + color));
 
 			return ConfiguredModel.builder().modelFile(jellyModel)
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();

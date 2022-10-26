@@ -61,6 +61,21 @@ public class Butchercraft {
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.STIRFRY.get(), RenderType.cutout());
     		
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_WHITE.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_ORANGE.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_MAGENTA.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_LIGHT_BLUE.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_YELLOW.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_LIME.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_PINK.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_GREY.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_LIGHT_GREY.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_CYAN.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_PURPLE.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_BLUE.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_BROWN.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_GREEN.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_RED.get(), RenderType.translucent());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.JELLY_BLACK.get(), RenderType.translucent());
     	});
     }
 

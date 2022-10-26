@@ -6,6 +6,7 @@ import com.lance5057.butchercraft.blocks.HideBlock;
 import com.lance5057.butchercraft.blocks.JarBlock;
 import com.lance5057.butchercraft.blocks.PotRoastBlock;
 import com.lance5057.butchercraft.blocks.SalisburySteakBlock;
+import com.lance5057.butchercraft.workstations.blocks.DryingRackBlock;
 import com.lance5057.butchercraft.workstations.blocks.MeatHookBlock;
 
 import net.minecraft.world.level.block.Block;
@@ -24,6 +25,7 @@ public class ButchercraftBlocks {
 			Butchercraft.MOD_ID);
 
 	public static final RegistryObject<MeatHookBlock> MEAT_HOOK = BLOCKS.register("meat_hook", MeatHookBlock::new);
+	public static final RegistryObject<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack", DryingRackBlock::new); 
 //	public static final RegistryObject<SkullBlock> COW_SKULL = BLOCKS.register("cow_skull",
 //			() -> new SkullBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
 //	public static final RegistryObject<SkullBlock> PIG_SKULL = BLOCKS.register("pig_skull",
