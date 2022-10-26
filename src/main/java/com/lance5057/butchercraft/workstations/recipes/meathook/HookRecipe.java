@@ -1,7 +1,9 @@
-package com.lance5057.butchercraft.workstations.recipes;
+package com.lance5057.butchercraft.workstations.recipes.meathook;
 
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
+import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
+
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;

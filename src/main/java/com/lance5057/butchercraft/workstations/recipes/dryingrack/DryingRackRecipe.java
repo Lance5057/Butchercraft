@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.workstations.recipes;
+package com.lance5057.butchercraft.workstations.recipes.dryingrack;
 
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
@@ -12,7 +12,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-public class DryingRackRecipe implements Recipe<DryingRackContainer> {
+public class DryingRackRecipe implements Recipe<Container> {
 
 	protected final ResourceLocation id;
 	protected final String group;
@@ -38,13 +38,13 @@ public class DryingRackRecipe implements Recipe<DryingRackContainer> {
 	}
 
 	@Override
-	public boolean matches(DryingRackContainer pContainer, Level pLevel) {
+	public boolean matches(Container pContainer, Level pLevel) {
 		return ingredient.test(pContainer.getItem(0));
 	}
 
 	@Override
-	public ItemStack assemble(DryingRackContainer pContainer) {
-		 return this.result.copy();
+	public ItemStack assemble(Container pContainer) {
+		return this.result.copy();
 	}
 
 	@Override
@@ -52,9 +52,8 @@ public class DryingRackRecipe implements Recipe<DryingRackContainer> {
 		// TODO Auto-generated method stub
 		return true;
 	}
-	
-	public Ingredient getInput()
-	{
+
+	public Ingredient getInput() {
 		return ingredient;
 	}
 
@@ -62,6 +61,10 @@ public class DryingRackRecipe implements Recipe<DryingRackContainer> {
 	public ItemStack getResultItem() {
 		// TODO Auto-generated method stub
 		return result;
+	}
+
+	public int getCookingTime() {
+		return this.cookingTime;
 	}
 
 	@Override

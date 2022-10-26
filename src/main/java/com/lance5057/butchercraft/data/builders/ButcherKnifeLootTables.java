@@ -1,5 +1,8 @@
 package com.lance5057.butchercraft.data.builders;
 
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 
@@ -8,9 +11,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class ButcherKnifeLootTables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 

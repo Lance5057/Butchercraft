@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.workstations.recipes;
+package com.lance5057.butchercraft.workstations.recipes.dryingrack;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

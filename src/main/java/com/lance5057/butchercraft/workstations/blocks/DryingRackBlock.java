@@ -1,10 +1,12 @@
 package com.lance5057.butchercraft.workstations.blocks;
 
-import javax.annotation.Nonnull;
+import java.util.Optional;
 
-import com.lance5057.butchercraft.items.CarcassItem;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import com.lance5057.butchercraft.workstations.blockentities.DryingRackBlockEntity;
-import com.lance5057.butchercraft.workstations.blockentities.MeatHookBlockEntity;
+import com.lance5057.butchercraft.workstations.recipes.dryingrack.DryingRackRecipe;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -16,6 +18,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.CampfireBlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -23,7 +28,7 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class DryingRackBlock extends Block implements EntityBlock {
 
-	public DryingRackBlock() { 
+	public DryingRackBlock() {
 		super(BlockBehaviour.Properties.of(Material.WOOD).strength(1, 1).noOcclusion());
 		// TODO Auto-generated constructor stub
 	}
@@ -35,27 +40,36 @@ public class DryingRackBlock extends Block implements EntityBlock {
 
 	@Nonnull
 	@Override
-	public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
-			@Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
-		BlockEntity entity = world.getBlockEntity(blockPos);
-		if (entity instanceof MeatHookBlockEntity te) {
+	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+	      BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+	      if (blockentity instanceof DryingRackBlockEntity) {
+	         DryingRackBlockEntity be = (DryingRackBlockEntity)blockentity;
+	         ItemStack itemstack = pPlayer.getItemInHand(pHand);
+	         Optional<DryingRackRecipe> optional = be.matchRecipe(itemstack); 
+	         if (optional.isPresent()) {
+	            if (!pLevel.isClientSide && be.placeFood(pPlayer.getAbilities().instabuild ? itemstack.copy() : itemstack, optional.get().getCookingTime())) {
+	               //pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+	               return InteractionResult.SUCCESS;
+	            }
 
-			// Get item in both InteractionHands
-			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
-			// TODO May want to disable insertion if there's not enough space under the hook
-			if (heldMain.getItem() instanceof CarcassItem) {
-				// TODO Find a way to return SUCCESS on successful insertion
-				te.insertItem(heldMain);
-			} else if (heldMain != ItemStack.EMPTY)
-				return te.butcher(playerEntity, heldMain);
-		}
+	            return InteractionResult.CONSUME;
+	         }
+	      }
 
-		return InteractionResult.PASS;
-
-	}
+	      return InteractionResult.PASS;
+	   }
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
 		return new DryingRackBlockEntity(pPos, pState);
 	}
+	
+	@Nullable
+	   public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+	      if (pLevel.isClientSide) {
+	         return pState.getValue(LIT) ? createTickerHelper(pBlockEntityType, BlockEntityType.CAMPFIRE, CampfireBlockEntity::particleTick) : null;
+	      } else {
+	         return pState.getValue(LIT) ? createTickerHelper(pBlockEntityType, BlockEntityType.CAMPFIRE, CampfireBlockEntity::cookTick) : createTickerHelper(pBlockEntityType, BlockEntityType.CAMPFIRE, CampfireBlockEntity::cooldownTick);
+	      }
+	   }
 }

@@ -1,7 +1,46 @@
 package com.lance5057.butchercraft.data.builders;
 
+import static com.lance5057.butchercraft.ButchercraftItems.BACON;
+import static com.lance5057.butchercraft.ButchercraftItems.BEEF_RIBS;
+import static com.lance5057.butchercraft.ButchercraftItems.BEEF_ROAST;
+import static com.lance5057.butchercraft.ButchercraftItems.BEEF_SCRAPS;
+import static com.lance5057.butchercraft.ButchercraftItems.BEEF_STEW_MEAT;
+import static com.lance5057.butchercraft.ButchercraftItems.BRAIN;
+import static com.lance5057.butchercraft.ButchercraftItems.COW_HIDE;
+import static com.lance5057.butchercraft.ButchercraftItems.CUBED_BEEF;
+import static com.lance5057.butchercraft.ButchercraftItems.CUBED_LAMB;
+import static com.lance5057.butchercraft.ButchercraftItems.CUBED_PORK;
+import static com.lance5057.butchercraft.ButchercraftItems.FAT;
+import static com.lance5057.butchercraft.ButchercraftItems.HEART;
+import static com.lance5057.butchercraft.ButchercraftItems.HORN;
+import static com.lance5057.butchercraft.ButchercraftItems.KIDNEY;
+import static com.lance5057.butchercraft.ButchercraftItems.LAMB_RIBS;
+import static com.lance5057.butchercraft.ButchercraftItems.LAMB_ROAST;
+import static com.lance5057.butchercraft.ButchercraftItems.LAMB_SCRAPS;
+import static com.lance5057.butchercraft.ButchercraftItems.LAMB_STEW_MEAT;
+import static com.lance5057.butchercraft.ButchercraftItems.LEATHER_SCRAP;
+import static com.lance5057.butchercraft.ButchercraftItems.LIVER;
+import static com.lance5057.butchercraft.ButchercraftItems.LUNG;
+import static com.lance5057.butchercraft.ButchercraftItems.PIG_HIDE;
+import static com.lance5057.butchercraft.ButchercraftItems.PORK_RIBS;
+import static com.lance5057.butchercraft.ButchercraftItems.PORK_ROAST;
+import static com.lance5057.butchercraft.ButchercraftItems.PORK_SCRAPS;
+import static com.lance5057.butchercraft.ButchercraftItems.PORK_STEW_MEAT;
+import static com.lance5057.butchercraft.ButchercraftItems.SHEEP_HIDE;
+import static com.lance5057.butchercraft.ButchercraftItems.SINEW;
+import static com.lance5057.butchercraft.ButchercraftItems.STOMACHE;
+import static com.lance5057.butchercraft.ButchercraftItems.TRIPE;
+import static net.minecraft.world.item.Items.BEEF;
+import static net.minecraft.world.item.Items.BONE;
+import static net.minecraft.world.item.Items.MUTTON;
+import static net.minecraft.world.item.Items.PORKCHOP;
+
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+
+import org.jetbrains.annotations.NotNull;
+
 import com.lance5057.butchercraft.Butchercraft;
-import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -12,13 +51,6 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-
-import static com.lance5057.butchercraft.ButchercraftItems.*;
-import static net.minecraft.world.item.Items.*;
 
 public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 

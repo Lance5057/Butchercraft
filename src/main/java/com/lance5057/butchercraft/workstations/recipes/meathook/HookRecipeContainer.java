@@ -1,4 +1,6 @@
-package com.lance5057.butchercraft.workstations.recipes;
+package com.lance5057.butchercraft.workstations.recipes.meathook;
+
+import com.lance5057.butchercraft.workstations.recipes.EmptyInventory;
 
 import net.minecraft.world.item.ItemStack;
 

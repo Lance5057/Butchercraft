@@ -1,11 +1,12 @@
 package com.lance5057.butchercraft;
 
-import com.electronwill.nightconfig.core.file.CommentedFileConfig;
-import com.electronwill.nightconfig.core.io.WritingMode;
-import net.minecraftforge.common.ForgeConfigSpec;
-
 import java.nio.file.Path;
 import java.util.Objects;
+
+import com.electronwill.nightconfig.core.file.CommentedFileConfig;
+import com.electronwill.nightconfig.core.io.WritingMode;
+
+import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ButchercraftConfig {
     private static ButchercraftConfig instance;

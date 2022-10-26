@@ -1,7 +1,7 @@
 package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.workstations.recipes.DryingRackRecipe;
-import com.lance5057.butchercraft.workstations.recipes.HookRecipe;
+import com.lance5057.butchercraft.workstations.recipes.dryingrack.DryingRackRecipe;
+import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipe;
 
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.Recipe;

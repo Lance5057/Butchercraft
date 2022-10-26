@@ -1,7 +1,10 @@
 package com.lance5057.butchercraft.workstations.blocks;
 
+import javax.annotation.Nonnull;
+
 import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.workstations.blockentities.MeatHookBlockEntity;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -28,8 +31,6 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import javax.annotation.Nonnull;
 
 public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;

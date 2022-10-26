@@ -1,8 +1,8 @@
 package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.workstations.recipes.DryingRackSerializer;
-import com.lance5057.butchercraft.workstations.recipes.HookRecipe;
-import com.lance5057.butchercraft.workstations.recipes.HookRecipeSerializer;
+import com.lance5057.butchercraft.workstations.recipes.dryingrack.DryingRackSerializer;
+import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipe;
+import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipeSerializer;
 
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;

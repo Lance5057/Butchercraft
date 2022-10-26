@@ -1,14 +1,13 @@
 package com.lance5057.butchercraft.data.builders;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.lance5057.butchercraft.ButchercraftBlocks;
-import com.lance5057.butchercraft.food.FoodsGeneric;
 
 import net.minecraft.data.loot.BlockLoot;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 
 public class ButchercraftBlockLootTables extends BlockLoot {
 	@Override

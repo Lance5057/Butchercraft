@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.ButchercraftBlocks;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;

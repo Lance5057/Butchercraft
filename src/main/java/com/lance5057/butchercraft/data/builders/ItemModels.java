@@ -1,23 +1,17 @@
 package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
-import com.lance5057.butchercraft.ButchercraftBlocks;
 import com.lance5057.butchercraft.ButchercraftItems;
-import com.lance5057.butchercraft.food.FoodsGeneric;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.FoodValues;
-import vectorwing.farmersdelight.common.block.FeastBlock;
 
 public class ItemModels extends ModelProvider<ItemModelBuilder> {
 	private final ExistingFileHelper fh;
