@@ -2,7 +2,6 @@ package com.lance5057.butchercraft;
 
 import com.lance5057.butchercraft.workstations.blockentities.DryingRackBlockEntity;
 import com.lance5057.butchercraft.workstations.blockentities.MeatHookBlockEntity;
-
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ButchercraftBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister
-            .create(ForgeRegistries.BLOCK_ENTITIES, Butchercraft.MOD_ID);
+            .create(ForgeRegistries.BLOCK_ENTITY_TYPES, Butchercraft.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<MeatHookBlockEntity>> MEAT_HOOK = BLOCK_ENTITIES.register(
             "meat_hook",
