@@ -5,6 +5,7 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.workstations.blockentities.DryingRackBlockEntity;
 import com.lance5057.butchercraft.workstations.recipes.dryingrack.DryingRackRecipe;
 
@@ -40,36 +41,42 @@ public class DryingRackBlock extends Block implements EntityBlock {
 
 	@Nonnull
 	@Override
-	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-	      BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-	      if (blockentity instanceof DryingRackBlockEntity) {
-	         DryingRackBlockEntity be = (DryingRackBlockEntity)blockentity;
-	         ItemStack itemstack = pPlayer.getItemInHand(pHand);
-	         Optional<DryingRackRecipe> optional = be.matchRecipe(itemstack); 
-	         if (optional.isPresent()) {
-	            if (!pLevel.isClientSide && be.placeFood(pPlayer.getAbilities().instabuild ? itemstack.copy() : itemstack, optional.get().getCookingTime())) {
-	               //pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
-	               return InteractionResult.SUCCESS;
-	            }
+	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
+			BlockHitResult pHit) {
+		BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+		if (blockentity instanceof DryingRackBlockEntity) {
+			DryingRackBlockEntity be = (DryingRackBlockEntity) blockentity;
 
-	            return InteractionResult.CONSUME;
-	         }
-	      }
+			if (pPlayer.isCrouching())
+				be.extractItem(pPlayer);
+			else {
 
-	      return InteractionResult.PASS;
-	   }
+				ItemStack itemstack = pPlayer.getItemInHand(pHand);
+				Optional<DryingRackRecipe> optional = be.matchRecipe(itemstack);
+				if (optional.isPresent()) {
+					if (!pLevel.isClientSide) {
+						// pPlayer.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+						be.insertItem(itemstack, optional.get().getCookingTime());
+						return InteractionResult.SUCCESS;
+					}
+
+					return InteractionResult.CONSUME;
+				}
+			}
+		}
+
+		return InteractionResult.PASS;
+	}
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
 		return new DryingRackBlockEntity(pPos, pState);
 	}
-	
+
 	@Nullable
-	   public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-	      if (pLevel.isClientSide) {
-	         return pState.getValue(LIT) ? createTickerHelper(pBlockEntityType, BlockEntityType.CAMPFIRE, CampfireBlockEntity::particleTick) : null;
-	      } else {
-	         return pState.getValue(LIT) ? createTickerHelper(pBlockEntityType, BlockEntityType.CAMPFIRE, CampfireBlockEntity::cookTick) : createTickerHelper(pBlockEntityType, BlockEntityType.CAMPFIRE, CampfireBlockEntity::cooldownTick);
-	      }
-	   }
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState,
+			BlockEntityType<T> pBlockEntityType) {
+		return pBlockEntityType == ButchercraftBlockEntities.DRYING_RACK.get() ? DryingRackBlockEntity::tick : null;
+	}
 }

@@ -390,6 +390,9 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(Items.CANDLE, 6).requires(ButchercraftItems.LARD.get()).requires(Items.STRING)
 				.unlockedBy("has_lard", has(ButchercraftItems.LARD.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lard_to_candle"));
+
+		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.COW_HIDE.get()), LEATHER, 10, 10000)
+				.unlockedBy("has_cow_hide", has(ButchercraftItems.COW_HIDE.get())).save(consumer);
 	}
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer) {

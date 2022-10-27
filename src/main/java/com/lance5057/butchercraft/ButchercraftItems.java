@@ -217,7 +217,8 @@ public class ButchercraftItems {
 
 	public static final RegistryObject<BlockItem> HOOK_BLOCK_ITEM = ITEMS.register("meat_hook_item",
 			() -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties().tab(BUTCHER_TAB)));
-
+	public static final RegistryObject<BlockItem> DRYING_RACK_BLOCK_ITEM = ITEMS.register("drying_rack_item",
+			() -> new BlockItem(ButchercraftBlocks.DRYING_RACK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 //	public static final RegistryObject<BlockItem> COW_SKULL = ITEMS.register("cow_skull_item",
 //			() -> new BlockItem(ButchercraftBlocks.COW_SKULL.get(), new Item.Properties().tab(BUTCHER_TAB)));
 //	public static final RegistryObject<BlockItem> PIG_SKULL = ITEMS.register("pig_skull_item",

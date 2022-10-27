@@ -1,0 +1,9 @@
+{
+  "type": "butchercraft:drying_rack",
+  "ingredient": {
+    "item": "butchercraft:cow_hide"
+  },
+  "result": "minecraft:leather",
+  "experience": 10.0,
+  "cookingtime": 10000
+}
