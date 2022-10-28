@@ -70,6 +70,8 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.BEEF_TONGUE)));
 	public static final RegistryObject<Item> COOKED_BEEF_TONGUE = ITEMS.register("cooked_tongue",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.COOKED_BEEF_TONGUE)));
+	public static final RegistryObject<Item> BEEF_JERKY = ITEMS.register("beef_jerky",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.BEEF_JERKY)));
 
 	// PORK
 	public static final RegistryObject<Item> COOKED_PORK_SCRAPS = ITEMS.register("cooked_pork_scraps",
@@ -104,6 +106,8 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsPig.COOKED_BACON)));
 	public static final RegistryObject<Item> BACON = ITEMS.register("bacon",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsPig.BACON)));
+	public static final RegistryObject<Item> PORK_JERKY = ITEMS.register("pork_jerky",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsPig.PORK_JERKY)));
 
 	// LAMB
 	public static final RegistryObject<Item> COOKED_LAMB_SCRAPS = ITEMS.register("cooked_lamb_scraps",
@@ -134,6 +138,8 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.COOKED_LAMB_STEWMEAT)));
 	public static final RegistryObject<Item> LAMB_STEW_MEAT = ITEMS.register("lamb_stewmeat",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.LAMB_STEWMEAT)));
+	public static final RegistryObject<Item> LAMB_JERKY = ITEMS.register("lamb_jerky",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.LAMB_JERKY)));
 
 	public static final RegistryObject<Item> SAUSAGE = ITEMS.register("sausage",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.SAUSAGE)));

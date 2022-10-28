@@ -12,12 +12,15 @@ import com.lance5057.butchercraft.workstations.recipes.dryingrack.DryingRackReci
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -37,8 +40,8 @@ public class DryingRackBlockEntity extends BlockEntity {
 	public static final int NUM_SLOTS = 8;
 	// private final NonNullList<ItemStack> items = NonNullList.withSize(4,
 	// ItemStack.EMPTY);
-	private final int[] cookingProgress = new int[8];
-	private final int[] cookingTime = new int[8];
+	private int[] cookingProgress = new int[8];
+	private int[] cookingTime = new int[8];
 
 	public DryingRackBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ButchercraftBlockEntities.DRYING_RACK.get(), pPos, pState);
@@ -89,7 +92,7 @@ public class DryingRackBlockEntity extends BlockEntity {
 //	}
 
 	public void extractItem(Player playerEntity, IItemHandler inventory) {
-		for (int i = 0; i < NUM_SLOTS; i++) {
+		for (int i = NUM_SLOTS-1; i >= 0; i--) {
 			if (!inventory.getStackInSlot(i).isEmpty()) {
 				ItemStack itemStack = inventory.extractItem(i, inventory.getStackInSlot(i).getCount(), false);
 				playerEntity.addItem(itemStack);
@@ -129,6 +132,7 @@ public class DryingRackBlockEntity extends BlockEntity {
 
 	public void updateInventory() {
 		requestModelDataUpdate();
+		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
 		this.setChanged();
 	}
 
@@ -149,13 +153,44 @@ public class DryingRackBlockEntity extends BlockEntity {
 					if (pBlockEntity.cookingProgress[i] >= pBlockEntity.cookingTime[i]) {
 						Container container = new SimpleContainer(itemstack);
 						ItemStack itemstack1 = level.getRecipeManager()
-								.getRecipeFor(RecipeType.CAMPFIRE_COOKING, container, level).map((p_155305_) -> {
+								.getRecipeFor(ButchercraftRecipes.DRYING_RACK.get(), container, level)
+								.map((p_155305_) -> {
 									return p_155305_.assemble(container);
 								}).orElse(itemstack);
-						Containers.dropItemStack(level, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(),
-								itemstack1);
-						inv.setStackInSlot(i, ItemStack.EMPTY);
+//						Containers.dropItemStack(level, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(),
+//								itemstack1);
+						inv.setStackInSlot(i, itemstack1);
 						level.sendBlockUpdated(pos, state, state, 3);
+					} else {
+
+						for (int k = 0; k < 1; k++) {
+							float yOff = (i > 3 ? 0.5f : 0) + 0.5f;
+							float xOff = 0;
+							float zOff = 0;
+							switch (i % 4) {
+							case 0:
+								xOff = 0.2f + level.random.nextFloat(0.2f);
+								zOff = 0.2f + level.random.nextFloat(0.2f);
+								break;
+							case 1:
+								xOff = 0.2f + level.random.nextFloat(0.2f);
+								zOff = 0.8f - level.random.nextFloat(0.2f);
+								break;
+							case 2:
+								xOff = 0.8f - level.random.nextFloat(0.2f);
+								zOff = 0.8f - level.random.nextFloat(0.2f);
+								break;
+							case 3:
+								xOff = 0.8f - level.random.nextFloat(0.2f);
+								zOff = 0.2f + level.random.nextFloat(0.2f);
+								break;
+							}
+							level.addParticle(ParticleTypes.MYCELIUM,
+									pos.getX() + level.random.nextDouble() / 16 + xOff,
+									pos.getY() - level.random.nextDouble() / 16 + yOff,
+									pos.getZ() + level.random.nextDouble() / 16 + zOff,
+									0, 0.0f, 0);
+						}
 					}
 				}
 			}
@@ -163,7 +198,9 @@ public class DryingRackBlockEntity extends BlockEntity {
 			if (flag) {
 				setChanged(level, pos, state);
 			}
+
 		});
+
 	}
 
 //	public boolean placeFood(ItemStack pStack, int pCookTime) {
@@ -217,6 +254,8 @@ public class DryingRackBlockEntity extends BlockEntity {
 				.orElseGet(this::createHandler);
 		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
 
+		this.cookingProgress = nbt.getIntArray("CookingTimes");
+		this.cookingTime = nbt.getIntArray("CookingTotalTimes");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
@@ -224,6 +263,7 @@ public class DryingRackBlockEntity extends BlockEntity {
 		IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
 				.orElseGet(this::createHandler);
 		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
+
 		tag.putIntArray("CookingTimes", this.cookingProgress);
 		tag.putIntArray("CookingTotalTimes", this.cookingTime);
 

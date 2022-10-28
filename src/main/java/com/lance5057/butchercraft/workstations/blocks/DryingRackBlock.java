@@ -47,9 +47,13 @@ public class DryingRackBlock extends Block implements EntityBlock {
 		if (blockentity instanceof DryingRackBlockEntity) {
 			DryingRackBlockEntity be = (DryingRackBlockEntity) blockentity;
 
-			if (pPlayer.isCrouching())
-				be.extractItem(pPlayer);
-			else {
+			if (pPlayer.isCrouching()) {
+				if (!pLevel.isClientSide) {
+					be.extractItem(pPlayer);
+					return InteractionResult.SUCCESS;
+				}
+				return InteractionResult.CONSUME;
+			} else {
 
 				ItemStack itemstack = pPlayer.getItemInHand(pHand);
 				Optional<DryingRackRecipe> optional = be.matchRecipe(itemstack);

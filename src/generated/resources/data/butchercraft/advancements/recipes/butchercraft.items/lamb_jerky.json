@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:lamb_jerky"
+    ]
+  },
+  "criteria": {
+    "has_lamb_scraps": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:lamb_scraps"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:lamb_jerky"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lamb_scraps",
+      "has_the_recipe"
+    ]
+  ]
+}

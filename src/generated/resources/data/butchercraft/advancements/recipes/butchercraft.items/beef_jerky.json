@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:leather"
+      "butchercraft:beef_jerky"
     ]
   },
   "criteria": {
-    "has_cow_hide": {
+    "has_beef_scraps": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "butchercraft:cow_hide"
+              "butchercraft:beef_scraps"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:leather"
+        "recipe": "butchercraft:beef_jerky"
       }
     }
   },
   "requirements": [
     [
-      "has_cow_hide",
+      "has_beef_scraps",
       "has_the_recipe"
     ]
   ]

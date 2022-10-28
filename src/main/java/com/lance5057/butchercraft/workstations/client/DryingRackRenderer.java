@@ -36,9 +36,15 @@ public class DryingRackRenderer implements BlockEntityRenderer<DryingRackBlockEn
 				if (!item.isEmpty()) {
 					BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 					pPoseStack.pushPose();
-					pPoseStack.translate(0.26f, 1 + (i % 2), 0.16);
-					pPoseStack.mulPose(new Quaternion(-90, 0, 0, true));
-					float uniscale = 0.2f;
+					
+					pPoseStack.translate(0.5f, 0.45f + (i > 3 ? 0.5f : 0), 0.5f);
+					
+					pPoseStack.mulPose(new Quaternion(0, 135, 0, true));
+					pPoseStack.mulPose(new Quaternion(0, 90 * (i%4), 0, true));
+					pPoseStack.mulPose(new Quaternion(90, 0, 0, true));
+					pPoseStack.translate(0.25f, 0, 0);
+					
+					float uniscale = 0.65f;
 					pPoseStack.scale(uniscale, uniscale, uniscale);
 					itemRenderer.render(item, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
 							pPackedLight, pPackedOverlay, bakedmodel);
