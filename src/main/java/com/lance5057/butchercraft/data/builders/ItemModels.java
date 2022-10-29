@@ -2,7 +2,6 @@ package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -11,6 +10,7 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemModels extends ModelProvider<ItemModelBuilder> {
@@ -254,7 +254,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 	public void forBlockItem(RegistryObject<? extends BlockItem> item, String name) {
 		getBuilder(item.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID,
-						"block/" + item.get().getBlock().getRegistryName().getPath())));
+						"block/" + ForgeRegistries.BLOCKS.getKey(item.get().getBlock()).getPath())));
 	}
 
 	public void forBlockItem(RegistryObject<? extends BlockItem> item, ResourceLocation modelLocation) {

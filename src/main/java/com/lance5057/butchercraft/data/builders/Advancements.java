@@ -12,8 +12,6 @@ import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.KilledTrigger;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
-import net.minecraft.data.HashCache;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -22,8 +20,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import javax.annotation.Nonnull;
-import java.io.IOException;
-import java.nio.file.Path;
 import java.util.function.Consumer;
 
 public class Advancements extends AdvancementProvider {
@@ -65,7 +61,7 @@ public class Advancements extends AdvancementProvider {
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.root.desc"),
 						new ResourceLocation("butchercraft:textures/background.png"), FrameType.TASK, false, false,
 						true))
-				.addCriterion("tick", new TickTrigger.TriggerInstance(EntityPredicate.Composite.ANY))
+				.addCriterion("tick", InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.BUTCHER_KNIFE.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":root");
 
 		hook = Advancement.Builder.advancement().parent(root)
@@ -77,14 +73,14 @@ public class Advancements extends AdvancementProvider {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.HOOK_BLOCK_ITEM.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":hook");
 
-		butcherknife = Advancement.Builder.advancement().parent(hook)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.BUTCHER_KNIFE.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.butcherknife.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.butcherknife.desc"), null,
-						FrameType.TASK, true, true, false))
-				.addCriterion("butcherknife",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.BUTCHER_KNIFE.get()))
-				.save(consumer, Butchercraft.MOD_ID + ":butcherknife");
+//		butcherknife = Advancement.Builder.advancement().parent(hook)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.BUTCHER_KNIFE.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.butcherknife.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.butcherknife.desc"), null,
+//						FrameType.TASK, true, true, false))
+//				.addCriterion("butcherknife",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.BUTCHER_KNIFE.get()))
+//				.save(consumer, Butchercraft.MOD_ID + ":butcherknife");
 
 		skinningknife = Advancement.Builder.advancement().parent(hook)
 				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SKINNING_KNIFE.get()),
@@ -342,21 +338,6 @@ public class Advancements extends AdvancementProvider {
 						KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity()
 								.of(EntityType.PLAYER).build()))
 				.save(consumer, Butchercraft.MOD_ID + ":cannibalism");
-	}
-
-	@Override
-	public void run(@Nonnull HashCache cache) {
-		Path outputFolder = this.dataGenerator.getOutputFolder();
-		Consumer<Advancement> consumer = advancement -> {
-			Path path = outputFolder.resolve("data/" + advancement.getId().getNamespace() + "/advancements/"
-					+ advancement.getId().getPath() + ".json");
-			try {
-				DataProvider.save(GSON, cache, advancement.deconstruct().serializeToJson(), path);
-			} catch (IOException e) {
-				System.out.println(e);
-			}
-		};
-		registerAdvancements(consumer);
 	}
 
 	@Override

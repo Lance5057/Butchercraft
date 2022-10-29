@@ -5,7 +5,6 @@ import com.lance5057.butchercraft.tags.ButchercraftEntityTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -19,6 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -27,7 +27,6 @@ public class ButcherKnifeItem extends KnifeItem {
 
 	public ButcherKnifeItem(Properties builderIn) {
 		super(builderIn);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -53,15 +52,14 @@ public class ButcherKnifeItem extends KnifeItem {
 			}
 		}
 
-		
-		
+
 		final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
-				"butcher_knife/" + entity.getType().getRegistryName().getPath());
+				"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).getPath());
 		if (player.getServer() != null) {
 			final LootTable lootTable = player.getServer().getLootTables().get(lootTableLocation);
 			if (entity.getType().is(ButchercraftEntityTags.CARCASSES) && entity instanceof Mob mob
 					&& lootTable != LootTable.EMPTY) {
-				entity.level.playSound(null, entity.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, player == null ? SoundSource.BLOCKS : SoundSource.PLAYERS, 1.0F, 1.0F);
+				entity.level.playSound(null, entity.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F, 1.0F);
 				mob.lootTable = lootTableLocation;
 				entity.setLastHurtByPlayer(player);
 				entity.hurt(DamageSource.playerAttack(player), 99999);
@@ -75,7 +73,7 @@ public class ButcherKnifeItem extends KnifeItem {
 	@Override
 	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
 			TooltipFlag pIsAdvanced) {
-		pTooltipComponents.add(new TextComponent("  ")
+		pTooltipComponents.add(Component.literal("  ")
 				.append(Component.translatable(Butchercraft.MOD_ID + ".butcherknife.rightclick"))
 				.withStyle(ChatFormatting.DARK_PURPLE));
 	}
