@@ -9,7 +9,7 @@
     }
   ],
   "result": {
-    "item": "butchercraft:stock_jar_block_item"
+    "item": "butchercraft:stock_jar_item"
   },
   "container": {
     "item": "minecraft:glass_bottle"

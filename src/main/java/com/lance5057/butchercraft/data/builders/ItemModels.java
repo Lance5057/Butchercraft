@@ -44,7 +44,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		// forItem(ButchercraftItems.SPATULA, "spatula");
 		forItem(ButchercraftItems.HORN, "horn");
 		forItem(ButchercraftItems.LARD, "lard");
-		forItem(ButchercraftItems.SOAP, "soap");
+//		forItem(ButchercraftItems.SOAP, "soap");
 
 		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
 		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())
@@ -158,10 +158,10 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.PIG_HIDE, "pig_hide");
 		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");
 
-		forBlockItem(ButchercraftItems.BBQ_JAR_BLOCK_ITEM, "bbq_jar_block_item");
-		forBlockItem(ButchercraftItems.STOCK_JAR_BLOCK_ITEM, "stock_jar_block_item");
-		forBlockItem(ButchercraftItems.KETCHUP_JAR_BLOCK_ITEM, "ketchup_jar_block_item");
-		forBlockItem(ButchercraftItems.GRAVY_BOAT_ITEM, "gravy_boat_item");
+		forItem(ButchercraftItems.BBQ_JAR_ITEM, "bbq");
+		forItem(ButchercraftItems.STOCK_JAR_ITEM, "broth");
+		forItem(ButchercraftItems.KETCHUP_JAR_ITEM, "ketchup");
+		forItem(ButchercraftItems.GRAVY_ITEM, "gravy");
 
 		forBlockItem(ButchercraftItems.HASH_FEAST_ITEM,
 				new ResourceLocation(Butchercraft.MOD_ID, "block/hash_block_stage0"));

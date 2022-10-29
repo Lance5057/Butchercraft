@@ -9,7 +9,7 @@
     }
   ],
   "result": {
-    "item": "butchercraft:ketchup_jar_block_item"
+    "item": "butchercraft:ketchup_jar_item"
   },
   "container": {
     "item": "minecraft:glass_bottle"

@@ -3,6 +3,9 @@
   "values": [
     "butchercraft:beef_scraps",
     "butchercraft:lamb_scraps",
-    "butchercraft:pork_scraps"
+    "butchercraft:pork_scraps",
+    "butchercraft:beef_roast",
+    "butchercraft:lamb_roast",
+    "butchercraft:pork_roast"
   ]
 }

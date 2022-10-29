@@ -82,6 +82,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ButchercraftRecipeProvider extends RecipeProvider {
 
@@ -388,6 +389,11 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.requires(ButchercraftItemTags.ANY_GROUND_MEAT_RAW).requires(TRIPE.get())
 				.unlockedBy("has_meat", has(ButchercraftItemTags.ANY_MEAT_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "stuff_sausage"));
+
+		ShapelessRecipeBuilder.shapeless(ModItems.MINCED_BEEF.get(), 1)
+				.requires(ButchercraftItemTags.ANY_GROUND_MEAT_RAW)
+				.unlockedBy("has_meat", has(ButchercraftItemTags.ANY_MEAT_RAW))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "form_patty"));
 
 		ShapelessRecipeBuilder.shapeless(Items.CANDLE, 6).requires(ButchercraftItems.LARD.get()).requires(Items.STRING)
 				.unlockedBy("has_lard", has(ButchercraftItems.LARD.get()))

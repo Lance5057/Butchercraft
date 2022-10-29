@@ -41,13 +41,13 @@ public class BlockModels extends BlockStateProvider {
 		this.horizontalBlock(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(),
 				models().getExistingFile(modLoc("block/sheep_hide_carpet")));
 
-		this.horizontalBlock(ButchercraftBlocks.BBQ_JAR_BLOCK.get(),
-				models().getExistingFile(modLoc("block/bbq_jar_block")));
-		this.horizontalBlock(ButchercraftBlocks.STOCK_JAR_BLOCK.get(),
-				models().getExistingFile(modLoc("block/stock_jar_block")));
-		this.horizontalBlock(ButchercraftBlocks.KETCHUP_JAR_BLOCK.get(),
-				models().getExistingFile(modLoc("block/ketchup_jar_block")));
-		this.horizontalBlock(ButchercraftBlocks.GRAVY_BOAT.get(), models().getExistingFile(modLoc("block/gravy_boat")));
+//		this.horizontalBlock(ButchercraftBlocks.BBQ_JAR_BLOCK.get(),
+//				models().getExistingFile(modLoc("block/bbq_jar_block")));
+//		this.horizontalBlock(ButchercraftBlocks.STOCK_JAR_BLOCK.get(),
+//				models().getExistingFile(modLoc("block/stock_jar_block")));
+//		this.horizontalBlock(ButchercraftBlocks.KETCHUP_JAR_BLOCK.get(),
+//				models().getExistingFile(modLoc("block/ketchup_jar_block")));
+//		this.horizontalBlock(ButchercraftBlocks.GRAVY_BOAT.get(), models().getExistingFile(modLoc("block/gravy_boat")));
 
 		this.feastBlock(ButchercraftBlocks.HASH_FEAST.get());
 		this.feastBlock(ButchercraftBlocks.POT_ROAST_FEAST.get());

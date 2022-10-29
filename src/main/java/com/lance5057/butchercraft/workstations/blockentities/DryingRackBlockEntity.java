@@ -92,7 +92,7 @@ public class DryingRackBlockEntity extends BlockEntity {
 //	}
 
 	public void extractItem(Player playerEntity, IItemHandler inventory) {
-		for (int i = NUM_SLOTS-1; i >= 0; i--) {
+		for (int i = NUM_SLOTS - 1; i >= 0; i--) {
 			if (!inventory.getStackInSlot(i).isEmpty()) {
 				ItemStack itemStack = inventory.extractItem(i, inventory.getStackInSlot(i).getCount(), false);
 				playerEntity.addItem(itemStack);
@@ -185,11 +185,10 @@ public class DryingRackBlockEntity extends BlockEntity {
 								zOff = 0.2f + level.random.nextFloat(0.2f);
 								break;
 							}
-							level.addParticle(ParticleTypes.MYCELIUM,
+							level.addParticle(ParticleTypes.DOLPHIN,
 									pos.getX() + level.random.nextDouble() / 16 + xOff,
 									pos.getY() - level.random.nextDouble() / 16 + yOff,
-									pos.getZ() + level.random.nextDouble() / 16 + zOff,
-									0, 0.0f, 0);
+									pos.getZ() + level.random.nextDouble() / 16 + zOff, 0, 1f, 0);
 						}
 					}
 				}
