@@ -83,5 +83,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		tag(Tags.Items.SLIMEBALLS).add(ButchercraftItems.FAT.get());
 		tag(Tags.Items.STRING).add(ButchercraftItems.SINEW.get()).add(ButchercraftItems.LEATHER_SCRAP.get());
+		
+		tag(ButchercraftItemTags.ANY_ROAST_RAW).add(ButchercraftItems.BEEF_ROAST.get(),
+				ButchercraftItems.LAMB_ROAST.get(), ButchercraftItems.PORK_ROAST.get());
 	}
 }

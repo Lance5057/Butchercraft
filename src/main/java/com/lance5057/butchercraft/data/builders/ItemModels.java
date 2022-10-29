@@ -44,7 +44,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		// forItem(ButchercraftItems.SPATULA, "spatula");
 		forItem(ButchercraftItems.HORN, "horn");
 		forItem(ButchercraftItems.LARD, "lard");
-		forItem(ButchercraftItems.SOAP, "soap");
+//		forItem(ButchercraftItems.SOAP, "soap");
 
 		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
 		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())
@@ -87,6 +87,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_BEEF_SCRAPS, "cooked_beef_scraps");
 		forItem(ButchercraftItems.OXTAIL, "oxtail");
 		forItem(ButchercraftItems.COOKED_OXTAIL, "cooked_oxtail");
+		forItem(ButchercraftItems.BEEF_JERKY, "beef_jerky");
 
 		forItem(ButchercraftItems.PORK_STEW_MEAT, "stew_pork");
 		forItem(ButchercraftItems.COOKED_PORK_STEW_MEAT, "cooked_stew_pork");
@@ -104,6 +105,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_PORK_SCRAPS, "cooked_pork_scraps");
 		forItem(ButchercraftItems.BACON, "bacon");
 		forItem(ButchercraftItems.COOKED_BACON, "cooked_bacon");
+		forItem(ButchercraftItems.PORK_JERKY, "pork_jerky");
 
 //		getBuilder(ButchercraftItems.PIG_HOOVES.getId().getPath())
 //				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig_foot")));
@@ -122,6 +124,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_LAMB, "cooked_ground_lamb");
 		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
 		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
+		forItem(ButchercraftItems.LAMB_JERKY, "lamb_jerky");
 
 		forItem(ButchercraftItems.SAUSAGE, "sausage");
 		forItem(ButchercraftItems.COOKED_SAUSAGE, "sausagecooked");
@@ -142,6 +145,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.OXTAIL_SOUP, "oxtail_soup");
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
+		forBlockItem(ButchercraftItems.DRYING_RACK_BLOCK_ITEM, "drying_rack");
 
 		forBlockItem(ButchercraftItems.BEEF_BLOCK_ITEM, "beef_block");
 		forBlockItem(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM, "cooked_beef_block");
@@ -154,10 +158,10 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.PIG_HIDE, "pig_hide");
 		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");
 
-		forBlockItem(ButchercraftItems.BBQ_JAR_BLOCK_ITEM, "bbq_jar_block_item");
-		forBlockItem(ButchercraftItems.STOCK_JAR_BLOCK_ITEM, "stock_jar_block_item");
-		forBlockItem(ButchercraftItems.KETCHUP_JAR_BLOCK_ITEM, "ketchup_jar_block_item");
-		forBlockItem(ButchercraftItems.GRAVY_BOAT_ITEM, "gravy_boat_item");
+		forItem(ButchercraftItems.BBQ_JAR_ITEM, "bbq");
+		forItem(ButchercraftItems.STOCK_JAR_ITEM, "broth");
+		forItem(ButchercraftItems.KETCHUP_JAR_ITEM, "ketchup");
+		forItem(ButchercraftItems.GRAVY_ITEM, "gravy");
 
 		forBlockItem(ButchercraftItems.HASH_FEAST_ITEM,
 				new ResourceLocation(Butchercraft.MOD_ID, "block/hash_block_stage0"));

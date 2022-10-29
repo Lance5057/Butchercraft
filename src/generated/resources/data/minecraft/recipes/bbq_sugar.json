@@ -12,7 +12,7 @@
     }
   ],
   "result": {
-    "item": "butchercraft:bbq_jar_block_item"
+    "item": "butchercraft:bbq_jar_item"
   },
   "container": {
     "item": "minecraft:glass_bottle"

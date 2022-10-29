@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "block\\block",
+	"parent": "block/block",
 	"textures": {
-		"0": "block/oak_planks",
-		"1": "butchercraft:block/dryingrack",
-		"particle": "block/oak_planks"
+		"0": "minecraft:block/oak_planks",
+		"1": "butchercraft:block/drying_rack",
+		"particle": "minecraft:block/oak_planks"
 	},
 	"elements": [
 		{

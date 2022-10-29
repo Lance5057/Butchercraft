@@ -1,0 +1,9 @@
+{
+  "type": "butchercraft:drying_rack",
+  "ingredient": {
+    "item": "butchercraft:lamb_scraps"
+  },
+  "result": "butchercraft:lamb_jerky",
+  "experience": 10.0,
+  "cookingtime": 1000
+}

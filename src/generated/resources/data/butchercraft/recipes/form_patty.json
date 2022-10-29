@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "butchercraft:any_ground_meat_raw"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:minced_beef"
+  }
+}

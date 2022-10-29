@@ -77,9 +77,12 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ButchercraftRecipeProvider extends RecipeProvider {
 
@@ -387,9 +390,29 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_meat", has(ButchercraftItemTags.ANY_MEAT_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "stuff_sausage"));
 
+		ShapelessRecipeBuilder.shapeless(ModItems.MINCED_BEEF.get(), 1)
+				.requires(ButchercraftItemTags.ANY_GROUND_MEAT_RAW)
+				.unlockedBy("has_meat", has(ButchercraftItemTags.ANY_MEAT_RAW))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "form_patty"));
+
 		ShapelessRecipeBuilder.shapeless(Items.CANDLE, 6).requires(ButchercraftItems.LARD.get()).requires(Items.STRING)
 				.unlockedBy("has_lard", has(ButchercraftItems.LARD.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lard_to_candle"));
+
+		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()),
+				ButchercraftItems.BEEF_JERKY.get(), 10, 1000)
+				.unlockedBy("has_beef_scraps", has(ButchercraftItems.BEEF_SCRAPS.get())).save(consumer);
+		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.PORK_SCRAPS.get()),
+				ButchercraftItems.PORK_JERKY.get(), 10, 1000)
+				.unlockedBy("has_pork_scraps", has(ButchercraftItems.PORK_SCRAPS.get())).save(consumer);
+		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.LAMB_SCRAPS.get()),
+				ButchercraftItems.LAMB_JERKY.get(), 10, 1000)
+				.unlockedBy("has_lamb_scraps", has(ButchercraftItems.LAMB_SCRAPS.get())).save(consumer);
+
+		ShapedRecipeBuilder.shaped(ButchercraftItems.DRYING_RACK_BLOCK_ITEM.get()).pattern("WSW").pattern("SSS")
+				.pattern("WSW").define('W', ItemTags.PLANKS).define('S', Tags.Items.STRING)
+				.unlockedBy("has_string", has(Tags.Items.STRING))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "drying_rack"));
 	}
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer) {

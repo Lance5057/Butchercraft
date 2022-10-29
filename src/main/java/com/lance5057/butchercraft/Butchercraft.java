@@ -44,14 +44,13 @@ public class Butchercraft {
     	event.enqueueWork(() -> {
     		ButchercraftClient.setBERenderers();
     		
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.MEAT_HOOK.get(), RenderType.cutout());
+    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.DRYING_RACK.get(), RenderType.cutout());
+    		
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.COW_HIDE_CARPET.get(), RenderType.cutout());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.PIG_HIDE_CARPET.get(), RenderType.cutout());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(), RenderType.cutout());
     		
-    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.BBQ_JAR_BLOCK.get(), RenderType.cutout());
-    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.STOCK_JAR_BLOCK.get(), RenderType.translucent());
-    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.KETCHUP_JAR_BLOCK.get(), RenderType.translucent());
-    		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.GRAVY_BOAT.get(), RenderType.cutout());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.HASH_FEAST.get(), RenderType.cutout());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.BBQ_RIBS_FEAST.get(), RenderType.cutout());
     		ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.POT_ROAST_FEAST.get(), RenderType.cutout());

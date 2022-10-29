@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "farmersdelight:onion"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "butchercraft:ground_beef"
+    },
+    {
+      "item": "butchercraft:ketchup_jar_item"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:hash_block_item"
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "experience": 0.35,
+  "cookingtime": 400
+}
