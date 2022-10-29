@@ -1,31 +1,19 @@
 package com.lance5057.butchercraft.workstations.blockentities;
 
-import java.util.Optional;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
-import com.lance5057.butchercraft.workstations.blocks.MeatHookBlock;
 import com.lance5057.butchercraft.workstations.recipes.dryingrack.DryingRackRecipe;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -34,6 +22,10 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.Optional;
 
 public class DryingRackBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
@@ -168,22 +160,22 @@ public class DryingRackBlockEntity extends BlockEntity {
 							float xOff = 0;
 							float zOff = 0;
 							switch (i % 4) {
-							case 0:
-								xOff = 0.2f + level.random.nextFloat(0.2f);
-								zOff = 0.2f + level.random.nextFloat(0.2f);
-								break;
-							case 1:
-								xOff = 0.2f + level.random.nextFloat(0.2f);
-								zOff = 0.8f - level.random.nextFloat(0.2f);
-								break;
-							case 2:
-								xOff = 0.8f - level.random.nextFloat(0.2f);
-								zOff = 0.8f - level.random.nextFloat(0.2f);
-								break;
-							case 3:
-								xOff = 0.8f - level.random.nextFloat(0.2f);
-								zOff = 0.2f + level.random.nextFloat(0.2f);
-								break;
+								case 0 -> {
+									xOff = 0.2f + level.random.nextFloat() * .2f;
+									zOff = 0.2f + level.random.nextFloat() * .2f;
+								}
+								case 1 -> {
+									xOff = 0.2f + level.random.nextFloat() * .2f;
+									zOff = 0.8f - level.random.nextFloat() * .2f;
+								}
+								case 2 -> {
+									xOff = 0.8f - level.random.nextFloat() * .2f;
+									zOff = 0.8f - level.random.nextFloat() * .2f;
+								}
+								case 3 -> {
+									xOff = 0.8f - level.random.nextFloat() * .2f;
+									zOff = 0.2f + level.random.nextFloat() * .2f;
+								}
 							}
 							level.addParticle(ParticleTypes.DOLPHIN,
 									pos.getX() + level.random.nextDouble() / 16 + xOff,

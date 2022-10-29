@@ -12,17 +12,16 @@ public class KnifeItem extends SwordItem {
 	}
 
 	@Override
-	public boolean hasContainerItem(ItemStack stack) {
-		return true;
-	}
-
-	@Override
-	public ItemStack getContainerItem(ItemStack itemStack) {
+	public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
 		ItemStack container = itemStack.copy();
 		if (container.hurt(1, RandomSource.create(), null))
 			return ItemStack.EMPTY;
 		else
 			return container;
+	}
 
+	@Override
+	public boolean hasCraftingRemainingItem(ItemStack stack) {
+		return true;
 	}
 }
