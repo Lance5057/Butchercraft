@@ -1,202 +1,202 @@
 {
   "type": "butchercraft:meat_hook",
+  "carcass": {
+    "item": "butchercraft:pig_carcass"
+  },
   "group": "",
   "tools": [
     {
-      "uses": 12,
-      "tool": {
-        "item": "butchercraft:skinning_knife"
-      },
       "count": 1,
       "damage": true,
       "loot_table": "butchercraft:meat_hook/skin_pig",
       "models": [
         {
-          "location": "butchercraft:meathook/pig",
           "IsBlock": true,
           "animation": {
             "location": {},
             "rotation": {},
             "scale": {}
-          }
+          },
+          "location": "butchercraft:meathook/pig"
         },
         {
-          "location": "butchercraft:skinning_knife",
           "animation": {
             "location": {
               "x": {
-                "min": -8.0,
-                "max": 8.0
+                "max": 8.0,
+                "min": -8.0
               },
               "y": {
-                "min": -24.0,
-                "max": 24.0
+                "max": 24.0,
+                "min": -24.0
               },
               "z": {
-                "min": -12.0,
-                "max": 12.0
+                "max": 12.0,
+                "min": -12.0
               }
             },
             "rotation": {
               "z": {
-                "min": -45.0,
-                "max": 45.0,
-                "speed": 0.05,
                 "loop": true,
-                "pingpong": true
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
               }
             },
             "scale": {}
-          }
+          },
+          "location": "butchercraft:skinning_knife"
         }
-      ]
+      ],
+      "tool": {
+        "item": "butchercraft:skinning_knife"
+      },
+      "uses": 12
     },
     {
-      "uses": 12,
-      "tool": {
-        "item": "butchercraft:gut_knife"
-      },
       "count": 1,
       "damage": true,
       "loot_table": "butchercraft:meat_hook/disembowel_pig",
       "models": [
         {
-          "location": "butchercraft:meathook/pig_skinned",
           "IsBlock": true,
           "animation": {
             "location": {},
             "rotation": {},
             "scale": {}
-          }
+          },
+          "location": "butchercraft:meathook/pig_skinned"
         },
         {
-          "location": "butchercraft:gut_knife",
           "animation": {
             "location": {
               "x": {
-                "min": -8.0,
-                "max": 8.0
+                "max": 8.0,
+                "min": -8.0
               },
               "y": {
-                "min": -24.0,
-                "max": 24.0
+                "max": 24.0,
+                "min": -24.0
               },
               "z": {
-                "min": -12.0,
-                "max": 12.0
+                "max": 12.0,
+                "min": -12.0
               }
             },
             "rotation": {
               "z": {
-                "min": -45.0,
-                "max": 45.0,
-                "speed": 0.05,
                 "loop": true,
-                "pingpong": true
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
               }
             },
             "scale": {}
-          }
+          },
+          "location": "butchercraft:gut_knife"
         }
-      ]
+      ],
+      "tool": {
+        "item": "butchercraft:gut_knife"
+      },
+      "uses": 12
     },
     {
-      "uses": 12,
-      "tool": {
-        "item": "butchercraft:bone_saw"
-      },
       "count": 1,
       "damage": true,
       "loot_table": "butchercraft:meat_hook/bisect_pig",
       "models": [
         {
-          "location": "butchercraft:meathook/pig_gutted",
           "IsBlock": true,
           "animation": {
             "location": {},
             "rotation": {},
             "scale": {}
-          }
+          },
+          "location": "butchercraft:meathook/pig_gutted"
         },
         {
-          "location": "butchercraft:bone_saw",
           "animation": {
             "location": {
               "x": {
-                "min": -8.0,
-                "max": 8.0
+                "max": 8.0,
+                "min": -8.0
               },
               "y": {
-                "min": -24.0,
-                "max": 24.0
+                "max": 24.0,
+                "min": -24.0
               },
               "z": {
-                "min": -12.0,
-                "max": 12.0
+                "max": 12.0,
+                "min": -12.0
               }
             },
             "rotation": {
               "z": {
-                "min": -45.0,
-                "max": 45.0,
-                "speed": 0.05,
                 "loop": true,
-                "pingpong": true
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
               }
             },
             "scale": {}
-          }
+          },
+          "location": "butchercraft:bone_saw"
         }
-      ]
+      ],
+      "tool": {
+        "item": "butchercraft:bone_saw"
+      },
+      "uses": 12
     },
     {
-      "uses": 12,
-      "tool": {
-        "item": "butchercraft:butcher_knife"
-      },
       "count": 1,
       "damage": true,
       "loot_table": "butchercraft:meat_hook/butcher_pig",
       "models": [
         {
-          "location": "butchercraft:meathook/pig_bisected",
           "IsBlock": true,
           "animation": {
             "location": {},
             "rotation": {},
             "scale": {}
-          }
+          },
+          "location": "butchercraft:meathook/pig_bisected"
         },
         {
-          "location": "butchercraft:butcher_knife",
           "animation": {
             "location": {
               "x": {
-                "min": -8.0,
-                "max": 8.0
+                "max": 8.0,
+                "min": -8.0
               },
               "y": {
-                "min": -24.0,
-                "max": 24.0
+                "max": 24.0,
+                "min": -24.0
               },
               "z": {
-                "min": -12.0,
-                "max": 12.0
+                "max": 12.0,
+                "min": -12.0
               }
             },
             "rotation": {
               "y": {
-                "min": -90.0,
-                "max": 90.0
+                "max": 90.0,
+                "min": -90.0
               }
             },
             "scale": {}
-          }
+          },
+          "location": "butchercraft:butcher_knife"
         }
-      ]
+      ],
+      "tool": {
+        "item": "butchercraft:butcher_knife"
+      },
+      "uses": 12
     }
-  ],
-  "carcass": {
-    "item": "butchercraft:pig_carcass"
-  }
+  ]
 }

@@ -16,14 +16,12 @@ import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.client.model.lighting.ForgeModelBlockRenderer;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
@@ -114,19 +112,19 @@ public class RenderUtil {
 	public static void loadModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,
 			int combinedOverlayIn, BlacklistedModel model, float timer) {
 
-		if (model.isBlock) {
-			UnbakedModel um = ForgeModelBlockRenderer.instance().getModelOrMissing(model.rc);
-			if (um instanceof BlockModel bm) {
-
-				blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist,
-						model.transform, timer);
-
-			}
-		} else {
-			Item item = ForgeRegistries.ITEMS.getValue(model.rc);
-			itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist,
-					model.transform, timer);
-		}
+//		if (model.isBlock) {
+//			UnbakedModel um = ForgeModelBlockRenderer.instance().getModelOrMissing(model.rc);
+//			if (um instanceof BlockModel bm) {
+//
+//				blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist,
+//						model.transform, timer);
+//
+//			}
+//		} else {
+		Item item = ForgeRegistries.ITEMS.getValue(model.rc);
+		itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist,
+				model.transform, timer);
+//		}
 	}
 
 	public static void blockModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,

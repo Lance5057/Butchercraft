@@ -1,9 +1,9 @@
 {
   "type": "butchercraft:drying_rack",
+  "cookingtime": 1000,
+  "experience": 10.0,
   "ingredient": {
     "item": "butchercraft:pork_scraps"
   },
-  "result": "butchercraft:pork_jerky",
-  "experience": 10.0,
-  "cookingtime": 1000
+  "result": "butchercraft:pork_jerky"
 }

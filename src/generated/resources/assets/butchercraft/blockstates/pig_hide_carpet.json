@@ -1,5 +1,9 @@
 {
   "variants": {
+    "facing=east": {
+      "model": "butchercraft:block/pig_hide_carpet",
+      "y": 90
+    },
     "facing=north": {
       "model": "butchercraft:block/pig_hide_carpet"
     },
@@ -10,10 +14,6 @@
     "facing=west": {
       "model": "butchercraft:block/pig_hide_carpet",
       "y": 270
-    },
-    "facing=east": {
-      "model": "butchercraft:block/pig_hide_carpet",
-      "y": 90
     }
   }
 }

@@ -16,7 +16,7 @@ public class DataGen {
 
 		DataGenerator generator = event.getGenerator();
 
-		final Advancements advancements = new Advancements(generator);
+		final Advancements advancements = new Advancements(generator, event.getExistingFileHelper());
 		generator.addProvider(true, advancements);
 		generator.addProvider(true, new ItemModels(generator, event.getExistingFileHelper()));
 		generator.addProvider(true, new BlockModels(generator, event.getExistingFileHelper()));

@@ -1,5 +1,10 @@
 {
   "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
   "ingredients": [
     {
       "tag": "butchercraft:any_scrap_meat_raw"
@@ -13,10 +18,5 @@
   ],
   "result": {
     "item": "butchercraft:gravy_boat_item"
-  },
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "experience": 1.0,
-  "cookingtime": 200
+  }
 }

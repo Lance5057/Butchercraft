@@ -23,8 +23,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Butchercraft item models";
 	}
 
 	@Override

@@ -1,5 +1,10 @@
 {
   "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
   "ingredients": [
     {
       "tag": "butchercraft:any_roast_raw"
@@ -16,10 +21,5 @@
   ],
   "result": {
     "item": "butchercraft:pot_roast_block_item"
-  },
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "experience": 0.35,
-  "cookingtime": 400
+  }
 }

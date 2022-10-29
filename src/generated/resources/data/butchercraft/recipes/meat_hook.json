@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "III",
-    "NCN",
-    "NNN"
-  ],
   "key": {
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
     "C": {
       "item": "minecraft:chain"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
     },
     "N": {
       "item": "minecraft:iron_nugget"
     }
   },
+  "pattern": [
+    "III",
+    "NCN",
+    "NNN"
+  ],
   "result": {
     "item": "butchercraft:meat_hook_item"
   }

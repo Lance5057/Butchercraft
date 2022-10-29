@@ -1,7 +1,6 @@
 {
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -11,14 +10,14 @@
       ],
       "functions": [
         {
-          "function": "minecraft:set_count",
+          "add": false,
           "count": 5.0,
-          "add": false
+          "function": "minecraft:set_count"
         }
-      ]
+      ],
+      "rolls": 1.0
     },
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -28,14 +27,14 @@
       ],
       "functions": [
         {
-          "function": "minecraft:set_count",
+          "add": false,
           "count": 2.0,
-          "add": false
+          "function": "minecraft:set_count"
         }
-      ]
+      ],
+      "rolls": 1.0
     },
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -45,14 +44,14 @@
       ],
       "functions": [
         {
-          "function": "minecraft:set_count",
+          "add": false,
           "count": 7.0,
-          "add": false
+          "function": "minecraft:set_count"
         }
-      ]
+      ],
+      "rolls": 1.0
     },
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -62,14 +61,14 @@
       ],
       "functions": [
         {
-          "function": "minecraft:set_count",
+          "add": false,
           "count": 2.0,
-          "add": false
+          "function": "minecraft:set_count"
         }
-      ]
+      ],
+      "rolls": 1.0
     },
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -79,14 +78,14 @@
       ],
       "functions": [
         {
-          "function": "minecraft:set_count",
+          "add": false,
           "count": 10.0,
-          "add": false
+          "function": "minecraft:set_count"
         }
-      ]
+      ],
+      "rolls": 1.0
     },
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -96,11 +95,12 @@
       ],
       "functions": [
         {
-          "function": "minecraft:set_count",
+          "add": false,
           "count": 9.0,
-          "add": false
+          "function": "minecraft:set_count"
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

@@ -18,7 +18,7 @@
     }
   ],
   "result": {
-    "item": "butchercraft:sausage",
-    "count": 4
+    "count": 4,
+    "item": "butchercraft:sausage"
   }
 }

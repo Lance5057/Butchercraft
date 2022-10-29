@@ -1,5 +1,10 @@
 {
   "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
   "ingredients": [
     {
       "item": "butchercraft:lamb_stewmeat"
@@ -13,10 +18,5 @@
   ],
   "result": {
     "item": "butchercraft:lamb_stew"
-  },
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "experience": 0.35,
-  "cookingtime": 200
+  }
 }

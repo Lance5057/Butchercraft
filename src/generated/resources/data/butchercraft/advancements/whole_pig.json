@@ -1,100 +1,100 @@
 {
   "parent": "butchercraft:pig",
-  "display": {
-    "icon": {
-      "item": "minecraft:cooked_porkchop"
-    },
-    "title": {
-      "translate": "butchercraft.advancement.whole_pig.name"
-    },
-    "description": {
-      "translate": "butchercraft.advancement.whole_pig.desc"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
-    "whole_pig_rib": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_rib"
-          ]
-        }
-      }
-    },
-    "whole_pig_ribs": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_ribs"
-          ]
-        }
-      }
-    },
-    "whole_pig_roast": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_roast"
-          ]
-        }
-      }
-    },
-    "whole_pig_scraps": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_scraps"
-          ]
-        }
-      }
-    },
-    "whole_pig_stew": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_stewmeat"
-          ]
-        }
-      }
-    },
-    "whole_pig_cubed": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_cubed_pork"
-          ]
-        }
-      }
-    },
-    "whole_pig_ground": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_ground_pork"
-          ]
-        }
-      }
-    },
     "whole_pig_bacon": {
-      "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
             "butchercraft:cooked_bacon"
           ]
         }
-      }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_cubed": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_cubed_pork"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_ground": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_ground_pork"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_rib": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_rib"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_ribs": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_ribs"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_roast": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_roast"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_scraps": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_scraps"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_stew": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_stewmeat"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.whole_pig.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:cooked_porkchop"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.whole_pig.name"
     }
   },
   "requirements": [

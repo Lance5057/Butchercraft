@@ -18,6 +18,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import java.util.function.Consumer;
@@ -49,12 +51,13 @@ public class Advancements extends AdvancementProvider {
 	private Advancement heart;
 	private Advancement cannibalism;
 
-	public Advancements(@Nonnull DataGenerator dataGenerator) {
-		super(dataGenerator);
+	public Advancements(@Nonnull DataGenerator dataGenerator, ExistingFileHelper existingFileHelper) {
+		super(dataGenerator, existingFileHelper);
 		this.dataGenerator = dataGenerator;
 	}
 
-	private void registerAdvancements(Consumer<Advancement> consumer) {
+	@Override
+	protected void registerAdvancements(@NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper fileHelper) {
 		root = Advancement.Builder.advancement()
 				.display(new DisplayInfo(new ItemStack(ButchercraftItems.BUTCHER_KNIFE.get()),
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.root.name"),

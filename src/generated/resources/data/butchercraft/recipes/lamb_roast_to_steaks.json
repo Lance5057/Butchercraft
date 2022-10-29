@@ -9,7 +9,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:mutton",
-    "count": 4
+    "count": 4,
+    "item": "minecraft:mutton"
   }
 }
