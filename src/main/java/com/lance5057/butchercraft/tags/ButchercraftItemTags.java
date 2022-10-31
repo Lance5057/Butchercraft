@@ -25,4 +25,9 @@ public class ButchercraftItemTags {
     
     public static final TagKey<Item> ANY_SCRAP_MEAT_RAW = ItemTags.create(new ResourceLocation(Butchercraft.MOD_ID, "any_scrap_meat_raw"));
     public static final TagKey<Item> ANY_ROAST_RAW = ItemTags.create(new ResourceLocation(Butchercraft.MOD_ID, "any_roast_raw"));
+    public static final TagKey<Item> ANY_RIBS_RAW = ItemTags.create(new ResourceLocation(Butchercraft.MOD_ID, "any_ribs_raw"));
+    public static final TagKey<Item> ANY_CUBED_MEAT_RAW = ItemTags.create(new ResourceLocation(Butchercraft.MOD_ID, "any_cubed_meat_raw"));
+    
+    public static final TagKey<Item> ANY_OFFAL = ItemTags.create(new ResourceLocation(Butchercraft.MOD_ID, "any_offal"));
+    public static final TagKey<Item> ANY_GELATIN_PROVIDER = ItemTags.create(new ResourceLocation(Butchercraft.MOD_ID, "any_gelatin_provider"));
 }

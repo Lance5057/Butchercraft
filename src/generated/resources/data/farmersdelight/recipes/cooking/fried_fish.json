@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "item": "butchercraft:lard"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:fried_fish"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

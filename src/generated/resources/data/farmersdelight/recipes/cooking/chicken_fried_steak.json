@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:beef"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "item": "butchercraft:lard"
+    },
+    {
+      "item": "butchercraft:gravy_boat_item"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:chicken_fried_steak"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

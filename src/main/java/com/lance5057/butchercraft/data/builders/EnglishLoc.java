@@ -88,6 +88,7 @@ import static com.lance5057.butchercraft.ButchercraftItems.STOMACHE;
 import static com.lance5057.butchercraft.ButchercraftItems.TRIPE;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -196,6 +197,8 @@ public class EnglishLoc extends LanguageProvider {
         this.add(SHEEP_HIDE.get(), "Sheep Hide");
         
         this.add(HORN.get(), "Horn");
+        
+        
 //        this.add(SPATULA.get(), "Spatula");
 //        
 //        this.add(GRINDER_TIP.get(), "Grinder Tip");
@@ -206,8 +209,117 @@ public class EnglishLoc extends LanguageProvider {
         
         this.add(FAT.get(), "Fat");
         this.add(SINEW.get(), "Sinew");
-        this.add(HOOK_BLOCK_ITEM.get(), "Meat Hook");
+        this.add(ButchercraftItems.LARD.get(), "Lard");
+        this.add(ButchercraftItems.GELATIN.get(), "Gelatin");
+        
+        this.add(ButchercraftItems.HOOK_BLOCK_ITEM.get(), "Meat Hook");
+        this.add(ButchercraftItems.DRYING_RACK_BLOCK_ITEM.get(), "Drying Rack");
 //        this.add(COW_SKULL.get(), "Cow Skull");
+        
+        this.add(ButchercraftItems.STOCK_JAR_ITEM.get(), "Stock");
+        this.add(ButchercraftItems.BBQ_JAR_ITEM.get(), "BBQ Sauce");
+        this.add(ButchercraftItems.KETCHUP_JAR_ITEM.get(), "Ketchup");
+        this.add(ButchercraftItems.GRAVY_ITEM.get(), "Gravy");
+        
+        this.add(ButchercraftItems.PORK_STEW.get(), "Pork Stew");
+        this.add(ButchercraftItems.LAMB_STEW.get(), "Mutton Stew");
+        
+        this.add(ButchercraftItems.SAUSAGE_ROLL.get(), "Sausage Roll");
+        this.add(ButchercraftItems.SOS.get(), "SOS");
+        this.add(ButchercraftItems.LIVER_ONIONS.get(), "Liver and Onions");
+        this.add(ButchercraftItems.FRIES.get(), "French Fries");
+        this.add(ButchercraftItems.FRIED_FISH.get(), "Fried Fish");
+        this.add(ButchercraftItems.CHICKEN_FRIED_STEAK.get(), "Chicken Fried Steak");
+        this.add(ButchercraftItems.PORK_TENDERLOIN.get(), "Pork Tenderloin");
+        this.add(ButchercraftItems.FRIED_CHICKEN.get(), "Fried Chicken");
+        this.add(ButchercraftItems.STUFFED_HEART.get(), "Stuffed Heart");
+        this.add(ButchercraftItems.FRIED_BRAINS.get(), "Fried Brains");
+        this.add(ButchercraftItems.OXTAIL_SOUP.get(), "Oxtail Soup");
+        
+        this.add(ButchercraftItems.HASH.get(), "Bowl of Hash");
+        this.add(ButchercraftItems.HASH_FEAST_ITEM.get(), "Hash");
+        
+        this.add(ButchercraftItems.POT_ROAST.get(), "Bowl of Pot Roast");
+        this.add(ButchercraftItems.POT_ROAST_FEAST_ITEM.get(), "Pot Roast");
+        
+        this.add(ButchercraftItems.SALISBURY_STEAK.get(), "Plate of Salisbury Steak");
+        this.add(ButchercraftItems.SALISBURY_STEAK_FEAST_ITEM.get(), "Salisbury Steak");
+        
+        this.add(ButchercraftItems.BBQ_RIBS.get(), "Plate of BBQ Ribs");
+        this.add(ButchercraftItems.BBQ_RIBS_FEAST_ITEM.get(), "BBQ Ribs");
+        
+        this.add(ButchercraftItems.MEAT_PIE_SLICE.get(), "Slice of Meat Pie");
+        this.add(ButchercraftItems.MEAT_PIE_BLOCK_ITEM.get(), "Meat Pie");
+        
+        this.add(ButchercraftItems.PULLED_PORK_SANDWICH.get(), "Pulled Pork Sandwich");
+        this.add(ButchercraftItems.PULLED_PORK_FEAST_ITEM.get(), "Pulled Pork");
+        
+        this.add(ButchercraftItems.MASHED_POTATO_GRAVY.get(), "Bowl of Mashed Potatos with Gravy");
+        this.add(ButchercraftItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), "Mashed Potatos with Gravy");
+        
+        this.add(ButchercraftItems.RACK_LAMB.get(), "Rack of Lamb Plate");
+        this.add(ButchercraftItems.RACK_LAMB_FEAST_ITEM.get(), "Rack of Lamb");
+        
+        this.add(ButchercraftItems.STIRFRY.get(), "Bowl of Stirfry");
+        this.add(ButchercraftItems.STIRFRY_FEAST_ITEM.get(), "Stirfry");
+        
+        this.add(ButchercraftItems.BEEF_WELLINGTON.get(), "Plate of Beef Wellington");
+        this.add(ButchercraftItems.BEEF_WELLINGTON_FEAST_ITEM.get(), "Beef Wellington");
+        
+        this.add(ButchercraftItems.HAGGIS.get(), "Bowl of Haggis");
+        this.add(ButchercraftItems.HAGGIS_FEAST_ITEM.get(), "Haggis");
+        
+        this.add(ButchercraftItems.JELLY_BLACK.get(), "Bowl of Blackberry Jelly");
+        this.add(ButchercraftItems.JELLY_BLACK_FEAST_ITEM.get(), "Blackberry Jelly");
+        
+        this.add(ButchercraftItems.JELLY_RED.get(), "Bowl of Cherry Jelly");
+        this.add(ButchercraftItems.JELLY_RED_FEAST_ITEM.get(), "Cherry Jelly");
+        
+        this.add(ButchercraftItems.JELLY_GREEN.get(), "Bowl of Apple Jelly");
+        this.add(ButchercraftItems.JELLY_GREEN_FEAST_ITEM.get(), "Apple Jelly");
+        
+        this.add(ButchercraftItems.JELLY_BROWN.get(), "Bowl of Cola Jelly");
+        this.add(ButchercraftItems.JELLY_BROWN_FEAST_ITEM.get(), "Cola Jelly");
+        
+        this.add(ButchercraftItems.JELLY_BLUE.get(), "Bowl of Blueberry Jelly");
+        this.add(ButchercraftItems.JELLY_BLUE_FEAST_ITEM.get(), "Blueberry Jelly");
+        
+        this.add(ButchercraftItems.JELLY_PURPLE.get(), "Bowl of Grape Jelly");
+        this.add(ButchercraftItems.JELLY_PURPLE_FEAST_ITEM.get(), "Grape Jelly");
+        
+        this.add(ButchercraftItems.JELLY_CYAN.get(), "Bowl of Punch Jelly");
+        this.add(ButchercraftItems.JELLY_CYAN_FEAST_ITEM.get(), "Punch Jelly");
+        
+        this.add(ButchercraftItems.JELLY_LIGHT_GREY.get(), "Bowl of Dragonfruit Jelly");
+        this.add(ButchercraftItems.JELLY_LIGHT_GREY_FEAST_ITEM.get(), "Dragonfruit Jelly");
+        
+        this.add(ButchercraftItems.JELLY_GREY.get(), "Bowl of Mystery Jelly");
+        this.add(ButchercraftItems.JELLY_GREY_FEAST_ITEM.get(), "Mystery Jelly");
+        
+        this.add(ButchercraftItems.JELLY_PINK.get(), "Bowl of Strawberry Jelly");
+        this.add(ButchercraftItems.JELLY_PINK_FEAST_ITEM.get(), "Strawberry Jelly");
+        
+        this.add(ButchercraftItems.JELLY_LIME.get(), "Bowl of Lime Jelly");
+        this.add(ButchercraftItems.JELLY_LIME_FEAST_ITEM.get(), "Lime Jelly");
+        
+        this.add(ButchercraftItems.JELLY_YELLOW.get(), "Bowl of Lemon Jelly");
+        this.add(ButchercraftItems.JELLY_YELLOW_FEAST_ITEM.get(), "Lemon Jelly");
+        
+        this.add(ButchercraftItems.JELLY_LIGHT_BLUE.get(), "Bowl of Blue Raspberry Jelly");
+        this.add(ButchercraftItems.JELLY_LIGHT_BLUE_FEAST_ITEM.get(), "Blue Raspberry Jelly");
+        
+        this.add(ButchercraftItems.JELLY_MAGENTA.get(), "Bowl of Mixed Berry Jelly");
+        this.add(ButchercraftItems.JELLY_MAGENTA_FEAST_ITEM.get(), "Mixed Berry Jelly");
+        
+        this.add(ButchercraftItems.JELLY_ORANGE.get(), "Bowl of Orange Jelly");
+        this.add(ButchercraftItems.JELLY_ORANGE_FEAST_ITEM.get(), "Orange Jelly");
+       
+        this.add(ButchercraftItems.JELLY_WHITE.get(), "Bowl of Coconut Jelly");
+        this.add(ButchercraftItems.JELLY_WHITE_FEAST_ITEM.get(), "Coconut Jelly");
+        
+        this.add(ButchercraftItems.BEEF_JERKY.get(), "Beef Jerky");
+        this.add(ButchercraftItems.PORK_JERKY.get(), "Pork Jerky");
+        this.add(ButchercraftItems.LAMB_JERKY.get(), "Mutton Jerky");
         
         //Advancements
         this.add(Butchercraft.MOD_ID + ".advancement.root.name", "Butchercraft");

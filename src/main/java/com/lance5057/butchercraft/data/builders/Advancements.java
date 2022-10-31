@@ -15,9 +15,13 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;
+import net.minecraft.advancements.critereon.DamageSourcePredicate;
+import net.minecraft.advancements.critereon.EntityEquipmentPredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.KilledTrigger;
+import net.minecraft.advancements.critereon.PlayerInteractTrigger;
 import net.minecraft.advancements.critereon.TickTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
@@ -326,13 +330,12 @@ public class Advancements extends AdvancementProvider {
 
 		DisplayInfo dheart = new DisplayInfo(new ItemStack(ButchercraftItems.HEART.get()),
 				new TranslatableComponent(Butchercraft.MOD_ID + ".advancement.heart.name"),
-				new TranslatableComponent(Butchercraft.MOD_ID + ".advancement.heart.desc"), null,
-				FrameType.CHALLENGE, true, true, true);
+				new TranslatableComponent(Butchercraft.MOD_ID + ".advancement.heart.desc"), null, FrameType.CHALLENGE,
+				true, true, true);
 		dheart.setLocation(0, 32);
-		
+
 		// Challenges
-		heart = Advancement.Builder.advancement().parent(butcherknife)
-				.display(dheart)
+		heart = Advancement.Builder.advancement().parent(butcherknife).display(dheart)
 				.addCriterion("heart", ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.HEART.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":heart");
 
@@ -342,8 +345,10 @@ public class Advancements extends AdvancementProvider {
 						new TranslatableComponent(Butchercraft.MOD_ID + ".advancement.cannibalism.desc"), null,
 						FrameType.CHALLENGE, true, true, true))
 				.addCriterion("cannibalism",
-						KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity()
-								.of(EntityType.PLAYER).build()))
+						PlayerInteractTrigger.TriggerInstance.itemUsedOnEntity(EntityPredicate.Composite.ANY,
+								ItemPredicate.Builder.item().of(ButchercraftItems.BUTCHER_KNIFE.get()),
+								EntityPredicate.Composite
+										.wrap(EntityPredicate.Builder.entity().of(EntityType.PLAYER).build())))
 				.save(consumer, Butchercraft.MOD_ID + ":cannibalism");
 	}
 

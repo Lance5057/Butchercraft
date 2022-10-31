@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "butchercraft:cow_hide",
+    "butchercraft:pig_hide",
+    "butchercraft:sheep_hide",
+    "minecraft:bone",
+    "butchercraft:sinew"
+  ]
+}

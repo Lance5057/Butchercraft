@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:porkchop"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "item": "butchercraft:lard"
+    },
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:pork_tenderloin"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

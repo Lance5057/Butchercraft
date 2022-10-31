@@ -2,20 +2,23 @@
   "type": "farmersdelight:cooking",
   "ingredients": [
     {
-      "tag": "butchercraft:any_roast_raw"
+      "item": "butchercraft:lamb_ribs"
+    },
+    {
+      "item": "butchercraft:lamb_ribs"
     },
     {
       "tag": "forge:vegetables/onion"
     },
     {
-      "item": "minecraft:potato"
+      "item": "minecraft:bread"
     },
     {
-      "item": "minecraft:carrot"
+      "item": "minecraft:sweet_berries"
     }
   ],
   "result": {
-    "item": "butchercraft:pot_roast_block_item"
+    "item": "butchercraft:rack_lamb_block_item"
   },
   "container": {
     "item": "minecraft:bowl"

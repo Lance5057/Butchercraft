@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "butchercraft:oxtail"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "butchercraft:stock_jar_item"
+    },
+    {
+      "tag": "forge:vegetables/tomato"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:oxtail_soup"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

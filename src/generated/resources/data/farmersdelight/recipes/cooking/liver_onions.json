@@ -2,24 +2,18 @@
   "type": "farmersdelight:cooking",
   "ingredients": [
     {
-      "tag": "butchercraft:any_roast_raw"
+      "item": "butchercraft:liver"
     },
     {
       "tag": "forge:vegetables/onion"
-    },
-    {
-      "item": "minecraft:potato"
-    },
-    {
-      "item": "minecraft:carrot"
     }
   ],
   "result": {
-    "item": "butchercraft:pot_roast_block_item"
+    "item": "butchercraft:liver_onions"
   },
   "container": {
     "item": "minecraft:bowl"
   },
   "experience": 0.35,
-  "cookingtime": 400
+  "cookingtime": 200
 }

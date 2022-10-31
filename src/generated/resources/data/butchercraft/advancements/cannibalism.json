@@ -17,8 +17,13 @@
   },
   "criteria": {
     "cannibalism": {
-      "trigger": "minecraft:player_killed_entity",
+      "trigger": "minecraft:player_interacted_with_entity",
       "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:butcher_knife"
+          ]
+        },
         "entity": [
           {
             "condition": "minecraft:entity_properties",

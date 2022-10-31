@@ -1,0 +1,9 @@
+{
+  "type": "butchercraft:drying_rack",
+  "ingredient": {
+    "item": "minecraft:kelp"
+  },
+  "result": "minecraft:dried_kelp",
+  "experience": 10.0,
+  "cookingtime": 1000
+}

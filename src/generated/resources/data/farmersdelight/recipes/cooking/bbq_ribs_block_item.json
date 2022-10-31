@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "tag": "butchercraft:any_ribs_raw"
+    },
+    {
+      "tag": "butchercraft:any_ribs_raw"
+    },
+    {
+      "tag": "butchercraft:any_ribs_raw"
+    },
+    {
+      "tag": "butchercraft:any_ribs_raw"
+    },
+    {
+      "item": "butchercraft:bbq_jar_item"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:bbq_ribs_block_item"
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "experience": 0.35,
+  "cookingtime": 400
+}

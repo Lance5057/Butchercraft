@@ -218,6 +218,8 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 	public static final RegistryObject<Item> LARD = ITEMS.register("lard",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
+	public static final RegistryObject<Item> GELATIN = ITEMS.register("gelatin",
+			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 //	public static final RegistryObject<Item> SOAP = ITEMS.register("soap",
 //			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 

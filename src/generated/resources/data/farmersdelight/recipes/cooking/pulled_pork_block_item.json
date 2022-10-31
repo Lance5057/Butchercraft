@@ -2,20 +2,17 @@
   "type": "farmersdelight:cooking",
   "ingredients": [
     {
-      "tag": "forge:vegetables/onion"
+      "item": "butchercraft:pork_roast"
     },
     {
-      "item": "minecraft:potato"
+      "item": "butchercraft:pork_roast"
     },
     {
-      "item": "butchercraft:ground_beef"
-    },
-    {
-      "item": "butchercraft:ketchup_jar_item"
+      "item": "butchercraft:bbq_jar_item"
     }
   ],
   "result": {
-    "item": "butchercraft:hash_block_item"
+    "item": "butchercraft:pulled_pork_block_item"
   },
   "container": {
     "item": "minecraft:bowl"
