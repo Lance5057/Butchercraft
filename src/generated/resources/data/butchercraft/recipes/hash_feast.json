@@ -7,7 +7,7 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "item": "farmersdelight:onion"
+      "tag": "forge:vegetables/onion"
     },
     {
       "item": "minecraft:potato"

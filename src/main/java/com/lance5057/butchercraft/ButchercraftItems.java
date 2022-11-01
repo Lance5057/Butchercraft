@@ -218,6 +218,8 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 	public static final RegistryObject<Item> LARD = ITEMS.register("lard",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
+	public static final RegistryObject<Item> GELATIN = ITEMS.register("gelatin",
+			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 //	public static final RegistryObject<Item> SOAP = ITEMS.register("soap",
 //			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 
@@ -304,7 +306,7 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().food(FoodsCow.COOKED_BEEF_RIBS).craftRemainder(Items.BOWL).stacksTo(4)
 					.tab(BUTCHER_TAB)));
 	public static final RegistryObject<Item> STIRFRY = ITEMS.register("stirfry", () -> new Item(new Item.Properties()
-			.food(FoodsGeneric.STIRFRY).craftRemainder(ModItems.COOKED_RICE.get()).stacksTo(4).tab(BUTCHER_TAB)));
+			.food(FoodsGeneric.STIRFRY).craftRemainder(Items.BOWL).stacksTo(4).tab(BUTCHER_TAB)));
 	public static final RegistryObject<Item> BEEF_WELLINGTON = ITEMS.register("beef_wellington",
 			() -> new Item(new Item.Properties().food(FoodsGeneric.WELLINGTON).craftRemainder(Items.BOWL).stacksTo(4)
 					.tab(BUTCHER_TAB)));

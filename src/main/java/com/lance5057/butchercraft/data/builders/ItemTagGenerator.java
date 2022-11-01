@@ -8,6 +8,7 @@ import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -77,14 +78,25 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		tag(ButchercraftItemTags.ANY_GROUND_MEAT_RAW).add(ButchercraftItems.GROUND_BEEF.get(),
 				ButchercraftItems.GROUND_LAMB.get(), ButchercraftItems.GROUND_PORK.get());
-		
+		tag(ButchercraftItemTags.ANY_CUBED_MEAT_RAW).add(ButchercraftItems.CUBED_BEEF.get(),
+				ButchercraftItems.CUBED_LAMB.get(), ButchercraftItems.CUBED_PORK.get());
 		tag(ButchercraftItemTags.ANY_SCRAP_MEAT_RAW).add(ButchercraftItems.BEEF_SCRAPS.get(),
 				ButchercraftItems.LAMB_SCRAPS.get(), ButchercraftItems.PORK_SCRAPS.get());
 
 		tag(Tags.Items.SLIMEBALLS).add(ButchercraftItems.FAT.get());
 		tag(Tags.Items.STRING).add(ButchercraftItems.SINEW.get()).add(ButchercraftItems.LEATHER_SCRAP.get());
-		
+
 		tag(ButchercraftItemTags.ANY_ROAST_RAW).add(ButchercraftItems.BEEF_ROAST.get(),
 				ButchercraftItems.LAMB_ROAST.get(), ButchercraftItems.PORK_ROAST.get());
+
+		tag(ButchercraftItemTags.ANY_RIBS_RAW).add(ButchercraftItems.BEEF_RIBS.get(), ButchercraftItems.LAMB_RIBS.get(),
+				ButchercraftItems.PORK_RIBS.get());
+
+		tag(ButchercraftItemTags.ANY_OFFAL).add(ButchercraftItems.HEART.get(), ButchercraftItems.LUNG.get(),
+				ButchercraftItems.KIDNEY.get(), ButchercraftItems.LIVER.get(), ButchercraftItems.BRAIN.get(),
+				ButchercraftItems.TRIPE.get());
+
+		tag(ButchercraftItemTags.ANY_GELATIN_PROVIDER).add(ButchercraftItems.COW_HIDE.get(), ButchercraftItems.PIG_HIDE.get(),
+				ButchercraftItems.SHEEP_HIDE.get(), Items.BONE, ButchercraftItems.SINEW.get());
 	}
 }

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "butchercraft:heart",
+    "butchercraft:lung",
+    "butchercraft:kidney",
+    "butchercraft:liver",
+    "butchercraft:brain",
+    "butchercraft:tripe"
+  ]
+}

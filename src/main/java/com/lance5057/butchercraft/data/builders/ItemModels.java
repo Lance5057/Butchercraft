@@ -43,6 +43,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		// forItem(ButchercraftItems.SPATULA, "spatula");
 		forItem(ButchercraftItems.HORN, "horn");
 		forItem(ButchercraftItems.LARD, "lard");
+		forItem(ButchercraftItems.GELATIN, "gelatin");
 //		forItem(ButchercraftItems.SOAP, "soap");
 
 		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");

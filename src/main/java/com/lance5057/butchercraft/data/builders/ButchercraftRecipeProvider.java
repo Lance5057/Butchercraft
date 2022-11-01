@@ -17,6 +17,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import javax.annotation.Nonnull;
 import java.util.function.Consumer;
@@ -296,6 +297,11 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_lamb", has(ButchercraftItemTags.ANY_LAMB_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lamb_scraps_to_ground"));
 
+		ShapelessRecipeBuilder.shapeless(ModItems.BARBECUE_STICK.get())
+				.requires(ButchercraftItemTags.ANY_CUBED_MEAT_RAW).requires(ForgeTags.VEGETABLES_ONION)
+				.requires(ForgeTags.VEGETABLES_TOMATO).requires(Items.STICK).unlockedBy("has_stick", has(Items.STICK))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "kebab"));
+
 		createFoodRecipe(Ingredient.of(BRAIN.get()), COOKED_BRAIN.get(), consumer);
 		createFoodRecipe(Ingredient.of(HEART.get()), COOKED_HEART.get(), consumer);
 		createFoodRecipe(Ingredient.of(KIDNEY.get()), COOKED_KIDNEY.get(), consumer);
@@ -348,6 +354,10 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.LAMB_SCRAPS.get()),
 				ButchercraftItems.LAMB_JERKY.get(), 10, 1000)
 				.unlockedBy("has_lamb_scraps", has(ButchercraftItems.LAMB_SCRAPS.get())).save(consumer);
+		DryingRackRecipeBuilder.drying(Ingredient.of(Items.WET_SPONGE), Items.SPONGE, 10, 1000)
+				.unlockedBy("has_sponge", has(Items.WET_SPONGE)).save(consumer);
+		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), Items.DRIED_KELP, 10, 1000)
+				.unlockedBy("has_kelp", has(Items.KELP)).save(consumer);
 
 		ShapedRecipeBuilder.shaped(ButchercraftItems.DRYING_RACK_BLOCK_ITEM.get()).pattern("WSW").pattern("SSS")
 				.pattern("WSW").define('W', ItemTags.PLANKS).define('S', Tags.Items.STRING)
