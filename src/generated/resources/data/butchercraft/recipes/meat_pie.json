@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "butchercraft:any_ground_meat_raw"
+    },
+    {
+      "tag": "butchercraft:any_ground_meat_raw"
+    },
+    {
+      "tag": "butchercraft:any_ground_meat_raw"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "tag": "forge:vegetables/onion"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:meat_pie_block_item"
+  }
+}

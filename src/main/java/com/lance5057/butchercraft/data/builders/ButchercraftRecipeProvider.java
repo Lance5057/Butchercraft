@@ -346,18 +346,18 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lard_to_candle"));
 
 		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()),
-				ButchercraftItems.BEEF_JERKY.get(), 10, 1000)
-				.unlockedBy("has_beef_scraps", has(ButchercraftItems.BEEF_SCRAPS.get())).save(consumer);
+						ButchercraftItems.BEEF_JERKY.get(), 10, 1000)
+				.unlockedBy("has_beef_scraps", has(ButchercraftItems.BEEF_SCRAPS.get())).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_jerky"));
 		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.PORK_SCRAPS.get()),
-				ButchercraftItems.PORK_JERKY.get(), 10, 1000)
-				.unlockedBy("has_pork_scraps", has(ButchercraftItems.PORK_SCRAPS.get())).save(consumer);
+						ButchercraftItems.PORK_JERKY.get(), 10, 1000)
+				.unlockedBy("has_pork_scraps", has(ButchercraftItems.PORK_SCRAPS.get())).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pork_jerky"));
 		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.LAMB_SCRAPS.get()),
-				ButchercraftItems.LAMB_JERKY.get(), 10, 1000)
-				.unlockedBy("has_lamb_scraps", has(ButchercraftItems.LAMB_SCRAPS.get())).save(consumer);
+						ButchercraftItems.LAMB_JERKY.get(), 10, 1000)
+				.unlockedBy("has_lamb_scraps", has(ButchercraftItems.LAMB_SCRAPS.get())).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lamb_jerky"));
 		DryingRackRecipeBuilder.drying(Ingredient.of(Items.WET_SPONGE), Items.SPONGE, 10, 1000)
-				.unlockedBy("has_sponge", has(Items.WET_SPONGE)).save(consumer);
+				.unlockedBy("has_sponge", has(Items.WET_SPONGE)).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sponge"));
 		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), Items.DRIED_KELP, 10, 1000)
-				.unlockedBy("has_kelp", has(Items.KELP)).save(consumer);
+				.unlockedBy("has_kelp", has(Items.KELP)).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "dried_kelp"));
 
 		ShapedRecipeBuilder.shaped(ButchercraftItems.DRYING_RACK_BLOCK_ITEM.get()).pattern("WSW").pattern("SSS")
 				.pattern("WSW").define('W', ItemTags.PLANKS).define('S', Tags.Items.STRING)

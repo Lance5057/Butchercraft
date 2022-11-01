@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "butchercraft:any_gelatin_provider"
+    },
+    {
+      "tag": "butchercraft:any_gelatin_provider"
+    },
+    {
+      "tag": "butchercraft:any_gelatin_provider"
+    },
+    {
+      "tag": "butchercraft:any_gelatin_provider"
+    },
+    {
+      "tag": "butchercraft:any_gelatin_provider"
+    },
+    {
+      "tag": "butchercraft:any_gelatin_provider"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "butchercraft:gelatin"
+  }
+}

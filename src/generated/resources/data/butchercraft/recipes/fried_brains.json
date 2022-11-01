@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "butchercraft:brain"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    },
+    {
+      "item": "butchercraft:lard"
+    },
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:fried_brains"
+  }
+}
