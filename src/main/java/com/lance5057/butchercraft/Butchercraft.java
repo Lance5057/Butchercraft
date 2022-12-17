@@ -17,7 +17,7 @@ import net.minecraftforge.fml.loading.FMLPaths;
 public class Butchercraft {
 
     public final static String MOD_ID = "butchercraft";
-    public static final String VERSION = "2.1.2";
+    public static final String VERSION = "2.1.3";
 
     public static Logger logger = LogManager.getLogger();
 

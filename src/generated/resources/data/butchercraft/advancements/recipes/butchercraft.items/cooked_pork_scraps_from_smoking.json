@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_pork_scraps_from_smoking"
+    ]
+  },
+  "criteria": {
+    "has_pork_scraps": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:pork_scraps"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_pork_scraps_from_smoking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pork_scraps",
+      "has_the_recipe"
+    ]
+  ]
+}

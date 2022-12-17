@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "butchercraft:ground_pork"
+  },
+  "result": "butchercraft:cooked_ground_pork",
+  "experience": 0.35,
+  "cookingtime": 600
+}

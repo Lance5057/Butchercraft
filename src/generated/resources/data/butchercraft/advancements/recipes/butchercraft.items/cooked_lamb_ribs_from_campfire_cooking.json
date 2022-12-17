@@ -2,16 +2,18 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "butchercraft:form_patty"
+      "butchercraft:cooked_lamb_ribs_from_campfire_cooking"
     ]
   },
   "criteria": {
-    "has_meat": {
+    "has_lamb_ribs": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "butchercraft:any_meat_raw"
+            "items": [
+              "butchercraft:lamb_ribs"
+            ]
           }
         ]
       }
@@ -19,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "butchercraft:form_patty"
+        "recipe": "butchercraft:cooked_lamb_ribs_from_campfire_cooking"
       }
     }
   },
   "requirements": [
     [
-      "has_meat",
+      "has_lamb_ribs",
       "has_the_recipe"
     ]
   ]

@@ -54,7 +54,7 @@
     {
       "uses": 12,
       "tool": {
-        "item": "butchercraft:bone_saw"
+        "item": "butchercraft:gut_knife"
       },
       "count": 1,
       "damage": true,
@@ -103,7 +103,7 @@
     {
       "uses": 12,
       "tool": {
-        "item": "butchercraft:gut_knife"
+        "item": "butchercraft:bone_saw"
       },
       "count": 1,
       "damage": true,

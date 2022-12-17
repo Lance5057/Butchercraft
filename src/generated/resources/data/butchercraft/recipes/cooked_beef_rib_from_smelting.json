@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "butchercraft:beef_rib"
+  },
+  "result": "butchercraft:cooked_beef_rib",
+  "experience": 0.35,
+  "cookingtime": 200
+}

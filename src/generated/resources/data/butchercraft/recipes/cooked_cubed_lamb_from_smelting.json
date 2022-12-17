@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "butchercraft:cubed_lamb"
+  },
+  "result": "butchercraft:cooked_cubed_lamb",
+  "experience": 0.35,
+  "cookingtime": 200
+}

@@ -3,13 +3,14 @@ package com.lance5057.butchercraft;
 import com.lance5057.butchercraft.blocks.BbqRibsBlock;
 import com.lance5057.butchercraft.blocks.HashBowlBlock;
 import com.lance5057.butchercraft.blocks.HideBlock;
-import com.lance5057.butchercraft.blocks.JarBlock;
+import com.lance5057.butchercraft.blocks.JellyBlock;
 import com.lance5057.butchercraft.blocks.PotRoastBlock;
 import com.lance5057.butchercraft.blocks.SalisburySteakBlock;
 import com.lance5057.butchercraft.workstations.blocks.DryingRackBlock;
 import com.lance5057.butchercraft.workstations.blocks.MeatHookBlock;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -34,19 +35,19 @@ public class ButchercraftBlocks {
 //			() -> new SkullBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
 
 	public static final RegistryObject<Block> BEEF_BLOCK = BLOCKS.register("beef_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK)));
 	public static final RegistryObject<Block> COOKED_BEEF_BLOCK = BLOCKS.register("cooked_beef_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)));
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN).sound(SoundType.SLIME_BLOCK)));
 
 	public static final RegistryObject<Block> PORK_BLOCK = BLOCKS.register("pork_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK)));
 	public static final RegistryObject<Block> COOKED_PORK_BLOCK = BLOCKS.register("cooked_pork_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)));
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN).sound(SoundType.SLIME_BLOCK)));
 
 	public static final RegistryObject<Block> LAMB_BLOCK = BLOCKS.register("lamb_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)));
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK)));
 	public static final RegistryObject<Block> COOKED_LAMB_BLOCK = BLOCKS.register("cooked_lamb_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)));
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN).sound(SoundType.SLIME_BLOCK)));
 
 	public static final RegistryObject<HideBlock> COW_HIDE_CARPET = BLOCKS.register("cow_hide_carpet",
 			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.COLOR_BROWN)));
@@ -96,53 +97,53 @@ public class ButchercraftBlocks {
 			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),
 					ButchercraftItems.HAGGIS, true));  
 	
-	public static final RegistryObject<BbqRibsBlock> JELLY_WHITE = BLOCKS.register("jelly_white_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_WHITE),
+	public static final RegistryObject<JellyBlock> JELLY_WHITE = BLOCKS.register("jelly_white_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_WHITE),
 					ButchercraftItems.JELLY_WHITE, true));  
-	public static final RegistryObject<BbqRibsBlock> JELLY_ORANGE = BLOCKS.register("jelly_orange_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_ORANGE),
+	public static final RegistryObject<JellyBlock> JELLY_ORANGE = BLOCKS.register("jelly_orange_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_ORANGE),
 					ButchercraftItems.JELLY_ORANGE, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_MAGENTA = BLOCKS.register("jelly_magenta_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_MAGENTA),
+	public static final RegistryObject<JellyBlock> JELLY_MAGENTA = BLOCKS.register("jelly_magenta_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_MAGENTA),
 					ButchercraftItems.JELLY_MAGENTA, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_LIGHT_BLUE = BLOCKS.register("jelly_light_blue_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_LIGHT_BLUE),
+	public static final RegistryObject<JellyBlock> JELLY_LIGHT_BLUE = BLOCKS.register("jelly_light_blue_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_LIGHT_BLUE),
 					ButchercraftItems.JELLY_LIGHT_BLUE, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_YELLOW = BLOCKS.register("jelly_yellow_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_YELLOW),
+	public static final RegistryObject<JellyBlock> JELLY_YELLOW = BLOCKS.register("jelly_yellow_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_YELLOW),
 					ButchercraftItems.JELLY_YELLOW, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_LIME = BLOCKS.register("jelly_lime_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_LIGHT_GREEN),
+	public static final RegistryObject<JellyBlock> JELLY_LIME = BLOCKS.register("jelly_lime_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_LIGHT_GREEN),
 					ButchercraftItems.JELLY_LIME, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_PINK = BLOCKS.register("jelly_pink_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_PINK),
+	public static final RegistryObject<JellyBlock> JELLY_PINK = BLOCKS.register("jelly_pink_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_PINK),
 					ButchercraftItems.JELLY_PINK, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_GREY = BLOCKS.register("jelly_grey_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_GRAY),
+	public static final RegistryObject<JellyBlock> JELLY_GREY = BLOCKS.register("jelly_grey_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_GRAY),
 					ButchercraftItems.JELLY_GREY, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_LIGHT_GREY = BLOCKS.register("jelly_light_grey_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_LIGHT_GRAY),
+	public static final RegistryObject<JellyBlock> JELLY_LIGHT_GREY = BLOCKS.register("jelly_light_grey_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_LIGHT_GRAY),
 					ButchercraftItems.JELLY_LIGHT_GREY, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_CYAN = BLOCKS.register("jelly_cyan_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_CYAN),
+	public static final RegistryObject<JellyBlock> JELLY_CYAN = BLOCKS.register("jelly_cyan_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_CYAN),
 					ButchercraftItems.JELLY_CYAN, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_PURPLE = BLOCKS.register("jelly_purple_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_PURPLE),
+	public static final RegistryObject<JellyBlock> JELLY_PURPLE = BLOCKS.register("jelly_purple_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_PURPLE),
 					ButchercraftItems.JELLY_PURPLE, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_BLUE = BLOCKS.register("jelly_blue_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_BLUE),
+	public static final RegistryObject<JellyBlock> JELLY_BLUE = BLOCKS.register("jelly_blue_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_BLUE),
 					ButchercraftItems.JELLY_BLUE, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_BROWN = BLOCKS.register("jelly_brown_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_BROWN),
+	public static final RegistryObject<JellyBlock> JELLY_BROWN = BLOCKS.register("jelly_brown_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_BROWN),
 					ButchercraftItems.JELLY_BROWN, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_GREEN = BLOCKS.register("jelly_green_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_GREEN),
+	public static final RegistryObject<JellyBlock> JELLY_GREEN = BLOCKS.register("jelly_green_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_GREEN),
 					ButchercraftItems.JELLY_GREEN, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_RED = BLOCKS.register("jelly_red_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_RED),
+	public static final RegistryObject<JellyBlock> JELLY_RED = BLOCKS.register("jelly_red_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_RED),
 					ButchercraftItems.JELLY_RED, true)); 
-	public static final RegistryObject<BbqRibsBlock> JELLY_BLACK = BLOCKS.register("jelly_black_block",
-			() -> new BbqRibsBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_BLACK),
+	public static final RegistryObject<JellyBlock> JELLY_BLACK = BLOCKS.register("jelly_black_block",
+			() -> new JellyBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.TERRACOTTA_BLACK),
 					ButchercraftItems.JELLY_BLACK, true)); 
 	
 	public static final RegistryObject<PieBlock> MEAT_PIE_BLOCK = BLOCKS.register("meat_pie",
