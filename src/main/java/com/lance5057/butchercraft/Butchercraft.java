@@ -29,7 +29,7 @@ public class Butchercraft {
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.initialize());
         // TODO Correct file name
         ButchercraftConfig.loadConfig(ButchercraftConfig.getInstance().getSpec(),
-                FMLPaths.CONFIGDIR.get().resolve("compendium-common.toml"));
+                FMLPaths.CONFIGDIR.get().resolve("butchercraft-common.toml"));
 
         ButchercraftBlocks.register(modEventBus);
         ButchercraftItems.register(modEventBus);
