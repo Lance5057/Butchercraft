@@ -11,6 +11,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ItemTagGenerator extends ItemTagsProvider {
 
@@ -27,7 +28,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				ButchercraftItems.GROUND_BEEF.get(), ButchercraftItems.PORK_RIB.get(),
 				ButchercraftItems.PORK_RIBS.get(), ButchercraftItems.PORK_ROAST.get(),
 				ButchercraftItems.PORK_SCRAPS.get(), ButchercraftItems.PORK_STEW_MEAT.get(),
-				ButchercraftItems.CUBED_PORK.get(), ButchercraftItems.GROUND_PORK.get(), ButchercraftItems.BACON.get(),
+				ButchercraftItems.CUBED_PORK.get(), ButchercraftItems.GROUND_PORK.get(), ModItems.BACON.get(),
 				ButchercraftItems.LAMB_RIB.get(), ButchercraftItems.LAMB_RIBS.get(), ButchercraftItems.LAMB_ROAST.get(),
 				ButchercraftItems.LAMB_SCRAPS.get(), ButchercraftItems.LAMB_STEW_MEAT.get(),
 				ButchercraftItems.CUBED_LAMB.get(), ButchercraftItems.GROUND_LAMB.get());
@@ -39,7 +40,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				ButchercraftItems.COOKED_PORK_RIB.get(), ButchercraftItems.COOKED_PORK_RIBS.get(),
 				ButchercraftItems.COOKED_PORK_ROAST.get(), ButchercraftItems.COOKED_PORK_SCRAPS.get(),
 				ButchercraftItems.COOKED_PORK_STEW_MEAT.get(), ButchercraftItems.COOKED_CUBED_PORK.get(),
-				ButchercraftItems.COOKED_GROUND_PORK.get(), ButchercraftItems.COOKED_BACON.get(),
+				ButchercraftItems.COOKED_GROUND_PORK.get(), ModItems.COOKED_BACON.get(),
 				ButchercraftItems.COOKED_LAMB_RIB.get(), ButchercraftItems.COOKED_LAMB_RIBS.get(),
 				ButchercraftItems.COOKED_LAMB_ROAST.get(), ButchercraftItems.COOKED_LAMB_SCRAPS.get(),
 				ButchercraftItems.COOKED_LAMB_STEW_MEAT.get(), ButchercraftItems.COOKED_CUBED_LAMB.get(),
@@ -53,7 +54,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.ANY_PORK_RAW).add(ButchercraftItems.PORK_RIB.get(), ButchercraftItems.PORK_RIBS.get(),
 				ButchercraftItems.PORK_ROAST.get(), ButchercraftItems.PORK_SCRAPS.get(),
 				ButchercraftItems.PORK_STEW_MEAT.get(), ButchercraftItems.CUBED_PORK.get(),
-				ButchercraftItems.GROUND_PORK.get(), ButchercraftItems.BACON.get());
+				ButchercraftItems.GROUND_PORK.get(), ModItems.BACON.get());
 
 		tag(ButchercraftItemTags.ANY_LAMB_RAW).add(ButchercraftItems.LAMB_RIB.get(), ButchercraftItems.LAMB_RIBS.get(),
 				ButchercraftItems.LAMB_ROAST.get(), ButchercraftItems.LAMB_SCRAPS.get(),
@@ -69,7 +70,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				ButchercraftItems.COOKED_PORK_RIBS.get(), ButchercraftItems.COOKED_PORK_ROAST.get(),
 				ButchercraftItems.COOKED_PORK_SCRAPS.get(), ButchercraftItems.COOKED_PORK_STEW_MEAT.get(),
 				ButchercraftItems.COOKED_CUBED_PORK.get(), ButchercraftItems.COOKED_GROUND_PORK.get(),
-				ButchercraftItems.COOKED_BACON.get());
+				ModItems.COOKED_BACON.get());
 
 		tag(ButchercraftItemTags.ANY_LAMB_COOKED).add(ButchercraftItems.COOKED_LAMB_RIB.get(),
 				ButchercraftItems.COOKED_LAMB_RIBS.get(), ButchercraftItems.COOKED_LAMB_ROAST.get(),

@@ -30,13 +30,17 @@ public class FoodsGeneric {
     public static final FoodProperties MAYO = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.4F).build();
     public static final FoodProperties BBQ = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.4F).build();
     
+    public static final FoodProperties CHEESE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).build();
+    public static final FoodProperties BUTTER = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.5F).build();
+    
     public static final FoodProperties SAUSAGE_ROLL = (new FoodProperties.Builder()).nutrition(10).saturationMod(1F).build();
     public static final FoodProperties SOS = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.8F).build();
     public static final FoodProperties LIVERONION = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.6F).build();
     public static final FoodProperties CHICKEN_FRIED_STEAK = (new FoodProperties.Builder()).nutrition(8).saturationMod(1F).build();
     public static final FoodProperties STUFFED_HEART = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.5F).build();
     public static final FoodProperties FRIED_BRAIN = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.5F).build();
-
+    public static final FoodProperties GRILLED_CHEESE = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.75F).build();
+    
     public static final FoodProperties POTATO_GRAVY = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.7F).build();
     public static final FoodProperties STIRFRY = (new FoodProperties.Builder()).nutrition(10).saturationMod(1F).build();
     public static final FoodProperties WELLINGTON = (new FoodProperties.Builder()).nutrition(12).saturationMod(1F).build();

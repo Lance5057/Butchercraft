@@ -55,6 +55,12 @@ public class CookingPotRecipes extends RecipeProvider {
 				.addIngredient(ButchercraftItemTags.ANY_SCRAP_MEAT_RAW)
 				.addIngredient(ButchercraftItems.STOCK_JAR_ITEM.get()).addIngredient(Items.WHEAT).build(consumer);
 
+		CookingPotRecipeBuilder.cookingPotRecipe(ButchercraftItems.BUTTER.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
+				.addIngredient(Items.MILK_BUCKET).build(consumer);
+		
+		CookingPotRecipeBuilder.cookingPotRecipe(ButchercraftItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
+		.addIngredient(Items.MILK_BUCKET).addIngredient(ButchercraftItems.STOMACHE.get()).build(consumer);
+
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ButchercraftItems.LAMB_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
 						Items.BOWL)

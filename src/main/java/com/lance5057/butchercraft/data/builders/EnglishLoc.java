@@ -1,6 +1,5 @@
 package com.lance5057.butchercraft.data.builders;
 
-import static com.lance5057.butchercraft.ButchercraftItems.BACON;
 import static com.lance5057.butchercraft.ButchercraftItems.BEEF_BLOCK_ITEM;
 import static com.lance5057.butchercraft.ButchercraftItems.BEEF_RIB;
 import static com.lance5057.butchercraft.ButchercraftItems.BEEF_RIBS;
@@ -11,7 +10,6 @@ import static com.lance5057.butchercraft.ButchercraftItems.BEEF_TONGUE;
 import static com.lance5057.butchercraft.ButchercraftItems.BONE_SAW;
 import static com.lance5057.butchercraft.ButchercraftItems.BRAIN;
 import static com.lance5057.butchercraft.ButchercraftItems.BUTCHER_KNIFE;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BACON;
 import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_BLOCK_ITEM;
 import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_RIB;
 import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_RIBS;
@@ -57,7 +55,6 @@ import static com.lance5057.butchercraft.ButchercraftItems.GROUND_LAMB;
 import static com.lance5057.butchercraft.ButchercraftItems.GROUND_PORK;
 import static com.lance5057.butchercraft.ButchercraftItems.GUT_KNIFE;
 import static com.lance5057.butchercraft.ButchercraftItems.HEART;
-import static com.lance5057.butchercraft.ButchercraftItems.HOOK_BLOCK_ITEM;
 import static com.lance5057.butchercraft.ButchercraftItems.HORN;
 import static com.lance5057.butchercraft.ButchercraftItems.KIDNEY;
 import static com.lance5057.butchercraft.ButchercraftItems.LAMB_BLOCK_ITEM;
@@ -140,8 +137,6 @@ public class EnglishLoc extends LanguageProvider {
         this.add(PORK_ROAST.get(), "Raw Pork Roast");
         this.add(PORK_STEW_MEAT.get(), "Raw Pork Stew Meat");
         this.add(COOKED_PORK_STEW_MEAT.get(), "Cooked Pork Stew Meat");
-        this.add(BACON.get(), "Raw Bacon");
-        this.add(COOKED_BACON.get(), "Cooked Bacon");
         
         this.add(COOKED_LAMB_SCRAPS.get(), "Cooked Lamb Straps");
         this.add(LAMB_SCRAPS.get(), "Raw Lamb Scraps");
@@ -211,6 +206,8 @@ public class EnglishLoc extends LanguageProvider {
         this.add(SINEW.get(), "Sinew");
         this.add(ButchercraftItems.LARD.get(), "Lard");
         this.add(ButchercraftItems.GELATIN.get(), "Gelatin");
+        this.add(ButchercraftItems.BUTTER.get(), "Butter");
+        this.add(ButchercraftItems.CHEESE.get(), "Cheese");
         
         this.add(ButchercraftItems.HOOK_BLOCK_ITEM.get(), "Meat Hook");
         this.add(ButchercraftItems.DRYING_RACK_BLOCK_ITEM.get(), "Drying Rack");
@@ -235,6 +232,7 @@ public class EnglishLoc extends LanguageProvider {
         this.add(ButchercraftItems.STUFFED_HEART.get(), "Stuffed Heart");
         this.add(ButchercraftItems.FRIED_BRAINS.get(), "Fried Brains");
         this.add(ButchercraftItems.OXTAIL_SOUP.get(), "Oxtail Soup");
+        this.add(ButchercraftItems.GRILLED_CHEESE.get(), "Grilled Cheese");
         
         this.add(ButchercraftItems.HASH.get(), "Bowl of Hash");
         this.add(ButchercraftItems.HASH_FEAST_ITEM.get(), "Hash");

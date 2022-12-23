@@ -385,7 +385,6 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		createFoodRecipe(Ingredient.of(ButchercraftItems.CUBED_PORK.get()), ButchercraftItems.COOKED_CUBED_PORK.get(), consumer);
 		createFoodRecipe(Ingredient.of(ButchercraftItems.GROUND_PORK.get()), ButchercraftItems.COOKED_GROUND_PORK.get(), consumer);
 		createFoodRecipe(Ingredient.of(ButchercraftItems.PORK_SCRAPS.get()), ButchercraftItems.COOKED_PORK_SCRAPS.get(), consumer);
-		createFoodRecipe(Ingredient.of(ButchercraftItems.BACON.get()), ButchercraftItems.COOKED_BACON.get(), consumer);
 		createFoodRecipe(Ingredient.of(ButchercraftItems.PORK_RIB.get()), ButchercraftItems.COOKED_PORK_RIB.get(), consumer);
 		
 		createFoodRecipe(Ingredient.of(ButchercraftItems.LAMB_STEW_MEAT.get()), ButchercraftItems.COOKED_LAMB_STEW_MEAT.get(), consumer);

@@ -57,14 +57,10 @@ public class ButchercraftBlocks {
 			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.TERRACOTTA_WHITE)));
 
 	// Food Stuff
-//	public static final RegistryObject<JarBlock> STOCK_JAR_BLOCK = BLOCKS.register("stock_jar_block",
-//			() -> new JarBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN)));
-//	public static final RegistryObject<JarBlock> BBQ_JAR_BLOCK = BLOCKS.register("bbq_jar_block",
-//			() -> new JarBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN)));
-//	public static final RegistryObject<JarBlock> KETCHUP_JAR_BLOCK = BLOCKS.register("ketchup_jar_block",
-//			() -> new JarBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN)));
-//	public static final RegistryObject<JarBlock> GRAVY_BOAT = BLOCKS.register("gravy_boat",
-//			() -> new JarBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN)));
+	public static final RegistryObject<Block> CHEESE_BLOCK = BLOCKS.register("cheese_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_ORANGE).sound(SoundType.SLIME_BLOCK)));
+	public static final RegistryObject<Block> BUTTER_BLOCK = BLOCKS.register("butter_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_YELLOW).friction(0.98F).sound(SoundType.SLIME_BLOCK)));
 
 	public static final RegistryObject<HashBowlBlock> HASH_FEAST = BLOCKS.register("hash_block",
 			() -> new HashBowlBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.COLOR_BROWN),

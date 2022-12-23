@@ -29,6 +29,9 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.COW_HIDE_CARPET.get());
 		dropSelf(ButchercraftBlocks.PIG_HIDE_CARPET.get());
 		dropSelf(ButchercraftBlocks.SHEEP_HIDE_CARPET.get());
+		
+		dropSelf(ButchercraftBlocks.CHEESE_BLOCK.get());
+		dropSelf(ButchercraftBlocks.BUTTER_BLOCK.get());
 
 //		dropSelf(ButchercraftBlocks.BBQ_JAR_BLOCK.get());
 //		dropSelf(ButchercraftBlocks.STOCK_JAR_BLOCK.get());

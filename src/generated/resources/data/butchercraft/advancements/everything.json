@@ -2,7 +2,7 @@
   "parent": "butchercraft:whole_pig",
   "display": {
     "icon": {
-      "item": "butchercraft:cooked_bacon"
+      "item": "farmersdelight:cooked_bacon"
     },
     "title": {
       "translate": "butchercraft.advancement.everything.name"
@@ -231,7 +231,7 @@
       "conditions": {
         "item": {
           "items": [
-            "butchercraft:cooked_bacon"
+            "farmersdelight:cooked_bacon"
           ]
         }
       }
