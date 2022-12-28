@@ -7,10 +7,10 @@ import javax.annotation.Nullable;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
-import com.lance5057.butchercraft.workstations.blocks.MeatHookBlock;
+import com.lance5057.butchercraft.workstations.blocks.ButcherBlockBlock;
 import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
-import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipe;
-import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipeContainer;
+import com.lance5057.butchercraft.workstations.recipes.butcherblock.ButcherBlockContainer;
+import com.lance5057.butchercraft.workstations.recipes.butcherblock.ButcherBlockRecipe;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -54,7 +54,7 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 	public int stage = 0;
 
 	public ButcherBlockBlockEntity(BlockPos pPos, BlockState pState) {
-		super(ButchercraftBlockEntities.MEAT_HOOK.get(), pPos, pState);
+		super(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), pPos, pState);
 	}
 
 	@Nonnull
@@ -67,7 +67,7 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 		return super.getCapability(cap, side);
 	}
 
-	public void setRecipe(Optional<HookRecipe> r) {
+	public void setRecipe(Optional<ButcherBlockRecipe> r) {
 
 		if (r.isPresent()) {
 			this.setupStage(r.get(), 0);
@@ -84,10 +84,10 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 	}
 
 	public Optional<AnimatedRecipeItemUse> getCurrentTool() {
-		return matchRecipe().map(hookRecipe -> hookRecipe.getRecipeToolsIn().get(stage));
+		return matchRecipe().map(ButcherBlockRecipe -> ButcherBlockRecipe.getRecipeToolsIn().get(stage));
 	}
 
-	protected void setupStage(HookRecipe r, int i) {
+	protected void setupStage(ButcherBlockRecipe r, int i) {
 
 		this.progress = 0;
 		this.maxProgress = r.getRecipeToolsIn().get(i).uses;
@@ -97,7 +97,7 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 		this.stage = i;
 	}
 
-	boolean isFinalStage(HookRecipe r) {
+	boolean isFinalStage(ButcherBlockRecipe r) {
 		int i = r.getRecipeToolsIn().size();
 		if (i - 1 > stage) {
 			return false;
@@ -106,10 +106,10 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 	}
 
 	// Attempt to find a recipe that matches the tool and the item in its inventory
-	private Optional<HookRecipe> matchRecipe() {
+	private Optional<ButcherBlockRecipe> matchRecipe() {
 		if (this.level != null) {
-			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.HOOK.get(),
-					new HookRecipeContainer(getInsertedItem()), level);
+			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.BUTCHER_BLOCK.get(),
+					new ButcherBlockContainer(getInsertedItem()), level);
 		}
 		return Optional.empty();
 
@@ -134,8 +134,8 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 				boolean recipeWithInputExists = false;
 				if (level != null) {
 					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
-							.filter(recipe -> recipe instanceof HookRecipe).map(recipe -> (HookRecipe) recipe)
-							.anyMatch(hookRecipe -> hookRecipe.getCarcassIn().test(stack));
+							.filter(recipe -> recipe instanceof ButcherBlockRecipe).map(recipe -> (ButcherBlockRecipe) recipe)
+							.anyMatch(ButcherBlockRecipe -> ButcherBlockRecipe.getCarcassIn().test(stack));
 				}
 				return recipeWithInputExists && super.isItemValid(slot, stack);
 			}
@@ -194,18 +194,18 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 		this.setChanged();
 		if (this.getLevel() != null) {
 			getLevel().setBlock(getBlockPos(),
-					getBlockState().setValue(MeatHookBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
+					getBlockState().setValue(ButcherBlockBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
 					Block.UPDATE_ALL);
 			this.getLevel().sendBlockUpdated(this.worldPosition, this.getBlockState(),
-					this.getBlockState().setValue(MeatHookBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
+					this.getBlockState().setValue(ButcherBlockBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
 					Block.UPDATE_ALL);
 		}
 	}
 
 	public InteractionResult butcher(Player Player, ItemStack butcheringTool) {
-		Optional<HookRecipe> recipeOptional = matchRecipe();
+		Optional<ButcherBlockRecipe> recipeOptional = matchRecipe();
 		if (recipeOptional.isPresent()) {
-			HookRecipe recipe = recipeOptional.get();
+			ButcherBlockRecipe recipe = recipeOptional.get();
 			if (this.curTool == null) {
 				setupStage(recipe, stage);
 			}

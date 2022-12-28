@@ -3,7 +3,6 @@ package com.lance5057.butchercraft.workstations.recipes.butcherblock;
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
-import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipeContainer;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
@@ -14,7 +13,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-public class ButcherBlockRecipe implements Recipe<HookRecipeContainer> {
+public class ButcherBlockRecipe implements Recipe<ButcherBlockContainer> {
 
 	private final ResourceLocation idIn;
 	private final String groupIn;
@@ -34,12 +33,12 @@ public class ButcherBlockRecipe implements Recipe<HookRecipeContainer> {
 	}
 
 	@Override
-	public boolean matches(HookRecipeContainer pContainer, Level pLevel) {
+	public boolean matches(ButcherBlockContainer pContainer, Level pLevel) {
 		return carcassIn.test(pContainer.getInsertedItem());
 	}
 
 	@Override
-	public ItemStack assemble(HookRecipeContainer pContainer) {
+	public ItemStack assemble(ButcherBlockContainer pContainer) {
 		return null;
 	}
 
@@ -60,7 +59,7 @@ public class ButcherBlockRecipe implements Recipe<HookRecipeContainer> {
 
 	@Override
 	public RecipeSerializer<?> getSerializer() {
-		return ButchercraftRecipeSerializers.HOOK_SERIALIZER.get();
+		return ButchercraftRecipeSerializers.BUTCHER_BLOCK_SERIALIZER.get();
 	}
 
 	@Override
@@ -70,7 +69,7 @@ public class ButcherBlockRecipe implements Recipe<HookRecipeContainer> {
 
 	@Override
 	public RecipeType<?> getType() {
-		return ButchercraftRecipes.HOOK.get();
+		return ButchercraftRecipes.BUTCHER_BLOCK.get();
 	}
 
 	public NonNullList<AnimatedRecipeItemUse> getRecipeToolsIn() {

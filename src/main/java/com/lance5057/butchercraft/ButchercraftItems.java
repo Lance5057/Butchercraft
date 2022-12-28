@@ -223,6 +223,9 @@ public class ButchercraftItems {
 			() -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BlockItem> DRYING_RACK_BLOCK_ITEM = ITEMS.register("drying_rack_item",
 			() -> new BlockItem(ButchercraftBlocks.DRYING_RACK.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> BUTCHER_BLOCK_BLOCK_ITEM = ITEMS.register("butcher_block_block_item",
+			() -> new BlockItem(ButchercraftBlocks.BUTCHER_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	
 //	public static final RegistryObject<BlockItem> COW_SKULL = ITEMS.register("cow_skull_item",
 //			() -> new BlockItem(ButchercraftBlocks.COW_SKULL.get(), new Item.Properties().tab(BUTCHER_TAB)));
 //	public static final RegistryObject<BlockItem> PIG_SKULL = ITEMS.register("pig_skull_item",

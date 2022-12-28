@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.workstations.recipes.butcherblock.ButcherBlockSerializer;
 import com.lance5057.butchercraft.workstations.recipes.dryingrack.DryingRackSerializer;
 import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipe;
 import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipeSerializer;
@@ -19,6 +20,9 @@ public class ButchercraftRecipeSerializers {
 	
 	public static final RegistryObject<DryingRackSerializer> DRYING_RACK_SERIALIZER = RECIPE_SERIALIZERS.register(
 			"drying_rack",  DryingRackSerializer::new);
+	
+	public static final RegistryObject<ButcherBlockSerializer> BUTCHER_BLOCK_SERIALIZER = RECIPE_SERIALIZERS.register(
+			"butcher_block",  ButcherBlockSerializer::new);
 
 	public static void register(IEventBus modBus) {
 		RECIPE_SERIALIZERS.register(modBus);

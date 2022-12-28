@@ -211,6 +211,8 @@ public class EnglishLoc extends LanguageProvider {
         
         this.add(ButchercraftItems.HOOK_BLOCK_ITEM.get(), "Meat Hook");
         this.add(ButchercraftItems.DRYING_RACK_BLOCK_ITEM.get(), "Drying Rack");
+        this.add(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get(), "Butcher Block");
+        
 //        this.add(COW_SKULL.get(), "Cow Skull");
         
         this.add(ButchercraftItems.STOCK_JAR_ITEM.get(), "Stock");

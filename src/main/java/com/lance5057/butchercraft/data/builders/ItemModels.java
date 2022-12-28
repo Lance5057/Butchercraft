@@ -146,6 +146,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
 		forBlockItem(ButchercraftItems.DRYING_RACK_BLOCK_ITEM, "drying_rack");
+		forBlockItem(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM, "butcher_block");
 
 		forBlockItem(ButchercraftItems.BEEF_BLOCK_ITEM, "beef_block");
 		forBlockItem(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM, "cooked_beef_block");

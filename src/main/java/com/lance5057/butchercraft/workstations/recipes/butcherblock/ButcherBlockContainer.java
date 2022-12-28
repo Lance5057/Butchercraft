@@ -1,69 +1,19 @@
 package com.lance5057.butchercraft.workstations.recipes.butcherblock;
 
-import net.minecraft.world.Container;
-import net.minecraft.world.entity.player.Player;
+import com.lance5057.butchercraft.workstations.recipes.EmptyInventory;
+
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.IItemHandlerModifiable;
 
-public class ButcherBlockContainer implements Container {
-	protected final IItemHandler inv;
-	
-	public ButcherBlockContainer(IItemHandlerModifiable h2)
-	{
-		this.inv = h2;
-	}
-	
-	@Override
-	public void clearContent() {
-		// TODO Auto-generated method stub
-		
-	}
+public class ButcherBlockContainer extends EmptyInventory {
 
-	@Override
-	public int getContainerSize() {
-		// TODO Auto-generated method stub
-		return 8;
-	}
+	private final ItemStack insertedItem;
 
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public ButcherBlockContainer(ItemStack insertedItem) {
 
-	@Override
-	public ItemStack getItem(int pSlot) {
-		return inv.getStackInSlot(pSlot);
-	}
+        this.insertedItem = insertedItem;
+    }
 
-	@Override
-	public ItemStack removeItem(int pSlot, int pAmount) {
-		return inv.extractItem(pSlot, pAmount, false);
-		
+	public ItemStack getInsertedItem() {
+		return insertedItem;
 	}
-
-	@Override
-	public ItemStack removeItemNoUpdate(int pSlot) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setItem(int pSlot, ItemStack pStack) {
-		
-	}
-
-	@Override
-	public void setChanged() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean stillValid(Player pPlayer) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

@@ -14,6 +14,7 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 	protected void addTables() {
 		dropSelf(ButchercraftBlocks.MEAT_HOOK.get());
 		dropSelf(ButchercraftBlocks.DRYING_RACK.get());
+		dropSelf(ButchercraftBlocks.BUTCHER_BLOCK.get());
 
 //        dropSelf(ButchercraftBlocks.COW_SKULL.get());
 //        dropSelf(ButchercraftBlocks.PIG_SKULL.get());
