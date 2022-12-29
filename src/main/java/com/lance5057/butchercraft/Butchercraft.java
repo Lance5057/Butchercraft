@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.entity.Entity;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +33,11 @@ public class Butchercraft {
         ButchercraftConfig.loadConfig(ButchercraftConfig.getInstance().getSpec(),
                 FMLPaths.CONFIGDIR.get().resolve("butchercraft-common.toml"));
 
+        IEventBus bus = MinecraftForge.EVENT_BUS;
+        bus.addListener(ButchercraftEvents::registerCaps);
+        bus.addGenericListener(Entity.class, ButchercraftEvents::attachCaps);
+        bus.addListener(ButchercraftEvents::breedEvent);
+        
         ButchercraftBlocks.register(modEventBus);
         ButchercraftItems.register(modEventBus);
         ButchercraftRecipeSerializers.register(modEventBus);
