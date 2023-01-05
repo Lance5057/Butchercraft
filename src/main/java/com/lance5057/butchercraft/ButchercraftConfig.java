@@ -12,8 +12,12 @@ public class ButchercraftConfig {
     private static ButchercraftConfig instance;
 
     private final ForgeConfigSpec spec;
+    
+    public final General general;
 
     public ButchercraftConfig(ForgeConfigSpec.Builder builder) {
+    	this.general = new General(builder);
+    	
         this.spec = builder.build();
     }
 
@@ -39,4 +43,18 @@ public class ButchercraftConfig {
         return spec;
     }
 
+	public static class General {
+		public final ForgeConfigSpec.ConfigValue<Float> breedingMultiplier;
+		public final ForgeConfigSpec.ConfigValue<Float> ageMultiplier;
+		public final ForgeConfigSpec.ConfigValue<Float> wildlifeBaseNutrition;
+
+		General(ForgeConfigSpec.Builder builder) {
+			breedingMultiplier = builder.comment("Amount to multiply breeding timer by after an animal is bred.")
+					.translation("butchercraft.config.common.general.breeding").define("breedingMultiplier", 4f);
+			ageMultiplier = builder.comment("Amount to multiply age timer by after an animal is born.")
+					.translation("butchercraft.config.common.general.age").define("ageMultiplier", 4f);
+			wildlifeBaseNutrition = builder.comment("Nutrition of wild animals.")
+					.translation("butchercraft.config.common.general.wild_nutrition").define("ageMultiplier", 0.3f);
+		}
+	}
 }

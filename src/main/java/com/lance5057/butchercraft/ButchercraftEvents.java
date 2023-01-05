@@ -5,6 +5,7 @@ import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Cow;
@@ -39,9 +40,16 @@ public class ButchercraftEvents {
 				Cow pA = (Cow) event.getParentA();
 				Cow pB = (Cow) event.getParentB();
 
-				float pAN = pA.getCapability(AnimalCareProvider.CARE).map(i -> i.getNutrition()).orElse(0.3f); // TODO
-																												// config
-				float pBN = pB.getCapability(AnimalCareProvider.CARE).map(i -> i.getNutrition()).orElse(0.3f);
+				baby.setAge((int) (AgeableMob.BABY_START_AGE
+						* ButchercraftConfig.getInstance().general.ageMultiplier.get()));
+				pA.setAge((int) (6000 * ButchercraftConfig.getInstance().general.breedingMultiplier.get()));
+				pB.setAge((int) (6000 * ButchercraftConfig.getInstance().general.breedingMultiplier.get()));
+
+				float pAN = pA.getCapability(AnimalCareProvider.CARE).map(i -> i.getNutrition())
+						.orElse(ButchercraftConfig.getInstance().general.wildlifeBaseNutrition.get()); // TODO
+				// config
+				float pBN = pB.getCapability(AnimalCareProvider.CARE).map(i -> i.getNutrition())
+						.orElse(ButchercraftConfig.getInstance().general.wildlifeBaseNutrition.get());
 
 				if (pAN + pBN >= 2) {
 					baby.getCapability(AnimalCareProvider.CARE).ifPresent(i -> i.setNutrition(0.9f));
@@ -50,7 +58,7 @@ public class ButchercraftEvents {
 					baby2.setBaby(true);
 					baby2.getCapability(AnimalCareProvider.CARE).ifPresent(i -> i.setNutrition(0.9f));
 				} else {
-					float bred = Math.max(pAN, pBN) + Math.min(pAN, pBN)/2;
+					float bred = Math.max(pAN, pBN) + Math.min(pAN, pBN) / 2;
 					baby.getCapability(AnimalCareProvider.CARE).ifPresent(i -> i.setNutrition(bred));
 				}
 			}
