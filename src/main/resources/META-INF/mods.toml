@@ -11,7 +11,7 @@ issueTrackerURL = "https://github.com/Lance5057/Butchercraft/issues"
 	credits = "Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly"
 	authors = "Lance5057"
 
-[[dependencies.abnormals_delight]]
+[[dependencies.butchercraft]]
     modId = "farmersdelight"
     mandatory = true
     versionRange = "[1.2.0,)"
