@@ -1,310 +1,310 @@
 {
   "parent": "butchercraft:everything",
-  "display": {
-    "icon": {
-      "item": "butchercraft:cooked_tripe"
-    },
-    "title": {
-      "translate": "butchercraft.advancement.everything_plus.name"
-    },
-    "description": {
-      "translate": "butchercraft.advancement.everything_plus.desc"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
-    "whole_cow_rib": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_beef_rib"
-          ]
-        }
-      }
-    },
-    "whole_cow_ribs": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_beef_ribs"
-          ]
-        }
-      }
-    },
-    "whole_cow_roast": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_beef_roast"
-          ]
-        }
-      }
-    },
-    "whole_cow_scraps": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_beef_scraps"
-          ]
-        }
-      }
-    },
-    "whole_cow_stew": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_beef_stewmeat"
-          ]
-        }
-      }
-    },
-    "whole_cow_cubed": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_cubed_beef"
-          ]
-        }
-      }
-    },
-    "whole_cow_ground": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_ground_beef"
-          ]
-        }
-      }
-    },
-    "whole_pig_rib": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_rib"
-          ]
-        }
-      }
-    },
-    "whole_pig_ribs": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_ribs"
-          ]
-        }
-      }
-    },
-    "whole_pig_roast": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_roast"
-          ]
-        }
-      }
-    },
-    "whole_pig_scraps": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_scraps"
-          ]
-        }
-      }
-    },
-    "whole_pig_stew": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_pork_stewmeat"
-          ]
-        }
-      }
-    },
-    "whole_pig_cubed": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_cubed_pork"
-          ]
-        }
-      }
-    },
-    "whole_pig_ground": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_ground_pork"
-          ]
-        }
-      }
-    },
-    "whole_sheep_rib": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_lamb_rib"
-          ]
-        }
-      }
-    },
-    "whole_sheep_ribs": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_lamb_ribs"
-          ]
-        }
-      }
-    },
-    "whole_sheep_roast": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_lamb_roast"
-          ]
-        }
-      }
-    },
-    "whole_sheep_scraps": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_lamb_scraps"
-          ]
-        }
-      }
-    },
-    "whole_sheep_stew": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_lamb_stewmeat"
-          ]
-        }
-      }
-    },
-    "whole_sheep_cubed": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_cubed_lamb"
-          ]
-        }
-      }
-    },
-    "whole_sheep_ground": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "butchercraft:cooked_ground_lamb"
-          ]
-        }
-      }
-    },
-    "whole_pig_bacon": {
-      "trigger": "minecraft:consume_item",
-      "conditions": {
-        "item": {
-          "items": [
-            "farmersdelight:cooked_bacon"
-          ]
-        }
-      }
-    },
     "everything_plus_brain": {
-      "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
             "butchercraft:cooked_brain"
           ]
         }
-      }
+      },
+      "trigger": "minecraft:consume_item"
     },
     "everything_plus_heart": {
-      "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
             "butchercraft:cooked_heart"
           ]
         }
-      }
+      },
+      "trigger": "minecraft:consume_item"
     },
     "everything_plus_kidney": {
-      "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
             "butchercraft:cooked_kidney"
           ]
         }
-      }
+      },
+      "trigger": "minecraft:consume_item"
     },
     "everything_plus_liver": {
-      "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
             "butchercraft:cooked_liver"
           ]
         }
-      }
+      },
+      "trigger": "minecraft:consume_item"
     },
     "everything_plus_lung": {
-      "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
             "butchercraft:cooked_lung"
           ]
         }
-      }
+      },
+      "trigger": "minecraft:consume_item"
     },
     "everything_plus_stomach": {
-      "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
             "butchercraft:cooked_stomache"
           ]
         }
-      }
+      },
+      "trigger": "minecraft:consume_item"
     },
     "everything_plus_tripe": {
-      "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
             "butchercraft:cooked_tripe"
           ]
         }
-      }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_cow_cubed": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_cubed_beef"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_cow_ground": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_ground_beef"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_cow_rib": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_beef_rib"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_cow_ribs": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_beef_ribs"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_cow_roast": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_beef_roast"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_cow_scraps": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_beef_scraps"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_cow_stew": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_beef_stewmeat"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_bacon": {
+      "conditions": {
+        "item": {
+          "items": [
+            "farmersdelight:cooked_bacon"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_cubed": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_cubed_pork"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_ground": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_ground_pork"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_rib": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_rib"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_ribs": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_ribs"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_roast": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_roast"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_scraps": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_scraps"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_pig_stew": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_pork_stewmeat"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_cubed": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_cubed_lamb"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_ground": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_ground_lamb"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_rib": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_rib"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_ribs": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_ribs"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_roast": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_roast"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_scraps": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_scraps"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_stew": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_stewmeat"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.everything_plus.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:cooked_tripe"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.everything_plus.name"
     }
   },
   "requirements": [

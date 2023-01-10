@@ -1,4 +1,4 @@
-// 1.19.2	2022-11-01T00:58:22.7200741	Tags for minecraft:item
+// 1.19.2	2023-01-10T00:34:54.3922042	Tags for minecraft:item
 6cc71338338f3f7a55073619c01a845c66ec0e33 data/butchercraft/tags/items/any_beef_cooked.json
 120cb4233136d82cada294462580e31bdf610263 data/butchercraft/tags/items/any_beef_raw.json
 9202873775226b834fa54ea5d42365fe1fad7275 data/butchercraft/tags/items/any_cubed_meat_raw.json
@@ -6,11 +6,11 @@ ff31bed4ceaac838c1200966a1d4a927e5835a9b data/butchercraft/tags/items/any_gelati
 3f8b7f737289518896cef9e2bca4a7c09acb9bc6 data/butchercraft/tags/items/any_ground_meat_raw.json
 3f251aee24920a0b1fcbc0ff57f7a7f5737eff25 data/butchercraft/tags/items/any_lamb_cooked.json
 7f9cb640444a165a732f05cad4fdcdbbb2eb2440 data/butchercraft/tags/items/any_lamb_raw.json
-8711f6ba501dfc0499ff29bf84784cd8222c516d data/butchercraft/tags/items/any_meat_cooked.json
-63c0375fd5993fe859e8da46026aa3a0312dc2f7 data/butchercraft/tags/items/any_meat_raw.json
+ef7161f43117f94944ccc5745d4511f00f275178 data/butchercraft/tags/items/any_meat_cooked.json
+99b0f44f706b37d2f2088de8b42f67cf3ad62a55 data/butchercraft/tags/items/any_meat_raw.json
 e45f5493250c086d655364bc67d7a70364711e20 data/butchercraft/tags/items/any_offal.json
-0942386629aeb1f313c42f700f40e8318bbe84bb data/butchercraft/tags/items/any_pork_cooked.json
-e48792e82120cfa94d451b680cede40d90ec2b0d data/butchercraft/tags/items/any_pork_raw.json
+a76799a4c42e6a826c96c88d2dd077574ac2b7c1 data/butchercraft/tags/items/any_pork_cooked.json
+4b8bfe4df983e9048c01f1892d2b419b065bb7cf data/butchercraft/tags/items/any_pork_raw.json
 cc1a35447673a84f8c3a89afdef64ce8748872fa data/butchercraft/tags/items/any_ribs_raw.json
 e54a60605c1b490c50c92ab49116b061f08ea827 data/butchercraft/tags/items/any_roast_raw.json
 4c65530abf0c23896413c5c9c27558c3f17f1072 data/butchercraft/tags/items/any_scrap_meat_raw.json

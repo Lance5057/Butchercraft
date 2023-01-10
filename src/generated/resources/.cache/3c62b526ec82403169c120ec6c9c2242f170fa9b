@@ -1,7 +1,10 @@
-// 1.19.2	2022-10-29T15:55:08.0099058	Block States: butchercraft
+// 1.19.2	2023-01-10T00:34:54.3692664	Block States: butchercraft
 8309a6e41025e716b0373cf4bc5ad603207e415b assets/butchercraft/blockstates/bbq_ribs_block.json
 ea31054af405e7b9a159917ca4f56e15d2869d7a assets/butchercraft/blockstates/beef_block.json
 41ae6a8d0cd7b330cfec1a67be21818772a6b1fa assets/butchercraft/blockstates/beef_wellington_block.json
+3e7417dccf0f34a0770fa3ad82726f19750aa6fa assets/butchercraft/blockstates/butcher_block.json
+47a9e0ebe3655407daa16fbaa090658319055cbf assets/butchercraft/blockstates/butter_block.json
+d1e0ce352ac7a567d31c5a8f6e85fa74f6a0099d assets/butchercraft/blockstates/cheese_block.json
 49ca120e425977e161ae624ec082af6dee573d81 assets/butchercraft/blockstates/cooked_beef_block.json
 990c7fbedcc4333950ab20dc1baa3114ac30a27a assets/butchercraft/blockstates/cooked_lamb_block.json
 4bdf3d76fae7ca65fc4c89ef79bbdd46ee2a94c3 assets/butchercraft/blockstates/cooked_pork_block.json
@@ -38,6 +41,8 @@ c720c473a9ff1af5bde6f249beecd5aba6b4ad2e assets/butchercraft/blockstates/salisbu
 fda7625b79392d7e1b6187df46e3e2be36530c63 assets/butchercraft/blockstates/sheep_hide_carpet.json
 fc470483f854d7f3ac8b18923217bafca9950489 assets/butchercraft/blockstates/stirfry_block.json
 435d018a3c06b56344175c9cb4dff5ad69584fac assets/butchercraft/models/block/beef_block.json
+89e3f0da389cdb02f131828929533d03d42afc74 assets/butchercraft/models/block/butter_block.json
+a0827f0528e8c5f54d988c21b4af49f2e212b149 assets/butchercraft/models/block/cheese_block.json
 b71033639e50d1aace0c11c34ffe4fb2cacd493d assets/butchercraft/models/block/cooked_beef_block.json
 5748f5370e2e09a110021b98c9a38cb88a07ff42 assets/butchercraft/models/block/cooked_lamb_block.json
 30604e49f8a80f0a24436689b7322e2c9e9800b9 assets/butchercraft/models/block/cooked_pork_block.json

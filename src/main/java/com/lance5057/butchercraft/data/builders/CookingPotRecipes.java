@@ -56,10 +56,10 @@ public class CookingPotRecipes extends RecipeProvider {
 				.addIngredient(ButchercraftItems.STOCK_JAR_ITEM.get()).addIngredient(Items.WHEAT).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "gravy_boat"));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ButchercraftItems.BUTTER.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
-				.addIngredient(Items.MILK_BUCKET).build(consumer);
-		
+				.addIngredient(Items.MILK_BUCKET).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butter"));
+
 		CookingPotRecipeBuilder.cookingPotRecipe(ButchercraftItems.CHEESE.get(), 2, CookingRecipes.SLOW_COOKING, 1.0F)
-		.addIngredient(Items.MILK_BUCKET).addIngredient(ButchercraftItems.STOMACHE.get()).build(consumer);
+				.addIngredient(Items.MILK_BUCKET).addIngredient(ButchercraftItems.STOMACHE.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cheese"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ButchercraftItems.LAMB_STEW.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,

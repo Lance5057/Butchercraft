@@ -1,9 +1,9 @@
 {
   "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.35,
   "ingredient": {
     "item": "butchercraft:cubed_pork"
   },
-  "result": "butchercraft:cooked_cubed_pork",
-  "experience": 0.35,
-  "cookingtime": 600
+  "result": "butchercraft:cooked_cubed_pork"
 }
