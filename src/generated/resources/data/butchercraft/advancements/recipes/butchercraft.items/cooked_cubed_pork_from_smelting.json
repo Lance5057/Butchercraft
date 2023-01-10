@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_cubed_pork_from_smelting"
+    ]
+  },
+  "criteria": {
+    "has_cubed_pork": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:cubed_pork"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_cubed_pork_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cubed_pork",
+      "has_the_recipe"
+    ]
+  ]
+}

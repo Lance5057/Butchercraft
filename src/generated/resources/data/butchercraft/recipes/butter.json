@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "item": "minecraft:milk_bucket"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:butter",
+    "count": 2
+  },
+  "experience": 1.0,
+  "cookingtime": 400
+}

@@ -83,7 +83,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						.setRotation(new AnimatedFloatVector3().setZ(new AnimatedFloat(-45, 45, 0, 0.05f, true, true)))
 						.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
 								.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
-				.tool(Ingredient.of(BONE_SAW.get()), 12, true, MeatHookLoottables.DISEMBOWEL_SHEEP,
+				.tool(Ingredient.of(GUT_KNIFE.get()), 12, true, MeatHookLoottables.DISEMBOWEL_SHEEP,
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep_skinned"), null,
 								true, new AnimationFloatTransform()),
 						new BlacklistedModel(GUT_KNIFE.get(),
@@ -92,7 +92,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 												.setZ(new AnimatedFloat(-45, 45, 0, 0.05f, true, true)))
 										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
 												.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0)))))
-				.tool(Ingredient.of(GUT_KNIFE.get()), 12, true, MeatHookLoottables.BISECT_SHEEP,
+				.tool(Ingredient.of(BONE_SAW.get()), 12, true, MeatHookLoottables.BISECT_SHEEP,
 						new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep_gutted"), null,
 								true, new AnimationFloatTransform()),
 						new BlacklistedModel(BONE_SAW.get(),
@@ -310,13 +310,30 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		createFoodRecipe(Ingredient.of(STOMACHE.get()), COOKED_STOMACHE.get(), consumer);
 		createFoodRecipe(Ingredient.of(TRIPE.get()), COOKED_TRIPE.get(), consumer);
 
-		createFoodRecipe(Ingredient.of(BEEF_STEW_MEAT.get()), COOKED_BEEF_STEW_MEAT.get(), consumer);
-		createFoodRecipe(Ingredient.of(SAUSAGE.get()), COOKED_SAUSAGE.get(), consumer);
-		createFoodRecipe(Ingredient.of(BEEF_ROAST.get()), COOKED_BEEF_ROAST.get(), consumer);
-		createFoodRecipe(Ingredient.of(BEEF_RIBS.get()), COOKED_BEEF_RIBS.get(), consumer);
-		createFoodRecipe(Ingredient.of(CUBED_BEEF.get()), COOKED_CUBED_BEEF.get(), consumer);
-		createFoodRecipe(Ingredient.of(GROUND_BEEF.get()), COOKED_GROUND_BEEF.get(), consumer);
-		createFoodRecipe(Ingredient.of(BEEF_SCRAPS.get()), COOKED_BEEF_SCRAPS.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.BEEF_STEW_MEAT.get()), ButchercraftItems.COOKED_BEEF_STEW_MEAT.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.SAUSAGE.get()), ButchercraftItems.COOKED_SAUSAGE.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.BEEF_ROAST.get()), ButchercraftItems.COOKED_BEEF_ROAST.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.BEEF_RIBS.get()), ButchercraftItems.COOKED_BEEF_RIBS.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CUBED_BEEF.get()), ButchercraftItems.COOKED_CUBED_BEEF.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.GROUND_BEEF.get()), ButchercraftItems.COOKED_GROUND_BEEF.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()), ButchercraftItems.COOKED_BEEF_SCRAPS.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.BEEF_RIB.get()), ButchercraftItems.COOKED_BEEF_RIB.get(), consumer);
+		
+		createFoodRecipe(Ingredient.of(ButchercraftItems.PORK_STEW_MEAT.get()), ButchercraftItems.COOKED_PORK_STEW_MEAT.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.PORK_ROAST.get()), ButchercraftItems.COOKED_PORK_ROAST.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.PORK_RIBS.get()), ButchercraftItems.COOKED_PORK_RIBS.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CUBED_PORK.get()), ButchercraftItems.COOKED_CUBED_PORK.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.GROUND_PORK.get()), ButchercraftItems.COOKED_GROUND_PORK.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.PORK_SCRAPS.get()), ButchercraftItems.COOKED_PORK_SCRAPS.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.PORK_RIB.get()), ButchercraftItems.COOKED_PORK_RIB.get(), consumer);
+		
+		createFoodRecipe(Ingredient.of(ButchercraftItems.LAMB_STEW_MEAT.get()), ButchercraftItems.COOKED_LAMB_STEW_MEAT.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.LAMB_ROAST.get()), ButchercraftItems.COOKED_LAMB_ROAST.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.LAMB_RIBS.get()), ButchercraftItems.COOKED_LAMB_RIBS.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CUBED_LAMB.get()), ButchercraftItems.COOKED_CUBED_LAMB.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.GROUND_LAMB.get()), ButchercraftItems.COOKED_GROUND_LAMB.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.LAMB_SCRAPS.get()), ButchercraftItems.COOKED_LAMB_SCRAPS.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.LAMB_RIB.get()), ButchercraftItems.COOKED_LAMB_RIB.get(), consumer);
 
 		ShapelessRecipeBuilder.shapeless(LEATHER, 12).requires(COW_HIDE.get()).requires(SKINNING_KNIFE.get())
 				.unlockedBy("has_cow_hide", has(COW_HIDE.get()))
@@ -336,10 +353,10 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_meat", has(ButchercraftItemTags.ANY_MEAT_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "stuff_sausage"));
 
-		ShapelessRecipeBuilder.shapeless(ModItems.MINCED_BEEF.get(), 1)
-				.requires(ButchercraftItemTags.ANY_GROUND_MEAT_RAW)
-				.unlockedBy("has_meat", has(ButchercraftItemTags.ANY_MEAT_RAW))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "form_patty"));
+//		ShapelessRecipeBuilder.shapeless(ModItems.MINCED_BEEF.get(), 1)
+//				.requires(ButchercraftItemTags.ANY_GROUND_MEAT_RAW)
+//				.unlockedBy("has_meat", has(ButchercraftItemTags.ANY_MEAT_RAW))
+//				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "form_patty"));
 
 		ShapelessRecipeBuilder.shapeless(Items.CANDLE, 6).requires(ButchercraftItems.LARD.get()).requires(Items.STRING)
 				.unlockedBy("has_lard", has(ButchercraftItems.LARD.get()))

@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.workstations.client.ButcherBlockRenderer;
 import com.lance5057.butchercraft.workstations.client.DryingRackRenderer;
 import com.lance5057.butchercraft.workstations.client.MeatHookRenderer;
 
@@ -12,6 +13,7 @@ public class ButchercraftClient {
 	public static void setBERenderers() {
 		BlockEntityRenderers.register(ButchercraftBlockEntities.MEAT_HOOK.get(), MeatHookRenderer::new);
 		BlockEntityRenderers.register(ButchercraftBlockEntities.DRYING_RACK.get(), DryingRackRenderer::new);
+		BlockEntityRenderers.register(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), ButcherBlockRenderer::new);
 	}
 }
  

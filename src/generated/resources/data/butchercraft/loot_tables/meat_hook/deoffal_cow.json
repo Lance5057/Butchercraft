@@ -1,16 +1,17 @@
 {
   "pools": [
     {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
           "name": "butchercraft:heart"
         }
-      ],
-      "rolls": 1.0
+      ]
     },
     {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -20,24 +21,24 @@
       ],
       "functions": [
         {
-          "add": false,
+          "function": "minecraft:set_count",
           "count": 2.0,
-          "function": "minecraft:set_count"
+          "add": false
         }
-      ],
-      "rolls": 1.0
+      ]
     },
     {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
           "name": "butchercraft:liver"
         }
-      ],
-      "rolls": 1.0
+      ]
     },
     {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -47,14 +48,14 @@
       ],
       "functions": [
         {
-          "add": false,
+          "function": "minecraft:set_count",
           "count": 4.0,
-          "function": "minecraft:set_count"
+          "add": false
         }
-      ],
-      "rolls": 1.0
+      ]
     },
     {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -64,14 +65,14 @@
       ],
       "functions": [
         {
-          "add": false,
+          "function": "minecraft:set_count",
           "count": 2.0,
-          "function": "minecraft:set_count"
+          "add": false
         }
-      ],
-      "rolls": 1.0
+      ]
     },
     {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -81,12 +82,28 @@
       ],
       "functions": [
         {
-          "add": false,
+          "function": "minecraft:set_count",
           "count": 8.0,
-          "function": "minecraft:set_count"
+          "add": false
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:tongue"
         }
       ],
-      "rolls": 1.0
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 1.0,
+          "add": false
+        }
+      ]
     }
   ]
 }

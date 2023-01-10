@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "butchercraft:pork_stewmeat"
+  },
+  "result": "butchercraft:cooked_pork_stewmeat",
+  "experience": 0.35,
+  "cookingtime": 100
+}

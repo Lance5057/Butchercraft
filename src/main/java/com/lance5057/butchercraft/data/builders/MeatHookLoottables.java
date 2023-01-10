@@ -1,6 +1,5 @@
 package com.lance5057.butchercraft.data.builders;
 
-import static com.lance5057.butchercraft.ButchercraftItems.BACON;
 import static com.lance5057.butchercraft.ButchercraftItems.BEEF_RIBS;
 import static com.lance5057.butchercraft.ButchercraftItems.BEEF_ROAST;
 import static com.lance5057.butchercraft.ButchercraftItems.BEEF_SCRAPS;
@@ -41,6 +40,7 @@ import java.util.function.Consumer;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -51,6 +51,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 
@@ -84,7 +85,8 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(LIVER.get()))
                         .withPool(createPoolWithItem(STOMACHE.get(), 4))
                         .withPool(createPoolWithItem(LUNG.get(), 2))
-                        .withPool(createPoolWithItem(TRIPE.get(), 8)));
+                        .withPool(createPoolWithItem(TRIPE.get(), 8))
+                        .withPool(createPoolWithItem(ButchercraftItems.BEEF_TONGUE.get(), 1)));
         t.accept(DELIMB_COW,
                 LootTable.lootTable()
                         .withPool(createPoolWithItem(BRAIN.get()))
@@ -93,7 +95,8 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(BEEF_SCRAPS.get(), 0, 8))
                         .withPool(createPoolWithItem(BEEF_STEW_MEAT.get(), 24))
                         .withPool(createPoolWithItem(HORN.get(), 2))
-                        .withPool(createPoolWithItem(BONE, 4)));
+                        .withPool(createPoolWithItem(BONE, 4))
+                        .withPool(createPoolWithItem(ButchercraftItems.OXTAIL.get(), 1,3)));
         t.accept(BUTCHER_COW,
                 LootTable.lootTable()
                         .withPool(createPoolWithItem(BEEF_SCRAPS.get(), 29))
@@ -117,7 +120,8 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(STOMACHE.get()))
                         .withPool(createPoolWithItem(LUNG.get(), 2))
                         .withPool(createPoolWithItem(TRIPE.get(), 8))
-                        .withPool(createPoolWithItem(SINEW.get(), 4, 12)));
+                        .withPool(createPoolWithItem(SINEW.get(), 4, 12))
+                        .withPool(createPoolWithItem(ButchercraftItems.BEEF_TONGUE.get(), 1)));
         t.accept(BISECT_PIG,
                 LootTable.lootTable()
 //                        .withPool(createPoolWithItem(ButchercraftItems.PIG_HOOVES.get(), 4))
@@ -131,7 +135,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(PORK_RIBS.get(), 6))
                         .withPool(createPoolWithItem(PORK_ROAST.get(), 10))
                         .withPool(createPoolWithItem(CUBED_PORK.get(), 4))
-                        .withPool(createPoolWithItem(BACON.get(), 11))
+                        .withPool(createPoolWithItem(ModItems.BACON.get(), 11))
                         .withPool(createPoolWithItem(PORKCHOP, 14))
                         .withPool(createPoolWithItem(BONE, 12)));
 
@@ -149,7 +153,8 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(STOMACHE.get()))
                         .withPool(createPoolWithItem(LUNG.get(), 2))
                         .withPool(createPoolWithItem(TRIPE.get(), 4))
-                        .withPool(createPoolWithItem(SINEW.get(), 4, 8)));
+                        .withPool(createPoolWithItem(SINEW.get(), 4, 8))
+                        .withPool(createPoolWithItem(ButchercraftItems.BEEF_TONGUE.get(), 1)));
         t.accept(BISECT_SHEEP,
                 LootTable.lootTable()
                         .withPool(createPoolWithItem(SINEW.get(), 0, 6))

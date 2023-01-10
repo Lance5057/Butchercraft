@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "butchercraft:lamb_scraps"
+  },
+  "result": "butchercraft:cooked_lamb_scraps",
+  "experience": 0.35,
+  "cookingtime": 200
+}

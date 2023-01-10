@@ -73,7 +73,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:bacon"
+          "name": "farmersdelight:bacon"
         }
       ],
       "functions": [

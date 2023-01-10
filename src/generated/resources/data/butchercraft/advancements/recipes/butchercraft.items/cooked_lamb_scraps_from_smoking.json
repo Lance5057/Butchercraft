@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_lamb_scraps_from_smoking"
+    ]
+  },
+  "criteria": {
+    "has_lamb_scraps": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:lamb_scraps"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_lamb_scraps_from_smoking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lamb_scraps",
+      "has_the_recipe"
+    ]
+  ]
+}

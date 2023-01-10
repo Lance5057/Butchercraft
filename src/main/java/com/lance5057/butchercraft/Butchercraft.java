@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.entity.Entity;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -17,7 +19,7 @@ import net.minecraftforge.fml.loading.FMLPaths;
 public class Butchercraft {
 
     public final static String MOD_ID = "butchercraft";
-    public static final String VERSION = "2.1.2";
+    public static final String VERSION = "2.1.3";
 
     public static Logger logger = LogManager.getLogger();
 
@@ -29,8 +31,13 @@ public class Butchercraft {
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.initialize());
         // TODO Correct file name
         ButchercraftConfig.loadConfig(ButchercraftConfig.getInstance().getSpec(),
-                FMLPaths.CONFIGDIR.get().resolve("compendium-common.toml"));
+                FMLPaths.CONFIGDIR.get().resolve("butchercraft-common.toml"));
 
+        IEventBus bus = MinecraftForge.EVENT_BUS;
+        bus.addListener(ButchercraftEvents::registerCaps);
+        bus.addGenericListener(Entity.class, ButchercraftEvents::attachCaps);
+        bus.addListener(ButchercraftEvents::breedEvent);
+        
         ButchercraftBlocks.register(modEventBus);
         ButchercraftItems.register(modEventBus);
         ButchercraftRecipeSerializers.register(modEventBus);

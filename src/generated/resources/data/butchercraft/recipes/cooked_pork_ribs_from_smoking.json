@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "butchercraft:pork_ribs"
+  },
+  "result": "butchercraft:cooked_pork_ribs",
+  "experience": 0.35,
+  "cookingtime": 100
+}

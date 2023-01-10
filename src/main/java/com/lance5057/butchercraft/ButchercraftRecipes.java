@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.workstations.recipes.butcherblock.ButcherBlockRecipe;
 import com.lance5057.butchercraft.workstations.recipes.dryingrack.DryingRackRecipe;
 import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipe;
 
@@ -14,6 +15,7 @@ public class ButchercraftRecipes {
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, Butchercraft.MOD_ID);
     public static final RegistryObject<RecipeType<HookRecipe>> HOOK = createRecipeType("meat_hook");
 	public static final RegistryObject<RecipeType<DryingRackRecipe>> DRYING_RACK = createRecipeType("drying_rack");
+	public static final RegistryObject<RecipeType<ButcherBlockRecipe>> BUTCHER_BLOCK = createRecipeType("butcher_block");
 
     private static <T extends Recipe<?>> RegistryObject<RecipeType<T>> createRecipeType(String name) {
         return RECIPE_TYPES.register(name, () -> new RecipeType<T>() {

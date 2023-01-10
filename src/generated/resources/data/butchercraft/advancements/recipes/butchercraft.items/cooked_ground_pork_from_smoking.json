@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_ground_pork_from_smoking"
+    ]
+  },
+  "criteria": {
+    "has_ground_pork": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:ground_pork"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "butchercraft:cooked_ground_pork_from_smoking"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ground_pork",
+      "has_the_recipe"
+    ]
+  ]
+}
