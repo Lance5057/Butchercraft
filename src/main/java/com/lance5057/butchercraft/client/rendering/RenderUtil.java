@@ -1,11 +1,18 @@
 package com.lance5057.butchercraft.client.rendering;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import com.lance5057.butchercraft.client.BlacklistedModel;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -16,18 +23,17 @@ import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.client.resources.model.ModelManager;
+import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.client.ForgeHooksClient;
+import net.minecraftforge.client.model.lighting.ForgeModelBlockRenderer;
+import net.minecraftforge.client.model.renderable.BakedModelRenderable;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class RenderUtil {
 
@@ -112,14 +118,14 @@ public class RenderUtil {
 	public static void loadModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,
 			int combinedOverlayIn, BlacklistedModel model, float timer) {
 
-//		if (model.isBlock) {
-//			UnbakedModel um = ForgeModelBlockRenderer.instance().getModelOrMissing(model.rc);
-//			if (um instanceof BlockModel bm) {
-//
-//				blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist,
-//						model.transform, timer);
-//
-//			}
+		if (model.isBlock) {
+			UnbakedModel um = ForgeModelBlockRenderer.instance().getModelOrMissing(model.rc);
+			if (um instanceof BlockModel bm) {
+
+				blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist,
+						model.transform, timer);
+
+			}
 //		} else {
 		Item item = ForgeRegistries.ITEMS.getValue(model.rc);
 		itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist,
@@ -132,7 +138,13 @@ public class RenderUtil {
 			float timer) {
 		matrixStackIn.pushPose();
 		{
-			List<CompendiumModelPart> currentModel = convert(bm, blacklist);
+			Minecraft.getInstance().getResourceManager().listResources("models/meathook", (p_215600_) -> {
+		         return p_215600_.getPath().endsWith(".json"););
+//			BlockRenderDispatcher blockRenderer = Minecraft.getInstance().getBlockRenderer();
+//			blockRenderer.
+			//List<CompendiumModelPart> currentModel = convert(bm, blacklist);
+			
+//			BakedModelRenderable.of(null)
 
 			matrixStackIn.translate(transform.getLocation().getX().animate(timer) / 16,
 					transform.getLocation().getY().animate(timer) / 16,
