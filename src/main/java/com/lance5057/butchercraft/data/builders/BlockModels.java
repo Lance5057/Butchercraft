@@ -2,7 +2,6 @@ package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -10,6 +9,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
@@ -92,7 +92,7 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(new ModelFile.ExistingModelFile(
 							new ResourceLocation(Butchercraft.MOD_ID,
-									"block/" + block.getRegistryName().getPath() + suffix),
+									"block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix),
 							models().existingFileHelper))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
@@ -111,7 +111,7 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder()
 					.modelFile(new ModelFile.ExistingModelFile(
 							new ResourceLocation(Butchercraft.MOD_ID,
-									"block/" + block.getRegistryName().getPath() + suffix),
+									"block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + suffix),
 							models().existingFileHelper))
 					.rotationY(((int) state.getValue(FeastBlock.FACING).toYRot() + 180) % 360).build();
 		});

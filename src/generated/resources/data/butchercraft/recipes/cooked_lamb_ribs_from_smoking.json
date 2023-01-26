@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.35,
   "ingredient": {
     "item": "butchercraft:lamb_ribs"
   },
-  "result": "butchercraft:cooked_lamb_ribs",
-  "experience": 0.35,
-  "cookingtime": 100
+  "result": "butchercraft:cooked_lamb_ribs"
 }

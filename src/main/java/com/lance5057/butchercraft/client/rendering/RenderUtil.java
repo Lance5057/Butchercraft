@@ -1,19 +1,11 @@
 package com.lance5057.butchercraft.client.rendering;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
-import javax.annotation.Nullable;
-
 import com.lance5057.butchercraft.client.BlacklistedModel;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -24,15 +16,18 @@ import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.client.model.ForgeModelBakery;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class RenderUtil {
 
@@ -66,18 +61,16 @@ public class RenderUtil {
 	// [VanillaCopy] ItemRenderer with custom color
 	private static void renderBakedItemModel(BakedModel model, ItemStack stack, int color, int light, int overlay,
 			PoseStack ms, VertexConsumer buffer) {
-		Random random = new Random();
+		RandomSource random = RandomSource.create();
 		long i = 42L;
 
 		for (Direction direction : Direction.values()) {
 			random.setSeed(42L);
-			renderBakedItemQuads(ms, buffer, color, model.getQuads((BlockState) null, direction, random), stack, light,
-					overlay);
+			renderBakedItemQuads(ms, buffer, color, model.getQuads(null, direction, random), stack, light, overlay);
 		}
 
 		random.setSeed(42L);
-		renderBakedItemQuads(ms, buffer, color, model.getQuads((BlockState) null, (Direction) null, random), stack,
-				light, overlay);
+		renderBakedItemQuads(ms, buffer, color, model.getQuads(null, null, random), stack, light, overlay);
 	}
 
 	// [VanillaCopy] ItemRenderer, with custom color + alpha support
@@ -119,20 +112,19 @@ public class RenderUtil {
 	public static void loadModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,
 			int combinedOverlayIn, BlacklistedModel model, float timer) {
 
-		if (model.isBlock) {
-			UnbakedModel um = ForgeModelBakery.instance().getModelOrMissing(model.rc);
-			if (um instanceof BlockModel) {
-				BlockModel bm = (BlockModel) um;
-
-				blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist,
-						model.transform, timer);
-
-			}
-		} else {
-			Item item = ForgeRegistries.ITEMS.getValue(model.rc);
-			itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist,
-					model.transform, timer);
-		}
+//		if (model.isBlock) {
+//			UnbakedModel um = ForgeModelBlockRenderer.instance().getModelOrMissing(model.rc);
+//			if (um instanceof BlockModel bm) {
+//
+//				blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist,
+//						model.transform, timer);
+//
+//			}
+//		} else {
+		Item item = ForgeRegistries.ITEMS.getValue(model.rc);
+		itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist,
+				model.transform, timer);
+//		}
 	}
 
 	public static void blockModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,

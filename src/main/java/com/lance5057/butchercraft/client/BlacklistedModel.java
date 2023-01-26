@@ -1,17 +1,17 @@
 package com.lance5057.butchercraft.client;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.ForgeRegistries;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
-
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 
 public class BlacklistedModel {
 	public boolean isBlock;
@@ -31,7 +31,7 @@ public class BlacklistedModel {
 	
 	public BlacklistedModel(Item item, AnimationFloatTransform anim)
 	{
-		this.rc = item.getRegistryName();
+		this.rc = ForgeRegistries.ITEMS.getKey(item);
 		isBlock = false;
 		this.transform = anim;
 	}

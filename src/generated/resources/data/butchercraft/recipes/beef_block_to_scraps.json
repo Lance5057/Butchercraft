@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "butchercraft:beef_scraps",
-    "count": 9
+    "count": 9,
+    "item": "butchercraft:beef_scraps"
   }
 }

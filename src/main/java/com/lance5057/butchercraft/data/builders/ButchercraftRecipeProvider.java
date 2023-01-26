@@ -1,67 +1,5 @@
 package com.lance5057.butchercraft.data.builders;
 
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.BONE_SAW;
-import static com.lance5057.butchercraft.ButchercraftItems.BRAIN;
-import static com.lance5057.butchercraft.ButchercraftItems.BUTCHER_KNIFE;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_RIB;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BRAIN;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_CUBED_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_GROUND_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_HEART;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_KIDNEY;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_RIB;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LIVER;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LUNG;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_RIB;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_SAUSAGE;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_STOMACHE;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_TRIPE;
-import static com.lance5057.butchercraft.ButchercraftItems.COW_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.COW_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.CUBED_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.GROUND_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.GUT_KNIFE;
-import static com.lance5057.butchercraft.ButchercraftItems.HEART;
-import static com.lance5057.butchercraft.ButchercraftItems.HOOK_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.KIDNEY;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.LIVER;
-import static com.lance5057.butchercraft.ButchercraftItems.LUNG;
-import static com.lance5057.butchercraft.ButchercraftItems.PIG_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.PIG_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.SAUSAGE;
-import static com.lance5057.butchercraft.ButchercraftItems.SHEEP_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.SHEEP_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.SKINNING_KNIFE;
-import static com.lance5057.butchercraft.ButchercraftItems.STOMACHE;
-import static com.lance5057.butchercraft.ButchercraftItems.TRIPE;
-import static net.minecraft.world.item.Items.IRON_INGOT;
-import static net.minecraft.world.item.Items.LEATHER;
-import static net.minecraft.world.item.Items.STICK;
-
-import java.util.function.Consumer;
-
-import javax.annotation.Nonnull;
-
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.client.BlacklistedModel;
@@ -69,21 +7,23 @@ import com.lance5057.butchercraft.client.rendering.animation.floats.AnimatedFloa
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimatedFloatVector3;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
-
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
+
+import javax.annotation.Nonnull;
+import java.util.function.Consumer;
+
+import static com.lance5057.butchercraft.ButchercraftItems.*;
+import static net.minecraft.world.item.Items.*;
 
 public class ButchercraftRecipeProvider extends RecipeProvider {
 
@@ -423,18 +363,18 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lard_to_candle"));
 
 		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()),
-				ButchercraftItems.BEEF_JERKY.get(), 10, 1000)
-				.unlockedBy("has_beef_scraps", has(ButchercraftItems.BEEF_SCRAPS.get())).save(consumer);
+						ButchercraftItems.BEEF_JERKY.get(), 10, 1000)
+				.unlockedBy("has_beef_scraps", has(ButchercraftItems.BEEF_SCRAPS.get())).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_jerky"));
 		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.PORK_SCRAPS.get()),
-				ButchercraftItems.PORK_JERKY.get(), 10, 1000)
-				.unlockedBy("has_pork_scraps", has(ButchercraftItems.PORK_SCRAPS.get())).save(consumer);
+						ButchercraftItems.PORK_JERKY.get(), 10, 1000)
+				.unlockedBy("has_pork_scraps", has(ButchercraftItems.PORK_SCRAPS.get())).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pork_jerky"));
 		DryingRackRecipeBuilder.drying(Ingredient.of(ButchercraftItems.LAMB_SCRAPS.get()),
-				ButchercraftItems.LAMB_JERKY.get(), 10, 1000)
-				.unlockedBy("has_lamb_scraps", has(ButchercraftItems.LAMB_SCRAPS.get())).save(consumer);
+						ButchercraftItems.LAMB_JERKY.get(), 10, 1000)
+				.unlockedBy("has_lamb_scraps", has(ButchercraftItems.LAMB_SCRAPS.get())).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lamb_jerky"));
 		DryingRackRecipeBuilder.drying(Ingredient.of(Items.WET_SPONGE), Items.SPONGE, 10, 1000)
-				.unlockedBy("has_sponge", has(Items.WET_SPONGE)).save(consumer);
+				.unlockedBy("has_sponge", has(Items.WET_SPONGE)).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sponge"));
 		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), Items.DRIED_KELP, 10, 1000)
-				.unlockedBy("has_kelp", has(Items.KELP)).save(consumer);
+				.unlockedBy("has_kelp", has(Items.KELP)).save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "dried_kelp"));
 
 		ShapedRecipeBuilder.shaped(ButchercraftItems.DRYING_RACK_BLOCK_ITEM.get()).pattern("WSW").pattern("SSS")
 				.pattern("WSW").define('W', ItemTags.PLANKS).define('S', Tags.Items.STRING)
@@ -444,20 +384,20 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer) {
 		SimpleCookingRecipeBuilder.smoking(pIngredient, pResult, .35F, 100)
-				.unlockedBy("has_" + pIngredient.getItems()[0].getItem().getRegistryName().getPath(),
+				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID,
-						pResult.asItem().getRegistryName().getPath() + "_from_smoking"));
+						ForgeRegistries.ITEMS.getKey(pResult.asItem()).getPath() + "_from_smoking"));
 		SimpleCookingRecipeBuilder.campfireCooking(pIngredient, pResult, .35F, 600)
-				.unlockedBy("has_" + pIngredient.getItems()[0].getItem().getRegistryName().getPath(),
+				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID,
-						pResult.asItem().getRegistryName().getPath() + "_from_campfire_cooking"));
+						ForgeRegistries.ITEMS.getKey(pResult.asItem()).getPath() + "_from_campfire_cooking"));
 		SimpleCookingRecipeBuilder.smelting(pIngredient, pResult, .35F, 200)
-				.unlockedBy("has_" + pIngredient.getItems()[0].getItem().getRegistryName().getPath(),
+				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID,
-						pResult.asItem().getRegistryName().getPath() + "_from_smelting"));
+						ForgeRegistries.ITEMS.getKey(pResult.asItem()).getPath() + "_from_smelting"));
 	}
 
 }

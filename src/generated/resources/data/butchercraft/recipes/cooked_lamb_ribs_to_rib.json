@@ -9,7 +9,7 @@
     }
   ],
   "result": {
-    "item": "butchercraft:cooked_lamb_rib",
-    "count": 4
+    "count": 4,
+    "item": "butchercraft:cooked_lamb_rib"
   }
 }

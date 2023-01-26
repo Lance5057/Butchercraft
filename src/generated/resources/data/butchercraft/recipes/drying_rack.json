@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "tag": "forge:string"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    }
+  },
   "pattern": [
     "WSW",
     "SSS",
     "WSW"
   ],
-  "key": {
-    "W": {
-      "tag": "minecraft:planks"
-    },
-    "S": {
-      "tag": "forge:string"
-    }
-  },
   "result": {
     "item": "butchercraft:drying_rack_item"
   }

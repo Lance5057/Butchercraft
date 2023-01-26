@@ -9,7 +9,7 @@
     }
   ],
   "result": {
-    "item": "butchercraft:cooked_ground_beef",
-    "count": 4
+    "count": 4,
+    "item": "butchercraft:cooked_ground_beef"
   }
 }

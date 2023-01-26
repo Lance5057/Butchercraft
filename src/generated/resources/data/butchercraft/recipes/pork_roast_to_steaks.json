@@ -9,7 +9,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:porkchop",
-    "count": 4
+    "count": 4,
+    "item": "minecraft:porkchop"
   }
 }

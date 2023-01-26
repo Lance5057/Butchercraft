@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "butchercraft:fat"
+    },
+    {
+      "item": "butchercraft:fat"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:lard"
+  }
+}

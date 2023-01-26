@@ -2,7 +2,6 @@ package com.lance5057.butchercraft.workstations.recipes.dryingrack;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -11,10 +10,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 
-public class DryingRackSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
-		implements RecipeSerializer<DryingRackRecipe> {
+public class DryingRackSerializer implements RecipeSerializer<DryingRackRecipe> {
 
 	@Override
 	public DryingRackRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {

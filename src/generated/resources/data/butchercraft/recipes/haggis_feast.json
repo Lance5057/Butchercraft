@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "butchercraft:stomache"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "butchercraft:any_offal"
+    },
+    {
+      "tag": "butchercraft:any_offal"
+    },
+    {
+      "tag": "butchercraft:any_offal"
+    },
+    {
+      "item": "butchercraft:lung"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:haggis_block_item"
+  }
+}

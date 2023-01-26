@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "butchercraft:pork_roast"
+    },
+    {
+      "item": "butchercraft:pork_roast"
+    },
+    {
+      "item": "butchercraft:bbq_jar_item"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:pulled_pork_block_item"
+  }
+}

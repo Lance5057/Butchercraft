@@ -1,23 +1,6 @@
 {
-  "parent": "butchercraft:butcherknife",
-  "display": {
-    "icon": {
-      "item": "butchercraft:cow_carcass"
-    },
-    "title": {
-      "translate": "butchercraft.advancement.cow.name"
-    },
-    "description": {
-      "translate": "butchercraft.advancement.cow.desc"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "cow": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -26,7 +9,23 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.cow.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:cow_carcass"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.cow.name"
     }
   },
   "requirements": [

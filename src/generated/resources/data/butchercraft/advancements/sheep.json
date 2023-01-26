@@ -1,23 +1,6 @@
 {
-  "parent": "butchercraft:butcherknife",
-  "display": {
-    "icon": {
-      "item": "butchercraft:sheep_carcass"
-    },
-    "title": {
-      "translate": "butchercraft.advancement.sheep.name"
-    },
-    "description": {
-      "translate": "butchercraft.advancement.sheep.desc"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "sheep": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -26,7 +9,23 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.sheep.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:sheep_carcass"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.sheep.name"
     }
   },
   "requirements": [
