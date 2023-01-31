@@ -255,27 +255,28 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_lamb_cooked", has(ButchercraftItemTags.ANY_LAMB_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lamb_roast_to_steaks"));
 
-		ShapelessRecipeBuilder.shapeless(Items.COOKED_BEEF).requires(ButchercraftItems.COOKED_CUBED_BEEF.get())
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_CUBED_BEEF.get()).requires(Items.COOKED_BEEF)
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_beef_cooked", has(ButchercraftItemTags.ANY_BEEF_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_beef_to_cubes"));
-		ShapelessRecipeBuilder.shapeless(Items.COOKED_PORKCHOP).requires(ButchercraftItems.COOKED_CUBED_PORK.get())
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_CUBED_PORK.get()).requires(Items.COOKED_PORKCHOP)
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_pork_cooked", has(ButchercraftItemTags.ANY_PORK_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_pork_to_cubes"));
-		ShapelessRecipeBuilder.shapeless(Items.COOKED_MUTTON).requires(ButchercraftItems.COOKED_CUBED_LAMB.get())
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_CUBED_LAMB.get()).requires(Items.COOKED_MUTTON)
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_lamb_cooked", has(ButchercraftItemTags.ANY_LAMB_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_lamb_to_cubes"));
 
-		ShapelessRecipeBuilder.shapeless(Items.BEEF).requires(ButchercraftItems.CUBED_BEEF.get())
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.CUBED_BEEF.get()).requires(Items.BEEF)
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_beef_cooked", has(ButchercraftItemTags.ANY_BEEF_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_to_cubes"));
-		ShapelessRecipeBuilder.shapeless(Items.PORKCHOP).requires(ButchercraftItems.CUBED_PORK.get())
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.CUBED_PORK.get()).requires(Items.PORKCHOP)
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_pork_cooked", has(ButchercraftItemTags.ANY_PORK_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pork_to_cubes"));
-		ShapelessRecipeBuilder.shapeless(Items.MUTTON).requires(ButchercraftItems.CUBED_LAMB.get())
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.CUBED_LAMB.get()).requires(Items.MUTTON)
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_lamb_cooked", has(ButchercraftItemTags.ANY_LAMB_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lamb_to_cubes"));
 
-		ShapelessRecipeBuilder.shapeless(COOKED_GROUND_BEEF.get(), 4).requires(COOKED_BEEF_SCRAPS.get())
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_GROUND_BEEF.get(), 4)
+				.requires(COOKED_BEEF_SCRAPS.get())
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_beef_cooked", has(ButchercraftItemTags.ANY_BEEF_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_beef_scraps_to_ground"));
 		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_GROUND_PORK.get(), 4)
