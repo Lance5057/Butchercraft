@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "butchercraft:lamb_block_item"
+    }
+  ],
+  "processingTime": 2250,
+  "results": [
+    {
+      "count": 36,
+      "item": "butchercraft:ground_lamb"
+    }
+  ]
+}

@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "butchercraft:cubed_pork"
+      "item": "minecraft:porkchop"
     },
     {
       "item": "butchercraft:butcher_knife"
     }
   ],
   "result": {
-    "item": "minecraft:porkchop"
+    "item": "butchercraft:cubed_pork"
   }
 }

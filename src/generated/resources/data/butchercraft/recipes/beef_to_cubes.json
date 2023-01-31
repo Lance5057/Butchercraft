@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "butchercraft:cubed_beef"
+      "item": "minecraft:beef"
     },
     {
       "item": "butchercraft:butcher_knife"
     }
   ],
   "result": {
-    "item": "minecraft:beef"
+    "item": "butchercraft:cubed_beef"
   }
 }

@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "butchercraft:cubed_lamb"
+      "item": "minecraft:mutton"
     },
     {
       "item": "butchercraft:butcher_knife"
     }
   ],
   "result": {
-    "item": "minecraft:mutton"
+    "item": "butchercraft:cubed_lamb"
   }
 }
