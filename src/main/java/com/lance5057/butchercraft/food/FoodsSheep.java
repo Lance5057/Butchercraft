@@ -17,5 +17,5 @@ public class FoodsSheep {
     public static final FoodProperties COOKED_GROUND_LAMB = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().build();
     public static final FoodProperties LAMB_SCRAPS = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().build();
     public static final FoodProperties COOKED_LAMB_SCRAPS = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).meat().build();
-    public static final FoodProperties LAMB_JERKY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().alwaysEat().build();
+    public static final FoodProperties LAMB_JERKY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().fast().alwaysEat().build();
 }

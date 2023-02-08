@@ -22,5 +22,5 @@ public class FoodsPig {
     public static final FoodProperties COOKED_PORK_SCRAPS = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().build();
     public static final FoodProperties BACON = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().build();
     public static final FoodProperties COOKED_BACON = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2F).meat().build();
-    public static final FoodProperties PORK_JERKY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().alwaysEat().build();
+    public static final FoodProperties PORK_JERKY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().fast().alwaysEat().build();
 }

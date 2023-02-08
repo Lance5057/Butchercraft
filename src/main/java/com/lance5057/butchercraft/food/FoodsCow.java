@@ -25,5 +25,5 @@ public class FoodsCow {
     public static final FoodProperties COOKED_OXTAIL = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).meat().build();
     public static final FoodProperties BEEF_TONGUE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).meat().build();
     public static final FoodProperties COOKED_BEEF_TONGUE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2F).meat().build();
-    public static final FoodProperties BEEF_JERKY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().alwaysEat().build();
+    public static final FoodProperties BEEF_JERKY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().fast().alwaysEat().build();
 }
