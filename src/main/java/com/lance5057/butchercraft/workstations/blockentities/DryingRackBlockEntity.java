@@ -56,32 +56,8 @@ public class DryingRackBlockEntity extends BlockEntity {
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				return 1;
 			}
-//			@Override
-//			public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-//				// Item is only valid if it can find a recipe that uses the inserted item
-//				boolean recipeWithInputExists = false;
-//				if (level != null) {
-//					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
-//							.filter(recipe -> recipe instanceof DryingRackRecipe)
-//							.map(recipe -> (DryingRackRecipe) recipe)
-//							.anyMatch(hookRecipe -> hookRecipe.getInput().test(stack));
-//				}
-//				return recipeWithInputExists && super.isItemValid(slot, stack);
-//			}
 		};
 	}
-
-//	public void extractInsertItem(Player playerEntity, InteractionHand hand) {
-//		handler.ifPresent(inventory -> {
-//			ItemStack held = playerEntity.getItemInHand(hand);
-//			if (!held.isEmpty()) {
-//				insertItem(inventory, held);
-//			} else {
-//				extractItem(playerEntity, inventory);
-//			}
-//		});
-//		updateInventory();
-//	}
 
 	public void extractItem(Player playerEntity, IItemHandler inventory) {
 		for (int i = NUM_SLOTS - 1; i >= 0; i--) {
