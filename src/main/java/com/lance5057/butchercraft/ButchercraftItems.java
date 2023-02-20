@@ -19,6 +19,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.FoodValues;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ButchercraftItems {
@@ -251,9 +252,11 @@ public class ButchercraftItems {
 	public static final RegistryObject<Item> STOCK_JAR_ITEM = ITEMS.register("stock_jar_item",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<Item> BBQ_JAR_ITEM = ITEMS.register("bbq_jar_item",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+			() -> new DrinkableItem(new Item.Properties().tab(BUTCHER_TAB)
+					.food(FoodsGeneric.BBQ).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> KETCHUP_JAR_ITEM = ITEMS.register("ketchup_jar_item",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+			() -> new DrinkableItem(new Item.Properties().tab(BUTCHER_TAB)
+					.food(FoodsGeneric.KETCHUP).craftRemainder(Items.GLASS_BOTTLE)));
 	public static final RegistryObject<Item> GRAVY_ITEM = ITEMS.register("gravy_boat_item",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 	
