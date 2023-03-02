@@ -158,9 +158,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.PIG_HIDE, "pig_hide");
 		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");
 
-		forItem(ButchercraftItems.BBQ_JAR_ITEM, "bbq");
 		forItem(ButchercraftItems.STOCK_JAR_ITEM, "broth");
-		forItem(ButchercraftItems.KETCHUP_JAR_ITEM, "ketchup");
+		
 		forItem(ButchercraftItems.GRAVY_ITEM, "gravy");
 		
 		forItem(ButchercraftItems.CHEESE, "cheese");

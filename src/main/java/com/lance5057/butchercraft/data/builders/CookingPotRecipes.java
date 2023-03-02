@@ -27,22 +27,7 @@ public class CookingPotRecipes extends RecipeProvider {
 
 	@Override
 	protected void buildCraftingRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ButchercraftItems.KETCHUP_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
-						Items.GLASS_BOTTLE)
-				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(Items.SUGAR).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "ketchup_jar"));
-
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ButchercraftItems.BBQ_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
-						Items.GLASS_BOTTLE)
-				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(ForgeTags.VEGETABLES_ONION)
-				.addIngredient(Items.SUGAR).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "bbq_sugar"));
-
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ButchercraftItems.BBQ_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,
-						Items.GLASS_BOTTLE)
-				.addIngredient(ForgeTags.VEGETABLES_TOMATO).addIngredient(ForgeTags.VEGETABLES_ONION)
-				.addIngredient(Items.HONEY_BOTTLE).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "bbq_honey"));
+		
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ButchercraftItems.STOCK_JAR_ITEM.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F,

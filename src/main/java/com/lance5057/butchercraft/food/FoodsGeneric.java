@@ -26,12 +26,7 @@ public class FoodsGeneric {
     public static final FoodProperties STOCK = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.0F).build();
     public static final FoodProperties GRAVY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
     
-    public static final FoodProperties KETCHUP = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.4F).alwaysEat()
-            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
-    public static final FoodProperties MAYO = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.4F).alwaysEat()
-            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
-    public static final FoodProperties BBQ = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.4F).alwaysEat()
-            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
+    
     
     public static final FoodProperties CHEESE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).build();
     public static final FoodProperties BUTTER = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.5F).build();
