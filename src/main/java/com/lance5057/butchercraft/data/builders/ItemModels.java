@@ -159,12 +159,12 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");
 
 		forItem(ButchercraftItems.STOCK_JAR_ITEM, "broth");
-		
+
 		forItem(ButchercraftItems.GRAVY_ITEM, "gravy");
-		
+
 		forItem(ButchercraftItems.CHEESE, "cheese");
 		forItem(ButchercraftItems.BUTTER, "butter");
-		
+
 		forBlockItem(ButchercraftItems.CHEESE_BLOCK_ITEM, "cheese_block");
 		forBlockItem(ButchercraftItems.BUTTER_BLOCK_ITEM, "butter_block");
 
@@ -228,7 +228,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		this.jellyBlock(ButchercraftItems.JELLY_GREEN_FEAST_ITEM, "green");
 		this.jellyBlock(ButchercraftItems.JELLY_RED_FEAST_ITEM, "red");
 		this.jellyBlock(ButchercraftItems.JELLY_BLACK_FEAST_ITEM, "black");
-		
+
 		forItem(ButchercraftItems.JELLY_WHITE, "jelly_white");
 		forItem(ButchercraftItems.JELLY_ORANGE, "jelly_orange");
 		forItem(ButchercraftItems.JELLY_MAGENTA, "jelly_magenta");

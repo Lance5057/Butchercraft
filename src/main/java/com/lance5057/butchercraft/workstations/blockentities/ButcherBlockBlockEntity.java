@@ -42,7 +42,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class ButcherBlockBlockEntity  extends BlockEntity {
+public class ButcherBlockBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 
 	public boolean recipeLocked = false;
@@ -134,7 +134,8 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 				boolean recipeWithInputExists = false;
 				if (level != null) {
 					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
-							.filter(recipe -> recipe instanceof ButcherBlockRecipe).map(recipe -> (ButcherBlockRecipe) recipe)
+							.filter(recipe -> recipe instanceof ButcherBlockRecipe)
+							.map(recipe -> (ButcherBlockRecipe) recipe)
 							.anyMatch(ButcherBlockRecipe -> ButcherBlockRecipe.getCarcassIn().test(stack));
 				}
 				return recipeWithInputExists && super.isItemValid(slot, stack);
@@ -238,7 +239,7 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 							level.addParticle(ParticleTypes.FALLING_DRIPSTONE_LAVA,
 									worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
 									worldPosition.getY() - 0.5f - level.random.nextDouble(),
-									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2 , 0, 0, 0);
+									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
 						level.playSound(Player, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1,
 								1);
@@ -265,8 +266,8 @@ public class ButcherBlockBlockEntity  extends BlockEntity {
 					.create(LootContextParamSets.EMPTY);
 			// TODO Investigate how to make block not drop things so violently
 			player.getServer().getLootTables().get(recipeToolsIn.lootTable).getRandomItems(pContext)
-					.forEach(itemStack -> new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY(),
-							getBlockPos().getZ(), itemStack).spawnAtLocation(itemStack));
+					.forEach(itemStack -> level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(),
+							getBlockPos().getY() + 0.5f, getBlockPos().getZ(), itemStack)));
 
 		}
 	}
