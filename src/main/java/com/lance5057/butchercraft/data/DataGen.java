@@ -2,6 +2,9 @@ package com.lance5057.butchercraft.data;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.data.builders.*;
+import com.lance5057.butchercraft.data.builders.recipes.ButchercraftRecipeProvider;
+import com.lance5057.butchercraft.data.builders.recipes.CookingPotRecipes;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

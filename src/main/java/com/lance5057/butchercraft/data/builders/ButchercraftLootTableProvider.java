@@ -8,6 +8,8 @@ import java.util.function.Supplier;
 
 import javax.annotation.Nonnull;
 
+import com.lance5057.butchercraft.data.builders.recipes.loottables.ButcherBlockLootTables;
+import com.lance5057.butchercraft.data.builders.recipes.loottables.MeatHookLoottables;
 import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.data.DataGenerator;
@@ -28,6 +30,7 @@ public class ButchercraftLootTableProvider extends LootTableProvider {
     @Nonnull
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
         return List.of(Pair.of(MeatHookLoottables::new, LootContextParamSets.ALL_PARAMS),
+        		Pair.of(ButcherBlockLootTables::new, LootContextParamSets.ALL_PARAMS),
                 Pair.of(ButcherKnifeLootTables::new, LootContextParamSets.ENTITY),
                 Pair.of(ButchercraftBlockLootTables::new, LootContextParamSets.BLOCK));
     }

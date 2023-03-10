@@ -75,7 +75,7 @@
       "functions": [
         {
           "add": false,
-          "count": 4.0,
+          "count": 1.0,
           "function": "minecraft:set_count"
         }
       ],
@@ -97,6 +97,44 @@
             "max": 8.0,
             "min": 4.0
           },
+          "function": "minecraft:set_count"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "butchercraft:fat"
+        }
+      ],
+      "functions": [
+        {
+          "add": false,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 6.0,
+            "min": 2.0
+          },
+          "function": "minecraft:set_count"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chicken"
+        }
+      ],
+      "functions": [
+        {
+          "add": false,
+          "count": 1.0,
           "function": "minecraft:set_count"
         }
       ],

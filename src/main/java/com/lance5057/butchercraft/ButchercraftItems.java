@@ -179,6 +179,8 @@ public class ButchercraftItems {
 			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
 	public static final RegistryObject<CarcassItem> PIG_CARCASS = ITEMS.register("pig_carcass",
 			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
+	public static final RegistryObject<CarcassItem> CHICKEN_CARCASS = ITEMS.register("chicken_carcass",
+			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
 
 	public static final RegistryObject<BlockItem> COW_HIDE = ITEMS.register("cow_hide",
 			() -> new BlockItem(ButchercraftBlocks.COW_HIDE_CARPET.get(), new Item.Properties().tab(BUTCHER_TAB)));

@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.data.builders;
+package com.lance5057.butchercraft.data.builders.recipes.loottables;
 
 import static com.lance5057.butchercraft.ButchercraftItems.BEEF_RIBS;
 import static com.lance5057.butchercraft.ButchercraftItems.BEEF_ROAST;
@@ -55,22 +55,29 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 
-    public static final ResourceLocation SKIN_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_cow");
-    public static final ResourceLocation DEOFFAL_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/deoffal_cow");
-    public static final ResourceLocation DELIMB_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_cow");
-    public static final ResourceLocation BUTCHER_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_cow");
-    
-    public static final ResourceLocation SKIN_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_pig");
-    public static final ResourceLocation DISEMBOWEL_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/disembowel_pig");
-    public static final ResourceLocation BISECT_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/bisect_pig");
-    public static final ResourceLocation BUTCHER_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_pig");
+	public static final ResourceLocation SKIN_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_cow");
+	public static final ResourceLocation DEOFFAL_COW = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/deoffal_cow");
+	public static final ResourceLocation DELIMB_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/delimb_cow");
+	public static final ResourceLocation BUTCHER_COW = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/butcher_cow");
 
-    public static final ResourceLocation SKIN_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_sheep");
-    public static final ResourceLocation DISEMBOWEL_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/disembowel_sheep");
-    public static final ResourceLocation BISECT_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/bisect_sheep");
-    public static final ResourceLocation BUTCHER_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/butcher_sheep");
+	public static final ResourceLocation SKIN_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_pig");
+	public static final ResourceLocation DISEMBOWEL_PIG = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/disembowel_pig");
+	public static final ResourceLocation BISECT_PIG = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/bisect_pig");
+	public static final ResourceLocation BUTCHER_PIG = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/butcher_pig");
 
-    @Override
+	public static final ResourceLocation SKIN_SHEEP = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_sheep");
+	public static final ResourceLocation DISEMBOWEL_SHEEP = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/disembowel_sheep");
+	public static final ResourceLocation BISECT_SHEEP = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/bisect_sheep");
+	public static final ResourceLocation BUTCHER_SHEEP = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/butcher_sheep");
+
+	@Override
     public void accept(BiConsumer<ResourceLocation, Builder> t) {
         t.accept(SKIN_COW,
                 LootTable.lootTable()
@@ -153,8 +160,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(STOMACHE.get()))
                         .withPool(createPoolWithItem(LUNG.get(), 2))
                         .withPool(createPoolWithItem(TRIPE.get(), 4))
-                        .withPool(createPoolWithItem(SINEW.get(), 4, 8))
-                        .withPool(createPoolWithItem(ButchercraftItems.BEEF_TONGUE.get(), 1)));
+                        .withPool(createPoolWithItem(SINEW.get(), 4, 8)));
         t.accept(BISECT_SHEEP,
                 LootTable.lootTable()
                         .withPool(createPoolWithItem(SINEW.get(), 0, 6))
@@ -171,18 +177,20 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(BONE, 9)));
     }
 
-    @NotNull
-    private static LootPool.Builder createPoolWithItem(Item item, int count) {
-        return LootPool.lootPool().add(LootItem.lootTableItem(item)).apply(SetItemCountFunction.setCount(ConstantValue.exactly(count)));
-    }
+	@NotNull
+	public static LootPool.Builder createPoolWithItem(Item item, int count) {
+		return LootPool.lootPool().add(LootItem.lootTableItem(item))
+				.apply(SetItemCountFunction.setCount(ConstantValue.exactly(count)));
+	}
 
-    @NotNull
-    private static LootPool.Builder createPoolWithItem(Item item, int min, int max) {
-        return LootPool.lootPool().add(LootItem.lootTableItem(item)).apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max)));
-    }
+	@NotNull
+	public static LootPool.Builder createPoolWithItem(Item item, int min, int max) {
+		return LootPool.lootPool().add(LootItem.lootTableItem(item))
+				.apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max)));
+	}
 
-    @NotNull
-    private static LootPool.Builder createPoolWithItem(Item item) {
-        return LootPool.lootPool().add(LootItem.lootTableItem(item));
-    }
+	@NotNull
+	public static LootPool.Builder createPoolWithItem(Item item) {
+		return LootPool.lootPool().add(LootItem.lootTableItem(item));
+	}
 }

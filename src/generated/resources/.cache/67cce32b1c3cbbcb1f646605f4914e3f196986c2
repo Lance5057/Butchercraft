@@ -1,4 +1,4 @@
-// 1.19.2	2023-01-10T00:34:54.3942005	LootTables
+// 1.19.2	2023-03-10T11:54:42.0584678	LootTables
 217f685d6d604dbaf667b831b301b39f41f99905 data/butchercraft/loot_tables/blocks/bbq_ribs_block.json
 b75b67897a7f41513639696413b6ad9026abd229 data/butchercraft/loot_tables/blocks/beef_block.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/butchercraft/loot_tables/blocks/beef_wellington_block.json
@@ -40,6 +40,9 @@ b7eedee15bf7a50bd07d87b74a9753cad39c1dee data/butchercraft/loot_tables/blocks/co
 217f685d6d604dbaf667b831b301b39f41f99905 data/butchercraft/loot_tables/blocks/salisbury_steak_block.json
 dee672e10d3739d923a46481ac3a58b91db2fcc0 data/butchercraft/loot_tables/blocks/sheep_hide_carpet.json
 217f685d6d604dbaf667b831b301b39f41f99905 data/butchercraft/loot_tables/blocks/stirfry_block.json
+54b30d385d48bf05bf0090027ac22245cc9c0e7c data/butchercraft/loot_tables/butcherblock/deoffal_chicken.json
+341311375f77ad896288ad899037e03a6942513e data/butchercraft/loot_tables/butcherblock/pluck_chicken.json
+a438331bbac4466465bf5ccac1434c31d6998fb6 data/butchercraft/loot_tables/butcher_knife/chicken.json
 78d13ead91d7d108df95189bc146c8602a4f544e data/butchercraft/loot_tables/butcher_knife/cow.json
 fc3e5a04bb9c17e70e23d714c813bc6d95969718 data/butchercraft/loot_tables/butcher_knife/pig.json
 09f2fba152ae704841ff08d467eed862a9e2e7ed data/butchercraft/loot_tables/butcher_knife/sheep.json
@@ -51,7 +54,7 @@ fc3e5a04bb9c17e70e23d714c813bc6d95969718 data/butchercraft/loot_tables/butcher_k
 055ee500c14304bc9ff304245ef9d9f3577d01ae data/butchercraft/loot_tables/meat_hook/delimb_cow.json
 2d2c302b9892a8e237f8352b92e7e42386140930 data/butchercraft/loot_tables/meat_hook/deoffal_cow.json
 6be7ff80fcc614e99719d07843fa431a153d5b1f data/butchercraft/loot_tables/meat_hook/disembowel_pig.json
-9aeacbe975141b94bd6ce0bd56a82d3465952c7b data/butchercraft/loot_tables/meat_hook/disembowel_sheep.json
+5e1dffecd7214dd4403395d226d2ad9f274bb3d0 data/butchercraft/loot_tables/meat_hook/disembowel_sheep.json
 dfe2af99a58f9681948f5f2e4232a6eda57d542c data/butchercraft/loot_tables/meat_hook/skin_cow.json
 e321d5cede15036649cb44d8e4781f1416c628ff data/butchercraft/loot_tables/meat_hook/skin_pig.json
 ac24513589066a674c00475d58f73066f25ccb7b data/butchercraft/loot_tables/meat_hook/skin_sheep.json

@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.data.builders;
+package com.lance5057.butchercraft.data.builders.recipes;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
@@ -71,12 +71,12 @@ public class CookingPotRecipes extends RecipeProvider {
 		CookingPotRecipeBuilder.cookingPotRecipe(ButchercraftItems.LARD.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
 				.addIngredient(ButchercraftItems.FAT.get()).addIngredient(ButchercraftItems.FAT.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lard"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ButchercraftItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(Items.POTATO)
-				.addIngredient(ButchercraftItems.GROUND_BEEF.get())
-				.addIngredient(ButchercraftItems.KETCHUP_JAR_ITEM.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "hash_feast"));
+//		CookingPotRecipeBuilder
+//				.cookingPotRecipe(ButchercraftItems.HASH_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+//						Items.BOWL)
+//				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(Items.POTATO)
+//				.addIngredient(ButchercraftItems.GROUND_BEEF.get())
+//				.addIngredient(ButchercraftItems.KETCHUP_JAR_ITEM.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "hash_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ButchercraftItems.POT_ROAST_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
@@ -90,12 +90,12 @@ public class CookingPotRecipes extends RecipeProvider {
 				.addIngredient(ModItems.MINCED_BEEF.get(), 3).addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(Tags.Items.MUSHROOMS).addIngredient(ButchercraftItems.GRAVY_ITEM.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "salisbury_steak_feast"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ButchercraftItems.BBQ_RIBS_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ButchercraftItemTags.ANY_RIBS_RAW).addIngredient(ButchercraftItemTags.ANY_RIBS_RAW)
-				.addIngredient(ButchercraftItemTags.ANY_RIBS_RAW).addIngredient(ButchercraftItemTags.ANY_RIBS_RAW)
-				.addIngredient(ButchercraftItems.BBQ_JAR_ITEM.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "bbq_ribs_feast"));
+//		CookingPotRecipeBuilder
+//				.cookingPotRecipe(ButchercraftItems.BBQ_RIBS_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+//						Items.BOWL)
+//				.addIngredient(ButchercraftItemTags.ANY_RIBS_RAW).addIngredient(ButchercraftItemTags.ANY_RIBS_RAW)
+//				.addIngredient(ButchercraftItemTags.ANY_RIBS_RAW).addIngredient(ButchercraftItemTags.ANY_RIBS_RAW)
+//				.addIngredient(ButchercraftItems.BBQ_JAR_ITEM.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "bbq_ribs_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ButchercraftItems.MEAT_PIE_BLOCK_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
@@ -105,11 +105,11 @@ public class CookingPotRecipes extends RecipeProvider {
 				.addIngredient(ButchercraftItemTags.ANY_GROUND_MEAT_RAW).addIngredient(Items.POTATO)
 				.addIngredient(ForgeTags.VEGETABLES_ONION).addIngredient(ModItems.PIE_CRUST.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "meat_pie"));
 
-		CookingPotRecipeBuilder
-				.cookingPotRecipe(ButchercraftItems.PULLED_PORK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
-						Items.BOWL)
-				.addIngredient(ButchercraftItems.PORK_ROAST.get()).addIngredient(ButchercraftItems.PORK_ROAST.get())
-				.addIngredient(ButchercraftItems.BBQ_JAR_ITEM.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pulled_pork_feast"));
+//		CookingPotRecipeBuilder
+//				.cookingPotRecipe(ButchercraftItems.PULLED_PORK_FEAST_ITEM.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F,
+//						Items.BOWL)
+//				.addIngredient(ButchercraftItems.PORK_ROAST.get()).addIngredient(ButchercraftItems.PORK_ROAST.get())
+//				.addIngredient(ButchercraftItems.BBQ_JAR_ITEM.get()).build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pulled_pork_feast"));
 
 		CookingPotRecipeBuilder
 				.cookingPotRecipe(ButchercraftItems.MASHED_POTATO_GRAVY_FEAST_ITEM.get(), 1,

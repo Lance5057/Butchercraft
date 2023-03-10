@@ -1,5 +1,4 @@
-// 1.19.2	2023-01-10T00:34:54.3722572	Butchercraft item models
-fca9613d23545c6dc1724dee159a6cd9096406d8 assets/butchercraft/models/item/bbq_jar_item.json
+// 1.19.2	2023-03-10T11:54:42.0754715	Butchercraft item models
 0c1cdb46c700d78fb6dc1423cee55fc8eb516c3c assets/butchercraft/models/item/bbq_ribs.json
 da43915896c87d42a8c0c3bd461fce75483e7d47 assets/butchercraft/models/item/bbq_ribs_block_item.json
 25fc57d82967f63ebdb799201b7830119f1cac60 assets/butchercraft/models/item/beef_block_item.json
@@ -110,7 +109,6 @@ d06c9113730cd49af1e57b3fc05d986932d40c72 assets/butchercraft/models/item/jelly_r
 f88314b805c04fc28213eb37c11b5f50209a4533 assets/butchercraft/models/item/jelly_white_block_item.json
 49e68b2e8fdc7e09d5be8d52fbf1d3d6e84405f7 assets/butchercraft/models/item/jelly_yellow.json
 24f941e5497c31769fd82480295b6d7d04438167 assets/butchercraft/models/item/jelly_yellow_block_item.json
-aade3bd9726189af3dd7add87ddf1cba7754b5bb assets/butchercraft/models/item/ketchup_jar_item.json
 c17f3fa625b887999bfc90add57da50b731af277 assets/butchercraft/models/item/kidney.json
 fe4d8c1335b533fd9424904eced5502d4f61ef37 assets/butchercraft/models/item/lamb_block_item.json
 0c716e3b2d8783408a3bc94eb9297a9faa3e32b8 assets/butchercraft/models/item/lamb_jerky.json
@@ -154,7 +152,7 @@ cfd79668a86a2faba870a75f8dbcec8ef38f3b7c assets/butchercraft/models/item/rack_la
 f45a87b84b716f73120ef419578fa9a322d3ee44 assets/butchercraft/models/item/salisbury_steak_block_item.json
 25c282bfdaf42831302d2032d42c88dfae343a5c assets/butchercraft/models/item/sausage.json
 b377ee5098a440809f0ce5d65474ce9cfc424c93 assets/butchercraft/models/item/sausage_roll.json
-c198e5877ed487c10a8563eec188d1e9fae6402e assets/butchercraft/models/item/sheep_carcass.json
+6020153546d582fe0e151c266d2c3dfdaf19a52f assets/butchercraft/models/item/sheep_carcass.json
 cea772c82ddebdc3039cc43fc69da67e1f690f12 assets/butchercraft/models/item/sheep_hide.json
 ab315ae5abe2da6618b3e98c90c81f153168a7a0 assets/butchercraft/models/item/sinew.json
 a6beb2fe93f1d7fd045405ab4a83dabee264724a assets/butchercraft/models/item/skinning_knife.json

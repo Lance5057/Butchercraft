@@ -53,6 +53,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig")));
 		getBuilder(ButchercraftItems.SHEEP_CARCASS.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/sheep")));
+		getBuilder(ButchercraftItems.SHEEP_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/chicken")));
 
 		forItem(ButchercraftItems.BRAIN, "brain");
 		forItem(ButchercraftItems.COOKED_BRAIN, "cooked_brain");

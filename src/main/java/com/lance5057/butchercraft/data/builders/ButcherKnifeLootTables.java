@@ -19,6 +19,8 @@ public class ButcherKnifeLootTables implements Consumer<BiConsumer<ResourceLocat
         createButcherKnifeLootTable(consumer, EntityType.COW, new LootTable.Builder().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.COW_CARCASS.get()))));
         createButcherKnifeLootTable(consumer, EntityType.SHEEP, new LootTable.Builder().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.SHEEP_CARCASS.get()))));
         createButcherKnifeLootTable(consumer, EntityType.PIG, new LootTable.Builder().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.PIG_CARCASS.get()))));
+        createButcherKnifeLootTable(consumer, EntityType.CHICKEN, new LootTable.Builder().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.CHICKEN_CARCASS.get()))));
+
     }
 
     public static void createButcherKnifeLootTable(BiConsumer<ResourceLocation, LootTable.Builder> consumer, EntityType<?> entityType, LootTable.Builder lootTable) {

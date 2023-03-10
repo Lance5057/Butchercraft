@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.data.builders;
+package com.lance5057.butchercraft.data.builders.recipes;
 
 import java.util.List;
 import java.util.function.Consumer;

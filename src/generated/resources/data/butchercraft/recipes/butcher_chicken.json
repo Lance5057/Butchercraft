@@ -1,0 +1,331 @@
+{
+  "type": "butchercraft:butcher_block",
+  "carcass": {
+    "item": "butchercraft:chicken_carcass"
+  },
+  "group": "",
+  "tools": [
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/pluck_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {},
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:shears"
+        }
+      ],
+      "tool": {
+        "tag": "forge:shears"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/pluck_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {},
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:shears"
+        }
+      ],
+      "tool": {
+        "tag": "forge:shears"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/pluck_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {},
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:shears"
+        }
+      ],
+      "tool": {
+        "tag": "forge:shears"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/pluck_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {},
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:shears"
+        }
+      ],
+      "tool": {
+        "tag": "forge:shears"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/pluck_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {},
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:shears"
+        }
+      ],
+      "tool": {
+        "tag": "forge:shears"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/pluck_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {},
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:shears"
+        }
+      ],
+      "tool": {
+        "tag": "forge:shears"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/deoffal_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken_plucked"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {},
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "butchercraft:gut_knife"
+        }
+      ],
+      "tool": {
+        "item": "butchercraft:gut_knife"
+      },
+      "uses": 12
+    }
+  ]
+}
