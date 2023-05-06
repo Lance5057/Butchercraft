@@ -7,6 +7,7 @@ import com.lance5057.butchercraft.food.FoodsSheep;
 import com.lance5057.butchercraft.items.ButcherKnifeItem;
 import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.items.KnifeItem;
+import com.lance5057.extradelight.food.EDFoods;
 
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
@@ -238,6 +239,11 @@ public class ButchercraftItems {
 			() -> new BlockItem(ButchercraftBlocks.LAMB_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BlockItem> COOKED_LAMB_BLOCK_ITEM = ITEMS.register("cooked_lamb_block_item",
 			() -> new BlockItem(ButchercraftBlocks.COOKED_LAMB_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	
+	public static final RegistryObject<Item> SAUSAGE = ITEMS.register("sausage",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.SAUSAGE)));
+	public static final RegistryObject<Item> COOKED_SAUSAGE = ITEMS.register("cooked_sausage",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.COOKED_SAUSAGE)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);
