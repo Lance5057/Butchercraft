@@ -1,5 +1,7 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.armor.BCArmorMaterial;
+import com.lance5057.butchercraft.armor.PaperHatItem;
 import com.lance5057.butchercraft.food.FoodsCow;
 import com.lance5057.butchercraft.food.FoodsGeneric;
 import com.lance5057.butchercraft.food.FoodsPig;
@@ -126,7 +128,7 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.COOKED_LAMB_STEWMEAT)));
 	public static final RegistryObject<Item> LAMB_STEW_MEAT = ITEMS.register("lamb_stewmeat",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.LAMB_STEWMEAT)));
-	
+
 	// OFFAL
 	public static final RegistryObject<Item> COOKED_TRIPE = ITEMS.register("cooked_tripe",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.COOKED_TRIPE)));
@@ -233,11 +235,15 @@ public class ButchercraftItems {
 			() -> new BlockItem(ButchercraftBlocks.LAMB_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BlockItem> COOKED_LAMB_BLOCK_ITEM = ITEMS.register("cooked_lamb_block_item",
 			() -> new BlockItem(ButchercraftBlocks.COOKED_LAMB_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
-	
+
 	public static final RegistryObject<Item> SAUSAGE = ITEMS.register("sausage",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.SAUSAGE)));
 	public static final RegistryObject<Item> COOKED_SAUSAGE = ITEMS.register("cooked_sausage",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.COOKED_SAUSAGE)));
+
+	// Armor
+	public static final RegistryObject<Item> PAPER_HAT = ITEMS.register("paper_hat",
+			() -> new PaperHatItem(BCArmorMaterial.PAPER, new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);

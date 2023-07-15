@@ -37,6 +37,7 @@ public class Butchercraft {
 		bus.addListener(ButchercraftEvents::registerCaps);
 		bus.addGenericListener(Entity.class, ButchercraftEvents::attachCaps);
 		bus.addListener(ButchercraftEvents::breedEvent);
+		bus.addListener(ButchercraftEvents::registerLayerDefinitions);
 
 		ButchercraftBlocks.register(modEventBus);
 		ButchercraftItems.register(modEventBus);
