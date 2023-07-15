@@ -19,9 +19,4 @@ public class KnifeItem extends SwordItem {
 		else
 			return container;
 	}
-
-	@Override
-	public boolean hasCraftingRemainingItem(ItemStack stack) {
-		return true;
-	}
 }
