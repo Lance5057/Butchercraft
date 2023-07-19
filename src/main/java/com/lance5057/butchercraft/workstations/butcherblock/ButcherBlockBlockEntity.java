@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.workstations.blockentities;
+package com.lance5057.butchercraft.workstations.butcherblock;
 
 import java.util.Optional;
 
@@ -7,10 +7,7 @@ import javax.annotation.Nullable;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
-import com.lance5057.butchercraft.workstations.blocks.MeatHookBlock;
-import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
-import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipe;
-import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipeContainer;
+import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -42,20 +39,17 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 
-// TODO Track recipe stage and damage tool on use
-public class MeatHookBlockEntity extends BlockEntity {
+public class ButcherBlockBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 
-	public boolean recipeLocked = false;
-	// public NonNullList<RecipeItemUse> toolList;
 	private int progress;
 	private int maxProgress;
 	private Ingredient curTool;
 	public int toolCount;
 	public int stage = 0;
 
-	public MeatHookBlockEntity(BlockPos pPos, BlockState pState) {
-		super(ButchercraftBlockEntities.MEAT_HOOK.get(), pPos, pState);
+	public ButcherBlockBlockEntity(BlockPos pPos, BlockState pState) {
+		super(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), pPos, pState);
 	}
 
 	@Nonnull
@@ -68,7 +62,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 		return super.getCapability(cap, side);
 	}
 
-	public void setRecipe(Optional<HookRecipe> r) {
+	public void setRecipe(Optional<ButcherBlockRecipe> r) {
 
 		if (r.isPresent()) {
 			this.setupStage(r.get(), 0);
@@ -85,10 +79,10 @@ public class MeatHookBlockEntity extends BlockEntity {
 	}
 
 	public Optional<AnimatedRecipeItemUse> getCurrentTool() {
-		return matchRecipe().map(hookRecipe -> hookRecipe.getRecipeToolsIn().get(stage));
+		return matchRecipe().map(ButcherBlockRecipe -> ButcherBlockRecipe.getRecipeToolsIn().get(stage));
 	}
 
-	protected void setupStage(HookRecipe r, int i) {
+	protected void setupStage(ButcherBlockRecipe r, int i) {
 
 		this.progress = 0;
 		this.maxProgress = r.getRecipeToolsIn().get(i).uses;
@@ -98,7 +92,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 		this.stage = i;
 	}
 
-	boolean isFinalStage(HookRecipe r) {
+	boolean isFinalStage(ButcherBlockRecipe r) {
 		int i = r.getRecipeToolsIn().size();
 		if (i - 1 > stage) {
 			return false;
@@ -107,10 +101,10 @@ public class MeatHookBlockEntity extends BlockEntity {
 	}
 
 	// Attempt to find a recipe that matches the tool and the item in its inventory
-	private Optional<HookRecipe> matchRecipe() {
+	private Optional<ButcherBlockRecipe> matchRecipe() {
 		if (this.level != null) {
-			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.HOOK.get(),
-					new HookRecipeContainer(getInsertedItem()), level);
+			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.BUTCHER_BLOCK.get(),
+					new ButcherBlockContainer(getInsertedItem()), level);
 		}
 		return Optional.empty();
 
@@ -135,8 +129,9 @@ public class MeatHookBlockEntity extends BlockEntity {
 				boolean recipeWithInputExists = false;
 				if (level != null) {
 					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
-							.filter(recipe -> recipe instanceof HookRecipe).map(recipe -> (HookRecipe) recipe)
-							.anyMatch(hookRecipe -> hookRecipe.getCarcassIn().test(stack));
+							.filter(recipe -> recipe instanceof ButcherBlockRecipe)
+							.map(recipe -> (ButcherBlockRecipe) recipe)
+							.anyMatch(ButcherBlockRecipe -> ButcherBlockRecipe.getCarcassIn().test(stack));
 				}
 				return recipeWithInputExists && super.isItemValid(slot, stack);
 			}
@@ -195,18 +190,18 @@ public class MeatHookBlockEntity extends BlockEntity {
 		this.setChanged();
 		if (this.getLevel() != null) {
 			getLevel().setBlock(getBlockPos(),
-					getBlockState().setValue(MeatHookBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
+					getBlockState().setValue(ButcherBlockBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
 					Block.UPDATE_ALL);
 			this.getLevel().sendBlockUpdated(this.worldPosition, this.getBlockState(),
-					this.getBlockState().setValue(MeatHookBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
+					this.getBlockState().setValue(ButcherBlockBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
 					Block.UPDATE_ALL);
 		}
 	}
 
 	public InteractionResult butcher(Player Player, ItemStack butcheringTool) {
-		Optional<HookRecipe> recipeOptional = matchRecipe();
+		Optional<ButcherBlockRecipe> recipeOptional = matchRecipe();
 		if (recipeOptional.isPresent()) {
-			HookRecipe recipe = recipeOptional.get();
+			ButcherBlockRecipe recipe = recipeOptional.get();
 			if (this.curTool == null) {
 				setupStage(recipe, stage);
 			}
@@ -239,7 +234,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 							level.addParticle(ParticleTypes.FALLING_DRIPSTONE_LAVA,
 									worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
 									worldPosition.getY() - 0.5f - level.random.nextDouble(),
-									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2 , 0, 0, 0);
+									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
 						level.playSound(Player, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1,
 								1);
@@ -266,8 +261,8 @@ public class MeatHookBlockEntity extends BlockEntity {
 					.create(LootContextParamSets.EMPTY);
 			// TODO Investigate how to make block not drop things so violently
 			player.getServer().getLootTables().get(recipeToolsIn.lootTable).getRandomItems(pContext)
-					.forEach(itemStack -> new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY(),
-							getBlockPos().getZ(), itemStack).spawnAtLocation(itemStack));
+					.forEach(itemStack -> level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(),
+							getBlockPos().getY() + 0.5f, getBlockPos().getZ(), itemStack)));
 
 		}
 	}

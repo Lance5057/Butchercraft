@@ -9,7 +9,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.client.BlacklistedModel;
-import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
+import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;

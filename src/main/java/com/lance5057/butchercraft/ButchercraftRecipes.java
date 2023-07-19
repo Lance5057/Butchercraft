@@ -1,7 +1,8 @@
 package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.workstations.recipes.butcherblock.ButcherBlockRecipe;
-import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipe;
+import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
+import com.lance5057.butchercraft.workstations.grinder.GrinderRecipe;
+import com.lance5057.butchercraft.workstations.hook.HookRecipe;
 
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.Recipe;
@@ -17,6 +18,8 @@ public class ButchercraftRecipes {
 
 	public static final RegistryObject<RecipeType<ButcherBlockRecipe>> BUTCHER_BLOCK = createRecipeType(
 			"butcher_block");
+
+	public static final RegistryObject<RecipeType<GrinderRecipe>> GRINDER = createRecipeType("grinder");
 
 	private static <T extends Recipe<?>> RegistryObject<RecipeType<T>> createRecipeType(String name) {
 		return RECIPE_TYPES.register(name, () -> new RecipeType<T>() {

@@ -1,12 +1,12 @@
-package com.lance5057.butchercraft.workstations.blockentities.bases;
+package com.lance5057.butchercraft.workstations.bases;
 
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
-import com.lance5057.butchercraft.workstations.recipes.MultiToolRecipe;
+import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+import com.lance5057.butchercraft.workstations.bases.recipes.MultiToolRecipe;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

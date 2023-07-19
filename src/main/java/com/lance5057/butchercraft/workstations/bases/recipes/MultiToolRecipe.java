@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.workstations.recipes;
+package com.lance5057.butchercraft.workstations.bases.recipes;
 
 import java.util.Map;
 import java.util.Map.Entry;

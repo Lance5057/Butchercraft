@@ -1,9 +1,6 @@
-package com.lance5057.butchercraft.workstations.blocks;
+package com.lance5057.butchercraft.workstations.grinder;
 
 import javax.annotation.Nonnull;
-
-import com.lance5057.butchercraft.items.CarcassItem;
-import com.lance5057.butchercraft.workstations.blockentities.ButcherBlockBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -29,36 +26,14 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
+public class GrinderBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	public static final BooleanProperty CARCASS_HOOKED = BooleanProperty.create("carcass_hooked");
-	// TODO Maybe use double plant logic so that you can interact with bottom thirds
-	// of the block
-	protected static final VoxelShape AABB = Block.box(0.0D, -32.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
-	public ButcherBlockBlock() {
+	public GrinderBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(CARCASS_HOOKED, false));
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-		return state.getValue(CARCASS_HOOKED) ? AABB : super.getShape(state, worldIn, pos, context);
-	}
-
-	@Override
-	public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos,
-			CollisionContext pContext) {
-		return pState.getValue(CARCASS_HOOKED) ? AABB : super.getCollisionShape(pState, pLevel, pPos, pContext);
-	}
-
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, WATERLOGGED, CARCASS_HOOKED);
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@SuppressWarnings("deprecation")
@@ -72,21 +47,24 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 		return !state.getValue(WATERLOGGED);
 	}
 
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(FACING, WATERLOGGED);
+	}
+	
 	@Nonnull
 	@Override
 	public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
 			@Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
 		BlockEntity entity = world.getBlockEntity(blockPos);
-		if (entity instanceof ButcherBlockBlockEntity te) {
+		if (entity instanceof GrinderBlockEntity te) {
 
 			// Get item in both InteractionHands
-			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
-			// TODO May want to disable insertion if there's not enough space under the hook
-			if (heldMain.getItem() instanceof CarcassItem) {
-				// TODO Find a way to return SUCCESS on successful insertion
-				te.insertItem(heldMain);
-			} else if (heldMain != ItemStack.EMPTY)
-				return te.butcher(playerEntity, heldMain);
+//			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
+//			if (heldMain.getItem() instanceof CarcassItem) {
+//				te.insertItem(heldMain);
+//			} else if (heldMain != ItemStack.EMPTY)
+//				return te.grind(playerEntity);
 		}
 
 		return InteractionResult.PASS;
@@ -95,7 +73,7 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-		return new ButcherBlockBlockEntity(pPos, pState);
+		return new GrinderBlockEntity(pPos, pState);
 	}
 
 	@Override

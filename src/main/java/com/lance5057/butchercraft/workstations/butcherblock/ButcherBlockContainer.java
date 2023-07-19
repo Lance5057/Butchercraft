@@ -1,6 +1,6 @@
-package com.lance5057.butchercraft.workstations.recipes.butcherblock;
+package com.lance5057.butchercraft.workstations.butcherblock;
 
-import com.lance5057.butchercraft.workstations.recipes.EmptyInventory;
+import com.lance5057.butchercraft.workstations.bases.recipes.EmptyInventory;
 
 import net.minecraft.world.item.ItemStack;
 

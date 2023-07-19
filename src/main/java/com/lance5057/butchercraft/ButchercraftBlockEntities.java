@@ -1,7 +1,8 @@
 package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.workstations.blockentities.ButcherBlockBlockEntity;
-import com.lance5057.butchercraft.workstations.blockentities.MeatHookBlockEntity;
+import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockBlockEntity;
+import com.lance5057.butchercraft.workstations.grinder.GrinderBlockEntity;
+import com.lance5057.butchercraft.workstations.hook.MeatHookBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,6 +21,9 @@ public class ButchercraftBlockEntities {
 	public static final RegistryObject<BlockEntityType<ButcherBlockBlockEntity>> BUTCHER_BLOCK = BLOCK_ENTITIES
 			.register("butcher_block", () -> BlockEntityType.Builder
 					.of(ButcherBlockBlockEntity::new, ButchercraftBlocks.BUTCHER_BLOCK.get()).build(null));
+
+	public static final RegistryObject<BlockEntityType<GrinderBlockEntity>> GRINDER = BLOCK_ENTITIES.register("grinder",
+			() -> BlockEntityType.Builder.of(GrinderBlockEntity::new, ButchercraftBlocks.GRINDER.get()).build(null));
 
 	public static void register(IEventBus modBus) {
 		BLOCK_ENTITIES.register(modBus);

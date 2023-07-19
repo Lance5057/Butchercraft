@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.workstations.recipes;
+package com.lance5057.butchercraft.workstations.bases.recipes;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;

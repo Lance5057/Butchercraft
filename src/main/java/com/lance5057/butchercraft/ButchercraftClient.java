@@ -2,8 +2,8 @@ package com.lance5057.butchercraft;
 
 import java.util.Map;
 
-import com.lance5057.butchercraft.workstations.client.ButcherBlockRenderer;
-import com.lance5057.butchercraft.workstations.client.MeatHookRenderer;
+import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRenderer;
+import com.lance5057.butchercraft.workstations.hook.MeatHookRenderer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;

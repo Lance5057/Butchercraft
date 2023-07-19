@@ -1,8 +1,9 @@
 package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.workstations.recipes.butcherblock.ButcherBlockSerializer;
-import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipe;
-import com.lance5057.butchercraft.workstations.recipes.meathook.HookRecipeSerializer;
+import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockSerializer;
+import com.lance5057.butchercraft.workstations.grinder.GrinderRecipeSerializer;
+import com.lance5057.butchercraft.workstations.hook.HookRecipe;
+import com.lance5057.butchercraft.workstations.hook.HookRecipeSerializer;
 
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,6 +20,9 @@ public class ButchercraftRecipeSerializers {
 
 	public static final RegistryObject<ButcherBlockSerializer> BUTCHER_BLOCK_SERIALIZER = RECIPE_SERIALIZERS
 			.register("butcher_block", ButcherBlockSerializer::new);
+
+	public static final RegistryObject<GrinderRecipeSerializer> GRINDER_SERIALIZER = RECIPE_SERIALIZERS
+			.register("grinder", GrinderRecipeSerializer::new);
 
 	public static void register(IEventBus modBus) {
 		RECIPE_SERIALIZERS.register(modBus);

@@ -1,9 +1,8 @@
-package com.lance5057.butchercraft.workstations.blocks;
+package com.lance5057.butchercraft.workstations.hook;
 
 import javax.annotation.Nonnull;
 
 import com.lance5057.butchercraft.items.CarcassItem;
-import com.lance5057.butchercraft.workstations.blockentities.MeatHookBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

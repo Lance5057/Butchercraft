@@ -1,7 +1,8 @@
-package com.lance5057.butchercraft.workstations.recipes.butcherblock;
+package com.lance5057.butchercraft.workstations.butcherblock;
 
 import com.google.gson.JsonObject;
-import com.lance5057.butchercraft.workstations.recipes.AnimatedRecipeItemUse;
+import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
