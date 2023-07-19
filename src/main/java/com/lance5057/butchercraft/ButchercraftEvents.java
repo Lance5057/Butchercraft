@@ -1,9 +1,15 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.armor.models.ApronModel;
+import com.lance5057.butchercraft.armor.models.BootsModel;
+import com.lance5057.butchercraft.armor.models.GlovesModel;
+import com.lance5057.butchercraft.armor.models.MaskModel;
 import com.lance5057.butchercraft.armor.models.PaperHatModel;
 import com.lance5057.butchercraft.capabilities.AnimalCare;
 import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
 
+import net.minecraft.client.model.geom.LayerDefinitions;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
@@ -15,7 +21,10 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ButchercraftEvents {
 
 	public static void registerCaps(RegisterCapabilitiesEvent event) {
@@ -67,7 +76,17 @@ public class ButchercraftEvents {
 		}
 	}
 
+	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		event.registerLayerDefinition(PaperHatModel.LAYER_LOCATION, PaperHatModel::createBodyLayer);
+		event.registerLayerDefinition(PaperHatModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(PaperHatModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 32, 32));
+		event.registerLayerDefinition(ApronModel.LAYER_LOCATION,
+				() -> LayerDefinition.create(ApronModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
+		event.registerLayerDefinition(GlovesModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(GlovesModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
+		event.registerLayerDefinition(BootsModel.LAYER_LOCATION,
+				() -> LayerDefinition.create(BootsModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
+		event.registerLayerDefinition(MaskModel.LAYER_LOCATION,
+				() -> LayerDefinition.create(MaskModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
 	}
 }

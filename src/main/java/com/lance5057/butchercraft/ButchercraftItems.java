@@ -1,6 +1,10 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.armor.ApronItem;
 import com.lance5057.butchercraft.armor.BCArmorMaterial;
+import com.lance5057.butchercraft.armor.BootsItem;
+import com.lance5057.butchercraft.armor.GlovesItem;
+import com.lance5057.butchercraft.armor.MaskItem;
 import com.lance5057.butchercraft.armor.PaperHatItem;
 import com.lance5057.butchercraft.food.FoodsCow;
 import com.lance5057.butchercraft.food.FoodsGeneric;
@@ -242,8 +246,16 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.COOKED_SAUSAGE)));
 
 	// Armor
+	public static final RegistryObject<Item> MASK = ITEMS.register("mask",
+			() -> new MaskItem(BCArmorMaterial.WOOL, new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<Item> PAPER_HAT = ITEMS.register("paper_hat",
 			() -> new PaperHatItem(BCArmorMaterial.PAPER, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> APRON = ITEMS.register("apron",
+			() -> new ApronItem(BCArmorMaterial.WOOL, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> GLOVES = ITEMS.register("gloves",
+			() -> new GlovesItem(BCArmorMaterial.WOOL, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> BOOTS = ITEMS.register("boots",
+			() -> new BootsItem(BCArmorMaterial.WOOL, new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);
