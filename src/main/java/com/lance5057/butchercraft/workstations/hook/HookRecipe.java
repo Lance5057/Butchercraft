@@ -50,7 +50,7 @@ public class HookRecipe implements Recipe<HookRecipeContainer> {
 
 	@Override
 	public ItemStack getResultItem() {
-		return null;
+		return ItemStack.EMPTY;
 	}
 
 	@Override

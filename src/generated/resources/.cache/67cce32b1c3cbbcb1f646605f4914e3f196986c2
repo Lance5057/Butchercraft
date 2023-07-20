@@ -1,10 +1,11 @@
-// 1.19.2	2023-03-16T13:26:38.028711	LootTables
+// 1.19.2	2023-07-20T12:51:55.4971216	LootTables
 b75b67897a7f41513639696413b6ad9026abd229 data/butchercraft/loot_tables/blocks/beef_block.json
 2c49e3d04f4ca824434b48cdc5eb6d4f3cb88551 data/butchercraft/loot_tables/blocks/butcher_block.json
 d138b32c18977f9fd4edd987b6480d6511224ff5 data/butchercraft/loot_tables/blocks/cooked_beef_block.json
 40629ac5a013f6fc2c3d5a7f78fb195d7a9656db data/butchercraft/loot_tables/blocks/cooked_lamb_block.json
 e7f66e367e845f00e78b159cb7652b3604ac0cf6 data/butchercraft/loot_tables/blocks/cooked_pork_block.json
 b7eedee15bf7a50bd07d87b74a9753cad39c1dee data/butchercraft/loot_tables/blocks/cow_hide_carpet.json
+ea3fdec8354dbd992ccc60eebc6d54e2cd244517 data/butchercraft/loot_tables/blocks/grinder.json
 39179a2f0e31fb0f4b0b552b10c49fa5273c1fd2 data/butchercraft/loot_tables/blocks/lamb_block.json
 89a880a26b4171604e01397a0fdc545661ed015b data/butchercraft/loot_tables/blocks/meat_hook.json
 2752f93ceba420b9f007de6176e247389efc3983 data/butchercraft/loot_tables/blocks/pig_hide_carpet.json
