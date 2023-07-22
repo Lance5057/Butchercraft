@@ -73,23 +73,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "farmersdelight:bacon"
-        }
-      ],
-      "functions": [
-        {
-          "add": false,
-          "count": 11.0,
-          "function": "minecraft:set_count"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
           "name": "minecraft:porkchop"
         }
       ],

@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-20T12:51:55.4971216	LootTables
+// 1.19.2	2023-07-22T10:46:19.5635664	LootTables
 b75b67897a7f41513639696413b6ad9026abd229 data/butchercraft/loot_tables/blocks/beef_block.json
 2c49e3d04f4ca824434b48cdc5eb6d4f3cb88551 data/butchercraft/loot_tables/blocks/butcher_block.json
 d138b32c18977f9fd4edd987b6480d6511224ff5 data/butchercraft/loot_tables/blocks/cooked_beef_block.json
@@ -20,7 +20,7 @@ fc3e5a04bb9c17e70e23d714c813bc6d95969718 data/butchercraft/loot_tables/butcher_k
 914eab63ce1e7c1fe7e82b1cea0e52db889abe46 data/butchercraft/loot_tables/meat_hook/bisect_pig.json
 45c172e78bfb97b3bd022d0928ee3f492821c04a data/butchercraft/loot_tables/meat_hook/bisect_sheep.json
 190a803da445c2059be27000bb2a29a9015af6f2 data/butchercraft/loot_tables/meat_hook/butcher_cow.json
-254c80a32a90ea7da563720cc6a50d799bb43481 data/butchercraft/loot_tables/meat_hook/butcher_pig.json
+9a042e1834001b92ce4be1b71a21a5ce29ec82c9 data/butchercraft/loot_tables/meat_hook/butcher_pig.json
 515332aae7bb80f8c374c62b90ba73aa665cab53 data/butchercraft/loot_tables/meat_hook/butcher_sheep.json
 055ee500c14304bc9ff304245ef9d9f3577d01ae data/butchercraft/loot_tables/meat_hook/delimb_cow.json
 6a5ce241fe2835176b8d05655f89951022b19b40 data/butchercraft/loot_tables/meat_hook/deoffal_cow.json

@@ -1,18 +1,18 @@
-// 1.19.2	2023-03-16T13:01:30.1385503	Tags for minecraft:item
+// 1.19.2	2023-07-22T10:46:19.5555683	Tags for minecraft:item
 ff31bed4ceaac838c1200966a1d4a927e5835a9b data/butchercraft/tags/items/gelatin_provider.json
 f336588026e0340101018efefa180c951510de8f data/forge/tags/items/beef/cooked.json
 1199d9c2c65889587a5643e4afa791f4b8cba50a data/forge/tags/items/beef/raw.json
 3f8b7f737289518896cef9e2bca4a7c09acb9bc6 data/forge/tags/items/ground_meat/raw.json
-0f3c31c3a7702bddae326fb707e05e294028a316 data/forge/tags/items/meat/cooked.json
+6fe81b53b45ec83b7b13a86bf8e2f194b2aceb83 data/forge/tags/items/meat/cooked.json
 9202873775226b834fa54ea5d42365fe1fad7275 data/forge/tags/items/meat/cubed/raw.json
-4937876e5e05dcb5daf292d068480a43de06626c data/forge/tags/items/meat/raw.json
+14350f2254b38dca175974ce31cd18e8029b5d17 data/forge/tags/items/meat/raw.json
 cc1a35447673a84f8c3a89afdef64ce8748872fa data/forge/tags/items/meat/ribs/raw.json
 e54a60605c1b490c50c92ab49116b061f08ea827 data/forge/tags/items/meat/roast/raw.json
 4c65530abf0c23896413c5c9c27558c3f17f1072 data/forge/tags/items/meat/scrap/raw.json
 6a719a452cc3737fc0616ee45ebe7cf8b25b6757 data/forge/tags/items/mutton/cooked.json
 bbead326bde1b1d7896c7625e9f95d20b75ce61f data/forge/tags/items/mutton/raw.json
 e45f5493250c086d655364bc67d7a70364711e20 data/forge/tags/items/offal.json
-45f0e284e0b48b36377ec4748a2cac8f6a33a1a9 data/forge/tags/items/pork/cooked.json
-88720334a4ddf627da8e5d73ba83dd0aeb052b50 data/forge/tags/items/pork/raw.json
+63a37fff1f7bed886de766a09daa1227453a71c7 data/forge/tags/items/pork/cooked.json
+4284eb5c5658a73e0c7b0db7efbbff41274ad0f2 data/forge/tags/items/pork/raw.json
 cd09d0bd2502f17520be606eac462355e2cedb8d data/forge/tags/items/slimeballs.json
 0af0673d94e4a49f2f10115b5b0784153a1ff214 data/forge/tags/items/string.json

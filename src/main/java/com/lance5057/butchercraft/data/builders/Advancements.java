@@ -27,7 +27,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class Advancements extends AdvancementProvider {
 	private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
@@ -182,8 +181,6 @@ public class Advancements extends AdvancementProvider {
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_PORK.get()))
 				.addCriterion("whole_pig_ground",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
-				.addCriterion("whole_pig_bacon",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ModItems.COOKED_BACON.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":whole_pig");
 
 		whole_sheep = Advancement.Builder.advancement().parent(sheep)
@@ -206,7 +203,7 @@ public class Advancements extends AdvancementProvider {
 				.save(consumer, Butchercraft.MOD_ID + ":whole_sheep");
 
 		everything = Advancement.Builder.advancement().parent(whole_sheep).parent(whole_cow).parent(whole_pig)
-				.display(new DisplayInfo(new ItemStack(ModItems.COOKED_BACON.get()),
+				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SAUSAGE.get()),
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything.name"),
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything.desc"), null,
 						FrameType.CHALLENGE, true, true, false))
@@ -246,8 +243,6 @@ public class Advancements extends AdvancementProvider {
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_LAMB.get()))
 				.addCriterion("whole_sheep_ground",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_LAMB.get()))
-				.addCriterion("whole_pig_bacon",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ModItems.COOKED_BACON.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":everything");
 
 		everything_plus = Advancement.Builder.advancement().parent(everything)
@@ -291,8 +286,6 @@ public class Advancements extends AdvancementProvider {
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_LAMB.get()))
 				.addCriterion("whole_sheep_ground",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_LAMB.get()))
-				.addCriterion("whole_pig_bacon",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ModItems.COOKED_BACON.get()))
 				.addCriterion("everything_plus_brain",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BRAIN.get()))
 				.addCriterion("everything_plus_heart",

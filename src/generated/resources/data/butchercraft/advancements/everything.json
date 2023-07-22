@@ -61,16 +61,6 @@
       },
       "trigger": "minecraft:consume_item"
     },
-    "whole_pig_bacon": {
-      "conditions": {
-        "item": {
-          "items": [
-            "farmersdelight:cooked_bacon"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "whole_pig_cubed": {
       "conditions": {
         "item": {
@@ -200,7 +190,7 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "farmersdelight:cooked_bacon"
+      "item": "butchercraft:sausage"
     },
     "show_toast": true,
     "title": {
@@ -261,9 +251,6 @@
     ],
     [
       "whole_sheep_ground"
-    ],
-    [
-      "whole_pig_bacon"
     ]
   ]
 }

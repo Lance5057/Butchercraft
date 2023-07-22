@@ -10,10 +10,3 @@ issueTrackerURL = "https://github.com/Lance5057/Butchercraft/issues"
 	displayURL = "https://github.com/Lance5057/Butchercraft"
 	credits = "Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly"
 	authors = "Lance5057"
-
-[[dependencies.butchercraft]]
-    modId = "farmersdelight"
-    mandatory = true
-    versionRange = "[1.2.0,)"
-    ordering = "AFTER"
-    side = "BOTH"

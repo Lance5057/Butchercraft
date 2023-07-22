@@ -3,6 +3,7 @@ package com.lance5057.butchercraft;
 import java.util.Map;
 
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRenderer;
+import com.lance5057.butchercraft.workstations.grinder.GrinderRenderer;
 import com.lance5057.butchercraft.workstations.hook.MeatHookRenderer;
 
 import net.minecraft.client.Minecraft;
@@ -20,12 +21,12 @@ public class ButchercraftClient {
 	// @SubscribeEvent
 	public static void setBERenderers() {
 		BlockEntityRenderers.register(ButchercraftBlockEntities.MEAT_HOOK.get(), MeatHookRenderer::new);
-		
+		BlockEntityRenderers.register(ButchercraftBlockEntities.GRINDER.get(), GrinderRenderer::new);
 		BlockEntityRenderers.register(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), ButcherBlockRenderer::new);
 	}
 
 	@SubscribeEvent
-	public static void RegisterHookModels(RegisterAdditional event) {
+	public static void RegisterExtraModels(RegisterAdditional event) {
 		Map<ResourceLocation, Resource> rrs = Minecraft.getInstance().getResourceManager()
 				.listResources("models/meathook", (p_215600_) -> {
 					return p_215600_.getPath().endsWith(".json");

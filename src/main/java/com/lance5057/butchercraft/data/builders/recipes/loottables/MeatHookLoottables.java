@@ -51,7 +51,6 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 
@@ -142,7 +141,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(PORK_RIBS.get(), 6))
                         .withPool(createPoolWithItem(PORK_ROAST.get(), 10))
                         .withPool(createPoolWithItem(CUBED_PORK.get(), 4))
-                        .withPool(createPoolWithItem(ModItems.BACON.get(), 11))
+                        //.withPool(createPoolWithItem(ModItems.BACON.get(), 11))
                         .withPool(createPoolWithItem(PORKCHOP, 14))
                         .withPool(createPoolWithItem(BONE, 12)));
 

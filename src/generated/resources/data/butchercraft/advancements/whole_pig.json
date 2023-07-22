@@ -1,16 +1,6 @@
 {
   "parent": "butchercraft:pig",
   "criteria": {
-    "whole_pig_bacon": {
-      "conditions": {
-        "item": {
-          "items": [
-            "farmersdelight:cooked_bacon"
-          ]
-        }
-      },
-      "trigger": "minecraft:consume_item"
-    },
     "whole_pig_cubed": {
       "conditions": {
         "item": {
@@ -105,9 +95,6 @@
     ],
     [
       "whole_pig_ground"
-    ],
-    [
-      "whole_pig_bacon"
     ]
   ]
 }

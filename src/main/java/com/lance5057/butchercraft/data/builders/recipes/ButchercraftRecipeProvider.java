@@ -70,10 +70,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.DifferenceIngredient;
 import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
-import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
 public class ButchercraftRecipeProvider extends RecipeProvider {
 
@@ -395,11 +391,6 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_lamb", has(ButchercraftItemTags.MUTTON_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lamb_scraps_to_ground"));
 
-		ShapelessRecipeBuilder.shapeless(ModItems.BARBECUE_STICK.get()).requires(ButchercraftItemTags.CUBED_MEAT_RAW)
-				.requires(ForgeTags.VEGETABLES_ONION).requires(ForgeTags.VEGETABLES_TOMATO).requires(Items.STICK)
-				.unlockedBy("has_stick", has(Items.STICK))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "kebab"));
-
 		createFoodRecipe(Ingredient.of(BRAIN.get()), COOKED_BRAIN.get(), consumer);
 		createFoodRecipe(Ingredient.of(HEART.get()), COOKED_HEART.get(), consumer);
 		createFoodRecipe(Ingredient.of(KIDNEY.get()), COOKED_KIDNEY.get(), consumer);
@@ -458,23 +449,6 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(LEATHER, 6).requires(SHEEP_HIDE.get()).requires(SKINNING_KNIFE.get())
 				.unlockedBy("has_sheep_hide", has(SHEEP_HIDE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide_to_leather"));
-
-		CookingPotRecipeBuilder.cookingPotRecipe(ButchercraftItems.LARD.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F)
-				.addIngredient(ButchercraftItems.FAT.get()).addIngredient(ButchercraftItems.FAT.get())
-				.build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lard"));
-
-		ShapelessRecipeBuilder.shapeless(Items.CANDLE, 6).requires(ButchercraftItems.LARD.get()).requires(Items.STRING)
-				.unlockedBy("has_lard", has(ButchercraftItems.LARD.get()))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lard_to_candle"));
-
-		CookingPotRecipeBuilder.cookingPotRecipe(ButchercraftItems.GELATIN.get(), 4, CookingRecipes.SLOW_COOKING, 0.35F)
-				.addIngredient(ButchercraftItemTags.GELATIN_PROVIDER)
-				.addIngredient(ButchercraftItemTags.GELATIN_PROVIDER)
-				.addIngredient(ButchercraftItemTags.GELATIN_PROVIDER)
-				.addIngredient(ButchercraftItemTags.GELATIN_PROVIDER)
-				.addIngredient(ButchercraftItemTags.GELATIN_PROVIDER)
-				.addIngredient(ButchercraftItemTags.GELATIN_PROVIDER)
-				.build(consumer, new ResourceLocation(Butchercraft.MOD_ID, "gelatin"));
 
 	}
 
