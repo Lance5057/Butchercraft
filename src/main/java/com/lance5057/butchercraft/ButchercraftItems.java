@@ -260,6 +260,9 @@ public class ButchercraftItems {
 	public static final RegistryObject<Item> BOOTS = ITEMS.register("boots",
 			() -> new BootsItem(BCArmorMaterial.WOOL, new Item.Properties().tab(BUTCHER_TAB)));
 
+	public static final RegistryObject<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.COOKED_SAUSAGE)));
+
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);
 	}

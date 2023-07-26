@@ -5,8 +5,12 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
+import com.lance5057.butchercraft.tags.ButchercraftItemTags;
+import com.lance5057.butchercraft.workstations.BlockEntityItemHandler;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -50,10 +54,19 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	private IItemHandlerModifiable createHandler() {
-		return new ItemStackHandler(1) {
+		return new BlockEntityItemHandler<GrinderBlockEntity>(this, 2) {
+
+			@Override
+			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+				boolean b = stack.is(ButchercraftItemTags.GRINDER_ATTACHMENT);
+				if (slot == 1)
+					return b;
+				return !b;
+			}
+
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
-				return 4;
+				return 8;
 			}
 
 			@Override
@@ -61,32 +74,72 @@ public class GrinderBlockEntity extends BlockEntity {
 				zeroProgress();
 				updateInventory();
 			}
+
+			@Override
+			@NotNull
+			public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
+				if (slot == 0) {
+					Optional<GrinderRecipe> r = this.getBlockEntity().matchRecipe(stack);
+					if (r.isPresent()) {
+						if (this.getStackInSlot(slot) == ItemStack.EMPTY) {
+							this.getBlockEntity().updateInventory();
+							return super.insertItem(slot, stack, simulate);
+						}
+					}
+				} else {
+					if (this.getStackInSlot(slot) == ItemStack.EMPTY) {
+						this.getBlockEntity().updateInventory();
+						return super.insertItem(slot, stack, simulate);
+					}
+				}
+				return stack;
+			}
 		};
 	}
 
-	public void extractItem(Player playerEntity, IItemHandler inventory) {
+	public void extractItem(Player playerEntity, IItemHandlerModifiable inventory) {
 		if (!inventory.getStackInSlot(0).isEmpty()) {
-			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
+			ItemStack itemStack = inventory.getStackInSlot(0).copy();
 			playerEntity.addItem(itemStack);
+			inventory.setStackInSlot(0, ItemStack.EMPTY);
 			updateInventory();
+
 			return;
 
+		} else if (!inventory.getStackInSlot(1).isEmpty()) {
+			ItemStack itemStack = inventory.getStackInSlot(1).copy();
+			playerEntity.addItem(itemStack);
+			inventory.setStackInSlot(1, ItemStack.EMPTY);
+			updateInventory();
+
+			return;
 		}
+
 		updateInventory();
 	}
 
-	public void insertItem(IItemHandler inventory, ItemStack heldItem) {
-		if (!this.matchRecipe(heldItem).isEmpty()) {
-			if (inventory.isItemValid(0, heldItem))
-				if (!inventory.insertItem(0, heldItem, true).equals(heldItem, false)) {
-					final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
-					heldItem.setCount(leftover);
-					updateInventory();
-					return;
-				}
-		}
-		updateInventory();
+	public ItemStack insertItem(IItemHandler inventory, ItemStack heldItem) {
+		if (inventory.isItemValid(0, heldItem))
+		{
+			if (!inventory.insertItem(0, heldItem, true).equals(heldItem, false)) {
+				heldItem = inventory.insertItem(0, heldItem.copy(), false);
 
+				updateInventory();
+				return heldItem;
+			}
+		}
+		else if(inventory.isItemValid(1, heldItem))
+		{
+			if (!inventory.insertItem(1, heldItem, true).equals(heldItem, false)) {
+				heldItem = inventory.insertItem(1, heldItem.copy(), false);
+
+				updateInventory();
+				return heldItem;
+			}
+		}
+		
+		updateInventory();
+		return heldItem;
 	}
 
 	// External extract handler
@@ -95,8 +148,13 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	// External insert handler
-	public void insertItem(ItemStack heldItem) {
-		handler.ifPresent(inventory -> this.insertItem(inventory, heldItem));
+	public ItemStack insertItem(ItemStack heldItem) {
+		if (handler.isPresent()) {
+			Optional<ItemStack> s = handler.map(i -> insertItem(i, heldItem));
+			if (s.isPresent())
+				return s.get();
+		}
+		return heldItem;
 	}
 
 	public void zeroProgress() {

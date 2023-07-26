@@ -21,7 +21,7 @@ public class BlockModels extends BlockStateProvider {
 
 		this.simpleBlock(ButchercraftBlocks.BUTCHER_BLOCK.get(),
 				models().getExistingFile(modLoc("block/butcherblock")));
-		this.simpleBlock(ButchercraftBlocks.GRINDER.get(), models().getExistingFile(modLoc("block/grinder")));
+		this.horizontalBlock(ButchercraftBlocks.GRINDER.get(), models().getExistingFile(modLoc("block/grinder")));
 
 		this.simpleBlock(ButchercraftBlocks.BEEF_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.COOKED_BEEF_BLOCK.get());

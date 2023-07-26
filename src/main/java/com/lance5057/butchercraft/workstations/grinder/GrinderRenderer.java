@@ -33,7 +33,7 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 		Quaternion q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
 
 		pPoseStack.mulPose(q);
-		pPoseStack.mulPose(new Quaternion(-90, 90, 0, true));
+		pPoseStack.mulPose(new Quaternion(-90, 180, 0, true));
 
 		pPoseStack.mulPose(new Quaternion(0, 0, pBlockEntity.getGrind() * 45, true));
 

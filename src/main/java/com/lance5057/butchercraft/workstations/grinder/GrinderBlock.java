@@ -51,24 +51,33 @@ public class GrinderBlock extends Block implements EntityBlock, SimpleWaterlogge
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING, WATERLOGGED);
 	}
-	
+
 	@Nonnull
 	@Override
 	public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
 			@Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
-		BlockEntity entity = world.getBlockEntity(blockPos);
-		if (entity instanceof GrinderBlockEntity te) {
+		BlockEntity blockentity = world.getBlockEntity(blockPos);
+		if (blockentity instanceof GrinderBlockEntity be) {
 
-			// Get item in both InteractionHands
-//			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
-//			if (heldMain.getItem() instanceof CarcassItem) {
-//				te.insertItem(heldMain);
-//			} else if (heldMain != ItemStack.EMPTY)
-//				return te.grind(playerEntity);
+			if (playerEntity.isCrouching()) {
+				if (!world.isClientSide) {
+					be.extractItem(playerEntity);
+					return InteractionResult.SUCCESS;
+				}
+				return InteractionResult.CONSUME;
+			} else {
+
+				ItemStack itemstack = playerEntity.getItemInHand(hand);
+				if (!world.isClientSide) {
+					playerEntity.setItemInHand(hand, be.insertItem(itemstack));
+					return InteractionResult.SUCCESS;
+				}
+
+				return InteractionResult.CONSUME;
+			}
 		}
 
 		return InteractionResult.PASS;
-
 	}
 
 	@Override

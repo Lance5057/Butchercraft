@@ -54,7 +54,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig")));
 		getBuilder(ButchercraftItems.SHEEP_CARCASS.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/sheep")));
-		getBuilder(ButchercraftItems.SHEEP_CARCASS.getId().getPath())
+		getBuilder(ButchercraftItems.CHICKEN_CARCASS.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/chicken")));
 
 		forItem(ButchercraftItems.BRAIN, "brain");
@@ -117,9 +117,12 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_LAMB, "cooked_ground_lamb");
 		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
 		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
+		
+		getBuilder(ButchercraftItems.EXTRUDER_TIP.getId().getPath() + "_item")
+		.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/extruder_tip")));
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
-		
+		forBlockItem(ButchercraftItems.GRINDER_BLOCK_ITEM, "grinder");
 		forBlockItem(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM, "butcher_block");
 
 		forBlockItem(ButchercraftItems.BEEF_BLOCK_ITEM, "beef_block");

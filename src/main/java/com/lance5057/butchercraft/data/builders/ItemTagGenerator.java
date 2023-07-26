@@ -92,5 +92,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.GELATIN_PROVIDER).add(ButchercraftItems.COW_HIDE.get(),
 				ButchercraftItems.PIG_HIDE.get(), ButchercraftItems.SHEEP_HIDE.get(), Items.BONE,
 				ButchercraftItems.SINEW.get());
+		
+		tag(ButchercraftItemTags.GRINDER_ATTACHMENT).add(ButchercraftItems.EXTRUDER_TIP.get());
 	}
 }

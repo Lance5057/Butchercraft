@@ -15,6 +15,9 @@ public class BlockTagGenerator extends BlockTagsProvider {
     @Override
     protected void addTags() {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ButchercraftBlocks.MEAT_HOOK.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ButchercraftBlocks.GRINDER.get());
+        
+        tag(BlockTags.MINEABLE_WITH_AXE).add(ButchercraftBlocks.BUTCHER_BLOCK.get());
         
         tag(BlockTags.MINEABLE_WITH_AXE).add(ButchercraftBlocks.BEEF_BLOCK.get());
         tag(BlockTags.MINEABLE_WITH_AXE).add(ButchercraftBlocks.COOKED_BEEF_BLOCK.get());
