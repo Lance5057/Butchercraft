@@ -117,9 +117,11 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_LAMB, "cooked_ground_lamb");
 		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
 		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
-		
-		getBuilder(ButchercraftItems.EXTRUDER_TIP.getId().getPath() + "_item")
-		.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/extruder_tip")));
+
+		getBuilder(ButchercraftItems.EXTRUDER_TIP.getId().getPath()).parent(
+				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/extruder_tip_item"), fh));
+		getBuilder(ButchercraftItems.GRINDER_TIP.getId().getPath()).parent(
+				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/grinder_tip_item"), fh));
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
 		forBlockItem(ButchercraftItems.GRINDER_BLOCK_ITEM, "grinder");

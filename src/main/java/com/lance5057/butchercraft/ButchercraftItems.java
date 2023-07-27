@@ -261,7 +261,9 @@ public class ButchercraftItems {
 			() -> new BootsItem(BCArmorMaterial.WOOL, new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static final RegistryObject<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.COOKED_SAUSAGE)));
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);

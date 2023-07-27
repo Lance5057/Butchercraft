@@ -26,14 +26,23 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class GrinderBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
+	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 8.0D, 9.0D, 16.0D);
+
 	public GrinderBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+	}
+
+	public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
+			CollisionContext p_152920_) {
+		return SHAPE;
 	}
 
 	@SuppressWarnings("deprecation")
