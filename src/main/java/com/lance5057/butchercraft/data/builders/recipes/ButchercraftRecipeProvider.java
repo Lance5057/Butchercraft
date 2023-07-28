@@ -64,6 +64,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -450,6 +451,11 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_sheep_hide", has(SHEEP_HIDE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide_to_leather"));
 
+		GrinderRecipeBuilder
+				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()), Ingredient.of(new ItemStack(Items.AIR)),
+						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_BEEF.get(), 4, 2)
+				.unlockedBy("has_beef_scrap", has(BEEF_SCRAPS.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_scrap_to_ground_beef"));
 	}
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer) {

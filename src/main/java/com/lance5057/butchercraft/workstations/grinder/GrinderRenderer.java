@@ -55,10 +55,25 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 				.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
 
 		itemInteractionHandler.ifPresent(inv -> {
-			ItemStack item = inv.getStackInSlot(1);
+			ItemStack input = inv.getStackInSlot(0);
+			ItemStack tip = inv.getStackInSlot(1);
 
-			if (!item.isEmpty()) {
-				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
+			if (!input.isEmpty()) {
+				BakedModel bakedmodel = itemRenderer.getModel(input, pBlockEntity.getLevel(), null, 0);
+				pPoseStack.pushPose();
+
+				pPoseStack.translate(0.5f, 0.4f, 0.8f);
+
+				pPoseStack.mulPose(new Quaternion(0, 90, 0, true));
+
+				float uniscale = 1f;
+				pPoseStack.scale(uniscale, uniscale, uniscale);
+				itemRenderer.render(input, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
+						pPackedLight, pPackedOverlay, bakedmodel);
+				pPoseStack.popPose();
+			}
+			if (!tip.isEmpty()) {
+				BakedModel bakedmodel = itemRenderer.getModel(tip, pBlockEntity.getLevel(), null, 0);
 				pPoseStack.pushPose();
 
 				pPoseStack.translate(0.5f, 0.225f, 0.075f);
@@ -67,7 +82,7 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 
 				float uniscale = 1f;
 				pPoseStack.scale(uniscale, uniscale, uniscale);
-				itemRenderer.render(item, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
+				itemRenderer.render(tip, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
 						pPackedLight, pPackedOverlay, bakedmodel);
 				pPoseStack.popPose();
 			}

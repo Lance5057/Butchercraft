@@ -1,8 +1,8 @@
 package com.lance5057.butchercraft.workstations.grinder;
 
-import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
+import com.lance5057.butchercraft.ButchercraftRecipes;
 
-import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -16,6 +16,8 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 	public final ResourceLocation idIn;
 	public final String groupIn;
 	public final Ingredient ingredient;
+	public final Ingredient ingredient2;
+	public final Ingredient attachment;
 	public final ItemStack result;
 	public final int grinds;
 
@@ -23,11 +25,13 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 		return grinds;
 	}
 
-	public GrinderRecipe(ResourceLocation idIn, String groupIn, Ingredient itemIn,
-			ItemStack result, int grinds) {
+	public GrinderRecipe(ResourceLocation idIn, String groupIn, Ingredient itemIn, Ingredient itemIn2,
+			Ingredient attachment, ItemStack result, int grinds) {
 		this.idIn = idIn;
 		this.groupIn = groupIn;
 		this.ingredient = itemIn;
+		this.ingredient2 = itemIn2;
+		this.attachment = attachment;
 		this.result = result;
 		this.grinds = grinds;
 	}
@@ -35,12 +39,6 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 	@Override
 	public boolean matches(GrinderContainer pContainer, Level pLevel) {
 		return ingredient.test(pContainer.getInsertedItem());
-	}
-
-	@Override
-	public ItemStack assemble(GrinderContainer pContainer) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -60,11 +58,16 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 
 	@Override
 	public RecipeSerializer<?> getSerializer() {
-		return null;
+		return ButchercraftRecipeSerializers.GRINDER_SERIALIZER.get();
 	}
 
 	@Override
 	public RecipeType<?> getType() {
-		return null;
+		return ButchercraftRecipes.GRINDER.get();
+	}
+
+	@Override
+	public ItemStack assemble(GrinderContainer pContainer) {
+		return this.result.copy();
 	}
 }
