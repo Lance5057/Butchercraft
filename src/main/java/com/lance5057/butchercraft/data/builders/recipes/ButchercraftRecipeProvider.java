@@ -452,7 +452,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide_to_leather"));
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()), Ingredient.of(new ItemStack(Items.AIR)),
+				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()),
 						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_BEEF.get(), 4, 2)
 				.unlockedBy("has_beef_scrap", has(BEEF_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_scrap_to_ground_beef"));

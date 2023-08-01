@@ -24,17 +24,6 @@ public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> 
 			ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "ingredient"));
 		}
 
-		Ingredient ingredient2;
-		if (GsonHelper.isArrayNode(pJson, "ingredient2")) {
-			JsonArray a = GsonHelper.getAsJsonArray(pJson, "ingredient2");
-			if (a.isEmpty())
-				ingredient2 = Ingredient.EMPTY;
-			else
-				ingredient2 = Ingredient.fromJson(a);
-		} else {
-			ingredient2 = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "ingredient2"));
-		}
-
 		Ingredient attachment;
 		if (GsonHelper.isArrayNode(pJson, "attachment")) {
 			JsonArray a = GsonHelper.getAsJsonArray(pJson, "attachment");
@@ -60,23 +49,21 @@ public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> 
 		}
 
 		int g = GsonHelper.getAsInt(pJson, "grinds");
-		return new GrinderRecipe(pRecipeId, s, ingredient, ingredient2, attachment, itemstack, g);
+		return new GrinderRecipe(pRecipeId, s, ingredient, attachment, itemstack, g);
 	}
 
 	public GrinderRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
 		String s = pBuffer.readUtf();
 		Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
-		Ingredient ingredient2 = Ingredient.fromNetwork(pBuffer);
 		Ingredient attachment = Ingredient.fromNetwork(pBuffer);
 		ItemStack itemstack = pBuffer.readItem();
 		int g = pBuffer.readInt();
-		return new GrinderRecipe(pRecipeId, s, ingredient, ingredient2, attachment, itemstack, g);
+		return new GrinderRecipe(pRecipeId, s, ingredient, attachment, itemstack, g);
 	}
 
 	public void toNetwork(FriendlyByteBuf pBuffer, GrinderRecipe pRecipe) {
 		pBuffer.writeUtf(pRecipe.getGroup());
 		pRecipe.ingredient.toNetwork(pBuffer);
-		pRecipe.ingredient2.toNetwork(pBuffer);
 		pRecipe.attachment.toNetwork(pBuffer);
 		pBuffer.writeItem(pRecipe.result);
 		pBuffer.writeInt(pRecipe.grinds);

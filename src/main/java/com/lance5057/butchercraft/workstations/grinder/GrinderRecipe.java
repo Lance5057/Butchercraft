@@ -16,7 +16,6 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 	public final ResourceLocation idIn;
 	public final String groupIn;
 	public final Ingredient ingredient;
-	public final Ingredient ingredient2;
 	public final Ingredient attachment;
 	public final ItemStack result;
 	public final int grinds;
@@ -25,12 +24,11 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 		return grinds;
 	}
 
-	public GrinderRecipe(ResourceLocation idIn, String groupIn, Ingredient itemIn, Ingredient itemIn2,
+	public GrinderRecipe(ResourceLocation idIn, String groupIn, Ingredient itemIn, 
 			Ingredient attachment, ItemStack result, int grinds) {
 		this.idIn = idIn;
 		this.groupIn = groupIn;
 		this.ingredient = itemIn;
-		this.ingredient2 = itemIn2;
 		this.attachment = attachment;
 		this.result = result;
 		this.grinds = grinds;

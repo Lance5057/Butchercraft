@@ -26,7 +26,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class GrinderRecipeBuilder implements RecipeBuilder {
 	private final Item result;
 	private final Ingredient ingredient;
-	private final Ingredient ingredient2;
 	private final Ingredient attachment;
 	private final int count;
 	private final int grinds;
@@ -35,20 +34,19 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 	private String group;
 	private final GrinderRecipeSerializer serializer;
 
-	private GrinderRecipeBuilder(ItemLike pResult, Ingredient pIngredient, Ingredient pIngredient2,
-			Ingredient attachment, int pGrind, int count, GrinderRecipeSerializer serializer) {
+	private GrinderRecipeBuilder(ItemLike pResult, Ingredient pIngredient, Ingredient attachment, int pGrind, int count,
+			GrinderRecipeSerializer serializer) {
 		this.result = pResult.asItem();
 		this.ingredient = pIngredient;
-		this.ingredient2 = pIngredient2;
 		this.attachment = attachment;
 		this.count = count;
 		this.grinds = pGrind;
 		this.serializer = serializer;
 	}
 
-	public static GrinderRecipeBuilder grind(Ingredient pIngredient, Ingredient pIngredient2, Ingredient attachment,
-			ItemLike pResult, int grinds, int count) {
-		return new GrinderRecipeBuilder(pResult, pIngredient, pIngredient2, attachment, grinds, count,
+	public static GrinderRecipeBuilder grind(Ingredient pIngredient, Ingredient attachment, ItemLike pResult,
+			int grinds, int count) {
+		return new GrinderRecipeBuilder(pResult, pIngredient, attachment, grinds, count,
 				ButchercraftRecipeSerializers.GRINDER_SERIALIZER.get());
 	}
 
@@ -82,9 +80,9 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 		ResourceLocation r = new ResourceLocation(pRecipeId.getNamespace(),
 				"recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath());
 
-		pFinishedRecipeConsumer.accept(new GrinderRecipeBuilder.Result(pRecipeId, this.group == null ? "" : this.group,
-				this.ingredient, this.ingredient2, attachment, this.result, this.grinds, this.count, this.advancement,
-				r, this.serializer));
+		pFinishedRecipeConsumer.accept(
+				new GrinderRecipeBuilder.Result(pRecipeId, this.group == null ? "" : this.group, this.ingredient,
+						attachment, this.result, this.grinds, this.count, this.advancement, r, this.serializer));
 	}
 
 	/**
@@ -100,7 +98,6 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 		private final ResourceLocation id;
 		private final String group;
 		private final Ingredient ingredient;
-		private final Ingredient ingredient2;
 		private final Ingredient attachment;
 		private final Item result;
 		private final int count;
@@ -109,13 +106,12 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 		private final ResourceLocation advancementId;
 		private final GrinderRecipeSerializer serializer;
 
-		public Result(ResourceLocation pId, String pGroup, Ingredient pIngredient, Ingredient pIngredient2,
-				Ingredient attachment, Item pResult, int pGrinds, int pCount, Advancement.Builder pAdvancement,
-				ResourceLocation pAdvancementId, GrinderRecipeSerializer pSerializer) {
+		public Result(ResourceLocation pId, String pGroup, Ingredient pIngredient, Ingredient attachment, Item pResult,
+				int pGrinds, int pCount, Advancement.Builder pAdvancement, ResourceLocation pAdvancementId,
+				GrinderRecipeSerializer pSerializer) {
 			this.id = pId;
 			this.group = pGroup;
 			this.ingredient = pIngredient;
-			this.ingredient2 = pIngredient2;
 			this.attachment = attachment;
 			this.result = pResult;
 			this.count = pCount;
@@ -131,8 +127,6 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 			}
 
 			pJson.add("ingredient", this.ingredient.toJson());
-
-			pJson.add("ingredient2", this.ingredient2.toJson());
 
 			pJson.add("attachment", this.attachment.toJson());
 

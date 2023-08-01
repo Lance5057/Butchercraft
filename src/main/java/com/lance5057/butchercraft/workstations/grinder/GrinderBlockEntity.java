@@ -39,6 +39,7 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	private ItemStack output = ItemStack.EMPTY;
 	private int grinds = 0;
+	private int grindsMax = 0;
 
 	public GrinderBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ButchercraftBlockEntities.GRINDER.get(), pPos, pState);
@@ -55,7 +56,7 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	private IItemHandlerModifiable createHandler() {
-		return new BlockEntityItemHandler<GrinderBlockEntity>(this, 3) {
+		return new BlockEntityItemHandler<GrinderBlockEntity>(this, 2) {
 
 			@Override
 			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
@@ -81,10 +82,21 @@ public class GrinderBlockEntity extends BlockEntity {
 			@Override
 			@NotNull
 			public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
-
 				if (this.getStackInSlot(slot) == ItemStack.EMPTY) {
-					this.getBlockEntity().updateInventory();
-					return super.insertItem(slot, stack, simulate);
+					if (slot == 0) {
+						Optional<GrinderRecipe> r = level.getRecipeManager().getRecipeFor(
+								ButchercraftRecipes.GRINDER.get(), new GrinderContainer(stack, getStackInSlot(1)),
+								level);
+						if (r.isPresent()) {
+							this.getBlockEntity().setupRecipe(r.get().getGrinds(), r.get().getResultItem());
+							this.getBlockEntity().updateInventory();
+							return super.insertItem(slot, stack, simulate);
+						}
+					} else {
+
+						this.getBlockEntity().updateInventory();
+						return super.insertItem(slot, stack, simulate);
+					}
 				}
 				return stack;
 			}
@@ -115,13 +127,16 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	public ItemStack insertItem(IItemHandler inventory, ItemStack heldItem) {
 		if (inventory.isItemValid(0, heldItem)) {
+
 			if (!inventory.insertItem(0, heldItem, true).equals(heldItem, false)) {
+
 				heldItem = inventory.insertItem(0, heldItem.copy(), false);
 
 				updateInventory();
 				return heldItem;
 			}
 		} else if (inventory.isItemValid(1, heldItem)) {
+
 			if (!inventory.insertItem(1, heldItem, true).equals(heldItem, false)) {
 				heldItem = inventory.insertItem(1, heldItem.copy(), false);
 
@@ -151,6 +166,14 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	public void zeroProgress() {
 		grinds = 0;
+		grindsMax = 0;
+		output = ItemStack.EMPTY;
+	}
+
+	public void setupRecipe(int grindsMax, ItemStack output) {
+		zeroProgress();
+		this.grindsMax = grindsMax;
+		this.output = output;
 	}
 
 	public void updateInventory() {
@@ -161,10 +184,6 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	public ItemStack getInsertedItem() {
 		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
-	}
-
-	public ItemStack getInsertedItem2() {
-		return handler.map(inventory -> inventory.getStackInSlot(2)).orElse(ItemStack.EMPTY);
 	}
 
 	public ItemStack getAttachment() {
@@ -236,10 +255,10 @@ public class GrinderBlockEntity extends BlockEntity {
 		writeNBT(nbt);
 	}
 
-	public Optional<GrinderRecipe> matchRecipe(ItemStack ingredient, ItemStack ingredient2, ItemStack attachment) {
+	public Optional<GrinderRecipe> matchRecipe(ItemStack ingredient, ItemStack attachment) {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.GRINDER.get(),
-					new GrinderContainer(ingredient, ingredient2, attachment), level);
+					new GrinderContainer(ingredient, attachment), level);
 		}
 		return Optional.empty();
 
@@ -247,7 +266,7 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	public InteractionResult grind(Player Player) {
 		handler.ifPresent(inv -> {
-			Optional<GrinderRecipe> recipeOptional = matchRecipe(getInsertedItem(), output, output);
+			Optional<GrinderRecipe> recipeOptional = matchRecipe(getInsertedItem(), getAttachment());
 			if (recipeOptional.isPresent()) {
 				GrinderRecipe recipe = recipeOptional.get();
 

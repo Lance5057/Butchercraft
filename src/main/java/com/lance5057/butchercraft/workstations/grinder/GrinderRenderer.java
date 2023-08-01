@@ -58,37 +58,37 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 			ItemStack input = inv.getStackInSlot(0);
 			ItemStack tip = inv.getStackInSlot(1);
 
-			if (!input.isEmpty()) {
-				BakedModel bakedmodel = itemRenderer.getModel(input, pBlockEntity.getLevel(), null, 0);
-				pPoseStack.pushPose();
-
-				pPoseStack.translate(0.5f, 0.4f, 0.8f);
-
-				pPoseStack.mulPose(new Quaternion(0, 90, 0, true));
-
-				float uniscale = 1f;
-				pPoseStack.scale(uniscale, uniscale, uniscale);
-				itemRenderer.render(input, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
-						pPackedLight, pPackedOverlay, bakedmodel);
-				pPoseStack.popPose();
-			}
-			if (!tip.isEmpty()) {
-				BakedModel bakedmodel = itemRenderer.getModel(tip, pBlockEntity.getLevel(), null, 0);
-				pPoseStack.pushPose();
-
-				pPoseStack.translate(0.5f, 0.225f, 0.075f);
-
-				pPoseStack.mulPose(new Quaternion(-90, 0, 0, true));
-
-				float uniscale = 1f;
-				pPoseStack.scale(uniscale, uniscale, uniscale);
-				itemRenderer.render(tip, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
-						pPackedLight, pPackedOverlay, bakedmodel);
-				pPoseStack.popPose();
-			}
+			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+					input, 0.5, 1.5, 0.175, 0, 90, 0);
+			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+					tip, 0.5, 1.22, 0.925, 90, 0, 0);
 		});
 
 		timer++;
+	}
+
+	private void renderRotatedItem(GrinderBlockEntity pBlockEntity, PoseStack pPoseStack,
+			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay, Quaternion q,
+			ItemRenderer itemRenderer, ItemStack input, double xt, double yt, double zt, float xr, float yr, float zr) {
+		if (!input.isEmpty()) {
+			BakedModel bakedmodel = itemRenderer.getModel(input, pBlockEntity.getLevel(), null, 0);
+			pPoseStack.pushPose();
+			pPoseStack.translate(0.5f, -1, 0.5f);
+			
+			pPoseStack.mulPose(q);
+			pPoseStack.mulPose(new Quaternion(-90,0,0,true));
+			pPoseStack.translate(-0.5f, 0, -0.5f);
+			
+			pPoseStack.translate(xt, yt, zt);
+
+			pPoseStack.mulPose(new Quaternion(xr, yr, zr, true));
+
+			float uniscale = 1f;
+			pPoseStack.scale(uniscale, uniscale, uniscale);
+			itemRenderer.render(input, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
+					pPackedLight, pPackedOverlay, bakedmodel);
+			pPoseStack.popPose();
+		}
 	}
 
 }

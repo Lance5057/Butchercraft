@@ -33,7 +33,8 @@ public class GrinderBlock extends Block implements EntityBlock, SimpleWaterlogge
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 9.0D, 16.0D);
+	protected static final VoxelShape SHAPEW = Block.box(0.0D, 0.0D, 4.0D, 16.0D, 9.0D, 12.0D);
+	protected static final VoxelShape SHAPEN = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 9.0D, 16.0D);
 
 	public GrinderBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
@@ -42,7 +43,19 @@ public class GrinderBlock extends Block implements EntityBlock, SimpleWaterlogge
 
 	public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
 			CollisionContext p_152920_) {
-		return SHAPE;
+		switch (p_152917_.getValue(FACING)) {
+
+		case NORTH:
+		case SOUTH:
+			return SHAPEN;
+		case WEST:
+		case UP:
+		case DOWN:
+		case EAST:
+		default:
+			return SHAPEW;
+
+		}
 	}
 
 	@SuppressWarnings("deprecation")
