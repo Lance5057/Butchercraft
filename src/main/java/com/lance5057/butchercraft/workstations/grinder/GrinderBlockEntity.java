@@ -56,14 +56,24 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	private IItemHandlerModifiable createHandler() {
-		return new BlockEntityItemHandler<GrinderBlockEntity>(this, 2) {
+		return new BlockEntityItemHandler<GrinderBlockEntity>(this, 3) {
 
 			@Override
 			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-				boolean b = stack.is(ButchercraftItemTags.GRINDER_ATTACHMENT);
-				if (slot == 1)
-					return b;
-				return !b;
+				if (stack.is(ButchercraftItemTags.GRINDER_ATTACHMENT)) {
+					if (slot == 1)
+
+						return true;
+					return false;
+				}
+
+				if (stack.is(ButchercraftItemTags.SAUSAGE_CASING)) {
+					if (slot == 2)
+
+						return true;
+					return false;
+				}
+				return true;
 			}
 
 			@Override
@@ -75,7 +85,7 @@ public class GrinderBlockEntity extends BlockEntity {
 
 			@Override
 			protected void onContentsChanged(int slot) {
-				zeroProgress();
+
 				updateInventory();
 			}
 
@@ -100,6 +110,14 @@ public class GrinderBlockEntity extends BlockEntity {
 				}
 				return stack;
 			}
+
+			@Override
+			@NotNull
+			public ItemStack extractItem(int slot, int amount, boolean simulate) {
+				this.getBlockEntity().zeroProgress();
+				return super.extractItem(slot, amount, simulate);
+
+			}
 		};
 
 	}
@@ -121,7 +139,7 @@ public class GrinderBlockEntity extends BlockEntity {
 
 			return;
 		}
-
+		zeroProgress();
 		updateInventory();
 	}
 
@@ -230,6 +248,9 @@ public class GrinderBlockEntity extends BlockEntity {
 		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
 
 		this.grinds = nbt.getInt("Grinds");
+		this.grindsMax = nbt.getInt("GrindsMax");
+
+		this.output = ItemStack.of(nbt.getCompound("Output"));
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
@@ -239,6 +260,9 @@ public class GrinderBlockEntity extends BlockEntity {
 		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
 
 		tag.putInt("Grinds", this.grinds);
+		tag.putInt("GrindsMax", this.grindsMax);
+
+		tag.put("Output", output.serializeNBT());
 
 		return tag;
 	}
@@ -265,36 +289,35 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	public InteractionResult grind(Player Player) {
-		handler.ifPresent(inv -> {
-			Optional<GrinderRecipe> recipeOptional = matchRecipe(getInsertedItem(), getAttachment());
-			if (recipeOptional.isPresent()) {
-				GrinderRecipe recipe = recipeOptional.get();
+		if (!this.output.isEmpty()) {
 
-				if (this.grinds < recipe.getGrinds()) {
-					grinds++;
+			if (this.grinds < this.grindsMax) {
+				this.grinds++;
 
-					for (int i = 0; i < 1 + level.random.nextInt(4); i++)
-						level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
-								worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-								worldPosition.getY() - 0.5f - level.random.nextDouble(),
-								worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
+				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
+					level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
+							worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
+							worldPosition.getY() - 0.5f - level.random.nextDouble(),
+							worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
-					level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
-				} else {
-					ItemStack in = getInsertedItem();
+				level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
+			} else {
+				ItemStack in = getInsertedItem();
 
-					for (int i = 0; i < in.getCount(); i++) {
+				for (int i = 0; i < in.getCount(); i++) {
 
-						ItemStack r = recipe.getResultItem().copy();
+					ItemStack r = output.copy();
 
-						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
-								getBlockPos().getZ(), r));
-					}
-					inv.setStackInSlot(0, ItemStack.EMPTY);
+					level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
+							getBlockPos().getZ(), r));
+
 				}
-				updateInventory();
+
+				this.handler.ifPresent(i -> i.setStackInSlot(0, ItemStack.EMPTY));
+				zeroProgress();
 			}
-		});
+			updateInventory();
+		}
 
 		return InteractionResult.SUCCESS;
 	}

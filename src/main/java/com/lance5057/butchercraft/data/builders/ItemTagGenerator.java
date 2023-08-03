@@ -95,5 +95,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		tag(ButchercraftItemTags.GRINDER_ATTACHMENT).add(ButchercraftItems.EXTRUDER_TIP.get())
 				.add(ButchercraftItems.GRINDER_TIP.get());
+
+		tag(ButchercraftItemTags.SAUSAGE_CASING).add(ButchercraftItems.CASING.get());
 	}
 }

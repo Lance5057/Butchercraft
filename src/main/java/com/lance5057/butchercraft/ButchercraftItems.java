@@ -163,6 +163,9 @@ public class ButchercraftItems {
 	public static final RegistryObject<Item> BRAIN = ITEMS.register("brain",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.BRAIN)));
 
+	public static final RegistryObject<Item> CASING = ITEMS.register("casing",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+
 	public static final RegistryObject<CarcassItem> COW_CARCASS = ITEMS.register("cow_carcass",
 			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
 	public static final RegistryObject<CarcassItem> SHEEP_CARCASS = ITEMS.register("sheep_carcass",

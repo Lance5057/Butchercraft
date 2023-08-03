@@ -94,6 +94,8 @@ public class GrinderBlock extends Block implements EntityBlock, SimpleWaterlogge
 					playerEntity.setItemInHand(hand, be.insertItem(itemstack));
 					return InteractionResult.SUCCESS;
 				}
+				else if (itemstack == ItemStack.EMPTY)
+					return be.grind(playerEntity);
 
 				return InteractionResult.CONSUME;
 			}

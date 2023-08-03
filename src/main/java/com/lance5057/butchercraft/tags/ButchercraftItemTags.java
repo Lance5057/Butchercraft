@@ -159,6 +159,7 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> LEATHER_SCRAP = forgeTag("leather_scrap");
 	
 	public static final TagKey<Item> GRINDER_ATTACHMENT = butcherTag("grinder_attachment");
+	public static final TagKey<Item> SAUSAGE_CASING = butcherTag("sausage_casing");
 
 	public static TagKey<Item> forgeTag(String tag) {
 		return ItemTags.create(new ResourceLocation("forge", tag));
