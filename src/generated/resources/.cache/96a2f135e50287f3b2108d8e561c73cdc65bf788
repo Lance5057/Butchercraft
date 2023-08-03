@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-27T13:37:55.0221003	Butchercraft item models
+// 1.19.2	2023-08-03T12:29:15.2212856	Butchercraft item models
 25fc57d82967f63ebdb799201b7830119f1cac60 assets/butchercraft/models/item/beef_block_item.json
 88b7ccadd46e5d7d2eb28fc8c2a4fffa6d983635 assets/butchercraft/models/item/beef_ribs.json
 2a830d971004f08fb1c215a03ea0b6de50cae98e assets/butchercraft/models/item/beef_roast.json
@@ -68,6 +68,7 @@ cda86f3b1fb3faac89a66c05fe5db56a74851394 assets/butchercraft/models/item/liver.j
 a049148087f270b9858603b45e1461d53ec8da8e assets/butchercraft/models/item/lung.json
 379bd334c2e487e7b83096ad46d605d21f494759 assets/butchercraft/models/item/meat_hook_item.json
 b5dc894a873079e32beeaba592c2ff336aeffe6e assets/butchercraft/models/item/oxtail.json
+6f7d15dab0c90fbab07d604c8e4da3b86a5b684c assets/butchercraft/models/item/paper_hat.json
 d9ce9b4a5b7af7eda1f490f0f866efb78650aefe assets/butchercraft/models/item/pig_carcass.json
 a1cb05f4f51532deca803516bfebb25e35d4d2a7 assets/butchercraft/models/item/pig_hide.json
 cfa910d2e7f3bf903fab3bdb51d1764659a109c7 assets/butchercraft/models/item/pork_block_item.json

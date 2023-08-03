@@ -37,15 +37,17 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
 		// model = BakedModelRenderable.of(rc).withModelDataContext();
 		pPoseStack.pushPose();
-		pPoseStack.translate(0.5f, 1, 0.5f);
 		Quaternion q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
 
 		pPoseStack.mulPose(q);
-		pPoseStack.mulPose(new Quaternion(-90, 180, 0, true));
-
-		pPoseStack.mulPose(new Quaternion(0, 0, pBlockEntity.getGrind() * 45, true));
-
-		pPoseStack.translate(-0.5f, -1, -0.5f);
+		pPoseStack.mulPose(new Quaternion(0, 0, 180, true));
+		pPoseStack.translate(0.5, 0.85, -0.235);
+		
+		float g = pBlockEntity.getGrind();
+		float mg = pBlockEntity.getMaxGrind();
+		float r = mg == 0 ? 1 : 360 / (mg + 1);
+		pPoseStack.mulPose(new Quaternion(0, g * r, 0, true));
+		pPoseStack.translate(-0.5, 0, -1.05);
 		model.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
 				pPackedOverlay, pPartialTick, ModelData.EMPTY);
 		pPoseStack.popPose();
@@ -58,8 +60,9 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 			ItemStack input = inv.getStackInSlot(0);
 			ItemStack tip = inv.getStackInSlot(1);
 
+			float t = mg == 0 ? 1 : -0.3f / (mg);
 			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					input, 0.5, 1.5, 0.175, 0, 90, 0);
+					input, 0.5, 1.5 + (g * t), 0.175, 0, 90, 0);
 			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
 					tip, 0.5, 1.22, 0.925, 90, 0, 0);
 		});
@@ -74,11 +77,11 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 			BakedModel bakedmodel = itemRenderer.getModel(input, pBlockEntity.getLevel(), null, 0);
 			pPoseStack.pushPose();
 			pPoseStack.translate(0.5f, -1, 0.5f);
-			
+
 			pPoseStack.mulPose(q);
-			pPoseStack.mulPose(new Quaternion(-90,0,0,true));
+			pPoseStack.mulPose(new Quaternion(-90, 0, 0, true));
 			pPoseStack.translate(-0.5f, 0, -0.5f);
-			
+
 			pPoseStack.translate(xt, yt, zt);
 
 			pPoseStack.mulPose(new Quaternion(xr, yr, zr, true));

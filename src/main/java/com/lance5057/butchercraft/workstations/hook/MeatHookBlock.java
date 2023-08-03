@@ -35,12 +35,14 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final BooleanProperty CARCASS_HOOKED = BooleanProperty.create("carcass_hooked");
-	// TODO Maybe use double plant logic so that you can interact with bottom thirds of the block
+	// TODO Maybe use double plant logic so that you can interact with bottom thirds
+	// of the block
 	protected static final VoxelShape AABB = Block.box(0.0D, -32.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 	public MeatHookBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(CARCASS_HOOKED, false));
+		this.registerDefaultState(
+				this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(CARCASS_HOOKED, false));
 	}
 
 	@Override
@@ -72,12 +74,8 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 
 	@Nonnull
 	@Override
-	public InteractionResult use(@Nonnull BlockState blockState,
-								 Level world,
-								 @Nonnull BlockPos blockPos,
-								 @Nonnull Player playerEntity,
-								 @Nonnull InteractionHand hand,
-								 @Nonnull BlockHitResult blockRayTraceResult) {
+	public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
+			@Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
 		BlockEntity entity = world.getBlockEntity(blockPos);
 		if (entity instanceof MeatHookBlockEntity te) {
 
@@ -87,8 +85,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 			if (heldMain.getItem() instanceof CarcassItem) {
 				// TODO Find a way to return SUCCESS on successful insertion
 				te.insertItem(heldMain);
-			}
-			else if (heldMain != ItemStack.EMPTY)
+			} else if (heldMain != ItemStack.EMPTY)
 				return te.butcher(playerEntity, heldMain);
 		}
 

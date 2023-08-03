@@ -1,6 +1,7 @@
-// 1.19.2	2023-07-27T13:37:55.0181006	Tags for minecraft:item
+// 1.19.2	2023-08-03T12:29:15.2262841	Tags for minecraft:item
 ff31bed4ceaac838c1200966a1d4a927e5835a9b data/butchercraft/tags/items/gelatin_provider.json
 4657f9eae59e6658aeba5f711978b48e03ad9715 data/butchercraft/tags/items/grinder_attachment.json
+0e3627197ab0855eec5ca3eaee114fd6aed5ef68 data/butchercraft/tags/items/sausage_casing.json
 f336588026e0340101018efefa180c951510de8f data/forge/tags/items/beef/cooked.json
 1199d9c2c65889587a5643e4afa791f4b8cba50a data/forge/tags/items/beef/raw.json
 3f8b7f737289518896cef9e2bca4a7c09acb9bc6 data/forge/tags/items/ground_meat/raw.json

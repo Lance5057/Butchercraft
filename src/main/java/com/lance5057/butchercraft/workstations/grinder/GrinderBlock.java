@@ -82,22 +82,17 @@ public class GrinderBlock extends Block implements EntityBlock, SimpleWaterlogge
 		if (blockentity instanceof GrinderBlockEntity be) {
 
 			if (playerEntity.isCrouching()) {
-				if (!world.isClientSide) {
-					be.extractItem(playerEntity);
-					return InteractionResult.SUCCESS;
-				}
-				return InteractionResult.CONSUME;
+				be.extractItem(playerEntity);
+				return InteractionResult.SUCCESS;
 			} else {
 
 				ItemStack itemstack = playerEntity.getItemInHand(hand);
-				if (!world.isClientSide) {
+				if (!itemstack.isEmpty()) {
 					playerEntity.setItemInHand(hand, be.insertItem(itemstack));
 					return InteractionResult.SUCCESS;
-				}
-				else if (itemstack == ItemStack.EMPTY)
+				} else {
 					return be.grind(playerEntity);
-
-				return InteractionResult.CONSUME;
+				}
 			}
 		}
 

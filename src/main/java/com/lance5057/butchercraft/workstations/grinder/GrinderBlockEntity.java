@@ -25,6 +25,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -196,8 +197,10 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	public void updateInventory() {
 		requestModelDataUpdate();
-		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
+
 		this.setChanged();
+		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(),
+				Block.UPDATE_ALL);
 	}
 
 	public ItemStack getInsertedItem() {
@@ -212,11 +215,15 @@ public class GrinderBlockEntity extends BlockEntity {
 		return grinds;
 	}
 
+	public int getMaxGrind() {
+		return grindsMax;
+	}
+
 	@Override
 	public CompoundTag getUpdateTag() {
 		CompoundTag nbt = super.getUpdateTag();
 
-		writeNBT(nbt);
+		nbt = writeNBT(nbt);
 
 		return nbt;
 	}
@@ -230,7 +237,7 @@ public class GrinderBlockEntity extends BlockEntity {
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
 		CompoundTag tag = new CompoundTag();
 
-		writeNBT(tag);
+		tag = writeNBT(tag);
 
 		return ClientboundBlockEntityDataPacket.create(this);
 	}
@@ -238,7 +245,7 @@ public class GrinderBlockEntity extends BlockEntity {
 	@Override
 	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
 		CompoundTag tag = pkt.getTag();
-		// InteractionHandle your Data
+
 		readNBT(tag);
 	}
 
@@ -247,10 +254,10 @@ public class GrinderBlockEntity extends BlockEntity {
 				.orElseGet(this::createHandler);
 		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
 
-		this.grinds = nbt.getInt("Grinds");
-		this.grindsMax = nbt.getInt("GrindsMax");
+		this.grinds = nbt.getInt("grinds");
+		this.grindsMax = nbt.getInt("grinds_max");
 
-		this.output = ItemStack.of(nbt.getCompound("Output"));
+		this.output = ItemStack.of(nbt.getCompound("output"));
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
@@ -259,10 +266,10 @@ public class GrinderBlockEntity extends BlockEntity {
 				.orElseGet(this::createHandler);
 		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
 
-		tag.putInt("Grinds", this.grinds);
-		tag.putInt("GrindsMax", this.grindsMax);
+		tag.putInt("grinds", this.grinds);
+		tag.putInt("grinds_max", this.grindsMax);
 
-		tag.put("Output", output.serializeNBT());
+		tag.put("output", output.serializeNBT());
 
 		return tag;
 	}
@@ -276,7 +283,7 @@ public class GrinderBlockEntity extends BlockEntity {
 	@Override
 	public void saveAdditional(@Nonnull CompoundTag nbt) {
 		super.saveAdditional(nbt);
-		writeNBT(nbt);
+		nbt = writeNBT(nbt);
 	}
 
 	public Optional<GrinderRecipe> matchRecipe(ItemStack ingredient, ItemStack attachment) {
@@ -296,11 +303,12 @@ public class GrinderBlockEntity extends BlockEntity {
 
 				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
 					level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
-							worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-							worldPosition.getY() - 0.5f - level.random.nextDouble(),
-							worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
+							worldPosition.getX() + 0.5f,
+							worldPosition.getY() + 0.25f,
+							worldPosition.getZ() + 0.25f, 0, 0, -0.1f);
 
-				level.playSound(Player, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, 1, 1);
+				level.playSound(Player, worldPosition, SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS, 1, 1);
+
 			} else {
 				ItemStack in = getInsertedItem();
 
@@ -317,8 +325,9 @@ public class GrinderBlockEntity extends BlockEntity {
 				zeroProgress();
 			}
 			updateInventory();
+			return InteractionResult.SUCCESS;
 		}
+		return InteractionResult.PASS;
 
-		return InteractionResult.SUCCESS;
 	}
 }

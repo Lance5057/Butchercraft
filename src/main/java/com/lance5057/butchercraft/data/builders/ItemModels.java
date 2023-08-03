@@ -138,6 +138,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.PIG_HIDE, "pig_hide");
 		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");
 
+		forItem(ButchercraftItems.PAPER_HAT, "paper_hat");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {
