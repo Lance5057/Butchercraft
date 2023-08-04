@@ -26,8 +26,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class GrinderRecipeBuilder implements RecipeBuilder {
 	private final Item result;
 	private final Ingredient ingredient;
+	private final int ingredientCount;
 	private final Ingredient attachment;
-	private final int count;
+	private final int resultCount;
 	private final int grinds;
 	private final Advancement.Builder advancement = Advancement.Builder.advancement();
 	@Nullable
@@ -35,19 +36,20 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 	private final GrinderRecipeSerializer serializer;
 
 	private GrinderRecipeBuilder(ItemLike pResult, Ingredient pIngredient, Ingredient attachment, int pGrind, int count,
-			GrinderRecipeSerializer serializer) {
+			GrinderRecipeSerializer serializer, int ingredientCount) {
 		this.result = pResult.asItem();
 		this.ingredient = pIngredient;
+		this.ingredientCount = ingredientCount;
 		this.attachment = attachment;
-		this.count = count;
+		this.resultCount = count;
 		this.grinds = pGrind;
 		this.serializer = serializer;
 	}
 
-	public static GrinderRecipeBuilder grind(Ingredient pIngredient, Ingredient attachment, ItemLike pResult,
-			int grinds, int count) {
-		return new GrinderRecipeBuilder(pResult, pIngredient, attachment, grinds, count,
-				ButchercraftRecipeSerializers.GRINDER_SERIALIZER.get());
+	public static GrinderRecipeBuilder grind(Ingredient pIngredient, int ingredientCount, Ingredient attachment,
+			ItemLike pResult, int grinds, int resultCount) {
+		return new GrinderRecipeBuilder(pResult, pIngredient, attachment, grinds, resultCount,
+				ButchercraftRecipeSerializers.GRINDER_SERIALIZER.get(), ingredientCount);
 	}
 
 	public GrinderRecipeBuilder unlockedBy(String pCriterionName, CriterionTriggerInstance pCriterionTrigger) {
@@ -82,7 +84,7 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 
 		pFinishedRecipeConsumer.accept(
 				new GrinderRecipeBuilder.Result(pRecipeId, this.group == null ? "" : this.group, this.ingredient,
-						attachment, this.result, this.grinds, this.count, this.advancement, r, this.serializer));
+						attachment, this.result, this.grinds, this.resultCount, this.advancement, r, this.serializer, ingredientCount));
 	}
 
 	/**
@@ -98,23 +100,25 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 		private final ResourceLocation id;
 		private final String group;
 		private final Ingredient ingredient;
+		private final int ingredientCount;
 		private final Ingredient attachment;
 		private final Item result;
-		private final int count;
+		private final int resultCount;
 		private final int grinds;
 		private final Advancement.Builder advancement;
 		private final ResourceLocation advancementId;
 		private final GrinderRecipeSerializer serializer;
 
 		public Result(ResourceLocation pId, String pGroup, Ingredient pIngredient, Ingredient attachment, Item pResult,
-				int pGrinds, int pCount, Advancement.Builder pAdvancement, ResourceLocation pAdvancementId,
-				GrinderRecipeSerializer pSerializer) {
+				int pGrinds, int pResultCount, Advancement.Builder pAdvancement, ResourceLocation pAdvancementId,
+				GrinderRecipeSerializer pSerializer, int ingredientCount) {
 			this.id = pId;
 			this.group = pGroup;
 			this.ingredient = pIngredient;
+			this.ingredientCount = ingredientCount;
 			this.attachment = attachment;
 			this.result = pResult;
-			this.count = pCount;
+			this.resultCount = pResultCount;
 			this.grinds = pGrinds;
 			this.advancement = pAdvancement;
 			this.advancementId = pAdvancementId;
@@ -127,13 +131,13 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 			}
 
 			pJson.add("ingredient", this.ingredient.toJson());
-
+			pJson.addProperty("ingredientCount", this.ingredientCount);
 			pJson.add("attachment", this.attachment.toJson());
 
 			JsonObject objectResult = new JsonObject();
 			objectResult.addProperty("item", ForgeRegistries.ITEMS.getKey(result).toString());
-			if (count > 1) {
-				objectResult.addProperty("count", count);
+			if (resultCount > 1) {
+				objectResult.addProperty("count", resultCount);
 			}
 			pJson.add("result", objectResult);
 

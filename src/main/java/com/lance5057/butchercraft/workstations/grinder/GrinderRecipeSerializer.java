@@ -49,21 +49,24 @@ public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> 
 		}
 
 		int g = GsonHelper.getAsInt(pJson, "grinds");
-		return new GrinderRecipe(pRecipeId, s, ingredient, attachment, itemstack, g);
+		int c = GsonHelper.getAsInt(pJson, "ingredientCount");
+		return new GrinderRecipe(pRecipeId, s, ingredient, c, attachment, itemstack, g);
 	}
 
 	public GrinderRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
 		String s = pBuffer.readUtf();
 		Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
+		int c = pBuffer.readInt();
 		Ingredient attachment = Ingredient.fromNetwork(pBuffer);
 		ItemStack itemstack = pBuffer.readItem();
 		int g = pBuffer.readInt();
-		return new GrinderRecipe(pRecipeId, s, ingredient, attachment, itemstack, g);
+		return new GrinderRecipe(pRecipeId, s, ingredient, c, attachment, itemstack, g);
 	}
 
 	public void toNetwork(FriendlyByteBuf pBuffer, GrinderRecipe pRecipe) {
 		pBuffer.writeUtf(pRecipe.getGroup());
 		pRecipe.ingredient.toNetwork(pBuffer);
+		pBuffer.writeInt(pRecipe.count);
 		pRecipe.attachment.toNetwork(pBuffer);
 		pBuffer.writeItem(pRecipe.result);
 		pBuffer.writeInt(pRecipe.grinds);

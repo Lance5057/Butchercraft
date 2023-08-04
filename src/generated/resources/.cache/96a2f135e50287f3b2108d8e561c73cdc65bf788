@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-03T12:29:15.2212856	Butchercraft item models
+// 1.19.2	2023-08-04T12:59:22.9761326	Butchercraft item models
 25fc57d82967f63ebdb799201b7830119f1cac60 assets/butchercraft/models/item/beef_block_item.json
 88b7ccadd46e5d7d2eb28fc8c2a4fffa6d983635 assets/butchercraft/models/item/beef_ribs.json
 2a830d971004f08fb1c215a03ea0b6de50cae98e assets/butchercraft/models/item/beef_roast.json
@@ -8,6 +8,7 @@ ebd8cc80d3b9f90b6c562f4687d496221385f94c assets/butchercraft/models/item/bone_sa
 366e9a69fccbf9d12ccf005ac2f3cce922ea1ded assets/butchercraft/models/item/brain.json
 f2b7d99888dc41d805abd712c99ac5bfe1c822f6 assets/butchercraft/models/item/butcher_block_block_item.json
 17ba49a23c61b85be8484908aae620e5b83f2c70 assets/butchercraft/models/item/butcher_knife.json
+e72a3b226b96730a905a31e82b2685e5152c3d58 assets/butchercraft/models/item/casing.json
 6020153546d582fe0e151c266d2c3dfdaf19a52f assets/butchercraft/models/item/chicken_carcass.json
 6196e829969c1b1d38a9cd5f2021461b6001fe07 assets/butchercraft/models/item/cooked_beef_block_item.json
 acfb52b0fd2299dee29c3f9da075b981a5f24b9d assets/butchercraft/models/item/cooked_beef_ribs.json
@@ -36,6 +37,7 @@ ae7fe070b16cb3436dc510ea0474078cd362e20f assets/butchercraft/models/item/cooked_
 c766184b801d314eea1e2e64edaa293af02286c2 assets/butchercraft/models/item/cooked_pork_roast.json
 564e544ee667f0b8d1c5c468ebc0c9c0123c7c5c assets/butchercraft/models/item/cooked_pork_scraps.json
 0637cce782d8da59e5173012dc9e9d422b0c8843 assets/butchercraft/models/item/cooked_pork_stewmeat.json
+00ee4de3b0237dbf5afd546f6266c7131f117197 assets/butchercraft/models/item/cooked_sausage.json
 5d51b62e72f25795c31a2d4a21c6f9b9120667d1 assets/butchercraft/models/item/cooked_stomach.json
 1bfa537fb005f06e68d37505678cdfa5189c891c assets/butchercraft/models/item/cooked_tongue.json
 b90f898195b1d6629f5041bf3f898f1e5e4e3e15 assets/butchercraft/models/item/cooked_tripe.json
@@ -76,6 +78,7 @@ cfa910d2e7f3bf903fab3bdb51d1764659a109c7 assets/butchercraft/models/item/pork_bl
 2a830d971004f08fb1c215a03ea0b6de50cae98e assets/butchercraft/models/item/pork_roast.json
 53277e54a9bd800faae1b3141e7f0b1d244a4d80 assets/butchercraft/models/item/pork_scraps.json
 a521415ea587c6e4f4c91bf82777533906af51ef assets/butchercraft/models/item/pork_stewmeat.json
+25c282bfdaf42831302d2032d42c88dfae343a5c assets/butchercraft/models/item/sausage.json
 c198e5877ed487c10a8563eec188d1e9fae6402e assets/butchercraft/models/item/sheep_carcass.json
 cea772c82ddebdc3039cc43fc69da67e1f690f12 assets/butchercraft/models/item/sheep_hide.json
 ab315ae5abe2da6618b3e98c90c81f153168a7a0 assets/butchercraft/models/item/sinew.json

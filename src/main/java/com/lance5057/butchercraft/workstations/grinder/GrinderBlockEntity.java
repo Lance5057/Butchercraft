@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
+import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 import com.lance5057.butchercraft.workstations.BlockEntityItemHandler;
@@ -39,8 +40,10 @@ public class GrinderBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 
 	private ItemStack output = ItemStack.EMPTY;
+	private int itemsUsed = 0;
 	private int grinds = 0;
 	private int grindsMax = 0;
+	private boolean isExtruder = false;
 
 	public GrinderBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ButchercraftBlockEntities.GRINDER.get(), pPos, pState);
@@ -61,17 +64,18 @@ public class GrinderBlockEntity extends BlockEntity {
 
 			@Override
 			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-				if (stack.is(ButchercraftItemTags.GRINDER_ATTACHMENT)) {
-					if (slot == 1)
-
+				if (slot == 1) {
+					if (stack.is(ButchercraftItemTags.GRINDER_ATTACHMENT)) {
 						return true;
-					return false;
+					} else
+						return false;
 				}
 
-				if (stack.is(ButchercraftItemTags.SAUSAGE_CASING)) {
-					if (slot == 2)
-
-						return true;
+				if (slot == 2) {
+					if (stack.is(ButchercraftItemTags.SAUSAGE_CASING)) {
+						if (this.getStackInSlot(1).is(ButchercraftItems.EXTRUDER_TIP.get()))
+							return true;
+					}
 					return false;
 				}
 				return true;
@@ -79,7 +83,7 @@ public class GrinderBlockEntity extends BlockEntity {
 
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
-				if (slot == 0 || slot == 2)
+				if (slot == 0)
 					return 8;
 				return 1;
 			}
@@ -99,7 +103,8 @@ public class GrinderBlockEntity extends BlockEntity {
 								ButchercraftRecipes.GRINDER.get(), new GrinderContainer(stack, getStackInSlot(1)),
 								level);
 						if (r.isPresent()) {
-							this.getBlockEntity().setupRecipe(r.get().getGrinds(), r.get().getResultItem());
+							this.getBlockEntity().setupRecipe(r.get().getGrinds(), r.get().getResultItem(),
+									getStackInSlot(1), r.get().count);
 							this.getBlockEntity().updateInventory();
 							return super.insertItem(slot, stack, simulate);
 						}
@@ -128,39 +133,47 @@ public class GrinderBlockEntity extends BlockEntity {
 			ItemStack itemStack = inventory.getStackInSlot(0).copy();
 			playerEntity.addItem(itemStack);
 			inventory.setStackInSlot(0, ItemStack.EMPTY);
+			zeroProgress();
+			updateInventory();
+
+			return;
+
+		} else if (!inventory.getStackInSlot(2).isEmpty()) {
+			ItemStack itemStack = inventory.getStackInSlot(2).copy();
+			playerEntity.addItem(itemStack);
+			inventory.setStackInSlot(2, ItemStack.EMPTY);
+			zeroProgress();
 			updateInventory();
 
 			return;
 
 		} else if (!inventory.getStackInSlot(1).isEmpty()) {
-			ItemStack itemStack = inventory.getStackInSlot(1).copy();
-			playerEntity.addItem(itemStack);
-			inventory.setStackInSlot(1, ItemStack.EMPTY);
-			updateInventory();
+			if (inventory.getStackInSlot(0).isEmpty()) {
+				ItemStack itemStack = inventory.getStackInSlot(1).copy();
+				playerEntity.addItem(itemStack);
+				inventory.setStackInSlot(1, ItemStack.EMPTY);
+				zeroProgress();
+				updateInventory();
 
-			return;
+				return;
+			}
 		}
-		zeroProgress();
+
 		updateInventory();
 	}
 
 	public ItemStack insertItem(IItemHandler inventory, ItemStack heldItem) {
-		if (inventory.isItemValid(0, heldItem)) {
 
-			if (!inventory.insertItem(0, heldItem, true).equals(heldItem, false)) {
+		for (int i = 0; i < 3; i++) {
+			if (inventory.isItemValid(i, heldItem)) {
 
-				heldItem = inventory.insertItem(0, heldItem.copy(), false);
+				if (!inventory.insertItem(i, heldItem, true).equals(heldItem, false)) {
 
-				updateInventory();
-				return heldItem;
-			}
-		} else if (inventory.isItemValid(1, heldItem)) {
+					heldItem = inventory.insertItem(i, heldItem.copy(), false);
 
-			if (!inventory.insertItem(1, heldItem, true).equals(heldItem, false)) {
-				heldItem = inventory.insertItem(1, heldItem.copy(), false);
-
-				updateInventory();
-				return heldItem;
+					updateInventory();
+					return heldItem;
+				}
 			}
 		}
 
@@ -184,15 +197,22 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	public void zeroProgress() {
+		itemsUsed = 0;
 		grinds = 0;
 		grindsMax = 0;
 		output = ItemStack.EMPTY;
+		this.isExtruder = false;
 	}
 
-	public void setupRecipe(int grindsMax, ItemStack output) {
+	public void setupRecipe(int grindsMax, ItemStack output, ItemStack extruder, int used) {
 		zeroProgress();
 		this.grindsMax = grindsMax;
 		this.output = output;
+		this.itemsUsed = used;
+
+		if (extruder.is(ButchercraftItems.EXTRUDER_TIP.get())) {
+			this.isExtruder = true;
+		}
 	}
 
 	public void updateInventory() {
@@ -209,6 +229,10 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	public ItemStack getAttachment() {
 		return handler.map(inventory -> inventory.getStackInSlot(1)).orElse(ItemStack.EMPTY);
+	}
+
+	public ItemStack getCasing() {
+		return handler.map(inventory -> inventory.getStackInSlot(2)).orElse(ItemStack.EMPTY);
 	}
 
 	public int getGrind() {
@@ -298,14 +322,18 @@ public class GrinderBlockEntity extends BlockEntity {
 	public InteractionResult grind(Player Player) {
 		if (!this.output.isEmpty()) {
 
+			if (this.isExtruder) {
+				if (this.getCasing().isEmpty())
+					return InteractionResult.PASS;
+			}
+
 			if (this.grinds < this.grindsMax) {
 				this.grinds++;
 
 				for (int i = 0; i < 1 + level.random.nextInt(4); i++)
 					level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, getInsertedItem()),
-							worldPosition.getX() + 0.5f,
-							worldPosition.getY() + 0.25f,
-							worldPosition.getZ() + 0.25f, 0, 0, -0.1f);
+							worldPosition.getX() + 0.5f, worldPosition.getY() + 0.25f, worldPosition.getZ() + 0.25f, 0,
+							0, -0.1f);
 
 				level.playSound(Player, worldPosition, SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS, 1, 1);
 
@@ -321,12 +349,25 @@ public class GrinderBlockEntity extends BlockEntity {
 
 				}
 
-				this.handler.ifPresent(i -> i.setStackInSlot(0, ItemStack.EMPTY));
-				zeroProgress();
+				this.handler.ifPresent(i -> {
+					ItemStack s = i.getStackInSlot(0).copy();
+					s.setCount(i.getStackInSlot(0).getCount() - this.itemsUsed);
+
+					i.setStackInSlot(0, ItemStack.EMPTY);
+					i.setStackInSlot(2, ItemStack.EMPTY);
+
+					if (i.isItemValid(0, s)) {
+						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
+								getBlockPos().getZ(), i.insertItem(0, s, false)));
+					}
+
+				});
+				
 			}
 			updateInventory();
 			return InteractionResult.SUCCESS;
 		}
+
 		return InteractionResult.PASS;
 
 	}

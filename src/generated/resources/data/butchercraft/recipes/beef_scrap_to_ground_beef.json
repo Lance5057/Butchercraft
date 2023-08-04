@@ -7,6 +7,7 @@
   "ingredient": {
     "item": "butchercraft:beef_scraps"
   },
+  "ingredientCount": 1,
   "result": {
     "count": 2,
     "item": "butchercraft:ground_beef"

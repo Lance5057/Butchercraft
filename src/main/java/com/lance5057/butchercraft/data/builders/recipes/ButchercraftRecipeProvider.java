@@ -453,9 +453,15 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 		GrinderRecipeBuilder
 				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()),
-						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_BEEF.get(), 4, 2)
+						1, Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_BEEF.get(), 4, 2)
 				.unlockedBy("has_beef_scrap", has(BEEF_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_scrap_to_ground_beef"));
+
+		GrinderRecipeBuilder
+				.grind(Ingredient.of(ButchercraftItemTags.GROUND_MEAT_RAW),
+						2, Ingredient.of(ButchercraftItems.EXTRUDER_TIP.get()), ButchercraftItems.SAUSAGE.get(), 4, 1)
+				.unlockedBy("has_ground_beef", has(GROUND_BEEF.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "ground_beef_to_sausage"));
 	}
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer) {

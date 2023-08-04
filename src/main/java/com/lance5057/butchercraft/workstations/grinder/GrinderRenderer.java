@@ -42,7 +42,7 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 		pPoseStack.mulPose(q);
 		pPoseStack.mulPose(new Quaternion(0, 0, 180, true));
 		pPoseStack.translate(0.5, 0.85, -0.235);
-		
+
 		float g = pBlockEntity.getGrind();
 		float mg = pBlockEntity.getMaxGrind();
 		float r = mg == 0 ? 1 : 360 / (mg + 1);
@@ -59,12 +59,15 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 		itemInteractionHandler.ifPresent(inv -> {
 			ItemStack input = inv.getStackInSlot(0);
 			ItemStack tip = inv.getStackInSlot(1);
+			ItemStack casing = inv.getStackInSlot(2);
 
 			float t = mg == 0 ? 1 : -0.3f / (mg);
 			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					input, 0.5, 1.5 + (g * t), 0.175, 0, 90, 0);
+					input, 0.5, 1.5 + (g * t), 0.175, 0, 90, 0, 1, 1, 1);
 			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					tip, 0.5, 1.22, 0.925, 90, 0, 0);
+					tip, 0.5, 1.22, 0.925, 90, 0, 0, 1, 1, 1);
+			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+					casing, 0.5, 1.11, 0.9 - (g * t), 0, 90, 0, 1, 1, 2.1f);
 		});
 
 		timer++;
@@ -72,7 +75,8 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 
 	private void renderRotatedItem(GrinderBlockEntity pBlockEntity, PoseStack pPoseStack,
 			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay, Quaternion q,
-			ItemRenderer itemRenderer, ItemStack input, double xt, double yt, double zt, float xr, float yr, float zr) {
+			ItemRenderer itemRenderer, ItemStack input, double xt, double yt, double zt, float xr, float yr, float zr,
+			float xs, float ys, float zs) {
 		if (!input.isEmpty()) {
 			BakedModel bakedmodel = itemRenderer.getModel(input, pBlockEntity.getLevel(), null, 0);
 			pPoseStack.pushPose();
@@ -85,7 +89,7 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 			pPoseStack.translate(xt, yt, zt);
 
 			pPoseStack.mulPose(new Quaternion(xr, yr, zr, true));
-
+			pPoseStack.scale(xs, ys, zs);
 			float uniscale = 1f;
 			pPoseStack.scale(uniscale, uniscale, uniscale);
 			itemRenderer.render(input, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,

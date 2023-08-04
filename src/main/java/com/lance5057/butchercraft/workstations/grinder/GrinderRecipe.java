@@ -16,6 +16,7 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 	public final ResourceLocation idIn;
 	public final String groupIn;
 	public final Ingredient ingredient;
+	public final int count;
 	public final Ingredient attachment;
 	public final ItemStack result;
 	public final int grinds;
@@ -24,11 +25,12 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 		return grinds;
 	}
 
-	public GrinderRecipe(ResourceLocation idIn, String groupIn, Ingredient itemIn, 
-			Ingredient attachment, ItemStack result, int grinds) {
+	public GrinderRecipe(ResourceLocation idIn, String groupIn, Ingredient itemIn, int count, Ingredient attachment,
+			ItemStack result, int grinds) {
 		this.idIn = idIn;
 		this.groupIn = groupIn;
 		this.ingredient = itemIn;
+		this.count = count;
 		this.attachment = attachment;
 		this.result = result;
 		this.grinds = grinds;
@@ -36,7 +38,7 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 
 	@Override
 	public boolean matches(GrinderContainer pContainer, Level pLevel) {
-		return ingredient.test(pContainer.getInsertedItem());
+		return ingredient.test(pContainer.getInsertedItem()) && attachment.test(pContainer.getAttachment());
 	}
 
 	@Override
