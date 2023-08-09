@@ -9,13 +9,14 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ButchercraftEntityTypeTagsProvider extends EntityTypeTagsProvider {
-    public ButchercraftEntityTypeTagsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Butchercraft.MOD_ID, existingFileHelper);
-    }
+	public ButchercraftEntityTypeTagsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+		super(generator, Butchercraft.MOD_ID, existingFileHelper);
+	}
 
-    @Override
-    protected void addTags() {
-        tag(ButchercraftEntityTags.CARCASSES).add(EntityType.COW, EntityType.SHEEP, EntityType.PIG);
-    }
+	@Override
+	protected void addTags() {
+		tag(ButchercraftEntityTags.CARCASSES).add(EntityType.COW, EntityType.SHEEP, EntityType.PIG, EntityType.GOAT,
+				EntityType.RABBIT, EntityType.CHICKEN);
+	}
 
 }

@@ -39,15 +39,17 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 		pPoseStack.pushPose();
 		Quaternion q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
 
+		pPoseStack.translate(0.5, 0.23, 0.5);
+		
 		pPoseStack.mulPose(q);
 		pPoseStack.mulPose(new Quaternion(0, 0, 180, true));
-		pPoseStack.translate(0.5, 0.85, -0.235);
+		pPoseStack.translate(0, 0.34, 0);
 
 		float g = pBlockEntity.getGrind();
 		float mg = pBlockEntity.getMaxGrind();
 		float r = mg == 0 ? 1 : 360 / (mg + 1);
 		pPoseStack.mulPose(new Quaternion(0, g * r, 0, true));
-		pPoseStack.translate(-0.5, 0, -1.05);
+		pPoseStack.translate(-0.5, 0, -0.05);
 		model.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
 				pPackedOverlay, pPartialTick, ModelData.EMPTY);
 		pPoseStack.popPose();

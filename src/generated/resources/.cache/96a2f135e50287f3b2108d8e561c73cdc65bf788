@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-04T12:59:22.9761326	Butchercraft item models
+// 1.19.2	2023-08-09T12:55:03.52718	Butchercraft item models
 25fc57d82967f63ebdb799201b7830119f1cac60 assets/butchercraft/models/item/beef_block_item.json
 88b7ccadd46e5d7d2eb28fc8c2a4fffa6d983635 assets/butchercraft/models/item/beef_ribs.json
 2a830d971004f08fb1c215a03ea0b6de50cae98e assets/butchercraft/models/item/beef_roast.json
@@ -49,6 +49,7 @@ a815ccd3f3effdc5ced2dc66ca689f23d89da061 assets/butchercraft/models/item/cubed_l
 163344390f1783bfd2305213e5f468a82cc9fda6 assets/butchercraft/models/item/extruder_tip.json
 f685763c1b40c4493e6db89f232a72de6a2a5a9e assets/butchercraft/models/item/fat.json
 83e2dad441c565131cbc39cf8dc96df446177cae assets/butchercraft/models/item/gelatin.json
+81807eec176e049c750ecb4245b64ef2dcb594ad assets/butchercraft/models/item/goat_carcass.json
 b8b07b84042ea499aebcdc26475cf74324d1a972 assets/butchercraft/models/item/grinder_block_item.json
 f26c09a5a1e225096cd4e1407a00a85d2a21a4c1 assets/butchercraft/models/item/grinder_tip.json
 a0562699d4f66ca3a2eb1335c3e867392ca0bd46 assets/butchercraft/models/item/ground_beef.json
@@ -78,6 +79,7 @@ cfa910d2e7f3bf903fab3bdb51d1764659a109c7 assets/butchercraft/models/item/pork_bl
 2a830d971004f08fb1c215a03ea0b6de50cae98e assets/butchercraft/models/item/pork_roast.json
 53277e54a9bd800faae1b3141e7f0b1d244a4d80 assets/butchercraft/models/item/pork_scraps.json
 a521415ea587c6e4f4c91bf82777533906af51ef assets/butchercraft/models/item/pork_stewmeat.json
+90e3e335c1bf06e076829f37a01eb2fd0a23d942 assets/butchercraft/models/item/rabbit_carcass.json
 25c282bfdaf42831302d2032d42c88dfae343a5c assets/butchercraft/models/item/sausage.json
 c198e5877ed487c10a8563eec188d1e9fae6402e assets/butchercraft/models/item/sheep_carcass.json
 cea772c82ddebdc3039cc43fc69da67e1f690f12 assets/butchercraft/models/item/sheep_hide.json

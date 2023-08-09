@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "butchercraft:block/chicken",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "butchercraft:block/chicken"
+    },
+    "facing=south": {
+      "model": "butchercraft:block/chicken",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "butchercraft:block/chicken",
+      "y": 270
+    }
+  }
+}

@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft;
 
 import com.lance5057.butchercraft.blocks.HideBlock;
+import com.lance5057.butchercraft.blocks.TaxidermyBlock;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockBlock;
 import com.lance5057.butchercraft.workstations.grinder.GrinderBlock;
 import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
@@ -48,7 +49,21 @@ public class ButchercraftBlocks {
 			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.COLOR_PINK)));
 	public static final RegistryObject<HideBlock> SHEEP_HIDE_CARPET = BLOCKS.register("sheep_hide_carpet",
 			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.TERRACOTTA_WHITE)));
+	public static final RegistryObject<HideBlock> GOAT_HIDE_CARPET = BLOCKS.register("goat_hide_carpet",
+			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.TERRACOTTA_WHITE)));
 
+	public static final RegistryObject<TaxidermyBlock> COW_BLOCK = BLOCKS.register("cow_block",
+			() -> new TaxidermyBlock());
+	public static final RegistryObject<TaxidermyBlock> PIG_BLOCK = BLOCKS.register("pig_block",
+			() -> new TaxidermyBlock());
+	public static final RegistryObject<TaxidermyBlock> SHEEP_BLOCK = BLOCKS.register("sheep_block",
+			() -> new TaxidermyBlock());
+	public static final RegistryObject<TaxidermyBlock> GOAT_BLOCK = BLOCKS.register("goat_block",
+			() -> new TaxidermyBlock());
+	public static final RegistryObject<TaxidermyBlock> RABBIT_BLOCK = BLOCKS.register("rabbit_block",
+			() -> new TaxidermyBlock());
+	public static final RegistryObject<TaxidermyBlock> CHICKEN_BLOCK = BLOCKS.register("chicken_block",
+			() -> new TaxidermyBlock());
 	// Food Stuff
 
 	public static void register(IEventBus modBus) {

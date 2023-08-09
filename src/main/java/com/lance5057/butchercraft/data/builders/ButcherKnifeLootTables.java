@@ -14,17 +14,27 @@ import java.util.function.Consumer;
 
 public class ButcherKnifeLootTables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 
-    @Override
-    public void accept(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
-        createButcherKnifeLootTable(consumer, EntityType.COW, new LootTable.Builder().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.COW_CARCASS.get()))));
-        createButcherKnifeLootTable(consumer, EntityType.SHEEP, new LootTable.Builder().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.SHEEP_CARCASS.get()))));
-        createButcherKnifeLootTable(consumer, EntityType.PIG, new LootTable.Builder().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.PIG_CARCASS.get()))));
-        createButcherKnifeLootTable(consumer, EntityType.CHICKEN, new LootTable.Builder().withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.CHICKEN_CARCASS.get()))));
+	@Override
+	public void accept(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
+		createButcherKnifeLootTable(consumer, EntityType.COW, new LootTable.Builder()
+				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.COW_CARCASS.get()))));
+		createButcherKnifeLootTable(consumer, EntityType.SHEEP, new LootTable.Builder()
+				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.SHEEP_CARCASS.get()))));
+		createButcherKnifeLootTable(consumer, EntityType.PIG, new LootTable.Builder()
+				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.PIG_CARCASS.get()))));
+		createButcherKnifeLootTable(consumer, EntityType.CHICKEN, new LootTable.Builder()
+				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.CHICKEN_CARCASS.get()))));
+		createButcherKnifeLootTable(consumer, EntityType.RABBIT, new LootTable.Builder()
+				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.RABBIT_CARCASS.get()))));
+		createButcherKnifeLootTable(consumer, EntityType.GOAT, new LootTable.Builder()
+				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.GOAT_CARCASS.get()))));
 
-    }
+	}
 
-    public static void createButcherKnifeLootTable(BiConsumer<ResourceLocation, LootTable.Builder> consumer, EntityType<?> entityType, LootTable.Builder lootTable) {
-        consumer.accept(new ResourceLocation(Butchercraft.MOD_ID, "butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entityType).getPath()), lootTable);
-    }
+	public static void createButcherKnifeLootTable(BiConsumer<ResourceLocation, LootTable.Builder> consumer,
+			EntityType<?> entityType, LootTable.Builder lootTable) {
+		consumer.accept(new ResourceLocation(Butchercraft.MOD_ID,
+				"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entityType).getPath()), lootTable);
+	}
 
 }

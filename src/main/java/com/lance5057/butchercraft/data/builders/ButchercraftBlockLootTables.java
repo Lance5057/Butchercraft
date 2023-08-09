@@ -12,7 +12,7 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 	@Override
 	protected void addTables() {
 		dropSelf(ButchercraftBlocks.MEAT_HOOK.get());
-		
+
 		dropSelf(ButchercraftBlocks.BUTCHER_BLOCK.get());
 		dropSelf(ButchercraftBlocks.GRINDER.get());
 
@@ -30,7 +30,14 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.COW_HIDE_CARPET.get());
 		dropSelf(ButchercraftBlocks.PIG_HIDE_CARPET.get());
 		dropSelf(ButchercraftBlocks.SHEEP_HIDE_CARPET.get());
-		
+		dropSelf(ButchercraftBlocks.GOAT_HIDE_CARPET.get());
+
+		dropSelf(ButchercraftBlocks.COW_BLOCK.get());
+		dropSelf(ButchercraftBlocks.SHEEP_BLOCK.get());
+		dropSelf(ButchercraftBlocks.PIG_BLOCK.get());
+		dropSelf(ButchercraftBlocks.GOAT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.CHICKEN_BLOCK.get());
 	}
 
 	@Override
