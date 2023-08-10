@@ -12,7 +12,7 @@ import net.minecraft.world.level.material.MaterialColor;
 public class TaxidermyBlock extends HorizontalDirectionalBlock {
 
 	public TaxidermyBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.TERRACOTTA_WHITE));
+		super(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.TERRACOTTA_WHITE).noOcclusion().dynamicShape());
 	}
 
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
