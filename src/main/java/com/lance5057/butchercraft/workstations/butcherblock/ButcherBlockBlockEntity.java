@@ -261,8 +261,8 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 					.create(LootContextParamSets.EMPTY);
 			// TODO Investigate how to make block not drop things so violently
 			player.getServer().getLootTables().get(recipeToolsIn.lootTable).getRandomItems(pContext)
-					.forEach(itemStack -> level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(),
-							getBlockPos().getY() + 0.5f, getBlockPos().getZ(), itemStack)));
+					.forEach(itemStack -> level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
+							getBlockPos().getY() + 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0)));
 
 		}
 	}

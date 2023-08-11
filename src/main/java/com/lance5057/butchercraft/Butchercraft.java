@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -45,7 +46,6 @@ public class Butchercraft {
 		ButchercraftBlockEntities.register(modEventBus);
 		ButchercraftRecipes.register(modEventBus);
 		ButchercraftLootModifiers.register(modEventBus);
-
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {
