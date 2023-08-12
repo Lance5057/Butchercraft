@@ -260,6 +260,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
 												.setY(new AnimatedFloat(0, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_chicken"));
+		
+		ButcherBlockRecipeBuilder.shapedRecipe(Items.CHICKEN).tool(Ingredient.of(BUTCHER_KNIFE.get()), 12, true, null, null)
 
 		ShapedRecipeBuilder.shaped(BONE_SAW.get()).define('I', IRON_INGOT).define('S', STICK).pattern("IIS")
 				.pattern("IIS").unlockedBy("has_iron", has(IRON_INGOT))

@@ -44,4 +44,6 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 						.withPool(MeatHookLoottables.createPoolWithItem(FAT.get(), 2, 6))
 						.withPool(MeatHookLoottables.createPoolWithItem(Items.CHICKEN, 1)));
 	}
+	
+	
 }

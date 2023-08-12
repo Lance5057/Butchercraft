@@ -9,6 +9,8 @@ public class FoodsChicken {
     public static final FoodProperties COOKED_GROUND = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.4F).meat().build();
     public static final FoodProperties SCRAPS = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).meat().build();
     public static final FoodProperties COOKED_SCRAPS = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).meat().build();
+    public static final FoodProperties STEW = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.2F).meat().build();
+    public static final FoodProperties COOKED_STEW = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.3F).meat().build();
     
     public static final FoodProperties BREAST = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.3F).meat().build();
     public static final FoodProperties COOKED_BREAST = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.4F).meat().build();

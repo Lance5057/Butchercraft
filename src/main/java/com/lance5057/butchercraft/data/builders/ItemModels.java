@@ -124,6 +124,23 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_LAMB, "cooked_ground_lamb");
 		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
 		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
+		
+		forItem(ButchercraftItems.CHICKEN_BREAST, "chicken_breast");
+		forItem(ButchercraftItems.CHICKEN_LEG, "chicken_leg");
+		forItem(ButchercraftItems.CHICKEN_SCRAPS, "chicken_scraps");
+		forItem(ButchercraftItems.CHICKEN_THIGH, "chicken_thigh");
+		forItem(ButchercraftItems.CHICKEN_WING, "chicken_wing");
+		forItem(ButchercraftItems.CUBED_CHICKEN, "cubed_chicken");
+		forItem(ButchercraftItems.GROUND_CHICKEN, "ground_chicken");
+		forItem(ButchercraftItems.STEW_CHICKEN, "stew_chicken");
+		forItem(ButchercraftItems.COOKED_CHICKEN_BREAST, "cooked_chicken_breast");
+		forItem(ButchercraftItems.COOKED_CHICKEN_LEG, "cooked_chicken_leg");
+		forItem(ButchercraftItems.COOKED_CHICKEN_SCRAPS, "cooked_chicken_scraps");
+		forItem(ButchercraftItems.COOKED_CHICKEN_THIGH, "cooked_chicken_thigh");
+		forItem(ButchercraftItems.COOKED_CHICKEN_WING, "cooked_chicken_wing");
+		forItem(ButchercraftItems.COOKED_CUBED_CHICKEN, "cooked_cubed_chicken");
+		forItem(ButchercraftItems.COOKED_GROUND_CHICKEN, "cooked_ground_chicken");
+		forItem(ButchercraftItems.COOKED_STEW_CHICKEN, "cooked_stew_chicken");
 
 		getBuilder(ButchercraftItems.EXTRUDER_TIP.getId().getPath()).parent(new ModelFile.ExistingModelFile(
 				new ResourceLocation(Butchercraft.MOD_ID, "item/extruder_tip_item"), fh));
