@@ -3,6 +3,7 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 import javax.annotation.Nonnull;
 
 import com.lance5057.butchercraft.items.CarcassItem;
+import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -81,7 +82,7 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 			// Get item in both InteractionHands
 			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
 			// TODO May want to disable insertion if there's not enough space under the hook
-			if (heldMain.getItem() instanceof CarcassItem) {
+			if (heldMain.is(ButchercraftItemTags.CARCASS)) {
 				// TODO Find a way to return SUCCESS on successful insertion
 				te.insertItem(heldMain);
 			} else if (heldMain != ItemStack.EMPTY)

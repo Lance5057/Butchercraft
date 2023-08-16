@@ -8,13 +8,13 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class ButchercraftItemTags {
-	public static final TagKey<Item> CARCASSE = butcherTag("carcasse");
-	public static final TagKey<Item> COW_CARCASSE = butcherTag("cow_carcasse");
-	public static final TagKey<Item> PIG_CARCASSE = butcherTag("pig_carcasse");
-	public static final TagKey<Item> SHEEP_CARCASSE = butcherTag("sheep_carcasse");
-	public static final TagKey<Item> CHICKEN_CARCASSE = butcherTag("chicken_carcasse");
-	public static final TagKey<Item> RABBIT_CARCASSE = butcherTag("rabbit_carcasse");
-	public static final TagKey<Item> GOAT_CARCASSE = butcherTag("goat_carcasse");
+	public static final TagKey<Item> CARCASS = butcherTag("carcass");
+	public static final TagKey<Item> COW_CARCASS = butcherTag("cow_carcass");
+	public static final TagKey<Item> PIG_CARCASS = butcherTag("pig_carcass");
+	public static final TagKey<Item> SHEEP_CARCASS = butcherTag("sheep_carcass");
+	public static final TagKey<Item> CHICKEN_CARCASS = butcherTag("chicken_carcass");
+	public static final TagKey<Item> RABBIT_CARCASS = butcherTag("rabbit_carcass");
+	public static final TagKey<Item> GOAT_CARCASS = butcherTag("goat_carcass");
 
 	// Generic Meat
 	public static final TagKey<Item> MEAT = forgeTag("meat");

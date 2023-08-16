@@ -1,7 +1,14 @@
-// 1.19.2	2023-08-03T12:29:15.2262841	Tags for minecraft:item
+// 1.19.2	2023-08-16T10:08:56.7787576	Tags for minecraft:item
+3a6a55d4d974fc7d8a1e204fb3b0060a6b435cc0 data/butchercraft/tags/items/carcass.json
+30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/items/chicken_carcass.json
+ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/items/cow_carcass.json
 ff31bed4ceaac838c1200966a1d4a927e5835a9b data/butchercraft/tags/items/gelatin_provider.json
+243fc5ac734a989f45ba17b74854127c36a1b65e data/butchercraft/tags/items/goat_carcass.json
 4657f9eae59e6658aeba5f711978b48e03ad9715 data/butchercraft/tags/items/grinder_attachment.json
+6af88c7bc1893f0c693c10ae1ee148aefe1ed6ad data/butchercraft/tags/items/pig_carcass.json
+7441127424cf0a50643161caa944050d079e400c data/butchercraft/tags/items/rabbit_carcass.json
 0e3627197ab0855eec5ca3eaee114fd6aed5ef68 data/butchercraft/tags/items/sausage_casing.json
+08ddda1e7c354e6560543656eaf127f5d0a55af0 data/butchercraft/tags/items/sheep_carcass.json
 f336588026e0340101018efefa180c951510de8f data/forge/tags/items/beef/cooked.json
 1199d9c2c65889587a5643e4afa791f4b8cba50a data/forge/tags/items/beef/raw.json
 3f8b7f737289518896cef9e2bca4a7c09acb9bc6 data/forge/tags/items/ground_meat/raw.json

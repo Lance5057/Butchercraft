@@ -1,0 +1,55 @@
+{
+  "type": "butchercraft:butcher_block",
+  "carcass": {
+    "item": "minecraft:chicken"
+  },
+  "group": "",
+  "tools": [
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:meat_hook/butcher_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken_gutted"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {},
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "butchercraft:butcher_knife"
+        }
+      ],
+      "tool": {
+        "item": "butchercraft:butcher_knife"
+      },
+      "uses": 12
+    }
+  ]
+}

@@ -97,5 +97,17 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				.add(ButchercraftItems.GRINDER_TIP.get());
 
 		tag(ButchercraftItemTags.SAUSAGE_CASING).add(ButchercraftItems.CASING.get());
+
+		tag(ButchercraftItemTags.COW_CARCASS).add(ButchercraftItems.COW_CARCASS.get());
+		tag(ButchercraftItemTags.CHICKEN_CARCASS).add(ButchercraftItems.CHICKEN_CARCASS.get()).add(Items.CHICKEN);
+		tag(ButchercraftItemTags.GOAT_CARCASS).add(ButchercraftItems.GOAT_CARCASS.get());
+		tag(ButchercraftItemTags.PIG_CARCASS).add(ButchercraftItems.PIG_CARCASS.get());
+		tag(ButchercraftItemTags.RABBIT_CARCASS).add(ButchercraftItems.RABBIT_CARCASS.get());
+		tag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.SHEEP_CARCASS.get());
+
+		tag(ButchercraftItemTags.CARCASS).addTag(ButchercraftItemTags.COW_CARCASS)
+				.addTag(ButchercraftItemTags.CHICKEN_CARCASS).addTag(ButchercraftItemTags.GOAT_CARCASS)
+				.addTag(ButchercraftItemTags.PIG_CARCASS).addTag(ButchercraftItemTags.RABBIT_CARCASS)
+				.addTag(ButchercraftItemTags.SHEEP_CARCASS);
 	}
 }

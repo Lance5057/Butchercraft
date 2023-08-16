@@ -260,8 +260,16 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 										.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
 												.setY(new AnimatedFloat(0, 0)).setZ(new AnimatedFloat(12, 0)))))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_chicken"));
-		
-		ButcherBlockRecipeBuilder.shapedRecipe(Items.CHICKEN).tool(Ingredient.of(BUTCHER_KNIFE.get()), 12, true, null, null)
+
+		ButcherBlockRecipeBuilder.shapedRecipe(Items.CHICKEN).tool(Ingredient.of(BUTCHER_KNIFE.get()), 12, true,
+				ButcherBlockLootTables.BUTCHER_CHICKEN,
+				new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/chicken_gutted"), null, true,
+						new AnimationFloatTransform()),
+				new BlacklistedModel(ButchercraftItems.BUTCHER_KNIFE.get(), new AnimationFloatTransform()
+						.setRotation(new AnimatedFloatVector3().setZ(new AnimatedFloat(-45, 45, 0, 0.05f, true, true)))
+						.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
+								.setY(new AnimatedFloat(0, 0)).setZ(new AnimatedFloat(12, 0)))))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_whole_chicken"));
 
 		ShapedRecipeBuilder.shaped(BONE_SAW.get()).define('I', IRON_INGOT).define('S', STICK).pattern("IIS")
 				.pattern("IIS").unlockedBy("has_iron", has(IRON_INGOT))
@@ -454,14 +462,14 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide_to_leather"));
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()),
-						1, Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_BEEF.get(), 4, 2)
+				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()), 1,
+						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_BEEF.get(), 4, 2)
 				.unlockedBy("has_beef_scrap", has(BEEF_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_scrap_to_ground_beef"));
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItemTags.GROUND_MEAT_RAW),
-						2, Ingredient.of(ButchercraftItems.EXTRUDER_TIP.get()), ButchercraftItems.SAUSAGE.get(), 4, 1)
+				.grind(Ingredient.of(ButchercraftItemTags.GROUND_MEAT_RAW), 2,
+						Ingredient.of(ButchercraftItems.EXTRUDER_TIP.get()), ButchercraftItems.SAUSAGE.get(), 4, 1)
 				.unlockedBy("has_ground_beef", has(GROUND_BEEF.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "ground_beef_to_sausage"));
 	}

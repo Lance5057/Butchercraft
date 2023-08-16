@@ -130,6 +130,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(ButchercraftItems.BEEF_TONGUE.get(), 1)));
         t.accept(BISECT_PIG,
                 LootTable.lootTable()
+                .withPool(createPoolWithItem(BRAIN.get()))
 //                        .withPool(createPoolWithItem(ButchercraftItems.PIG_HOOVES.get(), 4))
                         .withPool(createPoolWithItem(SINEW.get(), 0, 8))
                         .withPool(createPoolWithItem(PORK_SCRAPS.get(), 4))
@@ -146,7 +147,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(BONE, 12)));
 
         t.accept(SKIN_SHEEP,
-                LootTable.lootTable().setParamSet(null)
+                LootTable.lootTable()
                         .withPool(createPoolWithItem(SHEEP_HIDE.get(), 1))
                         .withPool(createPoolWithItem(LEATHER_SCRAP.get(), 4, 8))
                         .withPool(createPoolWithItem(FAT.get(), 4, 12))
@@ -162,6 +163,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(createPoolWithItem(SINEW.get(), 4, 8)));
         t.accept(BISECT_SHEEP,
                 LootTable.lootTable()
+                .withPool(createPoolWithItem(BRAIN.get()))
                         .withPool(createPoolWithItem(SINEW.get(), 0, 6))
                         .withPool(createPoolWithItem(LAMB_SCRAPS.get(), 4))
                         .withPool(createPoolWithItem(LAMB_STEW_MEAT.get(), 6))
