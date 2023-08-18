@@ -37,4 +37,8 @@ public class FoodsGeneric {
 			.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build();
 	public static final FoodProperties COOKED_SAUSAGE = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.2F)
 			.meat().build();
+	public static final FoodProperties EYEBALL = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).meat()
+			.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.6F).build();
+	public static final FoodProperties COOKED_EYEBALL = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F)
+			.meat().build();
 }

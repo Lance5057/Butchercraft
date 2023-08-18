@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-16T09:32:03.9307697	LootTables
+// 1.19.2	2023-08-18T12:50:10.1818585	LootTables
 b75b67897a7f41513639696413b6ad9026abd229 data/butchercraft/loot_tables/blocks/beef_block.json
 2c49e3d04f4ca824434b48cdc5eb6d4f3cb88551 data/butchercraft/loot_tables/blocks/butcher_block.json
 1f4644cc89d8e22eecdb261289487f064bc92de9 data/butchercraft/loot_tables/blocks/chicken_block.json
@@ -26,8 +26,8 @@ a438331bbac4466465bf5ccac1434c31d6998fb6 data/butchercraft/loot_tables/butcher_k
 fc3e5a04bb9c17e70e23d714c813bc6d95969718 data/butchercraft/loot_tables/butcher_knife/pig.json
 b85e824324f8663201c4f98b814107ff29d2eac0 data/butchercraft/loot_tables/butcher_knife/rabbit.json
 09f2fba152ae704841ff08d467eed862a9e2e7ed data/butchercraft/loot_tables/butcher_knife/sheep.json
-914eab63ce1e7c1fe7e82b1cea0e52db889abe46 data/butchercraft/loot_tables/meat_hook/bisect_pig.json
-45c172e78bfb97b3bd022d0928ee3f492821c04a data/butchercraft/loot_tables/meat_hook/bisect_sheep.json
+a85db44afbe8f82b57e00008c21e02ef127494f6 data/butchercraft/loot_tables/meat_hook/bisect_pig.json
+f58f07ea56e2f262f4f45b6c5bfd62ae7dd65528 data/butchercraft/loot_tables/meat_hook/bisect_sheep.json
 dcefca50ec40c786ed800e16a60d4adf7916785f data/butchercraft/loot_tables/meat_hook/butcher_chicken.json
 190a803da445c2059be27000bb2a29a9015af6f2 data/butchercraft/loot_tables/meat_hook/butcher_cow.json
 9a042e1834001b92ce4be1b71a21a5ce29ec82c9 data/butchercraft/loot_tables/meat_hook/butcher_pig.json

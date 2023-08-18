@@ -125,6 +125,19 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
 		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
 		
+		forItem(ButchercraftItems.GOAT_STEW_MEAT, "stew_goat");
+		forItem(ButchercraftItems.COOKED_GOAT_STEW_MEAT, "cooked_stew_goat");
+		forItem(ButchercraftItems.GOAT_ROAST, "roast");
+		forItem(ButchercraftItems.COOKED_GOAT_ROAST, "cooked_roast");
+		forItem(ButchercraftItems.GOAT_RIBS, "goat_ribs");
+		forItem(ButchercraftItems.COOKED_GOAT_RIBS, "cooked_goat_ribs");
+		forItem(ButchercraftItems.CUBED_GOAT, "cubed_goat");
+		forItem(ButchercraftItems.COOKED_CUBED_GOAT, "cooked_cubed_goat");
+		forItem(ButchercraftItems.GROUND_GOAT, "ground_goat");
+		forItem(ButchercraftItems.COOKED_GROUND_GOAT, "cooked_ground_goat");
+		forItem(ButchercraftItems.GOAT_SCRAPS, "goat_scraps");
+		forItem(ButchercraftItems.COOKED_GOAT_SCRAPS, "cooked_goat_scraps");
+		
 		forItem(ButchercraftItems.CHICKEN_BREAST, "chicken_breast");
 		forItem(ButchercraftItems.CHICKEN_LEG, "chicken_leg");
 		forItem(ButchercraftItems.CHICKEN_SCRAPS, "chicken_scraps");
@@ -141,6 +154,21 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_CUBED_CHICKEN, "cooked_cubed_chicken");
 		forItem(ButchercraftItems.COOKED_GROUND_CHICKEN, "cooked_ground_chicken");
 		forItem(ButchercraftItems.COOKED_STEW_CHICKEN, "cooked_stew_chicken");
+		
+		forItem(ButchercraftItems.RABBIT_SADDLE, "rabbit_saddle");
+		forItem(ButchercraftItems.RABBIT_LEG, "rabbit_front_leg");
+		forItem(ButchercraftItems.RABBIT_SCRAPS, "rabbit_scraps");
+		forItem(ButchercraftItems.RABBIT_THIGH, "rabbit_thigh");
+		forItem(ButchercraftItems.CUBED_RABBIT, "cubed_rabbit");
+		forItem(ButchercraftItems.GROUND_RABBIT, "ground_rabbit");
+		forItem(ButchercraftItems.STEW_RABBIT, "stew_rabbit");
+		forItem(ButchercraftItems.COOKED_RABBIT_SADDLE, "cooked_rabbit_saddle");
+		forItem(ButchercraftItems.COOKED_RABBIT_LEG, "cooked_rabbit_front_leg");
+		forItem(ButchercraftItems.COOKED_RABBIT_SCRAPS, "cooked_rabbit_scraps");
+		forItem(ButchercraftItems.COOKED_RABBIT_THIGH, "cooked_rabbit_thigh");
+		forItem(ButchercraftItems.COOKED_CUBED_RABBIT, "cooked_cubed_rabbit");
+		forItem(ButchercraftItems.COOKED_GROUND_RABBIT, "cooked_ground_rabbit");
+		forItem(ButchercraftItems.COOKED_STEW_RABBIT, "cooked_stew_rabbit");
 
 		getBuilder(ButchercraftItems.EXTRUDER_TIP.getId().getPath()).parent(new ModelFile.ExistingModelFile(
 				new ResourceLocation(Butchercraft.MOD_ID, "item/extruder_tip_item"), fh));
