@@ -177,7 +177,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
 		forBlockItem(ButchercraftItems.GRINDER_BLOCK_ITEM, "grinder");
-		forBlockItem(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM, "butcher_block");
+		forBlockItem(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM, "butcherblock");
 
 		forBlockItem(ButchercraftItems.BEEF_BLOCK_ITEM, "beef_block");
 		forBlockItem(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM, "cooked_beef_block");
@@ -189,6 +189,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.COW_HIDE, "cow_hide");
 		forBlockItem(ButchercraftItems.PIG_HIDE, "pig_hide");
 		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");
+		forBlockItem(ButchercraftItems.GOAT_HIDE, "goat_hide");
 
 		forItem(ButchercraftItems.PAPER_HAT, "paper_hat");
 		forItem(ButchercraftItems.CASING, "casing");

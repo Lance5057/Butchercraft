@@ -2,9 +2,14 @@ package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
+import com.lance5057.butchercraft.blocks.HideBlock;
 
+import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockModels extends BlockStateProvider {
@@ -30,25 +35,43 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ButchercraftBlocks.LAMB_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.COOKED_LAMB_BLOCK.get());
 
-		this.horizontalBlock(ButchercraftBlocks.COW_HIDE_CARPET.get(),
-				models().getExistingFile(modLoc("block/cow_hide_carpet")));
-		this.horizontalBlock(ButchercraftBlocks.PIG_HIDE_CARPET.get(),
-				models().getExistingFile(modLoc("block/pig_hide_carpet")));
-		this.horizontalBlock(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(),
-				models().getExistingFile(modLoc("block/sheep_hide_carpet")));
-		
-		this.horizontalBlock(ButchercraftBlocks.COW_BLOCK.get(),
-				models().getExistingFile(modLoc("block/cow")));
-		this.horizontalBlock(ButchercraftBlocks.PIG_BLOCK.get(),
-				models().getExistingFile(modLoc("block/pig")));
-		this.horizontalBlock(ButchercraftBlocks.SHEEP_BLOCK.get(),
-				models().getExistingFile(modLoc("block/sheep")));
-		this.horizontalBlock(ButchercraftBlocks.GOAT_BLOCK.get(),
-				models().getExistingFile(modLoc("block/goat")));
-		this.horizontalBlock(ButchercraftBlocks.CHICKEN_BLOCK.get(),
-				models().getExistingFile(modLoc("block/chicken")));
-		this.horizontalBlock(ButchercraftBlocks.RABBIT_BLOCK.get(),
-				models().getExistingFile(modLoc("block/rabbit")));
+		hideModel("cow", ButchercraftBlocks.COW_HIDE_CARPET.get());
+		hideModel("sheep", ButchercraftBlocks.SHEEP_HIDE_CARPET.get());
+		hideModel("goat", ButchercraftBlocks.GOAT_HIDE_CARPET.get());
+		hideModel("pig", ButchercraftBlocks.PIG_HIDE_CARPET.get());
 
+//		getVariantBuilder(ButchercraftBlocks.COW_HIDE_CARPET.get()).partialState().addModels(ConfiguredModel.)
+//        .forAllStates(state -> ConfiguredModel.builder()
+//                .modelFile(models().getExistingFile(modLoc("block/cow_hide_carpet")))
+//                .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+//                .build());
+
+		this.horizontalBlock(ButchercraftBlocks.COW_BLOCK.get(), models().getExistingFile(modLoc("block/cow")));
+		this.horizontalBlock(ButchercraftBlocks.PIG_BLOCK.get(), models().getExistingFile(modLoc("block/pig")));
+		this.horizontalBlock(ButchercraftBlocks.SHEEP_BLOCK.get(), models().getExistingFile(modLoc("block/sheep")));
+		this.horizontalBlock(ButchercraftBlocks.GOAT_BLOCK.get(), models().getExistingFile(modLoc("block/goat")));
+		this.horizontalBlock(ButchercraftBlocks.CHICKEN_BLOCK.get(), models().getExistingFile(modLoc("block/chicken")));
+		this.horizontalBlock(ButchercraftBlocks.RABBIT_BLOCK.get(), models().getExistingFile(modLoc("block/rabbit")));
+
+	}
+
+	private void hideModel(String animal, HideBlock block) {
+		ModelFile normal = models().withExistingParent(animal + "hide_carpet", modLoc("block/cow_hide_carpet"))
+				.texture("0", "butchercraft:block/" + animal + "_hide")
+				.texture("particle", "butchercraft:block/" + animal + "_hide");
+		ModelFile up = models().withExistingParent(animal + "hide_carpet", modLoc("block/cow_hide_carpet_up"))
+				.texture("0", "butchercraft:block/" + animal + "_hide")
+				.texture("particle", "butchercraft:block/" + animal + "_hide");
+		;
+
+		VariantBlockStateBuilder builder = getVariantBuilder(block);
+
+		for (Direction dir : BlockStateProperties.HORIZONTAL_FACING.getPossibleValues()) {
+			builder.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, true)
+					.modelForState().modelFile(up).rotationY((int) dir.toYRot() + 180).addModel()
+
+					.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, false)
+					.modelForState().modelFile(normal).rotationY((int) dir.toYRot() + 180).addModel();
+		}
 	}
 }

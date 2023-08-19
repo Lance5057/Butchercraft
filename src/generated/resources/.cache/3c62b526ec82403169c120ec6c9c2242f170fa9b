@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-09T13:51:33.3554172	Block States: butchercraft
+// 1.19.2	2023-08-19T10:32:59.1499974	Block States: butchercraft
 ea31054af405e7b9a159917ca4f56e15d2869d7a assets/butchercraft/blockstates/beef_block.json
 3e7417dccf0f34a0770fa3ad82726f19750aa6fa assets/butchercraft/blockstates/butcher_block.json
 173bf3878613e62257ddf5bc39c1c6e1718cac45 assets/butchercraft/blockstates/chicken_block.json
@@ -8,6 +8,7 @@ ea31054af405e7b9a159917ca4f56e15d2869d7a assets/butchercraft/blockstates/beef_bl
 18286d9e298bb1471e771e92d30be70155c71732 assets/butchercraft/blockstates/cow_block.json
 3d089e7ea14434b0e953ca3d87b8381f11233ca2 assets/butchercraft/blockstates/cow_hide_carpet.json
 746d2f261cb265e228902f7d69aef87e5365aa15 assets/butchercraft/blockstates/goat_block.json
+d461b0508349ee913af52f92fb096f24b1f4464f assets/butchercraft/blockstates/goat_hide_carpet.json
 2b57f8adb2c228779a9b74ea94a5d7a02ca0d8ee assets/butchercraft/blockstates/grinder.json
 2c9fbb6ba4234b2df486c83afed4d9c98bc8894a assets/butchercraft/blockstates/lamb_block.json
 df30ceef2af1e7bc93358e491d22ddace1d16b45 assets/butchercraft/blockstates/meat_hook.json
