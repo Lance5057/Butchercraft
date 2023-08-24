@@ -385,6 +385,9 @@ public class ButchercraftItems {
 	public static final RegistryObject<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
+	public static final RegistryObject<Item> SOAP = ITEMS.register("soap",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);
 	}

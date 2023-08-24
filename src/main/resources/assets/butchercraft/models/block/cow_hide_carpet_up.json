@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "butchercraft:block/cow_hide",
@@ -8,16 +9,16 @@
 	},
 	"elements": [
 		{
-			"from": [-8, 0.101, -8],
-			"to": [24, 0.101, 24],
+			"from": [-8, 0.11, -8],
+			"to": [24, 0.11, 24],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
 			"faces": {
 				"up": {"uv": [0, 0, 16, 16], "texture": "#0"}
 			}
 		},
 		{
-			"from": [0, 0.001, 0],
-			"to": [16, 1.001, 16],
+			"from": [0, 0, 0],
+			"to": [16, 1, 16],
 			"faces": {
 				"north": {"uv": [4, 3.5, 12, 4], "texture": "#0"},
 				"east": {"uv": [12, 4, 12.5, 12], "rotation": 90, "texture": "#0"},

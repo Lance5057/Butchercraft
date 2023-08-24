@@ -11,14 +11,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HideBlock extends HorizontalDirectionalBlock {
 	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
-	public static final BooleanProperty LIFT = BooleanProperty.create("lift");
+	//public static final IntegerProperty LIFT = IntegerProperty.create("lift", 0, 2);
 
 	public HideBlock(Properties p_52591_) {
 		super(p_52591_);
@@ -45,7 +45,16 @@ public class HideBlock extends HorizontalDirectionalBlock {
 
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
 		BlockPos b = pContext.getClickedPos();
-		return this.defaultBlockState().setValue(LIFT, b.getX() % 2 == 0 || b.getZ() % 2 == 0 ? true : false)
-				.setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+		boolean e = b.getX() % 2  == 0 && b.getZ() % 2 == 0;
+		boolean o = b.getX() % 4 != 0 || b.getZ() % 4 != 0;
+
+		int i = 0;
+		if (e)
+			i = 1;
+		if (o)
+			i = 2;
+
+		return this.defaultBlockState().setValue(FACING,
+				pContext.getHorizontalDirection().getOpposite());
 	}
 }

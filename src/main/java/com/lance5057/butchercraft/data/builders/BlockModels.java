@@ -35,10 +35,16 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ButchercraftBlocks.LAMB_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.COOKED_LAMB_BLOCK.get());
 
-		hideModel("cow", ButchercraftBlocks.COW_HIDE_CARPET.get());
-		hideModel("sheep", ButchercraftBlocks.SHEEP_HIDE_CARPET.get());
-		hideModel("goat", ButchercraftBlocks.GOAT_HIDE_CARPET.get());
-		hideModel("pig", ButchercraftBlocks.PIG_HIDE_CARPET.get());
+		horizontalBlock(ButchercraftBlocks.COW_HIDE_CARPET.get(), models().getExistingFile(modLoc("block/cow_hide_carpet")));
+		horizontalBlock(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(), models().withExistingParent("sheep_hide", modLoc("block/cow_hide_carpet"))
+				.texture("0", "butchercraft:block/sheep_hide")
+				.texture("particle", "butchercraft:block/sheep_hide")); 
+		horizontalBlock(ButchercraftBlocks.GOAT_HIDE_CARPET.get(), models().withExistingParent("goat_hide", modLoc("block/cow_hide_carpet"))
+				.texture("0", "butchercraft:block/goat_hide")
+				.texture("particle", "butchercraft:block/goat_hide")); 
+		horizontalBlock(ButchercraftBlocks.PIG_HIDE_CARPET.get(), models().withExistingParent("pig_hide", modLoc("block/cow_hide_carpet"))
+				.texture("0", "butchercraft:block/pig_hide")
+				.texture("particle", "butchercraft:block/pig_hide")); 
 
 //		getVariantBuilder(ButchercraftBlocks.COW_HIDE_CARPET.get()).partialState().addModels(ConfiguredModel.)
 //        .forAllStates(state -> ConfiguredModel.builder()
@@ -55,23 +61,29 @@ public class BlockModels extends BlockStateProvider {
 
 	}
 
-	private void hideModel(String animal, HideBlock block) {
-		ModelFile normal = models().withExistingParent(animal + "hide_carpet", modLoc("block/cow_hide_carpet"))
-				.texture("0", "butchercraft:block/" + animal + "_hide")
-				.texture("particle", "butchercraft:block/" + animal + "_hide");
-		ModelFile up = models().withExistingParent(animal + "hide_carpet", modLoc("block/cow_hide_carpet_up"))
-				.texture("0", "butchercraft:block/" + animal + "_hide")
-				.texture("particle", "butchercraft:block/" + animal + "_hide");
-		;
-
-		VariantBlockStateBuilder builder = getVariantBuilder(block);
-
-		for (Direction dir : BlockStateProperties.HORIZONTAL_FACING.getPossibleValues()) {
-			builder.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, true)
-					.modelForState().modelFile(up).rotationY((int) dir.toYRot() + 180).addModel()
-
-					.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, false)
-					.modelForState().modelFile(normal).rotationY((int) dir.toYRot() + 180).addModel();
-		}
-	}
+//	private void hideModel(String animal, HideBlock block) {
+//		ModelFile normal = models().withExistingParent(animal + "_hide", modLoc("block/cow_hide_carpet"))
+//				.texture("0", "butchercraft:block/" + animal + "_hide")
+//				.texture("particle", "butchercraft:block/" + animal + "_hide");
+//		ModelFile up = models().withExistingParent(animal + "_hide_up", modLoc("block/cow_hide_carpet_up"))
+//				.texture("0", "butchercraft:block/" + animal + "_hide")
+//				.texture("particle", "butchercraft:block/" + animal + "_hide");
+//		ModelFile up_moar = models().withExistingParent(animal + "_hide_up", modLoc("block/cow_hide_carpet_up"))
+//				.texture("0", "butchercraft:block/" + animal + "_hide")
+//				.texture("particle", "butchercraft:block/" + animal + "_hide");
+//		;
+//
+//		VariantBlockStateBuilder builder = getVariantBuilder(block);
+//
+//		for (Direction dir : BlockStateProperties.HORIZONTAL_FACING.getPossibleValues()) {
+//			builder.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, 0)
+//					.modelForState().modelFile(normal).rotationY((int) dir.toYRot() + 180).addModel()
+//
+//					.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, 1)
+//					.modelForState().modelFile(up).rotationY((int) dir.toYRot() + 180).addModel()
+//
+//					.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, 2)
+//					.modelForState().modelFile(up_moar).rotationY((int) dir.toYRot() + 180).addModel();
+//		}
+//	}
 }

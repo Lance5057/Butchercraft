@@ -1,0 +1,7 @@
+{
+  "parent": "butchercraft:block/cow_hide_carpet",
+  "textures": {
+    "0": "butchercraft:block/pig_hide",
+    "particle": "butchercraft:block/pig_hide"
+  }
+}
