@@ -2,9 +2,9 @@ package com.lance5057.butchercraft.effects;
 
 import net.minecraft.world.effect.MobEffectCategory;
 
-public class BloodySplatteredEffect extends SoapableMobEffect {
+public class BloodSplatteredEffect extends SoapableMobEffect {
 
-	protected BloodySplatteredEffect() {
+	public BloodSplatteredEffect() {
 		super(MobEffectCategory.HARMFUL, 7995392);
 	}
 

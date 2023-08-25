@@ -1,4 +1,5 @@
-// 1.19.2	2023-08-19T10:24:02.7757016	Butchercraft item models
+// 1.19.2	2023-08-25T12:22:31.9952052	Butchercraft item models
+b245a986ba8116dc626d2aedb12401999dfe38c1 assets/butchercraft/models/item/beak.json
 25fc57d82967f63ebdb799201b7830119f1cac60 assets/butchercraft/models/item/beef_block_item.json
 88b7ccadd46e5d7d2eb28fc8c2a4fffa6d983635 assets/butchercraft/models/item/beef_ribs.json
 2a830d971004f08fb1c215a03ea0b6de50cae98e assets/butchercraft/models/item/beef_roast.json
@@ -6,6 +7,8 @@
 4ed2808d86e5e8d2639343e916e927a218176dd7 assets/butchercraft/models/item/beef_stewmeat.json
 ebd8cc80d3b9f90b6c562f4687d496221385f94c assets/butchercraft/models/item/bone_saw.json
 366e9a69fccbf9d12ccf005ac2f3cce922ea1ded assets/butchercraft/models/item/brain.json
+05dcf18c7b9f86fbf603d8240e217cafccdf123c assets/butchercraft/models/item/bunny_ears.json
+3a22491379fd2b0baf92be279a92a3756a9fd600 assets/butchercraft/models/item/bunny_tail.json
 f2b7d99888dc41d805abd712c99ac5bfe1c822f6 assets/butchercraft/models/item/butcher_block_block_item.json
 17ba49a23c61b85be8484908aae620e5b83f2c70 assets/butchercraft/models/item/butcher_knife.json
 e72a3b226b96730a905a31e82b2685e5152c3d58 assets/butchercraft/models/item/casing.json
@@ -34,6 +37,7 @@ fbd3c05328589f4fbb9db40e6056a7145acc96bc assets/butchercraft/models/item/cooked_
 b1ca661b6ff58f1fcbcf47511c30fce2851583e8 assets/butchercraft/models/item/cooked_cubed_lamb.json
 951376c2ffcf54bdb3a62267d01a1ff71b53bf4e assets/butchercraft/models/item/cooked_cubed_pork.json
 0f42aded3721d1ca804012544c010c1dbbcdcbdb assets/butchercraft/models/item/cooked_cubed_rabbit.json
+09a01b5ac69f9e4e3e6c33386e35037f2867055e assets/butchercraft/models/item/cooked_eyeball.json
 0f625443c86984b9d4cf6063f548f5fa966c387b assets/butchercraft/models/item/cooked_goat_ribs.json
 c766184b801d314eea1e2e64edaa293af02286c2 assets/butchercraft/models/item/cooked_goat_roast.json
 e18655396bcf6c244d38468393726a783208e24c assets/butchercraft/models/item/cooked_goat_scraps.json
@@ -68,6 +72,7 @@ b3a64f61f7a892c864df57f15a5026a76837f152 assets/butchercraft/models/item/cooked_
 5d51b62e72f25795c31a2d4a21c6f9b9120667d1 assets/butchercraft/models/item/cooked_stomach.json
 1bfa537fb005f06e68d37505678cdfa5189c891c assets/butchercraft/models/item/cooked_tongue.json
 b90f898195b1d6629f5041bf3f898f1e5e4e3e15 assets/butchercraft/models/item/cooked_tripe.json
+835f53e8af14fe21b281a24a74ff65e08fa6805b assets/butchercraft/models/item/cooked_wattle.json
 d1fc68fe1c14eb612b0a222b54be10f3cdf4e63c assets/butchercraft/models/item/cow_carcass.json
 250e450914f9777efa1240ccea28b2edc7f564ba assets/butchercraft/models/item/cow_hide.json
 e46e23beb86e1a2840cecb6b1ae17cf475d420d2 assets/butchercraft/models/item/cubed_beef.json
@@ -77,6 +82,7 @@ a815ccd3f3effdc5ced2dc66ca689f23d89da061 assets/butchercraft/models/item/cubed_l
 8dc081dd6e7d6c47c4ba4bc89eb35cfca779af1b assets/butchercraft/models/item/cubed_pork.json
 41f7d5e0d070067cd64f4c459812cc0495d9880d assets/butchercraft/models/item/cubed_rabbit.json
 163344390f1783bfd2305213e5f468a82cc9fda6 assets/butchercraft/models/item/extruder_tip.json
+d13d3d875883a34adf1ebeeebe1c6eea603d2b4a assets/butchercraft/models/item/eyeball.json
 f685763c1b40c4493e6db89f232a72de6a2a5a9e assets/butchercraft/models/item/fat.json
 83e2dad441c565131cbc39cf8dc96df446177cae assets/butchercraft/models/item/gelatin.json
 81807eec176e049c750ecb4245b64ef2dcb594ad assets/butchercraft/models/item/goat_carcass.json
@@ -131,3 +137,4 @@ a6beb2fe93f1d7fd045405ab4a83dabee264724a assets/butchercraft/models/item/skinnin
 4d7160a7916a75a20dbd8a86df303ca7ec3c030d assets/butchercraft/models/item/stomach.json
 fe5e24b12e9e51718918cf767bf58c08bb7c5466 assets/butchercraft/models/item/tongue.json
 7561193650e5ed4778cbc049c9e9e82ba69da689 assets/butchercraft/models/item/tripe.json
+d67fb4f3533e5dc63d88a4b15918a3f971f02e67 assets/butchercraft/models/item/wattle.json
