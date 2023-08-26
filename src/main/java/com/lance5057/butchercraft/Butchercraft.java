@@ -38,6 +38,7 @@ public class Butchercraft {
 		bus.addListener(ButchercraftEvents::registerCaps);
 		bus.addGenericListener(Entity.class, ButchercraftEvents::attachCaps);
 		bus.addListener(ButchercraftEvents::breedEvent);
+		bus.addListener(ButchercraftEvents::cancelEat);
 //		bus.addListener(ButchercraftEvents::registerLayerDefinitions);
 
 		ButchercraftBlocks.register(modEventBus);
@@ -46,6 +47,8 @@ public class Butchercraft {
 		ButchercraftBlockEntities.register(modEventBus);
 		ButchercraftRecipes.register(modEventBus);
 		ButchercraftLootModifiers.register(modEventBus);
+		ButchercraftMobEffects.register(modEventBus);
+		ButchercraftFluids.register(modEventBus);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {
