@@ -7,6 +7,7 @@ import com.lance5057.butchercraft.workstations.grinder.GrinderBlock;
 import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -64,7 +65,10 @@ public class ButchercraftBlocks {
 			() -> new TaxidermyBlock());
 	public static final RegistryObject<TaxidermyBlock> CHICKEN_BLOCK = BLOCKS.register("chicken_block",
 			() -> new TaxidermyBlock());
-	// Food Stuff
+
+	public static final RegistryObject<LiquidBlock> BLOOD_FLUID_BLOCK = ButchercraftBlocks.BLOCKS
+			.register("blood_fluid_block", () -> new LiquidBlock(ButchercraftFluids.BLOOD_FLUID,
+					BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noLootTable()));
 
 	public static void register(IEventBus modBus) {
 

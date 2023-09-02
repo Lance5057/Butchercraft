@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.ButchercraftFluids;
 import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.data.DataGenerator;
@@ -46,6 +47,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.LARD, "lard");
 		forItem(ButchercraftItems.GELATIN, "gelatin");
 //		forItem(ButchercraftItems.SOAP, "soap");
+		forItem(ButchercraftItems.BLOOD_FLUID_BUCKET, "blood_bucket");
+		forItem(ButchercraftItems.BLOOD_FLUID_BOTTLE, "blood_bottle");
 
 		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
 		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())

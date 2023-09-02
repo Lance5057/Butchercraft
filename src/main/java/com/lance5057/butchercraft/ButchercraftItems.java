@@ -17,9 +17,11 @@ import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.items.KnifeItem;
 
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -188,35 +190,35 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsChicken.COOKED_WING)));
 
 	// Rabbit
-		public static final RegistryObject<Item> RABBIT_SADDLE = ITEMS.register("rabbit_saddle",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.SADDLE)));
-		public static final RegistryObject<Item> CUBED_RABBIT = ITEMS.register("cubed_rabbit",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.CUBED)));
-		public static final RegistryObject<Item> GROUND_RABBIT = ITEMS.register("ground_rabbit",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.GROUND)));
-		public static final RegistryObject<Item> RABBIT_LEG = ITEMS.register("rabbit_leg",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.LEG)));
-		public static final RegistryObject<Item> RABBIT_SCRAPS = ITEMS.register("rabbit_scraps",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.SCRAPS)));
-		public static final RegistryObject<Item> RABBIT_THIGH = ITEMS.register("rabbit_thigh",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.THIGH)));
-		public static final RegistryObject<Item> STEW_RABBIT = ITEMS.register("rabbit_stewmeat",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.STEW)));
-		public static final RegistryObject<Item> COOKED_RABBIT_SADDLE = ITEMS.register("cooked_rabbit_saddle",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_SADDLE)));
-		public static final RegistryObject<Item> COOKED_CUBED_RABBIT = ITEMS.register("cooked_cubed_rabbit",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_CUBED)));
-		public static final RegistryObject<Item> COOKED_GROUND_RABBIT = ITEMS.register("cooked_ground_rabbit",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_GROUND)));
-		public static final RegistryObject<Item> COOKED_RABBIT_LEG = ITEMS.register("cooked_rabbit_leg",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_LEG)));
-		public static final RegistryObject<Item> COOKED_RABBIT_SCRAPS = ITEMS.register("cooked_rabbit_scraps",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_SCRAPS)));
-		public static final RegistryObject<Item> COOKED_RABBIT_THIGH = ITEMS.register("cooked_rabbit_thigh",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_THIGH)));
-		public static final RegistryObject<Item> COOKED_STEW_RABBIT = ITEMS.register("cooked_rabbit_stewmeat",
-				() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_STEW)));
-	
+	public static final RegistryObject<Item> RABBIT_SADDLE = ITEMS.register("rabbit_saddle",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.SADDLE)));
+	public static final RegistryObject<Item> CUBED_RABBIT = ITEMS.register("cubed_rabbit",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.CUBED)));
+	public static final RegistryObject<Item> GROUND_RABBIT = ITEMS.register("ground_rabbit",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.GROUND)));
+	public static final RegistryObject<Item> RABBIT_LEG = ITEMS.register("rabbit_leg",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.LEG)));
+	public static final RegistryObject<Item> RABBIT_SCRAPS = ITEMS.register("rabbit_scraps",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.SCRAPS)));
+	public static final RegistryObject<Item> RABBIT_THIGH = ITEMS.register("rabbit_thigh",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.THIGH)));
+	public static final RegistryObject<Item> STEW_RABBIT = ITEMS.register("rabbit_stewmeat",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.STEW)));
+	public static final RegistryObject<Item> COOKED_RABBIT_SADDLE = ITEMS.register("cooked_rabbit_saddle",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_SADDLE)));
+	public static final RegistryObject<Item> COOKED_CUBED_RABBIT = ITEMS.register("cooked_cubed_rabbit",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_CUBED)));
+	public static final RegistryObject<Item> COOKED_GROUND_RABBIT = ITEMS.register("cooked_ground_rabbit",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_GROUND)));
+	public static final RegistryObject<Item> COOKED_RABBIT_LEG = ITEMS.register("cooked_rabbit_leg",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_LEG)));
+	public static final RegistryObject<Item> COOKED_RABBIT_SCRAPS = ITEMS.register("cooked_rabbit_scraps",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_SCRAPS)));
+	public static final RegistryObject<Item> COOKED_RABBIT_THIGH = ITEMS.register("cooked_rabbit_thigh",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_THIGH)));
+	public static final RegistryObject<Item> COOKED_STEW_RABBIT = ITEMS.register("cooked_rabbit_stewmeat",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsRabbit.COOKED_STEW)));
+
 	// OFFAL
 	public static final RegistryObject<Item> COOKED_TRIPE = ITEMS.register("cooked_tripe",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsGeneric.COOKED_TRIPE)));
@@ -387,6 +389,12 @@ public class ButchercraftItems {
 
 	public static final RegistryObject<Item> SOAP = ITEMS.register("soap",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+
+	public static final RegistryObject<Item> BLOOD_FLUID_BUCKET = ITEMS.register("blood_fluid_bucket",
+			() -> new BucketItem(ButchercraftFluids.BLOOD_FLUID,
+					new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
+	public static final RegistryObject<Item> BLOOD_FLUID_BOTTLE = ITEMS.register("blood_fluid_bottle",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.BUCKET).stacksTo(16)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);

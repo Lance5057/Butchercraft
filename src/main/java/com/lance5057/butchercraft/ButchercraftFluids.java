@@ -13,6 +13,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BottleItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -36,19 +37,20 @@ public class ButchercraftFluids {
 			Butchercraft.MOD_ID);
 
 	private static ForgeFlowingFluid.Properties fluidProperties() {
-		return new ForgeFlowingFluid.Properties(TEST_FLUID_TYPE, TEST_FLUID, TEST_FLUID_FLOWING).block(TEST_FLUID_BLOCK)
-				.bucket(TEST_FLUID_BUCKET);
+		return new ForgeFlowingFluid.Properties(BLOOD_FLUID_TYPE, BLOOD_FLUID, BLOOD_FLUID_FLOWING)
+				.block(ButchercraftBlocks.BLOOD_FLUID_BLOCK).bucket(ButchercraftItems.BLOOD_FLUID_BUCKET);
 	}
 
-	private static final RegistryObject<FluidType> TEST_FLUID_TYPE = FLUID_TYPES.register("test_fluid",
-			() -> new FluidType(FluidType.Properties.create().supportsBoating(true).canHydrate(true)) {
+	public static final RegistryObject<FluidType> BLOOD_FLUID_TYPE = FLUID_TYPES.register("blood_fluid",
+			() -> new FluidType(FluidType.Properties.create().supportsBoating(true).canHydrate(true).density(2000)
+					.viscosity(3000).fallDistanceModifier(0F).canExtinguish(true)) {
 				@Override
 				public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
 					consumer.accept(new IClientFluidTypeExtensions() {
 						private static final ResourceLocation STILL = new ResourceLocation("block/water_still"),
 								FLOW = new ResourceLocation("block/water_flow"),
-								OVERLAY = new ResourceLocation("block/obsidian"),
-								VIEW_OVERLAY = new ResourceLocation("textures/block/obsidian.png");
+								OVERLAY = new ResourceLocation("block/water_still"),
+								VIEW_OVERLAY = new ResourceLocation("textures/block/water_still.png");
 
 						@Override
 						public ResourceLocation getStillTexture() {
@@ -72,7 +74,7 @@ public class ButchercraftFluids {
 
 						@Override
 						public int getTintColor() {
-							return 0xAF7FFFD4;
+							return 0xAF540a04;
 						}
 
 						@Override
@@ -86,7 +88,7 @@ public class ButchercraftFluids {
 						@Override
 						public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance,
 								float partialTick, float nearDistance, float farDistance, FogShape shape) {
-							nearDistance = -8F;
+							nearDistance = -48F;
 							farDistance = 24F;
 
 							if (farDistance > renderDistance) {
@@ -102,15 +104,10 @@ public class ButchercraftFluids {
 				}
 			});
 
-	private static final RegistryObject<FlowingFluid> TEST_FLUID = FLUIDS.register("test_fluid",
+	public static final RegistryObject<FlowingFluid> BLOOD_FLUID = FLUIDS.register("blood_fluid",
 			() -> new ForgeFlowingFluid.Source(fluidProperties()));
-	private static final RegistryObject<Fluid> TEST_FLUID_FLOWING = FLUIDS.register("test_fluid_flowing",
+	public static final RegistryObject<Fluid> BLOOD_FLUID_FLOWING = FLUIDS.register("blood_fluid_flowing",
 			() -> new ForgeFlowingFluid.Flowing(fluidProperties()));
-	private static final RegistryObject<LiquidBlock> TEST_FLUID_BLOCK = ButchercraftBlocks.BLOCKS
-			.register("test_fluid_block", () -> new LiquidBlock(TEST_FLUID,
-					BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noLootTable()));
-	private static final RegistryObject<Item> TEST_FLUID_BUCKET = ButchercraftItems.ITEMS.register("test_fluid_bucket",
-			() -> new BucketItem(TEST_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 	public static void register(IEventBus modBus) {
 		FLUID_TYPES.register(modBus);

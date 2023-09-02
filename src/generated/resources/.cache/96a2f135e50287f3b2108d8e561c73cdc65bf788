@@ -1,10 +1,12 @@
-// 1.19.2	2023-08-25T12:22:31.9952052	Butchercraft item models
+// 1.19.2	2023-08-30T10:45:51.7546627	Butchercraft item models
 b245a986ba8116dc626d2aedb12401999dfe38c1 assets/butchercraft/models/item/beak.json
 25fc57d82967f63ebdb799201b7830119f1cac60 assets/butchercraft/models/item/beef_block_item.json
 88b7ccadd46e5d7d2eb28fc8c2a4fffa6d983635 assets/butchercraft/models/item/beef_ribs.json
 2a830d971004f08fb1c215a03ea0b6de50cae98e assets/butchercraft/models/item/beef_roast.json
 3d45e15ed7ca6ddb1901ac7b604af3472e359170 assets/butchercraft/models/item/beef_scraps.json
 4ed2808d86e5e8d2639343e916e927a218176dd7 assets/butchercraft/models/item/beef_stewmeat.json
+2d8b72075ff95d2b5182b231c86f0b86345c3651 assets/butchercraft/models/item/blood_fluid_bottle.json
+eabe039897686f0700e2f7b5322315efec756163 assets/butchercraft/models/item/blood_fluid_bucket.json
 ebd8cc80d3b9f90b6c562f4687d496221385f94c assets/butchercraft/models/item/bone_saw.json
 366e9a69fccbf9d12ccf005ac2f3cce922ea1ded assets/butchercraft/models/item/brain.json
 05dcf18c7b9f86fbf603d8240e217cafccdf123c assets/butchercraft/models/item/bunny_ears.json
