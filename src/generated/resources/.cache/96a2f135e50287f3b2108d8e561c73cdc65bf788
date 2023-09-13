@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-30T10:45:51.7546627	Butchercraft item models
+// 1.19.2	2023-09-13T11:54:29.4060257	Butchercraft item models
 b245a986ba8116dc626d2aedb12401999dfe38c1 assets/butchercraft/models/item/beak.json
 25fc57d82967f63ebdb799201b7830119f1cac60 assets/butchercraft/models/item/beef_block_item.json
 88b7ccadd46e5d7d2eb28fc8c2a4fffa6d983635 assets/butchercraft/models/item/beef_ribs.json
@@ -136,6 +136,7 @@ c198e5877ed487c10a8563eec188d1e9fae6402e assets/butchercraft/models/item/sheep_c
 cea772c82ddebdc3039cc43fc69da67e1f690f12 assets/butchercraft/models/item/sheep_hide.json
 ab315ae5abe2da6618b3e98c90c81f153168a7a0 assets/butchercraft/models/item/sinew.json
 a6beb2fe93f1d7fd045405ab4a83dabee264724a assets/butchercraft/models/item/skinning_knife.json
+ce859d871efce86e37ec62a0a6580bd1b2e7902a assets/butchercraft/models/item/soap.json
 4d7160a7916a75a20dbd8a86df303ca7ec3c030d assets/butchercraft/models/item/stomach.json
 fe5e24b12e9e51718918cf767bf58c08bb7c5466 assets/butchercraft/models/item/tongue.json
 7561193650e5ed4778cbc049c9e9e82ba69da689 assets/butchercraft/models/item/tripe.json

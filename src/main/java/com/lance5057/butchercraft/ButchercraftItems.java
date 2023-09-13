@@ -15,6 +15,7 @@ import com.lance5057.butchercraft.food.FoodsSheep;
 import com.lance5057.butchercraft.items.ButcherKnifeItem;
 import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.items.KnifeItem;
+import com.lance5057.butchercraft.items.SoapItem;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
@@ -387,8 +388,8 @@ public class ButchercraftItems {
 	public static final RegistryObject<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
-	public static final RegistryObject<Item> SOAP = ITEMS.register("soap",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<SoapItem> SOAP = ITEMS.register("soap",
+			() -> new SoapItem(new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static final RegistryObject<Item> BLOOD_FLUID_BUCKET = ITEMS.register("blood_fluid_bucket",
 			() -> new BucketItem(ButchercraftFluids.BLOOD_FLUID,

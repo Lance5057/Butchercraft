@@ -1,7 +1,6 @@
 package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
-import com.lance5057.butchercraft.ButchercraftFluids;
 import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.data.DataGenerator;
@@ -87,7 +86,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.BEAK, "beak");
 		forItem(ButchercraftItems.BUNNY_EARS, "bunny_ears");
 		forItem(ButchercraftItems.BUNNY_TAIL, "bunny_tail");
-		
+
 		forItem(ButchercraftItems.BEEF_STEW_MEAT, "stew_beef");
 		forItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT, "cooked_stew_beef");
 		forItem(ButchercraftItems.BEEF_ROAST, "roast");
@@ -134,7 +133,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_LAMB, "cooked_ground_lamb");
 		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
 		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
-		
+
 		forItem(ButchercraftItems.GOAT_STEW_MEAT, "stew_goat");
 		forItem(ButchercraftItems.COOKED_GOAT_STEW_MEAT, "cooked_stew_goat");
 		forItem(ButchercraftItems.GOAT_ROAST, "roast");
@@ -147,7 +146,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GROUND_GOAT, "cooked_ground_goat");
 		forItem(ButchercraftItems.GOAT_SCRAPS, "goat_scraps");
 		forItem(ButchercraftItems.COOKED_GOAT_SCRAPS, "cooked_goat_scraps");
-		
+
 		forItem(ButchercraftItems.CHICKEN_BREAST, "chicken_breast");
 		forItem(ButchercraftItems.CHICKEN_LEG, "chicken_leg");
 		forItem(ButchercraftItems.CHICKEN_SCRAPS, "chicken_scraps");
@@ -164,7 +163,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_CUBED_CHICKEN, "cooked_cubed_chicken");
 		forItem(ButchercraftItems.COOKED_GROUND_CHICKEN, "cooked_ground_chicken");
 		forItem(ButchercraftItems.COOKED_STEW_CHICKEN, "cooked_stew_chicken");
-		
+
 		forItem(ButchercraftItems.RABBIT_SADDLE, "rabbit_saddle");
 		forItem(ButchercraftItems.RABBIT_LEG, "rabbit_front_leg");
 		forItem(ButchercraftItems.RABBIT_SCRAPS, "rabbit_scraps");
@@ -203,6 +202,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forItem(ButchercraftItems.PAPER_HAT, "paper_hat");
 		forItem(ButchercraftItems.CASING, "casing");
+		forItem(ButchercraftItems.SOAP, "soap");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {
