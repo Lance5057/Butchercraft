@@ -3,10 +3,11 @@ package com.lance5057.butchercraft;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.lance5057.butchercraft.entity.ButchercraftVillagers;
+
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -39,6 +40,8 @@ public class Butchercraft {
 		bus.addGenericListener(Entity.class, ButchercraftEvents::attachCaps);
 		bus.addListener(ButchercraftEvents::breedEvent);
 		bus.addListener(ButchercraftEvents::cancelEat);
+		bus.addListener(ButchercraftEvents::dirtyHands);
+		bus.addListener(ButchercraftEvents::buffZombie);
 //		bus.addListener(ButchercraftEvents::registerLayerDefinitions);
 
 		ButchercraftBlocks.register(modEventBus);
@@ -49,17 +52,13 @@ public class Butchercraft {
 		ButchercraftLootModifiers.register(modEventBus);
 		ButchercraftMobEffects.register(modEventBus);
 		ButchercraftFluids.register(modEventBus);
+		ButchercraftVillagers.register(modEventBus);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			ButchercraftClient.setBERenderers();
-
-			ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.MEAT_HOOK.get(), RenderType.cutout());
-
-			ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.COW_HIDE_CARPET.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.PIG_HIDE_CARPET.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(), RenderType.cutout());
+			ButchercraftVillagers.fillTradeData();
 
 		});
 	}

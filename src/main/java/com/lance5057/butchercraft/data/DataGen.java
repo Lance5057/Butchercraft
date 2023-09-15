@@ -9,6 +9,7 @@ import com.lance5057.butchercraft.data.builders.ButchercraftLootTableProvider;
 import com.lance5057.butchercraft.data.builders.EnglishLoc;
 import com.lance5057.butchercraft.data.builders.ItemModels;
 import com.lance5057.butchercraft.data.builders.ItemTagGenerator;
+import com.lance5057.butchercraft.data.builders.PoiTagGenerator;
 import com.lance5057.butchercraft.data.builders.recipes.ButchercraftRecipeProvider;
 
 import net.minecraft.data.DataGenerator;
@@ -38,5 +39,6 @@ public class DataGen {
 		generator.addProvider(true, new ButchercraftRecipeProvider(generator));
 		generator.addProvider(true, new ButchercraftLootTableProvider(generator));
 		generator.addProvider(true, new ButchercraftEntityTypeTagsProvider(generator, event.getExistingFileHelper()));
+		generator.addProvider(true, new PoiTagGenerator(generator, event.getExistingFileHelper()));
 	}
 }

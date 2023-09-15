@@ -12,10 +12,13 @@ import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Cow;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.item.PotionItem;
@@ -25,6 +28,7 @@ import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -95,10 +99,41 @@ public class ButchercraftEvents {
 	}
 
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
-		ItemStack stack = event.getItem();
-		if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
-				|| stack.getItem() instanceof MilkBucketItem) {
-			event.setCanceled(true);
+		if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.get())) {
+			ItemStack stack = event.getItem();
+			if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
+					|| stack.getItem() instanceof MilkBucketItem) {
+				event.getEntity().addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100));
+				event.setCanceled(true);
+			}
+		}
+	} 
+
+	public static void dirtyHands(LivingEntityUseItemEvent.Finish event) {
+		if (event.getEntity().hasEffect(ButchercraftMobEffects.DIRTY.get())) {
+			ItemStack stack = event.getItem();
+			if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
+					|| stack.getItem() instanceof MilkBucketItem) {
+				switch (event.getEntity().level.random.nextInt(3)) {
+				case 0:
+					event.getEntity().addEffect(new MobEffectInstance(MobEffects.POISON, 600));
+				case 1:
+					event.getEntity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600));
+				default:
+					event.getEntity().addEffect(new MobEffectInstance(MobEffects.HUNGER, 600));
+				}
+
+				event.setCanceled(true);
+			}
+		}
+	}
+
+	public static void buffZombie(LivingHurtEvent event) {
+		if (event.getSource().getDirectEntity() instanceof Zombie z) {
+			if (event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY.get())) {
+				z.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0));
+				z.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 0));
+			}
 		}
 	}
 }

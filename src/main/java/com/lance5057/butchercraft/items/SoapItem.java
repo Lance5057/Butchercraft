@@ -15,6 +15,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -43,7 +44,7 @@ public class SoapItem extends Item {
 			pStack.shrink(1);
 		}
 
-		return pStack.isEmpty() ? new ItemStack(Items.BUCKET) : pStack;
+		return pStack;
 	}
 
 	/**
@@ -74,8 +75,9 @@ public class SoapItem extends Item {
 
 	@Override
 	public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-		if (pIsSelected) {
-			if (pEntity instanceof Player p) {
+
+		if (pEntity instanceof Player p) {
+			if (pIsSelected || p.getInventory().getItem(Inventory.SLOT_OFFHAND).sameItem(pStack)) {
 				if (p.getUseItemRemainingTicks() > 0) {
 					for (int i = 0; i < 10; i++) {
 						pLevel.addParticle(ParticleTypes.BUBBLE_POP, p.getX() + pLevel.random.nextFloat() - 0.5f,
@@ -98,14 +100,17 @@ public class SoapItem extends Item {
 
 			private static final HumanoidModel.ArmPose EXAMPLE_POSE = HumanoidModel.ArmPose.create("EXAMPLE", false,
 					(model, entity, arm) -> {
+						float f = entity.getUseItemRemainingTicks();
+						float f2 = Mth.abs(Mth.cos(f / 6.0F * (float) Math.PI) * 1.5F);
 						if (arm == HumanoidArm.RIGHT) {
-							float f = entity.getUseItemRemainingTicks();
-							float f2 = Mth.abs(Mth.cos(f / 4.0F * (float) Math.PI) * 1.5F);
+
 							model.rightArm.yRot = -45;
 							model.rightArm.xRot = (float) (f2 - 45);
 							model.leftArm.xRot = -135;
 						} else {
-							model.leftArm.xRot = (float) (180 + Math.PI * 2);
+							model.leftArm.yRot = 45;
+							model.leftArm.xRot = (float) (f2 - 45);
+							model.rightArm.xRot = -135;
 						}
 					});
 
@@ -125,12 +130,13 @@ public class SoapItem extends Item {
 					ItemStack itemInHand, float partialTick, float equipProcess, float swingProcess) {
 				float f = player.getUseItemRemainingTicks() - partialTick + 1.0F;
 				int i = arm == HumanoidArm.RIGHT ? 1 : -1;
+				float i2 = arm == HumanoidArm.RIGHT ? -0.5f : 0.5f;
 				poseStack.translate(i * 0.56F, -0.52F, -0.72F);
-				float f2 = Mth.abs(Mth.cos(f / 4.0F * (float) Math.PI) * 0.5F);
+				float f2 = Mth.abs(Mth.cos(f / 8.0F * (float) Math.PI) * 0.5F);
 				if (player.getUseItem() == itemInHand && player.isUsingItem()) {
 
 					poseStack.mulPose(new Quaternion(0, 90, 0, true));
-					poseStack.translate(0.0, f2, -0.5);
+					poseStack.translate(0.0, f2, i2);
 
 				}
 				return true;
