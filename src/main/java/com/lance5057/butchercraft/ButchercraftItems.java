@@ -57,10 +57,6 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.COOKED_BEEF_RIBS)));
 	public static final RegistryObject<Item> BEEF_RIBS = ITEMS.register("beef_ribs",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.BEEF_RIBS)));
-//	public static final RegistryObject<Item> COOKED_BEEF_RIB = ITEMS.register("cooked_beef_rib",
-//			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.COOKED_BEEF_RIB)));
-//	public static final RegistryObject<Item> BEEF_RIB = ITEMS.register("beef_rib",
-//			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.BEEF_RIB)));
 	public static final RegistryObject<Item> COOKED_BEEF_ROAST = ITEMS.register("cooked_beef_roast",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.COOKED_ROAST)));
 	public static final RegistryObject<Item> BEEF_ROAST = ITEMS.register("beef_roast",
@@ -311,12 +307,6 @@ public class ButchercraftItems {
 			() -> new KnifeItem(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB).durability(250)));
 	public static final RegistryObject<Item> GUT_KNIFE = ITEMS.register("gut_knife",
 			() -> new KnifeItem(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB).durability(250)));
-//	public static final RegistryObject<Item> SPATULA = ITEMS.register("spatula",
-//			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
-//	public static final RegistryObject<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
-//			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
-//	public static final RegistryObject<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
-//			() -> new Item(new Item.Properties().tab(ButchercraftItems.GROUP_ITEMS)));
 	public static final RegistryObject<Item> LEATHER_SCRAP = ITEMS.register("leather_scrap",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 
@@ -332,8 +322,6 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 	public static final RegistryObject<Item> GELATIN = ITEMS.register("gelatin",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
-//	public static final RegistryObject<Item> SOAP = ITEMS.register("soap",
-//			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 
 	public static final RegistryObject<BlockItem> HOOK_BLOCK_ITEM = ITEMS.register("meat_hook_item",
 			() -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties().tab(BUTCHER_TAB)));
@@ -343,13 +331,6 @@ public class ButchercraftItems {
 
 	public static final RegistryObject<BlockItem> GRINDER_BLOCK_ITEM = ITEMS.register("grinder_block_item",
 			() -> new BlockItem(ButchercraftBlocks.GRINDER.get(), new Item.Properties().tab(BUTCHER_TAB)));
-
-//	public static final RegistryObject<BlockItem> COW_SKULL = ITEMS.register("cow_skull_item",
-//			() -> new BlockItem(ButchercraftBlocks.COW_SKULL.get(), new Item.Properties().tab(BUTCHER_TAB)));
-//	public static final RegistryObject<BlockItem> PIG_SKULL = ITEMS.register("pig_skull_item",
-//			() -> new BlockItem(ButchercraftBlocks.PIG_SKULL.get(), new Item.Properties().tab(BUTCHER_TAB)));
-//	public static final RegistryObject<BlockItem> SHEEP_SKULL = ITEMS.register("sheep_skull_item",
-//			() -> new BlockItem(ButchercraftBlocks.SHEEP_SKULL.get(), new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static final RegistryObject<BlockItem> BEEF_BLOCK_ITEM = ITEMS.register("beef_block_item",
 			() -> new BlockItem(ButchercraftBlocks.BEEF_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));

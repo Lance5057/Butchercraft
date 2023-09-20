@@ -59,10 +59,10 @@ public class ButchercraftVillagers {
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.SOAP.get(), 6, 1, 8, 3) };
 
 		VillagerTrades.ItemListing[] slaughterLevel2 = new VillagerTrades.ItemListing[] {
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.MASK.get(), 6, 8, 5),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.GLOVES.get(), 6, 8, 5),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.BOOTS.get(), 6, 8, 5),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.APRON.get(), 6, 8, 5),
+				new VillagerTrades.EmeraldForItems(ButchercraftItems.MASK.get(), 1, 8, 5),
+				new VillagerTrades.EmeraldForItems(ButchercraftItems.GLOVES.get(), 1, 8, 5),
+				new VillagerTrades.EmeraldForItems(ButchercraftItems.BOOTS.get(), 1, 8, 5),
+				new VillagerTrades.EmeraldForItems(ButchercraftItems.APRON.get(), 1, 8, 5),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.BEAK.get(), 1, 4, 16, 1),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.EYEBALL.get(), 1, 2, 16, 1),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.FAT.get(), 1, 1, 16, 1),
@@ -71,10 +71,10 @@ public class ButchercraftVillagers {
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.SOAP.get(), 6, 1, 8, 3) };
 
 		VillagerTrades.ItemListing[] slaughterLevel3 = new VillagerTrades.ItemListing[] {
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.BUTCHER_KNIFE.get(), 12, 16, 5),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.GUT_KNIFE.get(), 12, 16, 5),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.SKINNING_KNIFE.get(), 12, 16, 5),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.BONE_SAW.get(), 12, 16, 5),
+				new VillagerTrades.EmeraldForItems(ButchercraftItems.BUTCHER_KNIFE.get(), 1, 16, 15),
+				new VillagerTrades.EmeraldForItems(ButchercraftItems.GUT_KNIFE.get(), 1, 16, 15),
+				new VillagerTrades.EmeraldForItems(ButchercraftItems.SKINNING_KNIFE.get(), 1, 16, 15),
+				new VillagerTrades.EmeraldForItems(ButchercraftItems.BONE_SAW.get(), 1, 16, 15),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.APRON.get(), 12, 1, 16, 10),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.MASK.get(), 12, 1, 16, 10),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.GLOVES.get(), 12, 1, 16, 10),

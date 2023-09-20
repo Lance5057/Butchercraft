@@ -19,10 +19,17 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 			"butcherblock/deoffal_chicken");
 
 	public static final ResourceLocation BUTCHER_CHICKEN = new ResourceLocation(Butchercraft.MOD_ID,
-			"meat_hook/butcher_chicken");
+			"butcherblock/butcher_chicken");
+	
+	public static final ResourceLocation BLOOD_BOTTLE = new ResourceLocation(Butchercraft.MOD_ID,
+			"butcherblock/blood_bottle");
 
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
+		t.accept(BLOOD_BOTTLE,
+                LootTable.lootTable()
+                        .withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 1)));
+		
 		t.accept(PLUCK_CHICKEN,
 				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(Items.FEATHER, 1, 5)));
 		t.accept(DEOFFAL_CHICKEN,

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "butchercraft:block/butcherblock"
+      "model": "butchercraft:block/butcher_block"
     }
   }
 }

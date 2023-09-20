@@ -63,6 +63,19 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		getBuilder(ButchercraftItems.RABBIT_CARCASS.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")));
 
+		getBuilder(ButchercraftItems.COW_ITEM_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/cow")));
+		getBuilder(ButchercraftItems.PIG_ITEM_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig")));
+		getBuilder(ButchercraftItems.SHEEP_ITEM_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/sheep")));
+		getBuilder(ButchercraftItems.GOAT_ITEM_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/goat")));
+		getBuilder(ButchercraftItems.CHICKEN_ITEM_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/chicken")));
+		getBuilder(ButchercraftItems.RABBIT_ITEM_BLOCK.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")));
+
 		forItem(ButchercraftItems.BRAIN, "brain");
 		forItem(ButchercraftItems.COOKED_BRAIN, "cooked_brain");
 		forItem(ButchercraftItems.HEART, "heart");
@@ -186,7 +199,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forBlockItem(ButchercraftItems.HOOK_BLOCK_ITEM, "hook");
 		forBlockItem(ButchercraftItems.GRINDER_BLOCK_ITEM, "grinder");
-		forBlockItem(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM, "butcherblock");
+		forBlockItem(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM, "butcher_block");
 
 		forBlockItem(ButchercraftItems.BEEF_BLOCK_ITEM, "beef_block");
 		forBlockItem(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM, "cooked_beef_block");
@@ -203,6 +216,11 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.PAPER_HAT, "paper_hat");
 		forItem(ButchercraftItems.CASING, "casing");
 		forItem(ButchercraftItems.SOAP, "soap");
+
+		forItem(ButchercraftItems.APRON, "apron");
+		forItem(ButchercraftItems.BOOTS, "boots");
+		forItem(ButchercraftItems.MASK, "mask");
+		forItem(ButchercraftItems.GLOVES, "gloves");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {
