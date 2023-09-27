@@ -85,7 +85,6 @@ public class ButchercraftVillagers {
 				new VillagerTrades.EmeraldForItems(ButchercraftItems.COW_CARCASS.get(), 24, 4, 15),
 				new VillagerTrades.EmeraldForItems(ButchercraftItems.GOAT_CARCASS.get(), 16, 4, 10),
 				new VillagerTrades.EmeraldForItems(ButchercraftItems.SHEEP_CARCASS.get(), 16, 4, 10),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.RABBIT_CARCASS.get(), 8, 8, 5),
 				new VillagerTrades.EmeraldForItems(ButchercraftItems.PIG_CARCASS.get(), 16, 4, 10),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.BUTCHER_KNIFE.get(), 24, 1, 16, 10),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.GUT_KNIFE.get(), 24, 1, 16, 10),
@@ -97,7 +96,6 @@ public class ButchercraftVillagers {
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.COW_CARCASS.get(), 24, 1, 4, 15),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.GOAT_CARCASS.get(), 16, 1, 4, 10),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.SHEEP_CARCASS.get(), 16, 1, 4, 10),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.RABBIT_CARCASS.get(), 8, 1, 8, 5),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.PIG_CARCASS.get(), 16, 1, 4, 10) };
 
 		VillagerTrades.TRADES.put(SLAUGHTER_PROFESSION.get(), toIntMap(ImmutableMap.of(1, slaughterLevel1, 2,

@@ -8,6 +8,153 @@
     {
       "count": 1,
       "damage": true,
+      "loot_table": "butchercraft:meat_hook/blood_bucket",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/cow"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 24.0,
+                "min": -24.0
+              },
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:bucket"
+        }
+      ],
+      "tool": {
+        "item": "minecraft:bucket"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:meat_hook/blood_bucket",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/cow"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 24.0,
+                "min": -24.0
+              },
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:bucket"
+        }
+      ],
+      "tool": {
+        "item": "minecraft:bucket"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:meat_hook/blood_bucket",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/cow"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 24.0,
+                "min": -24.0
+              },
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "minecraft:bucket"
+        }
+      ],
+      "tool": {
+        "item": "minecraft:bucket"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
       "loot_table": "butchercraft:meat_hook/skin_cow",
       "models": [
         {

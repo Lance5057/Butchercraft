@@ -60,8 +60,25 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/goat")));
 		getBuilder(ButchercraftItems.CHICKEN_CARCASS.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/chicken")));
-		getBuilder(ButchercraftItems.RABBIT_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")));
+
+		getBuilder(ButchercraftItems.BLACK_RABBIT_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")))
+				.texture("0", mcLoc("entity/rabbit/black"));
+		getBuilder(ButchercraftItems.BROWN_RABBIT_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")))
+				.texture("0", mcLoc("entity/rabbit/brown"));
+		getBuilder(ButchercraftItems.GOLD_RABBIT_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")))
+				.texture("0", mcLoc("entity/rabbit/gold"));
+		getBuilder(ButchercraftItems.SALT_RABBIT_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")))
+				.texture("0", mcLoc("entity/rabbit/salt"));
+		getBuilder(ButchercraftItems.WHITE_RABBIT_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")))
+				.texture("0", mcLoc("entity/rabbit/white"));
+		getBuilder(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")))
+				.texture("0", mcLoc("entity/rabbit/white_splotched"));
 
 		getBuilder(ButchercraftItems.COW_ITEM_BLOCK.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/cow")));
@@ -97,8 +114,6 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.EYEBALL, "eyeball");
 		forItem(ButchercraftItems.COOKED_EYEBALL, "cooked_eyeball");
 		forItem(ButchercraftItems.BEAK, "beak");
-		forItem(ButchercraftItems.BUNNY_EARS, "bunny_ears");
-		forItem(ButchercraftItems.BUNNY_TAIL, "bunny_tail");
 
 		forItem(ButchercraftItems.BEEF_STEW_MEAT, "stew_beef");
 		forItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT, "cooked_stew_beef");

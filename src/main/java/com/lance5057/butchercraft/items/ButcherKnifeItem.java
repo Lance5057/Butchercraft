@@ -13,6 +13,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -52,17 +53,18 @@ public class ButcherKnifeItem extends KnifeItem {
 			}
 		}
 
-
-		final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
-				"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).getPath());
 		if (player.getServer() != null) {
-			final LootTable lootTable = player.getServer().getLootTables().get(lootTableLocation);
-			if (entity.getType().is(ButchercraftEntityTags.CARCASSES) && entity instanceof Mob mob
-					&& lootTable != LootTable.EMPTY) {
-				entity.level.playSound(null, entity.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F, 1.0F);
-				mob.lootTable = lootTableLocation;
-				entity.setLastHurtByPlayer(player);
-				entity.hurt(DamageSource.playerAttack(player), 99999);
+
+			if (entity.getType().is(ButchercraftEntityTags.CARCASSES) && entity instanceof Mob mob) {
+				if (!specialCases(player, mob)) {
+					final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
+							"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).getPath());
+					final LootTable lootTable = player.getServer().getLootTables().get(lootTableLocation);
+
+					if (lootTable != LootTable.EMPTY) {
+						killAndDrop(player, lootTableLocation, mob);
+					}
+				}
 				return InteractionResult.SUCCESS;
 			}
 		}
@@ -70,11 +72,58 @@ public class ButcherKnifeItem extends KnifeItem {
 		return InteractionResult.PASS;
 	}
 
+	private void killAndDrop(Player player, final ResourceLocation lootTableLocation, Mob mob) {
+		player.level.playSound(null, mob.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F,
+				1.0F);
+		mob.lootTable = lootTableLocation;
+		mob.setLastHurtByPlayer(player);
+		mob.hurt(DamageSource.playerAttack(player), 99999);
+	}
+
+	boolean specialCases(Player player, Mob mob) {
+		if (mob instanceof Rabbit r) {
+
+			switch (r.getRabbitType()) {
+			case Rabbit.TYPE_BLACK:
+				rabbitDrop(player, mob, "_black");
+				return true;
+			case Rabbit.TYPE_BROWN:
+				rabbitDrop(player, mob, "_brown");
+				return true;
+			case Rabbit.TYPE_GOLD:
+				rabbitDrop(player, mob, "_gold");
+				return true;
+			case Rabbit.TYPE_SALT:
+				rabbitDrop(player, mob, "_salt");
+				return true;
+			case Rabbit.TYPE_WHITE:
+				rabbitDrop(player, mob, "_white");
+				return true;
+			case Rabbit.TYPE_WHITE_SPLOTCHED:
+				rabbitDrop(player, mob, "_splotched");
+				return true;
+			}
+			return false;
+
+		}
+		return false;
+	}
+
+	private void rabbitDrop(Player player, Mob mob, String type) {
+		final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
+				"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(mob.getType()).getPath() + type);
+		final LootTable lootTable = player.getServer().getLootTables().get(lootTableLocation);
+
+		if (lootTable != LootTable.EMPTY) {
+			killAndDrop(player, lootTableLocation, mob);
+		}
+	}
+
 	@Override
 	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
 			TooltipFlag pIsAdvanced) {
-		pTooltipComponents.add(Component.literal("  ")
-				.append(Component.translatable(Butchercraft.MOD_ID + ".butcherknife.rightclick"))
-				.withStyle(ChatFormatting.DARK_PURPLE));
+		pTooltipComponents.add(
+				Component.literal("  ").append(Component.translatable(Butchercraft.MOD_ID + ".butcherknife.rightclick"))
+						.withStyle(ChatFormatting.DARK_PURPLE));
 	}
 }

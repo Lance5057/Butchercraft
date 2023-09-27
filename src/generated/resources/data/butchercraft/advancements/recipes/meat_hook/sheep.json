@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "butchercraft:sheeptest"
+        "recipe": "butchercraft:sheep"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "butchercraft:sheeptest"
+      "butchercraft:sheep"
     ]
   }
 }

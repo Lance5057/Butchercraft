@@ -256,10 +256,7 @@ public class ButchercraftItems {
 
 	public static final RegistryObject<Item> CASING = ITEMS.register("casing",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<Item> BUNNY_TAIL = ITEMS.register("bunny_tail",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<Item> BUNNY_EARS = ITEMS.register("bunny_ears",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+
 	public static final RegistryObject<Item> BEAK = ITEMS.register("beak",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
@@ -271,10 +268,47 @@ public class ButchercraftItems {
 			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
 	public static final RegistryObject<CarcassItem> CHICKEN_CARCASS = ITEMS.register("chicken_carcass",
 			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
-	public static final RegistryObject<CarcassItem> RABBIT_CARCASS = ITEMS.register("rabbit_carcass",
-			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
 	public static final RegistryObject<CarcassItem> GOAT_CARCASS = ITEMS.register("goat_carcass",
 			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
+
+	public static final RegistryObject<CarcassItem> BLACK_RABBIT_CARCASS = ITEMS.register("black_rabbit_carcass",
+			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
+	public static final RegistryObject<CarcassItem> BROWN_RABBIT_CARCASS = ITEMS.register("brown_rabbit_carcass",
+			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
+	public static final RegistryObject<CarcassItem> SPLOTCHED_RABBIT_CARCASS = ITEMS.register(
+			"splotched_rabbit_carcass", () -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
+	public static final RegistryObject<CarcassItem> GOLD_RABBIT_CARCASS = ITEMS.register("gold_rabbit_carcass",
+			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
+	public static final RegistryObject<CarcassItem> SALT_RABBIT_CARCASS = ITEMS.register("salt_rabbit_carcass",
+			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
+	public static final RegistryObject<CarcassItem> WHITE_RABBIT_CARCASS = ITEMS.register("white_rabbit_carcass",
+			() -> new CarcassItem(new Item.Properties().tab(BUTCHER_TAB).stacksTo(1)));
+
+	public static final RegistryObject<Item> BLACK_BUNNY_TAIL = ITEMS.register("black_bunny_tail",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> BROWN_BUNNY_TAIL = ITEMS.register("brown_bunny_tail",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> SPLOTCHED_BUNNY_TAIL = ITEMS.register("splotched_bunny_tail",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> GOLD_BUNNY_TAIL = ITEMS.register("gold_bunny_tail",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> SALT_BUNNY_TAIL = ITEMS.register("salt_bunny_tail",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> WHITE_BUNNY_TAIL = ITEMS.register("white_bunny_tail",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+
+	public static final RegistryObject<Item> BLACK_BUNNY_EARS = ITEMS.register("black_bunny_ears",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> BROWN_BUNNY_EARS = ITEMS.register("brown_bunny_ears",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> SPLOTCHED_BUNNY_EARS = ITEMS.register("splotched_bunny_ears",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> GOLD_BUNNY_EARS = ITEMS.register("gold_bunny_ears",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> SALT_BUNNY_EARS = ITEMS.register("salt_bunny_ears",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> WHITE_BUNNY_EARS = ITEMS.register("white_bunny_ears",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static final RegistryObject<BlockItem> COW_HIDE = ITEMS.register("cow_hide",
 			() -> new BlockItem(ButchercraftBlocks.COW_HIDE_CARPET.get(), new Item.Properties().tab(BUTCHER_TAB)));

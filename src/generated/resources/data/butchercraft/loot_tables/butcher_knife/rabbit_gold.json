@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:rabbit_carcass"
+          "name": "butchercraft:gold_rabbit_carcass"
         }
       ],
       "rolls": 1.0

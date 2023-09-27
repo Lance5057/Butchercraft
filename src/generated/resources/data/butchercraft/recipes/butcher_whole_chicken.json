@@ -8,7 +8,7 @@
     {
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:meat_hook/butcher_chicken",
+      "loot_table": "butchercraft:butcherblock/butcher_chicken",
       "models": [
         {
           "IsBlock": true,

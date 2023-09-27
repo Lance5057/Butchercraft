@@ -24,10 +24,32 @@ public class ButcherKnifeLootTables implements Consumer<BiConsumer<ResourceLocat
 				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.PIG_CARCASS.get()))));
 		createButcherKnifeLootTable(consumer, EntityType.CHICKEN, new LootTable.Builder()
 				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.CHICKEN_CARCASS.get()))));
-		createButcherKnifeLootTable(consumer, EntityType.RABBIT, new LootTable.Builder()
-				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.RABBIT_CARCASS.get()))));
 		createButcherKnifeLootTable(consumer, EntityType.GOAT, new LootTable.Builder()
 				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.GOAT_CARCASS.get()))));
+
+		createRabbitButcherKnifeLootTable(consumer, EntityType.RABBIT,
+				new LootTable.Builder().withPool(
+						LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.GOLD_RABBIT_CARCASS.get()))),
+				"_gold");
+		createRabbitButcherKnifeLootTable(consumer, EntityType.RABBIT,
+				new LootTable.Builder().withPool(
+						LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.BLACK_RABBIT_CARCASS.get()))),
+				"_black");
+		createRabbitButcherKnifeLootTable(consumer, EntityType.RABBIT,
+				new LootTable.Builder().withPool(
+						LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.BROWN_RABBIT_CARCASS.get()))),
+				"_brown");
+		createRabbitButcherKnifeLootTable(consumer, EntityType.RABBIT,
+				new LootTable.Builder().withPool(
+						LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.SALT_RABBIT_CARCASS.get()))),
+				"_salt");
+		createRabbitButcherKnifeLootTable(consumer, EntityType.RABBIT, new LootTable.Builder().withPool(
+				LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get()))),
+				"_splotched");
+		createRabbitButcherKnifeLootTable(consumer, EntityType.RABBIT,
+				new LootTable.Builder().withPool(
+						LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.WHITE_RABBIT_CARCASS.get()))),
+				"_white");
 
 	}
 
@@ -37,4 +59,11 @@ public class ButcherKnifeLootTables implements Consumer<BiConsumer<ResourceLocat
 				"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entityType).getPath()), lootTable);
 	}
 
+	public static void createRabbitButcherKnifeLootTable(BiConsumer<ResourceLocation, LootTable.Builder> consumer,
+			EntityType<?> entityType, LootTable.Builder lootTable, String type) {
+		consumer.accept(
+				new ResourceLocation(Butchercraft.MOD_ID,
+						"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entityType).getPath() + type),
+				lootTable);
+	}
 }
