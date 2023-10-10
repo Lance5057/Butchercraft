@@ -2,9 +2,12 @@ package com.lance5057.butchercraft;
 
 import com.lance5057.butchercraft.armor.models.ApronModel;
 import com.lance5057.butchercraft.armor.models.BootsModel;
+import com.lance5057.butchercraft.armor.models.BunnyEarsModel;
+import com.lance5057.butchercraft.armor.models.BunnyTailModel;
 import com.lance5057.butchercraft.armor.models.GlovesModel;
 import com.lance5057.butchercraft.armor.models.MaskModel;
 import com.lance5057.butchercraft.armor.models.PaperHatModel;
+import com.lance5057.butchercraft.armor.models.PigHoodModel;
 import com.lance5057.butchercraft.capabilities.AnimalCare;
 import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
 
@@ -96,6 +99,12 @@ public class ButchercraftEvents {
 				() -> LayerDefinition.create(BootsModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
 		event.registerLayerDefinition(MaskModel.LAYER_LOCATION,
 				() -> LayerDefinition.create(MaskModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
+		event.registerLayerDefinition(BunnyEarsModel.LAYER_LOCATION,
+				() -> LayerDefinition.create(BunnyEarsModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
+		event.registerLayerDefinition(BunnyTailModel.LAYER_LOCATION,
+				() -> LayerDefinition.create(BunnyTailModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
+		event.registerLayerDefinition(PigHoodModel.LAYER_LOCATION,
+				() -> LayerDefinition.create(PigHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
 	}
 
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
@@ -107,7 +116,7 @@ public class ButchercraftEvents {
 				event.setCanceled(true);
 			}
 		}
-	} 
+	}
 
 	public static void dirtyHands(LivingEntityUseItemEvent.Finish event) {
 		if (event.getEntity().hasEffect(ButchercraftMobEffects.DIRTY.get())) {
