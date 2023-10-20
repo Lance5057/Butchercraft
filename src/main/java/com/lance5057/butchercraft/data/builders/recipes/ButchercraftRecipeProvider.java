@@ -96,7 +96,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				new AnimationFloatTransform()
 						.setRotation(new AnimatedFloatVector3().setZ(new AnimatedFloat(-45, 45, 0, 0.05f, true, true)))
 						.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
-								.setY(new AnimatedFloat(0, 0)).setZ(new AnimatedFloat(12, 0))));
+								.setY(new AnimatedFloat(8, 0)).setZ(new AnimatedFloat(8, 0))));
 	}
 
 	@Override

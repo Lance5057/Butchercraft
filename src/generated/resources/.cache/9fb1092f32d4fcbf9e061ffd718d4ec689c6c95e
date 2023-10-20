@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-21T13:23:41.4298133	Recipes
+// 1.19.2	2023-10-20T13:40:34.6850854	Recipes
 b54b39b9c55634bfd58061d81f98fceeeb60bfc6 data/butchercraft/advancements/recipes/butchercraft.items/beef_block.json
 99068a38c58955b315d8260458d2bc1a2c776f5e data/butchercraft/advancements/recipes/butchercraft.items/beef_block_to_scraps.json
 25ed530df04e3e9769f77555a31d0f910c39c0c2 data/butchercraft/advancements/recipes/butchercraft.items/beef_scraps_to_ground.json
@@ -126,7 +126,7 @@ cc4d534a757b7436c5532ae4bc3b60a61997cf34 data/butchercraft/recipes/beef_scraps_t
 e4a9220a90d75e6f1d790e7bdccaff654f6c931e data/butchercraft/recipes/beef_scrap_to_ground_beef.json
 66f1da2993e9cf8bea85b2ea66dec40ff7101919 data/butchercraft/recipes/beef_to_cubes.json
 5029083eaa1f48be33e4a5759d4f42f7303c8ba9 data/butchercraft/recipes/bone_saw.json
-efc11b75c2f26089fc78d32bd71a63cccdda961f data/butchercraft/recipes/butcher_chicken.json
+d2dcee7315bd44263c65981ea291bdbecb387fee data/butchercraft/recipes/butcher_chicken.json
 ce9bdbb2a2ecc17f3d0a366e48ca74cb0c69bac1 data/butchercraft/recipes/butcher_knife.json
 3a84fe27e3d09a9e41b2a27df646a4eee5bae403 data/butchercraft/recipes/butcher_whole_chicken.json
 40b83cb59be563daef593e3a4061333ce163dbba data/butchercraft/recipes/cooked_beef_block.json

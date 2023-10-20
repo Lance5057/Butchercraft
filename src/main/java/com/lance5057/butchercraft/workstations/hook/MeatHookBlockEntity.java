@@ -236,7 +236,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 							level.addParticle(ParticleTypes.FALLING_DRIPSTONE_LAVA,
 									worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
 									worldPosition.getY() - 0.5f - level.random.nextDouble(),
-									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2 , 0, 0, 0);
+									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
 						level.playSound(Player, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1,
 								1);
@@ -262,8 +262,16 @@ public class MeatHookBlockEntity extends BlockEntity {
 							player.getMainHandItem()))
 					.create(LootContextParamSets.EMPTY);
 			player.getServer().getLootTables().get(recipeToolsIn.lootTable).getRandomItems(pContext)
-					.forEach(itemStack -> level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
-							getBlockPos().getY() + 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0)));
+					.forEach(itemStack -> {
+//						if (player.isCrouching())
+							level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
+									getBlockPos().getY() - 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
+//						else {
+//							if (!player.getInventory().add(itemStack)) {
+//								player.drop(itemStack, false);
+//							}
+//						}
+					});
 
 		}
 	}
