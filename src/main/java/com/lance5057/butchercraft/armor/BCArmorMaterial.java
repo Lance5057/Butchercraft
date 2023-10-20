@@ -2,12 +2,15 @@ package com.lance5057.butchercraft.armor;
 
 import java.util.function.Supplier;
 
+import com.lance5057.butchercraft.ButchercraftItems;
+
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public enum BCArmorMaterial implements ArmorMaterial {
@@ -19,7 +22,35 @@ public enum BCArmorMaterial implements ArmorMaterial {
 	}), PAPER("butchercraft:paper", 3, new int[] { 1, 1, 1, 1 }, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
 
 	{
-		return Ingredient.of(ItemTags.WOOL);
+		return Ingredient.of(Items.PAPER);
+	}), BUNNY_BLACK("butchercraft:bunny_black", 3, new int[] { 0, 0, 0, 0 }, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(Items.RABBIT_HIDE);
+	}), BUNNY_BROWN("butchercraft:bunny_brown", 3, new int[] { 0, 0, 0, 0 }, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(Items.RABBIT_HIDE);
+	}), BUNNY_SPLOTCHED("butchercraft:bunny_splotched", 3, new int[] { 0, 0, 0, 0 }, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(Items.RABBIT_HIDE);
+	}), BUNNY_GOLD("butchercraft:bunny_gold", 3, new int[] { 0, 0, 0, 0 }, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(Items.RABBIT_HIDE);
+	}), BUNNY_SALT("butchercraft:bunny_salt", 3, new int[] { 0, 0, 0, 0 }, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(Items.RABBIT_HIDE);
+	}), BUNNY_WHITE("butchercraft:bunny_white", 3, new int[] { 0, 0, 0, 0 }, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(Items.RABBIT_HIDE);
+	}), PIG_HOOD("butchercraft:pig_hood", 3, new int[] { 1, 1, 1, 1}, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(ButchercraftItems.PIG_HIDE.get());
 	});
 
 	private static final int[] HEALTH_PER_SLOT = new int[] { 13, 15, 16, 11 };
