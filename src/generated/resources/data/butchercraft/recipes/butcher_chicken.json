@@ -44,7 +44,20 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5
+              }
+            }
           },
           "location": "minecraft:shears"
         }
@@ -93,7 +106,20 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5
+              }
+            }
           },
           "location": "minecraft:shears"
         }
@@ -142,7 +168,20 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5
+              }
+            }
           },
           "location": "minecraft:shears"
         }
@@ -191,7 +230,20 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5
+              }
+            }
           },
           "location": "minecraft:shears"
         }
@@ -240,7 +292,20 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5
+              }
+            }
           },
           "location": "minecraft:shears"
         }
@@ -289,7 +354,20 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5
+              }
+            }
           },
           "location": "minecraft:shears"
         }
@@ -338,7 +416,20 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5
+              }
+            }
           },
           "location": "butchercraft:gut_knife"
         }

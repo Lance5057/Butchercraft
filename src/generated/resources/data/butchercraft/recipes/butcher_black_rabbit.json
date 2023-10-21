@@ -1,14 +1,14 @@
 {
   "type": "butchercraft:butcher_block",
   "carcass": {
-    "item": "minecraft:chicken"
+    "item": "butchercraft:black_rabbit_carcass"
   },
   "group": "",
   "tools": [
     {
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:butcherblock/butcher_chicken",
+      "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
           "IsBlock": true,
@@ -17,7 +17,7 @@
             "rotation": {},
             "scale": {}
           },
-          "location": "butchercraft:meathook/chicken_gutted"
+          "location": "butchercraft:meathook/rabbit"
         },
         {
           "animation": {
@@ -59,13 +59,13 @@
               }
             }
           },
-          "location": "butchercraft:butcher_knife"
+          "location": "butchercraft:gut_knife"
         }
       ],
       "tool": {
-        "item": "butchercraft:butcher_knife"
+        "item": "butchercraft:skinning_knife"
       },
-      "uses": 12
+      "uses": 6
     }
   ]
 }

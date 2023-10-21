@@ -96,22 +96,20 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				new AnimationFloatTransform()
 						.setRotation(new AnimatedFloatVector3().setZ(new AnimatedFloat(-45, 45, 0, 0.05f, true, true)))
 						.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
-								.setY(new AnimatedFloat(8, 0)).setZ(new AnimatedFloat(8, 0))));
+								.setY(new AnimatedFloat(8, 0)).setZ(new AnimatedFloat(8, 0)))
+						.setScale(new AnimatedFloatVector3().setAll(new AnimatedFloat(1.5f, 0))));
 	}
 
 	@Override
 	protected void buildCraftingRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
 		MeatHookRecipeBuilder.shapedRecipe(COW_CARCASS.get())
-				.tool(Ingredient.of(Items.BUCKET), 1, true,
-						MeatHookLoottables.BLOOD_BUCKET,
+				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow")),
 						standardHookToolModel(Items.BUCKET))
-				.tool(Ingredient.of(Items.BUCKET), 1, true,
-						MeatHookLoottables.BLOOD_BUCKET,
+				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow")),
 						standardHookToolModel(Items.BUCKET))
-				.tool(Ingredient.of(Items.BUCKET), 1, true,
-						MeatHookLoottables.BLOOD_BUCKET,
+				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow")),
 						standardHookToolModel(Items.BUCKET))
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 12, true, MeatHookLoottables.SKIN_COW,
@@ -129,8 +127,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow"));
 
 		MeatHookRecipeBuilder.shapedRecipe(SHEEP_CARCASS.get())
-				.tool(Ingredient.of(Items.BUCKET), 1, true,
-						MeatHookLoottables.BLOOD_BUCKET,
+				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep")),
 						standardHookToolModel(Items.BUCKET))
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 12, true, MeatHookLoottables.SKIN_SHEEP,
@@ -148,12 +145,10 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep"));
 
 		MeatHookRecipeBuilder.shapedRecipe(PIG_CARCASS.get())
-				.tool(Ingredient.of(Items.BUCKET), 1, true,
-						MeatHookLoottables.BLOOD_BUCKET,
+				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig")),
 						standardHookToolModel(Items.BUCKET))
-				.tool(Ingredient.of(Items.BUCKET), 1, true,
-						MeatHookLoottables.BLOOD_BUCKET,
+				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig")),
 						standardHookToolModel(Items.BUCKET))
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 12, true, MeatHookLoottables.SKIN_PIG,
@@ -194,15 +189,18 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardButcherBlockToolModel(GUT_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_chicken"));
 
-		ButcherBlockRecipeBuilder.shapedRecipe(Items.CHICKEN).tool(Ingredient.of(BUTCHER_KNIFE.get()), 12, true,
-				ButcherBlockLootTables.BUTCHER_CHICKEN,
-				new BlacklistedModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/chicken_gutted"), null, true,
-						new AnimationFloatTransform()),
-				new BlacklistedModel(ButchercraftItems.BUTCHER_KNIFE.get(), new AnimationFloatTransform()
-						.setRotation(new AnimatedFloatVector3().setZ(new AnimatedFloat(-45, 45, 0, 0.05f, true, true)))
-						.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
-								.setY(new AnimatedFloat(0, 0)).setZ(new AnimatedFloat(12, 0)))))
+		ButcherBlockRecipeBuilder.shapedRecipe(Items.CHICKEN)
+				.tool(Ingredient.of(BUTCHER_KNIFE.get()), 12, true, ButcherBlockLootTables.BUTCHER_CHICKEN,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/chicken_gutted")),
+						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_whole_chicken"));
+
+		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.BLACK_RABBIT_CARCASS.get())
+				.tool(Ingredient.of(ButchercraftItems.SKINNING_KNIFE.get()), 6, true,
+						ButcherBlockLootTables.PLUCK_CHICKEN,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/rabbit")),
+						standardButcherBlockToolModel(ButchercraftItems.SKINNING_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_black_rabbit"));
 
 		ShapedRecipeBuilder.shaped(BONE_SAW.get()).define('I', IRON_INGOT).define('S', STICK).pattern("IIS")
 				.pattern("IIS").unlockedBy("has_iron", has(IRON_INGOT))
