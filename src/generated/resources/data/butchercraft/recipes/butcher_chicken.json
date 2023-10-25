@@ -8,6 +8,130 @@
     {
       "count": 1,
       "damage": true,
+      "loot_table": "butchercraft:butcherblock/blood_bottle",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "z": {
+                "max": 8.0,
+                "min": -8.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {
+              "x": {
+                "max": -0.5,
+                "min": 0.5
+              },
+              "y": {
+                "max": -0.5,
+                "min": 0.5
+              },
+              "z": {
+                "max": -0.5,
+                "min": 0.5
+              }
+            }
+          },
+          "location": "minecraft:glass_bottle"
+        }
+      ],
+      "tool": {
+        "item": "minecraft:glass_bottle"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/blood_bottle",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/chicken"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "z": {
+                "max": 8.0,
+                "min": -8.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {
+              "x": {
+                "max": -0.5,
+                "min": 0.5
+              },
+              "y": {
+                "max": -0.5,
+                "min": 0.5
+              },
+              "z": {
+                "max": -0.5,
+                "min": 0.5
+              }
+            }
+          },
+          "location": "minecraft:glass_bottle"
+        }
+      ],
+      "tool": {
+        "item": "minecraft:glass_bottle"
+      },
+      "uses": 1
+    },
+    {
+      "count": 1,
+      "damage": true,
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -46,16 +170,16 @@
             },
             "scale": {
               "x": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "y": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "z": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               }
             }
           },
@@ -108,16 +232,16 @@
             },
             "scale": {
               "x": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "y": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "z": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               }
             }
           },
@@ -170,16 +294,16 @@
             },
             "scale": {
               "x": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "y": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "z": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               }
             }
           },
@@ -232,16 +356,16 @@
             },
             "scale": {
               "x": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "y": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "z": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               }
             }
           },
@@ -294,16 +418,16 @@
             },
             "scale": {
               "x": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "y": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "z": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               }
             }
           },
@@ -356,16 +480,16 @@
             },
             "scale": {
               "x": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "y": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "z": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               }
             }
           },
@@ -418,16 +542,16 @@
             },
             "scale": {
               "x": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "y": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               },
               "z": {
-                "max": 0.5,
-                "min": -0.5
+                "max": -0.5,
+                "min": 0.5
               }
             }
           },

@@ -44,10 +44,19 @@ public class Advancements extends AdvancementProvider {
 	private Advancement cow;
 	private Advancement pig;
 	private Advancement sheep;
+	private Advancement rabbit;
+	private Advancement chicken;
+	private Advancement goat;
+
+	private Advancement bunny_equip;
+	private Advancement taxadermy;
 
 	private Advancement whole_cow;
 	private Advancement whole_pig;
 	private Advancement whole_sheep;
+	private Advancement whole_goat;
+	private Advancement whole_chicken;
+	private Advancement whole_rabbit;
 
 	private Advancement everything;
 	private Advancement everything_plus;
@@ -144,6 +153,53 @@ public class Advancements extends AdvancementProvider {
 				.addCriterion("sheep",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.SHEEP_CARCASS.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":sheep");
+
+		goat = Advancement.Builder.advancement().parent(butcherknife)
+				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GOAT_CARCASS.get()),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.goat.name"),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.goat.desc"), null, FrameType.TASK,
+						true, true, false))
+				.addCriterion("goat",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GOAT_CARCASS.get()))
+				.save(consumer, Butchercraft.MOD_ID + ":goat");
+
+		rabbit = Advancement.Builder.advancement().parent(butcherknife)
+				.display(new DisplayInfo(new ItemStack(ButchercraftItems.BROWN_RABBIT_CARCASS.get()),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.rabbit.name"),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.rabbit.desc"), null, FrameType.TASK,
+						true, true, false))
+				.addCriterion("rabbit", InventoryChangeTrigger.TriggerInstance.hasItems(
+						ButchercraftItems.BROWN_RABBIT_CARCASS.get(), ButchercraftItems.BLACK_RABBIT_CARCASS.get(),
+						ButchercraftItems.GOLD_RABBIT_CARCASS.get(), ButchercraftItems.SALT_RABBIT_CARCASS.get(),
+						ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(), ButchercraftItems.WHITE_RABBIT_CARCASS.get()))
+				.save(consumer, Butchercraft.MOD_ID + ":rabbit");
+
+		chicken = Advancement.Builder.advancement().parent(butcherknife)
+				.display(new DisplayInfo(new ItemStack(ButchercraftItems.CHICKEN_CARCASS.get()),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.chicken.name"),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.chicken.desc"), null, FrameType.TASK,
+						true, true, false))
+				.addCriterion("chicken",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.CHICKEN_CARCASS.get()))
+				.save(consumer, Butchercraft.MOD_ID + ":chicken");
+
+//		bunny_equip = Advancement.Builder.advancement().parent(butcherknife)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.WHITE_BUNNY_TAIL.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.bunny_equip.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.bunny_equip.desc"), null, FrameType.TASK,
+//						true, true, false))
+//				.addCriterion("bunny_equip",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.CHICKEN_CARCASS.get()))
+//				.save(consumer, Butchercraft.MOD_ID + ":bunny_equip");
+//		
+//		taxadermy = Advancement.Builder.advancement().parent(butcherknife)
+//				.display(new DisplayInfo(new ItemStack(Items.HAY_BLOCK),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.taxadermy.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.taxadermy.desc"), null, FrameType.TASK,
+//						true, true, false))
+//				.addCriterion("taxadermy",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.CHICKEN_CARCASS.get()))
+//				.save(consumer, Butchercraft.MOD_ID + ":taxadermy");
 
 		whole_cow = Advancement.Builder.advancement().parent(cow)
 				.display(new DisplayInfo(new ItemStack(Items.COOKED_BEEF),
