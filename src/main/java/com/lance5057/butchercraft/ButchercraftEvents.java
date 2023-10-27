@@ -10,6 +10,7 @@ import com.lance5057.butchercraft.armor.models.PaperHatModel;
 import com.lance5057.butchercraft.armor.models.PigHoodModel;
 import com.lance5057.butchercraft.capabilities.AnimalCare;
 import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
+import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
 
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -21,14 +22,17 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Cow;
+import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.item.PotionItem;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -99,12 +103,12 @@ public class ButchercraftEvents {
 				() -> LayerDefinition.create(BootsModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
 		event.registerLayerDefinition(MaskModel.LAYER_LOCATION,
 				() -> LayerDefinition.create(MaskModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 32, 32));
-		event.registerLayerDefinition(BunnyEarsModel.LAYER_LOCATION,
-				() -> LayerDefinition.create(BunnyEarsModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
-		event.registerLayerDefinition(BunnyTailModel.LAYER_LOCATION,
-				() -> LayerDefinition.create(BunnyTailModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
-		event.registerLayerDefinition(PigHoodModel.LAYER_LOCATION,
-				() -> LayerDefinition.create(PigHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(BunnyEarsModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(BunnyEarsModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
+		event.registerLayerDefinition(BunnyTailModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(BunnyTailModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
+		event.registerLayerDefinition(PigHoodModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(PigHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
 	}
 
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
@@ -143,6 +147,15 @@ public class ButchercraftEvents {
 				z.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0));
 				z.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 0));
 			}
+		}
+	}
+
+	// Hood Tempt Goals
+	public static void EntityJoined(EntityJoinLevelEvent event) {
+		Entity e = event.getEntity();
+		if (e instanceof Pig p) {
+			p.goalSelector.addGoal(4,
+					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.PIG_HOOD.get()), false));
 		}
 	}
 }

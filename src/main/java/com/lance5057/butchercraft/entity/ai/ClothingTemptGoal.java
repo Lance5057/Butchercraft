@@ -10,7 +10,6 @@ public class ClothingTemptGoal extends TemptGoal {
 
 	public ClothingTemptGoal(PathfinderMob pMob, double pSpeedModifier, Ingredient pItems, boolean pCanScare) {
 		super(pMob, pSpeedModifier, pItems, pCanScare);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

@@ -38,13 +38,13 @@ public class BunnyEarsModel extends HumanoidModel<LivingEntity> {
 
 		head.addOrReplaceChild("ear_l",
 				CubeListBuilder.create().texOffs(6, 0).mirror()
-						.addBox(-2.5F, -13.0F, -1.0F, 2.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false),
-				PartPose.offsetAndRotation(0.0F, 0.0F, 1.0F, 0.0F, -0.2618F, 0.0F));
+						.addBox(-3.0F, -14.0F, -1.0F, 2.0F, 7.0F, 1.0F, new CubeDeformation(0.25F)).mirror(false),
+				PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, -0.2618F, -0.1F));
 
 		head.addOrReplaceChild("ear_r",
 				CubeListBuilder.create().texOffs(0, 0).mirror()
-						.addBox(0.5F, -13.0F, -1.0F, 2.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false),
-				PartPose.offsetAndRotation(0.0F, 0.0F, 1.0F, 0.0F, 0.2618F, 0.0F));
+						.addBox(1.0F, -14.0F, -1.0F, 2.0F, 7.0F, 1.0F, new CubeDeformation(0.25F)).mirror(false),
+				PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.2618F, 0.1F));
 
 		return meshdefinition;
 	}
