@@ -21,8 +21,12 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.entity.animal.Rabbit;
+import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MilkBucketItem;
@@ -156,6 +160,32 @@ public class ButchercraftEvents {
 		if (e instanceof Pig p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.PIG_HOOD.get()), false));
+		}
+		if (e instanceof Cow p) {
+			p.goalSelector.addGoal(4,
+					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.COW_HOOD.get()), false));
+		}
+		if (e instanceof Sheep p) {
+			p.goalSelector.addGoal(4,
+					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.SHEEP_HOOD.get()), false));
+		}
+		if (e instanceof Goat p) {
+			p.goalSelector.addGoal(4,
+					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.GOAT_HOOD.get()), false));
+		}
+		if (e instanceof Chicken p) {
+			p.goalSelector.addGoal(4,
+					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.CHICKEN_HOOD.get()), false));
+		}
+		if (e instanceof Rabbit p) {
+			p.goalSelector.addGoal(4, new ClothingTemptGoal(p, 1.5D,
+					Ingredient.of(ButchercraftItems.BLACK_BUNNY_EARS.get(), ButchercraftItems.BROWN_BUNNY_EARS.get(),
+							ButchercraftItems.GOLD_BUNNY_EARS.get(), ButchercraftItems.SALT_BUNNY_EARS.get(),
+							ButchercraftItems.SPLOTCHED_BUNNY_EARS.get(), ButchercraftItems.WHITE_BUNNY_EARS.get(),
+							ButchercraftItems.BLACK_BUNNY_TAIL.get(), ButchercraftItems.BROWN_BUNNY_TAIL.get(),
+							ButchercraftItems.GOLD_BUNNY_TAIL.get(), ButchercraftItems.SALT_BUNNY_TAIL.get(),
+							ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get(), ButchercraftItems.WHITE_BUNNY_TAIL.get()),
+					false));
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.blocks.AnimalHeadBlock;
 import com.lance5057.butchercraft.blocks.HideBlock;
 import com.lance5057.butchercraft.blocks.TaxidermyBlock;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockBlock;
@@ -8,7 +9,9 @@ import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.SkullBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.WallSkullBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -69,6 +72,13 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<LiquidBlock> BLOOD_FLUID_BLOCK = ButchercraftBlocks.BLOCKS
 			.register("blood_fluid_block", () -> new LiquidBlock(ButchercraftFluids.BLOOD_FLUID,
 					BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noLootTable()));
+
+	public static final RegistryObject<SkullBlock> COW_HEAD = BLOCKS.register("cow_head",
+			() -> new SkullBlock(AnimalHeadBlock.Types.COW,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+	public static final RegistryObject<WallSkullBlock> COW_HEAD_WALL = BLOCKS.register("cow_head_wall",
+			() -> new WallSkullBlock(AnimalHeadBlock.Types.COW,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(COW_HEAD.get())));
 
 	public static void register(IEventBus modBus) {
 

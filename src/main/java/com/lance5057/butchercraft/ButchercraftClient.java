@@ -2,15 +2,19 @@ package com.lance5057.butchercraft;
 
 import java.util.Map;
 
+import com.lance5057.butchercraft.blocks.AnimalHeadBlock;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRenderer;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRenderer;
 import com.lance5057.butchercraft.workstations.hook.MeatHookRenderer;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.SkullModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent.RegisterAdditional;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -41,5 +45,11 @@ public class ButchercraftClient {
 
 			event.register(rl2);
 		});
+	}
+
+	@SubscribeEvent
+	public static void registerSkulls(EntityRenderersEvent.CreateSkullModels event) {
+		event.registerSkullModel(AnimalHeadBlock.Types.COW, new SkullModel(event.getEntityModelSet()
+				.bakeLayer(new ModelLayerLocation(new ResourceLocation(Butchercraft.MOD_ID, "cow_head"), "main"))));
 	}
 }

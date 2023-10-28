@@ -26,6 +26,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -312,8 +314,16 @@ public class ButchercraftItems {
 			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_SALT, new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BunnyEarsItem> WHITE_BUNNY_EARS = ITEMS.register("white_bunny_ears",
 			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_WHITE, new Item.Properties().tab(BUTCHER_TAB)));
-	
+
 	public static final RegistryObject<PigHoodItem> PIG_HOOD = ITEMS.register("pig_hood",
+			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<PigHoodItem> COW_HOOD = ITEMS.register("cow_hood",
+			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<PigHoodItem> SHEEP_HOOD = ITEMS.register("sheep_hood",
+			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<PigHoodItem> GOAT_HOOD = ITEMS.register("goat_hood",
+			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<PigHoodItem> CHICKEN_HOOD = ITEMS.register("chicken_hood",
 			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static final RegistryObject<BlockItem> COW_HIDE = ITEMS.register("cow_hide",
@@ -417,6 +427,11 @@ public class ButchercraftItems {
 					new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final RegistryObject<Item> BLOOD_FLUID_BOTTLE = ITEMS.register("blood_fluid_bottle",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.BUCKET).stacksTo(16)));
+
+	public static final RegistryObject<Item> COW_HEAD_ITEM = ITEMS.register("cow_head_item",
+			() -> new StandingAndWallBlockItem(ButchercraftBlocks.COW_HEAD.get(),
+					ButchercraftBlocks.COW_HEAD_WALL.get(),
+					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);

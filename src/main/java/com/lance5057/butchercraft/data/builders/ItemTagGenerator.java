@@ -112,7 +112,6 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				.addTag(ButchercraftItemTags.CHICKEN_CARCASS).addTag(ButchercraftItemTags.GOAT_CARCASS)
 				.addTag(ButchercraftItemTags.PIG_CARCASS).addTag(ButchercraftItemTags.RABBIT_CARCASS)
 				.addTag(ButchercraftItemTags.SHEEP_CARCASS);
-		
-		tag(Tags.EntityTypes.)
+	
 	}
 }
