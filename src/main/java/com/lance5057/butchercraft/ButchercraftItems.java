@@ -6,6 +6,7 @@ import com.lance5057.butchercraft.armor.BootsItem;
 import com.lance5057.butchercraft.armor.BunnyEarsItem;
 import com.lance5057.butchercraft.armor.BunnyTailItem;
 import com.lance5057.butchercraft.armor.GlovesItem;
+import com.lance5057.butchercraft.armor.GoatHoodItem;
 import com.lance5057.butchercraft.armor.MaskItem;
 import com.lance5057.butchercraft.armor.PaperHatItem;
 import com.lance5057.butchercraft.armor.PigHoodItem;
@@ -321,8 +322,8 @@ public class ButchercraftItems {
 			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<PigHoodItem> SHEEP_HOOD = ITEMS.register("sheep_hood",
 			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<PigHoodItem> GOAT_HOOD = ITEMS.register("goat_hood",
-			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<GoatHoodItem> GOAT_HOOD = ITEMS.register("goat_hood",
+			() -> new GoatHoodItem(BCArmorMaterial.GOAT_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<PigHoodItem> CHICKEN_HOOD = ITEMS.register("chicken_hood",
 			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
 

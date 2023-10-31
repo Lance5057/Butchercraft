@@ -5,6 +5,7 @@ import com.lance5057.butchercraft.armor.models.BootsModel;
 import com.lance5057.butchercraft.armor.models.BunnyEarsModel;
 import com.lance5057.butchercraft.armor.models.BunnyTailModel;
 import com.lance5057.butchercraft.armor.models.GlovesModel;
+import com.lance5057.butchercraft.armor.models.GoatHoodModel;
 import com.lance5057.butchercraft.armor.models.MaskModel;
 import com.lance5057.butchercraft.armor.models.PaperHatModel;
 import com.lance5057.butchercraft.armor.models.PigHoodModel;
@@ -113,6 +114,8 @@ public class ButchercraftEvents {
 				.create(BunnyTailModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
 		event.registerLayerDefinition(PigHoodModel.LAYER_LOCATION, () -> LayerDefinition
 				.create(PigHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(GoatHoodModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(GoatHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
 	}
 
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
