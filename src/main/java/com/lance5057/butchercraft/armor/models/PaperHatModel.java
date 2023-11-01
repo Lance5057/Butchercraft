@@ -1,8 +1,6 @@
 package com.lance5057.butchercraft.armor.models;
 
 import com.lance5057.butchercraft.Butchercraft;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;

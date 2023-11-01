@@ -2,14 +2,11 @@ package com.lance5057.butchercraft;
 
 import java.util.Map;
 
-import com.lance5057.butchercraft.blocks.AnimalHeadBlock;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRenderer;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRenderer;
 import com.lance5057.butchercraft.workstations.hook.MeatHookRenderer;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.SkullModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;

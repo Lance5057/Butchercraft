@@ -5,8 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.lance5057.butchercraft.entity.ButchercraftVillagers;
 
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.Entity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;

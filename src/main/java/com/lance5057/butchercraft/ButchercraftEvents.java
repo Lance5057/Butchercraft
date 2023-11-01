@@ -4,11 +4,13 @@ import com.lance5057.butchercraft.armor.models.ApronModel;
 import com.lance5057.butchercraft.armor.models.BootsModel;
 import com.lance5057.butchercraft.armor.models.BunnyEarsModel;
 import com.lance5057.butchercraft.armor.models.BunnyTailModel;
+import com.lance5057.butchercraft.armor.models.CowHoodModel;
 import com.lance5057.butchercraft.armor.models.GlovesModel;
 import com.lance5057.butchercraft.armor.models.GoatHoodModel;
 import com.lance5057.butchercraft.armor.models.MaskModel;
 import com.lance5057.butchercraft.armor.models.PaperHatModel;
 import com.lance5057.butchercraft.armor.models.PigHoodModel;
+import com.lance5057.butchercraft.armor.models.SheepHoodModel;
 import com.lance5057.butchercraft.capabilities.AnimalCare;
 import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
@@ -116,6 +118,10 @@ public class ButchercraftEvents {
 				.create(PigHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
 		event.registerLayerDefinition(GoatHoodModel.LAYER_LOCATION, () -> LayerDefinition
 				.create(GoatHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(CowHoodModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(CowHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(SheepHoodModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(SheepHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
 	}
 
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {

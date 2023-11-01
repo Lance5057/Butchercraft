@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft;
 
 import com.mojang.serialization.Codec;
+
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

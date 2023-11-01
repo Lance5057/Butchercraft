@@ -17,13 +17,13 @@ import net.minecraft.world.entity.LivingEntity;
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
-public class CowHoodModel extends HumanoidModel<LivingEntity> {
+public class SheepHoodModel extends HumanoidModel<LivingEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
-			new ResourceLocation(Butchercraft.MOD_ID, "cow_hood"), "main");
+			new ResourceLocation(Butchercraft.MOD_ID, "sheep_model"), "main");
 
-	public CowHoodModel(ModelPart root) {
+	public SheepHoodModel(ModelPart root) {
 		super(root);
 	}
 
@@ -31,18 +31,11 @@ public class CowHoodModel extends HumanoidModel<LivingEntity> {
 		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition head = partdefinition.addOrReplaceChild("head",
+		PartDefinition bb_main = partdefinition.addOrReplaceChild("head",
 				CubeListBuilder.create().texOffs(0, 0)
-						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.35F)).texOffs(24, 2)
-						.addBox(-6.0F, -10.0F, -0.6F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(24, 2)
-						.addBox(5.0F, -10.0F, -0.6F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, -5.0F, 0.6F, -0.2618F, 0.0F, 0.0F));
-
-//		head.addOrReplaceChild("head",
-//				CubeListBuilder.create().texOffs(0, 0)
-//						.addBox(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.1F)).texOffs(16, 16)
-//						.addBox(-2.0F, 0.0F, -5.0F, 4.0F, 3.0F, 1.0F, new CubeDeformation(0.1F)),
-//				PartPose.offsetAndRotation(0.0F, -5.0F, 0.0F, -0.0F, 0.0F, 0.0F));
+						.addBox(-4.0F, -8.0F, -5.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.35F)).texOffs(32, 0)
+						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.6F)),
+				PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create(),
@@ -50,10 +43,6 @@ public class CowHoodModel extends HumanoidModel<LivingEntity> {
 
 		body.addOrReplaceChild("body_3", CubeListBuilder.create().texOffs(0, 37).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 4.0F,
 				6.0F, new CubeDeformation(0.1F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F));
-
-		body.addOrReplaceChild("body_1", CubeListBuilder.create().texOffs(0, 20).addBox(-10.0F, -1.0F, 0.0F, 20.0F,
-				16.0F, 0.1F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, 0.0F, 3.0F, 0.2618F, 0.0F, 0.0F));
 
 		return meshdefinition;
 	}

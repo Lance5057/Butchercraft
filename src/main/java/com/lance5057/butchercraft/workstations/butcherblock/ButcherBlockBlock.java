@@ -2,7 +2,6 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 
 import javax.annotation.Nonnull;
 
-import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
 import net.minecraft.core.BlockPos;

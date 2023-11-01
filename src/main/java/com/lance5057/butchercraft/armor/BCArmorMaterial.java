@@ -55,6 +55,14 @@ public enum BCArmorMaterial implements ArmorMaterial {
 
 	{
 		return Ingredient.of(ButchercraftItems.GOAT_HIDE.get());
+	}), COW_HOOD("butchercraft:cow_hood", 3, new int[] { 1, 1, 1, 1}, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(ButchercraftItems.COW_HIDE.get());
+	}), SHEEP_HOOD("butchercraft:sheep_hood", 3, new int[] { 1, 1, 1, 1}, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(ButchercraftItems.SHEEP_HIDE.get());
 	});
 
 	private static final int[] HEALTH_PER_SLOT = new int[] { 13, 15, 16, 11 };
