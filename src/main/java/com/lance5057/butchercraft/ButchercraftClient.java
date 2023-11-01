@@ -49,7 +49,7 @@ public class ButchercraftClient {
 
 	@SubscribeEvent
 	public static void registerSkulls(EntityRenderersEvent.CreateSkullModels event) {
-		event.registerSkullModel(AnimalHeadBlock.Types.COW, new SkullModel(event.getEntityModelSet()
-				.bakeLayer(new ModelLayerLocation(new ResourceLocation(Butchercraft.MOD_ID, "cow_head"), "main"))));
+//		event.registerSkullModel(AnimalHeadBlock.Types.COW, new SkullModel(event.getEntityModelSet()
+//				.bakeLayer(new ModelLayerLocation(new ResourceLocation(Butchercraft.MOD_ID, "cow_head"), "main"))));
 	}
 }
