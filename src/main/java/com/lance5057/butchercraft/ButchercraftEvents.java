@@ -4,6 +4,7 @@ import com.lance5057.butchercraft.armor.models.ApronModel;
 import com.lance5057.butchercraft.armor.models.BootsModel;
 import com.lance5057.butchercraft.armor.models.BunnyEarsModel;
 import com.lance5057.butchercraft.armor.models.BunnyTailModel;
+import com.lance5057.butchercraft.armor.models.ChickenMaskModel;
 import com.lance5057.butchercraft.armor.models.CowHoodModel;
 import com.lance5057.butchercraft.armor.models.GlovesModel;
 import com.lance5057.butchercraft.armor.models.GoatHoodModel;
@@ -122,6 +123,8 @@ public class ButchercraftEvents {
 				.create(CowHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
 		event.registerLayerDefinition(SheepHoodModel.LAYER_LOCATION, () -> LayerDefinition
 				.create(SheepHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
+		event.registerLayerDefinition(ChickenMaskModel.LAYER_LOCATION, () -> LayerDefinition
+				.create(ChickenMaskModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 	}
 
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
@@ -184,7 +187,7 @@ public class ButchercraftEvents {
 		}
 		if (e instanceof Chicken p) {
 			p.goalSelector.addGoal(4,
-					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.CHICKEN_HOOD.get()), false));
+					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.CHICKEN_MASK.get()), false));
 		}
 		if (e instanceof Rabbit p) {
 			p.goalSelector.addGoal(4, new ClothingTemptGoal(p, 1.5D,

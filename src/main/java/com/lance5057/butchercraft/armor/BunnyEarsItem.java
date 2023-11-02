@@ -26,13 +26,6 @@ public class BunnyEarsItem extends ArmorItem {
 	}
 
 	@Override
-	public void onArmorTick(ItemStack stack, Level level, Player player) {
-		if (level instanceof ServerLevel s) {
-			player.addEffect(new MobEffectInstance(MobEffects.JUMP, 20, 0, false, false, true));
-		}
-	}
-
-	@Override
 	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
 		consumer.accept(new IClientItemExtensions() {
 

@@ -63,6 +63,10 @@ public enum BCArmorMaterial implements ArmorMaterial {
 
 	{
 		return Ingredient.of(ButchercraftItems.SHEEP_HIDE.get());
+	}), CHICKEN_MASK("butchercraft:chicken_mask", 3, new int[] { 1, 1, 1, 1}, 10, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
+
+	{
+		return Ingredient.of(Items.FEATHER);
 	});
 
 	private static final int[] HEALTH_PER_SLOT = new int[] { 13, 15, 16, 11 };

@@ -5,6 +5,7 @@ import com.lance5057.butchercraft.armor.BCArmorMaterial;
 import com.lance5057.butchercraft.armor.BootsItem;
 import com.lance5057.butchercraft.armor.BunnyEarsItem;
 import com.lance5057.butchercraft.armor.BunnyTailItem;
+import com.lance5057.butchercraft.armor.ChickenMaskItem;
 import com.lance5057.butchercraft.armor.CowHoodItem;
 import com.lance5057.butchercraft.armor.GlovesItem;
 import com.lance5057.butchercraft.armor.GoatHoodItem;
@@ -326,8 +327,8 @@ public class ButchercraftItems {
 			() -> new SheepHoodItem(BCArmorMaterial.SHEEP_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<GoatHoodItem> GOAT_HOOD = ITEMS.register("goat_hood",
 			() -> new GoatHoodItem(BCArmorMaterial.GOAT_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<PigHoodItem> CHICKEN_HOOD = ITEMS.register("chicken_hood",
-			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<ChickenMaskItem> CHICKEN_MASK = ITEMS.register("chicken_mask",
+			() -> new ChickenMaskItem(BCArmorMaterial.CHICKEN_MASK, new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static final RegistryObject<BlockItem> COW_HIDE = ITEMS.register("cow_hide",
 			() -> new BlockItem(ButchercraftBlocks.COW_HIDE_CARPET.get(), new Item.Properties().tab(BUTCHER_TAB)));

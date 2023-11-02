@@ -33,7 +33,7 @@ public class SheepHoodModel extends HumanoidModel<LivingEntity> {
 
 		PartDefinition bb_main = partdefinition.addOrReplaceChild("head",
 				CubeListBuilder.create().texOffs(0, 0)
-						.addBox(-4.0F, -8.0F, -5.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.35F)).texOffs(32, 0)
+						.addBox(-3.0F, -7.0F, -6.0F, 6.0F, 6.0F, 8.0F, new CubeDeformation(0.35F)).texOffs(32, 0)
 						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.6F)),
 				PartPose.offset(0.0F, 24.0F, 0.0F));
 
@@ -43,6 +43,10 @@ public class SheepHoodModel extends HumanoidModel<LivingEntity> {
 
 		body.addOrReplaceChild("body_3", CubeListBuilder.create().texOffs(0, 37).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 4.0F,
 				6.0F, new CubeDeformation(0.1F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F));
+		
+		body.addOrReplaceChild("body_1", CubeListBuilder.create().texOffs(0, 20).addBox(-10.0F, -1.0F, 0.0F, 20.0F,
+				16.0F, 0.1F, new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 0.0F, 3.0F, 0.2618F, 0.0F, 0.0F));
 
 		return meshdefinition;
 	}
