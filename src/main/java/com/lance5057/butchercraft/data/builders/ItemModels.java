@@ -162,6 +162,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
 		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
 
+		forItem(ButchercraftItems.GOAT_CHOP, "goat_steak");
+		forItem(ButchercraftItems.COOKED_GOAT_CHOP, "cooked_goat_steak");
 		forItem(ButchercraftItems.GOAT_STEW_MEAT, "stew_goat");
 		forItem(ButchercraftItems.COOKED_GOAT_STEW_MEAT, "cooked_stew_goat");
 		forItem(ButchercraftItems.GOAT_ROAST, "roast");
@@ -236,14 +238,14 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.BOOTS, "boots");
 		forItem(ButchercraftItems.MASK, "mask");
 		forItem(ButchercraftItems.GLOVES, "gloves");
-		
+
 		forItem(ButchercraftItems.BLACK_BUNNY_EARS, "black_bunny_ears");
 		forItem(ButchercraftItems.BROWN_BUNNY_EARS, "brown_bunny_ears");
 		forItem(ButchercraftItems.WHITE_BUNNY_EARS, "white_bunny_ears");
 		forItem(ButchercraftItems.GOLD_BUNNY_EARS, "gold_bunny_ears");
 		forItem(ButchercraftItems.SPLOTCHED_BUNNY_EARS, "splotched_bunny_ears");
 		forItem(ButchercraftItems.SALT_BUNNY_EARS, "salt_bunny_ears");
-		
+
 		forItem(ButchercraftItems.BLACK_BUNNY_TAIL, "black_bunny_tail");
 		forItem(ButchercraftItems.BROWN_BUNNY_TAIL, "brown_bunny_tail");
 		forItem(ButchercraftItems.WHITE_BUNNY_TAIL, "white_bunny_tail");

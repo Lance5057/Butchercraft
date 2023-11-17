@@ -1,0 +1,71 @@
+{
+  "type": "butchercraft:butcher_block",
+  "carcass": {
+    "item": "minecraft:rabbit"
+  },
+  "group": "",
+  "tools": [
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/butcher_rabbit",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:meathook/rabbit_skinned"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "z": {
+                "max": 8.0,
+                "min": -8.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {
+              "x": {
+                "max": -0.5,
+                "min": 0.5
+              },
+              "y": {
+                "max": -0.5,
+                "min": 0.5
+              },
+              "z": {
+                "max": -0.5,
+                "min": 0.5
+              }
+            }
+          },
+          "location": "butchercraft:butcher_knife"
+        }
+      ],
+      "tool": {
+        "item": "butchercraft:butcher_knife"
+      },
+      "uses": 12
+    }
+  ]
+}

@@ -165,6 +165,24 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardHookToolModel(BUTCHER_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pig"));
 
+		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.GOAT_CARCASS.get())
+				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat")),
+						standardHookToolModel(Items.BUCKET))
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 12, true, MeatHookLoottables.SKIN_GOAT,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.tool(Ingredient.of(BONE_SAW.get()), 12, true, MeatHookLoottables.BISECT_GOAT,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat_skinned")),
+						standardHookToolModel(BONE_SAW.get()))
+				.tool(Ingredient.of(GUT_KNIFE.get()), 12, true, MeatHookLoottables.DISEMBOWEL_GOAT,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat_gutted")),
+						standardHookToolModel(GUT_KNIFE.get()))
+				.tool(Ingredient.of(BUTCHER_KNIFE.get()), 12, true, MeatHookLoottables.BUTCHER_GOAT,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat_bisected")),
+						standardHookToolModel(BUTCHER_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat"));
+
 		ButcherBlockRecipeBuilder.shapedRecipe(CHICKEN_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/chicken")),
@@ -216,6 +234,12 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/rabbit_skinned")),
 						standardButcherBlockToolModel(ButchercraftItems.GUT_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_black_rabbit"));
+
+		ButcherBlockRecipeBuilder.shapedRecipe(Items.RABBIT)
+				.tool(Ingredient.of(BUTCHER_KNIFE.get()), 12, true, ButcherBlockLootTables.BUTCHER_RABBIT,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/rabbit_skinned")),
+						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_whole_rabbit"));
 
 		ShapedRecipeBuilder.shaped(BONE_SAW.get()).define('I', IRON_INGOT).define('S', STICK).pattern("IIS")
 				.pattern("IIS").unlockedBy("has_iron", has(IRON_INGOT))

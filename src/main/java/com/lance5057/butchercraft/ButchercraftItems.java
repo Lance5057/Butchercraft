@@ -136,6 +136,10 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.LAMB_STEWMEAT)));
 
 	// GOAT
+	public static final RegistryObject<Item> COOKED_GOAT_CHOP = ITEMS.register("cooked_goat_chop",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.COOKED_LAMB_SCRAPS)));
+	public static final RegistryObject<Item> GOAT_CHOP = ITEMS.register("goat_chop",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.LAMB_SCRAPS)));
 	public static final RegistryObject<Item> COOKED_GOAT_SCRAPS = ITEMS.register("cooked_goat_scraps",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsSheep.COOKED_LAMB_SCRAPS)));
 	public static final RegistryObject<Item> GOAT_SCRAPS = ITEMS.register("goat_scraps",

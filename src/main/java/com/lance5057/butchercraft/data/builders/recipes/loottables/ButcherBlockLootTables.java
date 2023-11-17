@@ -40,6 +40,9 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 	public static final ResourceLocation DEOFFAL_RABBIT = new ResourceLocation(Butchercraft.MOD_ID,
 			"butcherblock/gut_rabbit");
 
+	public static final ResourceLocation BUTCHER_RABBIT = new ResourceLocation(Butchercraft.MOD_ID,
+			"butcherblock/butcher_rabbit");
+
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
 		t.accept(BLOOD_BOTTLE, LootTable.lootTable()
@@ -119,6 +122,14 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 8))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.FAT.get(), 2, 6))
 						.withPool(MeatHookLoottables.createPoolWithItem(Items.RABBIT, 1)));
+
+		t.accept(BUTCHER_RABBIT,
+				LootTable.lootTable()
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_LEG.get(), 4))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SADDLE.get(), 2))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_THIGH.get(), 2))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 4, 8))
+						.withPool(MeatHookLoottables.createPoolWithItem(Items.BONE_MEAL, 2, 6)));
 	}
 
 }

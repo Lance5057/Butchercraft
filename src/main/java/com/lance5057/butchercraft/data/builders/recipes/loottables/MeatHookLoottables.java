@@ -1,39 +1,5 @@
 package com.lance5057.butchercraft.data.builders.recipes.loottables;
 
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.BRAIN;
-import static com.lance5057.butchercraft.ButchercraftItems.COW_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.CUBED_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.CUBED_LAMB;
-import static com.lance5057.butchercraft.ButchercraftItems.CUBED_PORK;
-import static com.lance5057.butchercraft.ButchercraftItems.FAT;
-import static com.lance5057.butchercraft.ButchercraftItems.HEART;
-import static com.lance5057.butchercraft.ButchercraftItems.HORN;
-import static com.lance5057.butchercraft.ButchercraftItems.KIDNEY;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.LEATHER_SCRAP;
-import static com.lance5057.butchercraft.ButchercraftItems.LIVER;
-import static com.lance5057.butchercraft.ButchercraftItems.LUNG;
-import static com.lance5057.butchercraft.ButchercraftItems.PIG_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.SHEEP_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.SINEW;
-import static com.lance5057.butchercraft.ButchercraftItems.STOMACH;
-import static com.lance5057.butchercraft.ButchercraftItems.TRIPE;
-import static net.minecraft.world.item.Items.BEEF;
-import static net.minecraft.world.item.Items.BONE;
-import static net.minecraft.world.item.Items.MUTTON;
-import static net.minecraft.world.item.Items.PORKCHOP;
-
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
@@ -44,6 +10,7 @@ import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
@@ -76,6 +43,14 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 	public static final ResourceLocation BUTCHER_SHEEP = new ResourceLocation(Butchercraft.MOD_ID,
 			"meat_hook/butcher_sheep");
 
+	public static final ResourceLocation SKIN_GOAT = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_goat");
+	public static final ResourceLocation DISEMBOWEL_GOAT = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/disembowel_goat");
+	public static final ResourceLocation BISECT_GOAT = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/bisect_goat");
+	public static final ResourceLocation BUTCHER_GOAT = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/butcher_goat");
+
 	public static final ResourceLocation BLOOD_BUCKET = new ResourceLocation(Butchercraft.MOD_ID,
 			"meat_hook/blood_bucket");
 
@@ -84,61 +59,114 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 		t.accept(BLOOD_BUCKET,
 				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1)));
 
-		t.accept(SKIN_COW, LootTable.lootTable().withPool(createPoolWithItem(COW_HIDE.get(), 1))
-				.withPool(createPoolWithItem(LEATHER_SCRAP.get(), 8, 16)).withPool(createPoolWithItem(FAT.get(), 4, 12))
-				.withPool(createPoolWithItem(SINEW.get(), 4, 12)));
+		t.accept(SKIN_COW,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.COW_HIDE.get(), 1))
+						.withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 8, 16))
+						.withPool(createPoolWithItem(ButchercraftItems.FAT.get(), 4, 12))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 12)));
 		t.accept(DISEMBOWEL_COW,
-				LootTable.lootTable().withPool(createPoolWithItem(HEART.get()))
-						.withPool(createPoolWithItem(KIDNEY.get(), 2)).withPool(createPoolWithItem(LIVER.get()))
-						.withPool(createPoolWithItem(STOMACH.get(), 4)).withPool(createPoolWithItem(LUNG.get(), 2))
-						.withPool(createPoolWithItem(TRIPE.get(), 8))
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.HEART.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.KIDNEY.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.LIVER.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.STOMACH.get(), 4))
+						.withPool(createPoolWithItem(ButchercraftItems.LUNG.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.TRIPE.get(), 8))
 						.withPool(createPoolWithItem(ButchercraftItems.BEEF_TONGUE.get(), 1)));
-		t.accept(BISECT_COW, LootTable.lootTable().withPool(createPoolWithItem(BRAIN.get()))
+		t.accept(BISECT_COW, LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BRAIN.get()))
 //                        .withPool(createPoolWithItem(COW_SKULL.get()))
-				.withPool(createPoolWithItem(LEATHER_SCRAP.get(), 0, 4))
-				.withPool(createPoolWithItem(BEEF_SCRAPS.get(), 0, 8))
-				.withPool(createPoolWithItem(BEEF_STEW_MEAT.get(), 24)).withPool(createPoolWithItem(HORN.get(), 2))
-				.withPool(createPoolWithItem(BONE, 4))
+				.withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 0, 4))
+				.withPool(createPoolWithItem(ButchercraftItems.BEEF_SCRAPS.get(), 0, 8))
+				.withPool(createPoolWithItem(ButchercraftItems.BEEF_STEW_MEAT.get(), 24))
+				.withPool(createPoolWithItem(ButchercraftItems.HORN.get(), 2))
+				.withPool(createPoolWithItem(Items.BONE, 4))
 				.withPool(createPoolWithItem(ButchercraftItems.OXTAIL.get(), 1, 3)));
-		t.accept(BUTCHER_COW, LootTable.lootTable().withPool(createPoolWithItem(BEEF_SCRAPS.get(), 29))
-				.withPool(createPoolWithItem(BEEF_RIBS.get(), 6)).withPool(createPoolWithItem(BEEF_ROAST.get(), 21))
-				.withPool(createPoolWithItem(CUBED_BEEF.get(), 9)).withPool(createPoolWithItem(BEEF, 81))
-				.withPool(createPoolWithItem(BONE, 4, 12)));
+		t.accept(BUTCHER_COW,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BEEF_SCRAPS.get(), 29))
+						.withPool(createPoolWithItem(ButchercraftItems.BEEF_RIBS.get(), 6))
+						.withPool(createPoolWithItem(ButchercraftItems.BEEF_ROAST.get(), 21))
+						.withPool(createPoolWithItem(ButchercraftItems.CUBED_BEEF.get(), 9))
+						.withPool(createPoolWithItem(Items.BEEF, 81)).withPool(createPoolWithItem(Items.BONE, 4, 12)));
 
-		t.accept(SKIN_PIG, LootTable.lootTable().withPool(createPoolWithItem(PIG_HIDE.get(), 1))
-				.withPool(createPoolWithItem(LEATHER_SCRAP.get(), 4, 8)).withPool(createPoolWithItem(FAT.get(), 4, 12))
-				.withPool(createPoolWithItem(SINEW.get(), 4, 12)));
+		t.accept(SKIN_PIG,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.PIG_HIDE.get(), 1))
+						.withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 4, 8))
+						.withPool(createPoolWithItem(ButchercraftItems.FAT.get(), 4, 12))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 12)));
 		t.accept(DISEMBOWEL_PIG,
-				LootTable.lootTable().withPool(createPoolWithItem(HEART.get()))
-						.withPool(createPoolWithItem(KIDNEY.get(), 2)).withPool(createPoolWithItem(LIVER.get()))
-						.withPool(createPoolWithItem(STOMACH.get())).withPool(createPoolWithItem(LUNG.get(), 2))
-						.withPool(createPoolWithItem(TRIPE.get(), 8)).withPool(createPoolWithItem(SINEW.get(), 4, 12))
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.HEART.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.KIDNEY.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.LIVER.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.STOMACH.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.LUNG.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.TRIPE.get(), 8))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 12))
 						.withPool(createPoolWithItem(ButchercraftItems.BEEF_TONGUE.get(), 1)));
-		t.accept(BISECT_PIG, LootTable.lootTable().withPool(createPoolWithItem(BRAIN.get()))
+		t.accept(BISECT_PIG, LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BRAIN.get()))
 //                        .withPool(createPoolWithItem(ButchercraftItems.PIG_HOOVES.get(), 4))
-				.withPool(createPoolWithItem(SINEW.get(), 0, 8)).withPool(createPoolWithItem(PORK_SCRAPS.get(), 4))
-				.withPool(createPoolWithItem(PORK_STEW_MEAT.get(), 10)).withPool(createPoolWithItem(BONE, 4)));
-		t.accept(BUTCHER_PIG, LootTable.lootTable().withPool(createPoolWithItem(PORK_SCRAPS.get(), 10))
-				.withPool(createPoolWithItem(PORK_RIBS.get(), 6)).withPool(createPoolWithItem(PORK_ROAST.get(), 10))
-				.withPool(createPoolWithItem(CUBED_PORK.get(), 4))
-				// .withPool(createPoolWithItem(ModItems.BACON.get(), 11))
-				.withPool(createPoolWithItem(PORKCHOP, 14)).withPool(createPoolWithItem(BONE, 12)));
+				.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 0, 8))
+				.withPool(createPoolWithItem(ButchercraftItems.PORK_SCRAPS.get(), 4))
+				.withPool(createPoolWithItem(ButchercraftItems.PORK_STEW_MEAT.get(), 10))
+				.withPool(createPoolWithItem(Items.BONE, 4)));
+		t.accept(BUTCHER_PIG,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.PORK_SCRAPS.get(), 10))
+						.withPool(createPoolWithItem(ButchercraftItems.PORK_RIBS.get(), 6))
+						.withPool(createPoolWithItem(ButchercraftItems.PORK_ROAST.get(), 10))
+						.withPool(createPoolWithItem(ButchercraftItems.CUBED_PORK.get(), 4))
+						// .withPool(createPoolWithItem(ModItems.BACON.get(), 11))
+						.withPool(createPoolWithItem(Items.PORKCHOP, 14)).withPool(createPoolWithItem(Items.BONE, 12)));
 
-		t.accept(SKIN_SHEEP, LootTable.lootTable().withPool(createPoolWithItem(SHEEP_HIDE.get(), 1))
-				.withPool(createPoolWithItem(LEATHER_SCRAP.get(), 4, 8)).withPool(createPoolWithItem(FAT.get(), 4, 12))
-				.withPool(createPoolWithItem(SINEW.get(), 4, 12)));
+		t.accept(SKIN_SHEEP,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.SHEEP_HIDE.get(), 1))
+						.withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 4, 8))
+						.withPool(createPoolWithItem(ButchercraftItems.FAT.get(), 4, 12))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 12)));
 		t.accept(DISEMBOWEL_SHEEP,
-				LootTable.lootTable().withPool(createPoolWithItem(HEART.get()))
-						.withPool(createPoolWithItem(KIDNEY.get(), 2)).withPool(createPoolWithItem(LIVER.get()))
-						.withPool(createPoolWithItem(STOMACH.get())).withPool(createPoolWithItem(LUNG.get(), 2))
-						.withPool(createPoolWithItem(TRIPE.get(), 4)).withPool(createPoolWithItem(SINEW.get(), 4, 8)));
-		t.accept(BISECT_SHEEP, LootTable.lootTable().withPool(createPoolWithItem(BRAIN.get()))
-				.withPool(createPoolWithItem(SINEW.get(), 0, 6)).withPool(createPoolWithItem(LAMB_SCRAPS.get(), 4))
-				.withPool(createPoolWithItem(LAMB_STEW_MEAT.get(), 6)).withPool(createPoolWithItem(BONE, 4)));
-		t.accept(BUTCHER_SHEEP, LootTable.lootTable().withPool(createPoolWithItem(LAMB_SCRAPS.get(), 5))
-				.withPool(createPoolWithItem(LAMB_RIBS.get(), 2)).withPool(createPoolWithItem(LAMB_ROAST.get(), 7))
-				.withPool(createPoolWithItem(CUBED_LAMB.get(), 2)).withPool(createPoolWithItem(MUTTON, 10))
-				.withPool(createPoolWithItem(BONE, 9)));
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.HEART.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.KIDNEY.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.LIVER.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.STOMACH.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.LUNG.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.TRIPE.get(), 4))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 8)));
+		t.accept(BISECT_SHEEP,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BRAIN.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 0, 6))
+						.withPool(createPoolWithItem(ButchercraftItems.LAMB_SCRAPS.get(), 4))
+						.withPool(createPoolWithItem(ButchercraftItems.LAMB_STEW_MEAT.get(), 6))
+						.withPool(createPoolWithItem(Items.BONE, 4)));
+		t.accept(BUTCHER_SHEEP,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.LAMB_SCRAPS.get(), 5))
+						.withPool(createPoolWithItem(ButchercraftItems.LAMB_RIBS.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.LAMB_ROAST.get(), 7))
+						.withPool(createPoolWithItem(ButchercraftItems.CUBED_LAMB.get(), 2))
+						.withPool(createPoolWithItem(Items.MUTTON, 10)).withPool(createPoolWithItem(Items.BONE, 9)));
+
+		t.accept(SKIN_GOAT,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.GOAT_HIDE.get(), 1))
+						.withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 4, 8))
+						.withPool(createPoolWithItem(ButchercraftItems.FAT.get(), 4, 12))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 12)));
+		t.accept(DISEMBOWEL_GOAT,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.HEART.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.KIDNEY.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.LIVER.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.STOMACH.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.LUNG.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.TRIPE.get(), 4))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 8)));
+		t.accept(BISECT_GOAT,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BRAIN.get()))
+						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 0, 6))
+						.withPool(createPoolWithItem(ButchercraftItems.GOAT_SCRAPS.get(), 4))
+						.withPool(createPoolWithItem(ButchercraftItems.GOAT_STEW_MEAT.get(), 6))
+						.withPool(createPoolWithItem(Items.BONE, 4)));
+		t.accept(BUTCHER_GOAT,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.GOAT_SCRAPS.get(), 5))
+						.withPool(createPoolWithItem(ButchercraftItems.GOAT_RIBS.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.GOAT_ROAST.get(), 7))
+						.withPool(createPoolWithItem(ButchercraftItems.CUBED_GOAT.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.GOAT_CHOP.get(), 10))
+						.withPool(createPoolWithItem(Items.BONE, 9)));
 	}
 
 	@NotNull

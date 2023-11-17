@@ -41,7 +41,8 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 
 	public ButcherBlockBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(CARCASS_HOOKED, false));
+		this.registerDefaultState(
+				this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(CARCASS_HOOKED, false));
 	}
 
 	@Override
@@ -101,8 +102,8 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState ifluidstate = context.getLevel().getFluidState(context.getClickedPos());
 
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getCounterClockWise())
-				.setValue(WATERLOGGED, ifluidstate.getType() == Fluids.WATER);
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()).setValue(WATERLOGGED,
+				ifluidstate.getType() == Fluids.WATER);
 	}
 
 }

@@ -102,7 +102,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		FluidState ifluidstate = context.getLevel().getFluidState(context.getClickedPos());
 
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getCounterClockWise())
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
 				.setValue(WATERLOGGED, ifluidstate.getType() == Fluids.WATER);
 	}
 }

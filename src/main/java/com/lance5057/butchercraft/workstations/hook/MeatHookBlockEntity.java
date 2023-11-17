@@ -209,6 +209,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 			}
 			if (this.curTool.test(butcheringTool)) {
 				if (butcheringTool.getCount() >= this.toolCount) {
+					progress++;
 					if (this.progress >= this.maxProgress) {
 
 						if (isFinalStage(recipe)) {
@@ -240,7 +241,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 
 						level.playSound(Player, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1,
 								1);
-						progress++;
+						
 					}
 				}
 

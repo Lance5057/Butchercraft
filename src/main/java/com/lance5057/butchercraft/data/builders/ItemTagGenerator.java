@@ -105,7 +105,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.RABBIT_CARCASS).add(ButchercraftItems.BLACK_RABBIT_CARCASS.get(),
 				ButchercraftItems.BROWN_RABBIT_CARCASS.get(), ButchercraftItems.GOLD_RABBIT_CARCASS.get(),
 				ButchercraftItems.SALT_RABBIT_CARCASS.get(), ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(),
-				ButchercraftItems.WHITE_RABBIT_CARCASS.get());
+				ButchercraftItems.WHITE_RABBIT_CARCASS.get()).add(Items.RABBIT);
 		tag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.SHEEP_CARCASS.get());
 
 		tag(ButchercraftItemTags.CARCASS).addTag(ButchercraftItemTags.COW_CARCASS)
