@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-17T11:44:47.710847	Recipes
+// 1.19.2	2023-11-18T10:56:49.0259061	Recipes
 b54b39b9c55634bfd58061d81f98fceeeb60bfc6 data/butchercraft/advancements/recipes/butchercraft.items/beef_block.json
 99068a38c58955b315d8260458d2bc1a2c776f5e data/butchercraft/advancements/recipes/butchercraft.items/beef_block_to_scraps.json
 25ed530df04e3e9769f77555a31d0f910c39c0c2 data/butchercraft/advancements/recipes/butchercraft.items/beef_scraps_to_ground.json
@@ -112,6 +112,7 @@ b32e00bb9eaa6d60730c943c5a8ab7d103c215bc data/butchercraft/advancements/recipes/
 fbb84f30d09e87d8057e4fa72ec684951a713869 data/butchercraft/advancements/recipes/food/lamb_roast_to_steaks.json
 a4d25bcaf20428f08b9c80ee00eb128cdd052f4f data/butchercraft/advancements/recipes/food/pork_roast_to_steaks.json
 8df486e8550a03c1b95cc4517d8256d31723485e data/butchercraft/advancements/recipes/meat_hook/butcher_black_rabbit.json
+501853bde43d44b4f65c4ba49956d698e189ae70 data/butchercraft/advancements/recipes/meat_hook/butcher_brown_rabbit.json
 8ce914d6c859257a32498918c217633d36dff37f data/butchercraft/advancements/recipes/meat_hook/butcher_chicken.json
 2a411edda3b3f4c2a9e0a98fd88bc11cd027140b data/butchercraft/advancements/recipes/meat_hook/butcher_whole_chicken.json
 95010ab9aa2a981e7c27131ca3e6ff73f393acef data/butchercraft/advancements/recipes/meat_hook/butcher_whole_rabbit.json
@@ -130,6 +131,7 @@ e4a9220a90d75e6f1d790e7bdccaff654f6c931e data/butchercraft/recipes/beef_scrap_to
 66f1da2993e9cf8bea85b2ea66dec40ff7101919 data/butchercraft/recipes/beef_to_cubes.json
 5029083eaa1f48be33e4a5759d4f42f7303c8ba9 data/butchercraft/recipes/bone_saw.json
 deb4670d30155b0381ed6c785013ec39d466e912 data/butchercraft/recipes/butcher_black_rabbit.json
+11addf2e121528718287ecb02802e673d7838ad6 data/butchercraft/recipes/butcher_brown_rabbit.json
 ee50a802a08930eb113ece1e80a9b56d9bc54915 data/butchercraft/recipes/butcher_chicken.json
 ce9bdbb2a2ecc17f3d0a366e48ca74cb0c69bac1 data/butchercraft/recipes/butcher_knife.json
 de67dbae19b3c89d4ba7faaed7154dbfacbc41d5 data/butchercraft/recipes/butcher_whole_chicken.json
