@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:blood_fluid_bottle"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:red_dye"
+  }
+}

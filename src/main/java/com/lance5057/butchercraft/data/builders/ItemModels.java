@@ -143,8 +143,14 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.PORK_SCRAPS, "pork_scraps");
 		forItem(ButchercraftItems.COOKED_PORK_SCRAPS, "cooked_pork_scraps");
 
+		forItem(ButchercraftItems.SAUSAGE_LINKED, "linked_sausage");
 		forItem(ButchercraftItems.SAUSAGE, "sausage");
 		forItem(ButchercraftItems.COOKED_SAUSAGE, "cooked_sausage");
+
+		forItem(ButchercraftItems.BLOOD_SAUSAGE_MIX, "blood_sausage_mix");
+		forItem(ButchercraftItems.BLOOD_SAUSAGE_LINKED, "linked_blood_sausage");
+		forItem(ButchercraftItems.BLOOD_SAUSAGE, "blood_sausage");
+		forItem(ButchercraftItems.COOKED_BLOOD_SAUSAGE, "cooked_blood_sausage");
 
 //		getBuilder(ButchercraftItems.PIG_HOOVES.getId().getPath())
 //				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig_foot")));

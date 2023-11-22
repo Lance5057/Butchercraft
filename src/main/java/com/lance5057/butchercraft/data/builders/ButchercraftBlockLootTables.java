@@ -39,6 +39,11 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.RABBIT_BLOCK.get());
 		dropSelf(ButchercraftBlocks.CHICKEN_BLOCK.get());
 
+		dropSelf(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
+		dropSelf(ButchercraftBlocks.BARN_WOOD_DOOR.get());
+		dropSelf(ButchercraftBlocks.BARN_WOOD_SLAB.get());
+		dropSelf(ButchercraftBlocks.BARN_WOOD_STAIRS.get());
+
 		dropSelf(ButchercraftBlocks.COW_HEAD.get());
 	}
 

@@ -1,4 +1,8 @@
-// 1.19.2	2023-11-17T11:32:18.2850792	LootTables
+// 1.19.2	2023-11-22T13:07:37.3564808	LootTables
+2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/butchercraft/loot_tables/blocks/barn_wood_block.json
+2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/butchercraft/loot_tables/blocks/barn_wood_door.json
+2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/butchercraft/loot_tables/blocks/barn_wood_slab.json
+2b2a4bde1a1c86393b28fa3ff9b81ef1ddeed22d data/butchercraft/loot_tables/blocks/barn_wood_stairs.json
 b75b67897a7f41513639696413b6ad9026abd229 data/butchercraft/loot_tables/blocks/beef_block.json
 2c49e3d04f4ca824434b48cdc5eb6d4f3cb88551 data/butchercraft/loot_tables/blocks/butcher_block.json
 1f4644cc89d8e22eecdb261289487f064bc92de9 data/butchercraft/loot_tables/blocks/chicken_block.json

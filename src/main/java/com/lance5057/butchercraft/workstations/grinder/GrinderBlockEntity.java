@@ -319,12 +319,16 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	}
 
-	public InteractionResult grind(Player Player) {
+	public InteractionResult grind(Player Player, BlockState blockState) {
 		if (!this.output.isEmpty()) {
 
 			if (this.isExtruder) {
 				if (this.getCasing().isEmpty())
 					return InteractionResult.PASS;
+			}
+
+			if (this.getInsertedItem().getCount() < this.itemsUsed) {
+				return InteractionResult.PASS;
 			}
 
 			if (this.grinds < this.grindsMax) {
@@ -338,37 +342,71 @@ public class GrinderBlockEntity extends BlockEntity {
 				level.playSound(Player, worldPosition, SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS, 1, 1);
 
 			} else {
-				ItemStack in = getInsertedItem();
+				this.handler.ifPresent(item -> {
+					ItemStack in = item.getStackInSlot(0);
+					ItemStack casing = item.getStackInSlot(2);
 
-				for (int i = 0; i < in.getCount(); i++) {
+					if (casing != ItemStack.EMPTY) {
+						for (int i = 0; i < casing.getCount(); i++) {
 
-					ItemStack r = output.copy();
+							ItemStack r = output.copy();
 
-					level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
-							getBlockPos().getZ(), r));
+							dropLoot(blockState, r);
+						}
+					} else {
+						for (int i = 0; i < in.getCount(); i++) {
 
-				}
+							ItemStack r = output.copy();
 
-				this.handler.ifPresent(i -> {
-					ItemStack s = i.getStackInSlot(0).copy();
-					s.setCount(i.getStackInSlot(0).getCount() - this.itemsUsed);
+							dropLoot(blockState, r);
+						}
+					}
 
-					i.setStackInSlot(0, ItemStack.EMPTY);
-					i.setStackInSlot(2, ItemStack.EMPTY);
+					ItemStack s = in.copy();
+					s.setCount(in.getCount() - this.itemsUsed);
 
-					if (i.isItemValid(0, s)) {
-						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY() + 0.5f,
-								getBlockPos().getZ(), i.insertItem(0, s, false)));
+					item.setStackInSlot(0, ItemStack.EMPTY);
+					item.setStackInSlot(2, ItemStack.EMPTY);
+
+					if (item.isItemValid(0, s)) {
+						dropLoot(blockState, item.insertItem(0, s, false));
 					}
 
 				});
-				
+
 			}
 			updateInventory();
 			return InteractionResult.SUCCESS;
 		}
 
 		return InteractionResult.PASS;
+
+	}
+
+	private void dropLoot(BlockState blockState, ItemStack item) {
+		Direction d = blockState.getValue(GrinderBlock.FACING);
+
+		switch (d) {
+		case NORTH:
+			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 1, getBlockPos().getY(),
+					getBlockPos().getZ(), item, 0, 0, 0));
+			break;
+		case SOUTH:
+			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY(),
+					getBlockPos().getZ() + 1.25f, item, 0, 0, 0.1f));
+			break;
+		case EAST:
+			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY(),
+					getBlockPos().getZ() + 1, item, 0, 0, 0));
+			break;
+		case WEST:
+			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX(), getBlockPos().getY(),
+					getBlockPos().getZ() - 1, item, 0, 0, 0));
+			break;
+		default:
+			break;
+
+		}
 
 	}
 }

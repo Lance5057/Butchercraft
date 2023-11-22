@@ -1,7 +1,7 @@
 {
   "type": "butchercraft:butcher_block",
   "carcass": {
-    "item": "butchercraft:brown_rabbit_carcass"
+    "item": "butchercraft:white_rabbit_carcass"
   },
   "group": "",
   "tools": [
@@ -17,7 +17,7 @@
             "rotation": {},
             "scale": {}
           },
-          "location": "butchercraft:meathook/rabbit_brown"
+          "location": "butchercraft:meathook/rabbit_white"
         },
         {
           "animation": {
@@ -79,7 +79,7 @@
             "rotation": {},
             "scale": {}
           },
-          "location": "butchercraft:meathook/rabbit_brown"
+          "location": "butchercraft:meathook/rabbit_white"
         },
         {
           "animation": {
@@ -132,7 +132,7 @@
     {
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:butcherblock/skin_brown_rabbit",
+      "loot_table": "butchercraft:butcherblock/skin_white_rabbit",
       "models": [
         {
           "IsBlock": true,
@@ -141,7 +141,7 @@
             "rotation": {},
             "scale": {}
           },
-          "location": "butchercraft:meathook/rabbit_brown"
+          "location": "butchercraft:meathook/rabbit_white"
         },
         {
           "animation": {
@@ -203,7 +203,7 @@
             "rotation": {},
             "scale": {}
           },
-          "location": "butchercraft:meathook/rabbit_brown_gutted"
+          "location": "butchercraft:meathook/rabbit_white_gutted"
         },
         {
           "animation": {
