@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "butchercraft:barn_wood_door_item"
         }
       ],
       "rolls": 1.0

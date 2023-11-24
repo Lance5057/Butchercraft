@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "butchercraft:block/barn_door_bottom",
+    "top": "butchercraft:block/barn_door_top"
+  }
+}

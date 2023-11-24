@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "butchercraft:block/barn_wood_block",
+    "side": "butchercraft:block/barn_wood_block",
+    "top": "butchercraft:block/barn_wood_block"
+  }
+}

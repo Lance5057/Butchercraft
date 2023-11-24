@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "butchercraft:block/barn_wood_slab"
+    },
+    "type=double": {
+      "model": "butchercraft:block/barn_wood_block"
+    },
+    "type=top": {
+      "model": "butchercraft:block/barn_wood_slab_top"
+    }
+  }
+}

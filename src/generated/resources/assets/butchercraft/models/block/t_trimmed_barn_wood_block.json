@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "butchercraft:block/barn_wood_block",
+    "side": "butchercraft:block/t_trimmed_barn_wood_block"
+  }
+}

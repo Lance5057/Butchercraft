@@ -30,16 +30,20 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ButchercraftBlocks.LAMB_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.COOKED_LAMB_BLOCK.get());
 
-		horizontalBlock(ButchercraftBlocks.COW_HIDE_CARPET.get(), models().getExistingFile(modLoc("block/cow_hide_carpet")));
-		horizontalBlock(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(), models().withExistingParent("sheep_hide", modLoc("block/cow_hide_carpet"))
-				.texture("0", "butchercraft:block/sheep_hide")
-				.texture("particle", "butchercraft:block/sheep_hide")); 
-		horizontalBlock(ButchercraftBlocks.GOAT_HIDE_CARPET.get(), models().withExistingParent("goat_hide", modLoc("block/cow_hide_carpet"))
-				.texture("0", "butchercraft:block/goat_hide")
-				.texture("particle", "butchercraft:block/goat_hide")); 
-		horizontalBlock(ButchercraftBlocks.PIG_HIDE_CARPET.get(), models().withExistingParent("pig_hide", modLoc("block/cow_hide_carpet"))
-				.texture("0", "butchercraft:block/pig_hide")
-				.texture("particle", "butchercraft:block/pig_hide")); 
+		horizontalBlock(ButchercraftBlocks.COW_HIDE_CARPET.get(),
+				models().getExistingFile(modLoc("block/cow_hide_carpet")));
+		horizontalBlock(ButchercraftBlocks.SHEEP_HIDE_CARPET.get(),
+				models().withExistingParent("sheep_hide", modLoc("block/cow_hide_carpet"))
+						.texture("0", "butchercraft:block/sheep_hide")
+						.texture("particle", "butchercraft:block/sheep_hide"));
+		horizontalBlock(ButchercraftBlocks.GOAT_HIDE_CARPET.get(),
+				models().withExistingParent("goat_hide", modLoc("block/cow_hide_carpet"))
+						.texture("0", "butchercraft:block/goat_hide")
+						.texture("particle", "butchercraft:block/goat_hide"));
+		horizontalBlock(ButchercraftBlocks.PIG_HIDE_CARPET.get(),
+				models().withExistingParent("pig_hide", modLoc("block/cow_hide_carpet"))
+						.texture("0", "butchercraft:block/pig_hide")
+						.texture("particle", "butchercraft:block/pig_hide"));
 
 //		getVariantBuilder(ButchercraftBlocks.COW_HIDE_CARPET.get()).partialState().addModels(ConfiguredModel.)
 //        .forAllStates(state -> ConfiguredModel.builder()
@@ -54,6 +58,27 @@ public class BlockModels extends BlockStateProvider {
 		this.horizontalBlock(ButchercraftBlocks.CHICKEN_BLOCK.get(), models().getExistingFile(modLoc("block/chicken")));
 		this.horizontalBlock(ButchercraftBlocks.RABBIT_BLOCK.get(), models().getExistingFile(modLoc("block/rabbit")));
 
+		this.simpleBlock(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
+		this.slabBlock(ButchercraftBlocks.BARN_WOOD_SLAB.get(), modLoc("block/barn_wood_block"),
+				modLoc("block/barn_wood_block"));
+		this.stairsBlock(ButchercraftBlocks.BARN_WOOD_STAIRS.get(), modLoc("block/barn_wood_block"));
+		this.doorBlock(ButchercraftBlocks.BARN_WOOD_DOOR.get(), modLoc("block/barn_door_bottom"),
+				modLoc("block/barn_door_top"));
+		this.trapdoorBlock(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get(), modLoc("block/barn_trapdoor"), false);
+
+		this.axisBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(), modLoc("block/trimmed_barn_wood_block"),
+				modLoc("block/barn_wood_block"));
+		this.axisBlock(ButchercraftBlocks.BEND_TRIMMED_BARN_WOOD_BLOCK.get(),
+				modLoc("block/bend_trimmed_barn_wood_block"), modLoc("block/barn_wood_block"));
+		this.axisBlock(ButchercraftBlocks.CORNER_TRIMMED_BARN_WOOD_BLOCK.get(),
+				modLoc("block/corner_trimmed_barn_wood_block"), modLoc("block/barn_wood_block"));
+		this.simpleBlock(ButchercraftBlocks.FULL_TRIMMED_BARN_WOOD_BLOCK.get());
+		this.axisBlock(ButchercraftBlocks.PIPE_TRIMMED_BARN_WOOD_BLOCK.get(),
+				modLoc("block/pipe_trimmed_barn_wood_block"), modLoc("block/barn_wood_block"));
+		this.axisBlock(ButchercraftBlocks.T_TRIMMED_BARN_WOOD_BLOCK.get(), modLoc("block/t_trimmed_barn_wood_block"),
+				modLoc("block/barn_wood_block"));
+
+		this.simpleBlock(ButchercraftBlocks.INNER_TRIMMED_BARN_WOOD_BLOCK.get());
 	}
 
 //	private void hideModel(String animal, HideBlock block) {

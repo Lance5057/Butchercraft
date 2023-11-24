@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:barn_wood_block_item"
+          "name": "butchercraft:full_trimmed_barn_wood_item"
         }
       ],
       "rolls": 1.0

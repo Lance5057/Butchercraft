@@ -258,6 +258,19 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.GOLD_BUNNY_TAIL, "gold_bunny_tail");
 		forItem(ButchercraftItems.SPLOTCHED_BUNNY_TAIL, "splotched_bunny_tail");
 		forItem(ButchercraftItems.SALT_BUNNY_TAIL, "salt_bunny_tail");
+
+		forBlockItem(ButchercraftItems.BARN_WOOD_BLOCK_ITEM, "barn_wood");
+		forItem(ButchercraftItems.BARN_WOOD_DOOR_ITEM, "barn_wood_door");
+		forBlockItem(ButchercraftItems.BARN_WOOD_SLAB_ITEM, "barn_wood_slab");
+		forBlockItem(ButchercraftItems.BARN_WOOD_STAIRS_ITEM, "barn_wood_stairs");
+		forBlockItem(ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM, "barn_trapdoor");
+
+		forBlockItem(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM, "trimmed_barn_wood");
+		forBlockItem(ButchercraftItems.BEND_TRIMMED_BARN_WOOD_ITEM, "bend_trimmed_barn_wood");
+		forBlockItem(ButchercraftItems.CORNER_TRIMMED_BARN_WOOD_ITEM, "corner_trimmed_barn_wood");
+		forBlockItem(ButchercraftItems.FULL_TRIMMED_BARN_WOOD_ITEM, "fulled_trimmed_barn_wood");
+		forBlockItem(ButchercraftItems.INNER_TRIMMED_BARN_WOOD_ITEM, "inner_trimmed_barn_wood");
+		forBlockItem(ButchercraftItems.T_TRIMMED_BARN_WOOD_ITEM, "t_trimmed_barn_wood");
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

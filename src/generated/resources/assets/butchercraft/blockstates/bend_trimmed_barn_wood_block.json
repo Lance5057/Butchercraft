@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "butchercraft:block/bend_trimmed_barn_wood_block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "butchercraft:block/bend_trimmed_barn_wood_block"
+    },
+    "axis=z": {
+      "model": "butchercraft:block/bend_trimmed_barn_wood_block_horizontal",
+      "x": 90
+    }
+  }
+}

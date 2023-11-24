@@ -452,6 +452,40 @@ public class ButchercraftItems {
 					ButchercraftBlocks.COW_HEAD_WALL.get(),
 					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
 
+	public static final RegistryObject<BlockItem> BARN_WOOD_BLOCK_ITEM = ITEMS.register("barn_wood_block_item",
+			() -> new BlockItem(ButchercraftBlocks.BARN_WOOD_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> BARN_WOOD_DOOR_ITEM = ITEMS.register("barn_wood_door_item",
+			() -> new BlockItem(ButchercraftBlocks.BARN_WOOD_DOOR.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> BARN_WOOD_SLAB_ITEM = ITEMS.register("barn_wood_slab_item",
+			() -> new BlockItem(ButchercraftBlocks.BARN_WOOD_SLAB.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> BARN_WOOD_STAIRS_ITEM = ITEMS.register("barn_wood_stairs_item",
+			() -> new BlockItem(ButchercraftBlocks.BARN_WOOD_STAIRS.get(), new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> BARN_WOOD_TRAPDOOR_ITEM = ITEMS.register("barn_wood_trapdoor_item",
+			() -> new BlockItem(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get(), new Item.Properties().tab(BUTCHER_TAB)));
+
+	public static final RegistryObject<BlockItem> TRIMMED_BARN_WOOD_ITEM = ITEMS.register("trimmed_barn_wood_item",
+			() -> new BlockItem(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(),
+					new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> CORNER_TRIMMED_BARN_WOOD_ITEM = ITEMS.register(
+			"corner_trimmed_barn_wood_item",
+			() -> new BlockItem(ButchercraftBlocks.CORNER_TRIMMED_BARN_WOOD_BLOCK.get(),
+					new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> BEND_TRIMMED_BARN_WOOD_ITEM = ITEMS.register(
+			"bend_trimmed_barn_wood_item", () -> new BlockItem(ButchercraftBlocks.BEND_TRIMMED_BARN_WOOD_BLOCK.get(),
+					new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> FULL_TRIMMED_BARN_WOOD_ITEM = ITEMS.register(
+			"full_trimmed_barn_wood_item", () -> new BlockItem(ButchercraftBlocks.FULL_TRIMMED_BARN_WOOD_BLOCK.get(),
+					new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> INNER_TRIMMED_BARN_WOOD_ITEM = ITEMS.register(
+			"inner_trimmed_barn_wood_item", () -> new BlockItem(ButchercraftBlocks.INNER_TRIMMED_BARN_WOOD_BLOCK.get(),
+					new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> T_TRIMMED_BARN_WOOD_ITEM = ITEMS.register("t_trimmed_barn_wood_item",
+			() -> new BlockItem(ButchercraftBlocks.T_TRIMMED_BARN_WOOD_BLOCK.get(),
+					new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<BlockItem> PIPE_TRIMMED_BARN_WOOD_ITEM = ITEMS.register(
+			"pipe_trimmed_barn_wood_item", () -> new BlockItem(ButchercraftBlocks.PIPE_TRIMMED_BARN_WOOD_BLOCK.get(),
+					new Item.Properties().tab(BUTCHER_TAB)));
+
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);
 	}

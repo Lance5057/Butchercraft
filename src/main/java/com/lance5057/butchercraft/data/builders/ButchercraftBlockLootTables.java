@@ -45,6 +45,20 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.BARN_WOOD_STAIRS.get());
 
 		dropSelf(ButchercraftBlocks.COW_HEAD.get());
+
+		dropSelf(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
+		createDoorTable(ButchercraftBlocks.BARN_WOOD_DOOR.get());
+		createSlabItemTable(ButchercraftBlocks.BARN_WOOD_SLAB.get());
+		dropSelf(ButchercraftBlocks.BARN_WOOD_STAIRS.get());
+		dropSelf(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get());
+
+		dropSelf(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get());
+		dropSelf(ButchercraftBlocks.BEND_TRIMMED_BARN_WOOD_BLOCK.get());
+		dropSelf(ButchercraftBlocks.CORNER_TRIMMED_BARN_WOOD_BLOCK.get());
+		dropSelf(ButchercraftBlocks.FULL_TRIMMED_BARN_WOOD_BLOCK.get());
+		dropSelf(ButchercraftBlocks.INNER_TRIMMED_BARN_WOOD_BLOCK.get());
+		dropSelf(ButchercraftBlocks.PIPE_TRIMMED_BARN_WOOD_BLOCK.get());
+		dropSelf(ButchercraftBlocks.T_TRIMMED_BARN_WOOD_BLOCK.get());
 	}
 
 	@Override

@@ -11,10 +11,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SkullBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallSkullBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -95,6 +97,31 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<DoorBlock> BARN_WOOD_DOOR = BLOCKS.register("barn_wood_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)
 					.sound(SoundType.WOOD).strength(3.0F).noOcclusion()));
+	public static final RegistryObject<TrapDoorBlock> BARN_WOOD_TRAPDOOR = BLOCKS.register("barn_wood_trapdoor",
+			() -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)
+					.sound(SoundType.WOOD).strength(3.0F).noOcclusion()));
+
+	public static final RegistryObject<RotatedPillarBlock> TRIMMED_BARN_WOOD_BLOCK = BLOCKS
+			.register("trimmed_barn_wood_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties
+					.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
+	public static final RegistryObject<RotatedPillarBlock> CORNER_TRIMMED_BARN_WOOD_BLOCK = BLOCKS
+			.register("corner_trimmed_barn_wood_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties
+					.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
+	public static final RegistryObject<RotatedPillarBlock> BEND_TRIMMED_BARN_WOOD_BLOCK = BLOCKS
+			.register("bend_trimmed_barn_wood_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties
+					.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
+	public static final RegistryObject<Block> FULL_TRIMMED_BARN_WOOD_BLOCK = BLOCKS
+			.register("full_trimmed_barn_wood_block", () -> new Block(BlockBehaviour.Properties
+					.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
+	public static final RegistryObject<Block> INNER_TRIMMED_BARN_WOOD_BLOCK = BLOCKS
+			.register("inner_trimmed_barn_wood_block", () -> new Block(BlockBehaviour.Properties
+					.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
+	public static final RegistryObject<RotatedPillarBlock> T_TRIMMED_BARN_WOOD_BLOCK = BLOCKS
+			.register("t_trimmed_barn_wood_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties
+					.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
+	public static final RegistryObject<RotatedPillarBlock> PIPE_TRIMMED_BARN_WOOD_BLOCK = BLOCKS
+			.register("pipe_trimmed_barn_wood_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties
+					.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
 
 	public static void register(IEventBus modBus) {
 
