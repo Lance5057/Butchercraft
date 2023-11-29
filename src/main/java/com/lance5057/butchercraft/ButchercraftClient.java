@@ -11,6 +11,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.SkullModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraftforge.api.distmarker.Dist;
@@ -51,5 +52,7 @@ public class ButchercraftClient {
 	public static void registerSkulls(EntityRenderersEvent.CreateSkullModels event) {
 		event.registerSkullModel(AnimalHeadBlock.Types.COW, new SkullModel(event.getEntityModelSet()
 				.bakeLayer(new ModelLayerLocation(new ResourceLocation(Butchercraft.MOD_ID, "cow_head"), "main"))));
+		
+		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.COW, new ResourceLocation("textures/entity/cow/cow.png"));
 	}
 }
