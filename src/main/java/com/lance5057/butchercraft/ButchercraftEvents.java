@@ -14,6 +14,7 @@ import com.lance5057.butchercraft.armor.models.PigHoodModel;
 import com.lance5057.butchercraft.armor.models.SheepHoodModel;
 import com.lance5057.butchercraft.capabilities.AnimalCare;
 import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
+import com.lance5057.butchercraft.client.block_models.CowHeadModel;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
 
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -125,6 +126,8 @@ public class ButchercraftEvents {
 				.create(SheepHoodModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 64));
 		event.registerLayerDefinition(ChickenMaskModel.LAYER_LOCATION, () -> LayerDefinition
 				.create(ChickenMaskModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
+
+		event.registerLayerDefinition(CowHeadModel.LAYER_LOCATION, () -> CowHeadModel.createBodyLayer());
 	}
 
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {

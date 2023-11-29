@@ -79,8 +79,8 @@ public class ButchercraftBlocks {
 			.register("blood_fluid_block", () -> new LiquidBlock(ButchercraftFluids.BLOOD_FLUID,
 					BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noLootTable()));
 
-	public static final RegistryObject<SkullBlock> COW_HEAD = BLOCKS.register("cow_head",
-			() -> new SkullBlock(AnimalHeadBlock.Types.COW,
+	public static final RegistryObject<AnimalHeadBlock> COW_HEAD = BLOCKS.register("cow_head",
+			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.COW,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> COW_HEAD_WALL = BLOCKS.register("cow_head_wall",
 			() -> new WallSkullBlock(AnimalHeadBlock.Types.COW,
