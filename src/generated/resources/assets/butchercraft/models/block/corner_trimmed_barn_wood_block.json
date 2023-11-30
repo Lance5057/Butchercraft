@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_directional",
-  "textures": {
-    "up": "butchercraft:block/corner_trimmed_barn_wood_block"
-  }
-}

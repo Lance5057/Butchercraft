@@ -71,8 +71,10 @@ public class BlockModels extends BlockStateProvider {
 		this.doorBlock(ButchercraftBlocks.BARN_WOOD_DOOR.get(), modLoc("block/barn_door_bottom"),
 				modLoc("block/barn_door_top"));
 		this.trapdoorBlock(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get(), modLoc("block/barn_trapdoor"), false);
+		
+		
 
-		trimmedBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(), modLoc("block/trimmed_barn_wood_block"));
+//		trimmedBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(), modLoc("block/trimmed_barn_wood_block"));
 //		this.directionalBlock(ButchercraftBlocks.BEND_TRIMMED_BARN_WOOD_BLOCK.get(),
 //				models().withExistingParent("bend_trimmed_barn_wood_block", mcLoc("block/cube_directional"))
 //						.texture("up", modLoc("block/bend_trimmed_barn_wood_block")));
@@ -91,15 +93,15 @@ public class BlockModels extends BlockStateProvider {
 //		this.simpleBlock(ButchercraftBlocks.INNER_TRIMMED_BARN_WOOD_BLOCK.get());
 	}
 
-	private void trimmedBlock(Block block, ResourceLocation rc) {
-		getVariantBuilder(block).forAllStates(state -> {
-			Direction dir = state.getValue(BlockStateProperties.FACING);
-			return ConfiguredModel.builder()
-					.modelFile(models()
-							.getExistingFile(modLoc("block/barn_wood/trimmed_barn_wood_block_" + dir.toString())))
-					.build();
-
-		});
-
-	}
+//	private void trimmedBlock(Block block, ResourceLocation rc) {
+//		getVariantBuilder(block).forAllStates(state -> {
+//			Direction dir = state.getValue(BlockStateProperties.FACING);
+//			return ConfiguredModel.builder()
+//					.modelFile(models()
+//							.getExistingFile(modLoc("block/barn_wood/trimmed_barn_wood_block_" + dir.toString())))
+//					.build();
+//
+//		});
+//
+//	}
 }

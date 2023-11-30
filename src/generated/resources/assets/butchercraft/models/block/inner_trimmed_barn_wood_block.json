@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "butchercraft:block/inner_trimmed_barn_wood_block"
-  }
-}

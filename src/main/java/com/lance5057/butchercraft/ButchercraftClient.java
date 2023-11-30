@@ -3,13 +3,13 @@ package com.lance5057.butchercraft;
 import java.util.Map;
 
 import com.lance5057.butchercraft.blocks.AnimalHeadBlock;
+import com.lance5057.butchercraft.client.block_models.CowHeadModel;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRenderer;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRenderer;
 import com.lance5057.butchercraft.workstations.hook.MeatHookRenderer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.SkullModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -28,6 +28,8 @@ public class ButchercraftClient {
 		BlockEntityRenderers.register(ButchercraftBlockEntities.MEAT_HOOK.get(), MeatHookRenderer::new);
 		BlockEntityRenderers.register(ButchercraftBlockEntities.GRINDER.get(), GrinderRenderer::new);
 		BlockEntityRenderers.register(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), ButcherBlockRenderer::new);
+
+		BlockEntityRenderers.register(ButchercraftBlockEntities.SKULL.get(), SkullBlockRenderer::new);
 	}
 
 	@SubscribeEvent
@@ -50,9 +52,10 @@ public class ButchercraftClient {
 
 	@SubscribeEvent
 	public static void registerSkulls(EntityRenderersEvent.CreateSkullModels event) {
-		event.registerSkullModel(AnimalHeadBlock.Types.COW, new SkullModel(event.getEntityModelSet()
-				.bakeLayer(new ModelLayerLocation(new ResourceLocation(Butchercraft.MOD_ID, "cow_head"), "main"))));
-		
-		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.COW, new ResourceLocation("textures/entity/cow/cow.png"));
+		event.registerSkullModel(AnimalHeadBlock.Types.COW,
+				new SkullModel(event.getEntityModelSet().bakeLayer(CowHeadModel.LAYER_LOCATION)));
+
+		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.COW,
+				new ResourceLocation("textures/entity/cow/cow.png"));
 	}
 }
