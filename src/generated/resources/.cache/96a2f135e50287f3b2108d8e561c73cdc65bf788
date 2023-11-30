@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-24T13:19:03.6496106	Butchercraft item models
+// 1.19.2	2023-11-25T18:35:41.1377643	Butchercraft item models
 65012af66cea6853cb6fc8f28d0c092803f20c0d assets/butchercraft/models/item/apron.json
 f90b50ce6dc5b95a23e41bdd59c2e8825cbd6399 assets/butchercraft/models/item/barn_wood_block_item.json
 0a278d1bfa0e986e1457cea216bbae8e461ac1e5 assets/butchercraft/models/item/barn_wood_door_item.json
@@ -177,7 +177,7 @@ ce859d871efce86e37ec62a0a6580bd1b2e7902a assets/butchercraft/models/item/soap.js
 167062c2bb96abe737a33435133c112cb09b9729 assets/butchercraft/models/item/splotched_rabbit_carcass.json
 4d7160a7916a75a20dbd8a86df303ca7ec3c030d assets/butchercraft/models/item/stomach.json
 fe5e24b12e9e51718918cf767bf58c08bb7c5466 assets/butchercraft/models/item/tongue.json
-3c9bfd93de944f846f38aa9c50e796344c1eec9c assets/butchercraft/models/item/trimmed_barn_wood_item.json
+1c8337adc08cd0636f2d30516d6680cfe1d030bc assets/butchercraft/models/item/trimmed_barn_wood_item.json
 7561193650e5ed4778cbc049c9e9e82ba69da689 assets/butchercraft/models/item/tripe.json
 149c5e04910362cf4e1dbbc2dd6420508f96fa5e assets/butchercraft/models/item/t_trimmed_barn_wood_item.json
 d67fb4f3533e5dc63d88a4b15918a3f971f02e67 assets/butchercraft/models/item/wattle.json

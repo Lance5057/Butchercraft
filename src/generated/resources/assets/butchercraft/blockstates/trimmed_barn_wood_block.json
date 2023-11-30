@@ -1,16 +1,22 @@
 {
   "variants": {
-    "axis=x": {
-      "model": "butchercraft:block/trimmed_barn_wood_block_horizontal",
-      "x": 90,
-      "y": 90
+    "facing=down": {
+      "model": "butchercraft:block/barn_wood/trimmed_barn_wood_block_down"
     },
-    "axis=y": {
-      "model": "butchercraft:block/trimmed_barn_wood_block"
+    "facing=east": {
+      "model": "butchercraft:block/barn_wood/trimmed_barn_wood_block_east"
     },
-    "axis=z": {
-      "model": "butchercraft:block/trimmed_barn_wood_block_horizontal",
-      "x": 90
+    "facing=north": {
+      "model": "butchercraft:block/barn_wood/trimmed_barn_wood_block_north"
+    },
+    "facing=south": {
+      "model": "butchercraft:block/barn_wood/trimmed_barn_wood_block_south"
+    },
+    "facing=up": {
+      "model": "butchercraft:block/barn_wood/trimmed_barn_wood_block_up"
+    },
+    "facing=west": {
+      "model": "butchercraft:block/barn_wood/trimmed_barn_wood_block_west"
     }
   }
 }

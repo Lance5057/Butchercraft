@@ -265,12 +265,9 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.BARN_WOOD_STAIRS_ITEM, "barn_wood_stairs");
 		forBlockItem(ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM, "barn_trapdoor");
 
-		forBlockItem(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM, "trimmed_barn_wood");
-		forBlockItem(ButchercraftItems.BEND_TRIMMED_BARN_WOOD_ITEM, "bend_trimmed_barn_wood");
-		forBlockItem(ButchercraftItems.CORNER_TRIMMED_BARN_WOOD_ITEM, "corner_trimmed_barn_wood");
-		forBlockItem(ButchercraftItems.FULL_TRIMMED_BARN_WOOD_ITEM, "fulled_trimmed_barn_wood");
-		forBlockItem(ButchercraftItems.INNER_TRIMMED_BARN_WOOD_ITEM, "inner_trimmed_barn_wood");
-		forBlockItem(ButchercraftItems.T_TRIMMED_BARN_WOOD_ITEM, "t_trimmed_barn_wood");
+//		forBlockItem(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM, "trimmed_barn_wood");
+		getBuilder(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "block/barn_wood/trimmed_barn_wood_block_down")));
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {

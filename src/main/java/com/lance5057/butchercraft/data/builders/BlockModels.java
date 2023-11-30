@@ -3,8 +3,14 @@ package com.lance5057.butchercraft.data.builders;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
 
+import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockModels extends BlockStateProvider {
@@ -66,44 +72,34 @@ public class BlockModels extends BlockStateProvider {
 				modLoc("block/barn_door_top"));
 		this.trapdoorBlock(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get(), modLoc("block/barn_trapdoor"), false);
 
-		this.axisBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(), modLoc("block/trimmed_barn_wood_block"),
-				modLoc("block/barn_wood_block"));
-		this.axisBlock(ButchercraftBlocks.BEND_TRIMMED_BARN_WOOD_BLOCK.get(),
-				modLoc("block/bend_trimmed_barn_wood_block"), modLoc("block/barn_wood_block"));
-		this.axisBlock(ButchercraftBlocks.CORNER_TRIMMED_BARN_WOOD_BLOCK.get(),
-				modLoc("block/corner_trimmed_barn_wood_block"), modLoc("block/barn_wood_block"));
-		this.simpleBlock(ButchercraftBlocks.FULL_TRIMMED_BARN_WOOD_BLOCK.get());
-		this.axisBlock(ButchercraftBlocks.PIPE_TRIMMED_BARN_WOOD_BLOCK.get(),
-				modLoc("block/pipe_trimmed_barn_wood_block"), modLoc("block/barn_wood_block"));
-		this.axisBlock(ButchercraftBlocks.T_TRIMMED_BARN_WOOD_BLOCK.get(), modLoc("block/t_trimmed_barn_wood_block"),
-				modLoc("block/barn_wood_block"));
-
-		this.simpleBlock(ButchercraftBlocks.INNER_TRIMMED_BARN_WOOD_BLOCK.get());
+		trimmedBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(), modLoc("block/trimmed_barn_wood_block"));
+//		this.directionalBlock(ButchercraftBlocks.BEND_TRIMMED_BARN_WOOD_BLOCK.get(),
+//				models().withExistingParent("bend_trimmed_barn_wood_block", mcLoc("block/cube_directional"))
+//						.texture("up", modLoc("block/bend_trimmed_barn_wood_block")));
+//		this.directionalBlock(ButchercraftBlocks.CORNER_TRIMMED_BARN_WOOD_BLOCK.get(),
+//				models().withExistingParent("corner_trimmed_barn_wood_block", mcLoc("block/cube_directional"))
+//						.texture("up", modLoc("block/corner_trimmed_barn_wood_block")));
+//		this.simpleBlock(ButchercraftBlocks.FULL_TRIMMED_BARN_WOOD_BLOCK.get());
+//		this.directionalBlock(ButchercraftBlocks.PIPE_TRIMMED_BARN_WOOD_BLOCK.get(),
+//				models().withExistingParent("pipe_trimmed_barn_wood_block", mcLoc("block/cube_directional"))
+//						.texture("up", modLoc("block/pipe_trimmed_barn_wood_block")));
+//		;
+//		this.directionalBlock(ButchercraftBlocks.T_TRIMMED_BARN_WOOD_BLOCK.get(),
+//				models().withExistingParent("t_trimmed_barn_wood_block", mcLoc("block/cube_directional")).texture("up",
+//						modLoc("block/t_trimmed_barn_wood_block")));
+//
+//		this.simpleBlock(ButchercraftBlocks.INNER_TRIMMED_BARN_WOOD_BLOCK.get());
 	}
 
-//	private void hideModel(String animal, HideBlock block) {
-//		ModelFile normal = models().withExistingParent(animal + "_hide", modLoc("block/cow_hide_carpet"))
-//				.texture("0", "butchercraft:block/" + animal + "_hide")
-//				.texture("particle", "butchercraft:block/" + animal + "_hide");
-//		ModelFile up = models().withExistingParent(animal + "_hide_up", modLoc("block/cow_hide_carpet_up"))
-//				.texture("0", "butchercraft:block/" + animal + "_hide")
-//				.texture("particle", "butchercraft:block/" + animal + "_hide");
-//		ModelFile up_moar = models().withExistingParent(animal + "_hide_up", modLoc("block/cow_hide_carpet_up"))
-//				.texture("0", "butchercraft:block/" + animal + "_hide")
-//				.texture("particle", "butchercraft:block/" + animal + "_hide");
-//		;
-//
-//		VariantBlockStateBuilder builder = getVariantBuilder(block);
-//
-//		for (Direction dir : BlockStateProperties.HORIZONTAL_FACING.getPossibleValues()) {
-//			builder.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, 0)
-//					.modelForState().modelFile(normal).rotationY((int) dir.toYRot() + 180).addModel()
-//
-//					.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, 1)
-//					.modelForState().modelFile(up).rotationY((int) dir.toYRot() + 180).addModel()
-//
-//					.partialState().with(BlockStateProperties.HORIZONTAL_FACING, dir).with(HideBlock.LIFT, 2)
-//					.modelForState().modelFile(up_moar).rotationY((int) dir.toYRot() + 180).addModel();
-//		}
-//	}
+	private void trimmedBlock(Block block, ResourceLocation rc) {
+		getVariantBuilder(block).forAllStates(state -> {
+			Direction dir = state.getValue(BlockStateProperties.FACING);
+			return ConfiguredModel.builder()
+					.modelFile(models()
+							.getExistingFile(modLoc("block/barn_wood/trimmed_barn_wood_block_" + dir.toString())))
+					.build();
+
+		});
+
+	}
 }

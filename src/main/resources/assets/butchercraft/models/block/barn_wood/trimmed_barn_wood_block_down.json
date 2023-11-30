@@ -1,0 +1,35 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "cutout",
+	"textures": {
+		"0": "butchercraft:block/barn_wood_block",
+		"2": "butchercraft:block/trimmed_barn_wood_block",
+		"particle": "butchercraft:block/barn_wood_block"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 16, 16, 0], "texture": "#0"},
+				"east": {"uv": [0, 16, 16, 0], "texture": "#0"},
+				"south": {"uv": [0, 16, 16, 0], "texture": "#0"},
+				"west": {"uv": [0, 16, 16, 0], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "trim",
+			"from": [-0.1, -0.1, -0.1],
+			"to": [16.1, 16.1, 16.1],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
+}
