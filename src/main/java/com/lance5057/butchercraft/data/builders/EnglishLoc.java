@@ -186,8 +186,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.GELATIN.get(), "Gelatin");
 
 		this.add(ButchercraftItems.HOOK_BLOCK_ITEM.get(), "Meat Hook");
-		
+
 		this.add(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get(), "Butcher Block");
+
+		this.add(ButchercraftItems.GOAT_CARCASS.get(), "Goat Carcass");
 
 //        this.add(COW_SKULL.get(), "Cow Skull");
 
@@ -239,10 +241,10 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(Butchercraft.MOD_ID + ".advancement.cannibalism.name", "This isn't RimWorld...");
 		this.add(Butchercraft.MOD_ID + ".advancement.cannibalism.desc", "Try to butcher a human.");
-		
+
 		this.add(Butchercraft.MOD_ID + ".advancement.bunny_equip.name", "Leotard and Hosery not included!");
 		this.add(Butchercraft.MOD_ID + ".advancement.bunny_equip.desc", "Equip bunny ears and a tail.");
-		
+
 		this.add(Butchercraft.MOD_ID + ".advancement.taxadermy.name", "No thanks, I'm stuffed.");
 		this.add(Butchercraft.MOD_ID + ".advancement.taxadermy.desc", "Taxidermy a carcass.");
 
