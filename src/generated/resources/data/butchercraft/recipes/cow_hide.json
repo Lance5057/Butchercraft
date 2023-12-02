@@ -1,0 +1,107 @@
+{
+  "type": "butchercraft:meat_hook",
+  "carcass": {
+    "item": "butchercraft:cow_hide"
+  },
+  "group": "",
+  "tools": [
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:meat_hook/skin_cow",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:block/cow_hide_carpet"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 24.0,
+                "min": -24.0
+              },
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "butchercraft:skinning_knife"
+        }
+      ],
+      "tool": {
+        "item": "butchercraft:skinning_knife"
+      },
+      "uses": 6
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:meat_hook/delimb_cow",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {},
+            "rotation": {},
+            "scale": {}
+          },
+          "location": "butchercraft:block/cow_hide_carpet"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 24.0,
+                "min": -24.0
+              },
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {}
+          },
+          "location": "butchercraft:skinning_knife"
+        }
+      ],
+      "tool": {
+        "item": "butchercraft:skinning_knife"
+      },
+      "uses": 6
+    }
+  ]
+}

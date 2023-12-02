@@ -102,16 +102,17 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.CHICKEN_CARCASS).add(ButchercraftItems.CHICKEN_CARCASS.get()).add(Items.CHICKEN);
 		tag(ButchercraftItemTags.GOAT_CARCASS).add(ButchercraftItems.GOAT_CARCASS.get());
 		tag(ButchercraftItemTags.PIG_CARCASS).add(ButchercraftItems.PIG_CARCASS.get());
-		tag(ButchercraftItemTags.RABBIT_CARCASS).add(ButchercraftItems.BLACK_RABBIT_CARCASS.get(),
-				ButchercraftItems.BROWN_RABBIT_CARCASS.get(), ButchercraftItems.GOLD_RABBIT_CARCASS.get(),
-				ButchercraftItems.SALT_RABBIT_CARCASS.get(), ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(),
-				ButchercraftItems.WHITE_RABBIT_CARCASS.get()).add(Items.RABBIT);
+		tag(ButchercraftItemTags.RABBIT_CARCASS)
+				.add(ButchercraftItems.BLACK_RABBIT_CARCASS.get(), ButchercraftItems.BROWN_RABBIT_CARCASS.get(),
+						ButchercraftItems.GOLD_RABBIT_CARCASS.get(), ButchercraftItems.SALT_RABBIT_CARCASS.get(),
+						ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(), ButchercraftItems.WHITE_RABBIT_CARCASS.get())
+				.add(Items.RABBIT);
 		tag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.SHEEP_CARCASS.get());
 
 		tag(ButchercraftItemTags.CARCASS).addTag(ButchercraftItemTags.COW_CARCASS)
 				.addTag(ButchercraftItemTags.CHICKEN_CARCASS).addTag(ButchercraftItemTags.GOAT_CARCASS)
 				.addTag(ButchercraftItemTags.PIG_CARCASS).addTag(ButchercraftItemTags.RABBIT_CARCASS)
-				.addTag(ButchercraftItemTags.SHEEP_CARCASS);
-	
+				.addTag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.COW_HIDE.get());
+
 	}
 }

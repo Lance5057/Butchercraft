@@ -182,6 +182,15 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat_bisected")),
 						standardHookToolModel(BUTCHER_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat"));
+		
+		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_HIDE.get())
+		.tool(Ingredient.of(SKINNING_KNIFE.get()),6, true, MeatHookLoottables.SKIN_COW,
+				standardModel(new ResourceLocation(Butchercraft.MOD_ID, "block/cow_hide_carpet")),
+				standardHookToolModel(SKINNING_KNIFE.get()))
+		.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.BISECT_COW,
+				standardModel(new ResourceLocation(Butchercraft.MOD_ID, "block/cow_hide_carpet")),
+				standardHookToolModel(SKINNING_KNIFE.get()))
+		.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(CHICKEN_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE,

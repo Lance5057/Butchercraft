@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-22T13:07:37.3584808	Recipes
+// 1.19.2	2023-12-02T11:52:44.3001031	Recipes
 b54b39b9c55634bfd58061d81f98fceeeb60bfc6 data/butchercraft/advancements/recipes/butchercraft.items/beef_block.json
 99068a38c58955b315d8260458d2bc1a2c776f5e data/butchercraft/advancements/recipes/butchercraft.items/beef_block_to_scraps.json
 25ed530df04e3e9769f77555a31d0f910c39c0c2 data/butchercraft/advancements/recipes/butchercraft.items/beef_scraps_to_ground.json
@@ -123,6 +123,7 @@ def0fcda120d15dd3f8e06d1f3bfd9e287f37a56 data/butchercraft/advancements/recipes/
 2a411edda3b3f4c2a9e0a98fd88bc11cd027140b data/butchercraft/advancements/recipes/meat_hook/butcher_whole_chicken.json
 95010ab9aa2a981e7c27131ca3e6ff73f393acef data/butchercraft/advancements/recipes/meat_hook/butcher_whole_rabbit.json
 c6fa776a31e79d97c4bc10d9c4d3ad60683b731f data/butchercraft/advancements/recipes/meat_hook/cow.json
+2deff6013808698196af79df7882ecbcba2de372 data/butchercraft/advancements/recipes/meat_hook/cow_hide.json
 293c9d8bbe00ba6db6d2c976c53e601337a89580 data/butchercraft/advancements/recipes/meat_hook/goat.json
 b4c43fbc71e5984cac5ce07f8f788e5f99060953 data/butchercraft/advancements/recipes/meat_hook/pig.json
 6f883cb8d2424a10ac23ddb8d4368056bb033f88 data/butchercraft/advancements/recipes/meat_hook/sheep.json
@@ -241,6 +242,7 @@ fca6b363e301e55e28d01e626dc1bc6689aabef1 data/butchercraft/recipes/cooked_stomac
 96326f4542cbcbdfe9208fc0c53352ed582c0991 data/butchercraft/recipes/cooked_tripe_from_smelting.json
 171a8073391e5a9ffa763a6c2ec3fe3289ba686d data/butchercraft/recipes/cooked_tripe_from_smoking.json
 77866cf55542d742e33474af7889c2e31a602776 data/butchercraft/recipes/cow.json
+3bb4f791f3a372e0b09b544aba46359e4393fa6e data/butchercraft/recipes/cow_hide.json
 bab05419ec2b61b1c6587071c100e6f1b907132b data/butchercraft/recipes/cow_hide_to_leather.json
 ead8f1adc81dd7e836ff66f64da9c6f11a776290 data/butchercraft/recipes/goat.json
 73c78c5c63644a4308a1454407c89dffbabb1a77 data/butchercraft/recipes/ground_beef_to_sausage.json

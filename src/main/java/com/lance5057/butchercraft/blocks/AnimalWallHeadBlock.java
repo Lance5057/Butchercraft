@@ -4,20 +4,16 @@ import com.lance5057.butchercraft.ButchercraftBlockEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.SkullBlock;
+import net.minecraft.world.level.block.WallSkullBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SkullBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class AnimalHeadBlock extends SkullBlock {
+public class AnimalWallHeadBlock extends WallSkullBlock {
 
-	public AnimalHeadBlock(Type pType, Properties pProperties) {
-		super(pType, pProperties);
-		// TODO Auto-generated constructor stub
-	}
-
-	public static enum Types implements SkullBlock.Type {
-		COW, SHEEP, PIG, GOAT, CHICKEN, RABBIT_BLACK, RABBIT_BROWN, RABBIT_GOLD, RABBIT_SALT, RABBIT_WHITE, RABBIT_SPLOTCHED;
+	public AnimalWallHeadBlock(SkullBlock.Type type, Properties props) {
+		super(type, props);
 	}
 
 	@Override
@@ -26,7 +22,7 @@ public class AnimalHeadBlock extends SkullBlock {
 
 			@Override
 			public BlockEntityType<?> getType() {
-				return ButchercraftBlockEntities.SKULL.get();
+				return ButchercraftBlockEntities.WALL_SKULL.get();
 			}
 		};
 	}

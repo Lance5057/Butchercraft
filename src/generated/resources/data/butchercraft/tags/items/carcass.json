@@ -5,6 +5,7 @@
     "#butchercraft:goat_carcass",
     "#butchercraft:pig_carcass",
     "#butchercraft:rabbit_carcass",
-    "#butchercraft:sheep_carcass"
+    "#butchercraft:sheep_carcass",
+    "butchercraft:cow_hide"
   ]
 }
