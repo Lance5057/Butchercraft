@@ -91,6 +91,11 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 								.setY(new AnimatedFloat(24, 0)).setZ(new AnimatedFloat(12, 0))));
 	}
 
+	BlacklistedModel hideModel(ResourceLocation rl) {
+		return new BlacklistedModel(rl, null, true, new AnimationFloatTransform()
+				.setLocation(new AnimatedFloatVector3().setY(new AnimatedFloat(12, 0))));
+	}
+
 	BlacklistedModel standardButcherBlockToolModel(Item i) {
 		return new BlacklistedModel(i,
 				new AnimationFloatTransform()
@@ -182,15 +187,15 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat_bisected")),
 						standardHookToolModel(BUTCHER_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat"));
-		
+
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_HIDE.get())
-		.tool(Ingredient.of(SKINNING_KNIFE.get()),6, true, MeatHookLoottables.SKIN_COW,
-				standardModel(new ResourceLocation(Butchercraft.MOD_ID, "block/cow_hide_carpet")),
-				standardHookToolModel(SKINNING_KNIFE.get()))
-		.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.BISECT_COW,
-				standardModel(new ResourceLocation(Butchercraft.MOD_ID, "block/cow_hide_carpet")),
-				standardHookToolModel(SKINNING_KNIFE.get()))
-		.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide"));
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SKIN_COW,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.BISECT_COW,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(CHICKEN_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE,
@@ -544,8 +549,10 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_ground_beef", has(GROUND_BEEF.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "ground_beef_to_sausage"));
 
-		GrinderRecipeBuilder.grind(Ingredient.of(ButchercraftItems.BLOOD_SAUSAGE_MIX.get()), 8,
-				Ingredient.of(ButchercraftItems.EXTRUDER_TIP.get()), ButchercraftItems.BLOOD_SAUSAGE_LINKED.get(), 16, 1)
+		GrinderRecipeBuilder
+				.grind(Ingredient.of(ButchercraftItems.BLOOD_SAUSAGE_MIX.get()), 8,
+						Ingredient.of(ButchercraftItems.EXTRUDER_TIP.get()),
+						ButchercraftItems.BLOOD_SAUSAGE_LINKED.get(), 16, 1)
 				.unlockedBy("has_blood_sausage_mix", has(ButchercraftItems.BLOOD_SAUSAGE_MIX.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_sausage_to_links"));
 	}

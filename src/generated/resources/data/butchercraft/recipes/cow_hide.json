@@ -13,11 +13,16 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "y": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
-          "location": "butchercraft:block/cow_hide_carpet"
+          "location": "butchercraft:meathook/cow_hide"
         },
         {
           "animation": {
@@ -62,11 +67,16 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "y": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
-          "location": "butchercraft:block/cow_hide_carpet"
+          "location": "butchercraft:meathook/cow_hide"
         },
         {
           "animation": {

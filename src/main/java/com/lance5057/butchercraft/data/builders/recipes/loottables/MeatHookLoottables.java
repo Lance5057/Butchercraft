@@ -54,10 +54,20 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 	public static final ResourceLocation BLOOD_BUCKET = new ResourceLocation(Butchercraft.MOD_ID,
 			"meat_hook/blood_bucket");
 
+	public static final ResourceLocation SCRAPE_HIDE = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/scrape_hide");
+	public static final ResourceLocation COW_LEATHER = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/cow_leather");
+
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
 		t.accept(BLOOD_BUCKET,
 				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1)));
+
+		t.accept(SCRAPE_HIDE, LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 1, 4))
+				.withPool(createPoolWithItem(ButchercraftItems.FAT.get(), 0, 2)));
+		t.accept(COW_LEATHER, LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 4))
+				.withPool(createPoolWithItem(Items.LEATHER, 12)));
 
 		t.accept(SKIN_COW,
 				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.COW_HIDE.get(), 1))
