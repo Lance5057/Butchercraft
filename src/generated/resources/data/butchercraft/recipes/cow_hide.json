@@ -8,7 +8,7 @@
     {
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:meat_hook/skin_cow",
+      "loot_table": "butchercraft:meat_hook/scrape_hide",
       "models": [
         {
           "IsBlock": true,
@@ -62,7 +62,7 @@
     {
       "count": 1,
       "damage": true,
-      "loot_table": "butchercraft:meat_hook/delimb_cow",
+      "loot_table": "butchercraft:meat_hook/cow_leather",
       "models": [
         {
           "IsBlock": true,

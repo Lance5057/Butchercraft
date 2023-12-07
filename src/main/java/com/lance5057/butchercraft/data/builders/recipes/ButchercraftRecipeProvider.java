@@ -189,10 +189,10 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat"));
 
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_HIDE.get())
-				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SKIN_COW,
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
 						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
 						standardHookToolModel(SKINNING_KNIFE.get()))
-				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.BISECT_COW,
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.COW_LEATHER,
 						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
 						standardHookToolModel(SKINNING_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide"));
@@ -526,17 +526,17 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		createFoodRecipe(Ingredient.of(ButchercraftItems.LAMB_SCRAPS.get()), ButchercraftItems.COOKED_LAMB_SCRAPS.get(),
 				consumer);
 
-		ShapelessRecipeBuilder.shapeless(LEATHER, 12).requires(COW_HIDE.get()).requires(SKINNING_KNIFE.get())
-				.unlockedBy("has_cow_hide", has(COW_HIDE.get()))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide_to_leather"));
-
-		ShapelessRecipeBuilder.shapeless(LEATHER, 8).requires(PIG_HIDE.get()).requires(SKINNING_KNIFE.get())
-				.unlockedBy("has_pig_hide", has(PIG_HIDE.get()))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pig_hide_to_leather"));
-
-		ShapelessRecipeBuilder.shapeless(LEATHER, 6).requires(SHEEP_HIDE.get()).requires(SKINNING_KNIFE.get())
-				.unlockedBy("has_sheep_hide", has(SHEEP_HIDE.get()))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide_to_leather"));
+//		ShapelessRecipeBuilder.shapeless(LEATHER, 12).requires(COW_HIDE.get()).requires(SKINNING_KNIFE.get())
+//				.unlockedBy("has_cow_hide", has(COW_HIDE.get()))
+//				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide_to_leather"));
+//
+//		ShapelessRecipeBuilder.shapeless(LEATHER, 8).requires(PIG_HIDE.get()).requires(SKINNING_KNIFE.get())
+//				.unlockedBy("has_pig_hide", has(PIG_HIDE.get()))
+//				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pig_hide_to_leather"));
+//
+//		ShapelessRecipeBuilder.shapeless(LEATHER, 6).requires(SHEEP_HIDE.get()).requires(SKINNING_KNIFE.get())
+//				.unlockedBy("has_sheep_hide", has(SHEEP_HIDE.get()))
+//				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide_to_leather"));
 
 		GrinderRecipeBuilder
 				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()), 1,

@@ -447,6 +447,10 @@ public class ButchercraftItems {
 	public static final RegistryObject<Item> BLOOD_FLUID_BOTTLE = ITEMS.register("blood_fluid_bottle",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.BUCKET).stacksTo(16)));
 
+	public static final RegistryObject<Item> TANNING_FLUID_BUCKET = ITEMS.register("tanning_fluid_bucket",
+			() -> new BucketItem(ButchercraftFluids.TANNING_FLUID,
+					new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
+
 	public static final RegistryObject<Item> COW_HEAD_ITEM = ITEMS.register("cow_head_item",
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.COW_HEAD.get(),
 					ButchercraftBlocks.COW_HEAD_WALL.get(),
@@ -513,6 +517,13 @@ public class ButchercraftItems {
 	public static final RegistryObject<BlockItem> TRIMMED_BARN_WOOD_ITEM = ITEMS.register("trimmed_barn_wood_item",
 			() -> new BlockItem(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(),
 					new Item.Properties().tab(BUTCHER_TAB)));
+
+	public static final RegistryObject<Item> RAWHIDE = ITEMS.register("rawhide",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> SOAKED_HIDE = ITEMS.register("soaked_hide",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+	public static final RegistryObject<Item> TANNING_SOLUTION = ITEMS.register("tanning_solution",
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);
