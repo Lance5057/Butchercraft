@@ -1,0 +1,6 @@
+{
+  "parent": "butchercraft:item/rabbit_head",
+  "textures": {
+    "0": "minecraft:entity/rabbit/white"
+  }
+}

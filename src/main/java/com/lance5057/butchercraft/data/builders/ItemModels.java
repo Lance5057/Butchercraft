@@ -264,10 +264,45 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.BARN_WOOD_SLAB_ITEM, "barn_wood_slab");
 		forBlockItem(ButchercraftItems.BARN_WOOD_STAIRS_ITEM, "barn_wood_stairs");
 		forBlockItem(ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM, "barn_trapdoor");
+		
+		getBuilder(ButchercraftItems.COW_HEAD_ITEM.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "item/cow_head"), fh));
+		getBuilder(ButchercraftItems.PIG_HEAD_ITEM.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "item/pig_head"), fh));
+		getBuilder(ButchercraftItems.SHEEP_HEAD_ITEM.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "item/sheep_head"), fh));
+		getBuilder(ButchercraftItems.GOAT_HEAD_ITEM.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "item/goat_head"), fh));
+		getBuilder(ButchercraftItems.CHICKEN_HEAD_ITEM.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "item/chicken_head"), fh));
+
+		getBuilder(ButchercraftItems.RABBIT_BLACK_HEAD_ITEM.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(modLoc("item/rabbit_head"), existingFileHelper))
+				.texture("0", mcLoc("entity/rabbit/black"));
+		getBuilder(ButchercraftItems.RABBIT_BROWN_HEAD_ITEM.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(modLoc("item/rabbit_head"), existingFileHelper))
+				.texture("0", mcLoc("entity/rabbit/brown"));
+		getBuilder(ButchercraftItems.RABBIT_GOLD_HEAD_ITEM.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(modLoc("item/rabbit_head"), existingFileHelper))
+				.texture("0", mcLoc("entity/rabbit/gold"));
+		getBuilder(ButchercraftItems.RABBIT_SALT_HEAD_ITEM.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(modLoc("item/rabbit_head"), existingFileHelper))
+				.texture("0", mcLoc("entity/rabbit/salt"));
+		getBuilder(ButchercraftItems.RABBIT_SPLOTCHED_HEAD_ITEM.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(modLoc("item/rabbit_head"), existingFileHelper))
+				.texture("0", mcLoc("entity/rabbit/white_splotched"));
+		getBuilder(ButchercraftItems.RABBIT_WHITE_HEAD_ITEM.getId().getPath())
+				.parent(new ModelFile.ExistingModelFile(modLoc("item/rabbit_head"), existingFileHelper))
+				.texture("0", mcLoc("entity/rabbit/white"));
 
 //		forBlockItem(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM, "trimmed_barn_wood");
-		getBuilder(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
-				new ResourceLocation(Butchercraft.MOD_ID, "block/barn_wood/trimmed_barn_wood_block_down")));
+		
+		getBuilder(ButchercraftItems.CHICKEN_MASK.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "item/chicken_mask_model"), fh));
+		getBuilder(ButchercraftItems.PIG_HOOD.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "item/pig_hood"), fh));
+		getBuilder(ButchercraftItems.COW_HOOD.getId().getPath()).parent(new ModelFile.ExistingModelFile(
+				new ResourceLocation(Butchercraft.MOD_ID, "item/cow_hood"), fh));
 	}
 
 	public void forItem(RegistryObject<? extends Item> item, String name) {
