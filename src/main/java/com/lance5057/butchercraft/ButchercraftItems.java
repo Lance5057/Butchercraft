@@ -518,12 +518,12 @@ public class ButchercraftItems {
 			() -> new BlockItem(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(),
 					new Item.Properties().tab(BUTCHER_TAB)));
 
-	public static final RegistryObject<Item> RAWHIDE = ITEMS.register("rawhide",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<Item> SOAKED_HIDE = ITEMS.register("soaked_hide",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<Item> TANNING_SOLUTION = ITEMS.register("tanning_solution",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+//	public static final RegistryObject<Item> RAWHIDE = ITEMS.register("rawhide",
+//			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+//	public static final RegistryObject<Item> SOAKED_HIDE = ITEMS.register("soaked_hide",
+//			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
+//	public static final RegistryObject<Item> TANNING_SOLUTION = ITEMS.register("tanning_solution",
+//			() -> new Item(new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static void register(IEventBus modBus) {
 		ITEMS.register(modBus);

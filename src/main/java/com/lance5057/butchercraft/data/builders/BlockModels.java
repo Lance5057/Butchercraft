@@ -65,6 +65,7 @@ public class BlockModels extends BlockStateProvider {
 		this.horizontalBlock(ButchercraftBlocks.RABBIT_BLOCK.get(), models().getExistingFile(modLoc("block/rabbit")));
 
 		this.simpleBlock(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
+		this.simpleBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get());
 		this.slabBlock(ButchercraftBlocks.BARN_WOOD_SLAB.get(), modLoc("block/barn_wood_block"),
 				modLoc("block/barn_wood_block"));
 		this.stairsBlock(ButchercraftBlocks.BARN_WOOD_STAIRS.get(), modLoc("block/barn_wood_block"));
