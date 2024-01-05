@@ -231,6 +231,11 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.LAMB_BLOCK_ITEM, "lamb_block");
 		forBlockItem(ButchercraftItems.COOKED_LAMB_BLOCK_ITEM, "cooked_lamb_block");
 
+		forBlockItem(ButchercraftItems.SAUSAGE_BLOCK_ITEM, "sausage_block");
+		forBlockItem(ButchercraftItems.BLOOD_SAUSAGE_BLOCK_ITEM, "blood_sausage_block");
+		forBlockItem(ButchercraftItems.COOKED_SAUSAGE_BLOCK_ITEM, "cooked_sausage_block");
+		forBlockItem(ButchercraftItems.COOKED_BLOOD_SAUSAGE_BLOCK_ITEM, "cooked_blood_sausage_block");
+
 		forBlockItem(ButchercraftItems.COW_HIDE, "cow_hide");
 		forBlockItem(ButchercraftItems.PIG_HIDE, "pig_hide");
 		forBlockItem(ButchercraftItems.SHEEP_HIDE, "sheep_hide");

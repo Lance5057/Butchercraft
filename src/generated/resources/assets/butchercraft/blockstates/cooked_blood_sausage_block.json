@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "butchercraft:block/cooked_blood_sausage_block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "butchercraft:block/cooked_blood_sausage_block"
+    },
+    "axis=z": {
+      "model": "butchercraft:block/cooked_blood_sausage_block_horizontal",
+      "x": 90
+    }
+  }
+}

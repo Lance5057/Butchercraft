@@ -1,4 +1,4 @@
-// 1.19.2	2024-01-03T12:17:37.3790224	Butchercraft item models
+// 1.19.2	2024-01-05T12:44:00.1287805	Butchercraft item models
 65012af66cea6853cb6fc8f28d0c092803f20c0d assets/butchercraft/models/item/apron.json
 f90b50ce6dc5b95a23e41bdd59c2e8825cbd6399 assets/butchercraft/models/item/barn_wood_block_item.json
 0a278d1bfa0e986e1457cea216bbae8e461ac1e5 assets/butchercraft/models/item/barn_wood_door_item.json
@@ -17,6 +17,7 @@ ab6f9ccf9f1176fbd16ad83c20fc595f0f0a7f9e assets/butchercraft/models/item/black_r
 2d8b72075ff95d2b5182b231c86f0b86345c3651 assets/butchercraft/models/item/blood_fluid_bottle.json
 eabe039897686f0700e2f7b5322315efec756163 assets/butchercraft/models/item/blood_fluid_bucket.json
 db181c762d3f7e552ff2b402d6c9c98b2f838aff assets/butchercraft/models/item/blood_sausage.json
+9557819e06762d6e210d0a9308565110207a60a2 assets/butchercraft/models/item/blood_sausage_block_item.json
 ee016afe423b3b7b1242853bb685752d80453028 assets/butchercraft/models/item/blood_sausage_linked.json
 228723c938047e6a660aed721c27234da74db0f9 assets/butchercraft/models/item/blood_sausage_mix.json
 ebd8cc80d3b9f90b6c562f4687d496221385f94c assets/butchercraft/models/item/bone_saw.json
@@ -44,6 +45,7 @@ c766184b801d314eea1e2e64edaa293af02286c2 assets/butchercraft/models/item/cooked_
 caae792dbb6aecf1972763ef5c057ad81ac2871f assets/butchercraft/models/item/cooked_beef_scraps.json
 c6ce73eafba645307810bb4cd8a047d21b8f96c2 assets/butchercraft/models/item/cooked_beef_stewmeat.json
 f3cadf8d93530e580ea2ec08917757499dc1a67e assets/butchercraft/models/item/cooked_blood_sausage.json
+5ae738636a78cb28405875af130420360a5f68d3 assets/butchercraft/models/item/cooked_blood_sausage_block_item.json
 65568425c5b197dddbb178da7484ea4fb293cc53 assets/butchercraft/models/item/cooked_brain.json
 a1876ab3bb5e57a33c53d06eb5a68f1210375400 assets/butchercraft/models/item/cooked_chicken_breast.json
 1b623bccaed27dbefe4e1deb613c0acc2daa8565 assets/butchercraft/models/item/cooked_chicken_leg.json
@@ -90,6 +92,7 @@ dc44e25dc846d8bfc2fe89341a69e514cb0dd5f9 assets/butchercraft/models/item/cooked_
 ee68dff49182457ee2fd6815b31b4312ca28660a assets/butchercraft/models/item/cooked_rabbit_stewmeat.json
 b3a64f61f7a892c864df57f15a5026a76837f152 assets/butchercraft/models/item/cooked_rabbit_thigh.json
 00ee4de3b0237dbf5afd546f6266c7131f117197 assets/butchercraft/models/item/cooked_sausage.json
+5c3f34cc14faeff2121b6031f643ceaae9073b84 assets/butchercraft/models/item/cooked_sausage_block_item.json
 5d51b62e72f25795c31a2d4a21c6f9b9120667d1 assets/butchercraft/models/item/cooked_stomach.json
 1bfa537fb005f06e68d37505678cdfa5189c891c assets/butchercraft/models/item/cooked_tongue.json
 b90f898195b1d6629f5041bf3f898f1e5e4e3e15 assets/butchercraft/models/item/cooked_tripe.json
@@ -174,6 +177,7 @@ bfdc88aefc8b4362bcffa73fc1bda273a4c203cb assets/butchercraft/models/item/salt_bu
 25cd6b450a8991b47ae5b24bfefb3b024a232696 assets/butchercraft/models/item/salt_bunny_tail.json
 30aa4b44fa33190b489d909c8f2cc0a67c1c935d assets/butchercraft/models/item/salt_rabbit_carcass.json
 25c282bfdaf42831302d2032d42c88dfae343a5c assets/butchercraft/models/item/sausage.json
+8053bf922aaf06f6efa0714dac5dc9c191511f2d assets/butchercraft/models/item/sausage_block_item.json
 0a1ddda79679394127735cb8223d27d6d8ead02b assets/butchercraft/models/item/sausage_linked.json
 c198e5877ed487c10a8563eec188d1e9fae6402e assets/butchercraft/models/item/sheep_carcass.json
 cea2b4063ed0eeff798a0af1be9241e5b1e3f78b assets/butchercraft/models/item/sheep_head_item.json

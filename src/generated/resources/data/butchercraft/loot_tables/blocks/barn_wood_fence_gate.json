@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:goat_block_item"
+          "name": "butchercraft:barn_wood_fence_gate_item"
         }
       ],
       "rolls": 1.0

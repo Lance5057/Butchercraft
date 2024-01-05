@@ -11,7 +11,10 @@ import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -52,6 +55,36 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<Block> COOKED_LAMB_BLOCK = BLOCKS.register("cooked_lamb_block", () -> new Block(
 			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN).sound(SoundType.SLIME_BLOCK)));
 
+	public static final RegistryObject<Block> GOAT_BLOCK = BLOCKS.register("goat_block", () -> new Block(
+			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK)));
+	public static final RegistryObject<Block> COOKED_GOAT_BLOCK = BLOCKS.register("cooked_goat_block", () -> new Block(
+			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN).sound(SoundType.SLIME_BLOCK)));
+
+	public static final RegistryObject<Block> RABBIT_BLOCK = BLOCKS.register("rabbit_block", () -> new Block(
+			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK)));
+	public static final RegistryObject<Block> COOKED_RABBIT_BLOCK = BLOCKS.register("cooked_rabbit_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)
+					.sound(SoundType.SLIME_BLOCK)));
+
+	public static final RegistryObject<Block> CHICKEN_BLOCK = BLOCKS.register("chicken_block", () -> new Block(
+			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK)));
+	public static final RegistryObject<Block> COOKED_CHICKEN_BLOCK = BLOCKS.register("cooked_chicken_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)
+					.sound(SoundType.SLIME_BLOCK)));
+
+	public static final RegistryObject<RotatedPillarBlock> SAUSAGE_BLOCK = BLOCKS.register("sausage_block", () -> new RotatedPillarBlock(
+			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK)));
+	public static final RegistryObject<RotatedPillarBlock> COOKED_SAUSAGE_BLOCK = BLOCKS.register("cooked_sausage_block",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)
+					.sound(SoundType.SLIME_BLOCK)));
+
+	public static final RegistryObject<RotatedPillarBlock> BLOOD_SAUSAGE_BLOCK = BLOCKS.register("blood_sausage_block",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED)
+					.sound(SoundType.SLIME_BLOCK)));
+	public static final RegistryObject<RotatedPillarBlock> COOKED_BLOOD_SAUSAGE_BLOCK = BLOCKS.register("cooked_blood_sausage_block",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN)
+					.sound(SoundType.SLIME_BLOCK)));
+
 	public static final RegistryObject<HideBlock> COW_HIDE_CARPET = BLOCKS.register("cow_hide_carpet",
 			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.COLOR_BROWN)));
 	public static final RegistryObject<HideBlock> PIG_HIDE_CARPET = BLOCKS.register("pig_hide_carpet",
@@ -61,25 +94,25 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<HideBlock> GOAT_HIDE_CARPET = BLOCKS.register("goat_hide_carpet",
 			() -> new HideBlock(BlockBehaviour.Properties.of(Material.WOOL, MaterialColor.TERRACOTTA_WHITE)));
 
-	public static final RegistryObject<TaxidermyBlock> COW_BLOCK = BLOCKS.register("cow_block",
+	public static final RegistryObject<TaxidermyBlock> TAXIDERMY_COW_BLOCK = BLOCKS.register("taxidermy_cow_block",
 			() -> new TaxidermyBlock());
-	public static final RegistryObject<TaxidermyBlock> PIG_BLOCK = BLOCKS.register("pig_block",
+	public static final RegistryObject<TaxidermyBlock> TAXIDERMY_PIG_BLOCK = BLOCKS.register("taxidermy_pig_block",
 			() -> new TaxidermyBlock());
-	public static final RegistryObject<TaxidermyBlock> SHEEP_BLOCK = BLOCKS.register("sheep_block",
+	public static final RegistryObject<TaxidermyBlock> TAXIDERMY_SHEEP_BLOCK = BLOCKS.register("taxidermy_sheep_block",
 			() -> new TaxidermyBlock());
-	public static final RegistryObject<TaxidermyBlock> GOAT_BLOCK = BLOCKS.register("goat_block",
+	public static final RegistryObject<TaxidermyBlock> TAXIDERMY_GOAT_BLOCK = BLOCKS.register("taxidermy_goat_block",
 			() -> new TaxidermyBlock());
-	public static final RegistryObject<TaxidermyBlock> RABBIT_BLOCK = BLOCKS.register("rabbit_block",
-			() -> new TaxidermyBlock());
-	public static final RegistryObject<TaxidermyBlock> CHICKEN_BLOCK = BLOCKS.register("chicken_block",
-			() -> new TaxidermyBlock());
+	public static final RegistryObject<TaxidermyBlock> TAXIDERMY_RABBIT_BLOCK = BLOCKS
+			.register("taxidermy_rabbit_block", () -> new TaxidermyBlock());
+	public static final RegistryObject<TaxidermyBlock> TAXIDERMY_CHICKEN_BLOCK = BLOCKS
+			.register("taxidermy_chicken_block", () -> new TaxidermyBlock());
 
 	public static final RegistryObject<LiquidBlock> BLOOD_FLUID_BLOCK = ButchercraftBlocks.BLOCKS
 			.register("blood_fluid_block", () -> new LiquidBlock(ButchercraftFluids.BLOOD_FLUID,
 					BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noLootTable()));
-	public static final RegistryObject<LiquidBlock> TANNING_FLUID_BLOCK = ButchercraftBlocks.BLOCKS
-			.register("tanning_fluid_block", () -> new LiquidBlock(ButchercraftFluids.TANNING_FLUID,
-					BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noLootTable()));
+//	public static final RegistryObject<LiquidBlock> TANNING_FLUID_BLOCK = ButchercraftBlocks.BLOCKS
+//			.register("tanning_fluid_block", () -> new LiquidBlock(ButchercraftFluids.TANNING_FLUID,
+//					BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noLootTable()));
 
 	public static final RegistryObject<AnimalHeadBlock> COW_HEAD = BLOCKS.register("cow_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.COW,
@@ -169,6 +202,12 @@ public class ButchercraftBlocks {
 					.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
 	public static final RegistryObject<SlabBlock> BARN_WOOD_SLAB = BLOCKS.register("barn_wood_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)
+					.sound(SoundType.WOOD).strength(3.0F)));
+	public static final RegistryObject<FenceBlock> BARN_WOOD_FENCE = BLOCKS.register("barn_wood_fence",
+			() -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)
+					.sound(SoundType.WOOD).strength(3.0F)));
+	public static final RegistryObject<FenceGateBlock> BARN_WOOD_FENCE_GATE = BLOCKS.register("barn_wood_fence_gate",
+			() -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)
 					.sound(SoundType.WOOD).strength(3.0F)));
 	public static final RegistryObject<DoorBlock> BARN_WOOD_DOOR = BLOCKS.register("barn_wood_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)

@@ -26,18 +26,28 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.COOKED_PORK_BLOCK.get());
 		dropSelf(ButchercraftBlocks.LAMB_BLOCK.get());
 		dropSelf(ButchercraftBlocks.COOKED_LAMB_BLOCK.get());
+		dropSelf(ButchercraftBlocks.GOAT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.COOKED_GOAT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.COOKED_RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.CHICKEN_BLOCK.get());
+		dropSelf(ButchercraftBlocks.COOKED_CHICKEN_BLOCK.get());
+		dropSelf(ButchercraftBlocks.SAUSAGE_BLOCK.get());
+		dropSelf(ButchercraftBlocks.BLOOD_SAUSAGE_BLOCK.get());
+		dropSelf(ButchercraftBlocks.COOKED_BLOOD_SAUSAGE_BLOCK.get());
+		dropSelf(ButchercraftBlocks.COOKED_SAUSAGE_BLOCK.get());
 
 		dropSelf(ButchercraftBlocks.COW_HIDE_CARPET.get());
 		dropSelf(ButchercraftBlocks.PIG_HIDE_CARPET.get());
 		dropSelf(ButchercraftBlocks.SHEEP_HIDE_CARPET.get());
 		dropSelf(ButchercraftBlocks.GOAT_HIDE_CARPET.get());
 
-		dropSelf(ButchercraftBlocks.COW_BLOCK.get());
-		dropSelf(ButchercraftBlocks.SHEEP_BLOCK.get());
-		dropSelf(ButchercraftBlocks.PIG_BLOCK.get());
-		dropSelf(ButchercraftBlocks.GOAT_BLOCK.get());
-		dropSelf(ButchercraftBlocks.RABBIT_BLOCK.get());
-		dropSelf(ButchercraftBlocks.CHICKEN_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_COW_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_SHEEP_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_PIG_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_GOAT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_CHICKEN_BLOCK.get());
 
 		dropSelf(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
 		dropSelf(ButchercraftBlocks.BARN_WOOD_DOOR.get());
@@ -49,7 +59,7 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.CHICKEN_HEAD.get());
 		dropSelf(ButchercraftBlocks.PIG_HEAD.get());
 		dropSelf(ButchercraftBlocks.GOAT_HEAD.get());
-		
+
 		dropSelf(ButchercraftBlocks.RABBIT_BLACK_HEAD.get());
 		dropSelf(ButchercraftBlocks.RABBIT_BROWN_HEAD.get());
 		dropSelf(ButchercraftBlocks.RABBIT_GOLD_HEAD.get());
@@ -62,6 +72,8 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		createSlabItemTable(ButchercraftBlocks.BARN_WOOD_SLAB.get());
 		dropSelf(ButchercraftBlocks.BARN_WOOD_STAIRS.get());
 		dropSelf(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get());
+		dropSelf(ButchercraftBlocks.BARN_WOOD_FENCE.get());
+		dropSelf(ButchercraftBlocks.BARN_WOOD_FENCE_GATE.get());
 
 		dropSelf(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get());
 	}

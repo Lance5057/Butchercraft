@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:goat_block_item"
+          "name": "butchercraft:cooked_chicken_block_item"
         }
       ],
       "rolls": 1.0
