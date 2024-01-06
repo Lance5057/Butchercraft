@@ -46,8 +46,14 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.TAXIDERMY_SHEEP_BLOCK.get());
 		dropSelf(ButchercraftBlocks.TAXIDERMY_PIG_BLOCK.get());
 		dropSelf(ButchercraftBlocks.TAXIDERMY_GOAT_BLOCK.get());
-		dropSelf(ButchercraftBlocks.TAXIDERMY_RABBIT_BLOCK.get());
 		dropSelf(ButchercraftBlocks.TAXIDERMY_CHICKEN_BLOCK.get());
+
+		dropSelf(ButchercraftBlocks.TAXIDERMY_BLACK_RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_BROWN_RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_GOLD_RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_SALT_RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get());
+		dropSelf(ButchercraftBlocks.TAXIDERMY_WHITE_RABBIT_BLOCK.get());
 
 		dropSelf(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
 		dropSelf(ButchercraftBlocks.BARN_WOOD_DOOR.get());

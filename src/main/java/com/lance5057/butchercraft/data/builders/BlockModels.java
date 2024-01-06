@@ -78,8 +78,25 @@ public class BlockModels extends BlockStateProvider {
 				models().getExistingFile(modLoc("block/goat")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_CHICKEN_BLOCK.get(),
 				models().getExistingFile(modLoc("block/chicken")));
-		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_RABBIT_BLOCK.get(),
-				models().getExistingFile(modLoc("block/rabbit")));
+
+		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_BLACK_RABBIT_BLOCK.get(),
+				models().withExistingParent("taxidermy_black_rabbit", modLoc("block/rabbit")).texture("0",
+						mcLoc("entity/rabbit/black")));
+		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_BROWN_RABBIT_BLOCK.get(),
+				models().withExistingParent("taxidermy_brown_rabbit", modLoc("block/rabbit")).texture("0",
+						mcLoc("entity/rabbit/brown")));
+		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_GOLD_RABBIT_BLOCK.get(),
+				models().withExistingParent("taxidermy_gold_rabbit", modLoc("block/rabbit")).texture("0",
+						mcLoc("entity/rabbit/gold")));
+		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_SALT_RABBIT_BLOCK.get(),
+				models().withExistingParent("taxidermy_salt_rabbit", modLoc("block/rabbit")).texture("0",
+						mcLoc("entity/rabbit/salt")));
+		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get(),
+				models().withExistingParent("taxidermy_splotched_rabbit", modLoc("block/rabbit")).texture("0",
+						mcLoc("entity/rabbit/white_splotched")));
+		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_WHITE_RABBIT_BLOCK.get(),
+				models().withExistingParent("taxidermy_white_rabbit", modLoc("block/rabbit")).texture("0",
+						mcLoc("entity/rabbit/white")));
 
 		this.simpleBlock(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get());
