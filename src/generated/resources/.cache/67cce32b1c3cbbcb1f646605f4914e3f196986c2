@@ -1,4 +1,4 @@
-// 1.19.2	2024-01-06T10:18:12.0887497	LootTables
+// 1.19.2	2024-01-10T13:13:28.9221003	LootTables
 d18309e947503b793ebec72b88be7dee5f134b23 data/butchercraft/loot_tables/blocks/barn_wood_block.json
 4e0b6fbc86feebe3cb637794f0dabe5c93562439 data/butchercraft/loot_tables/blocks/barn_wood_door.json
 2184af5fa312ec9b91dadd46d215ac132917deb1 data/butchercraft/loot_tables/blocks/barn_wood_fence.json
@@ -21,6 +21,7 @@ e7f66e367e845f00e78b159cb7652b3604ac0cf6 data/butchercraft/loot_tables/blocks/co
 f06279da926151fb09d67823809ec9e259ea6561 data/butchercraft/loot_tables/blocks/cooked_sausage_block.json
 618ef9858964ce9cdad63b8d55dc0ff2e7e16fb6 data/butchercraft/loot_tables/blocks/cow_head.json
 b7eedee15bf7a50bd07d87b74a9753cad39c1dee data/butchercraft/loot_tables/blocks/cow_hide_carpet.json
+15c89837aaf0aa93d9103467f33f0807f43734c1 data/butchercraft/loot_tables/blocks/cow_skull_head.json
 f7cff01ccb795ceb45b8dffda6b57a21f9c811d0 data/butchercraft/loot_tables/blocks/goat_block.json
 7a947e78288be4bc9035e58741eb60d9c10eeda9 data/butchercraft/loot_tables/blocks/goat_head.json
 28f9e97006fdb7663b360c856e8dc78cc3922332 data/butchercraft/loot_tables/blocks/goat_hide_carpet.json

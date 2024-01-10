@@ -132,6 +132,13 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<WallSkullBlock> COW_HEAD_WALL = BLOCKS.register("cow_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.COW,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(COW_HEAD.get())));
+	
+	public static final RegistryObject<AnimalHeadBlock> COW_SKULL_HEAD = BLOCKS.register("cow_skull_head",
+			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.COW_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+	public static final RegistryObject<WallSkullBlock> COW_SKULL_HEAD_WALL = BLOCKS.register("cow_skull_head_wall",
+			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.COW_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(COW_SKULL_HEAD.get())));
 
 	public static final RegistryObject<AnimalHeadBlock> CHICKEN_HEAD = BLOCKS.register("chicken_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.CHICKEN,

@@ -16,6 +16,7 @@ import com.lance5057.butchercraft.capabilities.AnimalCare;
 import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
 import com.lance5057.butchercraft.client.block_models.ChickenHeadModel;
 import com.lance5057.butchercraft.client.block_models.CowHeadModel;
+import com.lance5057.butchercraft.client.block_models.CowSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.GoatHeadModel;
 import com.lance5057.butchercraft.client.block_models.PigHeadModel;
 import com.lance5057.butchercraft.client.block_models.RabbitHeadModel;
@@ -133,6 +134,7 @@ public class ButchercraftEvents {
 				.create(ChickenMaskModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 
 		event.registerLayerDefinition(CowHeadModel.LAYER_LOCATION, () -> CowHeadModel.createBodyLayer());
+		event.registerLayerDefinition(CowSkullHeadModel.LAYER_LOCATION, () -> CowSkullHeadModel.createBodyLayer());
 		event.registerLayerDefinition(ChickenHeadModel.LAYER_LOCATION, () -> ChickenHeadModel.createBodyLayer());
 		event.registerLayerDefinition(SheepHeadModel.LAYER_LOCATION, () -> SheepHeadModel.createBodyLayer());
 		event.registerLayerDefinition(PigHeadModel.LAYER_LOCATION, () -> PigHeadModel.createBodyLayer());

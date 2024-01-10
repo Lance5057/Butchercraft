@@ -335,13 +335,13 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		getBuilder(ButchercraftItems.CHICKEN_MASK.getId().getPath()).parent(new ModelFile.ExistingModelFile(
 				new ResourceLocation(Butchercraft.MOD_ID, "item/chicken_mask_model"), fh));
 		getBuilder(ButchercraftItems.PIG_HOOD.getId().getPath()).parent(
-				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig_hood"), fh));
+				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig_hood_model"), fh));
 		getBuilder(ButchercraftItems.COW_HOOD.getId().getPath()).parent(
-				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/cow_hood"), fh));
+				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/cow_hood_model"), fh));
 		getBuilder(ButchercraftItems.GOAT_HOOD.getId().getPath()).parent(
-				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/goat_hood"), fh));
+				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/goat_hood_model"), fh));
 		getBuilder(ButchercraftItems.SHEEP_HOOD.getId().getPath()).parent(
-				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/sheep_hood"), fh));
+				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/sheep_hood_model"), fh));
 
 	}
 

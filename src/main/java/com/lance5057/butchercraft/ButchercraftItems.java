@@ -508,6 +508,10 @@ public class ButchercraftItems {
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.COW_HEAD.get(),
 					ButchercraftBlocks.COW_HEAD_WALL.get(),
 					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+	public static final RegistryObject<Item> COW_SKULL_HEAD_ITEM = ITEMS.register("cow_skull_head_item",
+			() -> new StandingAndWallBlockItem(ButchercraftBlocks.COW_SKULL_HEAD.get(),
+					ButchercraftBlocks.COW_SKULL_HEAD_WALL.get(),
+					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
 	public static final RegistryObject<Item> SHEEP_HEAD_ITEM = ITEMS.register("sheep_head_item",
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.SHEEP_HEAD.get(),
 					ButchercraftBlocks.SHEEP_HEAD_WALL.get(),
