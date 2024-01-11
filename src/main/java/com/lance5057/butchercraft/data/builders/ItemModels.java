@@ -136,8 +136,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forItem(ButchercraftItems.BEEF_STEW_MEAT, "stew_beef");
 		forItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT, "cooked_stew_beef");
-		forItem(ButchercraftItems.BEEF_ROAST, "roast");
-		forItem(ButchercraftItems.COOKED_BEEF_ROAST, "cooked_roast");
+		forItem(ButchercraftItems.BEEF_ROAST, "beef_roast");
+		forItem(ButchercraftItems.COOKED_BEEF_ROAST, "cooked_beef_roast");
 		forItem(ButchercraftItems.BEEF_RIBS, "ribs");
 		forItem(ButchercraftItems.COOKED_BEEF_RIBS, "cooked_ribs");
 		forItem(ButchercraftItems.CUBED_BEEF, "cubed_beef");
@@ -151,8 +151,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forItem(ButchercraftItems.PORK_STEW_MEAT, "stew_pork");
 		forItem(ButchercraftItems.COOKED_PORK_STEW_MEAT, "cooked_stew_pork");
-		forItem(ButchercraftItems.PORK_ROAST, "roast");
-		forItem(ButchercraftItems.COOKED_PORK_ROAST, "cooked_roast");
+		forItem(ButchercraftItems.PORK_ROAST, "pork_roast");
+		forItem(ButchercraftItems.COOKED_PORK_ROAST, "cooked_pork_roast");
 		forItem(ButchercraftItems.PORK_RIBS, "pork_ribs");
 		forItem(ButchercraftItems.COOKED_PORK_RIBS, "cooked_pork_ribs");
 		forItem(ButchercraftItems.CUBED_PORK, "cubed_pork");
@@ -176,8 +176,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		forItem(ButchercraftItems.LAMB_STEW_MEAT, "stew_lamb");
 		forItem(ButchercraftItems.COOKED_LAMB_STEW_MEAT, "cooked_stew_lamb");
-		forItem(ButchercraftItems.LAMB_ROAST, "roast");
-		forItem(ButchercraftItems.COOKED_LAMB_ROAST, "cooked_roast");
+		forItem(ButchercraftItems.LAMB_ROAST, "lamb_roast");
+		forItem(ButchercraftItems.COOKED_LAMB_ROAST, "cooked_lamb_roast");
 		forItem(ButchercraftItems.LAMB_RIBS, "lamb_ribs");
 		forItem(ButchercraftItems.COOKED_LAMB_RIBS, "cooked_lamb_ribs");
 		forItem(ButchercraftItems.CUBED_LAMB, "cubed_lamb");
@@ -191,8 +191,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_GOAT_CHOP, "cooked_goat_steak");
 		forItem(ButchercraftItems.GOAT_STEW_MEAT, "stew_goat");
 		forItem(ButchercraftItems.COOKED_GOAT_STEW_MEAT, "cooked_stew_goat");
-		forItem(ButchercraftItems.GOAT_ROAST, "roast");
-		forItem(ButchercraftItems.COOKED_GOAT_ROAST, "cooked_roast");
+		forItem(ButchercraftItems.GOAT_ROAST, "goat_roast");
+		forItem(ButchercraftItems.COOKED_GOAT_ROAST, "cooked_goat_roast");
 		forItem(ButchercraftItems.GOAT_RIBS, "goat_ribs");
 		forItem(ButchercraftItems.COOKED_GOAT_RIBS, "cooked_goat_ribs");
 		forItem(ButchercraftItems.CUBED_GOAT, "cubed_goat");

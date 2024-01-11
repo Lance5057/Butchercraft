@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.effects.BloodLustEffect;
 import com.lance5057.butchercraft.effects.BloodSplatteredEffect;
 import com.lance5057.butchercraft.effects.BloodTrailEffect;
 import com.lance5057.butchercraft.effects.DirtyHandsEffect;
@@ -23,8 +24,9 @@ public class ButchercraftMobEffects {
 			PungentReekEffect::new);
 	public static final RegistryObject<BloodTrailEffect> BLOODTRAIL = EFFECTS.register("blood_trail",
 			BloodTrailEffect::new);
-	public static final RegistryObject<DirtyHandsEffect> DIRTY = EFFECTS.register("dirty_hands",
-			DirtyHandsEffect::new);
+	public static final RegistryObject<DirtyHandsEffect> DIRTY = EFFECTS.register("dirty_hands", DirtyHandsEffect::new);
+	public static final RegistryObject<BloodLustEffect> BLOODLUST = EFFECTS.register("blood_lust",
+			BloodLustEffect::new);
 
 	public static void register(IEventBus modBus) {
 		EFFECTS.register(modBus);

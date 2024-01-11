@@ -21,6 +21,8 @@ import com.lance5057.butchercraft.client.block_models.GoatHeadModel;
 import com.lance5057.butchercraft.client.block_models.PigHeadModel;
 import com.lance5057.butchercraft.client.block_models.RabbitHeadModel;
 import com.lance5057.butchercraft.client.block_models.SheepHeadModel;
+import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
+import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
 
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -187,22 +189,28 @@ public class ButchercraftEvents {
 		if (e instanceof Pig p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.PIG_HOOD.get()), false));
+			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
+			p.goalSelector.addGoal(2, new AngryAnimalAttackGoal(p, 1, false));
 		}
 		if (e instanceof Cow p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.COW_HOOD.get()), false));
+			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
 		}
 		if (e instanceof Sheep p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.SHEEP_HOOD.get()), false));
+			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
 		}
 		if (e instanceof Goat p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.GOAT_HOOD.get()), false));
+			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
 		}
 		if (e instanceof Chicken p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.CHICKEN_MASK.get()), false));
+			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
 		}
 		if (e instanceof Rabbit p) {
 			p.goalSelector.addGoal(4, new ClothingTemptGoal(p, 1.5D,
@@ -213,6 +221,7 @@ public class ButchercraftEvents {
 							ButchercraftItems.GOLD_BUNNY_TAIL.get(), ButchercraftItems.SALT_BUNNY_TAIL.get(),
 							ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get(), ButchercraftItems.WHITE_BUNNY_TAIL.get()),
 					false));
+			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
 		}
 	}
 }

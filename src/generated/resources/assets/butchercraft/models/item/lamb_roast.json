@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "butchercraft:item/roast"
+    "layer0": "butchercraft:item/lamb_roast"
   }
 }
