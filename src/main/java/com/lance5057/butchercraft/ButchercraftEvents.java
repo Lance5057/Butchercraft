@@ -33,7 +33,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.Pig;
@@ -49,6 +51,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
@@ -222,6 +225,28 @@ public class ButchercraftEvents {
 							ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get(), ButchercraftItems.WHITE_BUNNY_TAIL.get()),
 					false));
 			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
+		}
+	}
+
+	@SubscribeEvent
+	public static void existingEntityAttributes(EntityAttributeModificationEvent event) {
+		if (!event.has(EntityType.PIG, Attributes.ATTACK_DAMAGE)) {
+			event.add(EntityType.PIG, Attributes.ATTACK_DAMAGE, 3);
+		}
+		if (!event.has(EntityType.COW, Attributes.ATTACK_DAMAGE)) {
+			event.add(EntityType.COW, Attributes.ATTACK_DAMAGE, 4);
+		}
+		if (!event.has(EntityType.SHEEP, Attributes.ATTACK_DAMAGE)) {
+			event.add(EntityType.SHEEP, Attributes.ATTACK_DAMAGE, 3);
+		}
+		if (!event.has(EntityType.GOAT, Attributes.ATTACK_DAMAGE)) {
+			event.add(EntityType.GOAT, Attributes.ATTACK_DAMAGE, 4);
+		}
+		if (!event.has(EntityType.RABBIT, Attributes.ATTACK_DAMAGE)) {
+			event.add(EntityType.RABBIT, Attributes.ATTACK_DAMAGE, 1);
+		}
+		if (!event.has(EntityType.CHICKEN, Attributes.ATTACK_DAMAGE)) {
+			event.add(EntityType.CHICKEN, Attributes.ATTACK_DAMAGE, 2);
 		}
 	}
 }

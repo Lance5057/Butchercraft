@@ -302,6 +302,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 		getBuilder(ButchercraftItems.COW_HEAD_ITEM.getId().getPath()).parent(
 				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/cow_head"), fh));
+		getBuilder(ButchercraftItems.COW_SKULL_HEAD_ITEM.getId().getPath()).parent(
+				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/cow_skull_head"), fh));
 		getBuilder(ButchercraftItems.PIG_HEAD_ITEM.getId().getPath()).parent(
 				new ModelFile.ExistingModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig_head"), fh));
 		getBuilder(ButchercraftItems.SHEEP_HEAD_ITEM.getId().getPath()).parent(

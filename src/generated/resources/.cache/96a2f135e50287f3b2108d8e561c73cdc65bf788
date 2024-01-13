@@ -1,4 +1,4 @@
-// 1.19.2	2024-01-11T10:18:36.3407302	Butchercraft item models
+// 1.19.2	2024-01-13T10:27:36.0288298	Butchercraft item models
 65012af66cea6853cb6fc8f28d0c092803f20c0d assets/butchercraft/models/item/apron.json
 f90b50ce6dc5b95a23e41bdd59c2e8825cbd6399 assets/butchercraft/models/item/barn_wood_block_item.json
 0a278d1bfa0e986e1457cea216bbae8e461ac1e5 assets/butchercraft/models/item/barn_wood_door_item.json
@@ -108,6 +108,7 @@ ae9b27c653dfba25f64f84485accfb2c6fe08405 assets/butchercraft/models/item/cow_hea
 250e450914f9777efa1240ccea28b2edc7f564ba assets/butchercraft/models/item/cow_hide.json
 7acf3ff0653e4b87d8219d32975626057db8daee assets/butchercraft/models/item/cow_hood.json
 d1fc68fe1c14eb612b0a222b54be10f3cdf4e63c assets/butchercraft/models/item/cow_item_block.json
+f31c8e6fe58020908e639d4ca967e4d71f992d3d assets/butchercraft/models/item/cow_skull_head_item.json
 e46e23beb86e1a2840cecb6b1ae17cf475d420d2 assets/butchercraft/models/item/cubed_beef.json
 6fc948d09435bfdbc98e4da22b8f9eb863931e03 assets/butchercraft/models/item/cubed_chicken.json
 885230d8fab256f6723b43e37fbfaf398ae99289 assets/butchercraft/models/item/cubed_goat.json

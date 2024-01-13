@@ -41,6 +41,7 @@ public class Butchercraft {
 		bus.addListener(ButchercraftEvents::dirtyHands);
 		bus.addListener(ButchercraftEvents::buffZombie);
 		bus.addListener(ButchercraftEvents::EntityJoined);
+//		bus.addListener(ButchercraftEvents::existingEntityAttributes);
 //		bus.addListener(ButchercraftEvents::registerLayerDefinitions);
 
 		ButchercraftBlocks.register(modEventBus);

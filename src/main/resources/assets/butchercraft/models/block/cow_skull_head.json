@@ -3,7 +3,8 @@
 	"parent": "block/block",
 	"texture_size": [64, 32],
 	"textures": {
-		"0": "cow"
+		"0": "cow",
+		"particle": "butchercraft:entity/cow"
 	},
 	"elements": [
 		{
@@ -56,7 +57,7 @@
 			"scale": [0.375, 0.375, 0.375]
 		},
 		"head": {
-			"translation": [0, 8, -2.5],
+			"translation": [0, 8, -4.5],
 			"scale": [2, 2, 2]
 		}
 	},

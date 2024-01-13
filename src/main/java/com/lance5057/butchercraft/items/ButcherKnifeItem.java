@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.tags.ButchercraftEntityTags;
 
 import net.minecraft.ChatFormatting;
@@ -36,6 +37,8 @@ public class ButcherKnifeItem extends KnifeItem {
 	public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
 			InteractionHand hand) {
 
+		if (entity.hasEffect(ButchercraftMobEffects.BLOODLUST.get()))
+			return InteractionResult.FAIL;
 		if (entity instanceof net.minecraftforge.common.IForgeShearable target) {
 			if (entity.level.isClientSide)
 				return net.minecraft.world.InteractionResult.SUCCESS;
