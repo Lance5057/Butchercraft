@@ -34,13 +34,13 @@ public class Butchercraft {
 				FMLPaths.CONFIGDIR.get().resolve("butchercraft-common.toml"));
 
 		IEventBus bus = MinecraftForge.EVENT_BUS;
-		bus.addListener(ButchercraftEvents::registerCaps);
-		bus.addGenericListener(Entity.class, ButchercraftEvents::attachCaps);
-		bus.addListener(ButchercraftEvents::breedEvent);
-		bus.addListener(ButchercraftEvents::cancelEat);
-		bus.addListener(ButchercraftEvents::dirtyHands);
-		bus.addListener(ButchercraftEvents::buffZombie);
-		bus.addListener(ButchercraftEvents::EntityJoined);
+		bus.addListener(ButchercraftModEvents::registerCaps);
+		bus.addGenericListener(Entity.class, ButchercraftModEvents::attachCaps);
+		bus.addListener(ButchercraftModEvents::breedEvent);
+		bus.addListener(ButchercraftModEvents::cancelEat);
+		bus.addListener(ButchercraftModEvents::dirtyHands);
+		bus.addListener(ButchercraftModEvents::buffZombie);
+		bus.addListener(ButchercraftModEvents::EntityJoined);
 //		bus.addListener(ButchercraftEvents::existingEntityAttributes);
 //		bus.addListener(ButchercraftEvents::registerLayerDefinitions);
 

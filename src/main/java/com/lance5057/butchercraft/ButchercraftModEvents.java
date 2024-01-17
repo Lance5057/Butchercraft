@@ -56,11 +56,12 @@ import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ButchercraftEvents {
+public class ButchercraftModEvents {
 
 	public static void registerCaps(RegisterCapabilitiesEvent event) {
 		event.register(AnimalCare.class);
@@ -199,21 +200,25 @@ public class ButchercraftEvents {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.COW_HOOD.get()), false));
 			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
+			p.goalSelector.addGoal(2, new AngryAnimalAttackGoal(p, 1, false));
 		}
 		if (e instanceof Sheep p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.SHEEP_HOOD.get()), false));
 			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
+			p.goalSelector.addGoal(2, new AngryAnimalAttackGoal(p, 1, false));
 		}
 		if (e instanceof Goat p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.GOAT_HOOD.get()), false));
 			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
+			p.goalSelector.addGoal(2, new AngryAnimalAttackGoal(p, 1, false));
 		}
 		if (e instanceof Chicken p) {
 			p.goalSelector.addGoal(4,
 					new ClothingTemptGoal(p, 1.5D, Ingredient.of(ButchercraftItems.CHICKEN_MASK.get()), false));
 			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
+			p.goalSelector.addGoal(2, new AngryAnimalAttackGoal(p, 1, false));
 		}
 		if (e instanceof Rabbit p) {
 			p.goalSelector.addGoal(4, new ClothingTemptGoal(p, 1.5D,
@@ -249,4 +254,5 @@ public class ButchercraftEvents {
 			event.add(EntityType.CHICKEN, Attributes.ATTACK_DAMAGE, 2);
 		}
 	}
+
 }

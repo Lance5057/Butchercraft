@@ -47,6 +47,8 @@ public class ButchercraftConfig {
 		public final ForgeConfigSpec.ConfigValue<Float> breedingMultiplier;
 		public final ForgeConfigSpec.ConfigValue<Float> ageMultiplier;
 		public final ForgeConfigSpec.ConfigValue<Float> wildlifeBaseNutrition;
+		public final ForgeConfigSpec.ConfigValue<Float> hoodSpawnChance;
+		public final ForgeConfigSpec.ConfigValue<Float> hoodArmyChance;
 
 		General(ForgeConfigSpec.Builder builder) {
 			breedingMultiplier = builder.comment("Amount to multiply breeding timer by after an animal is bred.")
@@ -54,7 +56,11 @@ public class ButchercraftConfig {
 			ageMultiplier = builder.comment("Amount to multiply age timer by after an animal is born.")
 					.translation("butchercraft.config.common.general.age").define("ageMultiplier", 4f);
 			wildlifeBaseNutrition = builder.comment("Nutrition of wild animals.")
-					.translation("butchercraft.config.common.general.wild_nutrition").define("ageMultiplier", 0.3f);
+					.translation("butchercraft.config.common.general.wild_nutrition").define("nutritionMultiplier", 0.3f);
+			hoodSpawnChance = builder.comment("Chance that an undead mob will spawn with an animal hood.")
+					.translation("butchercraft.config.common.general.hood_spawn_chance").define("hoodChanceMultiplier", 1f);
+			hoodArmyChance = builder.comment("Chance that an undead with a hood spawns with an army of matching animals.")
+					.translation("butchercraft.config.common.general.hood_army_chance").define("armyHoodChanceMultiplier", 0.1f);
 		}
 	}
 }
