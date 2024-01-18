@@ -90,23 +90,27 @@ public class ButchercraftForgeEvents {
 	}
 
 	private static void spawnArmy(ServerLevel level, Mob e, EntityType<?> type) {
-		int animalsAmount = level.getRandom().nextInt(4) + 2;
-		for (int i = 0; i < animalsAmount; i++) {
-			Animal ent = (Animal) type.spawn(level, null, null,
-					e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3),
-					null, false, false);
-			ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+		if (level.getRandom().nextFloat() <= ButchercraftConfig.getInstance().general.hoodArmyChance.get()) {
+			int animalsAmount = level.getRandom().nextInt(4) + 2;
+			for (int i = 0; i < animalsAmount; i++) {
+				Animal ent = (Animal) type.spawn(level, null, null,
+						e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3),
+						null, false, false);
+				ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+			}
 		}
 	}
 
 	private static void spawnRabbitArmy(ServerLevel level, Mob e, EntityType<?> type, int skin) {
-		int animalsAmount = level.getRandom().nextInt(4) + 2;
-		for (int i = 0; i < animalsAmount; i++) {
-			Rabbit ent = (Rabbit) type.spawn(level, null, null,
-					e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3),
-					null, false, false);
-			ent.setRabbitType(skin);
-			ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+		if (level.getRandom().nextFloat() <= ButchercraftConfig.getInstance().general.hoodArmyChance.get()) {
+			int animalsAmount = level.getRandom().nextInt(4) + 2;
+			for (int i = 0; i < animalsAmount; i++) {
+				Rabbit ent = (Rabbit) type.spawn(level, null, null,
+						e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3),
+						null, false, false);
+				ent.setRabbitType(skin);
+				ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+			}
 		}
 	}
 }
