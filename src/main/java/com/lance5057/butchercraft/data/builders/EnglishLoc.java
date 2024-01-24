@@ -77,6 +77,7 @@ import static com.lance5057.butchercraft.ButchercraftItems.STOMACH;
 import static com.lance5057.butchercraft.ButchercraftItems.TRIPE;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.ButchercraftBlocks;
 import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.data.DataGenerator;
@@ -190,6 +191,33 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get(), "Butcher Block");
 
 		this.add(ButchercraftItems.GOAT_CARCASS.get(), "Goat Carcass");
+
+		this.add(ButchercraftBlocks.SAUSAGE_BLOCK.get(), "Sausage Block");
+		this.add(ButchercraftBlocks.COOKED_SAUSAGE_BLOCK.get(), "Cooked Sausage Block");
+		this.add(ButchercraftBlocks.BLOOD_SAUSAGE_BLOCK.get(), "Blood Sausage Block");
+		this.add(ButchercraftBlocks.COOKED_BLOOD_SAUSAGE_BLOCK.get(), "Cooked Blood Sausage Block");
+		this.add(ButchercraftBlocks.RABBIT_BLOCK.get(), "Rabbit Block");
+		this.add(ButchercraftBlocks.COOKED_RABBIT_BLOCK.get(), "Cooked Rabbit Block");
+		this.add(ButchercraftBlocks.CHICKEN_BLOCK.get(), "Chicken Block");
+		this.add(ButchercraftBlocks.COOKED_CHICKEN_BLOCK.get(), "Cooked Chicken Block");
+		this.add(ButchercraftBlocks.GOAT_BLOCK.get(), "Goat Block");
+		this.add(ButchercraftBlocks.COOKED_GOAT_BLOCK.get(), "Cooked Goat Block");
+		
+		this.add(ButchercraftBlocks.TAXIDERMY_BLACK_RABBIT_BLOCK.get(), "Taxidermied Black Rabbit");
+		this.add(ButchercraftBlocks.TAXIDERMY_BROWN_RABBIT_BLOCK.get(), "Taxidermied Brown Rabbit");
+		this.add(ButchercraftBlocks.TAXIDERMY_GOLD_RABBIT_BLOCK.get(), "Taxidermied Gold Rabbit");
+		this.add(ButchercraftBlocks.TAXIDERMY_SALT_RABBIT_BLOCK.get(), "Taxidermied Salt Rabbit");
+		this.add(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get(), "Taxidermied Splotched Rabbit");
+		this.add(ButchercraftBlocks.TAXIDERMY_WHITE_RABBIT_BLOCK.get(), "Taxidermied White Rabbit");
+		
+		this.add(ButchercraftBlocks.TAXIDERMY_CHICKEN_BLOCK.get(), "Taxidermied Chicken");
+		this.add(ButchercraftBlocks.TAXIDERMY_COW_BLOCK.get(), "Taxidermied Cow");
+		this.add(ButchercraftBlocks.TAXIDERMY_GOAT_BLOCK.get(), "Taxidermied Goat");
+		this.add(ButchercraftBlocks.TAXIDERMY_PIG_BLOCK.get(), "Taxidermied Pig");
+		this.add(ButchercraftBlocks.TAXIDERMY_SHEEP_BLOCK.get(), "Taxidermied Sheep");
+		
+		this.add(ButchercraftItems.GOAT_CHOP.get(), "Raw Chevon");
+		this.add(ButchercraftItems.COOKED_GOAT_CHOP.get(), "Cooked Chevon");
 
 //        this.add(COW_SKULL.get(), "Cow Skull");
 
