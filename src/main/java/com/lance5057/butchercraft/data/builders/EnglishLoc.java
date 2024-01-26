@@ -202,25 +202,71 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftBlocks.COOKED_CHICKEN_BLOCK.get(), "Cooked Chicken Block");
 		this.add(ButchercraftBlocks.GOAT_BLOCK.get(), "Goat Block");
 		this.add(ButchercraftBlocks.COOKED_GOAT_BLOCK.get(), "Cooked Goat Block");
-		
+
 		this.add(ButchercraftBlocks.TAXIDERMY_BLACK_RABBIT_BLOCK.get(), "Taxidermied Black Rabbit");
 		this.add(ButchercraftBlocks.TAXIDERMY_BROWN_RABBIT_BLOCK.get(), "Taxidermied Brown Rabbit");
 		this.add(ButchercraftBlocks.TAXIDERMY_GOLD_RABBIT_BLOCK.get(), "Taxidermied Gold Rabbit");
 		this.add(ButchercraftBlocks.TAXIDERMY_SALT_RABBIT_BLOCK.get(), "Taxidermied Salt Rabbit");
 		this.add(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get(), "Taxidermied Splotched Rabbit");
 		this.add(ButchercraftBlocks.TAXIDERMY_WHITE_RABBIT_BLOCK.get(), "Taxidermied White Rabbit");
-		
+
+		this.add(ButchercraftItems.RABBIT_BLACK_HEAD_ITEM.get(), "Black Rabbit Head");
+		this.add(ButchercraftItems.RABBIT_BROWN_HEAD_ITEM.get(), "Brown Rabbit Head");
+		this.add(ButchercraftItems.RABBIT_GOLD_HEAD_ITEM.get(), "Gold Rabbit Head");
+		this.add(ButchercraftItems.RABBIT_SALT_HEAD_ITEM.get(), "Salt Rabbit Head");
+		this.add(ButchercraftItems.RABBIT_SPLOTCHED_HEAD_ITEM.get(), "Splotched Rabbit Head");
+		this.add(ButchercraftItems.RABBIT_WHITE_HEAD_ITEM.get(), "White Rabbit Head");
+		this.add(ButchercraftItems.COW_HEAD_ITEM.get(), "Cow Head");
+		this.add(ButchercraftItems.COW_SKULL_HEAD_ITEM.get(), "Cow Skull");
+		this.add(ButchercraftItems.SHEEP_HEAD_ITEM.get(), "Sheep Head");
+		this.add(ButchercraftItems.PIG_HEAD_ITEM.get(), "Pig Head");
+		this.add(ButchercraftItems.GOAT_HEAD_ITEM.get(), "Goat Head");
+		this.add(ButchercraftItems.CHICKEN_HEAD_ITEM.get(), "Chicken Head");
+
 		this.add(ButchercraftBlocks.TAXIDERMY_CHICKEN_BLOCK.get(), "Taxidermied Chicken");
 		this.add(ButchercraftBlocks.TAXIDERMY_COW_BLOCK.get(), "Taxidermied Cow");
 		this.add(ButchercraftBlocks.TAXIDERMY_GOAT_BLOCK.get(), "Taxidermied Goat");
 		this.add(ButchercraftBlocks.TAXIDERMY_PIG_BLOCK.get(), "Taxidermied Pig");
 		this.add(ButchercraftBlocks.TAXIDERMY_SHEEP_BLOCK.get(), "Taxidermied Sheep");
+
+		this.add(ButchercraftItems.GOAT_CHOP.get(), "Raw Goat Chop");
+		this.add(ButchercraftItems.COOKED_GOAT_CHOP.get(), "Cooked Goat Chop");
+		this.add(ButchercraftItems.GOAT_RIBS.get(), "Raw Goat Ribs");
+		this.add(ButchercraftItems.GOAT_ROAST.get(), "Raw Goat Roast");
+		this.add(ButchercraftItems.GOAT_SCRAPS.get(), "Raw Goat Scraps");
 		
-		this.add(ButchercraftItems.GOAT_CHOP.get(), "Raw Chevon");
-		this.add(ButchercraftItems.COOKED_GOAT_CHOP.get(), "Cooked Chevon");
+		this.add(ButchercraftItems.CHICKEN_BREAST.get(), "Raw Chicken Breast");
+		this.add(ButchercraftItems.CHICKEN_LEG.get(), "Raw Chicken Leg");
+		this.add(ButchercraftItems.CHICKEN_SCRAPS.get(), "Raw Chicken Scraps");
+		this.add(ButchercraftItems.CHICKEN_WING.get(), "Raw Chicken Wing");
+		this.add(ButchercraftItems.CHICKEN_THIGH.get(), "Raw Chicken Thigh");
+		this.add(ButchercraftItems.CUBED_CHICKEN.get(), "Raw Cubed Chicken");
+		this.add(ButchercraftItems.GROUND_CHICKEN.get(), "Raw Ground Chicken");
+		this.add(ButchercraftItems.STEW_CHICKEN.get(), "Raw Stew Chicken");
+		this.add(ButchercraftItems.COOKED_CHICKEN_BREAST.get(), "Cooked Chicken Breast");
+		this.add(ButchercraftItems.COOKED_CHICKEN_LEG.get(), "Cooked Chicken Leg");
+		this.add(ButchercraftItems.COOKED_CHICKEN_SCRAPS.get(), "Cooked Chicken Scraps");
+		this.add(ButchercraftItems.COOKED_CHICKEN_WING.get(), "Cooked Chicken Wing");
+		this.add(ButchercraftItems.COOKED_CHICKEN_THIGH.get(), "Cooked Chicken Thigh");
+		this.add(ButchercraftItems.COOKED_CUBED_CHICKEN.get(), "Cooked Cubed Chicken");
+		this.add(ButchercraftItems.COOKED_GROUND_CHICKEN.get(), "Cooked Ground Chicken");
+		this.add(ButchercraftItems.COOKED_STEW_CHICKEN.get(), "Cooked Stew Chicken");
 
-//        this.add(COW_SKULL.get(), "Cow Skull");
-
+		this.add(ButchercraftItems.RABBIT_LEG.get(), "Raw Rabbit Leg");
+		this.add(ButchercraftItems.RABBIT_SADDLE.get(), "Raw Rabbit Saddle");
+		this.add(ButchercraftItems.RABBIT_SCRAPS.get(), "Raw Rabbit Scrap");
+		this.add(ButchercraftItems.RABBIT_THIGH.get(), "Raw Rabbit Thigh");
+		this.add(ButchercraftItems.CUBED_RABBIT.get(), "Raw Cubed Rabbit");
+		this.add(ButchercraftItems.GROUND_RABBIT.get(), "Raw Ground Rabbit");
+		this.add(ButchercraftItems.STEW_RABBIT.get(), "Raw Stew Rabbit");
+		this.add(ButchercraftItems.COOKED_RABBIT_LEG.get(), "Cooked Rabbit Leg");
+		this.add(ButchercraftItems.COOKED_RABBIT_SADDLE.get(), "Cooked Rabbit Saddle");
+		this.add(ButchercraftItems.COOKED_RABBIT_SCRAPS.get(), "Cooked Rabbit Scrap");
+		this.add(ButchercraftItems.COOKED_RABBIT_THIGH.get(), "Cooked Rabbit Thigh");
+		this.add(ButchercraftItems.COOKED_CUBED_RABBIT.get(), "Cooked Cubed Rabbit");
+		this.add(ButchercraftItems.COOKED_GROUND_RABBIT.get(), "Cooked Ground Rabbit");
+		this.add(ButchercraftItems.COOKED_STEW_RABBIT.get(), "Cooked Stew Rabbit");
+		
 		// Advancements
 		this.add(Butchercraft.MOD_ID + ".advancement.root.name", "Butchercraft");
 		this.add(Butchercraft.MOD_ID + ".advancement.root.desc", "Welcome to Butchercraft!");
