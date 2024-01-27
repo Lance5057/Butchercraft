@@ -1,81 +1,5 @@
 package com.lance5057.butchercraft.data.builders;
 
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.BEEF_TONGUE;
-import static com.lance5057.butchercraft.ButchercraftItems.BONE_SAW;
-import static com.lance5057.butchercraft.ButchercraftItems.BRAIN;
-import static com.lance5057.butchercraft.ButchercraftItems.BUTCHER_KNIFE;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BEEF_TONGUE;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_BRAIN;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_CUBED_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_CUBED_LAMB;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_CUBED_PORK;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_GROUND_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_GROUND_LAMB;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_GROUND_PORK;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_HEART;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_KIDNEY;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LAMB_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LIVER;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_LUNG;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_OXTAIL;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_STOMACH;
-import static com.lance5057.butchercraft.ButchercraftItems.COOKED_TRIPE;
-import static com.lance5057.butchercraft.ButchercraftItems.COW_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.COW_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.CUBED_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.CUBED_LAMB;
-import static com.lance5057.butchercraft.ButchercraftItems.CUBED_PORK;
-import static com.lance5057.butchercraft.ButchercraftItems.FAT;
-import static com.lance5057.butchercraft.ButchercraftItems.GROUND_BEEF;
-import static com.lance5057.butchercraft.ButchercraftItems.GROUND_LAMB;
-import static com.lance5057.butchercraft.ButchercraftItems.GROUND_PORK;
-import static com.lance5057.butchercraft.ButchercraftItems.GUT_KNIFE;
-import static com.lance5057.butchercraft.ButchercraftItems.HEART;
-import static com.lance5057.butchercraft.ButchercraftItems.HORN;
-import static com.lance5057.butchercraft.ButchercraftItems.KIDNEY;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.LAMB_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.LEATHER_CORD;
-import static com.lance5057.butchercraft.ButchercraftItems.LEATHER_SCRAP;
-import static com.lance5057.butchercraft.ButchercraftItems.LIVER;
-import static com.lance5057.butchercraft.ButchercraftItems.LUNG;
-import static com.lance5057.butchercraft.ButchercraftItems.OXTAIL;
-import static com.lance5057.butchercraft.ButchercraftItems.PIG_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.PIG_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_BLOCK_ITEM;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_RIBS;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_ROAST;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_SCRAPS;
-import static com.lance5057.butchercraft.ButchercraftItems.PORK_STEW_MEAT;
-import static com.lance5057.butchercraft.ButchercraftItems.SHEEP_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.SHEEP_HIDE;
-import static com.lance5057.butchercraft.ButchercraftItems.SINEW;
-import static com.lance5057.butchercraft.ButchercraftItems.SKINNING_KNIFE;
-import static com.lance5057.butchercraft.ButchercraftItems.STOMACH;
-import static com.lance5057.butchercraft.ButchercraftItems.TRIPE;
-
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
 import com.lance5057.butchercraft.ButchercraftItems;
@@ -96,93 +20,93 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add("itemGroup.butchercraft.items", "Butchercraft Items");
 
-		this.add(COOKED_BEEF_SCRAPS.get(), "Cooked Beef Straps");
-		this.add(BEEF_SCRAPS.get(), "Raw Beef Scraps");
-		this.add(COOKED_GROUND_BEEF.get(), "Cooked Ground Beef");
-		this.add(GROUND_BEEF.get(), "Raw Ground Beef");
-		this.add(COOKED_CUBED_BEEF.get(), "Cooked Cubed Beef");
-		this.add(CUBED_BEEF.get(), "Raw Cubed Beef");
-		this.add(COOKED_BEEF_RIBS.get(), "Cooked Beef Ribs");
-		this.add(BEEF_RIBS.get(), "Raw Beef Ribs");
-		this.add(COOKED_BEEF_ROAST.get(), "Cooked Beef Roast");
-		this.add(BEEF_ROAST.get(), "Raw Beef Roast");
+		this.add(ButchercraftItems.COOKED_BEEF_SCRAPS.get(), "Cooked Beef Straps");
+		this.add(ButchercraftItems.BEEF_SCRAPS.get(), "Raw Beef Scraps");
+		this.add(ButchercraftItems.COOKED_GROUND_BEEF.get(), "Cooked Ground Beef");
+		this.add(ButchercraftItems.GROUND_BEEF.get(), "Raw Ground Beef");
+		this.add(ButchercraftItems.COOKED_CUBED_BEEF.get(), "Cooked Cubed Beef");
+		this.add(ButchercraftItems.CUBED_BEEF.get(), "Raw Cubed Beef");
+		this.add(ButchercraftItems.COOKED_BEEF_RIBS.get(), "Cooked Beef Ribs");
+		this.add(ButchercraftItems.BEEF_RIBS.get(), "Raw Beef Ribs");
+		this.add(ButchercraftItems.COOKED_BEEF_ROAST.get(), "Cooked Beef Roast");
+		this.add(ButchercraftItems.BEEF_ROAST.get(), "Raw Beef Roast");
 
-		this.add(BEEF_STEW_MEAT.get(), "Raw Beef Stew Meat");
-		this.add(COOKED_BEEF_STEW_MEAT.get(), "Cooked Beef Stew Meat");
-		this.add(OXTAIL.get(), "Raw Oxtail");
-		this.add(COOKED_OXTAIL.get(), "Cooked Oxtail");
+		this.add(ButchercraftItems.BEEF_STEW_MEAT.get(), "Raw Beef Stew Meat");
+		this.add(ButchercraftItems.COOKED_BEEF_STEW_MEAT.get(), "Cooked Beef Stew Meat");
+		this.add(ButchercraftItems.OXTAIL.get(), "Raw Oxtail");
+		this.add(ButchercraftItems.COOKED_OXTAIL.get(), "Cooked Oxtail");
 
-		this.add(COOKED_PORK_SCRAPS.get(), "Cooked Pork Straps");
-		this.add(PORK_SCRAPS.get(), "Raw Pork Scraps");
-		this.add(COOKED_GROUND_PORK.get(), "Cooked Ground Pork");
-		this.add(GROUND_PORK.get(), "Raw Ground Pork");
-		this.add(COOKED_CUBED_PORK.get(), "Cooked Cubed Pork");
-		this.add(CUBED_PORK.get(), "Raw Cubed Pork");
-		this.add(COOKED_PORK_RIBS.get(), "Cooked Pork Ribs");
-		this.add(PORK_RIBS.get(), "Raw Pork Ribs");
-		this.add(COOKED_PORK_ROAST.get(), "Cooked Pork Roast");
-		this.add(PORK_ROAST.get(), "Raw Pork Roast");
-		this.add(PORK_STEW_MEAT.get(), "Raw Pork Stew Meat");
-		this.add(COOKED_PORK_STEW_MEAT.get(), "Cooked Pork Stew Meat");
+		this.add(ButchercraftItems.COOKED_PORK_SCRAPS.get(), "Cooked Pork Straps");
+		this.add(ButchercraftItems.PORK_SCRAPS.get(), "Raw Pork Scraps");
+		this.add(ButchercraftItems.COOKED_GROUND_PORK.get(), "Cooked Ground Pork");
+		this.add(ButchercraftItems.GROUND_PORK.get(), "Raw Ground Pork");
+		this.add(ButchercraftItems.COOKED_CUBED_PORK.get(), "Cooked Cubed Pork");
+		this.add(ButchercraftItems.CUBED_PORK.get(), "Raw Cubed Pork");
+		this.add(ButchercraftItems.COOKED_PORK_RIBS.get(), "Cooked Pork Ribs");
+		this.add(ButchercraftItems.PORK_RIBS.get(), "Raw Pork Ribs");
+		this.add(ButchercraftItems.COOKED_PORK_ROAST.get(), "Cooked Pork Roast");
+		this.add(ButchercraftItems.PORK_ROAST.get(), "Raw Pork Roast");
+		this.add(ButchercraftItems.PORK_STEW_MEAT.get(), "Raw Pork Stew Meat");
+		this.add(ButchercraftItems.COOKED_PORK_STEW_MEAT.get(), "Cooked Pork Stew Meat");
 
-		this.add(COOKED_LAMB_SCRAPS.get(), "Cooked Lamb Straps");
-		this.add(LAMB_SCRAPS.get(), "Raw Lamb Scraps");
-		this.add(COOKED_GROUND_LAMB.get(), "Cooked Ground Lamb");
-		this.add(GROUND_LAMB.get(), "Raw Ground Lamb");
-		this.add(COOKED_CUBED_LAMB.get(), "Cooked Cubed Lamb");
-		this.add(CUBED_LAMB.get(), "Raw Cubed Lamb");
-		this.add(COOKED_LAMB_RIBS.get(), "Cooked Lamb Ribs");
-		this.add(LAMB_RIBS.get(), "Raw Lamb Ribs");
-		this.add(COOKED_LAMB_ROAST.get(), "Cooked Lamb Roast");
-		this.add(LAMB_ROAST.get(), "Raw Lamb Roast");
-		this.add(LAMB_STEW_MEAT.get(), "Raw Lamb Stew Meat");
-		this.add(COOKED_LAMB_STEW_MEAT.get(), "Cooked Lamb Stew Meat");
+		this.add(ButchercraftItems.COOKED_LAMB_SCRAPS.get(), "Cooked Mutton Straps");
+		this.add(ButchercraftItems.LAMB_SCRAPS.get(), "Raw Mutton Scraps");
+		this.add(ButchercraftItems.COOKED_GROUND_LAMB.get(), "Cooked Ground Mutton");
+		this.add(ButchercraftItems.GROUND_LAMB.get(), "Raw Ground Mutton");
+		this.add(ButchercraftItems.COOKED_CUBED_LAMB.get(), "Cooked Cubed Mutton");
+		this.add(ButchercraftItems.CUBED_LAMB.get(), "Raw Cubed Mutton");
+		this.add(ButchercraftItems.COOKED_LAMB_RIBS.get(), "Cooked Mutton Ribs");
+		this.add(ButchercraftItems.LAMB_RIBS.get(), "Raw Mutton Ribs");
+		this.add(ButchercraftItems.COOKED_LAMB_ROAST.get(), "Cooked Mutton Roast");
+		this.add(ButchercraftItems.LAMB_ROAST.get(), "Raw Mutton Roast");
+		this.add(ButchercraftItems.LAMB_STEW_MEAT.get(), "Raw Mutton Stew Meat");
+		this.add(ButchercraftItems.COOKED_LAMB_STEW_MEAT.get(), "Cooked Mutton Stew Meat");
 
-		this.add(COOKED_TRIPE.get(), "Cooked Intestines");
-		this.add(TRIPE.get(), "Raw Intestines");
-		this.add(COOKED_STOMACH.get(), "Cooked Stomach");
-		this.add(STOMACH.get(), "Raw Stomach");
-		this.add(COOKED_LUNG.get(), "Cooked Lung");
-		this.add(LUNG.get(), "Raw Lung");
-		this.add(COOKED_LIVER.get(), "Cooked Liver");
-		this.add(LIVER.get(), "Raw Liver");
-		this.add(COOKED_KIDNEY.get(), "Cooked Kidney");
-		this.add(KIDNEY.get(), "Raw Kidney");
-		this.add(COOKED_HEART.get(), "Cooked Heart");
-		this.add(HEART.get(), "Raw Heart");
-		this.add(COOKED_BRAIN.get(), "Cooked Brain");
-		this.add(BRAIN.get(), "Raw Brain");
-		this.add(COOKED_BEEF_TONGUE.get(), "Cooked Tongue");
-		this.add(BEEF_TONGUE.get(), "Raw Tongue");
+		this.add(ButchercraftItems.COOKED_TRIPE.get(), "Cooked Intestines");
+		this.add(ButchercraftItems.TRIPE.get(), "Raw Intestines");
+		this.add(ButchercraftItems.COOKED_STOMACH.get(), "Cooked Stomach");
+		this.add(ButchercraftItems.STOMACH.get(), "Raw Stomach");
+		this.add(ButchercraftItems.COOKED_LUNG.get(), "Cooked Lung");
+		this.add(ButchercraftItems.LUNG.get(), "Raw Lung");
+		this.add(ButchercraftItems.COOKED_LIVER.get(), "Cooked Liver");
+		this.add(ButchercraftItems.LIVER.get(), "Raw Liver");
+		this.add(ButchercraftItems.COOKED_KIDNEY.get(), "Cooked Kidney");
+		this.add(ButchercraftItems.KIDNEY.get(), "Raw Kidney");
+		this.add(ButchercraftItems.COOKED_HEART.get(), "Cooked Heart");
+		this.add(ButchercraftItems.HEART.get(), "Raw Heart");
+		this.add(ButchercraftItems.COOKED_BRAIN.get(), "Cooked Brain");
+		this.add(ButchercraftItems.BRAIN.get(), "Raw Brain");
+		this.add(ButchercraftItems.COOKED_BEEF_TONGUE.get(), "Cooked Tongue");
+		this.add(ButchercraftItems.BEEF_TONGUE.get(), "Raw Tongue");
 
-		this.add(COW_CARCASS.get(), "Cow Carcass");
-		this.add(PIG_CARCASS.get(), "Pig Carcass");
-		this.add(SHEEP_CARCASS.get(), "Sheep Carcass");
+		this.add(ButchercraftItems.COW_CARCASS.get(), "Cow Carcass");
+		this.add(ButchercraftItems.PIG_CARCASS.get(), "Pig Carcass");
+		this.add(ButchercraftItems.SHEEP_CARCASS.get(), "Sheep Carcass");
 
-		this.add(BEEF_BLOCK_ITEM.get(), "Raw Beef Block");
-		this.add(PORK_BLOCK_ITEM.get(), "Raw Pork Block");
-		this.add(LAMB_BLOCK_ITEM.get(), "Raw Lamb Block");
+		this.add(ButchercraftItems.BEEF_BLOCK_ITEM.get(), "Raw Beef Block");
+		this.add(ButchercraftItems.PORK_BLOCK_ITEM.get(), "Raw Pork Block");
+		this.add(ButchercraftItems.LAMB_BLOCK_ITEM.get(), "Raw Mutton Block");
 
-		this.add(COOKED_BEEF_BLOCK_ITEM.get(), "Cooked Beef Block");
-		this.add(COOKED_PORK_BLOCK_ITEM.get(), "Cooked Pork Block");
-		this.add(COOKED_LAMB_BLOCK_ITEM.get(), "Cooked Lamb Block");
+		this.add(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM.get(), "Cooked Beef Block");
+		this.add(ButchercraftItems.COOKED_PORK_BLOCK_ITEM.get(), "Cooked Pork Block");
+		this.add(ButchercraftItems.COOKED_LAMB_BLOCK_ITEM.get(), "Cooked Mutton Block");
 
-		this.add(BUTCHER_KNIFE.get(), "Butcher Knife");
-		this.add(SKINNING_KNIFE.get(), "Skinning Knife");
-		this.add(BONE_SAW.get(), "Bone Saw");
-		this.add(GUT_KNIFE.get(), "Gut Knife");
+		this.add(ButchercraftItems.BUTCHER_KNIFE.get(), "Butcher Knife");
+		this.add(ButchercraftItems.SKINNING_KNIFE.get(), "Skinning Knife");
+		this.add(ButchercraftItems.BONE_SAW.get(), "Bone Saw");
+		this.add(ButchercraftItems.GUT_KNIFE.get(), "Gut Knife");
 
-		this.add(COW_HIDE.get(), "Cow Hide");
-		this.add(PIG_HIDE.get(), "Pig Hide");
-		this.add(SHEEP_HIDE.get(), "Sheep Hide");
+		this.add(ButchercraftItems.COW_HIDE.get(), "Cow Hide");
+		this.add(ButchercraftItems.PIG_HIDE.get(), "Pig Hide");
+		this.add(ButchercraftItems.SHEEP_HIDE.get(), "Sheep Hide");
 
-		this.add(HORN.get(), "Horn");
+		this.add(ButchercraftItems.HORN.get(), "Horn");
 
-		this.add(LEATHER_SCRAP.get(), "Leather Scrap");
-		this.add(LEATHER_CORD.get(), "Leather Cord");
+		this.add(ButchercraftItems.LEATHER_SCRAP.get(), "Leather Scrap");
+		this.add(ButchercraftItems.LEATHER_CORD.get(), "Leather Cord");
 
-		this.add(FAT.get(), "Fat");
-		this.add(SINEW.get(), "Sinew");
+		this.add(ButchercraftItems.FAT.get(), "Fat");
+		this.add(ButchercraftItems.SINEW.get(), "Sinew");
 		this.add(ButchercraftItems.LARD.get(), "Lard");
 		this.add(ButchercraftItems.GELATIN.get(), "Gelatin");
 
@@ -191,6 +115,13 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get(), "Butcher Block");
 
 		this.add(ButchercraftItems.GOAT_CARCASS.get(), "Goat Carcass");
+		this.add(ButchercraftItems.CHICKEN_CARCASS.get(), "Chicken Carcass");
+		this.add(ButchercraftItems.BLACK_RABBIT_CARCASS.get(), "Black Rabbit Carcass");
+		this.add(ButchercraftItems.BROWN_RABBIT_CARCASS.get(), "Brown Rabbit Carcass");
+		this.add(ButchercraftItems.GOLD_RABBIT_CARCASS.get(), "Gold Rabbit Carcass");
+		this.add(ButchercraftItems.SALT_RABBIT_CARCASS.get(), "Salt Rabbit Carcass");
+		this.add(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(), "Splotched Rabbit Carcass");
+		this.add(ButchercraftItems.WHITE_RABBIT_CARCASS.get(), "White Rabbit Carcass");
 
 		this.add(ButchercraftBlocks.SAUSAGE_BLOCK.get(), "Sausage Block");
 		this.add(ButchercraftBlocks.COOKED_SAUSAGE_BLOCK.get(), "Cooked Sausage Block");
@@ -229,11 +160,20 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftBlocks.TAXIDERMY_PIG_BLOCK.get(), "Taxidermied Pig");
 		this.add(ButchercraftBlocks.TAXIDERMY_SHEEP_BLOCK.get(), "Taxidermied Sheep");
 
-		this.add(ButchercraftItems.GOAT_CHOP.get(), "Raw Goat Chop");
-		this.add(ButchercraftItems.COOKED_GOAT_CHOP.get(), "Cooked Goat Chop");
-		this.add(ButchercraftItems.GOAT_RIBS.get(), "Raw Goat Ribs");
-		this.add(ButchercraftItems.GOAT_ROAST.get(), "Raw Goat Roast");
-		this.add(ButchercraftItems.GOAT_SCRAPS.get(), "Raw Goat Scraps");
+		this.add(ButchercraftItems.GOAT_CHOP.get(), "Raw Chevon Chop");
+		this.add(ButchercraftItems.COOKED_GOAT_CHOP.get(), "Cooked Chevon Chop");
+		this.add(ButchercraftItems.GOAT_RIBS.get(), "Raw Chevon Ribs");
+		this.add(ButchercraftItems.GOAT_ROAST.get(), "Raw Chevon Roast");
+		this.add(ButchercraftItems.GOAT_SCRAPS.get(), "Raw Chevon Scraps");
+		this.add(ButchercraftItems.GOAT_STEW_MEAT.get(), "Raw Chevon Stew Meat");
+		this.add(ButchercraftItems.CUBED_GOAT.get(), "Raw Cubed Chevon");
+		this.add(ButchercraftItems.GROUND_GOAT.get(), "Raw Ground Chevon");
+		this.add(ButchercraftItems.COOKED_GOAT_RIBS.get(), "Cooked Chevon Ribs");
+		this.add(ButchercraftItems.COOKED_GOAT_ROAST.get(), "Cooked Chevon Roast");
+		this.add(ButchercraftItems.COOKED_GOAT_SCRAPS.get(), "Cooked Chevon Scraps");
+		this.add(ButchercraftItems.COOKED_GOAT_STEW_MEAT.get(), "Cooked Chevon Stew Meat");
+		this.add(ButchercraftItems.COOKED_CUBED_GOAT.get(), "Cooked Cubed Chevon");
+		this.add(ButchercraftItems.COOKED_GROUND_GOAT.get(), "Cooked Ground Chevon");
 		
 		this.add(ButchercraftItems.CHICKEN_BREAST.get(), "Raw Chicken Breast");
 		this.add(ButchercraftItems.CHICKEN_LEG.get(), "Raw Chicken Leg");
@@ -266,6 +206,27 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.COOKED_CUBED_RABBIT.get(), "Cooked Cubed Rabbit");
 		this.add(ButchercraftItems.COOKED_GROUND_RABBIT.get(), "Cooked Ground Rabbit");
 		this.add(ButchercraftItems.COOKED_STEW_RABBIT.get(), "Cooked Stew Rabbit");
+		
+		this.add(ButchercraftItems.EYEBALL.get(), "Eyeball");
+		this.add(ButchercraftItems.COOKED_EYEBALL.get(), "Cooked Eyeball");
+		this.add(ButchercraftItems.WATTLE.get(), "Wattle");
+		this.add(ButchercraftItems.COOKED_WATTLE.get(), "Cooked Wattle");
+		this.add(ButchercraftItems.CASING.get(), "Casing");
+		this.add(ButchercraftItems.BEAK.get(), "Beak");
+		
+		this.add(ButchercraftItems.BLACK_BUNNY_EARS.get(), "Black Bunny Ears");
+		this.add(ButchercraftItems.BROWN_BUNNY_EARS.get(), "Brown Bunny Ears");
+		this.add(ButchercraftItems.GOLD_BUNNY_EARS.get(), "Gold Bunny Ears");
+		this.add(ButchercraftItems.SALT_BUNNY_EARS.get(), "Salt Bunny Ears");
+		this.add(ButchercraftItems.SPLOTCHED_BUNNY_EARS.get(), "Splotched Bunny Ears");
+		this.add(ButchercraftItems.WHITE_BUNNY_EARS.get(), "White Bunny Ears");
+		
+		this.add(ButchercraftItems.BLACK_BUNNY_TAIL.get(), "Black Bunny Tail");
+		this.add(ButchercraftItems.BROWN_BUNNY_TAIL.get(), "Brown Bunny Tail");
+		this.add(ButchercraftItems.GOLD_BUNNY_TAIL.get(), "Gold Bunny Tail");
+		this.add(ButchercraftItems.SALT_BUNNY_TAIL.get(), "Salt Bunny Tail");
+		this.add(ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get(), "Splotched Bunny Tail");
+		this.add(ButchercraftItems.WHITE_BUNNY_TAIL.get(), "White Bunny Tail");
 		
 		// Advancements
 		this.add(Butchercraft.MOD_ID + ".advancement.root.name", "Butchercraft");
