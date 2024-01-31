@@ -39,7 +39,7 @@ public class ButcherBlockRecipe implements Recipe<ButcherBlockContainer> {
 
 	@Override
 	public ItemStack assemble(ButcherBlockContainer pContainer) {
-		return null;
+		return ItemStack.EMPTY;
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class ButcherBlockRecipe implements Recipe<ButcherBlockContainer> {
 
 	@Override
 	public ItemStack getResultItem() {
-		return null;
+		return ItemStack.EMPTY;
 	}
 
 	@Override

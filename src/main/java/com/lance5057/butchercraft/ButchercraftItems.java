@@ -383,16 +383,15 @@ public class ButchercraftItems {
 
 	public static final RegistryObject<Item> BUTCHER_KNIFE = ITEMS.register("butcher_knife",
 			() -> new ButcherKnifeItem(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB).durability(250)));
-
 	public static final RegistryObject<Item> SKINNING_KNIFE = ITEMS.register("skinning_knife",
 			() -> new KnifeItem(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB).durability(250)));
 	public static final RegistryObject<Item> BONE_SAW = ITEMS.register("bone_saw",
 			() -> new KnifeItem(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB).durability(250)));
 	public static final RegistryObject<Item> GUT_KNIFE = ITEMS.register("gut_knife",
 			() -> new KnifeItem(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB).durability(250)));
+	
 	public static final RegistryObject<Item> LEATHER_SCRAP = ITEMS.register("leather_scrap",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
-
 	public static final RegistryObject<Item> LEATHER_CORD = ITEMS.register("leather_cord",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 	public static final RegistryObject<Item> FAT = ITEMS.register("fat",

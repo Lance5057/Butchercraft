@@ -40,7 +40,7 @@ public class HookRecipe implements Recipe<HookRecipeContainer> {
 
 	@Override
 	public ItemStack assemble(HookRecipeContainer pContainer) {
-		return null;
+		return ItemStack.EMPTY;
 	}
 
 	@Override

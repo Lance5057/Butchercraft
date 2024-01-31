@@ -2,6 +2,7 @@ package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
+import com.lance5057.butchercraft.ButchercraftFluids;
 import com.lance5057.butchercraft.ButchercraftItems;
 
 import net.minecraft.data.DataGenerator;
@@ -99,6 +100,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.COW_HIDE.get(), "Cow Hide");
 		this.add(ButchercraftItems.PIG_HIDE.get(), "Pig Hide");
 		this.add(ButchercraftItems.SHEEP_HIDE.get(), "Sheep Hide");
+		this.add(ButchercraftItems.GOAT_HIDE.get(), "Goat Hide");
 
 		this.add(ButchercraftItems.HORN.get(), "Horn");
 
@@ -111,6 +113,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.GELATIN.get(), "Gelatin");
 
 		this.add(ButchercraftItems.HOOK_BLOCK_ITEM.get(), "Meat Hook");
+		this.add(ButchercraftItems.GRINDER_BLOCK_ITEM.get(), "Meat Grinder");
+		this.add(ButchercraftItems.EXTRUDER_TIP.get(), "Extruder Tip");
+		this.add(ButchercraftItems.GRINDER_TIP.get(), "Grinder Tip");
 
 		this.add(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get(), "Butcher Block");
 
@@ -227,6 +232,43 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.SALT_BUNNY_TAIL.get(), "Salt Bunny Tail");
 		this.add(ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get(), "Splotched Bunny Tail");
 		this.add(ButchercraftItems.WHITE_BUNNY_TAIL.get(), "White Bunny Tail");
+		
+		this.add(ButchercraftItems.COW_HOOD.get(), "Cow Hood");
+		this.add(ButchercraftItems.GOAT_HOOD.get(), "Goat Hood");
+		this.add(ButchercraftItems.PIG_HOOD.get(), "Pig Hood");
+		this.add(ButchercraftItems.SHEEP_HOOD.get(), "Sheep Hood");
+		this.add(ButchercraftItems.CHICKEN_MASK.get(), "Chicken Mask");
+		
+		this.add(ButchercraftItems.SAUSAGE_LINKED.get(), "Linked Sausage");
+		this.add(ButchercraftItems.SAUSAGE.get(), "Raw Sausage");
+		this.add(ButchercraftItems.COOKED_SAUSAGE.get(), "Cooked Sausage");
+		
+		this.add(ButchercraftItems.BLOOD_SAUSAGE_LINKED.get(), "Linked Blood Sausage");
+		this.add(ButchercraftItems.BLOOD_SAUSAGE_MIX.get(), "Blood Sausage Mix");
+		this.add(ButchercraftItems.BLOOD_SAUSAGE.get(), "Raw Blood Sausage");
+		this.add(ButchercraftItems.COOKED_BLOOD_SAUSAGE.get(), "Cooked Blood Sausage");
+		
+		this.add(ButchercraftItems.MASK.get(), "Butcher's Mask");
+		this.add(ButchercraftItems.PAPER_HAT.get(), "Paper Hat");
+		this.add(ButchercraftItems.APRON.get(), "Butcher's Apron");
+		this.add(ButchercraftItems.GLOVES.get(), "Butcher's Gloves");
+		this.add(ButchercraftItems.BOOTS.get(), "Butcher's Boots");
+		
+		this.add(ButchercraftItems.SOAP.get(), "Soap");
+		
+		this.add(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), "Bottle of Blood");
+		this.add(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), "Bucket of Blood");
+		
+		this.add(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get(), "Barn Wood");
+		this.add(ButchercraftItems.BARN_WOOD_DOOR_ITEM.get(), "Barn Wood Door");
+		this.add(ButchercraftItems.BARN_WOOD_FENCE_GATE_ITEM.get(), "Barn Wood Fence Gate");
+		this.add(ButchercraftItems.BARN_WOOD_FENCE_ITEM.get(), "Barn Wood Fence");
+		this.add(ButchercraftItems.BARN_WOOD_SLAB_ITEM.get(), "Barn Wood Slab");
+		this.add(ButchercraftItems.BARN_WOOD_STAIRS_ITEM.get(), "Barn Wood Stairs");
+		this.add(ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM.get(), "Barn Wood Trapdoor");
+		this.add(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM.get(), "Trimmed Barn Wood (CTM)");
+		
+		this.add(ButchercraftBlocks.BLOOD_FLUID_BLOCK.get(), "Blood");
 		
 		// Advancements
 		this.add(Butchercraft.MOD_ID + ".advancement.root.name", "Butchercraft");
