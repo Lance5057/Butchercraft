@@ -112,7 +112,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.CARCASS).addTag(ButchercraftItemTags.COW_CARCASS)
 				.addTag(ButchercraftItemTags.CHICKEN_CARCASS).addTag(ButchercraftItemTags.GOAT_CARCASS)
 				.addTag(ButchercraftItemTags.PIG_CARCASS).addTag(ButchercraftItemTags.RABBIT_CARCASS)
-				.addTag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.COW_HIDE.get());
+				.addTag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.COW_HIDE.get())
+				.add(ButchercraftItems.CHICKEN_HEAD_ITEM.get());
 
 	}
 }

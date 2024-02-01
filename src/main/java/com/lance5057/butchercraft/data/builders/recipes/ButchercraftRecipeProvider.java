@@ -92,8 +92,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	BlacklistedModel hideModel(ResourceLocation rl) {
-		return new BlacklistedModel(rl, null, true, new AnimationFloatTransform()
-				.setLocation(new AnimatedFloatVector3().setY(new AnimatedFloat(12, 0))));
+		return new BlacklistedModel(rl, null, true,
+				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setY(new AnimatedFloat(12, 0))));
 	}
 
 	BlacklistedModel standardButcherBlockToolModel(Item i) {
@@ -192,7 +192,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
 						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
 						standardHookToolModel(SKINNING_KNIFE.get()))
-				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.COW_LEATHER,
+				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.COW_LEATHER,
 						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
 						standardHookToolModel(SKINNING_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide"));
@@ -334,6 +334,12 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/rabbit_skinned")),
 						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_whole_rabbit"));
+
+		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.CHICKEN_HEAD_ITEM.get())
+				.tool(Ingredient.of(GUT_KNIFE.get()), 12, true, ButcherBlockLootTables.CHICKEN_HEAD,
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "item/chicken_head")),
+						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "chicken_head"));
 
 		ShapedRecipeBuilder.shaped(BONE_SAW.get()).define('I', IRON_INGOT).define('S', STICK).pattern("IIS")
 				.pattern("IIS").unlockedBy("has_iron", has(IRON_INGOT))

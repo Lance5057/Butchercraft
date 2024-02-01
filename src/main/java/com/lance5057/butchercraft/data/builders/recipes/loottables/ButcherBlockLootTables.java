@@ -42,6 +42,8 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 
 	public static final ResourceLocation BUTCHER_RABBIT = new ResourceLocation(Butchercraft.MOD_ID,
 			"butcherblock/butcher_rabbit");
+	public static final ResourceLocation CHICKEN_HEAD = new ResourceLocation(Butchercraft.MOD_ID,
+			"butcherblock/chicken_head");
 
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {

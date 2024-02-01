@@ -109,7 +109,7 @@
         }
       ],
       "tool": {
-        "item": "butchercraft:skinning_knife"
+        "item": "minecraft:shears"
       },
       "uses": 6
     }
