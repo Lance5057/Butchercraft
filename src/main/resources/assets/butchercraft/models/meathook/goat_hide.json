@@ -4,8 +4,8 @@
 	"render_type": "cutout",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "butchercraft:block/cow_hide",
-		"particle": "butchercraft:block/cow_hide"
+		"0": "butchercraft:block/goat_hide",
+		"particle": "butchercraft:block/goat_hide"
 	},
 	"elements": [
 		{

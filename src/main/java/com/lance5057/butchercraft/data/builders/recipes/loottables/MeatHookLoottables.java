@@ -58,6 +58,12 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 			"meat_hook/scrape_hide");
 	public static final ResourceLocation COW_LEATHER = new ResourceLocation(Butchercraft.MOD_ID,
 			"meat_hook/cow_leather");
+	public static final ResourceLocation GOAT_LEATHER = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/goat_leather");
+	public static final ResourceLocation PIG_LEATHER = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/pig_leather");
+	public static final ResourceLocation SHEEP_LEATHER = new ResourceLocation(Butchercraft.MOD_ID,
+			"meat_hook/sheep_leather");
 
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
@@ -66,8 +72,19 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 
 		t.accept(SCRAPE_HIDE, LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 1, 4))
 				.withPool(createPoolWithItem(ButchercraftItems.FAT.get(), 0, 2)));
-		t.accept(COW_LEATHER, LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 4))
-				.withPool(createPoolWithItem(Items.LEATHER, 12)));
+		
+		t.accept(COW_LEATHER,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 4))
+						.withPool(createPoolWithItem(Items.LEATHER, 12)));
+		t.accept(GOAT_LEATHER,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 4))
+						.withPool(createPoolWithItem(Items.LEATHER, 8)));
+		t.accept(PIG_LEATHER,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 4))
+						.withPool(createPoolWithItem(Items.LEATHER, 8)));
+		t.accept(SHEEP_LEATHER,
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 4))
+						.withPool(createPoolWithItem(Items.LEATHER, 6)));
 
 		t.accept(SKIN_COW,
 				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.COW_HIDE.get(), 1))

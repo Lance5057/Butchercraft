@@ -188,15 +188,6 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardHookToolModel(BUTCHER_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat"));
 
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_HIDE.get())
-				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
-						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
-						standardHookToolModel(SKINNING_KNIFE.get()))
-				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.COW_LEATHER,
-						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
-						standardHookToolModel(SKINNING_KNIFE.get()))
-				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide"));
-
 		ButcherBlockRecipeBuilder.shapedRecipe(CHICKEN_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/chicken")),
@@ -335,9 +326,45 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_whole_rabbit"));
 
+		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_HIDE.get())
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.COW_LEATHER,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide"));
+
+		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.GOAT_HIDE.get())
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.GOAT_LEATHER,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat_hide"));
+
+		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.PIG_HIDE.get())
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.PIG_LEATHER,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pig_hide"));
+
+		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.SHEEP_HIDE.get())
+				.tool(Ingredient.of(SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.SHEEP_LEATHER,
+						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep_hide")),
+						standardHookToolModel(SKINNING_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide"));
+
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.CHICKEN_HEAD_ITEM.get())
 				.tool(Ingredient.of(GUT_KNIFE.get()), 12, true, ButcherBlockLootTables.CHICKEN_HEAD,
-						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "item/chicken_head")),
+						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/chicken_head")),
 						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "chicken_head"));
 

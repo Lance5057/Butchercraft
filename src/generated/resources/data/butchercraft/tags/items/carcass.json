@@ -7,6 +7,9 @@
     "#butchercraft:rabbit_carcass",
     "#butchercraft:sheep_carcass",
     "butchercraft:cow_hide",
+    "butchercraft:goat_hide",
+    "butchercraft:pig_hide",
+    "butchercraft:sheep_hide",
     "butchercraft:chicken_head_item"
   ]
 }

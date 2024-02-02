@@ -1,11 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
-	"render_type": "cutout",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "butchercraft:block/cow_hide",
-		"particle": "butchercraft:block/cow_hide"
+		"0": "butchercraft:block/pig_hide",
+		"particle": "butchercraft:block/pig_hide"
 	},
 	"elements": [
 		{

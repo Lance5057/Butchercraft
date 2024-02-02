@@ -1,4 +1,4 @@
-// 1.19.2	2024-01-10T13:13:28.9221003	LootTables
+// 1.19.2	2024-02-02T12:53:26.5459437	LootTables
 d18309e947503b793ebec72b88be7dee5f134b23 data/butchercraft/loot_tables/blocks/barn_wood_block.json
 4e0b6fbc86feebe3cb637794f0dabe5c93562439 data/butchercraft/loot_tables/blocks/barn_wood_door.json
 2184af5fa312ec9b91dadd46d215ac132917deb1 data/butchercraft/loot_tables/blocks/barn_wood_fence.json
@@ -90,7 +90,10 @@ f58f07ea56e2f262f4f45b6c5bfd62ae7dd65528 data/butchercraft/loot_tables/meat_hook
 ac827a983649b9644d88adb5ab5fe9addc80eac1 data/butchercraft/loot_tables/meat_hook/disembowel_goat.json
 efcab638e92f8abe7fbafcfcd9cc56b8f9e6c637 data/butchercraft/loot_tables/meat_hook/disembowel_pig.json
 ac827a983649b9644d88adb5ab5fe9addc80eac1 data/butchercraft/loot_tables/meat_hook/disembowel_sheep.json
+c9cda46c998d2f3ba997ee2634e98b1d0d84b4b5 data/butchercraft/loot_tables/meat_hook/goat_leather.json
+c9cda46c998d2f3ba997ee2634e98b1d0d84b4b5 data/butchercraft/loot_tables/meat_hook/pig_leather.json
 615813e3ed2cd4256acf69e47a79f63dae8d2c84 data/butchercraft/loot_tables/meat_hook/scrape_hide.json
+6813c85cb360feb79a4618c00d768ff64ac420b3 data/butchercraft/loot_tables/meat_hook/sheep_leather.json
 dfe2af99a58f9681948f5f2e4232a6eda57d542c data/butchercraft/loot_tables/meat_hook/skin_cow.json
 b971c7a27d66cdf7c843a9d900080599acb276c9 data/butchercraft/loot_tables/meat_hook/skin_goat.json
 e321d5cede15036649cb44d8e4781f1416c628ff data/butchercraft/loot_tables/meat_hook/skin_pig.json
