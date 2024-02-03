@@ -332,7 +332,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardHookToolModel(SKINNING_KNIFE.get()))
 				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.COW_LEATHER,
 						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow_hide")),
-						standardHookToolModel(SKINNING_KNIFE.get()))
+						standardHookToolModel(Items.SHEARS))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hide"));
 
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.GOAT_HIDE.get())
@@ -341,7 +341,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardHookToolModel(SKINNING_KNIFE.get()))
 				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.GOAT_LEATHER,
 						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/goat_hide")),
-						standardHookToolModel(SKINNING_KNIFE.get()))
+						standardHookToolModel(Items.SHEARS))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat_hide"));
 
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.PIG_HIDE.get())
@@ -350,7 +350,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardHookToolModel(SKINNING_KNIFE.get()))
 				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.PIG_LEATHER,
 						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/pig_hide")),
-						standardHookToolModel(SKINNING_KNIFE.get()))
+						standardHookToolModel(Items.SHEARS))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pig_hide"));
 
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.SHEEP_HIDE.get())
@@ -359,7 +359,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardHookToolModel(SKINNING_KNIFE.get()))
 				.tool(Ingredient.of(Items.SHEARS), 6, true, MeatHookLoottables.SHEEP_LEATHER,
 						hideModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/sheep_hide")),
-						standardHookToolModel(SKINNING_KNIFE.get()))
+						standardHookToolModel(Items.SHEARS))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hide"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.CHICKEN_HEAD_ITEM.get())
