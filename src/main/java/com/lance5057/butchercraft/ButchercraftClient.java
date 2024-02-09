@@ -4,12 +4,17 @@ import java.util.Map;
 
 import com.lance5057.butchercraft.blocks.AnimalHeadBlock;
 import com.lance5057.butchercraft.client.block_models.ChickenHeadModel;
+import com.lance5057.butchercraft.client.block_models.ChickenSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.CowHeadModel;
 import com.lance5057.butchercraft.client.block_models.CowSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.GoatHeadModel;
+import com.lance5057.butchercraft.client.block_models.GoatSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.PigHeadModel;
+import com.lance5057.butchercraft.client.block_models.PigSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.RabbitHeadModel;
+import com.lance5057.butchercraft.client.block_models.RabbitSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.SheepHeadModel;
+import com.lance5057.butchercraft.client.block_models.SheepSkullHeadModel;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRenderer;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRenderer;
 import com.lance5057.butchercraft.workstations.hook.MeatHookRenderer;
@@ -71,6 +76,16 @@ public class ButchercraftClient {
 				new SkullModel(event.getEntityModelSet().bakeLayer(SheepHeadModel.LAYER_LOCATION)));
 		event.registerSkullModel(AnimalHeadBlock.Types.COW_SKULL,
 				new SkullModel(event.getEntityModelSet().bakeLayer(CowSkullHeadModel.LAYER_LOCATION)));
+		event.registerSkullModel(AnimalHeadBlock.Types.CHICKEN_SKULL,
+				new SkullModel(event.getEntityModelSet().bakeLayer(ChickenSkullHeadModel.LAYER_LOCATION)));
+		event.registerSkullModel(AnimalHeadBlock.Types.GOAT_SKULL,
+				new SkullModel(event.getEntityModelSet().bakeLayer(GoatSkullHeadModel.LAYER_LOCATION)));
+		event.registerSkullModel(AnimalHeadBlock.Types.PIG_SKULL,
+				new SkullModel(event.getEntityModelSet().bakeLayer(PigSkullHeadModel.LAYER_LOCATION)));
+		event.registerSkullModel(AnimalHeadBlock.Types.SHEEP_SKULL,
+				new SkullModel(event.getEntityModelSet().bakeLayer(SheepSkullHeadModel.LAYER_LOCATION)));
+		event.registerSkullModel(AnimalHeadBlock.Types.RABBIT_SKULL,
+				new SkullModel(event.getEntityModelSet().bakeLayer(RabbitSkullHeadModel.LAYER_LOCATION)));
 
 		event.registerSkullModel(AnimalHeadBlock.Types.RABBIT_BLACK,
 				new SkullModel(event.getEntityModelSet().bakeLayer(RabbitHeadModel.LAYER_LOCATION)));
@@ -87,8 +102,6 @@ public class ButchercraftClient {
 
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.COW,
 				new ResourceLocation("textures/entity/cow/cow.png"));
-		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.COW_SKULL,
-				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/cow.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.CHICKEN,
 				new ResourceLocation("textures/entity/chicken.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.GOAT,
@@ -97,6 +110,18 @@ public class ButchercraftClient {
 				new ResourceLocation("textures/entity/pig/pig.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.SHEEP,
 				new ResourceLocation("textures/entity/sheep/sheep.png"));
+		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.COW_SKULL,
+				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/cow.png"));
+		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.CHICKEN_SKULL,
+				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/chicken.png"));
+		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.GOAT_SKULL,
+				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/goat.png"));
+		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.PIG_SKULL,
+				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/pig.png"));
+		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_SKULL,
+				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/rabbit.png"));
+		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.SHEEP_SKULL,
+				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/sheep.png"));
 
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_BLACK,
 				new ResourceLocation("textures/entity/rabbit/black.png"));

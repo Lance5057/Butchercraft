@@ -132,7 +132,7 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<WallSkullBlock> COW_HEAD_WALL = BLOCKS.register("cow_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.COW,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(COW_HEAD.get())));
-	
+
 	public static final RegistryObject<AnimalHeadBlock> COW_SKULL_HEAD = BLOCKS.register("cow_skull_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.COW_SKULL,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
@@ -147,12 +147,27 @@ public class ButchercraftBlocks {
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.CHICKEN,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(CHICKEN_HEAD.get())));
 
+	public static final RegistryObject<AnimalHeadBlock> CHICKEN_SKULL_HEAD = BLOCKS.register("chicken_skull_head",
+			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.CHICKEN_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+	public static final RegistryObject<WallSkullBlock> CHICKEN_SKULL_HEAD_WALL = BLOCKS.register(
+			"chicken_skull_head_wall",
+			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.CHICKEN_SKULL, BlockBehaviour.Properties
+					.of(Material.DECORATION).strength(1.0F).dropsLike(CHICKEN_SKULL_HEAD.get())));
+
 	public static final RegistryObject<AnimalHeadBlock> GOAT_HEAD = BLOCKS.register("goat_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.GOAT,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> GOAT_HEAD_WALL = BLOCKS.register("goat_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.GOAT,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(GOAT_HEAD.get())));
+
+	public static final RegistryObject<AnimalHeadBlock> GOAT_SKULL_HEAD = BLOCKS.register("goat_skull_head",
+			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.GOAT_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+	public static final RegistryObject<WallSkullBlock> GOAT_SKULL_HEAD_WALL = BLOCKS.register("goat_skull_head_wall",
+			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.GOAT_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(GOAT_SKULL_HEAD.get())));
 
 	public static final RegistryObject<AnimalHeadBlock> PIG_HEAD = BLOCKS.register("pig_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.PIG,
@@ -161,12 +176,26 @@ public class ButchercraftBlocks {
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.PIG,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(PIG_HEAD.get())));
 
+	public static final RegistryObject<AnimalHeadBlock> PIG_SKULL_HEAD = BLOCKS.register("pig_skull_head",
+			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.PIG_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+	public static final RegistryObject<WallSkullBlock> PIG_SKULL_HEAD_WALL = BLOCKS.register("pig_skull_head_wall",
+			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.PIG_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(PIG_SKULL_HEAD.get())));
+
 	public static final RegistryObject<AnimalHeadBlock> SHEEP_HEAD = BLOCKS.register("sheep_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.SHEEP,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> SHEEP_HEAD_WALL = BLOCKS.register("sheep_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.SHEEP,
 					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F).dropsLike(SHEEP_HEAD.get())));
+
+	public static final RegistryObject<AnimalHeadBlock> SHEEP_SKULL_HEAD = BLOCKS.register("sheep_skull_head",
+			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.SHEEP_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+	public static final RegistryObject<WallSkullBlock> SHEEP_SKULL_HEAD_WALL = BLOCKS.register("sheep_skull_head_wall",
+			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.SHEEP_SKULL, BlockBehaviour.Properties
+					.of(Material.DECORATION).strength(1.0F).dropsLike(SHEEP_SKULL_HEAD.get())));
 
 	public static final RegistryObject<AnimalHeadBlock> RABBIT_BROWN_HEAD = BLOCKS.register("rabbit_brown_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_BROWN,
@@ -213,6 +242,14 @@ public class ButchercraftBlocks {
 			"rabbit_white_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_WHITE, BlockBehaviour.Properties
 					.of(Material.DECORATION).strength(1.0F).dropsLike(RABBIT_WHITE_HEAD.get())));
+
+	public static final RegistryObject<AnimalHeadBlock> RABBIT_SKULL_HEAD = BLOCKS.register("rabbit_skull_head",
+			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_SKULL,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+	public static final RegistryObject<WallSkullBlock> RABBIT_SKULL_HEAD_WALL = BLOCKS.register(
+			"rabbit_skull_head_wall",
+			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_SKULL, BlockBehaviour.Properties
+					.of(Material.DECORATION).strength(1.0F).dropsLike(RABBIT_SKULL_HEAD.get())));
 
 	public static final RegistryObject<Block> BARN_WOOD_BLOCK = BLOCKS.register("barn_wood_block", () -> new Block(
 			BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));

@@ -17,13 +17,13 @@ import net.minecraft.resources.ResourceLocation;
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
-public class RabbitHeadModel extends SkullModel {
+public class RabbitSkullHeadModel extends SkullModel {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
 			new ResourceLocation(Butchercraft.MOD_ID, "rabbithead"), "main");
 
-	public RabbitHeadModel(ModelPart root) {
+	public RabbitSkullHeadModel(ModelPart root) {
 		super(root);
 	}
 
@@ -35,6 +35,21 @@ public class RabbitHeadModel extends SkullModel {
 				CubeListBuilder.create().texOffs(32, 0).mirror()
 						.addBox(-2.5F, -4.0F, -2.0F, 5.0F, 4.0F, 5.0F, new CubeDeformation(0.0F)).mirror(false),
 				PartPose.offset(-0.5F, 0.0F, 0.0F));
+
+		head.addOrReplaceChild("earRight",
+				CubeListBuilder.create().texOffs(58, 0).mirror()
+						.addBox(-2.5F, -9.0F, -1.0F, 2.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false),
+				PartPose.offsetAndRotation(0.0F, 0.0F, 3.0F, 0.0F, -0.2618F, 0.0F));
+
+		head.addOrReplaceChild("earLeft",
+				CubeListBuilder.create().texOffs(52, 0).mirror()
+						.addBox(0.5F, -9.0F, -1.0F, 2.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false),
+				PartPose.offsetAndRotation(0.0F, 0.0F, 3.0F, 0.0F, 0.2618F, 0.0F));
+
+		head.addOrReplaceChild("nose",
+				CubeListBuilder.create().texOffs(32, 9).mirror()
+						.addBox(-0.5F, -2.5F, -5.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false),
+				PartPose.offset(0.0F, 0.0F, 3.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}

@@ -17,13 +17,13 @@ import net.minecraft.resources.ResourceLocation;
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
-public class RabbitHeadModel extends SkullModel {
+public class ChickenSkullHeadModel extends SkullModel {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
-			new ResourceLocation(Butchercraft.MOD_ID, "rabbithead"), "main");
+			new ResourceLocation(Butchercraft.MOD_ID, "chickenhead"), "main");
 
-	public RabbitHeadModel(ModelPart root) {
+	public ChickenSkullHeadModel(ModelPart root) {
 		super(root);
 	}
 
@@ -31,10 +31,11 @@ public class RabbitHeadModel extends SkullModel {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition head = partdefinition.addOrReplaceChild("head",
-				CubeListBuilder.create().texOffs(32, 0).mirror()
-						.addBox(-2.5F, -4.0F, -2.0F, 5.0F, 4.0F, 5.0F, new CubeDeformation(0.0F)).mirror(false),
-				PartPose.offset(-0.5F, 0.0F, 0.0F));
+		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(
+				-2.0F, -6.0F, -2.0F, 4.0F, 6.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 0.0F, 0.0F));
+
+		head.addOrReplaceChild("beak", CubeListBuilder.create().texOffs(14, 0).addBox(-2.0F, -4.0F, -4.0F, 4.0F, 2.0F,
+				2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}

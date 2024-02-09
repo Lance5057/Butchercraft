@@ -389,7 +389,7 @@ public class ButchercraftItems {
 			() -> new KnifeItem(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB).durability(250)));
 	public static final RegistryObject<Item> GUT_KNIFE = ITEMS.register("gut_knife",
 			() -> new KnifeItem(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB).durability(250)));
-	
+
 	public static final RegistryObject<Item> LEATHER_SCRAP = ITEMS.register("leather_scrap",
 			() -> new Item(new Item.Properties().tab(ButchercraftItems.BUTCHER_TAB)));
 	public static final RegistryObject<Item> LEATHER_CORD = ITEMS.register("leather_cord",
@@ -511,22 +511,41 @@ public class ButchercraftItems {
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.COW_SKULL_HEAD.get(),
 					ButchercraftBlocks.COW_SKULL_HEAD_WALL.get(),
 					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+
 	public static final RegistryObject<Item> SHEEP_HEAD_ITEM = ITEMS.register("sheep_head_item",
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.SHEEP_HEAD.get(),
 					ButchercraftBlocks.SHEEP_HEAD_WALL.get(),
 					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+	public static final RegistryObject<Item> SHEEP_SKULL_HEAD_ITEM = ITEMS.register("sheep_skull_head_item",
+			() -> new StandingAndWallBlockItem(ButchercraftBlocks.SHEEP_SKULL_HEAD.get(),
+					ButchercraftBlocks.SHEEP_SKULL_HEAD_WALL.get(),
+					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+
 	public static final RegistryObject<Item> PIG_HEAD_ITEM = ITEMS.register("pig_head_item",
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.PIG_HEAD.get(),
 					ButchercraftBlocks.PIG_HEAD_WALL.get(),
 					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+	public static final RegistryObject<Item> PIG_SKULL_HEAD_ITEM = ITEMS.register("pig_skull_head_item",
+			() -> new StandingAndWallBlockItem(ButchercraftBlocks.PIG_SKULL_HEAD.get(),
+					ButchercraftBlocks.PIG_SKULL_HEAD_WALL.get(),
+					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+
 	public static final RegistryObject<Item> GOAT_HEAD_ITEM = ITEMS.register("goat_head_item",
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.GOAT_HEAD.get(),
 					ButchercraftBlocks.GOAT_HEAD_WALL.get(),
+					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+	public static final RegistryObject<Item> GOAT_SKULL_HEAD_ITEM = ITEMS.register("goat_skull_head_item",
+			() -> new StandingAndWallBlockItem(ButchercraftBlocks.GOAT_SKULL_HEAD.get(),
+					ButchercraftBlocks.GOAT_SKULL_HEAD_WALL.get(),
 					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
 
 	public static final RegistryObject<Item> CHICKEN_HEAD_ITEM = ITEMS.register("chicken_head_item",
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.CHICKEN_HEAD.get(),
 					ButchercraftBlocks.CHICKEN_HEAD_WALL.get(),
+					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+	public static final RegistryObject<Item> CHICKEN_SKULL_HEAD_ITEM = ITEMS.register("chicken_skull_head_item",
+			() -> new StandingAndWallBlockItem(ButchercraftBlocks.CHICKEN_SKULL_HEAD.get(),
+					ButchercraftBlocks.CHICKEN_SKULL_HEAD_WALL.get(),
 					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
 
 	public static final RegistryObject<Item> RABBIT_BROWN_HEAD_ITEM = ITEMS.register("rabbit_brown_head_item",
@@ -557,6 +576,11 @@ public class ButchercraftItems {
 	public static final RegistryObject<Item> RABBIT_WHITE_HEAD_ITEM = ITEMS.register("rabbit_white_head_item",
 			() -> new StandingAndWallBlockItem(ButchercraftBlocks.RABBIT_WHITE_HEAD.get(),
 					ButchercraftBlocks.RABBIT_WHITE_HEAD_WALL.get(),
+					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
+
+	public static final RegistryObject<Item> RABBIT_SKULL_HEAD_ITEM = ITEMS.register("rabbit_skull_head_item",
+			() -> new StandingAndWallBlockItem(ButchercraftBlocks.RABBIT_SKULL_HEAD.get(),
+					ButchercraftBlocks.RABBIT_SKULL_HEAD_WALL.get(),
 					(new Item.Properties()).tab(CreativeModeTab.TAB_DECORATIONS).rarity(Rarity.UNCOMMON)));
 
 	public static final RegistryObject<BlockItem> BARN_WOOD_BLOCK_ITEM = ITEMS.register("barn_wood_block_item",

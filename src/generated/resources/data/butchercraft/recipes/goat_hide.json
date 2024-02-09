@@ -22,7 +22,7 @@
             "rotation": {},
             "scale": {}
           },
-          "location": "butchercraft:meathook/cow_hide"
+          "location": "butchercraft:meathook/goat_hide"
         },
         {
           "animation": {
@@ -105,7 +105,7 @@
             },
             "scale": {}
           },
-          "location": "butchercraft:skinning_knife"
+          "location": "minecraft:shears"
         }
       ],
       "tool": {

@@ -105,7 +105,7 @@
             },
             "scale": {}
           },
-          "location": "butchercraft:skinning_knife"
+          "location": "minecraft:shears"
         }
       ],
       "tool": {
