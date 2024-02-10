@@ -33,7 +33,7 @@ public class ButchercraftBlockEntities {
 							ButchercraftBlocks.CHICKEN_SKULL_HEAD.get(), ButchercraftBlocks.SHEEP_HEAD.get(),
 							ButchercraftBlocks.SHEEP_SKULL_HEAD.get(), ButchercraftBlocks.PIG_HEAD.get(),
 							ButchercraftBlocks.PIG_SKULL_HEAD.get(), ButchercraftBlocks.GOAT_HEAD.get(),
-							ButchercraftBlocks.GOAT_HEAD.get(), ButchercraftBlocks.RABBIT_BLACK_HEAD.get(),
+							ButchercraftBlocks.GOAT_SKULL_HEAD.get(), ButchercraftBlocks.RABBIT_BLACK_HEAD.get(),
 							ButchercraftBlocks.RABBIT_BROWN_HEAD.get(), ButchercraftBlocks.RABBIT_GOLD_HEAD.get(),
 							ButchercraftBlocks.RABBIT_SALT_HEAD.get(), ButchercraftBlocks.RABBIT_SPLOTCHED_HEAD.get(),
 							ButchercraftBlocks.RABBIT_WHITE_HEAD.get(), ButchercraftBlocks.RABBIT_SKULL_HEAD.get())

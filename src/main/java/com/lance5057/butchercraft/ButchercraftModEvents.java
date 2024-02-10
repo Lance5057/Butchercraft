@@ -15,12 +15,17 @@ import com.lance5057.butchercraft.armor.models.SheepHoodModel;
 import com.lance5057.butchercraft.capabilities.AnimalCare;
 import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
 import com.lance5057.butchercraft.client.block_models.ChickenHeadModel;
+import com.lance5057.butchercraft.client.block_models.ChickenSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.CowHeadModel;
 import com.lance5057.butchercraft.client.block_models.CowSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.GoatHeadModel;
+import com.lance5057.butchercraft.client.block_models.GoatSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.PigHeadModel;
+import com.lance5057.butchercraft.client.block_models.PigSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.RabbitHeadModel;
+import com.lance5057.butchercraft.client.block_models.RabbitSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.SheepHeadModel;
+import com.lance5057.butchercraft.client.block_models.SheepSkullHeadModel;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
@@ -56,7 +61,6 @@ import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -140,12 +144,20 @@ public class ButchercraftModEvents {
 				.create(ChickenMaskModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32));
 
 		event.registerLayerDefinition(CowHeadModel.LAYER_LOCATION, () -> CowHeadModel.createBodyLayer());
-		event.registerLayerDefinition(CowSkullHeadModel.LAYER_LOCATION, () -> CowSkullHeadModel.createBodyLayer());
 		event.registerLayerDefinition(ChickenHeadModel.LAYER_LOCATION, () -> ChickenHeadModel.createBodyLayer());
 		event.registerLayerDefinition(SheepHeadModel.LAYER_LOCATION, () -> SheepHeadModel.createBodyLayer());
 		event.registerLayerDefinition(PigHeadModel.LAYER_LOCATION, () -> PigHeadModel.createBodyLayer());
 		event.registerLayerDefinition(GoatHeadModel.LAYER_LOCATION, () -> GoatHeadModel.createBodyLayer());
 		event.registerLayerDefinition(RabbitHeadModel.LAYER_LOCATION, () -> RabbitHeadModel.createBodyLayer());
+
+		event.registerLayerDefinition(CowSkullHeadModel.LAYER_LOCATION, () -> CowSkullHeadModel.createBodyLayer());
+		event.registerLayerDefinition(SheepSkullHeadModel.LAYER_LOCATION, () -> SheepSkullHeadModel.createBodyLayer());
+		event.registerLayerDefinition(PigSkullHeadModel.LAYER_LOCATION, () -> PigSkullHeadModel.createBodyLayer());
+		event.registerLayerDefinition(ChickenSkullHeadModel.LAYER_LOCATION,
+				() -> ChickenSkullHeadModel.createBodyLayer());
+		event.registerLayerDefinition(GoatSkullHeadModel.LAYER_LOCATION, () -> GoatSkullHeadModel.createBodyLayer());
+		event.registerLayerDefinition(RabbitSkullHeadModel.LAYER_LOCATION,
+				() -> RabbitSkullHeadModel.createBodyLayer());
 	}
 
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
