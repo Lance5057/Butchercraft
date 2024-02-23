@@ -36,6 +36,6 @@ public class SheepSkullHeadModel extends SkullModel {
 						.addBox(-3.0F, -7.0F, -4.0F, 6.0F, 6.0F, 8.0F, new CubeDeformation(0.0F)),
 				PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		return LayerDefinition.create(meshdefinition, 64, 32);
+		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
 }
