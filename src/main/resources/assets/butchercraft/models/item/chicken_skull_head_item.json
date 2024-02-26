@@ -68,27 +68,5 @@
 		"fixed": {
 			"translation": [0, 4, 0]
 		}
-	},
-	"groups": [
-		{
-			"name": "head",
-			"origin": [8, 0, 8],
-			"color": 0,
-			"children": [
-				0,
-				{
-					"name": "comb",
-					"origin": [8, 0, 8],
-					"color": 0,
-					"children": []
-				},
-				{
-					"name": "beak",
-					"origin": [8, 0, 8],
-					"color": 0,
-					"children": [1]
-				}
-			]
-		}
-	]
+	}
 }

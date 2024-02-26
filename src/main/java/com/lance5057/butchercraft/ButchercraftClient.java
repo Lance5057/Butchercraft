@@ -3,6 +3,7 @@ package com.lance5057.butchercraft;
 import java.util.Map;
 
 import com.lance5057.butchercraft.blocks.AnimalHeadBlock;
+import com.lance5057.butchercraft.client.BCSkullModel;
 import com.lance5057.butchercraft.client.block_models.ChickenHeadModel;
 import com.lance5057.butchercraft.client.block_models.ChickenSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.CowHeadModel;
