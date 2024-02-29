@@ -20,7 +20,6 @@ import static com.lance5057.butchercraft.ButchercraftItems.COOKED_PORK_SCRAPS;
 import static com.lance5057.butchercraft.ButchercraftItems.COOKED_STOMACH;
 import static com.lance5057.butchercraft.ButchercraftItems.COOKED_TRIPE;
 import static com.lance5057.butchercraft.ButchercraftItems.COW_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.COW_HIDE;
 import static com.lance5057.butchercraft.ButchercraftItems.GROUND_BEEF;
 import static com.lance5057.butchercraft.ButchercraftItems.GUT_KNIFE;
 import static com.lance5057.butchercraft.ButchercraftItems.HEART;
@@ -31,16 +30,13 @@ import static com.lance5057.butchercraft.ButchercraftItems.LAMB_SCRAPS;
 import static com.lance5057.butchercraft.ButchercraftItems.LIVER;
 import static com.lance5057.butchercraft.ButchercraftItems.LUNG;
 import static com.lance5057.butchercraft.ButchercraftItems.PIG_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.PIG_HIDE;
 import static com.lance5057.butchercraft.ButchercraftItems.PORK_BLOCK_ITEM;
 import static com.lance5057.butchercraft.ButchercraftItems.PORK_SCRAPS;
 import static com.lance5057.butchercraft.ButchercraftItems.SHEEP_CARCASS;
-import static com.lance5057.butchercraft.ButchercraftItems.SHEEP_HIDE;
 import static com.lance5057.butchercraft.ButchercraftItems.SKINNING_KNIFE;
 import static com.lance5057.butchercraft.ButchercraftItems.STOMACH;
 import static com.lance5057.butchercraft.ButchercraftItems.TRIPE;
 import static net.minecraft.world.item.Items.IRON_INGOT;
-import static net.minecraft.world.item.Items.LEATHER;
 import static net.minecraft.world.item.Items.STICK;
 
 import java.util.function.Consumer;
@@ -94,6 +90,13 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	BlacklistedModel hideModel(ResourceLocation rl) {
 		return new BlacklistedModel(rl, null, true,
 				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setY(new AnimatedFloat(12, 0))));
+	}
+
+	BlacklistedModel layFlatModel(Item rl) {
+		return new BlacklistedModel(rl, new AnimationFloatTransform()
+				.setLocation(new AnimatedFloatVector3(new AnimatedFloat(8), new AnimatedFloat(0), new AnimatedFloat(8)))
+				.setRotation(new AnimatedFloatVector3().setX(new AnimatedFloat(-90)))
+				.setScale(new AnimatedFloatVector3().setAll(new AnimatedFloat(1))));
 	}
 
 	BlacklistedModel standardButcherBlockToolModel(Item i) {
@@ -365,8 +368,21 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.CHICKEN_HEAD_ITEM.get())
 				.tool(Ingredient.of(GUT_KNIFE.get()), 12, true, ButcherBlockLootTables.CHICKEN_HEAD,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/chicken_head")),
-						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
+						standardButcherBlockToolModel(ButchercraftItems.GUT_KNIFE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "chicken_head"));
+
+		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.BLOOD_SAUSAGE_LINKED.get())
+				.tool(Ingredient.of(ButchercraftItems.BUTCHER_KNIFE.get()), 8, true,
+						ButcherBlockLootTables.BLOOD_SAUSAGE_LINKED,
+						layFlatModel(ButchercraftItems.BLOOD_SAUSAGE_LINKED.get()),
+						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_sausage_linked"));
+
+		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.SAUSAGE_LINKED.get())
+				.tool(Ingredient.of(ButchercraftItems.BUTCHER_KNIFE.get()), 8, true,
+						ButcherBlockLootTables.SAUSAGE_LINKED, layFlatModel(ButchercraftItems.SAUSAGE_LINKED.get()),
+						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sausage_linked"));
 
 		ShapedRecipeBuilder.shaped(BONE_SAW.get()).define('I', IRON_INGOT).define('S', STICK).pattern("IIS")
 				.pattern("IIS").unlockedBy("has_iron", has(IRON_INGOT))

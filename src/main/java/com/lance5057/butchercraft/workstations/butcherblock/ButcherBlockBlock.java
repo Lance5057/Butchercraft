@@ -82,7 +82,7 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 			// Get item in both InteractionHands
 			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
 			// TODO May want to disable insertion if there's not enough space under the hook
-			if (heldMain.is(ButchercraftItemTags.CARCASS)) {
+			if (heldMain.is(ButchercraftItemTags.BUTCHERABLE)) {
 				// TODO Find a way to return SUCCESS on successful insertion
 				te.insertItem(heldMain);
 			} else if (heldMain != ItemStack.EMPTY)

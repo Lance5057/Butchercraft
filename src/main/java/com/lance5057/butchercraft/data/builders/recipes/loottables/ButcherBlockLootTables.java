@@ -45,6 +45,11 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 	public static final ResourceLocation CHICKEN_HEAD = new ResourceLocation(Butchercraft.MOD_ID,
 			"butcherblock/chicken_head");
 
+	public static final ResourceLocation BLOOD_SAUSAGE_LINKED = new ResourceLocation(Butchercraft.MOD_ID,
+			"butcherblock/blood_sausage_linked");
+	public static final ResourceLocation SAUSAGE_LINKED = new ResourceLocation(Butchercraft.MOD_ID,
+			"butcherblock/sausage_linked");
+
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
 		t.accept(BLOOD_BOTTLE, LootTable.lootTable()
@@ -132,6 +137,11 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_THIGH.get(), 2))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 4, 8))
 						.withPool(MeatHookLoottables.createPoolWithItem(Items.BONE_MEAL, 2, 6)));
+
+		t.accept(BLOOD_SAUSAGE_LINKED, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BLOOD_SAUSAGE.get(), 8)));
+		t.accept(SAUSAGE_LINKED, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SAUSAGE.get(), 8)));
 	}
 
 }

@@ -10,6 +10,8 @@
     "butchercraft:goat_hide",
     "butchercraft:pig_hide",
     "butchercraft:sheep_hide",
-    "butchercraft:chicken_head_item"
+    "butchercraft:chicken_head_item",
+    "butchercraft:sausage_linked",
+    "butchercraft:blood_sausage_linked"
   ]
 }

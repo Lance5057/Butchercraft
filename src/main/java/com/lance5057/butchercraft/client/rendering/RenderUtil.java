@@ -70,9 +70,12 @@ public class RenderUtil {
 			BakedModel bakedmodel = itemRenderer.getModel(stack, null, null, 0);
 
 			matrixStackIn.translate(
-					transform.getLocation().getX().getOffset() + transform.getLocation().getX().animate(timer) / 16,
-					transform.getLocation().getY().getOffset() + transform.getLocation().getY().animate(timer) / 16,
-					transform.getLocation().getZ().getOffset() + transform.getLocation().getZ().animate(timer) / 16);
+					(transform.getLocation().getX().getOffset() + transform.getLocation().getX().animate(timer) / 16)
+							/ (1f + transform.getScale().getX().animate(timer)),
+					(transform.getLocation().getY().getOffset() + transform.getLocation().getY().animate(timer) / 16)
+							/ (1f + transform.getScale().getX().animate(timer)),
+					(transform.getLocation().getZ().getOffset() + transform.getLocation().getZ().animate(timer) / 16)
+							/ (1f + transform.getScale().getX().animate(timer)));
 			matrixStackIn.mulPose(new Quaternion(
 					transform.getRotation().getX().getOffset() + transform.getRotation().getX().animate(timer),
 					transform.getRotation().getY().getOffset() + transform.getRotation().getY().animate(timer),

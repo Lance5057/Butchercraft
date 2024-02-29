@@ -81,7 +81,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 
 			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
 			// TODO May want to disable insertion if there's not enough space under the hook
-			if (heldMain.is(ButchercraftItemTags.CARCASS)) {
+			if (heldMain.is(ButchercraftItemTags.BUTCHERABLE)) {
 				te.insertItem(heldMain);
 				return InteractionResult.SUCCESS;
 			} else if (heldMain != ItemStack.EMPTY) {

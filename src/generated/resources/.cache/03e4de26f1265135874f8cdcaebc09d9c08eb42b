@@ -1,5 +1,5 @@
-// 1.19.2	2024-02-02T13:11:08.708437	Tags for minecraft:item
-da4dd049c30bd5d7bfab4596f7d966603a02049d data/butchercraft/tags/items/carcass.json
+// 1.19.2	2024-02-29T11:12:40.1445058	Tags for minecraft:item
+1640c0b2e2f7a4932121fd271e91c8af178382ca data/butchercraft/tags/items/butcherable.json
 30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/items/chicken_carcass.json
 ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/items/cow_carcass.json
 ff31bed4ceaac838c1200966a1d4a927e5835a9b data/butchercraft/tags/items/gelatin_provider.json

@@ -84,9 +84,9 @@ public class AnimatedFloat {
 //		}
 	}
 
-//	public float getFloat() {
-//		return i;
-//	}
+	public float getMax() {
+		return iMax;
+	}
 
 	public float getOffset() {
 		return offset;
