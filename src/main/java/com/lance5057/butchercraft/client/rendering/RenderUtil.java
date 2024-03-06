@@ -44,6 +44,7 @@ public class RenderUtil {
 			AnimationFloatTransform transform, float timer) {
 		matrixStackIn.pushPose();
 		{
+
 			matrixStackIn.translate(transform.getLocation().getX().animate(timer) / 16,
 					transform.getLocation().getY().animate(timer) / 16,
 					transform.getLocation().getZ().animate(timer) / 16);
@@ -70,19 +71,19 @@ public class RenderUtil {
 			BakedModel bakedmodel = itemRenderer.getModel(stack, null, null, 0);
 
 			matrixStackIn.translate(
-					(transform.getLocation().getX().getOffset() + transform.getLocation().getX().animate(timer) / 16)
-							/ (1f + transform.getScale().getX().animate(timer)),
-					(transform.getLocation().getY().getOffset() + transform.getLocation().getY().animate(timer) / 16)
-							/ (1f + transform.getScale().getX().animate(timer)),
-					(transform.getLocation().getZ().getOffset() + transform.getLocation().getZ().animate(timer) / 16)
-							/ (1f + transform.getScale().getX().animate(timer)));
+					(transform.getLocation().getX().getOffset() + transform.getLocation().getX().animate(timer) / 16),
+					(transform.getLocation().getY().getOffset() + transform.getLocation().getY().animate(timer) / 16),
+					(transform.getLocation().getZ().getOffset() + transform.getLocation().getZ().animate(timer) / 16));
+
 			matrixStackIn.mulPose(new Quaternion(
 					transform.getRotation().getX().getOffset() + transform.getRotation().getX().animate(timer),
 					transform.getRotation().getY().getOffset() + transform.getRotation().getY().animate(timer),
 					transform.getRotation().getZ().getOffset() + transform.getRotation().getZ().animate(timer), true));
+
 			matrixStackIn.scale(1f + transform.getScale().getX().animate(timer),
 					1f + transform.getScale().getY().animate(timer), 1f + transform.getScale().getZ().animate(timer));
-			itemRenderer.render(stack, ItemTransforms.TransformType.GROUND, false, matrixStackIn, bufferIn,
+
+			itemRenderer.render(stack, ItemTransforms.TransformType.NONE, false, matrixStackIn, bufferIn,
 					combinedLightIn, combinedOverlayIn, bakedmodel);
 		}
 		matrixStackIn.popPose();

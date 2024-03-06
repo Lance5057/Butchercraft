@@ -354,12 +354,9 @@ public class GrinderBlockEntity extends BlockEntity {
 							dropLoot(blockState, r);
 						}
 					} else {
-						for (int i = 0; i < in.getCount(); i++) {
-
 							ItemStack r = output.copy();
 
 							dropLoot(blockState, r);
-						}
 					}
 
 					ItemStack s = in.copy();

@@ -13,7 +13,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
@@ -62,7 +68,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
@@ -111,7 +123,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
@@ -160,7 +178,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
@@ -209,7 +233,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },

@@ -6,6 +6,14 @@
     "butchercraft:pork_block",
     "butchercraft:cooked_pork_block",
     "butchercraft:lamb_block",
-    "butchercraft:cooked_lamb_block"
+    "butchercraft:cooked_lamb_block",
+    "butchercraft:barn_wood_block",
+    "butchercraft:barn_wood_door",
+    "butchercraft:barn_wood_fence",
+    "butchercraft:barn_wood_fence_gate",
+    "butchercraft:barn_wood_slab",
+    "butchercraft:barn_wood_stairs",
+    "butchercraft:barn_wood_trapdoor",
+    "butchercraft:trimmed_barn_wood_block"
   ]
 }

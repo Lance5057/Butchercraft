@@ -21,6 +21,21 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
+		tag(ButchercraftItemTags.GOAT_RIBS_RAW).add(ButchercraftItems.GOAT_RIBS.get());
+		tag(ButchercraftItemTags.GOAT_RIBS_COOKED).add(ButchercraftItems.COOKED_GOAT_RIBS.get());
+		tag(ButchercraftItemTags.GOAT_RIBS).addTag(ButchercraftItemTags.GOAT_RIBS_RAW)
+				.addTag(ButchercraftItemTags.GOAT_RIBS_COOKED);
+
+		tag(ButchercraftItemTags.GOAT_ROAST_RAW).add(ButchercraftItems.GOAT_ROAST.get());
+		tag(ButchercraftItemTags.GOAT_ROAST_COOKED).add(ButchercraftItems.COOKED_GOAT_ROAST.get());
+		tag(ButchercraftItemTags.GOAT_ROAST).addTag(ButchercraftItemTags.GOAT_ROAST_RAW)
+				.addTag(ButchercraftItemTags.GOAT_ROAST_COOKED);
+
+		tag(ButchercraftItemTags.CUBED_GOAT_RAW).add(ButchercraftItems.CUBED_GOAT.get());
+		tag(ButchercraftItemTags.CUBED_GOAT_COOKED).add(ButchercraftItems.COOKED_CUBED_GOAT.get());
+		tag(ButchercraftItemTags.CUBED_GOAT).addTag(ButchercraftItemTags.CUBED_GOAT_RAW)
+				.addTag(ButchercraftItemTags.CUBED_GOAT_COOKED);
+
 		tag(ButchercraftItemTags.MEAT_RAW).add(ButchercraftItems.BEEF_RIBS.get(), ButchercraftItems.BEEF_ROAST.get(),
 				ButchercraftItems.BEEF_SCRAPS.get(), ButchercraftItems.BEEF_STEW_MEAT.get(),
 				ButchercraftItems.CUBED_BEEF.get(), ButchercraftItems.GROUND_BEEF.get(),

@@ -24,13 +24,13 @@ public class ButcherBlockRenderer implements BlockEntityRenderer<ButcherBlockBlo
 			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
 		if (pBlockEntity.hasLevel()) {
 			pPoseStack.pushPose();
-			pPoseStack.translate(0.5f, 1, 0.5f);
+			pPoseStack.translate(0.0f, 1, 0.0f);
 			Quaternion q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
 
 			pPoseStack.mulPose(q);
 			pPoseStack.mulPose(new Quaternion(-90, 0, 0, true));
 
-			pPoseStack.translate(-0.5f, 0, -0.5f);
+//			pPoseStack.translate(-0.5f, 0, -0.5f);
 
 			pBlockEntity.getCurrentTool().ifPresent(animatedRecipeItemUse -> animatedRecipeItemUse.model.forEach(
 					b -> RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer)));

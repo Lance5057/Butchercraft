@@ -37,7 +37,7 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 	public static final BooleanProperty CARCASS_HOOKED = BooleanProperty.create("carcass_hooked");
 	// TODO Maybe use double plant logic so that you can interact with bottom thirds
 	// of the block
-	protected static final VoxelShape AABB = Block.box(0.0D, -32.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 	public ButcherBlockBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).strength(3, 4).noOcclusion());

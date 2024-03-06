@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "x": {
+      "item": "butchercraft:barn_wood_block_item"
+    }
+  },
+  "pattern": [
+    "sxs",
+    "sxs"
+  ],
+  "result": {
+    "item": "butchercraft:barn_wood_fence_gate_item"
+  }
+}

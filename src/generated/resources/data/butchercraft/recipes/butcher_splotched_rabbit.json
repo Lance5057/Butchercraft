@@ -13,7 +13,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
@@ -23,8 +29,8 @@
           "animation": {
             "location": {
               "x": {
-                "max": 8.0,
-                "min": -8.0
+                "max": -8.0,
+                "min": 8.0
               },
               "y": {
                 "max": 8.0,
@@ -75,7 +81,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
@@ -85,8 +97,8 @@
           "animation": {
             "location": {
               "x": {
-                "max": 8.0,
-                "min": -8.0
+                "max": -8.0,
+                "min": 8.0
               },
               "y": {
                 "max": 8.0,
@@ -137,7 +149,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
@@ -147,8 +165,8 @@
           "animation": {
             "location": {
               "x": {
-                "max": 8.0,
-                "min": -8.0
+                "max": -8.0,
+                "min": 8.0
               },
               "y": {
                 "max": 8.0,
@@ -199,7 +217,13 @@
         {
           "IsBlock": true,
           "animation": {
-            "location": {},
+            "location": {
+              "x": {
+                "max": -16.0,
+                "min": 16.0,
+                "speed": 1.0
+              }
+            },
             "rotation": {},
             "scale": {}
           },
@@ -209,8 +233,8 @@
           "animation": {
             "location": {
               "x": {
-                "max": 8.0,
-                "min": -8.0
+                "max": -8.0,
+                "min": 8.0
               },
               "y": {
                 "max": 8.0,

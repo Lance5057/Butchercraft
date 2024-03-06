@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:blood_fluid_bottle"
+    },
+    {
+      "item": "butchercraft:blood_fluid_bottle"
+    },
+    {
+      "item": "butchercraft:blood_fluid_bottle"
+    },
+    {
+      "item": "butchercraft:blood_fluid_bottle"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:blood_fluid_bucket"
+  }
+}

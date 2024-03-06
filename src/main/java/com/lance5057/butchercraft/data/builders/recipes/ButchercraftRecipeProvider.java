@@ -77,7 +77,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	BlacklistedModel standardModel(ResourceLocation rl) {
-		return new BlacklistedModel(rl, null, true, new AnimationFloatTransform());
+		return new BlacklistedModel(rl, null, true,
+				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(-16))));
 	}
 
 	BlacklistedModel standardHookToolModel(Item i) {
@@ -95,16 +96,16 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 	BlacklistedModel layFlatModel(Item rl) {
 		return new BlacklistedModel(rl, new AnimationFloatTransform()
-				.setLocation(new AnimatedFloatVector3(new AnimatedFloat(8), new AnimatedFloat(0), new AnimatedFloat(8)))
-				.setRotation(new AnimatedFloatVector3().setX(new AnimatedFloat(-90)))
-				.setScale(new AnimatedFloatVector3().setAll(new AnimatedFloat(1))));
+				.setLocation(
+						new AnimatedFloatVector3(new AnimatedFloat(-8), new AnimatedFloat(0), new AnimatedFloat(8)))
+				.setRotation(new AnimatedFloatVector3().setX(new AnimatedFloat(-90))));
 	}
 
 	BlacklistedModel standardButcherBlockToolModel(Item i) {
 		return new BlacklistedModel(i,
 				new AnimationFloatTransform()
 						.setRotation(new AnimatedFloatVector3().setZ(new AnimatedFloat(-45, 45, 0, 0.05f, true, true)))
-						.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(8, 0))
+						.setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(-8, 0))
 								.setY(new AnimatedFloat(8, 0)).setZ(new AnimatedFloat(8, 0)))
 						.setScale(new AnimatedFloatVector3().setAll(new AnimatedFloat(-0.5f, 0))));
 	}
@@ -521,6 +522,34 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		ShapelessRecipeBuilder.shapeless(COOKED_LAMB_SCRAPS.get(), 9).requires(COOKED_LAMB_BLOCK_ITEM.get())
 				.unlockedBy("has_lamb_cooked", has(ButchercraftItemTags.MUTTON_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_lamb_block_to_scraps"));
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.GOAT_SCRAPS.get(), 9)
+				.requires(ButchercraftItems.GOAT_ITEM_BLOCK.get())
+				.unlockedBy("has_goat", has(ButchercraftItemTags.GOAT_RAW))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat_block_to_scraps"));
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_GOAT_SCRAPS.get(), 9)
+				.requires(ButchercraftItems.COOKED_GOAT_BLOCK_ITEM.get())
+				.unlockedBy("has_goat_cooked", has(ButchercraftItemTags.MUTTON_COOKED))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_goat_block_to_scraps"));
+
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_BLOOD_SAUSAGE_BLOCK_ITEM.get(), 1)
+				.requires(ButchercraftItems.COOKED_BLOOD_SAUSAGE.get(), 9)
+				.unlockedBy("has_blood_sausage", has(ButchercraftItems.COOKED_BLOOD_SAUSAGE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_blood_sausage_to_block"));
+
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_BLOOD_SAUSAGE.get(), 9)
+				.requires(ButchercraftItems.COOKED_BLOOD_SAUSAGE_BLOCK_ITEM.get(), 1)
+				.unlockedBy("has_blood_sausage_block", has(ButchercraftItems.COOKED_BLOOD_SAUSAGE_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_blood_sausage_from__block"));
+
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_SAUSAGE_BLOCK_ITEM.get(), 1)
+				.requires(ButchercraftItems.COOKED_SAUSAGE.get(), 9)
+				.unlockedBy("has_sausage", has(ButchercraftItems.COOKED_SAUSAGE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_sausage_to_block"));
+
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_SAUSAGE.get(), 9)
+				.requires(ButchercraftItems.COOKED_SAUSAGE_BLOCK_ITEM.get(), 1)
+				.unlockedBy("has_sausage_block", has(ButchercraftItems.COOKED_SAUSAGE_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_sausage_from__block"));
 
 		ShapelessRecipeBuilder.shapeless(Items.COOKED_BEEF, 4).requires(ButchercraftItems.COOKED_BEEF_ROAST.get())
 				.requires(BUTCHER_KNIFE.get()).unlockedBy("has_beef_cooked", has(ButchercraftItemTags.BEEF_COOKED))
@@ -657,6 +686,58 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.requires(ButchercraftItems.CHICKEN_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_chicken", has(ButchercraftItems.CHICKEN_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_chicken"));
+
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1)
+				.requires(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 4).requires(Items.BUCKET)
+				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BOTTLE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_bucket"));
+
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 4)
+				.requires(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1).requires(Items.GLASS_BOTTLE, 4)
+				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BOTTLE.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_bottle"));
+
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get(), 8)
+				.requires(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1).requires(ItemTags.PLANKS)
+				.requires(ItemTags.PLANKS).requires(ItemTags.PLANKS).requires(ItemTags.PLANKS).requires(ItemTags.PLANKS)
+				.requires(ItemTags.PLANKS).requires(ItemTags.PLANKS).requires(ItemTags.PLANKS)
+				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BUCKET.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood"));
+
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM.get(), 1)
+				.requires(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get(), 1).requires(Items.BONE_MEAL, 1)
+				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "trimmed_barn_wood"));
+
+		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_DOOR_ITEM.get(), 3).pattern("xx ").pattern("xx ")
+				.pattern("xx ").define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
+				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_door"));
+
+		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_SLAB_ITEM.get(), 6).pattern("xxx")
+				.define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
+				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_slab"));
+
+		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_STAIRS_ITEM.get(), 4).pattern("x  ").pattern("xx ")
+				.pattern("xxx").define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
+				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_stairs"));
+
+		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM.get(), 2).pattern("xxx").pattern("xxx")
+				.define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
+				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_trapdoor"));
+
+		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_FENCE_ITEM.get(), 3).pattern("xsx").pattern("xsx")
+				.define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()).define('s', Items.STICK)
+				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_fence"));
+
+		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_FENCE_GATE_ITEM.get()).pattern("sxs").pattern("sxs")
+				.define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()).define('s', Items.STICK)
+				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_fence_gate"));
 
 		createFoodRecipe(Ingredient.of(BRAIN.get()), COOKED_BRAIN.get(), consumer);
 		createFoodRecipe(Ingredient.of(HEART.get()), COOKED_HEART.get(), consumer);

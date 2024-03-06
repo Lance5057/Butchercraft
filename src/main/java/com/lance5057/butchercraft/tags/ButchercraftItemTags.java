@@ -114,6 +114,56 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> CUBED_MUTTON_COOKED = forgeTag("mutton/cubed/cooked");
 	public static final TagKey<Item> STEW_MUTTON_COOKED = forgeTag("mutton/stew/cooked");
 
+	// Mutton
+	public static final TagKey<Item> GOAT = forgeTag("goat");
+	public static final TagKey<Item> SCRAP_GOAT = forgeTag("goat/scrap");
+	public static final TagKey<Item> GOAT_ROAST = forgeTag("goat/roast");
+	public static final TagKey<Item> GOAT_RIBS = forgeTag("goat/ribs");
+	public static final TagKey<Item> CUBED_GOAT = forgeTag("goat/cubed");
+	public static final TagKey<Item> STEW_GOAT = forgeTag("goat/stew");
+
+	public static final TagKey<Item> GOAT_RAW = forgeTag("goat/raw");
+	public static final TagKey<Item> SCRAP_GOAT_RAW = forgeTag("goat/scrap/raw");
+	public static final TagKey<Item> GOAT_ROAST_RAW = forgeTag("goat/roast/raw");
+	public static final TagKey<Item> GOAT_RIBS_RAW = forgeTag("goat/ribs/raw");
+	public static final TagKey<Item> CUBED_GOAT_RAW = forgeTag("goat/cubed/raw");
+	public static final TagKey<Item> STEW_GOAT_RAW = forgeTag("goat/stew/raw");
+
+	public static final TagKey<Item> GOAT_COOKED = forgeTag("goat/cooked");
+	public static final TagKey<Item> SCRAP_GOAT_COOKED = forgeTag("goat/scrap/cooked");
+	public static final TagKey<Item> GOAT_ROAST_COOKED = forgeTag("goat/roast/cooked");
+	public static final TagKey<Item> GOAT_RIBS_COOKED = forgeTag("goat/ribs/cooked");
+	public static final TagKey<Item> CUBED_GOAT_COOKED = forgeTag("goat/cubed/cooked");
+	public static final TagKey<Item> STEW_GOAT_COOKED = forgeTag("goat/stew/cooked");
+
+	// Mutton
+	public static final TagKey<Item> CHICKEN = forgeTag("chicken");
+	public static final TagKey<Item> SCRAP_CHICKEN = forgeTag("chicken/scrap");
+	public static final TagKey<Item> CUBED_CHICKEN = forgeTag("chicken/cubed");
+	public static final TagKey<Item> STEW_CHICKEN = forgeTag("chicken/stew");
+	public static final TagKey<Item> CHICKEN_BREAST = forgeTag("chicken/breast");
+	public static final TagKey<Item> CHICKEN_THIGH = forgeTag("chicken/thigh");
+	public static final TagKey<Item> CHICKEN_LEG = forgeTag("chicken/leg");
+	public static final TagKey<Item> CHICKEN_WING = forgeTag("chicken/wing");
+
+	public static final TagKey<Item> CHICKEN_RAW = forgeTag("chicken/raw");
+	public static final TagKey<Item> SCRAP_CHICKEN_RAW = forgeTag("chicken/scrap/raw");
+	public static final TagKey<Item> CUBED_CHICKEN_RAW = forgeTag("chicken/cubed/raw");
+	public static final TagKey<Item> STEW_CHICKEN_RAW = forgeTag("chicken/stew/raw");
+	public static final TagKey<Item> CHICKEN_BREAST_RAW = forgeTag("chicken/breast/raw");
+	public static final TagKey<Item> CHICKEN_THIGH_RAW = forgeTag("chicken/thigh/raw");
+	public static final TagKey<Item> CHICKEN_LEG_RAW = forgeTag("chicken/leg/raw");
+	public static final TagKey<Item> CHICKEN_WING_RAW = forgeTag("chicken/wing/raw");
+
+	public static final TagKey<Item> CHICKEN_COOKED = forgeTag("chicken/cooked");
+	public static final TagKey<Item> SCRAP_CHICKEN_COOKED = forgeTag("chicken/scrap/cooked");
+	public static final TagKey<Item> CUBED_CHICKEN_COOKED = forgeTag("chicken/cubed/cooked");
+	public static final TagKey<Item> STEW_CHICKEN_COOKED = forgeTag("chicken/stew/cooked");
+	public static final TagKey<Item> CHICKEN_BREAST_COOKED = forgeTag("chicken/breast/cooked");
+	public static final TagKey<Item> CHICKEN_THIGH_COOKED = forgeTag("chicken/thigh/cooked");
+	public static final TagKey<Item> CHICKEN_LEG_COOKED = forgeTag("chicken/leg/cooked");
+	public static final TagKey<Item> CHICKEN_WING_COOKED = forgeTag("chicken/wing/cooked");
+
 	// Guts
 	public static final TagKey<Item> OFFAL = forgeTag("offal");
 	public static final TagKey<Item> OFFAL_RAW = forgeTag("offal/raw");
@@ -157,10 +207,10 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> HORN = forgeTag("horn");
 	public static final TagKey<Item> FAT = forgeTag("fat");
 	public static final TagKey<Item> LEATHER_SCRAP = forgeTag("leather_scrap");
-	
+
 	public static final TagKey<Item> GRINDER_ATTACHMENT = butcherTag("grinder_attachment");
 	public static final TagKey<Item> SAUSAGE_CASING = butcherTag("sausage_casing");
-	
+
 	public static final TagKey<Item> BUNNY_EARS = butcherTag("bunny_ears");
 	public static final TagKey<Item> BUNNY_TAILS = butcherTag("bunny_tails");
 	public static final TagKey<Item> TAXIDERMY = butcherTag("taxidermy");
