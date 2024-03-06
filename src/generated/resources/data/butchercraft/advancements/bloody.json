@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:blood",
+  "criteria": {
+    "bloody": {
+      "conditions": {
+        "effects": {
+          "butchercraft:blood_splatter": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.bloody.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:blood_fluid_bottle"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.bloody.name"
+    }
+  },
+  "requirements": [
+    [
+      "bloody"
+    ]
+  ]
+}

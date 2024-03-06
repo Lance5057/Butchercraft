@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "H": {
+      "item": "butchercraft:goat_head_item"
+    },
+    "L": {
+      "item": "butchercraft:goat_hide"
+    },
+    "S": {
+      "tag": "forge:string"
+    }
+  },
+  "pattern": [
+    " H ",
+    "SLS"
+  ],
+  "result": {
+    "item": "butchercraft:goat_hood"
+  }
+}

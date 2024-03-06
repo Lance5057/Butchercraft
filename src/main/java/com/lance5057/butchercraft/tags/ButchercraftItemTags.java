@@ -160,6 +160,10 @@ public class ButchercraftItemTags {
 	
 	public static final TagKey<Item> GRINDER_ATTACHMENT = butcherTag("grinder_attachment");
 	public static final TagKey<Item> SAUSAGE_CASING = butcherTag("sausage_casing");
+	
+	public static final TagKey<Item> BUNNY_EARS = butcherTag("bunny_ears");
+	public static final TagKey<Item> BUNNY_TAILS = butcherTag("bunny_tails");
+	public static final TagKey<Item> TAXIDERMY = butcherTag("taxidermy");
 
 	public static TagKey<Item> forgeTag(String tag) {
 		return ItemTags.create(new ResourceLocation("forge", tag));

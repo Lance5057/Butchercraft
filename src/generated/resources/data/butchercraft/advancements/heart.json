@@ -1,4 +1,5 @@
 {
+  "parent": "butchercraft:root",
   "criteria": {
     "heart": {
       "conditions": {

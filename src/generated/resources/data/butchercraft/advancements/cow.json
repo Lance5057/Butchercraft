@@ -1,4 +1,5 @@
 {
+  "parent": "butchercraft:hook",
   "criteria": {
     "cow": {
       "conditions": {

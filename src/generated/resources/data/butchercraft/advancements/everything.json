@@ -1,5 +1,5 @@
 {
-  "parent": "butchercraft:whole_pig",
+  "parent": "butchercraft:butcherknife",
   "criteria": {
     "whole_cow_cubed": {
       "conditions": {

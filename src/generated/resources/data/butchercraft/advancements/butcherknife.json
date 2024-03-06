@@ -1,0 +1,38 @@
+{
+  "parent": "butchercraft:root",
+  "criteria": {
+    "butcherknife": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:butcher_knife"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.butcherknife.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:butcher_knife",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.butcherknife.name"
+    }
+  },
+  "requirements": [
+    [
+      "butcherknife"
+    ]
+  ]
+}

@@ -1,4 +1,5 @@
 {
+  "parent": "butchercraft:butcherblock",
   "criteria": {
     "rabbit": {
       "conditions": {

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:goat_item_block"
+          "name": "butchercraft:taxidermy_goat_item_block"
         }
       ],
       "rolls": 1.0

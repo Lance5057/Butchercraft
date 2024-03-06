@@ -80,15 +80,15 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/rabbit")))
 				.texture("0", mcLoc("entity/rabbit/white_splotched"));
 
-		getBuilder(ButchercraftItems.COW_ITEM_BLOCK.getId().getPath())
+		getBuilder(ButchercraftItems.TAXIDERMY_COW_ITEM_BLOCK.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/cow")));
-		getBuilder(ButchercraftItems.PIG_ITEM_BLOCK.getId().getPath())
+		getBuilder(ButchercraftItems.TAXIDERMY_PIG_ITEM_BLOCK.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig")));
-		getBuilder(ButchercraftItems.SHEEP_ITEM_BLOCK.getId().getPath())
+		getBuilder(ButchercraftItems.TAXIDERMY_SHEEP_ITEM_BLOCK.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/sheep")));
-		getBuilder(ButchercraftItems.GOAT_ITEM_BLOCK.getId().getPath())
+		getBuilder(ButchercraftItems.TAXIDERMY_GOAT_ITEM_BLOCK.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/goat")));
-		getBuilder(ButchercraftItems.CHICKEN_ITEM_BLOCK.getId().getPath())
+		getBuilder(ButchercraftItems.TAXIDERMY_CHICKEN_ITEM_BLOCK.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/chicken")));
 
 		getBuilder(ButchercraftItems.TAXIDERMY_BLACK_RABBIT_ITEM_BLOCK.getId().getPath())
@@ -253,7 +253,7 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.COOKED_RABBIT_BLOCK_ITEM, "cooked_rabbit_block");
 		forBlockItem(ButchercraftItems.CHICKEN_BLOCK_ITEM, "chicken_block");
 		forBlockItem(ButchercraftItems.COOKED_CHICKEN_BLOCK_ITEM, "cooked_chicken_block");
-		forBlockItem(ButchercraftItems.GOAT_BLOCK_ITEM, "goat_block");
+		forBlockItem(ButchercraftItems.GOAT_ITEM_BLOCK, "goat_block");
 		forBlockItem(ButchercraftItems.COOKED_GOAT_BLOCK_ITEM, "cooked_goat_block");
 
 		forBlockItem(ButchercraftItems.SAUSAGE_BLOCK_ITEM, "sausage_block");

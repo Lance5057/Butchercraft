@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:goat_carcass"
+    },
+    {
+      "item": "minecraft:hay_block"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:taxidermy_goat_item_block"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "butchercraft:stink",
+  "criteria": {
+    "mask": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:mask"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.mask.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:mask",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.mask.name"
+    }
+  },
+  "requirements": [
+    [
+      "mask"
+    ]
+  ]
+}

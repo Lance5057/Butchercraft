@@ -1,0 +1,37 @@
+{
+  "parent": "butchercraft:blood",
+  "criteria": {
+    "soap": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:soap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.soap.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:soap"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.soap.name"
+    }
+  },
+  "requirements": [
+    [
+      "soap"
+    ]
+  ]
+}

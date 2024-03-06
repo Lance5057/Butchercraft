@@ -343,17 +343,18 @@ public class ButchercraftItems {
 	public static final RegistryObject<BlockItem> GOAT_HIDE = ITEMS.register("goat_hide",
 			() -> new BlockItem(ButchercraftBlocks.GOAT_HIDE_CARPET.get(), new Item.Properties().tab(BUTCHER_TAB)));
 
-	public static final RegistryObject<BlockItem> COW_ITEM_BLOCK = ITEMS.register("cow_item_block",
+	public static final RegistryObject<BlockItem> TAXIDERMY_COW_ITEM_BLOCK = ITEMS.register("taxidermy_cow_item_block",
 			() -> new BlockItem(ButchercraftBlocks.TAXIDERMY_COW_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<BlockItem> PIG_ITEM_BLOCK = ITEMS.register("pig_item_block",
+	public static final RegistryObject<BlockItem> TAXIDERMY_PIG_ITEM_BLOCK = ITEMS.register("taxidermy_pig_item_block",
 			() -> new BlockItem(ButchercraftBlocks.TAXIDERMY_PIG_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<BlockItem> SHEEP_ITEM_BLOCK = ITEMS.register("sheep_item_block",
-			() -> new BlockItem(ButchercraftBlocks.TAXIDERMY_SHEEP_BLOCK.get(),
+	public static final RegistryObject<BlockItem> TAXIDERMY_SHEEP_ITEM_BLOCK = ITEMS
+			.register("taxidermy_sheep_item_block", () -> new BlockItem(ButchercraftBlocks.TAXIDERMY_SHEEP_BLOCK.get(),
 					new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<BlockItem> GOAT_ITEM_BLOCK = ITEMS.register("goat_item_block",
+	public static final RegistryObject<BlockItem> TAXIDERMY_GOAT_ITEM_BLOCK = ITEMS.register(
+			"taxidermy_goat_item_block",
 			() -> new BlockItem(ButchercraftBlocks.TAXIDERMY_GOAT_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
-	public static final RegistryObject<BlockItem> CHICKEN_ITEM_BLOCK = ITEMS.register("chicken_item_block",
-			() -> new BlockItem(ButchercraftBlocks.TAXIDERMY_CHICKEN_BLOCK.get(),
+	public static final RegistryObject<BlockItem> TAXIDERMY_CHICKEN_ITEM_BLOCK = ITEMS.register(
+			"taxidermy_chicken_item_block", () -> new BlockItem(ButchercraftBlocks.TAXIDERMY_CHICKEN_BLOCK.get(),
 					new Item.Properties().tab(BUTCHER_TAB)));
 
 	public static final RegistryObject<BlockItem> TAXIDERMY_BLACK_RABBIT_ITEM_BLOCK = ITEMS.register(
@@ -440,7 +441,7 @@ public class ButchercraftItems {
 			"cooked_chicken_block_item",
 			() -> new BlockItem(ButchercraftBlocks.COOKED_CHICKEN_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 
-	public static final RegistryObject<BlockItem> GOAT_BLOCK_ITEM = ITEMS.register("goat_block_item",
+	public static final RegistryObject<BlockItem> GOAT_ITEM_BLOCK = ITEMS.register("goat_block_item",
 			() -> new BlockItem(ButchercraftBlocks.GOAT_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BlockItem> COOKED_GOAT_BLOCK_ITEM = ITEMS.register("cooked_goat_block_item",
 			() -> new BlockItem(ButchercraftBlocks.COOKED_GOAT_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
