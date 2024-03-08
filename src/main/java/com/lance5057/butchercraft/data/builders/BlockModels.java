@@ -33,8 +33,8 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ButchercraftBlocks.COOKED_BEEF_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.PORK_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.COOKED_PORK_BLOCK.get());
-		this.simpleBlock(ButchercraftBlocks.LAMB_BLOCK.get());
-		this.simpleBlock(ButchercraftBlocks.COOKED_LAMB_BLOCK.get());
+		this.simpleBlock(ButchercraftBlocks.MUTTON_BLOCK.get());
+		this.simpleBlock(ButchercraftBlocks.COOKED_MUTTON_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.GOAT_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.COOKED_GOAT_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.CHICKEN_BLOCK.get());

@@ -174,18 +174,18 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 //		getBuilder(ButchercraftItems.PIG_HOOVES.getId().getPath())
 //				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID, "item/pig_foot")));
 
-		forItem(ButchercraftItems.LAMB_STEW_MEAT, "stew_lamb");
-		forItem(ButchercraftItems.COOKED_LAMB_STEW_MEAT, "cooked_stew_lamb");
-		forItem(ButchercraftItems.LAMB_ROAST, "lamb_roast");
-		forItem(ButchercraftItems.COOKED_LAMB_ROAST, "cooked_lamb_roast");
-		forItem(ButchercraftItems.LAMB_RIBS, "lamb_ribs");
-		forItem(ButchercraftItems.COOKED_LAMB_RIBS, "cooked_lamb_ribs");
-		forItem(ButchercraftItems.CUBED_LAMB, "cubed_lamb");
-		forItem(ButchercraftItems.COOKED_CUBED_LAMB, "cooked_cubed_lamb");
-		forItem(ButchercraftItems.GROUND_LAMB, "ground_lamb");
-		forItem(ButchercraftItems.COOKED_GROUND_LAMB, "cooked_ground_lamb");
-		forItem(ButchercraftItems.LAMB_SCRAPS, "lamb_scraps");
-		forItem(ButchercraftItems.COOKED_LAMB_SCRAPS, "cooked_lamb_scraps");
+		forItem(ButchercraftItems.MUTTON_STEW_MEAT, "stew_lamb");
+		forItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT, "cooked_stew_lamb");
+		forItem(ButchercraftItems.MUTTON_ROAST, "lamb_roast");
+		forItem(ButchercraftItems.COOKED_MUTTON_ROAST, "cooked_lamb_roast");
+		forItem(ButchercraftItems.MUTTON_RIBS, "lamb_ribs");
+		forItem(ButchercraftItems.COOKED_MUTTON_RIBS, "cooked_lamb_ribs");
+		forItem(ButchercraftItems.CUBED_MUTTON, "cubed_lamb");
+		forItem(ButchercraftItems.COOKED_CUBED_MUTTON, "cooked_cubed_lamb");
+		forItem(ButchercraftItems.GROUND_MUTTON, "ground_lamb");
+		forItem(ButchercraftItems.COOKED_GROUND_MUTTON, "cooked_ground_lamb");
+		forItem(ButchercraftItems.MUTTON_SCRAPS, "lamb_scraps");
+		forItem(ButchercraftItems.COOKED_MUTTON_SCRAPS, "cooked_lamb_scraps");
 
 		forItem(ButchercraftItems.GOAT_CHOP, "goat_steak");
 		forItem(ButchercraftItems.COOKED_GOAT_CHOP, "cooked_goat_steak");
@@ -247,8 +247,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forBlockItem(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM, "cooked_beef_block");
 		forBlockItem(ButchercraftItems.PORK_BLOCK_ITEM, "pork_block");
 		forBlockItem(ButchercraftItems.COOKED_PORK_BLOCK_ITEM, "cooked_pork_block");
-		forBlockItem(ButchercraftItems.LAMB_BLOCK_ITEM, "lamb_block");
-		forBlockItem(ButchercraftItems.COOKED_LAMB_BLOCK_ITEM, "cooked_lamb_block");
+		forBlockItem(ButchercraftItems.MUTTON_BLOCK_ITEM, "lamb_block");
+		forBlockItem(ButchercraftItems.COOKED_MUTTON_BLOCK_ITEM, "cooked_lamb_block");
 		forBlockItem(ButchercraftItems.RABBIT_BLOCK_ITEM, "rabbit_block");
 		forBlockItem(ButchercraftItems.COOKED_RABBIT_BLOCK_ITEM, "cooked_rabbit_block");
 		forBlockItem(ButchercraftItems.CHICKEN_BLOCK_ITEM, "chicken_block");

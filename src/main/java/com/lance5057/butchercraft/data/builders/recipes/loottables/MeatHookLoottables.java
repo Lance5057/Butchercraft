@@ -158,14 +158,14 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 		t.accept(BISECT_SHEEP,
 				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BRAIN.get()))
 						.withPool(createPoolWithItem(ButchercraftItems.SINEW.get(), 0, 6))
-						.withPool(createPoolWithItem(ButchercraftItems.LAMB_SCRAPS.get(), 4))
-						.withPool(createPoolWithItem(ButchercraftItems.LAMB_STEW_MEAT.get(), 6))
+						.withPool(createPoolWithItem(ButchercraftItems.MUTTON_SCRAPS.get(), 4))
+						.withPool(createPoolWithItem(ButchercraftItems.MUTTON_STEW_MEAT.get(), 6))
 						.withPool(createPoolWithItem(Items.BONE, 4)));
 		t.accept(BUTCHER_SHEEP,
-				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.LAMB_SCRAPS.get(), 5))
-						.withPool(createPoolWithItem(ButchercraftItems.LAMB_RIBS.get(), 2))
-						.withPool(createPoolWithItem(ButchercraftItems.LAMB_ROAST.get(), 7))
-						.withPool(createPoolWithItem(ButchercraftItems.CUBED_LAMB.get(), 2))
+				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.MUTTON_SCRAPS.get(), 5))
+						.withPool(createPoolWithItem(ButchercraftItems.MUTTON_RIBS.get(), 2))
+						.withPool(createPoolWithItem(ButchercraftItems.MUTTON_ROAST.get(), 7))
+						.withPool(createPoolWithItem(ButchercraftItems.CUBED_MUTTON.get(), 2))
 						.withPool(createPoolWithItem(Items.MUTTON, 10)).withPool(createPoolWithItem(Items.BONE, 9)));
 
 		t.accept(SKIN_GOAT,

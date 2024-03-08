@@ -24,8 +24,8 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.COOKED_BEEF_BLOCK.get());
 		dropSelf(ButchercraftBlocks.PORK_BLOCK.get());
 		dropSelf(ButchercraftBlocks.COOKED_PORK_BLOCK.get());
-		dropSelf(ButchercraftBlocks.LAMB_BLOCK.get());
-		dropSelf(ButchercraftBlocks.COOKED_LAMB_BLOCK.get());
+		dropSelf(ButchercraftBlocks.MUTTON_BLOCK.get());
+		dropSelf(ButchercraftBlocks.COOKED_MUTTON_BLOCK.get());
 		dropSelf(ButchercraftBlocks.GOAT_BLOCK.get());
 		dropSelf(ButchercraftBlocks.COOKED_GOAT_BLOCK.get());
 		dropSelf(ButchercraftBlocks.RABBIT_BLOCK.get());

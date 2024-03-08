@@ -114,7 +114,7 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> CUBED_MUTTON_COOKED = forgeTag("mutton/cubed/cooked");
 	public static final TagKey<Item> STEW_MUTTON_COOKED = forgeTag("mutton/stew/cooked");
 
-	// Mutton
+	// goat
 	public static final TagKey<Item> GOAT = forgeTag("goat");
 	public static final TagKey<Item> SCRAP_GOAT = forgeTag("goat/scrap");
 	public static final TagKey<Item> GOAT_ROAST = forgeTag("goat/roast");
@@ -136,7 +136,7 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> CUBED_GOAT_COOKED = forgeTag("goat/cubed/cooked");
 	public static final TagKey<Item> STEW_GOAT_COOKED = forgeTag("goat/stew/cooked");
 
-	// Mutton
+	// Chicken
 	public static final TagKey<Item> CHICKEN = forgeTag("chicken");
 	public static final TagKey<Item> SCRAP_CHICKEN = forgeTag("chicken/scrap");
 	public static final TagKey<Item> CUBED_CHICKEN = forgeTag("chicken/cubed");
@@ -163,6 +163,34 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> CHICKEN_THIGH_COOKED = forgeTag("chicken/thigh/cooked");
 	public static final TagKey<Item> CHICKEN_LEG_COOKED = forgeTag("chicken/leg/cooked");
 	public static final TagKey<Item> CHICKEN_WING_COOKED = forgeTag("chicken/wing/cooked");
+
+	// Chicken
+	public static final TagKey<Item> RABBIT = forgeTag("chicken");
+	public static final TagKey<Item> SCRAP_RABBIT = forgeTag("chicken/scrap");
+	public static final TagKey<Item> CUBED_RABBIT = forgeTag("chicken/cubed");
+	public static final TagKey<Item> STEW_RABBIT = forgeTag("chicken/stew");
+	public static final TagKey<Item> RABBIT_BREAST = forgeTag("chicken/breast");
+	public static final TagKey<Item> RABBIT_THIGH = forgeTag("chicken/thigh");
+	public static final TagKey<Item> RABBIT_LEG = forgeTag("chicken/leg");
+	public static final TagKey<Item> RABBIT_WING = forgeTag("chicken/wing");
+
+	public static final TagKey<Item> RABBIT_RAW = forgeTag("chicken/raw");
+	public static final TagKey<Item> SCRAP_RABBIT_RAW = forgeTag("chicken/scrap/raw");
+	public static final TagKey<Item> CUBED_RABBIT_RAW = forgeTag("chicken/cubed/raw");
+	public static final TagKey<Item> STEW_RABBIT_RAW = forgeTag("chicken/stew/raw");
+	public static final TagKey<Item> RABBIT_BREAST_RAW = forgeTag("chicken/breast/raw");
+	public static final TagKey<Item> RABBIT_THIGH_RAW = forgeTag("chicken/thigh/raw");
+	public static final TagKey<Item> RABBIT_LEG_RAW = forgeTag("chicken/leg/raw");
+	public static final TagKey<Item> RABBIT_WING_RAW = forgeTag("chicken/wing/raw");
+
+	public static final TagKey<Item> RABBIT_COOKED = forgeTag("chicken/cooked");
+	public static final TagKey<Item> SCRAP_RABBIT_COOKED = forgeTag("chicken/scrap/cooked");
+	public static final TagKey<Item> CUBED_RABBIT_COOKED = forgeTag("chicken/cubed/cooked");
+	public static final TagKey<Item> STEW_RABBIT_COOKED = forgeTag("chicken/stew/cooked");
+	public static final TagKey<Item> RABBIT_BREAST_COOKED = forgeTag("chicken/breast/cooked");
+	public static final TagKey<Item> RABBIT_THIGH_COOKED = forgeTag("chicken/thigh/cooked");
+	public static final TagKey<Item> RABBIT_LEG_COOKED = forgeTag("chicken/leg/cooked");
+	public static final TagKey<Item> RABBIT_WING_COOKED = forgeTag("chicken/wing/cooked");
 
 	// Guts
 	public static final TagKey<Item> OFFAL = forgeTag("offal");

@@ -50,18 +50,18 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.PORK_STEW_MEAT.get(), "Raw Pork Stew Meat");
 		this.add(ButchercraftItems.COOKED_PORK_STEW_MEAT.get(), "Cooked Pork Stew Meat");
 
-		this.add(ButchercraftItems.COOKED_LAMB_SCRAPS.get(), "Cooked Mutton Straps");
-		this.add(ButchercraftItems.LAMB_SCRAPS.get(), "Raw Mutton Scraps");
-		this.add(ButchercraftItems.COOKED_GROUND_LAMB.get(), "Cooked Ground Mutton");
-		this.add(ButchercraftItems.GROUND_LAMB.get(), "Raw Ground Mutton");
-		this.add(ButchercraftItems.COOKED_CUBED_LAMB.get(), "Cooked Cubed Mutton");
-		this.add(ButchercraftItems.CUBED_LAMB.get(), "Raw Cubed Mutton");
-		this.add(ButchercraftItems.COOKED_LAMB_RIBS.get(), "Cooked Mutton Ribs");
-		this.add(ButchercraftItems.LAMB_RIBS.get(), "Raw Mutton Ribs");
-		this.add(ButchercraftItems.COOKED_LAMB_ROAST.get(), "Cooked Mutton Roast");
-		this.add(ButchercraftItems.LAMB_ROAST.get(), "Raw Mutton Roast");
-		this.add(ButchercraftItems.LAMB_STEW_MEAT.get(), "Raw Mutton Stew Meat");
-		this.add(ButchercraftItems.COOKED_LAMB_STEW_MEAT.get(), "Cooked Mutton Stew Meat");
+		this.add(ButchercraftItems.COOKED_MUTTON_SCRAPS.get(), "Cooked Mutton Straps");
+		this.add(ButchercraftItems.MUTTON_SCRAPS.get(), "Raw Mutton Scraps");
+		this.add(ButchercraftItems.COOKED_GROUND_MUTTON.get(), "Cooked Ground Mutton");
+		this.add(ButchercraftItems.GROUND_MUTTON.get(), "Raw Ground Mutton");
+		this.add(ButchercraftItems.COOKED_CUBED_MUTTON.get(), "Cooked Cubed Mutton");
+		this.add(ButchercraftItems.CUBED_MUTTON.get(), "Raw Cubed Mutton");
+		this.add(ButchercraftItems.COOKED_MUTTON_RIBS.get(), "Cooked Mutton Ribs");
+		this.add(ButchercraftItems.MUTTON_RIBS.get(), "Raw Mutton Ribs");
+		this.add(ButchercraftItems.COOKED_MUTTON_ROAST.get(), "Cooked Mutton Roast");
+		this.add(ButchercraftItems.MUTTON_ROAST.get(), "Raw Mutton Roast");
+		this.add(ButchercraftItems.MUTTON_STEW_MEAT.get(), "Raw Mutton Stew Meat");
+		this.add(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get(), "Cooked Mutton Stew Meat");
 
 		this.add(ButchercraftItems.COOKED_TRIPE.get(), "Cooked Intestines");
 		this.add(ButchercraftItems.TRIPE.get(), "Raw Intestines");
@@ -86,11 +86,11 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ButchercraftItems.BEEF_BLOCK_ITEM.get(), "Raw Beef Block");
 		this.add(ButchercraftItems.PORK_BLOCK_ITEM.get(), "Raw Pork Block");
-		this.add(ButchercraftItems.LAMB_BLOCK_ITEM.get(), "Raw Mutton Block");
+		this.add(ButchercraftItems.MUTTON_BLOCK_ITEM.get(), "Raw Mutton Block");
 
 		this.add(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM.get(), "Cooked Beef Block");
 		this.add(ButchercraftItems.COOKED_PORK_BLOCK_ITEM.get(), "Cooked Pork Block");
-		this.add(ButchercraftItems.COOKED_LAMB_BLOCK_ITEM.get(), "Cooked Mutton Block");
+		this.add(ButchercraftItems.COOKED_MUTTON_BLOCK_ITEM.get(), "Cooked Mutton Block");
 
 		this.add(ButchercraftItems.BUTCHER_KNIFE.get(), "Butcher Knife");
 		this.add(ButchercraftItems.SKINNING_KNIFE.get(), "Skinning Knife");

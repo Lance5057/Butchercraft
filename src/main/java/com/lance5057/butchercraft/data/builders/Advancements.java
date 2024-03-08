@@ -389,17 +389,17 @@ public class Advancements extends AdvancementProvider {
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_sheep.desc"), null,
 						FrameType.CHALLENGE, true, true, false))
 				.addCriterion("whole_sheep_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_RIBS.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
 				.addCriterion("whole_sheep_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_ROAST.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
 				.addCriterion("whole_sheep_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_SCRAPS.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
 				.addCriterion("whole_sheep_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_STEW_MEAT.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
 				.addCriterion("whole_sheep_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_LAMB.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
 				.addCriterion("whole_sheep_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_LAMB.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":whole_sheep");
 
 		whole_rabbit = Advancement.Builder.advancement().parent(rabbit)
@@ -452,17 +452,17 @@ public class Advancements extends AdvancementProvider {
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_goat.desc"), null,
 						FrameType.CHALLENGE, true, true, false))
 				.addCriterion("whole_goat_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_RIBS.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
 				.addCriterion("whole_goat_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_ROAST.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
 				.addCriterion("whole_goat_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_SCRAPS.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
 				.addCriterion("whole_goat_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_STEW_MEAT.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
 				.addCriterion("whole_goat_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_LAMB.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
 				.addCriterion("whole_goat_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_LAMB.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":whole_goat");
 
 		everything = Advancement.Builder.advancement().parent(butcherknife)
@@ -495,17 +495,17 @@ public class Advancements extends AdvancementProvider {
 				.addCriterion("whole_pig_ground",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
 				.addCriterion("whole_sheep_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_RIBS.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
 				.addCriterion("whole_sheep_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_ROAST.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
 				.addCriterion("whole_sheep_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_SCRAPS.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
 				.addCriterion("whole_sheep_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_STEW_MEAT.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
 				.addCriterion("whole_sheep_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_LAMB.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
 				.addCriterion("whole_sheep_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_LAMB.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":everything");
 
 		everything_plus = Advancement.Builder.advancement().parent(everything)
@@ -538,17 +538,17 @@ public class Advancements extends AdvancementProvider {
 				.addCriterion("whole_pig_ground",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
 				.addCriterion("whole_sheep_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_RIBS.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
 				.addCriterion("whole_sheep_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_ROAST.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
 				.addCriterion("whole_sheep_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_SCRAPS.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
 				.addCriterion("whole_sheep_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LAMB_STEW_MEAT.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
 				.addCriterion("whole_sheep_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_LAMB.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
 				.addCriterion("whole_sheep_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_LAMB.get()))
+						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
 				.addCriterion("everything_plus_brain",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BRAIN.get()))
 				.addCriterion("everything_plus_heart",

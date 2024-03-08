@@ -21,8 +21,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ButchercraftBlocks.BEEF_BLOCK.get())
 				.add(ButchercraftBlocks.COOKED_BEEF_BLOCK.get()).add(ButchercraftBlocks.PORK_BLOCK.get())
-				.add(ButchercraftBlocks.COOKED_PORK_BLOCK.get()).add(ButchercraftBlocks.LAMB_BLOCK.get())
-				.add(ButchercraftBlocks.COOKED_LAMB_BLOCK.get())
+				.add(ButchercraftBlocks.COOKED_PORK_BLOCK.get()).add(ButchercraftBlocks.MUTTON_BLOCK.get())
+				.add(ButchercraftBlocks.COOKED_MUTTON_BLOCK.get())
 
 				.add(ButchercraftBlocks.BARN_WOOD_BLOCK.get()).add(ButchercraftBlocks.BARN_WOOD_DOOR.get())
 				.add(ButchercraftBlocks.BARN_WOOD_FENCE.get()).add(ButchercraftBlocks.BARN_WOOD_FENCE_GATE.get())

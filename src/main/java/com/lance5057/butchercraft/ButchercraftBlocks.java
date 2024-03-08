@@ -50,9 +50,9 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<Block> COOKED_PORK_BLOCK = BLOCKS.register("cooked_pork_block", () -> new Block(
 			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN).sound(SoundType.SLIME_BLOCK)));
 
-	public static final RegistryObject<Block> LAMB_BLOCK = BLOCKS.register("lamb_block", () -> new Block(
+	public static final RegistryObject<Block> MUTTON_BLOCK = BLOCKS.register("mutton_block", () -> new Block(
 			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK)));
-	public static final RegistryObject<Block> COOKED_LAMB_BLOCK = BLOCKS.register("cooked_lamb_block", () -> new Block(
+	public static final RegistryObject<Block> COOKED_MUTTON_BLOCK = BLOCKS.register("cooked_mutton_block", () -> new Block(
 			BlockBehaviour.Properties.of(Material.SPONGE, MaterialColor.COLOR_BROWN).sound(SoundType.SLIME_BLOCK)));
 
 	public static final RegistryObject<Block> GOAT_BLOCK = BLOCKS.register("goat_block", () -> new Block(
