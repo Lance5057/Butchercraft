@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_rabbit"
+      }
+    }
+  ],
+  "result": {
+    "item": "butchercraft:cooked_rabbit_block_item"
+  }
+}

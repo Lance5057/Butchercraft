@@ -1,10 +1,9 @@
 {
   "values": [
-    "butchercraft:cooked_pork_ribs",
-    "butchercraft:cooked_pork_roast",
-    "butchercraft:cooked_pork_scraps",
-    "butchercraft:cooked_pork_stewmeat",
-    "butchercraft:cooked_cubed_pork",
-    "butchercraft:cooked_ground_pork"
+    "#forge:pork/ribs/cooked",
+    "#forge:pork/roast/cooked",
+    "#forge:pork/cubed/cooked",
+    "#forge:pork/scrap/cooked",
+    "#forge:pork/stew/cooked"
   ]
 }

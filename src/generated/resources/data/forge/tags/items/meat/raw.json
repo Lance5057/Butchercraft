@@ -1,22 +1,10 @@
 {
   "values": [
-    "butchercraft:beef_ribs",
-    "butchercraft:beef_roast",
-    "butchercraft:beef_scraps",
-    "butchercraft:beef_stewmeat",
-    "butchercraft:cubed_beef",
-    "butchercraft:ground_beef",
-    "butchercraft:pork_ribs",
-    "butchercraft:pork_roast",
-    "butchercraft:pork_scraps",
-    "butchercraft:pork_stewmeat",
-    "butchercraft:cubed_pork",
-    "butchercraft:ground_pork",
-    "butchercraft:lamb_ribs",
-    "butchercraft:lamb_roast",
-    "butchercraft:lamb_scraps",
-    "butchercraft:lamb_stewmeat",
-    "butchercraft:cubed_lamb",
-    "butchercraft:ground_lamb"
+    "#forge:goat/raw",
+    "#forge:beef/raw",
+    "#forge:mutton/raw",
+    "#forge:pork/raw",
+    "#forge:chicken/raw",
+    "#forge:rabbit/raw"
   ]
 }

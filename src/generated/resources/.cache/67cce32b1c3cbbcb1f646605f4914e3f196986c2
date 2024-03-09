@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-05T14:59:34.0166408	LootTables
+// 1.19.2	2024-03-09T11:20:39.8039103	LootTables
 d18309e947503b793ebec72b88be7dee5f134b23 data/butchercraft/loot_tables/blocks/barn_wood_block.json
 4e0b6fbc86feebe3cb637794f0dabe5c93562439 data/butchercraft/loot_tables/blocks/barn_wood_door.json
 2184af5fa312ec9b91dadd46d215ac132917deb1 data/butchercraft/loot_tables/blocks/barn_wood_fence.json
@@ -16,7 +16,7 @@ d138b32c18977f9fd4edd987b6480d6511224ff5 data/butchercraft/loot_tables/blocks/co
 f7da29b05b408e3c541612552754894115dea242 data/butchercraft/loot_tables/blocks/cooked_blood_sausage_block.json
 5336370f2e358c5fa4ce84691b6c34c0fbcbf8c2 data/butchercraft/loot_tables/blocks/cooked_chicken_block.json
 4d9d9b0f0e8e732977eb4550bc48413edd234d1f data/butchercraft/loot_tables/blocks/cooked_goat_block.json
-40629ac5a013f6fc2c3d5a7f78fb195d7a9656db data/butchercraft/loot_tables/blocks/cooked_lamb_block.json
+40629ac5a013f6fc2c3d5a7f78fb195d7a9656db data/butchercraft/loot_tables/blocks/cooked_mutton_block.json
 e7f66e367e845f00e78b159cb7652b3604ac0cf6 data/butchercraft/loot_tables/blocks/cooked_pork_block.json
 8c801c87f1244c37fc3059ab412c72521d22e2d0 data/butchercraft/loot_tables/blocks/cooked_rabbit_block.json
 f06279da926151fb09d67823809ec9e259ea6561 data/butchercraft/loot_tables/blocks/cooked_sausage_block.json
@@ -28,8 +28,8 @@ f7cff01ccb795ceb45b8dffda6b57a21f9c811d0 data/butchercraft/loot_tables/blocks/go
 28f9e97006fdb7663b360c856e8dc78cc3922332 data/butchercraft/loot_tables/blocks/goat_hide_carpet.json
 351bbd97d610164366f9d99c4855c11a51ecf9d2 data/butchercraft/loot_tables/blocks/goat_skull_head.json
 ea3fdec8354dbd992ccc60eebc6d54e2cd244517 data/butchercraft/loot_tables/blocks/grinder.json
-39179a2f0e31fb0f4b0b552b10c49fa5273c1fd2 data/butchercraft/loot_tables/blocks/lamb_block.json
 89a880a26b4171604e01397a0fdc545661ed015b data/butchercraft/loot_tables/blocks/meat_hook.json
+39179a2f0e31fb0f4b0b552b10c49fa5273c1fd2 data/butchercraft/loot_tables/blocks/mutton_block.json
 dc6aa2773c17d2f14f9aea7b7ab0e4f5d7bdde9f data/butchercraft/loot_tables/blocks/pig_head.json
 2752f93ceba420b9f007de6176e247389efc3983 data/butchercraft/loot_tables/blocks/pig_hide_carpet.json
 cedba6a6eb27c2c144d666d697da3871aaaae8d5 data/butchercraft/loot_tables/blocks/pig_skull_head.json

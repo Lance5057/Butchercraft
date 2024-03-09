@@ -64,6 +64,7 @@ public class Advancements extends AdvancementProvider {
 	private Advancement grinder;
 	private Advancement extruder;
 	private Advancement grinder_tip;
+	private Advancement sausage;
 
 	private Advancement cow;
 	private Advancement pig;
@@ -321,6 +322,44 @@ public class Advancements extends AdvancementProvider {
 				.addCriterion("chicken",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.CHICKEN_CARCASS.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":chicken");
+
+		grinder = Advancement.Builder.advancement().parent(root)
+				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GRINDER_BLOCK_ITEM.get()),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder.name"),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder.desc"), null, FrameType.TASK,
+						true, true, false))
+				.addCriterion("grinder",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GRINDER_BLOCK_ITEM.get()))
+				.save(consumer, Butchercraft.MOD_ID + ":grinder");
+		
+		grinder_tip = Advancement.Builder.advancement().parent(grinder)
+				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GRINDER_TIP.get()),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder_tip.name"),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder_tip.desc"), null, FrameType.TASK,
+						true, true, false))
+				.addCriterion("grinder_tip",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GRINDER_TIP.get()))
+				.save(consumer, Butchercraft.MOD_ID + ":grinder_tip");
+		
+		extruder = Advancement.Builder.advancement().parent(grinder)
+				.display(new DisplayInfo(new ItemStack(ButchercraftItems.EXTRUDER_TIP.get()),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.extruder.name"),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.extruder.desc"), null, FrameType.TASK,
+						true, true, false))
+				.addCriterion("extruder",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.EXTRUDER_TIP.get()))
+				.save(consumer, Butchercraft.MOD_ID + ":extruder");
+
+		sausage = Advancement.Builder.advancement().parent(extruder)
+				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SAUSAGE.get()),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.sausage.name"),
+						Component.translatable(Butchercraft.MOD_ID + ".advancement.sausage.desc"), null, FrameType.GOAL,
+						true, true, false))
+				.addCriterion("blood_sausage",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.BLOOD_SAUSAGE_LINKED.get()))
+				.addCriterion("sausage",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.SAUSAGE_LINKED.get()))
+				.save(consumer, Butchercraft.MOD_ID + ":sausage");
 
 		bunny_equip = Advancement.Builder.advancement().parent(rabbit)
 				.display(new DisplayInfo(new ItemStack(ButchercraftItems.WHITE_BUNNY_TAIL.get()),

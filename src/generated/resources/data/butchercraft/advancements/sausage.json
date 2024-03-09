@@ -1,0 +1,52 @@
+{
+  "parent": "butchercraft:extruder",
+  "criteria": {
+    "blood_sausage": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:blood_sausage_linked"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sausage": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:sausage_linked"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.sausage.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:sausage"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.sausage.name"
+    }
+  },
+  "requirements": [
+    [
+      "blood_sausage"
+    ],
+    [
+      "sausage"
+    ]
+  ]
+}

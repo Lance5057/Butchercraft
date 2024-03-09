@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:rabbit/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_rabbit"
+      }
+    }
+  ],
+  "result": {
+    "item": "butchercraft:rabbit_block_item"
+  }
+}

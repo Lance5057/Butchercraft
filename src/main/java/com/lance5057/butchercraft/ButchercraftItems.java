@@ -441,7 +441,7 @@ public class ButchercraftItems {
 			"cooked_chicken_block_item",
 			() -> new BlockItem(ButchercraftBlocks.COOKED_CHICKEN_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 
-	public static final RegistryObject<BlockItem> GOAT_ITEM_BLOCK = ITEMS.register("goat_block_item",
+	public static final RegistryObject<BlockItem> GOAT_BLOCK_ITEM = ITEMS.register("goat_block_item",
 			() -> new BlockItem(ButchercraftBlocks.GOAT_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BlockItem> COOKED_GOAT_BLOCK_ITEM = ITEMS.register("cooked_goat_block_item",
 			() -> new BlockItem(ButchercraftBlocks.COOKED_GOAT_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));

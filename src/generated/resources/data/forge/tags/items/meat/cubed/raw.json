@@ -2,6 +2,9 @@
   "values": [
     "butchercraft:cubed_beef",
     "butchercraft:cubed_lamb",
-    "butchercraft:cubed_pork"
+    "butchercraft:cubed_pork",
+    "butchercraft:cubed_chicken",
+    "butchercraft:cubed_rabbit",
+    "butchercraft:cubed_goat"
   ]
 }

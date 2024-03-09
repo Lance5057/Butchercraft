@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:chicken/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_chicken"
+      }
+    }
+  ],
+  "result": {
+    "item": "butchercraft:cooked_chicken_block_item"
+  }
+}

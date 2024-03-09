@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:cooked_blood_sausage_block_item"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "butchercraft:cooked_blood_sausage"
+  }
+}

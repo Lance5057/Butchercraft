@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:sausage_block_item"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "butchercraft:sausage"
+  }
+}

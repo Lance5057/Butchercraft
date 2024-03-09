@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-05T15:28:34.3954726	Butchercraft item models
+// 1.19.2	2024-03-09T11:20:39.8059101	Butchercraft item models
 65012af66cea6853cb6fc8f28d0c092803f20c0d assets/butchercraft/models/item/apron.json
 f90b50ce6dc5b95a23e41bdd59c2e8825cbd6399 assets/butchercraft/models/item/barn_wood_block_item.json
 0a278d1bfa0e986e1457cea216bbae8e461ac1e5 assets/butchercraft/models/item/barn_wood_door_item.json
@@ -77,7 +77,7 @@ d40ab289a32b9a343450a12d41c517f82430a0f0 assets/butchercraft/models/item/cooked_
 ee766438a82cec23dcabe7497c3c9f60f209a1fe assets/butchercraft/models/item/cooked_ground_rabbit.json
 7d0e14fe9e4ea392b27050dac9a5cb7117401cd3 assets/butchercraft/models/item/cooked_heart.json
 33fb7e10d237ba17a9762d3bad20af95193b6415 assets/butchercraft/models/item/cooked_kidney.json
-6c53ecb9bccda9a546b6e8c0342c73fe57fd7838 assets/butchercraft/models/item/cooked_lamb_block_item.json
+ca6b69a8d09dc19c8e99285817abbf223b2d6c8e assets/butchercraft/models/item/cooked_lamb_block_item.json
 e03f293a0e47a6aac96efc572c53cf5e0000fdb8 assets/butchercraft/models/item/cooked_lamb_ribs.json
 327d1050276ff7e77cb52b04fcb29ae8feace3a9 assets/butchercraft/models/item/cooked_lamb_roast.json
 e4b3fff946c2982d6a6d96505529074104e181ec assets/butchercraft/models/item/cooked_lamb_scraps.json
@@ -143,7 +143,7 @@ b9d7c1c3a9e3ac51197637e534b6826ac3a05235 assets/butchercraft/models/item/gut_kni
 a178785e1ced8fc21d3f1e91305dde4e8c98b254 assets/butchercraft/models/item/heart.json
 7c5563fac57092d75f8e80219a5d717bda30e8af assets/butchercraft/models/item/horn.json
 c17f3fa625b887999bfc90add57da50b731af277 assets/butchercraft/models/item/kidney.json
-fe4d8c1335b533fd9424904eced5502d4f61ef37 assets/butchercraft/models/item/lamb_block_item.json
+d20e49955f681f9f3c607f9e8530fd7b32c93efe assets/butchercraft/models/item/lamb_block_item.json
 8a1efbf4bbaedec2a2fd9981c0e852c518773f15 assets/butchercraft/models/item/lamb_ribs.json
 7bf08fad138644997bb45b5ac16423e799aca0b6 assets/butchercraft/models/item/lamb_roast.json
 1bfc648e83e4faa10f6c74a18f065b68b6d26f3e assets/butchercraft/models/item/lamb_scraps.json

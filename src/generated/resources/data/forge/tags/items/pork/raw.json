@@ -1,10 +1,9 @@
 {
   "values": [
-    "butchercraft:pork_ribs",
-    "butchercraft:pork_roast",
-    "butchercraft:pork_scraps",
-    "butchercraft:pork_stewmeat",
-    "butchercraft:cubed_pork",
-    "butchercraft:ground_pork"
+    "#forge:pork/ribs/raw",
+    "#forge:pork/roast/raw",
+    "#forge:pork/cubed/raw",
+    "#forge:pork/scrap/raw",
+    "#forge:pork/stew/raw"
   ]
 }
