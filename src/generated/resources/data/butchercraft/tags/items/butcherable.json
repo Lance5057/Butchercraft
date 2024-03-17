@@ -12,6 +12,24 @@
     "butchercraft:sheep_hide",
     "butchercraft:chicken_head_item",
     "butchercraft:sausage_linked",
-    "butchercraft:blood_sausage_linked"
+    "butchercraft:blood_sausage_linked",
+    "butchercraft:cow_head_item",
+    "butchercraft:goat_head_item",
+    "butchercraft:pig_head_item",
+    "butchercraft:rabbit_black_head_item",
+    "butchercraft:rabbit_brown_head_item",
+    "butchercraft:rabbit_gold_head_item",
+    "butchercraft:rabbit_salt_head_item",
+    "butchercraft:rabbit_splotched_head_item",
+    "butchercraft:rabbit_white_head_item",
+    "butchercraft:sheep_head_item",
+    "butchercraft:beef_roast",
+    "butchercraft:cooked_beef_roast",
+    "butchercraft:cooked_goat_roast",
+    "butchercraft:cooked_lamb_roast",
+    "butchercraft:cooked_pork_roast",
+    "butchercraft:goat_roast",
+    "butchercraft:lamb_roast",
+    "butchercraft:pork_roast"
   ]
 }

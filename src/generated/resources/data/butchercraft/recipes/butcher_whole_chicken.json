@@ -4,6 +4,26 @@
     "item": "minecraft:chicken"
   },
   "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:chicken_breast"
+    },
+    {
+      "item": "butchercraft:chicken_leg"
+    },
+    {
+      "item": "butchercraft:chicken_thigh"
+    },
+    {
+      "item": "butchercraft:chicken_wing"
+    },
+    {
+      "item": "butchercraft:chicken_scraps"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    }
+  ],
   "tools": [
     {
       "count": 1,
@@ -15,8 +35,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },

@@ -4,6 +4,41 @@
     "item": "butchercraft:chicken_carcass"
   },
   "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:blood_fluid_bottle"
+    },
+    {
+      "item": "butchercraft:heart"
+    },
+    {
+      "item": "butchercraft:kidney"
+    },
+    {
+      "item": "butchercraft:liver"
+    },
+    {
+      "item": "butchercraft:stomach"
+    },
+    {
+      "item": "butchercraft:lung"
+    },
+    {
+      "item": "butchercraft:tripe"
+    },
+    {
+      "item": "butchercraft:sinew"
+    },
+    {
+      "item": "butchercraft:fat"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "minecraft:feather"
+    }
+  ],
   "tools": [
     {
       "count": 1,
@@ -15,8 +50,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -83,8 +116,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -151,8 +182,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -219,8 +248,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -287,8 +314,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -355,8 +380,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -423,8 +446,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -491,8 +512,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -559,8 +578,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },

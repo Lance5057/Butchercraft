@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-09T13:00:00.8617156	Butchercraft Advancements
+// 1.19.2	2024-03-12T16:42:27.7204957	Butchercraft Advancements
 ab9c03c54943260b5f1cc59d3ceb682db285005a data/butchercraft/advancements/apron.json
 4c67d5b850dd48d68f63fd3a6d13b6b1cb37d056 data/butchercraft/advancements/barn_wood.json
 77aa179d505575e3c83112c51e1e8862639d9f4a data/butchercraft/advancements/blood.json
@@ -14,7 +14,7 @@ ce269092265f7b129d40a9d7e0de3c59d87502ea data/butchercraft/advancements/cow.json
 84b0cec9e672256b1f2e3a33458b7a769869bc5c data/butchercraft/advancements/everything.json
 7bb34ea0a0773bf23633afe42b4f959c00df9a1b data/butchercraft/advancements/everything_plus.json
 f01768c920c1848edd4010e9b86f70145756782a data/butchercraft/advancements/extruder.json
-63ce9322b0c983fd07210e1939acf075c19a2ca2 data/butchercraft/advancements/gloves.json
+199c031819d28b8bee4205cf25fdb96a99125e55 data/butchercraft/advancements/gloves.json
 66aa10fb38a79e9dc0978dc9aaca5244cdce2059 data/butchercraft/advancements/goat.json
 a43fe4d195816741172a23e634c77182b059cdab data/butchercraft/advancements/grinder.json
 dafbe326fd12aeca99f9db41a208d72571d3f149 data/butchercraft/advancements/grinder_tip.json

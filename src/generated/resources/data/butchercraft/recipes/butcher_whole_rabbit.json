@@ -4,6 +4,23 @@
     "item": "minecraft:rabbit"
   },
   "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:rabbit_leg"
+    },
+    {
+      "item": "butchercraft:rabbit_saddle"
+    },
+    {
+      "item": "butchercraft:rabbit_thigh"
+    },
+    {
+      "item": "butchercraft:rabbit_scraps"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    }
+  ],
   "tools": [
     {
       "count": 1,
@@ -15,8 +32,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },

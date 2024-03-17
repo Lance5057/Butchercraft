@@ -78,9 +78,9 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.OXTAIL)));
 	public static final RegistryObject<Item> COOKED_OXTAIL = ITEMS.register("cooked_oxtail",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.COOKED_OXTAIL)));
-	public static final RegistryObject<Item> BEEF_TONGUE = ITEMS.register("tongue",
+	public static final RegistryObject<Item> TONGUE = ITEMS.register("tongue",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.BEEF_TONGUE)));
-	public static final RegistryObject<Item> COOKED_BEEF_TONGUE = ITEMS.register("cooked_tongue",
+	public static final RegistryObject<Item> COOKED_TONGUE = ITEMS.register("cooked_tongue",
 			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).food(FoodsCow.COOKED_BEEF_TONGUE)));
 
 	// PORK

@@ -4,6 +4,20 @@
     "item": "butchercraft:cow_hide"
   },
   "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:sinew"
+    },
+    {
+      "item": "butchercraft:fat"
+    },
+    {
+      "item": "butchercraft:leather_scrap"
+    },
+    {
+      "item": "minecraft:leather"
+    }
+  ],
   "tools": [
     {
       "count": 1,
@@ -49,7 +63,23 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:skinning_knife"
         }
@@ -103,7 +133,23 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
           },
           "location": "minecraft:shears"
         }

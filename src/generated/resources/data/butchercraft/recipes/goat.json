@@ -4,6 +4,65 @@
     "item": "butchercraft:goat_carcass"
   },
   "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:blood_fluid_bucket"
+    },
+    {
+      "item": "butchercraft:goat_hide"
+    },
+    {
+      "item": "butchercraft:goat_head_item"
+    },
+    {
+      "item": "butchercraft:leather_scrap"
+    },
+    {
+      "item": "butchercraft:fat"
+    },
+    {
+      "item": "butchercraft:heart"
+    },
+    {
+      "item": "butchercraft:kidney"
+    },
+    {
+      "item": "butchercraft:liver"
+    },
+    {
+      "item": "butchercraft:stomach"
+    },
+    {
+      "item": "butchercraft:lung"
+    },
+    {
+      "item": "butchercraft:tripe"
+    },
+    {
+      "item": "butchercraft:sinew"
+    },
+    {
+      "item": "butchercraft:goat_scraps"
+    },
+    {
+      "item": "butchercraft:goat_stewmeat"
+    },
+    {
+      "item": "butchercraft:goat_ribs"
+    },
+    {
+      "item": "butchercraft:goat_roast"
+    },
+    {
+      "item": "butchercraft:cubed_goat"
+    },
+    {
+      "item": "butchercraft:goat_chop"
+    },
+    {
+      "item": "minecraft:bone"
+    }
+  ],
   "tools": [
     {
       "count": 1,
@@ -15,8 +74,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -50,7 +107,23 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
           },
           "location": "minecraft:bucket"
         }
@@ -70,8 +143,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -105,7 +176,23 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:skinning_knife"
         }
@@ -125,8 +212,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -160,7 +245,23 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:bone_saw"
         }
@@ -180,8 +281,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -215,7 +314,23 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:gut_knife"
         }
@@ -235,8 +350,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -270,7 +383,23 @@
                 "speed": 0.05
               }
             },
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:butcher_knife"
         }

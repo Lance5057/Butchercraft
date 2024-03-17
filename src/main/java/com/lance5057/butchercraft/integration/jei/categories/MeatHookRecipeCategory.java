@@ -21,20 +21,20 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 
 public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
-	public static final RecipeType<HookRecipe> TYPE = RecipeType.create(Butchercraft.MOD_ID, "hook",
-			HookRecipe.class);
+	public static final RecipeType<HookRecipe> TYPE = RecipeType.create(Butchercraft.MOD_ID, "hook", HookRecipe.class);
 	private final IDrawable background;
 	private final Component localizedName;
 	private final IDrawable icon;
 
 	public MeatHookRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 0,
-				138, 77);
+		background = guiHelper.createDrawable(new ResourceLocation(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 78,
+				144, 144);
 		localizedName = Component.translatable("Butchercraft.jei.hook");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
-				new ItemStack(ButchercraftItems.GRINDER_BLOCK_ITEM.get()));
+				new ItemStack(ButchercraftItems.HOOK_BLOCK_ITEM.get()));
 	}
 
 	@Override
@@ -62,34 +62,34 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 		int count = recipe.getRecipeToolsIn().size();
 		int offset = 2;
 		int width = (16 + offset);
-		
-		int placement = 0;
+
+		int placementH = 0;
+		int height = (16 + offset);
+		int c = 0;
+		int placementW = 0;
+
+		builder.addSlot(RecipeIngredientRole.INPUT, (this.getBackground().getWidth() / 2 - 8), 65)
+				.addIngredients(recipe.getCarcassIn());
+
 		for (AnimatedRecipeItemUse a : recipe.getRecipeToolsIn()) {
-			builder.addSlot(RecipeIngredientRole.INPUT, (this.getBackground().getWidth() / 2) - (width * count)/2 + placement, 2)
-					.addIngredients(a.tool);
-			
-			placement += width;
+			builder.addSlot(RecipeIngredientRole.CATALYST, 1 + placementW, 1 + placementH).addIngredients(a.tool);
+
+			placementW += width;
 		}
-	}
-
-	@Override
-	public void draw(HookRecipe recipe, IRecipeSlotsView slotsView, PoseStack ms, double mouseX, double mouseY) {
-		RenderSystem.enableBlend();
-
-		Minecraft minecraft = Minecraft.getInstance();
-		Font fontRenderer = minecraft.font;
 		
-		int count = recipe.getRecipeToolsIn().size();
-		int offset = 2;
-		int width = (16 + offset);
+		c = 0;
+		placementW = 0;
+		placementH = 0;
 		
-		int placement = 0;
-		for (AnimatedRecipeItemUse a : recipe.getRecipeToolsIn()) {
-			fontRenderer.draw(ms, "x" + a.uses, this.getBackground().getWidth() / 2 - (width * count)/2 + placement, 16, 0);
-			
-			placement += width;
+		for (Ingredient i : recipe.getDummyList()) { 
+			builder.addSlot(RecipeIngredientRole.OUTPUT, 1 + placementW, 73 + placementH+18).addIngredients(i);
+			placementW += width;
+			c++;
+			if (c > 7) {
+				placementH += height;
+				placementW = 0;
+				c = 0;
+			}
 		}
-
-		RenderSystem.disableBlend();
 	}
 }

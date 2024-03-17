@@ -21,7 +21,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '2.2.2a'
+version = '2.3.0a'
 group = 'com.lance5057.butchercraft' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'butchercraft'
 
@@ -112,8 +112,11 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.1.47'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    compileOnly fg.deobf("mezz.jei:jei-1.19.2-forge-api:11.2.0.246")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.19.2-forge:11.2.0.246")
+     // compile against the JEI API but do not include it at runtime
+	compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
+	compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
+	// at runtime, use the full JEI jar for Forge
+	runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 	
 	implementation fg.deobf("curse.maven:ctm-267602:4393695")
 }

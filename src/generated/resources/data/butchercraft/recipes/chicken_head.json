@@ -4,6 +4,32 @@
     "item": "butchercraft:chicken_head_item"
   },
   "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:eyeball"
+    },
+    {
+      "item": "butchercraft:brain"
+    },
+    {
+      "item": "butchercraft:chicken_scraps"
+    },
+    {
+      "item": "butchercraft:leather_scrap"
+    },
+    {
+      "item": "butchercraft:chicken_skull_head_item"
+    },
+    {
+      "item": "butchercraft:beak"
+    },
+    {
+      "item": "butchercraft:wattle"
+    },
+    {
+      "item": "minecraft:feather"
+    }
+  ],
   "tools": [
     {
       "count": 1,
@@ -15,8 +41,6 @@
           "animation": {
             "location": {
               "x": {
-                "max": -16.0,
-                "min": 16.0,
                 "speed": 1.0
               }
             },
@@ -71,7 +95,7 @@
       "tool": {
         "item": "butchercraft:gut_knife"
       },
-      "uses": 12
+      "uses": 4
     }
   ]
 }

@@ -324,10 +324,20 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.BUTCHERABLE).addTag(ButchercraftItemTags.COW_CARCASS)
 				.addTag(ButchercraftItemTags.CHICKEN_CARCASS).addTag(ButchercraftItemTags.GOAT_CARCASS)
 				.addTag(ButchercraftItemTags.PIG_CARCASS).addTag(ButchercraftItemTags.RABBIT_CARCASS)
-				.addTag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.COW_HIDE.get())
-				.add(ButchercraftItems.GOAT_HIDE.get()).add(ButchercraftItems.PIG_HIDE.get())
-				.add(ButchercraftItems.SHEEP_HIDE.get()).add(ButchercraftItems.CHICKEN_HEAD_ITEM.get())
-				.add(ButchercraftItems.SAUSAGE_LINKED.get()).add(ButchercraftItems.BLOOD_SAUSAGE_LINKED.get());
+				.addTag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.COW_HIDE.get(),
+						ButchercraftItems.GOAT_HIDE.get(), ButchercraftItems.PIG_HIDE.get(),
+						ButchercraftItems.SHEEP_HIDE.get(), ButchercraftItems.CHICKEN_HEAD_ITEM.get(),
+						ButchercraftItems.SAUSAGE_LINKED.get(), ButchercraftItems.BLOOD_SAUSAGE_LINKED.get(),
+						ButchercraftItems.COW_HEAD_ITEM.get(), ButchercraftItems.GOAT_HEAD_ITEM.get(),
+						ButchercraftItems.PIG_HEAD_ITEM.get(), ButchercraftItems.RABBIT_BLACK_HEAD_ITEM.get(),
+						ButchercraftItems.RABBIT_BROWN_HEAD_ITEM.get(), ButchercraftItems.RABBIT_GOLD_HEAD_ITEM.get(),
+						ButchercraftItems.RABBIT_SALT_HEAD_ITEM.get(),
+						ButchercraftItems.RABBIT_SPLOTCHED_HEAD_ITEM.get(),
+						ButchercraftItems.RABBIT_WHITE_HEAD_ITEM.get(), ButchercraftItems.SHEEP_HEAD_ITEM.get(),
+						ButchercraftItems.BEEF_ROAST.get(), ButchercraftItems.COOKED_BEEF_ROAST.get(),
+						ButchercraftItems.COOKED_GOAT_ROAST.get(), ButchercraftItems.COOKED_MUTTON_ROAST.get(),
+						ButchercraftItems.COOKED_PORK_ROAST.get(), ButchercraftItems.GOAT_ROAST.get(),
+						ButchercraftItems.MUTTON_ROAST.get(), ButchercraftItems.PORK_ROAST.get());
 
 	}
 }

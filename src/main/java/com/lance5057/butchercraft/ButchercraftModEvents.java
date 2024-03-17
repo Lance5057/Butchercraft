@@ -30,10 +30,13 @@ import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
 
+import net.minecraft.client.gui.screens.inventory.MerchantScreen;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
@@ -48,12 +51,14 @@ import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
@@ -61,6 +66,7 @@ import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -160,6 +166,17 @@ public class ButchercraftModEvents {
 				() -> RabbitSkullHeadModel.createBodyLayer());
 	}
 
+	public static void cancelInteractions(PlayerInteractEvent.EntityInteractSpecific event) {
+		if (event.getTarget() instanceof Villager v) {
+			if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.get())
+					|| event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY.get())) {
+				v.hurt(DamageSource.playerAttack(event.getEntity()), 0);
+				event.setCancellationResult(InteractionResult.FAIL);
+				event.setCanceled(true);
+			}
+		}
+	}
+	
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
 		if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.get())) {
 			ItemStack stack = event.getItem();

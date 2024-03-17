@@ -1,0 +1,15 @@
+{
+  "type": "butchercraft:grinder",
+  "attachment": {
+    "item": "butchercraft:grinder_tip"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "item": "butchercraft:pork_scraps"
+  },
+  "ingredientCount": 1,
+  "result": {
+    "count": 2,
+    "item": "butchercraft:ground_pork"
+  }
+}

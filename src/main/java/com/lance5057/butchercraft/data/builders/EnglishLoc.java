@@ -77,8 +77,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.HEART.get(), "Raw Heart");
 		this.add(ButchercraftItems.COOKED_BRAIN.get(), "Cooked Brain");
 		this.add(ButchercraftItems.BRAIN.get(), "Raw Brain");
-		this.add(ButchercraftItems.COOKED_BEEF_TONGUE.get(), "Cooked Tongue");
-		this.add(ButchercraftItems.BEEF_TONGUE.get(), "Raw Tongue");
+		this.add(ButchercraftItems.COOKED_TONGUE.get(), "Cooked Tongue");
+		this.add(ButchercraftItems.TONGUE.get(), "Raw Tongue");
 
 		this.add(ButchercraftItems.COW_CARCASS.get(), "Cow Carcass");
 		this.add(ButchercraftItems.PIG_CARCASS.get(), "Pig Carcass");
@@ -179,7 +179,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.COOKED_GOAT_STEW_MEAT.get(), "Cooked Chevon Stew Meat");
 		this.add(ButchercraftItems.COOKED_CUBED_GOAT.get(), "Cooked Cubed Chevon");
 		this.add(ButchercraftItems.COOKED_GROUND_GOAT.get(), "Cooked Ground Chevon");
-		
+
 		this.add(ButchercraftItems.CHICKEN_BREAST.get(), "Raw Chicken Breast");
 		this.add(ButchercraftItems.CHICKEN_LEG.get(), "Raw Chicken Leg");
 		this.add(ButchercraftItems.CHICKEN_SCRAPS.get(), "Raw Chicken Scraps");
@@ -211,54 +211,54 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.COOKED_CUBED_RABBIT.get(), "Cooked Cubed Rabbit");
 		this.add(ButchercraftItems.COOKED_GROUND_RABBIT.get(), "Cooked Ground Rabbit");
 		this.add(ButchercraftItems.COOKED_STEW_RABBIT.get(), "Cooked Stew Rabbit");
-		
+
 		this.add(ButchercraftItems.EYEBALL.get(), "Eyeball");
 		this.add(ButchercraftItems.COOKED_EYEBALL.get(), "Cooked Eyeball");
 		this.add(ButchercraftItems.WATTLE.get(), "Wattle");
 		this.add(ButchercraftItems.COOKED_WATTLE.get(), "Cooked Wattle");
 		this.add(ButchercraftItems.CASING.get(), "Casing");
 		this.add(ButchercraftItems.BEAK.get(), "Beak");
-		
+
 		this.add(ButchercraftItems.BLACK_BUNNY_EARS.get(), "Black Bunny Ears");
 		this.add(ButchercraftItems.BROWN_BUNNY_EARS.get(), "Brown Bunny Ears");
 		this.add(ButchercraftItems.GOLD_BUNNY_EARS.get(), "Gold Bunny Ears");
 		this.add(ButchercraftItems.SALT_BUNNY_EARS.get(), "Salt Bunny Ears");
 		this.add(ButchercraftItems.SPLOTCHED_BUNNY_EARS.get(), "Splotched Bunny Ears");
 		this.add(ButchercraftItems.WHITE_BUNNY_EARS.get(), "White Bunny Ears");
-		
+
 		this.add(ButchercraftItems.BLACK_BUNNY_TAIL.get(), "Black Bunny Tail");
 		this.add(ButchercraftItems.BROWN_BUNNY_TAIL.get(), "Brown Bunny Tail");
 		this.add(ButchercraftItems.GOLD_BUNNY_TAIL.get(), "Gold Bunny Tail");
 		this.add(ButchercraftItems.SALT_BUNNY_TAIL.get(), "Salt Bunny Tail");
 		this.add(ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get(), "Splotched Bunny Tail");
 		this.add(ButchercraftItems.WHITE_BUNNY_TAIL.get(), "White Bunny Tail");
-		
+
 		this.add(ButchercraftItems.COW_HOOD.get(), "Cow Hood");
 		this.add(ButchercraftItems.GOAT_HOOD.get(), "Goat Hood");
 		this.add(ButchercraftItems.PIG_HOOD.get(), "Pig Hood");
 		this.add(ButchercraftItems.SHEEP_HOOD.get(), "Sheep Hood");
 		this.add(ButchercraftItems.CHICKEN_MASK.get(), "Chicken Mask");
-		
+
 		this.add(ButchercraftItems.SAUSAGE_LINKED.get(), "Linked Sausage");
 		this.add(ButchercraftItems.SAUSAGE.get(), "Raw Sausage");
 		this.add(ButchercraftItems.COOKED_SAUSAGE.get(), "Cooked Sausage");
-		
+
 		this.add(ButchercraftItems.BLOOD_SAUSAGE_LINKED.get(), "Linked Blood Sausage");
 		this.add(ButchercraftItems.BLOOD_SAUSAGE_MIX.get(), "Blood Sausage Mix");
 		this.add(ButchercraftItems.BLOOD_SAUSAGE.get(), "Raw Blood Sausage");
 		this.add(ButchercraftItems.COOKED_BLOOD_SAUSAGE.get(), "Cooked Blood Sausage");
-		
+
 		this.add(ButchercraftItems.MASK.get(), "Butcher's Mask");
 		this.add(ButchercraftItems.PAPER_HAT.get(), "Paper Hat");
 		this.add(ButchercraftItems.APRON.get(), "Butcher's Apron");
 		this.add(ButchercraftItems.GLOVES.get(), "Butcher's Gloves");
 		this.add(ButchercraftItems.BOOTS.get(), "Butcher's Boots");
-		
+
 		this.add(ButchercraftItems.SOAP.get(), "Soap");
-		
+
 		this.add(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), "Bottle of Blood");
 		this.add(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), "Bucket of Blood");
-		
+
 		this.add(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get(), "Barn Wood");
 		this.add(ButchercraftItems.BARN_WOOD_DOOR_ITEM.get(), "Barn Wood Door");
 		this.add(ButchercraftItems.BARN_WOOD_FENCE_GATE_ITEM.get(), "Barn Wood Fence Gate");
@@ -267,9 +267,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.BARN_WOOD_STAIRS_ITEM.get(), "Barn Wood Stairs");
 		this.add(ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM.get(), "Barn Wood Trapdoor");
 		this.add(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM.get(), "Trimmed Barn Wood (CTM)");
-		
+
 		this.add(ButchercraftBlocks.BLOOD_FLUID_BLOCK.get(), "Blood");
-		
+
 		// Advancements
 		this.add(Butchercraft.MOD_ID + ".advancement.root.name", "Butchercraft");
 		this.add(Butchercraft.MOD_ID + ".advancement.root.desc", "Welcome to Butchercraft!");
@@ -289,41 +289,112 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(Butchercraft.MOD_ID + ".advancement.bonesaw.name", "Skeleton's Nightmare.");
 		this.add(Butchercraft.MOD_ID + ".advancement.bonesaw.desc", "Craft a Bone Saw");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.cow.name", "Where's the beef?");
+		this.add(Butchercraft.MOD_ID + ".advancement.cow.name", "Where's the Beef?");
 		this.add(Butchercraft.MOD_ID + ".advancement.cow.desc", "Use a Butcher Knife on a Cow (Right Click)");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.pig.name", "The other white meat");
+		this.add(Butchercraft.MOD_ID + ".advancement.pig.name", "The Other White Meat");
 		this.add(Butchercraft.MOD_ID + ".advancement.pig.desc", "Use a Butcher Knife on a Pig (Right Click)");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.sheep.name", "Me thinks it's mutton-tastic");
+		this.add(Butchercraft.MOD_ID + ".advancement.sheep.name", "Me Thinks it's Mutton-tastic");
 		this.add(Butchercraft.MOD_ID + ".advancement.sheep.desc", "Use a Butcher Knife on a Sheep (Right Click)");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.whole_cow.name", "Everything but the moo.");
-		this.add(Butchercraft.MOD_ID + ".advancement.whole_cow.desc", "Eat every edible cooked beef item.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_cow.name", "Everything but the Moo.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_cow.desc", "Eat every edible Cooked Beef item.");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.whole_pig.name", "Everything but the oink.");
-		this.add(Butchercraft.MOD_ID + ".advancement.whole_pig.desc", "Eat every edible cooked pork item.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_pig.name", "Everything but the Oink.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_pig.desc", "Eat every edible Cooked Pork item.");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.whole_sheep.name", "Everything but the bleat.");
-		this.add(Butchercraft.MOD_ID + ".advancement.whole_sheep.desc", "Eat every edible cooked mutton item.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_sheep.name", "Everything but the Bleat.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_sheep.desc", "Eat every edible Cooked Mutton item.");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.everything.name", "A little bit of everything");
-		this.add(Butchercraft.MOD_ID + ".advancement.everything.desc", "Eat all cooked meat.");
+		this.add(Butchercraft.MOD_ID + ".advancement.everything.name", "A Little Bit of Everything");
+		this.add(Butchercraft.MOD_ID + ".advancement.everything.desc", "Eat all Cooked Meat.");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.everything_plus.name", "I said everything!");
-		this.add(Butchercraft.MOD_ID + ".advancement.everything_plus.desc", "Eat all cooked edible parts.");
+		this.add(Butchercraft.MOD_ID + ".advancement.everything_plus.desc", "Eat all Cooked Edible Parts.");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.heart.name", "Eat your heart out.");
-		this.add(Butchercraft.MOD_ID + ".advancement.heart.desc", "Eat a raw heart.");
+		this.add(Butchercraft.MOD_ID + ".advancement.heart.desc", "Eat a raw Heart.");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.cannibalism.name", "This isn't RimWorld...");
 		this.add(Butchercraft.MOD_ID + ".advancement.cannibalism.desc", "Try to butcher a human.");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.bunny_equip.name", "Leotard and Hosery not included!");
-		this.add(Butchercraft.MOD_ID + ".advancement.bunny_equip.desc", "Equip bunny ears and a tail.");
+		this.add(Butchercraft.MOD_ID + ".advancement.bunny_equip.desc", "Equip Bunny Ears and a Tail.");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.taxadermy.name", "No thanks, I'm stuffed.");
-		this.add(Butchercraft.MOD_ID + ".advancement.taxadermy.desc", "Taxidermy a carcass.");
+		this.add(Butchercraft.MOD_ID + ".advancement.taxadermy.desc", "Taxidermy a Carcass.");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.hat.name", "How may I take your order?");
+		this.add(Butchercraft.MOD_ID + ".advancement.hat.desc", "Make a Paper Hat");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.grinder.name", "Twisted Fun Factory");
+		this.add(Butchercraft.MOD_ID + ".advancement.grinder.desc", "Make a Meat Grinder");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.extruder.name", "3..2..1..");
+		this.add(Butchercraft.MOD_ID + ".advancement.extruder.desc", "Make an Extruder Tip");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.grinder_tip.name", "The Daily Grind");
+		this.add(Butchercraft.MOD_ID + ".advancement.grinder_tip.desc", "Make a Grinder Tip");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.sausage.name", "Let's Sausage!");
+		this.add(Butchercraft.MOD_ID + ".advancement.sausage.desc", "Make a Sausage");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.goat.name", "Greatest Of All Time?");
+		this.add(Butchercraft.MOD_ID + ".advancement.goat.desc", "Use a Butcher Knife on a Goat (Right Click)");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_goat.name", "Everything but the Scream.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_goat.desc", "Eat every edible cooked chevon item.");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.hands.name", "Ya Filthy Animal");
+		this.add(Butchercraft.MOD_ID + ".advancement.hands.desc", "Get the Dirty Hands Effect");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.bloody.name", "Blood On Your Hands");
+		this.add(Butchercraft.MOD_ID + ".advancement.bloody.desc", "Get the Blood Splattered Effect");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.trail.name", "You Can't Hide");
+		this.add(Butchercraft.MOD_ID + ".advancement.trail.desc", "Get the Bloody Trail Effect");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.stink.name", "Stink, Stank, Stunk");
+		this.add(Butchercraft.MOD_ID + ".advancement.stink.desc", "Get the Pungent Reek Effect");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.gloves.name", "Clean Hands, Safe Hands");
+		this.add(Butchercraft.MOD_ID + ".advancement.gloves.desc", "Make Gloves to prevent the Dirty Hands Effect");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.apron.name", "Kiss the Cook!");
+		this.add(Butchercraft.MOD_ID + ".advancement.apron.desc",
+				"Make an Apron to prevent the Blood Splattered Effect");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.boots.name", "Made for Walking");
+		this.add(Butchercraft.MOD_ID + ".advancement.boots.desc",
+				"Make Rubber Boots to prevent the Bloody Trail Effect");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.mask.name", "Wear a Mask!");
+		this.add(Butchercraft.MOD_ID + ".advancement.mask.desc", "Make a Mask to prevent the Pungent Reek Effect");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.soap.name", "You Stink. Take a Bath.");
+		this.add(Butchercraft.MOD_ID + ".advancement.soap.desc", "Make some Soap");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.chicken.name", "Winner Winner");
+		this.add(Butchercraft.MOD_ID + ".advancement.chicken.desc", "Use a Butcher Knife on a Chicken (Right Click)");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_chicken.name", "Everything but the Cluck.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_chicken.desc", "Eat every edible Cooked Chicken item.");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.rabbit.name", "Bopped on the Head");
+		this.add(Butchercraft.MOD_ID + ".advancement.rabbit.desc", "Use a Butcher Knife on a Rabbit (Right Click)");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_rabbit.name", "Everything but the Squeak.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_rabbit.desc", "Eat every edible Cooked Rabbit item.");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.butcherblock.name", "Chopping Block");
+		this.add(Butchercraft.MOD_ID + ".advancement.butcherblock.desc", "Make a Butcher Block.");
+
+		this.add(Butchercraft.MOD_ID + ".advancement.blood.name", "For the Blood God!");
+		this.add(Butchercraft.MOD_ID + ".advancement.blood.desc", "Aquire a Bucket of Blood");
+		
+		this.add(Butchercraft.MOD_ID + ".advancement.barn_wood.name", "Target Practice");
+		this.add(Butchercraft.MOD_ID + ".advancement.barn_wood.desc", "Make some Barn Wood");
 
 		this.add(Butchercraft.MOD_ID + ".butcherknife.rightclick", "Right click to slaughter.");
 	}

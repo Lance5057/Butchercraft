@@ -27,6 +27,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 	private final Item result;
 	private final List<AnimatedRecipeItemUse> tools = NonNullList.create();
+	private final List<Ingredient> jei = NonNullList.create();
 	private final Advancement.Builder advancementBuilder = Advancement.Builder.advancement();
 	private String group;
 
@@ -47,6 +48,11 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 	public ButcherBlockRecipeBuilder tool(Ingredient tool, int uses, boolean damage, ResourceLocation table,
 			BlacklistedModel... model) {
 		this.tools.add(new AnimatedRecipeItemUse(uses, tool, 1, damage, table, model));
+		return this;
+	}
+
+	public ButcherBlockRecipeBuilder JEIIngredient(Ingredient i) {
+		this.jei.add(i);
 		return this;
 	}
 
@@ -89,7 +95,7 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId))
 				.rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(RequirementsStrategy.OR);
 		consumerIn.accept(new Result(pRecipeId, Ingredient.of(this.result), this.group == null ? "" : this.group,
-				this.tools, this.advancementBuilder,
+				this.tools, jei, this.advancementBuilder,
 				new ResourceLocation(pRecipeId.getNamespace(), "recipes/meat_hook/" + pRecipeId.getPath())));
 	}
 
@@ -98,11 +104,12 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 		private final Ingredient carcass;
 		private final String group;
 		private final List<AnimatedRecipeItemUse> tools;
+		private final List<Ingredient> JEI;
 		private final Advancement.Builder advancementBuilder;
 		private final ResourceLocation advancementId;
 
 		public Result(ResourceLocation idIn, Ingredient carcassIn, String groupIn, List<AnimatedRecipeItemUse> toolsIn,
-				Advancement.Builder advancementBuilderIn, ResourceLocation advancementIdIn) {
+				List<Ingredient> JEI, Advancement.Builder advancementBuilderIn, ResourceLocation advancementIdIn) {
 			this.id = idIn;
 			// TODO Possibly restrict to items only
 			this.carcass = carcassIn;
@@ -110,6 +117,7 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 			this.advancementBuilder = advancementBuilderIn;
 			this.advancementId = advancementIdIn;
 			this.tools = toolsIn;
+			this.JEI = JEI;
 		}
 
 		@Override
@@ -119,6 +127,9 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 			this.tools.stream().map(AnimatedRecipeItemUse::addProperty).forEach(stepArray::add);
 			json.add("tools", stepArray);
 			json.add("carcass", carcass.toJson());
+			JsonArray jei = new JsonArray();
+            this.JEI.stream().forEach(i -> jei.add(i.toJson()));
+            json.add("jei", jei);
 		}
 
 		public RecipeSerializer<?> getType() {

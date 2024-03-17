@@ -19,15 +19,21 @@ public class ButcherBlockRecipe implements Recipe<ButcherBlockContainer> {
 	private final String groupIn;
 	private final Ingredient carcassIn;
 	private final NonNullList<AnimatedRecipeItemUse> recipeToolsIn;
+	private final NonNullList<Ingredient> dummyList; //For JEI
 
 	public ButcherBlockRecipe(ResourceLocation idIn, String groupIn, Ingredient carcassIn,
-			NonNullList<AnimatedRecipeItemUse> recipeToolsIn) {
+			NonNullList<AnimatedRecipeItemUse> recipeToolsIn, NonNullList<Ingredient> JEI) {
 		this.idIn = idIn;
 		this.groupIn = groupIn;
 		this.carcassIn = carcassIn;
 		this.recipeToolsIn = recipeToolsIn;
+		this.dummyList = JEI;
 	}
 
+	public NonNullList<Ingredient> getDummyList() {
+		return dummyList;
+	}
+	
 	public Ingredient getCarcassIn() {
 		return carcassIn;
 	}

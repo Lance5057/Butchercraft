@@ -126,8 +126,8 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.COOKED_STOMACH, "cooked_stomach");
 		forItem(ButchercraftItems.TRIPE, "tripe");
 		forItem(ButchercraftItems.COOKED_TRIPE, "cooked_tripe");
-		forItem(ButchercraftItems.BEEF_TONGUE, "tongue");
-		forItem(ButchercraftItems.COOKED_BEEF_TONGUE, "cooked_tongue");
+		forItem(ButchercraftItems.TONGUE, "tongue");
+		forItem(ButchercraftItems.COOKED_TONGUE, "cooked_tongue");
 		forItem(ButchercraftItems.WATTLE, "wattle");
 		forItem(ButchercraftItems.COOKED_WATTLE, "cooked_wattle");
 		forItem(ButchercraftItems.EYEBALL, "eyeball");

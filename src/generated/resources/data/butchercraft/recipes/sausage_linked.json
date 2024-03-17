@@ -4,6 +4,11 @@
     "item": "butchercraft:sausage_linked"
   },
   "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:sausage"
+    }
+  ],
   "tools": [
     {
       "count": 1,

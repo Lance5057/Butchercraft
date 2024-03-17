@@ -222,7 +222,7 @@ public class Advancements extends AdvancementProvider {
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.gloves.name"),
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.gloves.desc"), null, FrameType.TASK,
 						true, true, false))
-				.addCriterion("gloves", InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.APRON.get()))
+				.addCriterion("gloves", InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GLOVES.get()))
 				.save(consumer, Butchercraft.MOD_ID + ":gloves");
 
 		boots = Advancement.Builder.advancement().parent(trail)

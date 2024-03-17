@@ -19,7 +19,7 @@ import net.minecraftforge.fml.loading.FMLPaths;
 public class Butchercraft {
 
 	public final static String MOD_ID = "butchercraft";
-	public static final String VERSION = "2.2.2a";
+	public static final String VERSION = "2.3.0a";
 
 	public static Logger logger = LogManager.getLogger();
 
@@ -41,6 +41,7 @@ public class Butchercraft {
 		bus.addListener(ButchercraftModEvents::dirtyHands);
 		bus.addListener(ButchercraftModEvents::buffZombie);
 		bus.addListener(ButchercraftModEvents::EntityJoined);
+		bus.addListener(ButchercraftModEvents::cancelInteractions);
 //		bus.addListener(ButchercraftEvents::existingEntityAttributes);
 //		bus.addListener(ButchercraftEvents::registerLayerDefinitions);
 
