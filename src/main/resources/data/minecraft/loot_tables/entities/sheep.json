@@ -39,7 +39,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "minecraft:mutton"
+          "name": "butchercraft:lamb_scraps"
         }
       ],
       "rolls": 1.0

@@ -59,7 +59,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "minecraft:chicken"
+          "name": "butchercraft:chicken_scraps"
         }
       ],
       "rolls": 1.0

@@ -9,6 +9,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -110,6 +111,20 @@ public class ButchercraftForgeEvents {
 						null, false, false);
 				ent.setRabbitType(skin);
 				ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	public static void bloodyTrail(LivingSpawnEvent.SpecialSpawn event) {
+		if(event.getEntity() instanceof Zombie z)
+		{
+			for(Player p : event.getLevel().players())
+			{
+				if(p.hasEffect(ButchercraftMobEffects.BLOODTRAIL.get()))
+				{
+					z.setTarget(p);
+				}
 			}
 		}
 	}

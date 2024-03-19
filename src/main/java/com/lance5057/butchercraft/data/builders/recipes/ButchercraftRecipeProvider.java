@@ -1243,6 +1243,11 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "trimmed_barn_wood"));
 
+		ShapelessRecipeBuilder.shapeless(ButchercraftItems.SOAP.get(), 1).requires(ButchercraftItems.LARD.get(), 1)
+				.requires(Items.BONE_MEAL, 1).requires(Ingredient.of(ItemTags.FLOWERS))
+				.unlockedBy("has_barn_wood", has(ButchercraftItems.LARD.get()))
+				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "soap"));
+
 		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_DOOR_ITEM.get(), 3).pattern("xx ").pattern("xx ")
 				.pattern("xx ").define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
@@ -1349,8 +1354,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				ButchercraftItems.COOKED_RABBIT_SCRAPS.get(), consumer);
 		createFoodRecipe(Ingredient.of(ButchercraftItems.RABBIT_THIGH.get()),
 				ButchercraftItems.COOKED_RABBIT_THIGH.get(), consumer);
-		createFoodRecipe(Ingredient.of(ButchercraftItems.STEW_RABBIT.get()),
-				ButchercraftItems.COOKED_STEW_RABBIT.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.STEW_RABBIT.get()), ButchercraftItems.COOKED_STEW_RABBIT.get(),
+				consumer);
 
 		createFoodRecipe(Ingredient.of(ButchercraftItems.SAUSAGE.get()), ButchercraftItems.COOKED_SAUSAGE.get(),
 				consumer);

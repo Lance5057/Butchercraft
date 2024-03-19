@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-12T16:42:27.7214969	Recipes
+// 1.19.2	2024-03-18T20:08:28.9186144	Recipes
 0d68330af9b0616883f04fff0d71694c03337bd3 data/butchercraft/advancements/recipes/butchercraft.items/apron.json
 fd7e0c12502d28f10ceb55a7d776cd43f15d8279 data/butchercraft/advancements/recipes/butchercraft.items/barn_wood.json
 c2b9729c1beb0035a4f8800e10d412782a2c2c78 data/butchercraft/advancements/recipes/butchercraft.items/barn_wood_door.json
@@ -216,6 +216,7 @@ a106782396b0cb48da9456e385f1d14651cf6fce data/butchercraft/advancements/recipes/
 315b5b3f4e57576db55d8b382b922a7469bb4ddf data/butchercraft/advancements/recipes/butchercraft.items/sinew_gelatin_from_smelting.json
 84ba5dc4637bd0884beb21a7fdee1373500a0043 data/butchercraft/advancements/recipes/butchercraft.items/sinew_gelatin_from_smoking.json
 0670fa125981939e30af9e1b4443fffc7a4eb6ff data/butchercraft/advancements/recipes/butchercraft.items/skinning_knife.json
+895e2cb94a7404e6cbd129e95832ccff82d23c5b data/butchercraft/advancements/recipes/butchercraft.items/soap.json
 3b8a56d7ee79522fbeb8d6e19f474af83aa44884 data/butchercraft/advancements/recipes/butchercraft.items/taxidermy_black_rabbit.json
 958ca0b4a2c7fb0f5279bde7560704d6de95ba84 data/butchercraft/advancements/recipes/butchercraft.items/taxidermy_brown_rabbit.json
 30758764998dc31609826957c7a34f21a9e4185f data/butchercraft/advancements/recipes/butchercraft.items/taxidermy_chicken.json
@@ -571,6 +572,7 @@ badc6040c15c5d883b968035a43120f19124515b data/butchercraft/recipes/sheep.json
 dc3492fb437bfc3d0ca9a1ff7220f087ab085396 data/butchercraft/recipes/sinew_gelatin_from_smelting.json
 688d7ff1d564a9c6073438bd42bc01dd813b5199 data/butchercraft/recipes/sinew_gelatin_from_smoking.json
 ba86553a1a556232f4afe211693fa5786cd7d9a0 data/butchercraft/recipes/skinning_knife.json
+19589d69bfddc0484f4ab1cbb3ac38627c30faa6 data/butchercraft/recipes/soap.json
 347143449aa085a2b8ec430c48115ff65d2534c6 data/butchercraft/recipes/splotched_rabbit_head.json
 91d13e0fecd62c87ef075955dbc13f3c0dc43e4f data/butchercraft/recipes/taxidermy_black_rabbit.json
 2cf93b136e201e80a103228165ffd831f8bf148f data/butchercraft/recipes/taxidermy_brown_rabbit.json

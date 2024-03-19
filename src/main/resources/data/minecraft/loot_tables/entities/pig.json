@@ -39,7 +39,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "minecraft:porkchop"
+          "name": "butchercraft:pork_scraps"
         }
       ],
       "rolls": 1.0

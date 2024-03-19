@@ -25,7 +25,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "minecraft:rabbit_hide"
+          "name": "butchercraft:leather_scrap"
         }
       ],
       "rolls": 1.0
@@ -68,7 +68,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "minecraft:rabbit"
+          "name": "butchercraft:rabbit_scraps"
         }
       ],
       "rolls": 1.0

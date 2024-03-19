@@ -6,7 +6,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
+import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.ButchercraftRecipes;
+import com.lance5057.butchercraft.armor.ApronItem;
+import com.lance5057.butchercraft.armor.BootsItem;
+import com.lance5057.butchercraft.armor.GlovesItem;
+import com.lance5057.butchercraft.armor.MaskItem;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 
 import net.minecraft.core.BlockPos;
@@ -20,6 +25,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -200,7 +206,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 		}
 	}
 
-	public InteractionResult butcher(Player Player, ItemStack butcheringTool) {
+	public InteractionResult butcher(Player p, ItemStack butcheringTool) {
 		Optional<HookRecipe> recipeOptional = matchRecipe();
 		if (recipeOptional.isPresent()) {
 			HookRecipe recipe = recipeOptional.get();
@@ -215,21 +221,21 @@ public class MeatHookBlockEntity extends BlockEntity {
 						if (isFinalStage(recipe)) {
 
 							if (butcheringTool.isDamageableItem())
-								butcheringTool.hurtAndBreak(1, Player, null);
+								butcheringTool.hurtAndBreak(1, p, null);
 							else
 								butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 //
-							dropLoot(recipe.getRecipeToolsIn().get(stage), Player);
+							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
 							this.finishRecipe();
 						} else {
-							dropLoot(recipe.getRecipeToolsIn().get(stage), Player);
+							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
 							setupStage(recipe, stage + 1);
 						}
 
-						level.playSound(Player, worldPosition, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1, 1);
+						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1, 1);
 					} else {
 						if (butcheringTool.isDamageableItem())
-							butcheringTool.hurtAndBreak(1, Player, null);
+							butcheringTool.hurtAndBreak(1, p, null);
 						else
 							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 
@@ -239,11 +245,38 @@ public class MeatHookBlockEntity extends BlockEntity {
 									worldPosition.getY() - 0.5f - level.random.nextDouble(),
 									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
-						level.playSound(Player, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1,
+						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1,
 								1);
 						
 					}
 				}
+				
+				ItemStack boots = p.getInventory().getArmor(0);
+				if (boots.getItem() instanceof BootsItem)
+					boots.hurtAndBreak(1, p, null);
+				else
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.get(), 3600, 0, false, false,
+							true));
+
+				ItemStack apron = p.getInventory().getArmor(1);
+				if (apron.getItem() instanceof ApronItem)
+					apron.hurtAndBreak(1, p, null);
+				else
+					p.addEffect(
+							new MobEffectInstance(ButchercraftMobEffects.BLOODY.get(), 3600, 0, false, false, true));
+
+				ItemStack gloves = p.getInventory().getArmor(2);
+				if (gloves.getItem() instanceof GlovesItem)
+					gloves.hurtAndBreak(1, p, null);
+				else
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY.get(), 3600, 0, false, false, true));
+
+				ItemStack mask = p.getInventory().getArmor(3);
+				if (mask.getItem() instanceof MaskItem)
+					mask.hurtAndBreak(1, p, null);
+				else
+					p.addEffect(
+							new MobEffectInstance(ButchercraftMobEffects.STINKY.get(), 3600, 0, false, false, true));
 
 				this.updateInventory();
 				return InteractionResult.SUCCESS;

@@ -397,6 +397,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(Butchercraft.MOD_ID + ".advancement.barn_wood.desc", "Make some Barn Wood");
 
 		this.add(Butchercraft.MOD_ID + ".butcherknife.rightclick", "Right click to slaughter.");
+		
+		this.add("effect." + Butchercraft.MOD_ID + ".pungent_reek", "Pungent Reek");
+		this.add("effect." + Butchercraft.MOD_ID + ".dirty_hands", "Dirty Hands");
+		this.add("effect." + Butchercraft.MOD_ID + ".blood_splatter", "Bloody");
+		this.add("effect." + Butchercraft.MOD_ID + ".blood_trail", "Blood Trail");
 	}
 
 }

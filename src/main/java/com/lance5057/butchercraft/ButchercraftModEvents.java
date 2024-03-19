@@ -30,13 +30,14 @@ import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.MerchantScreen;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AgeableMob;
@@ -170,13 +171,26 @@ public class ButchercraftModEvents {
 		if (event.getTarget() instanceof Villager v) {
 			if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.get())
 					|| event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY.get())) {
-				v.hurt(DamageSource.playerAttack(event.getEntity()), 0);
+				v.setUnhappyCounter(40);
+				if (!v.level.isClientSide()) {
+					v.playSound(SoundEvents.VILLAGER_NO, 1, v.getVoicePitch());
+				}
 				event.setCancellationResult(InteractionResult.FAIL);
 				event.setCanceled(true);
 			}
 		}
 	}
-	
+
+	public static void cancelTrade(ScreenEvent.Opening event) {
+		if (event.getNewScreen() instanceof MerchantScreen m) {
+			Minecraft mine = Minecraft.getInstance();
+			if (mine.player.hasEffect(ButchercraftMobEffects.STINKY.get())
+					|| mine.player.hasEffect(ButchercraftMobEffects.BLOODY.get())) {
+				event.setCanceled(true);
+			}
+		}
+	}
+
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
 		if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.get())) {
 			ItemStack stack = event.getItem();
