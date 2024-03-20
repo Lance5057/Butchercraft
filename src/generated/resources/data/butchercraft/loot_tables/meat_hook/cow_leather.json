@@ -32,8 +32,20 @@
       "functions": [
         {
           "add": false,
-          "count": 12.0,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 12.0,
+            "min": 12.0
+          },
           "function": "minecraft:set_count"
+        },
+        {
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 1.0,
+            "min": 0.0
+          },
+          "function": "minecraft:looting_enchant"
         }
       ],
       "rolls": 1.0

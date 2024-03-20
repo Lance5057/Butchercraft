@@ -51,8 +51,8 @@ public class RenderUtil {
 			matrixStackIn.mulPose(new Quaternion(transform.getRotation().getX().animate(timer),
 					transform.getRotation().getY().animate(timer), transform.getRotation().getZ().animate(timer),
 					true));
-			matrixStackIn.scale(1f + transform.getScale().getX().animate(timer),
-					1f + transform.getScale().getY().animate(timer), 1f + transform.getScale().getZ().animate(timer));
+			matrixStackIn.scale(1+transform.getScale().getX().animate(timer),
+					1+transform.getScale().getY().animate(timer), 1+transform.getScale().getZ().animate(timer));
 
 			bm.render(matrixStackIn, bufferIn, texture -> RenderType.entityTranslucent(texture), combinedLightIn,
 					combinedOverlayIn, timer, ModelData.EMPTY);
@@ -80,8 +80,8 @@ public class RenderUtil {
 					transform.getRotation().getY().getOffset() + transform.getRotation().getY().animate(timer),
 					transform.getRotation().getZ().getOffset() + transform.getRotation().getZ().animate(timer), true));
 
-			matrixStackIn.scale(1f + transform.getScale().getX().animate(timer),
-					1f + transform.getScale().getY().animate(timer), 1f + transform.getScale().getZ().animate(timer));
+			matrixStackIn.scale(transform.getScale().getX().animate(timer),
+					transform.getScale().getY().animate(timer), transform.getScale().getZ().animate(timer));
 
 			itemRenderer.render(stack, ItemTransforms.TransformType.NONE, false, matrixStackIn, bufferIn,
 					combinedLightIn, combinedOverlayIn, bakedmodel);

@@ -30,7 +30,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -217,13 +216,12 @@ public class MeatHookBlockEntity extends BlockEntity {
 				if (butcheringTool.getCount() >= this.toolCount) {
 					progress++;
 					if (this.progress >= this.maxProgress) {
-
+						if (butcheringTool.isDamageableItem())
+							butcheringTool.hurtAndBreak(1, p, null);
+						else
+							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 						if (isFinalStage(recipe)) {
 
-							if (butcheringTool.isDamageableItem())
-								butcheringTool.hurtAndBreak(1, p, null);
-							else
-								butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 //
 							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
 							this.finishRecipe();
@@ -245,12 +243,11 @@ public class MeatHookBlockEntity extends BlockEntity {
 									worldPosition.getY() - 0.5f - level.random.nextDouble(),
 									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
-						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1,
-								1);
-						
+						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1, 1);
+
 					}
 				}
-				
+
 				ItemStack boots = p.getInventory().getArmor(0);
 				if (boots.getItem() instanceof BootsItem)
 					boots.hurtAndBreak(1, p, null);
@@ -292,14 +289,14 @@ public class MeatHookBlockEntity extends BlockEntity {
 			final LootContext pContext = new LootContext.Builder((ServerLevel) level)
 					.withParameter(LootContextParams.TOOL, player.getMainHandItem())
 					.withParameter(LootContextParams.THIS_ENTITY, player).withRandom(level.getRandom())
-					.withLuck(player.getLuck() + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE,
-							player.getMainHandItem()))
+					.withLuck(
+							player.getLuck() + player.getMainHandItem().getEnchantmentLevel(Enchantments.BLOCK_FORTUNE))
 					.create(LootContextParamSets.EMPTY);
 			player.getServer().getLootTables().get(recipeToolsIn.lootTable).getRandomItems(pContext)
 					.forEach(itemStack -> {
 //						if (player.isCrouching())
-							level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
-									getBlockPos().getY() - 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
+						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
+								getBlockPos().getY() - 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
 //						else {
 //							if (!player.getInventory().add(itemStack)) {
 //								player.drop(itemStack, false);

@@ -34,7 +34,23 @@
               }
             },
             "rotation": {},
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:meathook/sheep_hide"
         },
@@ -104,7 +120,23 @@
               }
             },
             "rotation": {},
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:meathook/sheep_hide"
         },

@@ -8,13 +8,15 @@ public class AnimationFloatTransform {
 	AnimatedFloatVector3 loc, scale, rot;
 
 
-	public static AnimationFloatTransform ZERO = new AnimationFloatTransform(AnimatedFloatVector3.zero,
-			AnimatedFloatVector3.zero, AnimatedFloatVector3.zero);
+	public static AnimationFloatTransform ZERO = new AnimationFloatTransform(AnimatedFloatVector3.ZERO,
+			AnimatedFloatVector3.ZERO, AnimatedFloatVector3.ZERO);
+	public static AnimationFloatTransform ONE = new AnimationFloatTransform(AnimatedFloatVector3.ONE,
+			AnimatedFloatVector3.ONE, AnimatedFloatVector3.ONE);
 	
 	public AnimationFloatTransform() {
-		loc = AnimatedFloatVector3.zero;
-		rot = AnimatedFloatVector3.zero;
-		scale = AnimatedFloatVector3.zero;
+		loc = AnimatedFloatVector3.ZERO;
+		rot = AnimatedFloatVector3.ZERO;
+		scale = AnimatedFloatVector3.ONE;
 	}
 
 	public AnimationFloatTransform(AnimatedFloatVector3 l, AnimatedFloatVector3 s, AnimatedFloatVector3 r) {

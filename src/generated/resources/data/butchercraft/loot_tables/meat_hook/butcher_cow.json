@@ -30,6 +30,14 @@
           "add": false,
           "count": 6.0,
           "function": "minecraft:set_count"
+        },
+        {
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 1.0,
+            "min": 0.0
+          },
+          "function": "minecraft:looting_enchant"
         }
       ],
       "rolls": 1.0
@@ -47,6 +55,14 @@
           "add": false,
           "count": 21.0,
           "function": "minecraft:set_count"
+        },
+        {
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 1.0,
+            "min": 0.0
+          },
+          "function": "minecraft:looting_enchant"
         }
       ],
       "rolls": 1.0
@@ -62,8 +78,20 @@
       "functions": [
         {
           "add": false,
-          "count": 9.0,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 9.0,
+            "min": 9.0
+          },
           "function": "minecraft:set_count"
+        },
+        {
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 1.0,
+            "min": 0.0
+          },
+          "function": "minecraft:looting_enchant"
         }
       ],
       "rolls": 1.0
@@ -79,8 +107,20 @@
       "functions": [
         {
           "add": false,
-          "count": 81.0,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 81.0,
+            "min": 40.0
+          },
           "function": "minecraft:set_count"
+        },
+        {
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 1.0,
+            "min": 0.0
+          },
+          "function": "minecraft:looting_enchant"
         }
       ],
       "rolls": 1.0
@@ -102,6 +142,14 @@
             "min": 4.0
           },
           "function": "minecraft:set_count"
+        },
+        {
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 1.0,
+            "min": 0.0
+          },
+          "function": "minecraft:looting_enchant"
         }
       ],
       "rolls": 1.0

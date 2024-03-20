@@ -7,13 +7,15 @@ import net.minecraft.network.FriendlyByteBuf;
 public class AnimatedFloatVector3 {
 	AnimatedFloat x, y, z;
 
-	public static AnimatedFloatVector3 zero = new AnimatedFloatVector3(AnimatedFloat.zero, AnimatedFloat.zero,
-			AnimatedFloat.zero);
+	public static AnimatedFloatVector3 ZERO = new AnimatedFloatVector3(AnimatedFloat.ZERO, AnimatedFloat.ZERO,
+			AnimatedFloat.ZERO);
+	public static AnimatedFloatVector3 ONE = new AnimatedFloatVector3(AnimatedFloat.ONE, AnimatedFloat.ONE,
+			AnimatedFloat.ONE);
 
 	public AnimatedFloatVector3() {
-		x = AnimatedFloat.zero;
-		y = AnimatedFloat.zero;
-		z = AnimatedFloat.zero;
+		x = AnimatedFloat.ZERO;
+		y = AnimatedFloat.ZERO;
+		z = AnimatedFloat.ZERO;
 	}
 
 	public AnimatedFloatVector3(AnimatedFloat x, AnimatedFloat y, AnimatedFloat z) {
@@ -36,12 +38,12 @@ public class AnimatedFloatVector3 {
 		z = in;
 		return this;
 	}
-	
+
 	public AnimatedFloatVector3 setAll(AnimatedFloat in) {
 		this.x = in;
 		this.y = in;
 		this.z = in;
-		
+
 		return this;
 	}
 
@@ -82,11 +84,11 @@ public class AnimatedFloatVector3 {
 	}
 
 	public static AnimatedFloatVector3 read(JsonObject j) {
-		AnimatedFloat x = j.get("x") != null ? AnimatedFloat.read(j.get("x").getAsJsonObject()) : AnimatedFloat.zero;
+		AnimatedFloat x = j.get("x") != null ? AnimatedFloat.read(j.get("x").getAsJsonObject()) : AnimatedFloat.ZERO;
 
-		AnimatedFloat y = j.get("y") != null ? AnimatedFloat.read(j.get("y").getAsJsonObject()) : AnimatedFloat.zero;
+		AnimatedFloat y = j.get("y") != null ? AnimatedFloat.read(j.get("y").getAsJsonObject()) : AnimatedFloat.ZERO;
 
-		AnimatedFloat z = j.get("z") != null ? AnimatedFloat.read(j.get("z").getAsJsonObject()) : AnimatedFloat.zero;
+		AnimatedFloat z = j.get("z") != null ? AnimatedFloat.read(j.get("z").getAsJsonObject()) : AnimatedFloat.ZERO;
 
 		return new AnimatedFloatVector3(x, y, z);
 	}
@@ -108,11 +110,11 @@ public class AnimatedFloatVector3 {
 	public static JsonObject addProperty(AnimatedFloatVector3 af) {
 		JsonObject jo = new JsonObject();
 
-		if (af.x != AnimatedFloat.zero)
+		if (af.x != AnimatedFloat.ZERO)
 			jo.add("x", AnimatedFloat.addProperty(af.x));
-		if (af.y != AnimatedFloat.zero)
+		if (af.y != AnimatedFloat.ZERO)
 			jo.add("y", AnimatedFloat.addProperty(af.y));
-		if (af.z != AnimatedFloat.zero)
+		if (af.z != AnimatedFloat.ZERO)
 			jo.add("z", AnimatedFloat.addProperty(af.z));
 
 		return jo;

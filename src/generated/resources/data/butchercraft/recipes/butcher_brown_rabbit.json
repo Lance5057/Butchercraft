@@ -54,7 +54,23 @@
               }
             },
             "rotation": {},
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:meathook/rabbit_brown"
         },
@@ -62,8 +78,8 @@
           "animation": {
             "location": {
               "x": {
-                "max": -8.0,
-                "min": 8.0
+                "max": 8.0,
+                "min": -8.0
               },
               "y": {
                 "max": 8.0,
@@ -85,16 +101,19 @@
             },
             "scale": {
               "x": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               },
               "y": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               },
               "z": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               }
             }
           },
@@ -120,7 +139,23 @@
               }
             },
             "rotation": {},
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:meathook/rabbit_brown"
         },
@@ -128,8 +163,8 @@
           "animation": {
             "location": {
               "x": {
-                "max": -8.0,
-                "min": 8.0
+                "max": 8.0,
+                "min": -8.0
               },
               "y": {
                 "max": 8.0,
@@ -151,16 +186,19 @@
             },
             "scale": {
               "x": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               },
               "y": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               },
               "z": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               }
             }
           },
@@ -186,7 +224,23 @@
               }
             },
             "rotation": {},
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:meathook/rabbit_brown"
         },
@@ -194,8 +248,8 @@
           "animation": {
             "location": {
               "x": {
-                "max": -8.0,
-                "min": 8.0
+                "max": 8.0,
+                "min": -8.0
               },
               "y": {
                 "max": 8.0,
@@ -217,16 +271,19 @@
             },
             "scale": {
               "x": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               },
               "y": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               },
               "z": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               }
             }
           },
@@ -252,7 +309,23 @@
               }
             },
             "rotation": {},
-            "scale": {}
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
           },
           "location": "butchercraft:meathook/rabbit_brown_gutted"
         },
@@ -260,8 +333,8 @@
           "animation": {
             "location": {
               "x": {
-                "max": -8.0,
-                "min": 8.0
+                "max": 8.0,
+                "min": -8.0
               },
               "y": {
                 "max": 8.0,
@@ -283,16 +356,19 @@
             },
             "scale": {
               "x": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               },
               "y": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               },
               "z": {
-                "max": -0.5,
-                "min": 0.5
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
               }
             }
           },

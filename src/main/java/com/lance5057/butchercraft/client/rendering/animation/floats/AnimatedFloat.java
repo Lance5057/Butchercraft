@@ -14,7 +14,8 @@ public class AnimatedFloat {
 	boolean loop = false;
 	boolean pingpong = false;
 
-	public static AnimatedFloat zero = new AnimatedFloat(0, 0, 0);
+	public static AnimatedFloat ZERO = new AnimatedFloat(0, 0, 0);
+	public static AnimatedFloat ONE = new AnimatedFloat(1,1,1);
 
 	public AnimatedFloat(float iMax) {
 		this(-iMax, iMax, 1);
