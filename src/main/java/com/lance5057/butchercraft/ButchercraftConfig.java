@@ -1,66 +1,39 @@
 package com.lance5057.butchercraft;
 
-import java.nio.file.Path;
-import java.util.Objects;
-
-import com.electronwill.nightconfig.core.file.CommentedFileConfig;
-import com.electronwill.nightconfig.core.io.WritingMode;
-
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ButchercraftConfig {
-    private static ButchercraftConfig instance;
+	public static ForgeConfigSpec spec;
 
-    private final ForgeConfigSpec spec;
-    
-    public final General general;
+	public static final String CATEGORY_ANIMALS = "animals";
+	public static final ForgeConfigSpec.ConfigValue<Float> BREEDING_MULTIPLIER;
+	public static final ForgeConfigSpec.ConfigValue<Float> AGE_MULTIPLIER;
+	public static final ForgeConfigSpec.ConfigValue<Float> WILDLIFE_NUTRITION;
 
-    public ButchercraftConfig(ForgeConfigSpec.Builder builder) {
-    	this.general = new General(builder);
-    	
-        this.spec = builder.build();
-    }
+	public static final String CATEGORY_MOBS = "mobs";
+	public static final ForgeConfigSpec.ConfigValue<Float> HOOD_SPAWN_CHANCE;
+	public static final ForgeConfigSpec.ConfigValue<Float> HOOD_ARMY_CHANCE;
 
-    public static ForgeConfigSpec initialize() {
-        ButchercraftConfig config = new ButchercraftConfig(new ForgeConfigSpec.Builder());
-        instance = config;
-        return config.getSpec();
-    }
+	static {
+		ForgeConfigSpec.Builder Builder = new ForgeConfigSpec.Builder();
 
-    public static ButchercraftConfig getInstance() {
-        return Objects.requireNonNull(instance, "Called for Config before it's Initialization");
-    }
+		Builder.comment("Animals").push(CATEGORY_ANIMALS);
+		BREEDING_MULTIPLIER = Builder.comment("How much longer should it take for a baby animal to age?")
+				.define("breeding_mulitplier", 4f);
+		
 
-    public static void loadConfig(ForgeConfigSpec spec, Path path) {
-        final CommentedFileConfig configData = CommentedFileConfig.builder(path).sync().autosave()
-                .writingMode(WritingMode.REPLACE).build();
+		AGE_MULTIPLIER = Builder.comment("How much longer should it take for an animal to be able to breed again?")
+				.define("age_multiplier", 4f);
+		
+		WILDLIFE_NUTRITION = Builder.comment("Nutrition of wild animals.").define("nutrition_multiplier", 0.3f);
+		Builder.pop();
+		
+		Builder.comment("Mobs").push(CATEGORY_MOBS);
+		HOOD_SPAWN_CHANCE = Builder.comment("Chance that an undead mob will spawn with an animal hood.").define("hoodChanceMultiplier", 0.1f);
+		
+		HOOD_ARMY_CHANCE = Builder.comment("Chance that an undead with a hood spawns with an army of matching animals.")
+				.define("armyHoodChanceMultiplier", 0.1f);
+		Builder.pop();
 
-        configData.load();
-        spec.setConfig(configData);
-    }
-
-    public ForgeConfigSpec getSpec() {
-        return spec;
-    }
-
-	public static class General {
-		public final ForgeConfigSpec.ConfigValue<Float> breedingMultiplier;
-		public final ForgeConfigSpec.ConfigValue<Float> ageMultiplier;
-		public final ForgeConfigSpec.ConfigValue<Float> wildlifeBaseNutrition;
-		public final ForgeConfigSpec.ConfigValue<Float> hoodSpawnChance;
-		public final ForgeConfigSpec.ConfigValue<Float> hoodArmyChance;
-
-		General(ForgeConfigSpec.Builder builder) {
-			breedingMultiplier = builder.comment("Amount to multiply breeding timer by after an animal is bred.")
-					.translation("butchercraft.config.common.general.breeding").define("breedingMultiplier", 4f);
-			ageMultiplier = builder.comment("Amount to multiply age timer by after an animal is born.")
-					.translation("butchercraft.config.common.general.age").define("ageMultiplier", 4f);
-			wildlifeBaseNutrition = builder.comment("Nutrition of wild animals.")
-					.translation("butchercraft.config.common.general.wild_nutrition").define("nutritionMultiplier", 0.3f);
-			hoodSpawnChance = builder.comment("Chance that an undead mob will spawn with an animal hood.")
-					.translation("butchercraft.config.common.general.hood_spawn_chance").define("hoodChanceMultiplier", 1f);
-			hoodArmyChance = builder.comment("Chance that an undead with a hood spawns with an army of matching animals.")
-					.translation("butchercraft.config.common.general.hood_army_chance").define("armyHoodChanceMultiplier", 0.1f);
-		}
 	}
 }

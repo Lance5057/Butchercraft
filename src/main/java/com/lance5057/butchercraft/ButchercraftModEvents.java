@@ -99,15 +99,15 @@ public class ButchercraftModEvents {
 				Cow pB = (Cow) event.getParentB();
 
 				baby.setAge((int) (AgeableMob.BABY_START_AGE
-						* ButchercraftConfig.getInstance().general.ageMultiplier.get()));
-				pA.setAge((int) (6000 * ButchercraftConfig.getInstance().general.breedingMultiplier.get()));
-				pB.setAge((int) (6000 * ButchercraftConfig.getInstance().general.breedingMultiplier.get()));
+						* ButchercraftConfig.AGE_MULTIPLIER.get()));
+				pA.setAge((int) (6000 * ButchercraftConfig.BREEDING_MULTIPLIER.get()));
+				pB.setAge((int) (6000 * ButchercraftConfig.BREEDING_MULTIPLIER.get()));
 
 				float pAN = pA.getCapability(AnimalCareProvider.CARE).map(i -> i.getNutrition())
-						.orElse(ButchercraftConfig.getInstance().general.wildlifeBaseNutrition.get()); // TODO
+						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get()); // TODO
 				// config
 				float pBN = pB.getCapability(AnimalCareProvider.CARE).map(i -> i.getNutrition())
-						.orElse(ButchercraftConfig.getInstance().general.wildlifeBaseNutrition.get());
+						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get());
 
 				if (pAN + pBN >= 2) {
 					baby.getCapability(AnimalCareProvider.CARE).ifPresent(i -> i.setNutrition(0.9f));

@@ -297,9 +297,42 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(Tags.Items.SLIMEBALLS).add(ButchercraftItems.FAT.get());
 		tag(Tags.Items.STRING).add(ButchercraftItems.SINEW.get()).add(ButchercraftItems.LEATHER_CORD.get());
 
-		tag(ButchercraftItemTags.OFFAL).add(ButchercraftItems.HEART.get(), ButchercraftItems.LUNG.get(),
-				ButchercraftItems.KIDNEY.get(), ButchercraftItems.LIVER.get(), ButchercraftItems.BRAIN.get(),
-				ButchercraftItems.TRIPE.get());
+		tag(ButchercraftItemTags.HEART_RAW).add(ButchercraftItems.HEART.get());
+		tag(ButchercraftItemTags.HEART_COOKED).add(ButchercraftItems.COOKED_HEART.get());
+		tag(ButchercraftItemTags.HEART).addTag(ButchercraftItemTags.HEART_RAW)
+				.addTag(ButchercraftItemTags.HEART_COOKED);
+
+		tag(ButchercraftItemTags.LUNG_RAW).add(ButchercraftItems.LUNG.get());
+		tag(ButchercraftItemTags.LUNG_COOKED).add(ButchercraftItems.COOKED_LUNG.get());
+		tag(ButchercraftItemTags.LUNG).addTag(ButchercraftItemTags.LUNG_RAW).addTag(ButchercraftItemTags.LUNG_COOKED);
+
+		tag(ButchercraftItemTags.KIDNEY_RAW).add(ButchercraftItems.KIDNEY.get());
+		tag(ButchercraftItemTags.KIDNEY_COOKED).add(ButchercraftItems.COOKED_KIDNEY.get());
+		tag(ButchercraftItemTags.KIDNEY).addTag(ButchercraftItemTags.KIDNEY_RAW)
+				.addTag(ButchercraftItemTags.KIDNEY_COOKED);
+
+		tag(ButchercraftItemTags.LIVER_RAW).add(ButchercraftItems.LIVER.get());
+		tag(ButchercraftItemTags.LIVER_COOKED).add(ButchercraftItems.COOKED_LIVER.get());
+		tag(ButchercraftItemTags.LIVER).addTag(ButchercraftItemTags.LIVER_RAW)
+				.addTag(ButchercraftItemTags.LIVER_COOKED);
+
+		tag(ButchercraftItemTags.BRAIN_RAW).add(ButchercraftItems.BRAIN.get());
+		tag(ButchercraftItemTags.BRAIN_COOKED).add(ButchercraftItems.COOKED_BRAIN.get());
+		tag(ButchercraftItemTags.BRAIN).addTag(ButchercraftItemTags.BRAIN_RAW)
+				.addTag(ButchercraftItemTags.BRAIN_COOKED);
+
+		tag(ButchercraftItemTags.TRIPE_RAW).add(ButchercraftItems.TRIPE.get());
+		tag(ButchercraftItemTags.TRIPE_COOKED).add(ButchercraftItems.COOKED_TRIPE.get());
+		tag(ButchercraftItemTags.TRIPE).addTag(ButchercraftItemTags.TRIPE_RAW)
+				.addTag(ButchercraftItemTags.TRIPE_COOKED);
+
+		tag(ButchercraftItemTags.OFFAL).addTag(ButchercraftItemTags.HEART).addTag(ButchercraftItemTags.LUNG)
+				.addTag(ButchercraftItemTags.KIDNEY).addTag(ButchercraftItemTags.LIVER)
+				.addTag(ButchercraftItemTags.BRAIN).addTag(ButchercraftItemTags.TRIPE);
+		
+		tag(ButchercraftItemTags.OFFAL_RAW).addTag(ButchercraftItemTags.HEART_RAW).addTag(ButchercraftItemTags.LUNG_RAW)
+		.addTag(ButchercraftItemTags.KIDNEY_RAW).addTag(ButchercraftItemTags.LIVER_RAW)
+		.addTag(ButchercraftItemTags.BRAIN_RAW).addTag(ButchercraftItemTags.TRIPE_RAW);
 
 		tag(ButchercraftItemTags.GELATIN_PROVIDER).add(ButchercraftItems.COW_HIDE.get(),
 				ButchercraftItems.PIG_HIDE.get(), ButchercraftItems.SHEEP_HIDE.get(), Items.BONE,

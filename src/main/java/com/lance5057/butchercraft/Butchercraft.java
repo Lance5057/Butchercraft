@@ -27,11 +27,7 @@ public class Butchercraft {
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setupClient);
 
-		ModLoadingContext modLoadingContext = ModLoadingContext.get();
-		modLoadingContext.registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.initialize());
-		// TODO Correct file name
-		ButchercraftConfig.loadConfig(ButchercraftConfig.getInstance().getSpec(),
-				FMLPaths.CONFIGDIR.get().resolve("butchercraft-common.toml"));
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.spec);
 
 		IEventBus bus = MinecraftForge.EVENT_BUS;
 		bus.addListener(ButchercraftModEvents::registerCaps);
