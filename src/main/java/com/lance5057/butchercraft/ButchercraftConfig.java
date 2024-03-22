@@ -35,5 +35,6 @@ public class ButchercraftConfig {
 				.define("armyHoodChanceMultiplier", 0.1f);
 		Builder.pop();
 
+		spec = Builder.build();
 	}
 }

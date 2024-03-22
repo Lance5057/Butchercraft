@@ -145,7 +145,12 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 	@Override
 	public void accept(BiConsumer<ResourceLocation, Builder> t) {
 		t.accept(EMPTY, LootTable.lootTable());
-		
+
+		t.accept(CASING,
+				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CASING.get(), 1))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.FAT.get(), 0, 2))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SINEW.get(), 0, 2)));
+
 		t.accept(BLOOD_BOTTLE, LootTable.lootTable()
 				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 1)));
 
@@ -162,14 +167,13 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.FAT.get(), 2, 6, 0, 1))
 						.withPool(MeatHookLoottables.createPoolWithItem(Items.CHICKEN, 1)));
 
-		t.accept(BUTCHER_CHICKEN,
-				LootTable.lootTable()
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_BREAST.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_LEG.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_THIGH.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_WING.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_SCRAPS.get(), 4, 8, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(Items.BONE_MEAL, 2, 6, 0, 1)));
+		t.accept(BUTCHER_CHICKEN, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_BREAST.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_LEG.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_THIGH.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_WING.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_SCRAPS.get(), 4, 8, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(Items.BONE_MEAL, 2, 6, 0, 1)));
 
 		t.accept(SKIN_BLACK_RABBIT,
 				LootTable.lootTable()
@@ -304,109 +308,102 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 		t.accept(COOKED_RABBIT_STEW, LootTable.lootTable()
 				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.COOKED_STEW_RABBIT.get(), 2)));
 
-		t.accept(BLACK_RABBIT_HEAD,
-				LootTable.lootTable()
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BLACK_BUNNY_EARS.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BLACK_BUNNY_TAIL.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
+		t.accept(BLACK_RABBIT_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BLACK_BUNNY_EARS.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BLACK_BUNNY_TAIL.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
 
-		t.accept(BROWN_RABBIT_HEAD,
-				LootTable.lootTable()
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BROWN_BUNNY_EARS.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BROWN_BUNNY_TAIL.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
+		t.accept(BROWN_RABBIT_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BROWN_BUNNY_EARS.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BROWN_BUNNY_TAIL.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
 
-		t.accept(SPLOTCHED_RABBIT_HEAD,
-				LootTable.lootTable()
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SPLOTCHED_BUNNY_EARS.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
+		t.accept(SPLOTCHED_RABBIT_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SPLOTCHED_BUNNY_EARS.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
 
-		t.accept(GOLD_RABBIT_HEAD,
-				LootTable.lootTable()
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOLD_BUNNY_EARS.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOLD_BUNNY_TAIL.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
+		t.accept(GOLD_RABBIT_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOLD_BUNNY_EARS.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOLD_BUNNY_TAIL.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
 
-		t.accept(SALT_RABBIT_HEAD,
-				LootTable.lootTable()
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SALT_BUNNY_EARS.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SALT_BUNNY_TAIL.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
+		t.accept(SALT_RABBIT_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SALT_BUNNY_EARS.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SALT_BUNNY_TAIL.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
 
-		t.accept(WHITE_RABBIT_HEAD,
-				LootTable.lootTable()
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.WHITE_BUNNY_EARS.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.WHITE_BUNNY_TAIL.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
+		t.accept(WHITE_RABBIT_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.WHITE_BUNNY_EARS.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.WHITE_BUNNY_TAIL.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.RABBIT_SCRAPS.get(), 2, 4, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 3, 0, 1)));
 
-		t.accept(CHICKEN_HEAD,
-				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.WATTLE.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BEAK.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(
-								MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_SCRAPS.get(), 2, 4, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 2, 0, 1)));
+		t.accept(CHICKEN_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.WATTLE.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BEAK.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_SCRAPS.get(), 2, 4, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 1, 2, 0, 1)));
 
-		t.accept(COW_HEAD,
-				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.HORN.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TONGUE.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.COW_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BEEF_SCRAPS.get(), 4, 8, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0, 1)));
+		t.accept(COW_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.HORN.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TONGUE.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.COW_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BEEF_SCRAPS.get(), 4, 8, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0, 1)));
 
-		t.accept(PIG_HEAD,
-				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TONGUE.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.PIG_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.PORK_SCRAPS.get(), 4, 8, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0, 1)));
+		t.accept(PIG_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TONGUE.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.PIG_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.PORK_SCRAPS.get(), 4, 8, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0, 1)));
 
-		t.accept(SHEEP_HEAD,
-				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TONGUE.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SHEEP_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.MUTTON_SCRAPS.get(), 4, 8, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(Items.STRING, 1, 3)));
+		t.accept(SHEEP_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TONGUE.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SHEEP_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.MUTTON_SCRAPS.get(), 4, 8, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(Items.STRING, 1, 3)));
 
-		t.accept(GOAT_HEAD,
-				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TONGUE.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOAT_SKULL_HEAD_ITEM.get()))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOAT_SCRAPS.get(), 4, 8, 0, 1))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0, 1)));
+		t.accept(GOAT_HEAD, LootTable.lootTable()
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TONGUE.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EYEBALL.get(), 2))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BRAIN.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOAT_SKULL_HEAD_ITEM.get()))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOAT_SCRAPS.get(), 4, 8, 0, 1))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0, 1)));
 	}
 
 }

@@ -1,5 +1,5 @@
-// 1.19.2	2024-03-12T13:43:17.580747	Tags for minecraft:item
-d519e67cd102f030f338b7a0ebd9028b8381d31e data/butchercraft/tags/items/butcherable.json
+// 1.19.2	2024-03-22T09:53:32.5391975	Tags for minecraft:item
+296f4a4ecf3958f5f9ac07c4d7eecf25fd36fd40 data/butchercraft/tags/items/butcherable.json
 30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/items/chicken_carcass.json
 ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/items/cow_carcass.json
 66da3e39032bb6edf49b68f597c0d5f9b7cb5166 data/butchercraft/tags/items/gelatin_provider.json
@@ -27,6 +27,9 @@ bf718d49b16fa80674c3e91ad9f36d8349f523c5 data/forge/tags/items/beef/scrap/raw.js
 d3e040df14c9d09149fab06443695c891c8fc825 data/forge/tags/items/beef/stew.json
 b24efb7be1c976b275c79ff1829816cc9fc1d84d data/forge/tags/items/beef/stew/cooked.json
 e0b73bc02eaca32ce57d0d5a162d866a45bfee92 data/forge/tags/items/beef/stew/raw.json
+5684fb55c602f22aa4c1bb77191e49fbb00e19ac data/forge/tags/items/brain.json
+cf7936045061d5e4efdb8f9f723fcda5fab401a2 data/forge/tags/items/brain/cooked.json
+45e6f2df8bb3e2b863284ccdd2741e905aa7b2b8 data/forge/tags/items/brain/raw.json
 d14981712c33352f2ea15070dcd0539ff4fb6f4f data/forge/tags/items/chicken.json
 45bd53cbefbb47b1b38b8770603bd01e8858279e data/forge/tags/items/chicken/breast.json
 66be90b769d3dd230095ff12ebdeb069f3ead6c9 data/forge/tags/items/chicken/breast/cooked.json
@@ -70,6 +73,18 @@ a2b4deb6c27c78983db3f074aa660b544433048e data/forge/tags/items/goat/stew.json
 046efd493a75b166d70f3800aae4660858a51e65 data/forge/tags/items/goat/stew/cooked.json
 e02a5824657693198d9cc40480b3a03b84e8aaf9 data/forge/tags/items/goat/stew/raw.json
 bda1b43754964905c821d9c6f057318c44947014 data/forge/tags/items/ground_meat/raw.json
+8b9f40f015188a326efeca2d44d37ca378af6719 data/forge/tags/items/heart.json
+b93d3462406f0ce1062a5b32042f4f44363677a2 data/forge/tags/items/heart/cooked.json
+5fa2b4ddf835e740777ae952e1e72d5e3056c6cd data/forge/tags/items/heart/raw.json
+cc8a39e440fc459ca94f2e77f602346b35dd0b06 data/forge/tags/items/kidney.json
+f9751787afb1f2cd4bef7eac049ec97aa2996fcc data/forge/tags/items/kidney/cooked.json
+019e0df6cc19b1240f8f018b2cd6f553ec135851 data/forge/tags/items/kidney/raw.json
+f48b4e60c508dff781bc02c63502270e53fe3e43 data/forge/tags/items/liver.json
+e1d32097dbd15ea11961bee370273e09ab47a660 data/forge/tags/items/liver/cooked.json
+ddd6dfafcb104cc214d9cc3ea4deb83d2af5673c data/forge/tags/items/liver/raw.json
+5a7a2b3e61d68fe282a2affc2cb325f72216b4c0 data/forge/tags/items/lung.json
+7e5ac745f96528122481e43ce0e6eb3563a7c7ad data/forge/tags/items/lung/cooked.json
+c027047d7f0bbffe19d519eb02a7232b6b7708ae data/forge/tags/items/lung/raw.json
 1aa180c7aa326c355c980eba35c15cf468ec6269 data/forge/tags/items/meat.json
 ad1fbe33ec441f6207f00a4d399b2cf3b4ecb89e data/forge/tags/items/meat/cooked.json
 2db5e3412146074a91b112f1791ab5df4c3f55d1 data/forge/tags/items/meat/cubed/raw.json
@@ -95,7 +110,8 @@ cbef9c7be11e7f427946a19478042d01931c6c74 data/forge/tags/items/mutton/scrap/cook
 d2bc882cd7a9b3260f6d59e88b672be6b00e667e data/forge/tags/items/mutton/stew.json
 b7d3ca781dc4903defc745a222e79cc5f18ac044 data/forge/tags/items/mutton/stew/cooked.json
 22f7ed5c37406214377099856557456da9b6997f data/forge/tags/items/mutton/stew/raw.json
-e45f5493250c086d655364bc67d7a70364711e20 data/forge/tags/items/offal.json
+e04e1d800d0089886161d0d02ccde24117602525 data/forge/tags/items/offal.json
+3470d58ef2ca9cbbd59ffe31a7a4888358996da2 data/forge/tags/items/offal/raw.json
 f228734be4863065fbdf496d431659a790d698cc data/forge/tags/items/pork.json
 097bd06fbc1d71da35c2321aec4c61e29dcf7d27 data/forge/tags/items/pork/cooked.json
 352f1302f18b253222d15433a4205ddc0fdce96f data/forge/tags/items/pork/cubed.json
@@ -137,3 +153,6 @@ ab2e507c4e541bed39f33cb2526dd78e7bfab219 data/forge/tags/items/rabbit/scrap/raw.
 99910332d6fd3ff3439278a59bfe00790bea73d1 data/forge/tags/items/rabbit/thigh/raw.json
 cd09d0bd2502f17520be606eac462355e2cedb8d data/forge/tags/items/slimeballs.json
 0af0673d94e4a49f2f10115b5b0784153a1ff214 data/forge/tags/items/string.json
+da239695fcf5fac7b20fe260ddf448d047f51450 data/forge/tags/items/tripe.json
+f826a746873f047e45d29c16212dd811fb6ee3ae data/forge/tags/items/tripe/cooked.json
+dd4a57bc2f37aac7fa54049c3b26180591a464ed data/forge/tags/items/tripe/raw.json

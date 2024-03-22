@@ -370,7 +370,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 						ButchercraftItems.BEEF_ROAST.get(), ButchercraftItems.COOKED_BEEF_ROAST.get(),
 						ButchercraftItems.COOKED_GOAT_ROAST.get(), ButchercraftItems.COOKED_MUTTON_ROAST.get(),
 						ButchercraftItems.COOKED_PORK_ROAST.get(), ButchercraftItems.GOAT_ROAST.get(),
-						ButchercraftItems.MUTTON_ROAST.get(), ButchercraftItems.PORK_ROAST.get());
+						ButchercraftItems.MUTTON_ROAST.get(), ButchercraftItems.PORK_ROAST.get(), ButchercraftItems.TRIPE.get());
 
 	}
 }

@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-19T15:36:13.4003493	LootTables
+// 1.19.2	2024-03-22T13:23:10.3774781	LootTables
 d18309e947503b793ebec72b88be7dee5f134b23 data/butchercraft/loot_tables/blocks/barn_wood_block.json
 4e0b6fbc86feebe3cb637794f0dabe5c93562439 data/butchercraft/loot_tables/blocks/barn_wood_door.json
 2184af5fa312ec9b91dadd46d215ac132917deb1 data/butchercraft/loot_tables/blocks/barn_wood_fence.json
@@ -67,6 +67,7 @@ ce145b82aeb29fb936fea1b91a89114ad81baecc data/butchercraft/loot_tables/blocks/ta
 4e1016158d11e0ac61bd7b88c0d99d103e944030 data/butchercraft/loot_tables/butcherblock/brown_rabbit_head.json
 4d1fccc9f792bd84dd624dfecfeee127429c5ff8 data/butchercraft/loot_tables/butcherblock/butcher_chicken.json
 d8fe985252abdd071d21a6197e87e469a93f7da8 data/butchercraft/loot_tables/butcherblock/butcher_rabbit.json
+6f5f843f4301b0afde8647d53f65305e2b5587b1 data/butchercraft/loot_tables/butcherblock/casing.json
 ca013be7fe57487a255377f253f8078741a5d422 data/butchercraft/loot_tables/butcherblock/chicken_cubes.json
 ed26112e327398d54ef2ce6982dcfdfc82df733f data/butchercraft/loot_tables/butcherblock/chicken_head.json
 fb657f9fd7a2d7dc5248d286ea227eab2c2068b9 data/butchercraft/loot_tables/butcherblock/chicken_stew.json
