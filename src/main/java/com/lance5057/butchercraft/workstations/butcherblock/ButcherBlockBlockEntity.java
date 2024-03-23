@@ -47,8 +47,8 @@ import net.minecraftforge.items.ItemStackHandler;
 public class ButcherBlockBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
 
-	private int progress;
-	private int maxProgress;
+	public int progress;
+	public int maxProgress;
 	private Ingredient curTool;
 	public int toolCount;
 	public int stage = 0;

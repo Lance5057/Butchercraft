@@ -2,8 +2,6 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 
 import javax.annotation.Nonnull;
 
-import com.lance5057.butchercraft.tags.ButchercraftItemTags;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -76,20 +74,24 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 	@Override
 	public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
 			@Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
+
 		BlockEntity entity = world.getBlockEntity(blockPos);
 		if (entity instanceof ButcherBlockBlockEntity te) {
-
-			// Get item in both InteractionHands
-			ItemStack heldMain = playerEntity.getItemInHand(InteractionHand.MAIN_HAND);
-			// TODO May want to disable insertion if there's not enough space under the hook
-			if (heldMain.is(ButchercraftItemTags.BUTCHERABLE)) {
-				// TODO Find a way to return SUCCESS on successful insertion
+			ItemStack heldMain = playerEntity.getItemInHand(hand);
+			if (playerEntity.isCrouching()) {
+				if (te.stage == 0 && te.progress == 0) {
+					te.extractItem(playerEntity);
+					return InteractionResult.SUCCESS;
+				}
+			} else if (te.getInsertedItem().isEmpty()) {
 				te.insertItem(heldMain);
-			} else if (heldMain != ItemStack.EMPTY)
+				return InteractionResult.SUCCESS;
+			} else {
 				return te.butcher(playerEntity, heldMain);
+			}
 		}
 
-		return InteractionResult.PASS;
+		return InteractionResult.CONSUME;
 
 	}
 

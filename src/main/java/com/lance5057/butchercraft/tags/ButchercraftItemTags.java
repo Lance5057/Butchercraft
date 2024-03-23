@@ -8,7 +8,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class ButchercraftItemTags {
-	public static final TagKey<Item> BUTCHERABLE = butcherTag("butcherable");
 	public static final TagKey<Item> COW_CARCASS = butcherTag("cow_carcass");
 	public static final TagKey<Item> PIG_CARCASS = butcherTag("pig_carcass");
 	public static final TagKey<Item> SHEEP_CARCASS = butcherTag("sheep_carcass");

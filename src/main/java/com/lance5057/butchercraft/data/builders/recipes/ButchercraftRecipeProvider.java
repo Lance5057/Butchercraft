@@ -674,9 +674,9 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.COOKED_RABBIT_SADDLE.get())
 				.tool(Ingredient.of(ButchercraftItems.BUTCHER_KNIFE.get()), 4, true,
 						ButcherBlockLootTables.COOKED_RABBIT_CUBES,
-						layFlatModel(ButchercraftItems.COOKED_RABBIT_SADDLE.get()),
+						layFlatModel(ButchercraftItems.COOKED_RABBIT_SADDLE.get()), 
 						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
-				.JEIIngredient(Ingredient.of(ButchercraftItems.CUBED_RABBIT.get()))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.COOKED_CUBED_RABBIT.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_rabbit_cubes"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.CUBED_BEEF.get())
@@ -752,7 +752,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.CUBED_RABBIT.get())
 				.tool(Ingredient.of(ButchercraftItems.BUTCHER_KNIFE.get()), 4, true, ButcherBlockLootTables.RABBIT_STEW,
-						layFlatModel(ButchercraftItems.STEW_RABBIT.get()),
+						layFlatModel(ButchercraftItems.CUBED_RABBIT.get()),
 						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.STEW_RABBIT.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "rabbit_stew"));
@@ -762,7 +762,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						ButcherBlockLootTables.COOKED_RABBIT_STEW,
 						layFlatModel(ButchercraftItems.COOKED_CUBED_RABBIT.get()),
 						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get()))
-				.JEIIngredient(Ingredient.of(ButchercraftItems.STEW_RABBIT.get()))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.COOKED_STEW_RABBIT.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_rabbit_stew"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.TRIPE.get())

@@ -13,7 +13,7 @@ public class BloodTrailEffect extends SoapableMobEffect {
 	 public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
 			super.applyEffectTick(pLivingEntity, pAmplifier);
 			
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 3; i++)
 				pLivingEntity.level.addParticle(ParticleTypes.FALLING_LAVA,
 						pLivingEntity.position().x - 0.25f + pLivingEntity.level.random.nextDouble() / 2,
 						pLivingEntity.position().y + 0.25f - pLivingEntity.level.random.nextDouble(),

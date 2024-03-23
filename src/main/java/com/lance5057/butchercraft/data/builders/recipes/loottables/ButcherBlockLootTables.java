@@ -149,7 +149,8 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 		t.accept(CASING,
 				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CASING.get(), 1))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.FAT.get(), 0, 2))
-						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SINEW.get(), 0, 2)));
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SINEW.get(), 0, 2))
+						.withPool(MeatHookLoottables.createPoolWithItem(Items.BUCKET, 1)));
 
 		t.accept(BLOOD_BOTTLE, LootTable.lootTable()
 				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 1)));

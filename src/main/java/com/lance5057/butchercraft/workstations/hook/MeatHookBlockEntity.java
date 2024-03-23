@@ -50,8 +50,8 @@ public class MeatHookBlockEntity extends BlockEntity {
 
 	public boolean recipeLocked = false;
 	// public NonNullList<RecipeItemUse> toolList;
-	private int progress;
-	private int maxProgress;
+	public int progress;
+	public int maxProgress;
 	private Ingredient curTool;
 	public int toolCount;
 	public int stage = 0;
