@@ -6,7 +6,7 @@
   "group": "",
   "jei": [
     {
-      "item": "butchercraft:rabbit_stewmeat"
+      "item": "butchercraft:cooked_rabbit_stewmeat"
     }
   ],
   "tools": [
@@ -24,8 +24,8 @@
                 "speed": 1.0
               },
               "y": {
-                "max": 0.5,
-                "min": -0.5,
+                "max": 1.5,
+                "min": -1.5,
                 "speed": 1.0
               },
               "z": {

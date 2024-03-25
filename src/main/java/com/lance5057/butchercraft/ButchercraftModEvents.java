@@ -104,10 +104,10 @@ public class ButchercraftModEvents {
 				pB.setAge((int) (6000 * ButchercraftConfig.BREEDING_MULTIPLIER.get()));
 
 				float pAN = pA.getCapability(AnimalCareProvider.CARE).map(i -> i.getNutrition())
-						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get()); // TODO
+						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get().floatValue()); // TODO
 				// config
 				float pBN = pB.getCapability(AnimalCareProvider.CARE).map(i -> i.getNutrition())
-						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get());
+						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get().floatValue());
 
 				if (pAN + pBN >= 2) {
 					baby.getCapability(AnimalCareProvider.CARE).ifPresent(i -> i.setNutrition(0.9f));

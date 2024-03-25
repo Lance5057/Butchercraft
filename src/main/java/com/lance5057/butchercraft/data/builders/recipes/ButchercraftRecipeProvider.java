@@ -58,7 +58,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	BlacklistedModel layFlatModel(Item rl) {
 		return new BlacklistedModel(rl, new AnimationFloatTransform()
 				.setLocation(
-						new AnimatedFloatVector3(new AnimatedFloat(8), new AnimatedFloat(0.5f), new AnimatedFloat(8)))
+						new AnimatedFloatVector3(new AnimatedFloat(8), new AnimatedFloat(1f), new AnimatedFloat(8)))
 				.setRotation(new AnimatedFloatVector3().setX(new AnimatedFloat(-90))).setScale(
 						new AnimatedFloatVector3(new AnimatedFloat(1), new AnimatedFloat(1), new AnimatedFloat(1))));
 	}

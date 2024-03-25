@@ -13,13 +13,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLPaths;
 
 @Mod(Butchercraft.MOD_ID)
 public class Butchercraft {
 
 	public final static String MOD_ID = "butchercraft";
-	public static final String VERSION = "2.3.4";
+	public static final String VERSION = "2.3.7";
 
 	public static Logger logger = LogManager.getLogger();
 

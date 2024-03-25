@@ -5,12 +5,14 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,7 +22,7 @@ public class ButchercraftForgeEvents {
 	@SubscribeEvent
 	public static void giveHoodsToUndead(LivingSpawnEvent.SpecialSpawn event) {
 		if (event.getLevel() instanceof ServerLevel level) {
-			if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_SPAWN_CHANCE.get()) {
+			if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_SPAWN_CHANCE.get().floatValue()) {
 				Mob e = event.getEntity();
 				if (e instanceof Zombie || e instanceof Skeleton) {
 					int choice = event.getLevel().getRandom().nextInt(6);
@@ -91,28 +93,32 @@ public class ButchercraftForgeEvents {
 	}
 
 	private static void spawnArmy(ServerLevel level, Mob e, EntityType<?> type) {
-		if (level.canSeeSky(e.blockPosition()))
-			if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get()) {
-				int animalsAmount = level.getRandom().nextInt(4) + 2;
-				for (int i = 0; i < animalsAmount; i++) {
-					Animal ent = (Animal) type.spawn(level, null, null, e.blockPosition().offset(
-							level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), null, false, false);
-					ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+		if (level.dimension() == Level.OVERWORLD)
+			if (level.canSeeSky(e.blockPosition()))
+				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get().floatValue()) {
+					int animalsAmount = level.getRandom().nextInt(4) + 2;
+					for (int i = 0; i < animalsAmount; i++) {
+						Animal ent = (Animal) type.spawn(level, null, null, e.blockPosition()
+								.offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT,
+								false, false);
+						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+					}
 				}
-			}
 	}
 
 	private static void spawnRabbitArmy(ServerLevel level, Mob e, EntityType<?> type, int skin) {
-		if (level.canSeeSky(e.blockPosition()))
-			if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get()) {
-				int animalsAmount = level.getRandom().nextInt(4) + 2;
-				for (int i = 0; i < animalsAmount; i++) {
-					Rabbit ent = (Rabbit) type.spawn(level, null, null, e.blockPosition().offset(
-							level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), null, false, false);
-					ent.setRabbitType(skin);
-					ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+		if (level.dimension() == Level.OVERWORLD)
+			if (level.canSeeSky(e.blockPosition()))
+				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get().floatValue()) {
+					int animalsAmount = level.getRandom().nextInt(4) + 2;
+					for (int i = 0; i < animalsAmount; i++) {
+						Rabbit ent = (Rabbit) type.spawn(level, null, null, e.blockPosition()
+								.offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT,
+								false, false);
+						ent.setRabbitType(skin);
+						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+					}
 				}
-			}
 	}
 
 	@SubscribeEvent
