@@ -26,6 +26,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -250,27 +251,35 @@ public class MeatHookBlockEntity extends BlockEntity {
 
 				ItemStack boots = p.getInventory().getArmor(0);
 				if (boots.getItem() instanceof BootsItem)
-					boots.hurtAndBreak(1, p, null);
+					boots.hurtAndBreak(1, p, (x) -> {
+						x.broadcastBreakEvent(EquipmentSlot.FEET);
+					});
 				else
 					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.get(), 3600, 0, false, false,
 							true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
 				if (apron.getItem() instanceof ApronItem)
-					apron.hurtAndBreak(1, p, null);
+					apron.hurtAndBreak(1, p, (x) -> {
+						x.broadcastBreakEvent(EquipmentSlot.LEGS);
+					});
 				else
 					p.addEffect(
 							new MobEffectInstance(ButchercraftMobEffects.BLOODY.get(), 3600, 0, false, false, true));
 
 				ItemStack gloves = p.getInventory().getArmor(2);
 				if (gloves.getItem() instanceof GlovesItem)
-					gloves.hurtAndBreak(1, p, null);
+					gloves.hurtAndBreak(1, p, (x) -> {
+						x.broadcastBreakEvent(EquipmentSlot.CHEST);
+					});
 				else
 					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY.get(), 3600, 0, false, false, true));
 
 				ItemStack mask = p.getInventory().getArmor(3);
 				if (mask.getItem() instanceof MaskItem)
-					mask.hurtAndBreak(1, p, null);
+					mask.hurtAndBreak(1, p, (x) -> {
+						x.broadcastBreakEvent(EquipmentSlot.HEAD);
+					});
 				else
 					p.addEffect(
 							new MobEffectInstance(ButchercraftMobEffects.STINKY.get(), 3600, 0, false, false, true));

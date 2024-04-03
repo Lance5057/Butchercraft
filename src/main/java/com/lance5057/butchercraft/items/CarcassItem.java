@@ -6,6 +6,7 @@ import com.lance5057.butchercraft.armor.BootsItem;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -15,7 +16,6 @@ public class CarcassItem extends Item {
 
 	public CarcassItem(Properties pProperties) {
 		super(pProperties);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -24,14 +24,19 @@ public class CarcassItem extends Item {
 			if (pEntity instanceof Player p) {
 				ItemStack boots = p.getInventory().getArmor(0);
 				if (boots.getItem() instanceof BootsItem)
-					boots.hurtAndBreak(1, p, x -> {});
+
+					boots.hurtAndBreak(1, p, (x) -> {
+						x.broadcastBreakEvent(EquipmentSlot.FEET);
+					});
 				else
 					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.get(), 3600, 0, false, false,
 							true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
 				if (apron.getItem() instanceof ApronItem)
-					apron.hurtAndBreak(1, p, null);
+					apron.hurtAndBreak(1, p, (x) -> {
+						x.broadcastBreakEvent(EquipmentSlot.LEGS);
+					});
 				else
 					p.addEffect(
 							new MobEffectInstance(ButchercraftMobEffects.BLOODY.get(), 3600, 0, false, false, true));
