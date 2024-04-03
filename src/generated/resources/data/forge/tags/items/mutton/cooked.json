@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#forge:mutton/ribs/cooked",
+    "#forge:mutton/roast/cooked",
+    "#forge:mutton/cubed/cooked",
+    "#forge:mutton/scrap/cooked",
+    "#forge:mutton/stew/cooked"
+  ]
+}

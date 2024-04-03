@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:cooked_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_sausage"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:cooked_sausage_block_item"
+  }
+}

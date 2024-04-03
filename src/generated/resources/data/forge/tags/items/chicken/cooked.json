@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#forge:chicken/breast/cooked",
+    "#forge:chicken/thigh/cooked",
+    "#forge:chicken/leg/cooked",
+    "#forge:chicken/wing/cooked",
+    "#forge:chicken/cubed/cooked",
+    "#forge:chicken/scrap/cooked",
+    "#forge:chicken/stew/cooked"
+  ]
+}

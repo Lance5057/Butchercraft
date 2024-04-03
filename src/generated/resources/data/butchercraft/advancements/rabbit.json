@@ -1,0 +1,62 @@
+{
+  "parent": "butchercraft:butcherblock",
+  "criteria": {
+    "rabbit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:brown_rabbit_carcass"
+            ]
+          },
+          {
+            "items": [
+              "butchercraft:black_rabbit_carcass"
+            ]
+          },
+          {
+            "items": [
+              "butchercraft:gold_rabbit_carcass"
+            ]
+          },
+          {
+            "items": [
+              "butchercraft:salt_rabbit_carcass"
+            ]
+          },
+          {
+            "items": [
+              "butchercraft:splotched_rabbit_carcass"
+            ]
+          },
+          {
+            "items": [
+              "butchercraft:white_rabbit_carcass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.rabbit.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:brown_rabbit_carcass"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.rabbit.name"
+    }
+  },
+  "requirements": [
+    [
+      "rabbit"
+    ]
+  ]
+}

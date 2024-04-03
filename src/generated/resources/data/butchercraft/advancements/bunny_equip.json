@@ -1,0 +1,49 @@
+{
+  "parent": "butchercraft:rabbit",
+  "criteria": {
+    "bunny_equip_ears": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "butchercraft:bunny_ears"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bunny_equip_tail": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "butchercraft:bunny_tails"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.bunny_equip.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "item": "butchercraft:white_bunny_tail",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.bunny_equip.name"
+    }
+  },
+  "requirements": [
+    [
+      "bunny_equip_ears"
+    ],
+    [
+      "bunny_equip_tail"
+    ]
+  ]
+}

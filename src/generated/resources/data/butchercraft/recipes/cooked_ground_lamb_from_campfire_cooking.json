@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:ground_lamb"
+  },
+  "result": "butchercraft:cooked_ground_lamb"
+}

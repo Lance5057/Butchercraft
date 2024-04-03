@@ -1,0 +1,113 @@
+{
+  "parent": "butchercraft:rabbit",
+  "criteria": {
+    "whole_rabbit_cubed": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_cubed_rabbit"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_rabbit_ground": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_ground_rabbit"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_rabbit_leg": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_rabbit_leg"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_rabbit_saddle": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_rabbit_saddle"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_rabbit_scraps": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_rabbit_scraps"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_rabbit_stew": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_rabbit_stewmeat"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_rabbit_thigh": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_rabbit_thigh"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.whole_rabbit.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:cooked_rabbit"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.whole_rabbit.name"
+    }
+  },
+  "requirements": [
+    [
+      "whole_rabbit_leg"
+    ],
+    [
+      "whole_rabbit_saddle"
+    ],
+    [
+      "whole_rabbit_cubed"
+    ],
+    [
+      "whole_rabbit_scraps"
+    ],
+    [
+      "whole_rabbit_thigh"
+    ],
+    [
+      "whole_rabbit_stew"
+    ],
+    [
+      "whole_rabbit_ground"
+    ]
+  ]
+}

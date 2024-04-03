@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:pork/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_pork"
+      }
+    }
+  ],
+  "result": {
+    "item": "butchercraft:pork_block_item"
+  }
+}

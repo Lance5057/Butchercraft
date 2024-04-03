@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,waterlogged=false": {
+      "model": "butchercraft:block/grinder",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
+      "model": "butchercraft:block/grinder",
+      "y": 90
+    },
+    "facing=north,waterlogged=false": {
+      "model": "butchercraft:block/grinder"
+    },
+    "facing=north,waterlogged=true": {
+      "model": "butchercraft:block/grinder"
+    },
+    "facing=south,waterlogged=false": {
+      "model": "butchercraft:block/grinder",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "butchercraft:block/grinder",
+      "y": 180
+    },
+    "facing=west,waterlogged=false": {
+      "model": "butchercraft:block/grinder",
+      "y": 270
+    },
+    "facing=west,waterlogged=true": {
+      "model": "butchercraft:block/grinder",
+      "y": 270
+    }
+  }
+}

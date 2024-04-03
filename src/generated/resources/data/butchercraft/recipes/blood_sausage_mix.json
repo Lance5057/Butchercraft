@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "tag": "forge:ground_meat/raw"
+    },
+    {
+      "item": "butchercraft:fat"
+    },
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "butchercraft:blood_fluid_bottle"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "butchercraft:blood_sausage_mix"
+  }
+}

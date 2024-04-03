@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "carcass_hooked=false,facing=east,waterlogged=false": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 90
+    },
+    "carcass_hooked=false,facing=east,waterlogged=true": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 90
+    },
+    "carcass_hooked=false,facing=north,waterlogged=false": {
+      "model": "butchercraft:block/meat_hook"
+    },
+    "carcass_hooked=false,facing=north,waterlogged=true": {
+      "model": "butchercraft:block/meat_hook"
+    },
+    "carcass_hooked=false,facing=south,waterlogged=false": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 180
+    },
+    "carcass_hooked=false,facing=south,waterlogged=true": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 180
+    },
+    "carcass_hooked=false,facing=west,waterlogged=false": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 270
+    },
+    "carcass_hooked=false,facing=west,waterlogged=true": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 270
+    },
+    "carcass_hooked=true,facing=east,waterlogged=false": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 90
+    },
+    "carcass_hooked=true,facing=east,waterlogged=true": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 90
+    },
+    "carcass_hooked=true,facing=north,waterlogged=false": {
+      "model": "butchercraft:block/meat_hook"
+    },
+    "carcass_hooked=true,facing=north,waterlogged=true": {
+      "model": "butchercraft:block/meat_hook"
+    },
+    "carcass_hooked=true,facing=south,waterlogged=false": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 180
+    },
+    "carcass_hooked=true,facing=south,waterlogged=true": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 180
+    },
+    "carcass_hooked=true,facing=west,waterlogged=false": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 270
+    },
+    "carcass_hooked=true,facing=west,waterlogged=true": {
+      "model": "butchercraft:block/meat_hook",
+      "y": 270
+    }
+  }
+}

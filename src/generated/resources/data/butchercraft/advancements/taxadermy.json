@@ -1,0 +1,35 @@
+{
+  "parent": "butchercraft:root",
+  "criteria": {
+    "taxadermy": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "butchercraft:taxidermy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.taxadermy.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:hay_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.taxadermy.name"
+    }
+  },
+  "requirements": [
+    [
+      "taxadermy"
+    ]
+  ]
+}

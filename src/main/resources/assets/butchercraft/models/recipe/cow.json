@@ -1,0 +1,30 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 32],
+	"textures": {
+		"0": "butchercraft:models/cowhooked"
+	},
+	"elements": [
+		{
+			"name": "hook",
+			"from": [12, 3, 5],
+			"to": [12, 12, 11],
+			"faces": {
+				"east": {"uv": [13, 4, 15.25, 6.5], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [15.25, 4, 13, 6.5], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [13, 0, 6.5],
+			"to": [16, 3, 9.5],
+			"faces": {
+				"north": {"uv": [7.75, 14.5, 8.5, 16], "texture": "#0"},
+				"east": {"uv": [7.75, 14.5, 8.5, 16], "texture": "#0"},
+				"south": {"uv": [7.75, 13, 8.5, 14.5], "texture": "#0"},
+				"west": {"uv": [8.5, 13, 9.25, 14.5], "texture": "#0"},
+				"up": {"uv": [7.75, 13, 8.5, 14.5], "texture": "#0"},
+				"down": {"uv": [8.5, 14.5, 9.25, 16], "texture": "#0"}
+			}
+		}
+	]
+}

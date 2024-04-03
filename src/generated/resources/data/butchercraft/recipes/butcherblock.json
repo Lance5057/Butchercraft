@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "SWS"
+  ],
+  "result": {
+    "item": "butchercraft:butcher_block_block_item"
+  }
+}

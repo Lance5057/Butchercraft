@@ -1,0 +1,100 @@
+{
+  "parent": "butchercraft:goat",
+  "criteria": {
+    "whole_goat_cubed": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_cubed_lamb"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_goat_ground": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_ground_lamb"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_goat_ribs": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_ribs"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_goat_roast": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_roast"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_goat_scraps": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_scraps"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_goat_stew": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:cooked_lamb_stewmeat"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.whole_goat.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:cooked_goat_chop"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.whole_goat.name"
+    }
+  },
+  "requirements": [
+    [
+      "whole_goat_ribs"
+    ],
+    [
+      "whole_goat_roast"
+    ],
+    [
+      "whole_goat_scraps"
+    ],
+    [
+      "whole_goat_stew"
+    ],
+    [
+      "whole_goat_cubed"
+    ],
+    [
+      "whole_goat_ground"
+    ]
+  ]
+}

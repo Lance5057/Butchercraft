@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:lamb_roast"
+  },
+  "result": "butchercraft:cooked_lamb_roast"
+}

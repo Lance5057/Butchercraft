@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:beef/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_beef"
+      }
+    }
+  ],
+  "result": {
+    "item": "butchercraft:cooked_beef_block_item"
+  }
+}

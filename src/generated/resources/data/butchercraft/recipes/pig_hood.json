@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "H": {
+      "item": "butchercraft:pig_head_item"
+    },
+    "L": {
+      "item": "butchercraft:pig_hide"
+    },
+    "S": {
+      "tag": "forge:string"
+    }
+  },
+  "pattern": [
+    " H ",
+    "SLS"
+  ],
+  "result": {
+    "item": "butchercraft:pig_hood"
+  }
+}

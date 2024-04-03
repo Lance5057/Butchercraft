@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:beef_roast"
+  },
+  "result": "butchercraft:cooked_beef_roast"
+}

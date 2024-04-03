@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:ground_beef"
+  },
+  "result": "butchercraft:cooked_ground_beef"
+}

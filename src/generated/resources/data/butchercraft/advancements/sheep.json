@@ -1,0 +1,37 @@
+{
+  "parent": "butchercraft:hook",
+  "criteria": {
+    "sheep": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:sheep_carcass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.sheep.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:sheep_carcass"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.sheep.name"
+    }
+  },
+  "requirements": [
+    [
+      "sheep"
+    ]
+  ]
+}

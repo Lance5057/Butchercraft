@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "butchercraft:block/taxidermy_salt_rabbit",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "butchercraft:block/taxidermy_salt_rabbit"
+    },
+    "facing=south": {
+      "model": "butchercraft:block/taxidermy_salt_rabbit",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "butchercraft:block/taxidermy_salt_rabbit",
+      "y": 270
+    }
+  }
+}

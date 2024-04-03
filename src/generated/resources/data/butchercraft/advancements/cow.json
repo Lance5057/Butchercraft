@@ -1,0 +1,37 @@
+{
+  "parent": "butchercraft:hook",
+  "criteria": {
+    "cow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:cow_carcass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.cow.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:cow_carcass"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.cow.name"
+    }
+  },
+  "requirements": [
+    [
+      "cow"
+    ]
+  ]
+}

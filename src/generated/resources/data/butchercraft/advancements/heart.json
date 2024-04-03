@@ -1,0 +1,35 @@
+{
+  "parent": "butchercraft:root",
+  "criteria": {
+    "heart": {
+      "conditions": {
+        "item": {
+          "items": [
+            "butchercraft:heart"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.heart.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "butchercraft:heart"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.heart.name"
+    }
+  },
+  "requirements": [
+    [
+      "heart"
+    ]
+  ]
+}

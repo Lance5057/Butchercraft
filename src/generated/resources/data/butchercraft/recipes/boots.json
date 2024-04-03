@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:leather_boots"
+    },
+    "F": {
+      "item": "butchercraft:lard"
+    },
+    "W": {
+      "item": "minecraft:black_wool"
+    }
+  },
+  "pattern": [
+    " F ",
+    "WBW"
+  ],
+  "result": {
+    "item": "butchercraft:boots"
+  }
+}

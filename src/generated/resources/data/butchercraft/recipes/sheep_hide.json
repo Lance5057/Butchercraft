@@ -1,0 +1,195 @@
+{
+  "type": "butchercraft:meat_hook",
+  "carcass": {
+    "item": "butchercraft:sheep_hide"
+  },
+  "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:sinew"
+    },
+    {
+      "item": "butchercraft:fat"
+    },
+    {
+      "item": "butchercraft:leather_scrap"
+    },
+    {
+      "item": "minecraft:leather"
+    }
+  ],
+  "tools": [
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:meat_hook/scrape_hide",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {
+              "y": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {},
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
+          },
+          "location": "butchercraft:meathook/sheep_hide"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 24.0,
+                "min": -24.0
+              },
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
+          },
+          "location": "butchercraft:skinning_knife"
+        }
+      ],
+      "tool": {
+        "item": "butchercraft:skinning_knife"
+      },
+      "uses": 6
+    },
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:meat_hook/sheep_leather",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {
+              "y": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {},
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
+          },
+          "location": "butchercraft:meathook/sheep_hide"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 24.0,
+                "min": -24.0
+              },
+              "z": {
+                "max": 12.0,
+                "min": -12.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
+          },
+          "location": "minecraft:shears"
+        }
+      ],
+      "tool": {
+        "item": "minecraft:shears"
+      },
+      "uses": 6
+    }
+  ]
+}

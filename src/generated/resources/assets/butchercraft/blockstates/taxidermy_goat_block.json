@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "butchercraft:block/goat",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "butchercraft:block/goat"
+    },
+    "facing=south": {
+      "model": "butchercraft:block/goat",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "butchercraft:block/goat",
+      "y": 270
+    }
+  }
+}

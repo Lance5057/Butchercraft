@@ -1,0 +1,59 @@
+package com.lance5057.butchercraft.workstations.butcherblock;
+
+import com.lance5057.butchercraft.client.rendering.RenderUtil;
+import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Quaternion;
+
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.phys.Vec3;
+
+public class ButcherBlockRenderer implements BlockEntityRenderer<ButcherBlockBlockEntity> {
+	int timer = 0;
+	AnimationFloatTransform ghost;
+
+	public ButcherBlockRenderer(BlockEntityRendererProvider.Context cxt) {
+		ghost = new AnimationFloatTransform();
+	}
+
+	@Override
+	public void render(ButcherBlockBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack,
+			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
+		if (pBlockEntity.hasLevel()) {
+			pPoseStack.pushPose();
+			pPoseStack.translate(0.5f, 1, 0.5f);
+			Quaternion q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
+
+			pPoseStack.mulPose(q);
+			pPoseStack.mulPose(new Quaternion(-90, 0, 0, true));
+
+			pPoseStack.translate(-0.5f, 0, -0.5f);
+
+			pBlockEntity.getCurrentTool().ifPresent(animatedRecipeItemUse -> animatedRecipeItemUse.model.forEach(
+					b -> RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer)));
+			pPoseStack.popPose();
+			timer++;
+		}
+	}
+
+	@Override
+	public boolean shouldRenderOffScreen(ButcherBlockBlockEntity pBlockEntity) {
+		return true;
+	}
+
+	@Override
+	public int getViewDistance() {
+		return 64;
+	}
+
+	@Override
+	public boolean shouldRender(ButcherBlockBlockEntity pBlockEntity, Vec3 pCameraPos) {
+		// return Vec3.atCenterOf(pBlockEntity.getBlockPos()).closerThan(pCameraPos,
+		// (double) this.getViewDistance());
+		return true;
+	}
+
+}

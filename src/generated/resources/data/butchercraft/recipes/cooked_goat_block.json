@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:goat/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_goat"
+      }
+    }
+  ],
+  "result": {
+    "item": "butchercraft:cooked_goat_block_item"
+  }
+}

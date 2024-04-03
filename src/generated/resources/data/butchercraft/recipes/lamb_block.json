@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:mutton/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_lamb"
+      }
+    }
+  ],
+  "result": {
+    "item": "butchercraft:lamb_block_item"
+  }
+}

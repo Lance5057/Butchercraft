@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:string"
+    },
+    "W": {
+      "item": "minecraft:light_blue_carpet"
+    }
+  },
+  "pattern": [
+    "SWS"
+  ],
+  "result": {
+    "item": "butchercraft:mask"
+  }
+}

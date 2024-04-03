@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "butchercraft:block/blood_sausage_block_end",
+    "side": "butchercraft:block/blood_sausage_block_side"
+  }
+}

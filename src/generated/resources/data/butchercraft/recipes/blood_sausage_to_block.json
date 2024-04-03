@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:blood_sausage"
+    },
+    {
+      "item": "butchercraft:blood_sausage"
+    },
+    {
+      "item": "butchercraft:blood_sausage"
+    },
+    {
+      "item": "butchercraft:blood_sausage"
+    },
+    {
+      "item": "butchercraft:blood_sausage"
+    },
+    {
+      "item": "butchercraft:blood_sausage"
+    },
+    {
+      "item": "butchercraft:blood_sausage"
+    },
+    {
+      "item": "butchercraft:blood_sausage"
+    },
+    {
+      "item": "butchercraft:blood_sausage"
+    }
+  ],
+  "result": {
+    "item": "butchercraft:blood_sausage_block_item"
+  }
+}

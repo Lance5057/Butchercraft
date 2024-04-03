@@ -1,0 +1,20 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "cutout",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "butchercraft:block/goat_hide",
+		"particle": "butchercraft:block/goat_hide"
+	},
+	"elements": [
+		{
+			"from": [-8, -15.5, 8.39],
+			"to": [24, 16.5, 8.39],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 0.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:cubed_goat"
+  },
+  "result": "butchercraft:cooked_cubed_goat"
+}

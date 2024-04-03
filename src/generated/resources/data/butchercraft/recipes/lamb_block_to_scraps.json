@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "butchercraft:lamb_block_item"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "butchercraft:lamb_scraps"
+  }
+}

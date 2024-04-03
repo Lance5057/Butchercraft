@@ -1,0 +1,37 @@
+{
+  "parent": "butchercraft:grinder",
+  "criteria": {
+    "extruder": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:extruder_tip"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "butchercraft.advancement.extruder.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "butchercraft:extruder_tip"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "butchercraft.advancement.extruder.name"
+    }
+  },
+  "requirements": [
+    [
+      "extruder"
+    ]
+  ]
+}

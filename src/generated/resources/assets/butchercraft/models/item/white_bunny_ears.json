@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "butchercraft:item/white_bunny_ears"
+  }
+}

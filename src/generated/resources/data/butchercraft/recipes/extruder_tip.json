@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "minecraft:iron_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_trapdoor"
+    }
+  },
+  "pattern": [
+    "C  ",
+    "I  "
+  ],
+  "result": {
+    "item": "butchercraft:extruder_tip"
+  }
+}

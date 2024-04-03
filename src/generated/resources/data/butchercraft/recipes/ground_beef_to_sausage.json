@@ -1,0 +1,14 @@
+{
+  "type": "butchercraft:grinder",
+  "attachment": {
+    "item": "butchercraft:extruder_tip"
+  },
+  "grinds": 16,
+  "ingredient": {
+    "tag": "forge:ground_meat/raw"
+  },
+  "ingredientCount": 8,
+  "result": {
+    "item": "butchercraft:sausage_linked"
+  }
+}
