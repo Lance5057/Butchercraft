@@ -1,8 +1,8 @@
 {
   "values": [
-    "butchercraft:beef_ribs",
-    "butchercraft:lamb_ribs",
-    "butchercraft:pork_ribs",
-    "butchercraft:goat_ribs"
+    "#forge:beef/ribs",
+    "#forge:mutton/ribs",
+    "#forge:pork/ribs",
+    "#forge:goat/ribs"
   ]
 }

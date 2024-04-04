@@ -1,8 +1,8 @@
 {
   "values": [
-    "butchercraft:beef_roast",
-    "butchercraft:lamb_roast",
-    "butchercraft:pork_roast",
-    "butchercraft:goat_roast"
+    "#forge:beef/roast",
+    "#forge:mutton/roast",
+    "#forge:pork/roast",
+    "#forge:goat/roast"
   ]
 }

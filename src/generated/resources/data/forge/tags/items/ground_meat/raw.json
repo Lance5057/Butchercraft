@@ -1,10 +1,10 @@
 {
   "values": [
-    "butchercraft:ground_beef",
-    "butchercraft:ground_lamb",
-    "butchercraft:ground_pork",
-    "butchercraft:ground_chicken",
-    "butchercraft:ground_rabbit",
-    "butchercraft:ground_goat"
+    "#forge:beef/ground",
+    "#forge:mutton/ground",
+    "#forge:pork/ground",
+    "#forge:chicken/ground",
+    "#forge:rabbit/ground",
+    "#forge:goat/ground"
   ]
 }

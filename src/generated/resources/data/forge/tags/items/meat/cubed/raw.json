@@ -1,10 +1,10 @@
 {
   "values": [
-    "butchercraft:cubed_beef",
-    "butchercraft:cubed_lamb",
-    "butchercraft:cubed_pork",
-    "butchercraft:cubed_chicken",
-    "butchercraft:cubed_rabbit",
-    "butchercraft:cubed_goat"
+    "#forge:beef/cubed",
+    "#forge:mutton/cubed",
+    "#forge:pork/cubed",
+    "#forge:chicken/cubed",
+    "#forge:rabbit/cubed",
+    "#forge:goat/cubed"
   ]
 }
