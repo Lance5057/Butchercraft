@@ -429,7 +429,7 @@ public class ButchercraftItems {
 			() -> new BlockItem(ButchercraftBlocks.MUTTON_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BlockItem> COOKED_MUTTON_BLOCK_ITEM = ITEMS.register("cooked_lamb_block_item",
 			() -> new BlockItem(ButchercraftBlocks.COOKED_MUTTON_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
- 
+
 	public static final RegistryObject<BlockItem> RABBIT_BLOCK_ITEM = ITEMS.register("rabbit_block_item",
 			() -> new BlockItem(ButchercraftBlocks.RABBIT_BLOCK.get(), new Item.Properties().tab(BUTCHER_TAB)));
 	public static final RegistryObject<BlockItem> COOKED_RABBIT_BLOCK_ITEM = ITEMS.register("cooked_rabbit_block_item",
@@ -498,7 +498,7 @@ public class ButchercraftItems {
 			() -> new BucketItem(ButchercraftFluids.BLOOD_FLUID,
 					new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final RegistryObject<Item> BLOOD_FLUID_BOTTLE = ITEMS.register("blood_fluid_bottle",
-			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.BUCKET).stacksTo(16)));
+			() -> new Item(new Item.Properties().tab(BUTCHER_TAB).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 
 //	public static final RegistryObject<Item> TANNING_FLUID_BUCKET = ITEMS.register("tanning_fluid_bucket",
 //			() -> new BucketItem(ButchercraftFluids.TANNING_FLUID,
