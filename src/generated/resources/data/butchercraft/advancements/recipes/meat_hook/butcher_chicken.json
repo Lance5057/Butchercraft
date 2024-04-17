@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:butcher_chicken"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

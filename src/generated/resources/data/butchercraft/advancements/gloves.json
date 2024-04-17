@@ -34,5 +34,6 @@
     [
       "gloves"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

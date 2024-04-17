@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:rabbit_stew"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:cooked_beef_roast"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

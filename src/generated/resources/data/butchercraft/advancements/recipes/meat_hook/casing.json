@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:casing"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

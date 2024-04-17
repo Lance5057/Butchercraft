@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:cooked_goat_roast"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

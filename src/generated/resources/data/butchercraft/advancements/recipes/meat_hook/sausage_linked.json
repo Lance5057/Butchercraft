@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:sausage_linked"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

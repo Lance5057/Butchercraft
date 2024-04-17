@@ -109,5 +109,6 @@
     [
       "whole_rabbit_ground"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

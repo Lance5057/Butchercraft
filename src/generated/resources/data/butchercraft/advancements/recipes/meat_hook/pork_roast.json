@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:pork_roast"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

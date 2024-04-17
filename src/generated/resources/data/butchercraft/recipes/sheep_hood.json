@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "H": {
       "item": "butchercraft:sheep_head_item"
@@ -17,5 +18,6 @@
   ],
   "result": {
     "item": "butchercraft:sheep_hood"
-  }
+  },
+  "show_notification": true
 }

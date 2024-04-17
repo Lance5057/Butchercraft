@@ -34,5 +34,6 @@
     [
       "apron"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

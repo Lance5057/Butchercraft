@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "I": {
       "item": "minecraft:iron_ingot"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "butchercraft:butcher_knife"
-  }
+  },
+  "show_notification": true
 }

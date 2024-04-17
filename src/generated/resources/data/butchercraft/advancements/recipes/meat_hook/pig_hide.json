@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:pig_hide"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

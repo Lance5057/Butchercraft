@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cubed_rabbit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:cubed_rabbit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_cubed_rabbit_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cubed_rabbit",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_cubed_rabbit_from_smoking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

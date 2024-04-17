@@ -122,5 +122,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "butchercraft:butcherblock/cow_head"
 }

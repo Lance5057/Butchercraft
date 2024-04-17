@@ -33,5 +33,6 @@
     [
       "barn_wood"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

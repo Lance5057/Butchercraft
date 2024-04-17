@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "s": {
       "item": "minecraft:stick"
@@ -14,5 +15,6 @@
   ],
   "result": {
     "item": "butchercraft:barn_wood_fence_gate_item"
-  }
+  },
+  "show_notification": true
 }

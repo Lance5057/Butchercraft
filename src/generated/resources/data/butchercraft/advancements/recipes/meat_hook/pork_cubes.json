@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:pork_cubes"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

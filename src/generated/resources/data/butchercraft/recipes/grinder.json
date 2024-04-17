@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "B": {
       "tag": "minecraft:buttons"
@@ -24,5 +25,6 @@
   ],
   "result": {
     "item": "butchercraft:grinder_block_item"
-  }
+  },
+  "show_notification": true
 }

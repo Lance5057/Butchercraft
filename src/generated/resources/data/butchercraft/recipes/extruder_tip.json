@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "C": {
       "item": "minecraft:iron_ingot"
@@ -14,5 +15,6 @@
   ],
   "result": {
     "item": "butchercraft:extruder_tip"
-  }
+  },
+  "show_notification": true
 }

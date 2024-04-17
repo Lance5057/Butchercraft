@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:cow_hide"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }
