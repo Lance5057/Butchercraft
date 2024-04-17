@@ -1,9 +1,5 @@
 package com.lance5057.butchercraft.workstations.bases.recipes;
 
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -12,9 +8,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
-
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.Registry;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.Item;
@@ -24,6 +19,11 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.crafting.IShapedRecipe;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class MultiToolRecipe implements IShapedRecipe<WorkstationRecipeWrapper> {
 	static int MAX_WIDTH = 5;
@@ -215,9 +215,10 @@ public class MultiToolRecipe implements IShapedRecipe<WorkstationRecipeWrapper> 
 
 	public static ItemStack deserializeItem(JsonObject object) {
 		String s = GsonHelper.convertToString(object, "item");
-		Item item = Registry.ITEM.getOptional(new ResourceLocation(s)).orElseThrow(() -> {
-			return new JsonSyntaxException("Unknown item '" + s + "'");
-		});
+		Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(s));
+		if (item == null) {
+			throw new JsonSyntaxException("Unknown item '" + s + "'");
+		}
 		if (object.has("data")) {
 			throw new JsonParseException("Disallowed data tag found");
 		} else {
@@ -354,7 +355,7 @@ public class MultiToolRecipe implements IShapedRecipe<WorkstationRecipeWrapper> 
 	}
 
 	@Override
-	public ItemStack assemble(WorkstationRecipeWrapper p_77572_1_) {
+	public ItemStack assemble(WorkstationRecipeWrapper p_77572_1_, RegistryAccess registryAccess) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -366,7 +367,7 @@ public class MultiToolRecipe implements IShapedRecipe<WorkstationRecipeWrapper> 
 	}
 
 	@Override
-	public ItemStack getResultItem() {
+	public ItemStack getResultItem(RegistryAccess registryAccess) {
 		// TODO Auto-generated method stub
 		return null;
 	}

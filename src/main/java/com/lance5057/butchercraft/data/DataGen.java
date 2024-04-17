@@ -11,7 +11,6 @@ import com.lance5057.butchercraft.data.builders.ItemModels;
 import com.lance5057.butchercraft.data.builders.ItemTagGenerator;
 import com.lance5057.butchercraft.data.builders.PoiTagGenerator;
 import com.lance5057.butchercraft.data.builders.recipes.ButchercraftRecipeProvider;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

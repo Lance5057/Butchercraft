@@ -1,16 +1,14 @@
 package com.lance5057.butchercraft.data.builders;
 
-import org.jetbrains.annotations.Nullable;
-
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.Nullable;
 
 public class ItemTagGenerator extends ItemTagsProvider {
 

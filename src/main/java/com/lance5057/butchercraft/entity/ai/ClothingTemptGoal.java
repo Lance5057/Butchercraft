@@ -1,7 +1,6 @@
 package com.lance5057.butchercraft.entity.ai;
 
 import com.lance5057.butchercraft.ButchercraftMobEffects;
-
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;

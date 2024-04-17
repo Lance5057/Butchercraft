@@ -3,8 +3,8 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
-
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -44,7 +44,7 @@ public class ButcherBlockRecipe implements Recipe<ButcherBlockContainer> {
 	}
 
 	@Override
-	public ItemStack assemble(ButcherBlockContainer pContainer) {
+	public ItemStack assemble(ButcherBlockContainer pContainer, RegistryAccess registryAccess) {
 		return ItemStack.EMPTY;
 	}
 
@@ -54,7 +54,7 @@ public class ButcherBlockRecipe implements Recipe<ButcherBlockContainer> {
 	}
 
 	@Override
-	public ItemStack getResultItem() {
+	public ItemStack getResultItem(RegistryAccess registryAccess) {
 		return ItemStack.EMPTY;
 	}
 

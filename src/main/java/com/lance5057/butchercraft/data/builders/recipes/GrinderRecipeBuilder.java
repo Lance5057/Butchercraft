@@ -1,14 +1,9 @@
 package com.lance5057.butchercraft.data.builders.recipes;
 
-import java.util.function.Consumer;
-
-import javax.annotation.Nullable;
-
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRecipeSerializer;
-
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -22,6 +17,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import javax.annotation.Nullable;
+import java.util.function.Consumer;
 
 public class GrinderRecipeBuilder implements RecipeBuilder {
 	private final Item result;

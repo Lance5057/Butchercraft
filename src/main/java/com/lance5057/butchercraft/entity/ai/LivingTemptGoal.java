@@ -1,14 +1,13 @@
 package com.lance5057.butchercraft.entity.ai;
 
-import java.util.EnumSet;
-
-import javax.annotation.Nullable;
-
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.item.crafting.Ingredient;
+
+import javax.annotation.Nullable;
+import java.util.EnumSet;
 
 public class LivingTemptGoal extends Goal {
 	private static final TargetingConditions TEMP_TARGETING = TargetingConditions.forNonCombat().range(10.0D)
@@ -46,7 +45,7 @@ public class LivingTemptGoal extends Goal {
 			--this.calmDown;
 			return false;
 		} else {
-			this.entity = this.mob.level.getNearestEntity(LivingEntity.class, this.targetingConditions, this.mob, mob.getX(), mob.getY(), mob.getZ(), mob.getBoundingBox().inflate(5));
+			this.entity = this.mob.level().getNearestEntity(LivingEntity.class, this.targetingConditions, this.mob, mob.getX(), mob.getY(), mob.getZ(), mob.getBoundingBox().inflate(5));
 			return this.entity != null;
 		}
 	}

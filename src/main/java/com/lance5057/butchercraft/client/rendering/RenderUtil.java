@@ -1,24 +1,23 @@
 package com.lance5057.butchercraft.client.rendering;
 
-import java.util.List;
-
 import com.lance5057.butchercraft.client.BlacklistedModel;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Quaternion;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.client.model.renderable.BakedModelRenderable;
 import net.minecraftforge.client.model.renderable.IRenderable;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.joml.Quaternionf;
+
+import java.util.List;
 
 public class RenderUtil {
 
@@ -48,9 +47,9 @@ public class RenderUtil {
 			matrixStackIn.translate(transform.getLocation().getX().animate(timer) / 16,
 					transform.getLocation().getY().animate(timer) / 16,
 					transform.getLocation().getZ().animate(timer) / 16);
-			matrixStackIn.mulPose(new Quaternion(transform.getRotation().getX().animate(timer),
+			matrixStackIn.mulPose(new Quaternionf(transform.getRotation().getX().animate(timer),
 					transform.getRotation().getY().animate(timer), transform.getRotation().getZ().animate(timer),
-					true));
+					1));
 			matrixStackIn.scale(1+transform.getScale().getX().animate(timer),
 					1+transform.getScale().getY().animate(timer), 1+transform.getScale().getZ().animate(timer));
 
@@ -75,15 +74,15 @@ public class RenderUtil {
 					(transform.getLocation().getY().getOffset() + transform.getLocation().getY().animate(timer) / 16),
 					(transform.getLocation().getZ().getOffset() + transform.getLocation().getZ().animate(timer) / 16));
 
-			matrixStackIn.mulPose(new Quaternion(
+			matrixStackIn.mulPose(new Quaternionf(
 					transform.getRotation().getX().getOffset() + transform.getRotation().getX().animate(timer),
 					transform.getRotation().getY().getOffset() + transform.getRotation().getY().animate(timer),
-					transform.getRotation().getZ().getOffset() + transform.getRotation().getZ().animate(timer), true));
+					transform.getRotation().getZ().getOffset() + transform.getRotation().getZ().animate(timer), 1));
 
 			matrixStackIn.scale(transform.getScale().getX().animate(timer),
 					transform.getScale().getY().animate(timer), transform.getScale().getZ().animate(timer));
 
-			itemRenderer.render(stack, ItemTransforms.TransformType.NONE, false, matrixStackIn, bufferIn,
+			itemRenderer.render(stack, ItemDisplayContext.NONE, false, matrixStackIn, bufferIn,
 					combinedLightIn, combinedOverlayIn, bakedmodel);
 		}
 		matrixStackIn.popPose();

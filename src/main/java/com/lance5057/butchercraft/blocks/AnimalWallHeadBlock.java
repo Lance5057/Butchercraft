@@ -1,7 +1,6 @@
 package com.lance5057.butchercraft.blocks;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.SkullBlock;
 import net.minecraft.world.level.block.WallSkullBlock;

@@ -1,18 +1,11 @@
 package com.lance5057.butchercraft.data.builders;
 
-import java.util.function.Consumer;
-
-import javax.annotation.Nonnull;
-
-import org.jetbrains.annotations.NotNull;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
-
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.advancements.FrameType;
@@ -31,6 +24,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nonnull;
+import java.util.function.Consumer;
 
 public class Advancements extends AdvancementProvider {
 	private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();

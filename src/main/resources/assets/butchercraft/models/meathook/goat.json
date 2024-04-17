@@ -3,8 +3,8 @@
 	"parent": "block/block",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "butchercraft:models/goat_hooked",
-		"particle": "butchercraft:models/goat_hooked"
+		"0": "butchercraft:models/meathook/goat_hooked",
+		"particle": "butchercraft:models/meathook/goat_hooked"
 	},
 	"elements": [
 		{

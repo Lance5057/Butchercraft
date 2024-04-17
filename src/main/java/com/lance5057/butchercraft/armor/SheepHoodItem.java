@@ -1,9 +1,6 @@
 package com.lance5057.butchercraft.armor;
 
-import java.util.function.Consumer;
-
 import com.lance5057.butchercraft.armor.models.SheepHoodModel;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -16,9 +13,11 @@ import net.minecraft.world.item.DyeableArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
+import java.util.function.Consumer;
+
 public class SheepHoodItem extends DyeableArmorItem {
 	public SheepHoodItem(ArmorMaterial pMaterial, Properties pProperties) {
-		super(pMaterial, EquipmentSlot.HEAD, pProperties);
+		super(pMaterial, Type.HELMET, pProperties);
 	}
 
 	@Override

@@ -3,9 +3,9 @@
 	"texture_size": [64, 32],
 	"render_type": "cutout",
 	"textures": {
-		"0": "butchercraft:models/sheep",
+		"0": "butchercraft:models/meathook/sheep",
 		"1": "entity/sheep/sheep_fur",
-		"particle": "butchercraft:models/sheep"
+		"particle": "butchercraft:models/meathook/sheep"
 	},
 	"elements": [
 		{

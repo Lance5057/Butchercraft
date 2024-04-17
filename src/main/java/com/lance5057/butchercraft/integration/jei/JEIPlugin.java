@@ -1,14 +1,11 @@
 package com.lance5057.butchercraft.integration.jei;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.integration.jei.categories.ButcherBlockRecipeCategory;
 import com.lance5057.butchercraft.integration.jei.categories.GrinderRecipeCategory;
 import com.lance5057.butchercraft.integration.jei.categories.MeatHookRecipeCategory;
-
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
@@ -17,6 +14,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {

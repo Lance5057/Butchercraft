@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "butchercraft:models/armor/pig_hood_layer_1"
+		"0": "models/armor/pig_hood_layer_1"
 	},
 	"elements": [
 		{

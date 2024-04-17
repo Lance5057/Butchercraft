@@ -1,16 +1,15 @@
 package com.lance5057.butchercraft.workstations.bases.recipes;
 
-import java.util.List;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.client.BlacklistedModel;
 import com.lance5057.butchercraft.util.RecipeItemUse;
-
 import net.minecraft.core.Vec3i;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
+
+import java.util.List;
 
 public class AnimatedRecipeItemUse extends RecipeItemUse {
 

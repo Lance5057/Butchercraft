@@ -29,9 +29,6 @@ import com.lance5057.butchercraft.client.block_models.SheepSkullHeadModel;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.inventory.MerchantScreen;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.resources.ResourceLocation;
@@ -53,15 +50,16 @@ import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
@@ -88,7 +86,7 @@ public class ButchercraftModEvents {
 	}
 
 	public static void breedEvent(BabyEntitySpawnEvent event) {
-		Level level = event.getChild().level;
+		Level level = event.getChild().level();
 
 		if (level instanceof ServerLevel) {
 			ServerLevel server = (ServerLevel) level;
@@ -171,7 +169,7 @@ public class ButchercraftModEvents {
 			if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.get())
 					|| event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY.get())) {
 				v.setUnhappyCounter(40);
-				if (!v.level.isClientSide()) {
+				if (!v.level().isClientSide()) {
 					v.playSound(SoundEvents.VILLAGER_NO, 1, v.getVoicePitch());
 				}
 				event.setCancellationResult(InteractionResult.FAIL);
@@ -196,7 +194,7 @@ public class ButchercraftModEvents {
 			ItemStack stack = event.getItem();
 			if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
 					|| stack.getItem() instanceof MilkBucketItem) {
-				switch (event.getEntity().level.random.nextInt(3)) {
+				switch (event.getEntity().level().random.nextInt(3)) {
 				case 0:
 					event.getEntity().addEffect(new MobEffectInstance(MobEffects.POISON, 600));
 				case 1:
@@ -284,6 +282,36 @@ public class ButchercraftModEvents {
 		}
 		if (!event.has(EntityType.CHICKEN, Attributes.ATTACK_DAMAGE)) {
 			event.add(EntityType.CHICKEN, Attributes.ATTACK_DAMAGE, 2);
+		}
+	}
+
+	@SubscribeEvent
+	public static void buildContents(BuildCreativeModeTabContentsEvent event) {
+		if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+			event.accept(ButchercraftItems.COW_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.COW_SKULL_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.SHEEP_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.SHEEP_SKULL_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.PIG_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.PIG_SKULL_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.GOAT_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.GOAT_SKULL_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.CHICKEN_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.CHICKEN_SKULL_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.RABBIT_BROWN_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.RABBIT_BLACK_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.RABBIT_GOLD_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.RABBIT_SALT_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.RABBIT_SPLOTCHED_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.RABBIT_WHITE_HEAD_ITEM::get);
+			event.accept(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM::get);
+		}
+
+		// TODO: filter out heads + skulls
+		if (event.getTabKey() == ButchercraftItems.BUTCHER_TAB.getKey()) {
+			ButchercraftItems.ITEMS.getEntries().forEach(obj -> {
+				event.accept(obj::get);
+			});
 		}
 	}
 
