@@ -1,26 +1,29 @@
 package com.lance5057.butchercraft.data.builders;
 
+import java.util.concurrent.CompletableFuture;
+
 import org.jetbrains.annotations.Nullable;
 
+import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ItemTagGenerator extends ItemTagsProvider {
 
-	public ItemTagGenerator(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId,
-			@Nullable ExistingFileHelper existingFileHelper) {
-		super(pGenerator, pBlockTagsProvider, modId, existingFileHelper);
+	public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper) {
+		super(pOutput, pLookupProvider, pBlockTags, Butchercraft.MOD_ID, existingFileHelper);
 	}
 
 	@Override
-	protected void addTags() {
+	protected void addTags(HolderLookup.Provider pProvider) {
 		// Goat
 		tag(ButchercraftItemTags.GOAT_RIBS_RAW).add(ButchercraftItems.GOAT_RIBS.get());
 		tag(ButchercraftItemTags.GOAT_RIBS_COOKED).add(ButchercraftItems.COOKED_GOAT_RIBS.get());

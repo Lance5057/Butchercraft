@@ -1,17 +1,17 @@
 package com.lance5057.butchercraft.data.builders.recipes.loottables;
 
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
 
-public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
+public class ButcherBlockLootTables implements LootTableSubProvider {
 
 	public static final ResourceLocation PLUCK_CHICKEN = new ResourceLocation(Butchercraft.MOD_ID,
 			"butcherblock/pluck_chicken");
@@ -143,7 +143,7 @@ public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocat
 	public static final ResourceLocation EMPTY = new ResourceLocation(Butchercraft.MOD_ID, "empty");
 
 	@Override
-	public void accept(BiConsumer<ResourceLocation, Builder> t) {
+	public void generate(BiConsumer<ResourceLocation, Builder> t) {
 		t.accept(EMPTY, LootTable.lootTable());
 
 		t.accept(CASING,

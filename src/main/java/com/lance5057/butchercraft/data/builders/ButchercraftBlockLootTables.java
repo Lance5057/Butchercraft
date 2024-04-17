@@ -1,16 +1,23 @@
 package com.lance5057.butchercraft.data.builders;
 
+import java.util.Collections;
+
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.butchercraft.ButchercraftBlocks;
 
-import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ButchercraftBlockLootTables extends BlockLoot {
+public class ButchercraftBlockLootTables extends BlockLootSubProvider {
+	protected ButchercraftBlockLootTables() {
+		super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags());
+	}
+
 	@Override
-	protected void addTables() {
+	protected void generate() {
 		dropSelf(ButchercraftBlocks.MEAT_HOOK.get());
 
 		dropSelf(ButchercraftBlocks.BUTCHER_BLOCK.get());

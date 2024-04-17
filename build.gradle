@@ -99,9 +99,6 @@ minecraft {
 
 sourceSets {
     main {
-        java {
-            exclude("com/lance5057/butchercraft/data") // TODO
-        }
         resources {
             srcDirs = [
                     "$rootDir/src/main/resources",
