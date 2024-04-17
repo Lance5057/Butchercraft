@@ -218,12 +218,13 @@ public class MeatHookBlockEntity extends BlockEntity {
 					progress++;
 					if (this.progress >= this.maxProgress) {
 						if (butcheringTool.isDamageableItem())
-							butcheringTool.hurtAndBreak(1, p, null);
+							butcheringTool.hurtAndBreak(1, p, (x) -> {
+								x.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+							});
 						else
 							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 						if (isFinalStage(recipe)) {
 
-//
 							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
 							this.finishRecipe();
 						} else {
@@ -234,7 +235,9 @@ public class MeatHookBlockEntity extends BlockEntity {
 						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1, 1);
 					} else {
 						if (butcheringTool.isDamageableItem())
-							butcheringTool.hurtAndBreak(1, p, null);
+							butcheringTool.hurtAndBreak(1, p, (x) -> {
+								x.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+							});
 						else
 							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 

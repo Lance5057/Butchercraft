@@ -16,6 +16,7 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -173,7 +174,9 @@ public abstract class MultiToolRecipeStation<V extends MultiToolRecipe> extends 
 							level.playSound(Player, worldPosition, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1, 0);
 
 							if (hammer.isDamageableItem())
-								hammer.hurtAndBreak(1, Player, null);
+								hammer.hurtAndBreak(1, Player, (x) -> {
+									x.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+								});
 							else
 								hammer.setCount(hammer.getCount() - this.toolCount);
 
@@ -183,7 +186,9 @@ public abstract class MultiToolRecipeStation<V extends MultiToolRecipe> extends 
 						}
 					} else {
 						if (hammer.isDamageableItem())
-							hammer.hurtAndBreak(1, Player, null);
+							hammer.hurtAndBreak(1, Player, (x) -> {
+								x.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+							});
 						else
 							hammer.setCount(hammer.getCount() - this.toolCount);
 

@@ -21,7 +21,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '2.3.11'
+version = '2.3.12'
 group = 'com.lance5057.butchercraft' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'butchercraft'
 
