@@ -1,7 +1,13 @@
 package com.lance5057.butchercraft.data.builders.recipes.loottables;
 
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+
+import org.jetbrains.annotations.NotNull;
+
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -13,10 +19,6 @@ import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 

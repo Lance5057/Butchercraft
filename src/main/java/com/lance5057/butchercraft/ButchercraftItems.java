@@ -23,6 +23,7 @@ import com.lance5057.butchercraft.items.ButcherKnifeItem;
 import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.items.KnifeItem;
 import com.lance5057.butchercraft.items.SoapItem;
+
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;

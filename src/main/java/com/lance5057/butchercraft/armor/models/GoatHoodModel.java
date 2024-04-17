@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft.armor.models;
 
 import com.lance5057.butchercraft.Butchercraft;
+
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;

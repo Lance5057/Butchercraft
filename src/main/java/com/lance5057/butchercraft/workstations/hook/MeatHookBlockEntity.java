@@ -1,5 +1,10 @@
 package com.lance5057.butchercraft.workstations.hook;
 
+import java.util.Optional;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.ButchercraftRecipes;
@@ -8,6 +13,7 @@ import com.lance5057.butchercraft.armor.BootsItem;
 import com.lance5057.butchercraft.armor.GlovesItem;
 import com.lance5057.butchercraft.armor.MaskItem;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -38,10 +44,6 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.Optional;
 
 // TODO Track recipe stage and damage tool on use
 public class MeatHookBlockEntity extends BlockEntity {

@@ -1,7 +1,13 @@
 package com.lance5057.butchercraft;
 
+import java.util.function.Consumer;
+
+import org.antlr.v4.runtime.misc.NotNull;
+
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
+import org.joml.Vector3f;
+
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -16,10 +22,6 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.antlr.v4.runtime.misc.NotNull;
-import org.joml.Vector3f;
-
-import java.util.function.Consumer;
 
 public class ButchercraftFluids {
 	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister

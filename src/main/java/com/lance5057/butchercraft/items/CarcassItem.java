@@ -3,6 +3,7 @@ package com.lance5057.butchercraft.items;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.armor.ApronItem;
 import com.lance5057.butchercraft.armor.BootsItem;
+
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;

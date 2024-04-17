@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft.entity.ai;
 
 import com.lance5057.butchercraft.ButchercraftMobEffects;
+
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;

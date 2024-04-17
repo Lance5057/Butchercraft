@@ -1,14 +1,15 @@
 package com.lance5057.butchercraft.data.builders.recipes.loottables;
 
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTable.Builder;
-
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class ButcherBlockLootTables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
 

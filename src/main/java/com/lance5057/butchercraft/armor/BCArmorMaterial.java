@@ -1,6 +1,9 @@
 package com.lance5057.butchercraft.armor;
 
+import java.util.function.Supplier;
+
 import com.lance5057.butchercraft.ButchercraftItems;
+
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
@@ -9,8 +12,6 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-
-import java.util.function.Supplier;
 
 public enum BCArmorMaterial implements ArmorMaterial {
 

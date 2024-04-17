@@ -1,6 +1,8 @@
 package com.lance5057.butchercraft.items;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import org.joml.Quaternionf;
+
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.player.LocalPlayer;
@@ -21,7 +23,6 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
-import org.joml.Quaternionf;
 
 public class SoapItem extends Item {
 

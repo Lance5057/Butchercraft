@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft.client.rendering.animation.floats;
 
 import com.google.gson.JsonObject;
+
 import net.minecraft.network.FriendlyByteBuf;
 
 public class AnimatedFloat {

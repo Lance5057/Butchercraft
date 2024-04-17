@@ -3,6 +3,7 @@ package com.lance5057.butchercraft.workstations.hook;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;

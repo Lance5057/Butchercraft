@@ -3,6 +3,7 @@ package com.lance5057.butchercraft;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRecipe;
 import com.lance5057.butchercraft.workstations.hook.HookRecipe;
+
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.eventbus.api.IEventBus;

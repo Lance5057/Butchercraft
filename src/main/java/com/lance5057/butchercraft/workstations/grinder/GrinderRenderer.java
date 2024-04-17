@@ -2,6 +2,8 @@ package com.lance5057.butchercraft.workstations.grinder;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.mojang.blaze3d.vertex.PoseStack;
+import org.joml.Quaternionf;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -19,7 +21,6 @@ import net.minecraftforge.client.model.renderable.IRenderable;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
-import org.joml.Quaternionf;
 
 public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> {
 	int timer = 0;

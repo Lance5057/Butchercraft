@@ -7,6 +7,7 @@ import com.lance5057.butchercraft.blocks.TaxidermyBlock;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockBlock;
 import com.lance5057.butchercraft.workstations.grinder.GrinderBlock;
 import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
+
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;

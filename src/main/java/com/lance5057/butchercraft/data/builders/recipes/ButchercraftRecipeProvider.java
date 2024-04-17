@@ -1,5 +1,9 @@
 package com.lance5057.butchercraft.data.builders.recipes;
 
+import java.util.function.Consumer;
+
+import javax.annotation.Nonnull;
+
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.client.BlacklistedModel;
@@ -9,6 +13,7 @@ import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFlo
 import com.lance5057.butchercraft.data.builders.recipes.loottables.ButcherBlockLootTables;
 import com.lance5057.butchercraft.data.builders.recipes.loottables.MeatHookLoottables;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -24,9 +29,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.DifferenceIngredient;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import javax.annotation.Nonnull;
-import java.util.function.Consumer;
 
 public class ButchercraftRecipeProvider extends RecipeProvider {
 

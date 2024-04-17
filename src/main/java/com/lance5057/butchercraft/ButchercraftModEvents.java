@@ -29,6 +29,7 @@ import com.lance5057.butchercraft.client.block_models.SheepSkullHeadModel;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
+
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.resources.ResourceLocation;

@@ -1,12 +1,14 @@
 package com.lance5057.butchercraft.data.builders;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.entity.ButchercraftVillagers;
+
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.PoiTypeTagsProvider;
 import net.minecraft.tags.PoiTypeTags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
 
 public class PoiTagGenerator extends PoiTypeTagsProvider {
 

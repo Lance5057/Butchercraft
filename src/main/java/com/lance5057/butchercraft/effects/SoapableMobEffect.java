@@ -1,12 +1,13 @@
 package com.lance5057.butchercraft.effects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.lance5057.butchercraft.ButchercraftItems;
+
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SoapableMobEffect extends MobEffect {
 

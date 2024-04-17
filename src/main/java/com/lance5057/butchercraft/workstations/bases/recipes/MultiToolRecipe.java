@@ -1,5 +1,9 @@
 package com.lance5057.butchercraft.workstations.bases.recipes;
 
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -8,6 +12,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
+
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
@@ -20,10 +25,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.crafting.IShapedRecipe;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 public class MultiToolRecipe implements IShapedRecipe<WorkstationRecipeWrapper> {
 	static int MAX_WIDTH = 5;
