@@ -1,9 +1,9 @@
-// 1.20.1	2024-04-17T12:46:06.960149	Loot Tables
+// 1.20.1	2024-04-17T12:57:32.349945	Loot Tables
 2bcf2a9eb98e6e2d39b76b1d94e45a22406181e4 data/butchercraft/loot_tables/blocks/barn_wood_block.json
-7f48ccdefc107959773198f7ecb82afc3ebeee6a data/butchercraft/loot_tables/blocks/barn_wood_door.json
+b3286f8c44cf3888fa8f3a72cdf384fb811baaab data/butchercraft/loot_tables/blocks/barn_wood_door.json
 a5b96b97aa5388b3b64fb2b52a369611136bc379 data/butchercraft/loot_tables/blocks/barn_wood_fence.json
 be26f71bc2e52503fcb3b4304ec5fa9084a3b29d data/butchercraft/loot_tables/blocks/barn_wood_fence_gate.json
-2d76b44d98b061c3e3236304cd6b49404574d6e7 data/butchercraft/loot_tables/blocks/barn_wood_slab.json
+7e7f69a1503822d8dc2685f3c67c68321215f418 data/butchercraft/loot_tables/blocks/barn_wood_slab.json
 0cf5d6fac8a8c415fdbce1224b0ff681f6f3b724 data/butchercraft/loot_tables/blocks/barn_wood_stairs.json
 398f0fde58c5d2371c2e6d096c00e7a0a194d36e data/butchercraft/loot_tables/blocks/barn_wood_trapdoor.json
 3a470af1b5cd33bedca5a0eff4c7821ebeffd09c data/butchercraft/loot_tables/blocks/beef_block.json

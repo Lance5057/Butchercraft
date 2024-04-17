@@ -62,11 +62,6 @@ public class ButchercraftBlockLootTables extends BlockLootSubProvider {
 		dropSelf(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get());
 		dropSelf(ButchercraftBlocks.TAXIDERMY_WHITE_RABBIT_BLOCK.get());
 
-		dropSelf(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
-		dropSelf(ButchercraftBlocks.BARN_WOOD_DOOR.get());
-		dropSelf(ButchercraftBlocks.BARN_WOOD_SLAB.get());
-		dropSelf(ButchercraftBlocks.BARN_WOOD_STAIRS.get());
-
 		dropSelf(ButchercraftBlocks.COW_HEAD.get());
 		dropSelf(ButchercraftBlocks.COW_SKULL_HEAD.get());
 		dropSelf(ButchercraftBlocks.SHEEP_HEAD.get());
@@ -87,8 +82,8 @@ public class ButchercraftBlockLootTables extends BlockLootSubProvider {
 		dropSelf(ButchercraftBlocks.RABBIT_SKULL_HEAD.get());
 
 		dropSelf(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
-		createDoorTable(ButchercraftBlocks.BARN_WOOD_DOOR.get());
-		createSlabItemTable(ButchercraftBlocks.BARN_WOOD_SLAB.get());
+		add(ButchercraftBlocks.BARN_WOOD_DOOR.get(), createDoorTable(ButchercraftBlocks.BARN_WOOD_DOOR.get()));
+		add(ButchercraftBlocks.BARN_WOOD_SLAB.get(), createSlabItemTable(ButchercraftBlocks.BARN_WOOD_SLAB.get()));
 		dropSelf(ButchercraftBlocks.BARN_WOOD_STAIRS.get());
 		dropSelf(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get());
 		dropSelf(ButchercraftBlocks.BARN_WOOD_FENCE.get());
