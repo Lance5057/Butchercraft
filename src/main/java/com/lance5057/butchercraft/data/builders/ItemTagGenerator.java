@@ -391,16 +391,17 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.TRIPE).addTag(ButchercraftItemTags.TRIPE_RAW)
 				.addTag(ButchercraftItemTags.TRIPE_COOKED);
 
-		tag(ButchercraftItemTags.OFFAL_COOKED).addTag(ButchercraftItemTags.HEART_COOKED).addTag(ButchercraftItemTags.LUNG_COOKED)
-				.addTag(ButchercraftItemTags.KIDNEY_COOKED).addTag(ButchercraftItemTags.LIVER_COOKED)
-				.addTag(ButchercraftItemTags.BRAIN_COOKED).addTag(ButchercraftItemTags.TRIPE_COOKED);
+		tag(ButchercraftItemTags.OFFAL_COOKED).addTag(ButchercraftItemTags.HEART_COOKED)
+				.addTag(ButchercraftItemTags.LUNG_COOKED).addTag(ButchercraftItemTags.KIDNEY_COOKED)
+				.addTag(ButchercraftItemTags.LIVER_COOKED).addTag(ButchercraftItemTags.BRAIN_COOKED)
+				.addTag(ButchercraftItemTags.TRIPE_COOKED);
 
 		tag(ButchercraftItemTags.OFFAL_RAW).addTag(ButchercraftItemTags.HEART_RAW).addTag(ButchercraftItemTags.LUNG_RAW)
 				.addTag(ButchercraftItemTags.KIDNEY_RAW).addTag(ButchercraftItemTags.LIVER_RAW)
 				.addTag(ButchercraftItemTags.BRAIN_RAW).addTag(ButchercraftItemTags.TRIPE_RAW);
-		
+
 		tag(ButchercraftItemTags.OFFAL).addTag(ButchercraftItemTags.OFFAL_RAW)
-		.addTag(ButchercraftItemTags.OFFAL_COOKED);
+				.addTag(ButchercraftItemTags.OFFAL_COOKED);
 
 		tag(ButchercraftItemTags.GELATIN_PROVIDER).add(ButchercraftItems.COW_HIDE.get(),
 				ButchercraftItems.PIG_HIDE.get(), ButchercraftItems.SHEEP_HIDE.get(), Items.BONE,
@@ -420,6 +421,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.SAUSAGE).addTag(ButchercraftItemTags.SAUSAGE_COOKED)
 				.addTag(ButchercraftItemTags.SAUSAGE_RAW).addTag(ButchercraftItemTags.BLOOD_SAUSAGE_COOKED)
 				.addTag(ButchercraftItemTags.BLOOD_SAUSAGE_RAW);
+
+		tag(ButchercraftItemTags.OXTAIL_RAW).add(ButchercraftItems.OXTAIL.get());
+		tag(ButchercraftItemTags.OXTAIL_COOKED).add(ButchercraftItems.COOKED_OXTAIL.get());
+		tag(ButchercraftItemTags.OXTAIL).addTag(ButchercraftItemTags.OXTAIL_COOKED)
+				.addTag(ButchercraftItemTags.OXTAIL_COOKED);
 
 		tag(ButchercraftItemTags.COW_CARCASS).add(ButchercraftItems.COW_CARCASS.get());
 		tag(ButchercraftItemTags.CHICKEN_CARCASS).add(ButchercraftItems.CHICKEN_CARCASS.get()).add(Items.CHICKEN);

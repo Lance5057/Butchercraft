@@ -20,6 +20,9 @@ public class EnglishLoc extends LanguageProvider {
 		Butchercraft.logger.info("\tEN_US Localization");
 
 		this.add("itemGroup.butchercraft.items", "Butchercraft Items");
+		this.add("Butchercraft.jei.hook", "Meat Hook");
+		this.add("Butchercraft.jei.butcherblock", "Butcher Block");
+		this.add("Butchercraft.jei.grinder", "Meat Grinder");
 
 		this.add(ButchercraftItems.COOKED_BEEF_SCRAPS.get(), "Cooked Beef Straps");
 		this.add(ButchercraftItems.BEEF_SCRAPS.get(), "Raw Beef Scraps");

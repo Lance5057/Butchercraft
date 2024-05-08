@@ -1,4 +1,4 @@
-// 1.19.2	2024-04-27T10:33:38.8349514	Tags for minecraft:item
+// 1.19.2	2024-05-03T10:28:14.9669475	Tags for minecraft:item
 30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/items/chicken_carcass.json
 ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/items/cow_carcass.json
 66da3e39032bb6edf49b68f597c0d5f9b7cb5166 data/butchercraft/tags/items/gelatin_provider.json
@@ -16,6 +16,9 @@ c9b5bcf5669f6cf62dda80845fbb1194149c7563 data/forge/tags/items/beef/cubed/raw.js
 040a82995172c4ee444600aeba7754433e0e7bd6 data/forge/tags/items/beef/ground.json
 ebc19dd1aab04900536b4f978684150ff97655c1 data/forge/tags/items/beef/ground/cooked.json
 58f00ae7e8456e7773e5115c6be5f2e495d6c046 data/forge/tags/items/beef/ground/raw.json
+399d780bd815b3218d1b5e1e132e188eedc6f4a7 data/forge/tags/items/beef/oxtail.json
+e89c9d229159f6251357d86bee722b2a6b58fb4d data/forge/tags/items/beef/oxtail/cooked.json
+68a258479433894367a44e8dd441b13434c2bed9 data/forge/tags/items/beef/oxtail/raw.json
 51bbc160ad98995487d22b349d11a2549fa76fc5 data/forge/tags/items/beef/raw.json
 9b2c66c4bd9e781120fbd2dde0947b380a7192da data/forge/tags/items/beef/ribs.json
 8b5e503a9b0f6ea07e09873f77263ef8876257ce data/forge/tags/items/beef/ribs/cooked.json
