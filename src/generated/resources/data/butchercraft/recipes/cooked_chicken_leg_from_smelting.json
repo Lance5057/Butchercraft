@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:chicken_leg"
+  },
+  "result": "butchercraft:cooked_chicken_leg"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:ground_chicken"
+  },
+  "result": "butchercraft:cooked_ground_chicken"
+}

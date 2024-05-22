@@ -1,4 +1,4 @@
-// 1.19.2	2024-05-03T10:28:14.9669475	Tags for minecraft:item
+// 1.19.2	2024-05-22T10:00:54.7444829	Tags for minecraft:item
 30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/items/chicken_carcass.json
 ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/items/cow_carcass.json
 66da3e39032bb6edf49b68f597c0d5f9b7cb5166 data/butchercraft/tags/items/gelatin_provider.json
@@ -189,7 +189,7 @@ cd09d0bd2502f17520be606eac462355e2cedb8d data/forge/tags/items/slimeballs.json
 9a2ed5df55480147216b40ff4e19166b32de3a11 data/forge/tags/items/stomach.json
 7254e07a6db626a376d59b9fea92afbd80906e95 data/forge/tags/items/stomach/cooked.json
 76bb35b63c283b0f9a98dc97c550b78c753d54c3 data/forge/tags/items/stomach/raw.json
-0af0673d94e4a49f2f10115b5b0784153a1ff214 data/forge/tags/items/string.json
+03707a6b20761eda068121dc7b842aead0bbeebc data/forge/tags/items/string.json
 da239695fcf5fac7b20fe260ddf448d047f51450 data/forge/tags/items/tripe.json
 f826a746873f047e45d29c16212dd811fb6ee3ae data/forge/tags/items/tripe/cooked.json
 dd4a57bc2f37aac7fa54049c3b26180591a464ed data/forge/tags/items/tripe/raw.json
