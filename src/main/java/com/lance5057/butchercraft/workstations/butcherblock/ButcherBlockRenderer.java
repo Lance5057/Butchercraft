@@ -28,7 +28,7 @@ public class ButcherBlockRenderer implements BlockEntityRenderer<ButcherBlockBlo
 			Quaternionf q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
 
 			pPoseStack.mulPose(q);
-			pPoseStack.mulPose(new Quaternionf(-90, 0, 0, 1));
+			pPoseStack.mulPose(RenderUtil.createQuaternion(-90, 0, 0, true));
 
 			pPoseStack.translate(-0.5f, 0, -0.5f);
 

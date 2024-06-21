@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +22,28 @@ import net.minecraftforge.client.model.renderable.IRenderable;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class RenderUtil {
+
+	public static Quaternionf createQuaternion(float x, float y, float z, boolean degrees) {
+		if (degrees) {
+			x *= (float) (Math.PI / 180.0);
+			y *= (float) (Math.PI / 180.0);
+			z *= (float) (Math.PI / 180.0);
+		}
+
+		float f = Mth.sin(0.5F * x);
+		float g = Mth.cos(0.5F * x);
+		float h = Mth.sin(0.5F * y);
+		float i = Mth.cos(0.5F * y);
+		float j = Mth.sin(0.5F * z);
+		float k = Mth.cos(0.5F * z);
+
+		return new Quaternionf(
+				f * i * k + g * h * j,
+				g * h * k - f * i * j,
+				f * h * k + g * i * j,
+				g * i * k - f * h * j
+		);
+	}
 
 	public static void loadModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,
 			int combinedOverlayIn, BlacklistedModel model, float timer) {
@@ -48,9 +71,9 @@ public class RenderUtil {
 			matrixStackIn.translate(transform.getLocation().getX().animate(timer) / 16,
 					transform.getLocation().getY().animate(timer) / 16,
 					transform.getLocation().getZ().animate(timer) / 16);
-			matrixStackIn.mulPose(new Quaternionf(transform.getRotation().getX().animate(timer),
+			matrixStackIn.mulPose(createQuaternion(transform.getRotation().getX().animate(timer),
 					transform.getRotation().getY().animate(timer), transform.getRotation().getZ().animate(timer),
-					1));
+					true));
 			matrixStackIn.scale(1+transform.getScale().getX().animate(timer),
 					1+transform.getScale().getY().animate(timer), 1+transform.getScale().getZ().animate(timer));
 
@@ -75,10 +98,10 @@ public class RenderUtil {
 					(transform.getLocation().getY().getOffset() + transform.getLocation().getY().animate(timer) / 16),
 					(transform.getLocation().getZ().getOffset() + transform.getLocation().getZ().animate(timer) / 16));
 
-			matrixStackIn.mulPose(new Quaternionf(
+			matrixStackIn.mulPose(createQuaternion(
 					transform.getRotation().getX().getOffset() + transform.getRotation().getX().animate(timer),
 					transform.getRotation().getY().getOffset() + transform.getRotation().getY().animate(timer),
-					transform.getRotation().getZ().getOffset() + transform.getRotation().getZ().animate(timer), 1));
+					transform.getRotation().getZ().getOffset() + transform.getRotation().getZ().animate(timer), true));
 
 			matrixStackIn.scale(transform.getScale().getX().animate(timer),
 					transform.getScale().getY().animate(timer), transform.getScale().getZ().animate(timer));

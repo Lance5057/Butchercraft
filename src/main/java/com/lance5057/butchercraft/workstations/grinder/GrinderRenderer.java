@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft.workstations.grinder;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import org.joml.Quaternionf;
 
@@ -42,13 +43,13 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 		pPoseStack.translate(0.5, 0.23, 0.5);
 		
 		pPoseStack.mulPose(q);
-		pPoseStack.mulPose(new Quaternionf(0, 0, 180, 1));
+		pPoseStack.mulPose(RenderUtil.createQuaternion(0, 0, 180, true));
 		pPoseStack.translate(0, 0.34, 0);
 
 		float g = pBlockEntity.getGrind();
 		float mg = pBlockEntity.getMaxGrind();
 		float r = mg == 0 ? 1 : 360 / (mg + 1);
-		pPoseStack.mulPose(new Quaternionf(0, g * r, 0, 1));
+		pPoseStack.mulPose(RenderUtil.createQuaternion(0, g * r, 0, true));
 		pPoseStack.translate(-0.5, 0, -0.05);
 		model.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
 				pPackedOverlay, pPartialTick, ModelData.EMPTY);
@@ -85,12 +86,12 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 			pPoseStack.translate(0.5f, -1, 0.5f);
 
 			pPoseStack.mulPose(q);
-			pPoseStack.mulPose(new Quaternionf(-90, 0, 0, 1));
+			pPoseStack.mulPose(RenderUtil.createQuaternion(-90, 0, 0, true));
 			pPoseStack.translate(-0.5f, 0, -0.5f);
 
 			pPoseStack.translate(xt, yt, zt);
 
-			pPoseStack.mulPose(new Quaternionf(xr, yr, zr, 1));
+			pPoseStack.mulPose(RenderUtil.createQuaternion(xr, yr, zr, true));
 			pPoseStack.scale(xs, ys, zs);
 			float uniscale = 1f;
 			pPoseStack.scale(uniscale, uniscale, uniscale);

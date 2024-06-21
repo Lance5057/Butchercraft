@@ -1,7 +1,7 @@
 package com.lance5057.butchercraft.items;
 
+import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
-import org.joml.Quaternionf;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.model.HumanoidModel;
@@ -134,7 +134,7 @@ public class SoapItem extends Item {
 				float f2 = Mth.abs(Mth.cos(f / 8.0F * (float) Math.PI) * 0.5F);
 				if (player.getUseItem() == itemInHand && player.isUsingItem()) {
 
-					poseStack.mulPose(new Quaternionf(0, 90, 0, 1));
+					poseStack.mulPose(RenderUtil.createQuaternion(0, 90, 0, true));
 					poseStack.translate(0.0, f2, i2);
 
 				}
