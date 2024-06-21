@@ -252,10 +252,13 @@ public class ButchercraftBlocks {
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_SKULL, BlockBehaviour.Properties
 					.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).lootFrom(RABBIT_SKULL_HEAD)));
 
+	private static final BlockSetType BARN_WOOD_SET = BlockSetType.register(new BlockSetType("barn_wood"));
+	private static final WoodType BARN_WOOD_TYPE = WoodType.register(new WoodType("barn_wood", BARN_WOOD_SET));
+
 	public static final RegistryObject<Block> BARN_WOOD_BLOCK = BLOCKS.register("barn_wood_block", () -> new Block(
 			BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
 	public static final RegistryObject<StairBlock> BARN_WOOD_STAIRS = BLOCKS.register("barn_wood_stairs",
-			() -> new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties
+			() -> new StairBlock(() -> BARN_WOOD_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties
 					.copy(Blocks.OAK_STAIRS).mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
 	public static final RegistryObject<SlabBlock> BARN_WOOD_SLAB = BLOCKS.register("barn_wood_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB).mapColor(MapColor.COLOR_RED)
@@ -265,13 +268,13 @@ public class ButchercraftBlocks {
 					.sound(SoundType.WOOD).strength(3.0F)));
 	public static final RegistryObject<FenceGateBlock> BARN_WOOD_FENCE_GATE = BLOCKS.register("barn_wood_fence_gate",
 			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE).mapColor(MapColor.COLOR_RED)
-					.sound(SoundType.WOOD).strength(3.0F), WoodType.OAK.fenceGateOpen(), WoodType.OAK.fenceGateClose())); // TODO
+					.sound(SoundType.WOOD).strength(3.0F), BARN_WOOD_TYPE));
 	public static final RegistryObject<DoorBlock> BARN_WOOD_DOOR = BLOCKS.register("barn_wood_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).mapColor(MapColor.COLOR_RED)
-					.sound(SoundType.WOOD).strength(3.0F).noOcclusion(), BlockSetType.OAK)); // TODO
+					.sound(SoundType.WOOD).strength(3.0F).noOcclusion(), BARN_WOOD_SET));
 	public static final RegistryObject<TrapDoorBlock> BARN_WOOD_TRAPDOOR = BLOCKS.register("barn_wood_trapdoor",
 			() -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).mapColor(MapColor.COLOR_RED)
-					.sound(SoundType.WOOD).strength(3.0F).noOcclusion(), BlockSetType.OAK)); // TODO
+					.sound(SoundType.WOOD).strength(3.0F).noOcclusion(), BARN_WOOD_SET));
 
 	public static final RegistryObject<Block> TRIMMED_BARN_WOOD_BLOCK = BLOCKS.register("trimmed_barn_wood_block",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD)
