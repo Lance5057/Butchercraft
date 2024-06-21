@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cubed_goat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:cubed_goat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_cubed_goat_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cubed_goat",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_cubed_goat_from_smoking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

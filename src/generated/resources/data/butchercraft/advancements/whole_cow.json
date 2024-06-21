@@ -96,5 +96,6 @@
     [
       "whole_cow_ground"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:butcher_white_rabbit"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

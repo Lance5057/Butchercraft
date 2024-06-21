@@ -2,17 +2,15 @@ package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
-import com.lance5057.butchercraft.ButchercraftFluids;
 import com.lance5057.butchercraft.ButchercraftItems;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class EnglishLoc extends LanguageProvider {
 
-	public EnglishLoc(DataGenerator gen) {
-		super(gen, Butchercraft.MOD_ID, "en_us");
-
+	public EnglishLoc(PackOutput output) {
+		super(output, Butchercraft.MOD_ID, "en_us");
 	}
 
 	@Override

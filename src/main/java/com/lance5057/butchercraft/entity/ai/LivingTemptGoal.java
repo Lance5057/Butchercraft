@@ -46,7 +46,7 @@ public class LivingTemptGoal extends Goal {
 			--this.calmDown;
 			return false;
 		} else {
-			this.entity = this.mob.level.getNearestEntity(LivingEntity.class, this.targetingConditions, this.mob, mob.getX(), mob.getY(), mob.getZ(), mob.getBoundingBox().inflate(5));
+			this.entity = this.mob.level().getNearestEntity(LivingEntity.class, this.targetingConditions, this.mob, mob.getX(), mob.getY(), mob.getZ(), mob.getBoundingBox().inflate(5));
 			return this.entity != null;
 		}
 	}

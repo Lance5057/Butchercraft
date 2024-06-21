@@ -1,7 +1,7 @@
 package com.lance5057.butchercraft.items;
 
+import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Quaternion;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.model.HumanoidModel;
@@ -63,7 +63,7 @@ public class SoapItem extends Item {
 
 	/**
 	 * Called to trigger the item's "innate" right click behavior. To handle when
-	 * this item is used on a Block, see {@link #onItemUse}.
+	 * this item is used on a Block, see {@link #onItemUseFirst}.
 	 */
 	public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
 //		pLevel.addParticle(ParticleTypes.BUBBLE_POP, pPlayer.getX() + 0.25f + pLevel.random.nextDouble() / 2,
@@ -76,7 +76,7 @@ public class SoapItem extends Item {
 	public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
 
 		if (pEntity instanceof Player p) {
-			if (pIsSelected || p.getInventory().getItem(Inventory.SLOT_OFFHAND).sameItem(pStack)) {
+			if (pIsSelected || p.getInventory().getItem(Inventory.SLOT_OFFHAND).is(pStack.getItem())) {
 				if (p.getUseItemRemainingTicks() > 0) {
 					for (int i = 0; i < 10; i++) {
 						pLevel.addParticle(ParticleTypes.BUBBLE_POP, p.getX() + pLevel.random.nextFloat() - 0.5f,
@@ -134,7 +134,7 @@ public class SoapItem extends Item {
 				float f2 = Mth.abs(Mth.cos(f / 8.0F * (float) Math.PI) * 0.5F);
 				if (player.getUseItem() == itemInHand && player.isUsingItem()) {
 
-					poseStack.mulPose(new Quaternion(0, 90, 0, true));
+					poseStack.mulPose(RenderUtil.createQuaternion(0, 90, 0, true));
 					poseStack.translate(0.0, f2, i2);
 
 				}

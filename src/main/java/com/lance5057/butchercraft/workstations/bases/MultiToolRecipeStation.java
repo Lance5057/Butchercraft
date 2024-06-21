@@ -24,8 +24,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
@@ -60,7 +60,7 @@ public abstract class MultiToolRecipeStation<V extends MultiToolRecipe> extends 
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
 		if (side != Direction.DOWN)
-			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+			if (cap == ForgeCapabilities.ITEM_HANDLER) {
 				return InteractionHandler.cast();
 			}
 		return super.getCapability(cap, side);
@@ -259,7 +259,7 @@ public abstract class MultiToolRecipeStation<V extends MultiToolRecipe> extends 
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+		final IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
 				.orElseGet(this::createInteractionHandler);
 		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
 
@@ -268,7 +268,7 @@ public abstract class MultiToolRecipeStation<V extends MultiToolRecipe> extends 
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+		IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
 				.orElseGet(this::createInteractionHandler);
 		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
 

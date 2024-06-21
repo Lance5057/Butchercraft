@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:cow"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

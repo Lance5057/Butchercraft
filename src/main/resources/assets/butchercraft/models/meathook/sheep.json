@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 32],
 	"textures": {
-		"0": "butchercraft:models/sheep",
-		"particle": "butchercraft:models/sheep"
+		"0": "butchercraft:models/meathook/sheep",
+		"particle": "butchercraft:models/meathook/sheep"
 	},
 	"elements": [
 		{

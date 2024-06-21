@@ -3,14 +3,15 @@ package com.lance5057.butchercraft.workstations.grinder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> {
 	@Override
@@ -43,9 +44,11 @@ public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> 
 		else {
 			String s1 = GsonHelper.getAsString(pJson, "result");
 			ResourceLocation resourcelocation = new ResourceLocation(s1);
-			itemstack = new ItemStack(Registry.ITEM.getOptional(resourcelocation).orElseThrow(() -> {
-				return new IllegalStateException("Item: " + s1 + " does not exist");
-			}));
+			Item item = ForgeRegistries.ITEMS.getValue(resourcelocation);
+			if (item == null) {
+				throw new IllegalStateException("Item: " + s1 + " does not exist");
+			}
+			itemstack = new ItemStack(item);
 		}
 
 		int g = GsonHelper.getAsInt(pJson, "grinds");

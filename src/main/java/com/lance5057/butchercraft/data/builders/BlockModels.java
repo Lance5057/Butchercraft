@@ -3,20 +3,14 @@ package com.lance5057.butchercraft.data.builders;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
 
-import net.minecraft.core.Direction;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockModels extends BlockStateProvider {
 
-	public BlockModels(DataGenerator gen, ExistingFileHelper exFileHelper) {
-		super(gen, Butchercraft.MOD_ID, exFileHelper);
+	public BlockModels(PackOutput output, ExistingFileHelper exFileHelper) {
+		super(output, Butchercraft.MOD_ID, exFileHelper);
 		// TODO Auto-generated constructor stub
 	}
 

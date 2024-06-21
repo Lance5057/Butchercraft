@@ -35,12 +35,12 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
@@ -62,7 +62,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
 		if (side != Direction.DOWN)
-			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+			if (cap == ForgeCapabilities.ITEM_HANDLER) {
 				return handler.cast();
 			}
 		return super.getCapability(cap, side);
@@ -299,14 +299,14 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 
 	private void dropLoot(AnimatedRecipeItemUse recipeToolsIn, Player player) {
 		if (level != null && !level.isClientSide()) {
-			final LootContext pContext = new LootContext.Builder((ServerLevel) level)
+			final LootParams pParams = new LootParams.Builder((ServerLevel) level)
 					.withParameter(LootContextParams.TOOL, player.getMainHandItem())
-					.withParameter(LootContextParams.THIS_ENTITY, player).withRandom(level.getRandom())
+					.withParameter(LootContextParams.THIS_ENTITY, player)
 					.withLuck(player.getLuck()
 							+ player.getMainHandItem().getEnchantmentLevel(Enchantments.BLOCK_FORTUNE))
 					.create(LootContextParamSets.EMPTY);
 
-			player.getServer().getLootTables().get(recipeToolsIn.lootTable).getRandomItems(pContext)
+			player.getServer().getLootData().getLootTable(recipeToolsIn.lootTable).getRandomItems(pParams)
 					.forEach(itemStack -> {
 						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
 								getBlockPos().getY() + 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
@@ -350,7 +350,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+		final IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
 				.orElseGet(this::createHandler);
 		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
 
@@ -359,7 +359,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+		IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
 				.orElseGet(this::createHandler);
 		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
 

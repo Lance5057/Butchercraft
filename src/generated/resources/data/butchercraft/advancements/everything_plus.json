@@ -343,5 +343,6 @@
     [
       "everything_plus_tripe"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

@@ -17,7 +17,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 public class BootsItem extends ArmorItem {
 	public BootsItem(ArmorMaterial pMaterial, Properties pProperties) {
-		super(pMaterial, EquipmentSlot.FEET, pProperties);
+		super(pMaterial, Type.BOOTS, pProperties);
 	}
 
 	@Override

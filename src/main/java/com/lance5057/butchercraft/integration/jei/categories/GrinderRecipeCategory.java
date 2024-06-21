@@ -5,7 +5,6 @@ import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -18,6 +17,7 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -62,7 +62,7 @@ public class GrinderRecipeCategory implements IRecipeCategory<GrinderRecipe> {
 	public void setRecipe(IRecipeLayoutBuilder builder, GrinderRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.ingredient;
 		Ingredient attachment = recipe.attachment;
-		ItemStack output = recipe.getResultItem();
+		ItemStack output = recipe.getResultItem(null);
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getBackground().getWidth() / 2 - 17, 11)
 				.addIngredients(input);
@@ -77,12 +77,12 @@ public class GrinderRecipeCategory implements IRecipeCategory<GrinderRecipe> {
 	}
 
 	@Override
-	public void draw(GrinderRecipe recipe, IRecipeSlotsView slotsView, PoseStack ms, double mouseX, double mouseY) {
+	public void draw(GrinderRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 		RenderSystem.enableBlend();
 
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		fontRenderer.draw(ms, "" + recipe.getGrinds(), this.getBackground().getWidth() / 2 - 56, 66, 0);
+		guiGraphics.drawString(fontRenderer, "" + recipe.getGrinds(), this.getBackground().getWidth() / 2 - 56, 66, 0);
 
 		RenderSystem.disableBlend();
 	}

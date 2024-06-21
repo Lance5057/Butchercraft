@@ -18,7 +18,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 public class SheepHoodItem extends DyeableArmorItem {
 	public SheepHoodItem(ArmorMaterial pMaterial, Properties pProperties) {
-		super(pMaterial, EquipmentSlot.HEAD, pProperties);
+		super(pMaterial, Type.HELMET, pProperties);
 	}
 
 	@Override

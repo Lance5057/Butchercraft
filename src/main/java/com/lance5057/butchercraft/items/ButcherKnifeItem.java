@@ -16,7 +16,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Rabbit;
@@ -40,11 +39,11 @@ public class ButcherKnifeItem extends KnifeItem {
 		if (entity.hasEffect(ButchercraftMobEffects.BLOODLUST.get()))
 			return InteractionResult.FAIL;
 		if (entity instanceof net.minecraftforge.common.IForgeShearable target) {
-			if (entity.level.isClientSide)
+			if (entity.level().isClientSide)
 				return net.minecraft.world.InteractionResult.SUCCESS;
-			BlockPos pos = new BlockPos(entity.getX(), entity.getY(), entity.getZ());
-			if (target.isShearable(stack, entity.level, pos)) {
-				java.util.List<ItemStack> drops = target.onSheared(player, stack, entity.level, pos,
+			BlockPos pos = new BlockPos(entity.getBlockX(), entity.getBlockY(), entity.getBlockZ());
+			if (target.isShearable(stack, entity.level(), pos)) {
+				java.util.List<ItemStack> drops = target.onSheared(player, stack, entity.level(), pos,
 						net.minecraft.world.item.enchantment.EnchantmentHelper.getItemEnchantmentLevel(
 								net.minecraft.world.item.enchantment.Enchantments.BLOCK_FORTUNE, stack));
 				java.util.Random rand = new java.util.Random();
@@ -64,7 +63,7 @@ public class ButcherKnifeItem extends KnifeItem {
 				if (!specialCases(player, mob)) {
 					final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
 							"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).getPath());
-					final LootTable lootTable = player.getServer().getLootTables().get(lootTableLocation);
+					final LootTable lootTable = player.getServer().getLootData().getLootTable(lootTableLocation);
 
 					if (lootTable != LootTable.EMPTY) {
 						killAndDrop(player, lootTableLocation, mob);
@@ -78,33 +77,33 @@ public class ButcherKnifeItem extends KnifeItem {
 	}
 
 	private void killAndDrop(Player player, final ResourceLocation lootTableLocation, Mob mob) {
-		player.level.playSound(null, mob.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F,
+		player.level().playSound(null, mob.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F,
 				1.0F);
 		mob.lootTable = lootTableLocation;
 		mob.setLastHurtByPlayer(player);
-		mob.hurt(DamageSource.playerAttack(player), 99999);
+		mob.hurt(player.damageSources().playerAttack(player), 99999);
 	}
 
 	boolean specialCases(Player player, Mob mob) {
 		if (mob instanceof Rabbit r) {
 
-			switch (r.getRabbitType()) {
-			case Rabbit.TYPE_BLACK:
+			switch (r.getVariant()) {
+			case BLACK:
 				rabbitDrop(player, mob, "_black");
 				return true;
-			case Rabbit.TYPE_BROWN:
+			case BROWN:
 				rabbitDrop(player, mob, "_brown");
 				return true;
-			case Rabbit.TYPE_GOLD:
+			case GOLD:
 				rabbitDrop(player, mob, "_gold");
 				return true;
-			case Rabbit.TYPE_SALT:
+			case SALT:
 				rabbitDrop(player, mob, "_salt");
 				return true;
-			case Rabbit.TYPE_WHITE:
+			case WHITE:
 				rabbitDrop(player, mob, "_white");
 				return true;
-			case Rabbit.TYPE_WHITE_SPLOTCHED:
+			case WHITE_SPLOTCHED:
 				rabbitDrop(player, mob, "_splotched");
 				return true;
 			}
@@ -117,7 +116,7 @@ public class ButcherKnifeItem extends KnifeItem {
 	private void rabbitDrop(Player player, Mob mob, String type) {
 		final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
 				"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(mob.getType()).getPath() + type);
-		final LootTable lootTable = player.getServer().getLootTables().get(lootTableLocation);
+		final LootTable lootTable = player.getServer().getLootData().getLootTable(lootTableLocation);
 
 		if (lootTable != LootTable.EMPTY) {
 			killAndDrop(player, lootTableLocation, mob);

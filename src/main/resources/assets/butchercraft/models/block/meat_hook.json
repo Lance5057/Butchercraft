@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "butchercraft:models/hook",
-		"particle": "butchercraft:models/hook"
+		"0": "butchercraft:models/meathook/hook",
+		"particle": "butchercraft:models/meathook/hook"
 	},
 	"elements": [
 		{

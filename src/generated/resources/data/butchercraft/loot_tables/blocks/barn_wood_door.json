@@ -11,10 +11,20 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "butchercraft:barn_wood_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "butchercraft:barn_wood_door_item"
         }
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "butchercraft:blocks/barn_wood_door"
 }

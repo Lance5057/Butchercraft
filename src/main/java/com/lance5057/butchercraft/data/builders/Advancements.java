@@ -2,8 +2,6 @@ package com.lance5057.butchercraft.data.builders;
 
 import java.util.function.Consumer;
 
-import javax.annotation.Nonnull;
-
 import org.jetbrains.annotations.NotNull;
 
 import com.google.gson.Gson;
@@ -17,24 +15,24 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;
+import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.EffectsChangedTrigger;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MobEffectsPredicate;
 import net.minecraft.advancements.critereon.PlayerInteractTrigger;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.advancements.AdvancementProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.common.data.ForgeAdvancementProvider;
 
-public class Advancements extends AdvancementProvider {
+public class Advancements implements ForgeAdvancementProvider.AdvancementGenerator {
 	private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
-	private final DataGenerator dataGenerator;
 
 	private Advancement root;
 
@@ -89,14 +87,10 @@ public class Advancements extends AdvancementProvider {
 	private Advancement heart;
 	private Advancement cannibalism;
 
-	public Advancements(@Nonnull DataGenerator dataGenerator, ExistingFileHelper existingFileHelper) {
-		super(dataGenerator, existingFileHelper);
-		this.dataGenerator = dataGenerator;
-	}
+
 
 	@Override
-	protected void registerAdvancements(@NotNull Consumer<Advancement> consumer,
-			@NotNull ExistingFileHelper fileHelper) {
+	public void generate(@NotNull HolderLookup.Provider registries, @NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
 		root = Advancement.Builder.advancement()
 				.display(new DisplayInfo(new ItemStack(ButchercraftItems.BUTCHER_KNIFE.get()),
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.root.name"),
@@ -620,15 +614,9 @@ public class Advancements extends AdvancementProvider {
 						Component.translatable(Butchercraft.MOD_ID + ".advancement.cannibalism.desc"), null,
 						FrameType.CHALLENGE, true, true, true))
 				.addCriterion("cannibalism",
-						PlayerInteractTrigger.TriggerInstance.itemUsedOnEntity(EntityPredicate.Composite.ANY,
+						PlayerInteractTrigger.TriggerInstance.itemUsedOnEntity(ContextAwarePredicate.ANY,
 								ItemPredicate.Builder.item().of(ButchercraftItems.BUTCHER_KNIFE.get()),
-								EntityPredicate.Composite
-										.wrap(EntityPredicate.Builder.entity().of(EntityType.PLAYER).build())))
+								EntityPredicate.wrap(EntityPredicate.Builder.entity().of(EntityType.PLAYER).build())))
 				.save(consumer, Butchercraft.MOD_ID + ":cannibalism");
-	}
-
-	@Override
-	public String getName() {
-		return "Butchercraft Advancements";
 	}
 }

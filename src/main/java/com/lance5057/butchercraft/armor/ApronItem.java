@@ -17,7 +17,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 public class ApronItem extends ArmorItem {
 	public ApronItem(ArmorMaterial pMaterial, Properties pProperties) {
-		super(pMaterial, EquipmentSlot.LEGS, pProperties);
+		super(pMaterial, Type.LEGGINGS, pProperties);
 	}
 
 	@Override

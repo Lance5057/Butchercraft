@@ -3,7 +3,7 @@ package com.lance5057.butchercraft.workstations.hook;
 import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Quaternion;
+import org.joml.Quaternionf;
 
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -25,10 +25,10 @@ public class MeatHookRenderer implements BlockEntityRenderer<MeatHookBlockEntity
 		if (pBlockEntity.hasLevel()) {
 			pPoseStack.pushPose();
 			pPoseStack.translate(0.5f, -1, 0.5f);
-			Quaternion q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
+			Quaternionf q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
 			
 			pPoseStack.mulPose(q);
-			pPoseStack.mulPose(new Quaternion(-90,0,0,true));
+			pPoseStack.mulPose(RenderUtil.createQuaternion(-90,0,0,true));
 			
 			pPoseStack.translate(-0.5f, 0, -0.5f);
 			

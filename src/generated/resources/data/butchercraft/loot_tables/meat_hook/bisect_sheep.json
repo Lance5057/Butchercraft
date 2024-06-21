@@ -106,5 +106,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "butchercraft:meat_hook/bisect_sheep"
 }

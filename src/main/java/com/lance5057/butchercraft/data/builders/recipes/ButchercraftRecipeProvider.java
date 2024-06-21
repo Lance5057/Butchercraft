@@ -14,8 +14,9 @@ import com.lance5057.butchercraft.data.builders.recipes.loottables.ButcherBlockL
 import com.lance5057.butchercraft.data.builders.recipes.loottables.MeatHookLoottables;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
@@ -32,8 +33,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ButchercraftRecipeProvider extends RecipeProvider {
 
-	public ButchercraftRecipeProvider(DataGenerator generator) {
-		super(generator);
+	public ButchercraftRecipeProvider(PackOutput pOutput) {
+		super(pOutput);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -78,7 +79,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	@Override
-	protected void buildCraftingRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
+	protected void buildRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_CARCASS.get())
 				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow")),
@@ -939,248 +940,248 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.LEATHER_SCRAP.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat_head"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BONE_SAW.get()).define('I', Items.IRON_INGOT)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.BONE_SAW.get()).define('I', Items.IRON_INGOT)
 				.define('S', Items.STICK).pattern("IIS").pattern("IIS").unlockedBy("has_iron", has(Items.IRON_INGOT))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "bone_saw"));
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BUTCHER_KNIFE.get()).define('I', Items.IRON_INGOT)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.BUTCHER_KNIFE.get()).define('I', Items.IRON_INGOT)
 				.define('S', Items.STICK).pattern(" II").pattern(" II").pattern("S  ")
 				.unlockedBy("has_iron", has(Items.IRON_INGOT))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcher_knife"));
-		ShapedRecipeBuilder.shaped(ButchercraftItems.SKINNING_KNIFE.get()).define('I', Items.IRON_INGOT)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.SKINNING_KNIFE.get()).define('I', Items.IRON_INGOT)
 				.define('S', Items.STICK).pattern(" II").pattern("S  ").unlockedBy("has_iron", has(Items.IRON_INGOT))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "skinning_knife"));
-		ShapedRecipeBuilder.shaped(ButchercraftItems.GUT_KNIFE.get()).define('I', Items.IRON_INGOT)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.GUT_KNIFE.get()).define('I', Items.IRON_INGOT)
 				.define('S', Items.STICK).pattern("I  ").pattern(" I ").pattern(" S ")
 				.unlockedBy("has_iron", has(Items.IRON_INGOT))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "gut_knife"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.HOOK_BLOCK_ITEM.get()).define('I', Items.IRON_INGOT)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.HOOK_BLOCK_ITEM.get()).define('I', Items.IRON_INGOT)
 				.define('C', Items.CHAIN).define('N', Items.IRON_NUGGET).pattern("III").pattern("NCN").pattern("NNN")
 				.unlockedBy("has_iron", has(Items.IRON_INGOT))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "meat_hook"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.GRINDER_TIP.get()).define('I', Items.IRON_TRAPDOOR)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.GRINDER_TIP.get()).define('I', Items.IRON_TRAPDOOR)
 				.define('C', Items.IRON_BARS).pattern("C  ").pattern("I  ")
 				.unlockedBy("has_iron", has(Items.IRON_INGOT))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "grinder_tip"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.EXTRUDER_TIP.get()).define('I', Items.IRON_TRAPDOOR)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.EXTRUDER_TIP.get()).define('I', Items.IRON_TRAPDOOR)
 				.define('C', Items.IRON_INGOT).pattern("C  ").pattern("I  ")
 				.unlockedBy("has_iron", has(Items.IRON_INGOT))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "extruder_tip"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.GRINDER_BLOCK_ITEM.get()).define('S', Items.IRON_SWORD)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.GRINDER_BLOCK_ITEM.get()).define('S', Items.IRON_SWORD)
 				.define('P', Items.PISTON).define('C', Items.IRON_INGOT).define('B', ItemTags.BUTTONS)
 				.define('H', Items.HOPPER).pattern("BH ").pattern("CSC").pattern("CPH")
 				.unlockedBy("has_iron", has(Items.IRON_INGOT))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "grinder"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.MASK.get()).define('W', Items.LIGHT_BLUE_CARPET)
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.MASK.get()).define('W', Items.LIGHT_BLUE_CARPET)
 				.define('S', Items.STRING).pattern("SWS").unlockedBy("has_wool", has(Items.LIGHT_BLUE_CARPET))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "mask"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BOOTS.get()).define('W', Items.BLACK_WOOL)
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.BOOTS.get()).define('W', Items.BLACK_WOOL)
 				.define('B', Items.LEATHER_BOOTS).define('F', ButchercraftItems.LARD.get()).pattern(" F ")
 				.pattern("WBW").unlockedBy("has_boots", has(Items.LEATHER_BOOTS))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "boots"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.GLOVES.get()).define('W', Items.LIGHT_BLUE_WOOL)
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.GLOVES.get()).define('W', Items.LIGHT_BLUE_WOOL)
 				.define('B', Items.LEATHER).define('F', ButchercraftItems.LARD.get()).pattern("W W").pattern("BFB")
 				.unlockedBy("has_wool", has(Items.LIGHT_BLUE_WOOL))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "gloves"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.APRON.get()).define('W', Items.WHITE_CARPET)
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.APRON.get()).define('W', Items.WHITE_CARPET)
 				.define('S', Items.STRING).define('F', ButchercraftItems.LARD.get()).pattern(" S ").pattern("WWW")
 				.pattern("SFS").unlockedBy("has_wool", has(Items.WHITE_CARPET))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "apron"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.PAPER_HAT.get()).define('P', Items.PAPER).pattern("PPP")
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.PAPER_HAT.get()).define('P', Items.PAPER).pattern("PPP")
 				.pattern("P P").unlockedBy("has_paper", has(Items.PAPER))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "paper_hat"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get()).define('W', ItemTags.WOODEN_SLABS)
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get()).define('W', ItemTags.WOODEN_SLABS)
 				.define('S', Items.STICK).pattern("WWW").pattern("SWS")
 				.unlockedBy("has_wood", has(ItemTags.WOODEN_SLABS))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "butcherblock"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.COW_HOOD.get()).define('H', ButchercraftItems.COW_HEAD_ITEM.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.COW_HOOD.get()).define('H', ButchercraftItems.COW_HEAD_ITEM.get())
 				.define('L', ButchercraftItems.COW_HIDE.get()).define('S', Tags.Items.STRING).pattern(" H ")
 				.pattern("SLS").unlockedBy("has_head", has(ButchercraftItems.COW_HEAD_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cow_hood"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.GOAT_HOOD.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.GOAT_HOOD.get())
 				.define('H', ButchercraftItems.GOAT_HEAD_ITEM.get()).define('L', ButchercraftItems.GOAT_HIDE.get())
 				.define('S', Tags.Items.STRING).pattern(" H ").pattern("SLS")
 				.unlockedBy("has_head", has(ButchercraftItems.GOAT_HEAD_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat_hood"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.PIG_HOOD.get()).define('H', ButchercraftItems.PIG_HEAD_ITEM.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.PIG_HOOD.get()).define('H', ButchercraftItems.PIG_HEAD_ITEM.get())
 				.define('L', ButchercraftItems.PIG_HIDE.get()).define('S', Tags.Items.STRING).pattern(" H ")
 				.pattern("SLS").unlockedBy("has_head", has(ButchercraftItems.PIG_HEAD_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pig_hood"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.SHEEP_HOOD.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.SHEEP_HOOD.get())
 				.define('H', ButchercraftItems.SHEEP_HEAD_ITEM.get()).define('L', ButchercraftItems.SHEEP_HIDE.get())
 				.define('S', Tags.Items.STRING).pattern(" H ").pattern("SLS")
 				.unlockedBy("has_head", has(ButchercraftItems.SHEEP_HEAD_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sheep_hood"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.CHICKEN_MASK.get())
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ButchercraftItems.CHICKEN_MASK.get())
 				.define('H', ButchercraftItems.CHICKEN_HEAD_ITEM.get()).define('F', Items.FEATHER).pattern("F F")
 				.pattern("FHF").pattern("F F").unlockedBy("has_head", has(ButchercraftItems.CHICKEN_HEAD_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "chicken_mask"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BEEF_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.BEEF_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.BEEF_RAW),
 						Ingredient.of(ButchercraftItems.GROUND_BEEF.get())), 9)
 				.unlockedBy("has_beef", has(ButchercraftItemTags.BEEF_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_BEEF_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.BEEF_COOKED),
 						Ingredient.of(ButchercraftItems.COOKED_GROUND_BEEF.get())), 9)
 				.unlockedBy("has_beef_cooked", has(ButchercraftItemTags.BEEF_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_beef_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.PORK_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.PORK_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.PORK_RAW),
 						Ingredient.of(ButchercraftItems.GROUND_PORK.get())), 9)
 				.unlockedBy("has_pork", has(ButchercraftItemTags.PORK_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pork_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_PORK_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_PORK_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.PORK_COOKED),
 						Ingredient.of(ButchercraftItems.COOKED_GROUND_PORK.get())), 9)
 				.unlockedBy("has_pork_cooked", has(ButchercraftItemTags.PORK_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_pork_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.MUTTON_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.MUTTON_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.MUTTON_RAW),
 						Ingredient.of(ButchercraftItems.GROUND_MUTTON.get())), 9)
 				.unlockedBy("has_lamb", has(ButchercraftItemTags.MUTTON_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lamb_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_MUTTON_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_MUTTON_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.MUTTON_COOKED),
 						Ingredient.of(ButchercraftItems.COOKED_GROUND_MUTTON.get())), 9)
 				.unlockedBy("has_lamb_cooked", has(ButchercraftItemTags.MUTTON_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_lamb_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.GOAT_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.GOAT_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.GOAT_RAW),
 						Ingredient.of(ButchercraftItems.GROUND_GOAT.get())), 9)
 				.unlockedBy("has_goat", has(ButchercraftItemTags.GOAT_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_GOAT_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_GOAT_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.GOAT_COOKED),
 						Ingredient.of(ButchercraftItems.COOKED_GROUND_GOAT.get())), 9)
 				.unlockedBy("has_goat_cooked", has(ButchercraftItemTags.GOAT_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_goat_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.CHICKEN_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.CHICKEN_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.CHICKEN_RAW),
 						Ingredient.of(ButchercraftItems.GROUND_CHICKEN.get())), 9)
 				.unlockedBy("has_chicken", has(ButchercraftItemTags.CHICKEN_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "chicken_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_CHICKEN_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_CHICKEN_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.CHICKEN_COOKED),
 						Ingredient.of(ButchercraftItems.COOKED_GROUND_CHICKEN.get())), 9)
 				.unlockedBy("has_chicken_cooked", has(ButchercraftItemTags.CHICKEN_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_chicken_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.RABBIT_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.RABBIT_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.RABBIT_RAW),
 						Ingredient.of(ButchercraftItems.GROUND_RABBIT.get())), 9)
 				.unlockedBy("has_rabbit", has(ButchercraftItemTags.RABBIT_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "rabbit_block"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_RABBIT_BLOCK_ITEM.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_RABBIT_BLOCK_ITEM.get())
 				.requires(DifferenceIngredient.of(Ingredient.of(ButchercraftItemTags.RABBIT_COOKED),
 						Ingredient.of(ButchercraftItems.COOKED_GROUND_RABBIT.get())), 9)
 				.unlockedBy("has_rabbit_cooked", has(ButchercraftItemTags.RABBIT_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_rabbit_block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BEEF_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.BEEF_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.BEEF_BLOCK_ITEM.get())
 				.unlockedBy("has_beef", has(ButchercraftItemTags.BEEF_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_BEEF_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_BEEF_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.COOKED_BEEF_BLOCK_ITEM.get())
 				.unlockedBy("has_beef_cooked", has(ButchercraftItemTags.BEEF_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_beef_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.PORK_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.PORK_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.PORK_BLOCK_ITEM.get())
 				.unlockedBy("has_pork", has(ButchercraftItemTags.PORK_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pork_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_PORK_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_PORK_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.COOKED_PORK_BLOCK_ITEM.get())
 				.unlockedBy("has_pork_cooked", has(ButchercraftItemTags.PORK_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_pork_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.MUTTON_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.MUTTON_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.MUTTON_BLOCK_ITEM.get())
 				.unlockedBy("has_lamb", has(ButchercraftItemTags.MUTTON_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "lamb_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_MUTTON_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_MUTTON_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.COOKED_MUTTON_BLOCK_ITEM.get())
 				.unlockedBy("has_lamb_cooked", has(ButchercraftItemTags.MUTTON_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_lamb_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.GOAT_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.GOAT_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.GOAT_BLOCK_ITEM.get())
 				.unlockedBy("has_goat", has(ButchercraftItemTags.GOAT_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_GOAT_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_GOAT_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.COOKED_GOAT_BLOCK_ITEM.get())
 				.unlockedBy("has_goat_cooked", has(ButchercraftItemTags.MUTTON_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_goat_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.CHICKEN_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.CHICKEN_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.CHICKEN_BLOCK_ITEM.get())
 				.unlockedBy("has_chicken", has(ButchercraftItemTags.CHICKEN_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "chicken_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_CHICKEN_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_CHICKEN_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.COOKED_CHICKEN_BLOCK_ITEM.get())
 				.unlockedBy("has_chicken_cooked", has(ButchercraftItemTags.MUTTON_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_chicken_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.RABBIT_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.RABBIT_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.RABBIT_BLOCK_ITEM.get())
 				.unlockedBy("has_rabbit", has(ButchercraftItemTags.RABBIT_RAW))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "rabbit_block_to_scraps"));
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_RABBIT_SCRAPS.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_RABBIT_SCRAPS.get(), 9)
 				.requires(ButchercraftItems.COOKED_RABBIT_BLOCK_ITEM.get())
 				.unlockedBy("has_rabbit_cooked", has(ButchercraftItemTags.MUTTON_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_rabbit_block_to_scraps"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BLOOD_SAUSAGE_BLOCK_ITEM.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.BLOOD_SAUSAGE_BLOCK_ITEM.get(), 1)
 				.requires(ButchercraftItems.BLOOD_SAUSAGE.get(), 9)
 				.unlockedBy("has_blood_sausage", has(ButchercraftItems.BLOOD_SAUSAGE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_sausage_to_block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BLOOD_SAUSAGE.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.BLOOD_SAUSAGE.get(), 9)
 				.requires(ButchercraftItems.BLOOD_SAUSAGE_BLOCK_ITEM.get(), 1)
 				.unlockedBy("has_blood_sausage_block", has(ButchercraftItems.BLOOD_SAUSAGE_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_sausage_from_block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.SAUSAGE_BLOCK_ITEM.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.SAUSAGE_BLOCK_ITEM.get(), 1)
 				.requires(ButchercraftItems.SAUSAGE.get(), 9)
 				.unlockedBy("has_sausage", has(ButchercraftItems.SAUSAGE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sausage_to_block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.SAUSAGE.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.SAUSAGE.get(), 9)
 				.requires(ButchercraftItems.SAUSAGE_BLOCK_ITEM.get(), 1)
 				.unlockedBy("has_sausage_block", has(ButchercraftItems.SAUSAGE_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "sausage_from__block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_BLOOD_SAUSAGE_BLOCK_ITEM.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_BLOOD_SAUSAGE_BLOCK_ITEM.get(), 1)
 				.requires(ButchercraftItems.COOKED_BLOOD_SAUSAGE.get(), 9)
 				.unlockedBy("has_blood_sausage", has(ButchercraftItems.COOKED_BLOOD_SAUSAGE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_blood_sausage_to_block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_BLOOD_SAUSAGE.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_BLOOD_SAUSAGE.get(), 9)
 				.requires(ButchercraftItems.COOKED_BLOOD_SAUSAGE_BLOCK_ITEM.get(), 1)
 				.unlockedBy("has_blood_sausage_block", has(ButchercraftItems.COOKED_BLOOD_SAUSAGE_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_blood_sausage_from_block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_SAUSAGE_BLOCK_ITEM.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_SAUSAGE_BLOCK_ITEM.get(), 1)
 				.requires(ButchercraftItems.COOKED_SAUSAGE.get(), 9)
 				.unlockedBy("has_sausage", has(ButchercraftItems.COOKED_SAUSAGE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_sausage_to_block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.COOKED_SAUSAGE.get(), 9)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.COOKED_SAUSAGE.get(), 9)
 				.requires(ButchercraftItems.COOKED_SAUSAGE_BLOCK_ITEM.get(), 1)
 				.unlockedBy("has_sausage_block", has(ButchercraftItems.COOKED_SAUSAGE_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "cooked_sausage_from__block"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BLOOD_SAUSAGE_MIX.get(), 8)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ButchercraftItems.BLOOD_SAUSAGE_MIX.get(), 8)
 				.requires(ButchercraftItemTags.GROUND_MEAT_RAW).requires(ButchercraftItemTags.GROUND_MEAT_RAW)
 				.requires(ButchercraftItemTags.GROUND_MEAT_RAW).requires(ButchercraftItemTags.GROUND_MEAT_RAW)
 				.requires(ButchercraftItemTags.GROUND_MEAT_RAW).requires(ButchercraftItemTags.GROUND_MEAT_RAW)
@@ -1189,123 +1190,123 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_lamb", has(ButchercraftItemTags.MUTTON_COOKED))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_sausage_mix"));
 
-		ShapelessRecipeBuilder.shapeless(Items.RED_DYE, 2).requires(ButchercraftItems.BLOOD_FLUID_BOTTLE.get())
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.RED_DYE, 2).requires(ButchercraftItems.BLOOD_FLUID_BOTTLE.get())
 				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BOTTLE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_dye"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.LEATHER_CORD.get(), 3)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ButchercraftItems.LEATHER_CORD.get(), 3)
 				.requires(ButchercraftItems.LEATHER_SCRAP.get(), 3)
 				.unlockedBy("has_scrap", has(ButchercraftItems.LEATHER_SCRAP.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "leather_cord"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_BLACK_RABBIT_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_BLACK_RABBIT_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.BLACK_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_rabbit", has(ButchercraftItems.BLACK_RABBIT_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_black_rabbit"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_BROWN_RABBIT_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_BROWN_RABBIT_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.BROWN_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_rabbit", has(ButchercraftItems.BROWN_RABBIT_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_brown_rabbit"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_GOLD_RABBIT_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_GOLD_RABBIT_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.GOLD_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_rabbit", has(ButchercraftItems.GOLD_RABBIT_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_gold_rabbit"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_SALT_RABBIT_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SALT_RABBIT_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.SALT_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_rabbit", has(ButchercraftItems.SALT_RABBIT_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_salt_rabbit"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_SPLOTCHED_RABBIT_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SPLOTCHED_RABBIT_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_rabbit", has(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_splotched_rabbit"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_WHITE_RABBIT_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_WHITE_RABBIT_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.WHITE_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_rabbit", has(ButchercraftItems.WHITE_RABBIT_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_white_rabbit"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_GOAT_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_GOAT_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.GOAT_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_goat", has(ButchercraftItems.GOAT_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_goat"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_COW_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_COW_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.COW_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_cow", has(ButchercraftItems.COW_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_cow"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_SHEEP_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SHEEP_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.SHEEP_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_sheep", has(ButchercraftItems.SHEEP_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_sheep"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_PIG_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_PIG_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.PIG_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_pig", has(ButchercraftItems.PIG_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_pig"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TAXIDERMY_CHICKEN_ITEM_BLOCK.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_CHICKEN_ITEM_BLOCK.get(), 1)
 				.requires(ButchercraftItems.CHICKEN_CARCASS.get()).requires(Items.HAY_BLOCK)
 				.unlockedBy("has_chicken", has(ButchercraftItems.CHICKEN_CARCASS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "taxidermy_chicken"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1)
 				.requires(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 4).requires(Items.BUCKET)
 				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BOTTLE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_bucket"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 4)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 4)
 				.requires(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1).requires(Items.GLASS_BOTTLE, 4)
 				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BOTTLE.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_bottle"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get(), 8)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get(), 8)
 				.requires(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1).requires(ItemTags.PLANKS)
 				.requires(ItemTags.PLANKS).requires(ItemTags.PLANKS).requires(ItemTags.PLANKS).requires(ItemTags.PLANKS)
 				.requires(ItemTags.PLANKS).requires(ItemTags.PLANKS).requires(ItemTags.PLANKS)
 				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BUCKET.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ButchercraftItems.TRIMMED_BARN_WOOD_ITEM.get(), 1)
 				.requires(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get(), 1).requires(Items.BONE_MEAL, 1)
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "trimmed_barn_wood"));
 
-		ShapelessRecipeBuilder.shapeless(ButchercraftItems.SOAP.get(), 1).requires(ButchercraftItems.LARD.get(), 1)
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ButchercraftItems.SOAP.get(), 1).requires(ButchercraftItems.LARD.get(), 1)
 				.requires(Items.BONE_MEAL, 1).requires(Ingredient.of(ItemTags.FLOWERS))
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.LARD.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "soap"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_DOOR_ITEM.get(), 3).pattern("xx ").pattern("xx ")
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ButchercraftItems.BARN_WOOD_DOOR_ITEM.get(), 3).pattern("xx ").pattern("xx ")
 				.pattern("xx ").define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_door"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_SLAB_ITEM.get(), 6).pattern("xxx")
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ButchercraftItems.BARN_WOOD_SLAB_ITEM.get(), 6).pattern("xxx")
 				.define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_slab"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_STAIRS_ITEM.get(), 4).pattern("x  ").pattern("xx ")
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ButchercraftItems.BARN_WOOD_STAIRS_ITEM.get(), 4).pattern("x  ").pattern("xx ")
 				.pattern("xxx").define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_stairs"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM.get(), 2).pattern("xxx").pattern("xxx")
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM.get(), 2).pattern("xxx").pattern("xxx")
 				.define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get())
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_trapdoor"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_FENCE_ITEM.get(), 3).pattern("xsx").pattern("xsx")
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ButchercraftItems.BARN_WOOD_FENCE_ITEM.get(), 3).pattern("xsx").pattern("xsx")
 				.define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()).define('s', Items.STICK)
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_fence"));
 
-		ShapedRecipeBuilder.shaped(ButchercraftItems.BARN_WOOD_FENCE_GATE_ITEM.get()).pattern("sxs").pattern("sxs")
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ButchercraftItems.BARN_WOOD_FENCE_GATE_ITEM.get()).pattern("sxs").pattern("sxs")
 				.define('x', ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()).define('s', Items.STICK)
 				.unlockedBy("has_barn_wood", has(ButchercraftItems.BARN_WOOD_BLOCK_ITEM.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "barn_wood_fence_gate"));
@@ -1428,47 +1429,47 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				consumer);
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()), 1,
+				.grind(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()), RecipeCategory.FOOD, 1,
 						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_BEEF.get(), 4, 2)
 				.unlockedBy("has_beef_scrap", has(ButchercraftItems.BEEF_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "beef_scrap_to_ground_beef"));
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItems.PORK_SCRAPS.get()), 1,
+				.grind(Ingredient.of(ButchercraftItems.PORK_SCRAPS.get()), RecipeCategory.FOOD, 1,
 						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_PORK.get(), 4, 2)
 				.unlockedBy("has_pork_scrap", has(ButchercraftItems.BEEF_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "pork_scrap_to_ground_pork"));
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItems.MUTTON_SCRAPS.get()), 1,
+				.grind(Ingredient.of(ButchercraftItems.MUTTON_SCRAPS.get()), RecipeCategory.FOOD, 1,
 						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_MUTTON.get(), 4, 2)
 				.unlockedBy("has_mutton_scrap", has(ButchercraftItems.MUTTON_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "mutton_scrap_to_ground_mutton"));
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItems.GOAT_SCRAPS.get()), 1,
+				.grind(Ingredient.of(ButchercraftItems.GOAT_SCRAPS.get()), RecipeCategory.FOOD, 1,
 						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_GOAT.get(), 4, 2)
 				.unlockedBy("has_goat_scrap", has(ButchercraftItems.GOAT_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "goat_scrap_to_ground_goat"));
 
-		GrinderRecipeBuilder.grind(Ingredient.of(ButchercraftItems.CHICKEN_SCRAPS.get()), 1,
+		GrinderRecipeBuilder.grind(Ingredient.of(ButchercraftItems.CHICKEN_SCRAPS.get()), RecipeCategory.FOOD, 1,
 				Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_CHICKEN.get(), 4, 2)
 				.unlockedBy("has_chicken_scrap", has(ButchercraftItems.CHICKEN_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "chicken_scrap_to_ground_chicken"));
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItems.RABBIT_SCRAPS.get()), 1,
+				.grind(Ingredient.of(ButchercraftItems.RABBIT_SCRAPS.get()), RecipeCategory.FOOD, 1,
 						Ingredient.of(ButchercraftItems.GRINDER_TIP.get()), ButchercraftItems.GROUND_RABBIT.get(), 4, 2)
 				.unlockedBy("has_rabbit_scrap", has(ButchercraftItems.RABBIT_SCRAPS.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "rabbit_scrap_to_ground_rabbit"));
 
-		GrinderRecipeBuilder.grind(Ingredient.of(ButchercraftItemTags.GROUND_MEAT_RAW), 8,
+		GrinderRecipeBuilder.grind(Ingredient.of(ButchercraftItemTags.GROUND_MEAT_RAW), RecipeCategory.FOOD, 8,
 				Ingredient.of(ButchercraftItems.EXTRUDER_TIP.get()), ButchercraftItems.SAUSAGE_LINKED.get(), 16, 1)
 				.unlockedBy("has_ground_beef", has(ButchercraftItems.GROUND_BEEF.get()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "ground_beef_to_sausage"));
 
 		GrinderRecipeBuilder
-				.grind(Ingredient.of(ButchercraftItems.BLOOD_SAUSAGE_MIX.get()), 8,
+				.grind(Ingredient.of(ButchercraftItems.BLOOD_SAUSAGE_MIX.get()), RecipeCategory.FOOD, 8,
 						Ingredient.of(ButchercraftItems.EXTRUDER_TIP.get()),
 						ButchercraftItems.BLOOD_SAUSAGE_LINKED.get(), 16, 1)
 				.unlockedBy("has_blood_sausage_mix", has(ButchercraftItems.BLOOD_SAUSAGE_MIX.get()))
@@ -1481,15 +1482,15 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer,
 			String id) {
-		SimpleCookingRecipeBuilder.smoking(pIngredient, pResult, .35F, 100)
+		SimpleCookingRecipeBuilder.smoking(pIngredient, RecipeCategory.FOOD, pResult, .35F, 100)
 				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, id + "_from_smoking"));
-		SimpleCookingRecipeBuilder.campfireCooking(pIngredient, pResult, .35F, 600)
+		SimpleCookingRecipeBuilder.campfireCooking(pIngredient, RecipeCategory.FOOD, pResult, .35F, 600)
 				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, id + "_from_campfire_cooking"));
-		SimpleCookingRecipeBuilder.smelting(pIngredient, pResult, .35F, 200)
+		SimpleCookingRecipeBuilder.smelting(pIngredient, RecipeCategory.FOOD, pResult, .35F, 200)
 				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, id + "_from_smelting"));

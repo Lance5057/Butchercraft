@@ -1,19 +1,25 @@
 package com.lance5057.butchercraft.data.builders;
 
+import java.util.concurrent.CompletableFuture;
+
+import org.jetbrains.annotations.Nullable;
+
+import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
 
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockTagGenerator extends BlockTagsProvider {
-	public BlockTagGenerator(DataGenerator generator, String modId, ExistingFileHelper existingFileHelper) {
-		super(generator, modId, existingFileHelper);
+	public BlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+		super(output, lookupProvider, Butchercraft.MOD_ID, existingFileHelper);
 	}
 
 	@Override
-	protected void addTags() {
+	protected void addTags(HolderLookup.Provider pProvider) {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ButchercraftBlocks.MEAT_HOOK.get());
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ButchercraftBlocks.GRINDER.get());
 

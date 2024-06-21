@@ -1,25 +1,26 @@
 package com.lance5057.butchercraft.workstations.grinder;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Quaternion;
+import org.joml.Quaternionf;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.client.model.renderable.BakedModelRenderable;
 import net.minecraftforge.client.model.renderable.IRenderable;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
 public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> {
@@ -37,18 +38,18 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
 		// model = BakedModelRenderable.of(rc).withModelDataContext();
 		pPoseStack.pushPose();
-		Quaternion q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
+		Quaternionf q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
 
 		pPoseStack.translate(0.5, 0.23, 0.5);
 		
 		pPoseStack.mulPose(q);
-		pPoseStack.mulPose(new Quaternion(0, 0, 180, true));
+		pPoseStack.mulPose(RenderUtil.createQuaternion(0, 0, 180, true));
 		pPoseStack.translate(0, 0.34, 0);
 
 		float g = pBlockEntity.getGrind();
 		float mg = pBlockEntity.getMaxGrind();
 		float r = mg == 0 ? 1 : 360 / (mg + 1);
-		pPoseStack.mulPose(new Quaternion(0, g * r, 0, true));
+		pPoseStack.mulPose(RenderUtil.createQuaternion(0, g * r, 0, true));
 		pPoseStack.translate(-0.5, 0, -0.05);
 		model.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
 				pPackedOverlay, pPartialTick, ModelData.EMPTY);
@@ -56,7 +57,7 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
 		LazyOptional<IItemHandler> itemInteractionHandler = pBlockEntity
-				.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
+				.getCapability(ForgeCapabilities.ITEM_HANDLER);
 
 		itemInteractionHandler.ifPresent(inv -> {
 			ItemStack input = inv.getStackInSlot(0);
@@ -76,7 +77,7 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 	}
 
 	private void renderRotatedItem(GrinderBlockEntity pBlockEntity, PoseStack pPoseStack,
-			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay, Quaternion q,
+			MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay, Quaternionf q,
 			ItemRenderer itemRenderer, ItemStack input, double xt, double yt, double zt, float xr, float yr, float zr,
 			float xs, float ys, float zs) {
 		if (!input.isEmpty()) {
@@ -85,16 +86,16 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 			pPoseStack.translate(0.5f, -1, 0.5f);
 
 			pPoseStack.mulPose(q);
-			pPoseStack.mulPose(new Quaternion(-90, 0, 0, true));
+			pPoseStack.mulPose(RenderUtil.createQuaternion(-90, 0, 0, true));
 			pPoseStack.translate(-0.5f, 0, -0.5f);
 
 			pPoseStack.translate(xt, yt, zt);
 
-			pPoseStack.mulPose(new Quaternion(xr, yr, zr, true));
+			pPoseStack.mulPose(RenderUtil.createQuaternion(xr, yr, zr, true));
 			pPoseStack.scale(xs, ys, zs);
 			float uniscale = 1f;
 			pPoseStack.scale(uniscale, uniscale, uniscale);
-			itemRenderer.render(input, ItemTransforms.TransformType.GROUND, false, pPoseStack, pBufferSource,
+			itemRenderer.render(input, ItemDisplayContext.GROUND, false, pPoseStack, pBufferSource,
 					pPackedLight, pPackedOverlay, bakedmodel);
 			pPoseStack.popPose();
 		}

@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:beef_stew"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

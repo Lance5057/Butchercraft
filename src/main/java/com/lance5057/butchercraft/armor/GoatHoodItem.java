@@ -17,7 +17,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 public class GoatHoodItem extends ArmorItem {
 	public GoatHoodItem(ArmorMaterial pMaterial, Properties pProperties) {
-		super(pMaterial, EquipmentSlot.HEAD, pProperties);
+		super(pMaterial, Type.HELMET, pProperties);
 	}
 
 	@Override

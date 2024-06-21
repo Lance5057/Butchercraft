@@ -45,5 +45,6 @@
     [
       "bunny_equip_tail"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

@@ -16,6 +16,7 @@ import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class GrinderRecipeBuilder implements RecipeBuilder {
+	private final RecipeCategory category;
 	private final Item result;
 	private final Ingredient ingredient;
 	private final int ingredientCount;
@@ -35,8 +37,9 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 	private String group;
 	private final GrinderRecipeSerializer serializer;
 
-	private GrinderRecipeBuilder(ItemLike pResult, Ingredient pIngredient, Ingredient attachment, int pGrind, int count,
+	private GrinderRecipeBuilder(RecipeCategory pCategory, ItemLike pResult, Ingredient pIngredient, Ingredient attachment, int pGrind, int count,
 			GrinderRecipeSerializer serializer, int ingredientCount) {
+		this.category = pCategory;
 		this.result = pResult.asItem();
 		this.ingredient = pIngredient;
 		this.ingredientCount = ingredientCount;
@@ -46,9 +49,9 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 		this.serializer = serializer;
 	}
 
-	public static GrinderRecipeBuilder grind(Ingredient pIngredient, int ingredientCount, Ingredient attachment,
+	public static GrinderRecipeBuilder grind(Ingredient pIngredient, RecipeCategory pCategory, int ingredientCount, Ingredient attachment,
 			ItemLike pResult, int grinds, int resultCount) {
-		return new GrinderRecipeBuilder(pResult, pIngredient, attachment, grinds, resultCount,
+		return new GrinderRecipeBuilder(pCategory, pResult, pIngredient, attachment, grinds, resultCount,
 				ButchercraftRecipeSerializers.GRINDER_SERIALIZER.get(), ingredientCount);
 	}
 
@@ -80,7 +83,7 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(RequirementsStrategy.OR);
 
 		ResourceLocation r = new ResourceLocation(pRecipeId.getNamespace(),
-				"recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + pRecipeId.getPath());
+				"recipes/" + this.category.getFolderName() + "/" + pRecipeId.getPath());
 
 		pFinishedRecipeConsumer.accept(
 				new GrinderRecipeBuilder.Result(pRecipeId, this.group == null ? "" : this.group, this.ingredient,

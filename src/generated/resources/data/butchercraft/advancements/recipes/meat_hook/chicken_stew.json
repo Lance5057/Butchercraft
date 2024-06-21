@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:chicken_stew"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

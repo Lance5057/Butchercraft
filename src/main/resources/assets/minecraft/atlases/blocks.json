@@ -1,0 +1,58 @@
+{
+  "sources": [
+    {
+      "type": "directory",
+      "source": "models/meathook",
+      "prefix": "models/meathook/"
+    },
+    {
+      "type": "single",
+      "resource": "models/armor/chicken_mask_layer_1"
+    },
+    {
+      "type": "single",
+      "resource": "models/armor/cow_hood_layer_1"
+    },
+    {
+      "type": "single",
+      "resource": "models/armor/goat_hood_layer_1"
+    },
+    {
+      "type": "single",
+      "resource": "models/armor/pig_hood_layer_1"
+    },
+    {
+      "type": "single",
+      "resource": "models/armor/sheep_hood_layer_1_overlay"
+    },
+    {
+      "type": "single",
+      "resource": "models/armor/sheep_hood_layer_2"
+    },
+    {
+      "type": "single",
+      "resource": "entity/chicken"
+    },
+    {
+      "type": "single",
+      "resource": "entity/cow/cow"
+    },
+    {
+      "type": "single",
+      "resource": "entity/goat/goat"
+    },
+    {
+      "type": "single",
+      "resource": "entity/pig/pig"
+    },
+    {
+      "type": "directory",
+      "source": "entity/rabbit",
+      "prefix": "entity/rabbit/"
+    },
+    {
+      "type": "single",
+      "resource": "entity/sheep/sheep_fur"
+    }
+  ]
+}

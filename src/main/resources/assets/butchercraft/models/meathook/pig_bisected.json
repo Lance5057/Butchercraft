@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 32],
 	"textures": {
-		"0": "butchercraft:models/pig_bisected",
-		"particle": "butchercraft:models/pig_bisected"
+		"0": "butchercraft:models/meathook/pig_bisected",
+		"particle": "butchercraft:models/meathook/pig_bisected"
 	},
 	"elements": [
 		{

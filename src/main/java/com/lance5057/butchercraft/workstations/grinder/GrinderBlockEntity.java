@@ -30,8 +30,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
@@ -53,7 +53,7 @@ public class GrinderBlockEntity extends BlockEntity {
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
 		if (side != Direction.DOWN)
-			if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+			if (cap == ForgeCapabilities.ITEM_HANDLER) {
 				return handler.cast();
 			}
 		return super.getCapability(cap, side);
@@ -103,7 +103,7 @@ public class GrinderBlockEntity extends BlockEntity {
 								ButchercraftRecipes.GRINDER.get(), new GrinderContainer(stack, getStackInSlot(1)),
 								level);
 						if (r.isPresent()) {
-							this.getBlockEntity().setupRecipe(r.get().getGrinds(), r.get().getResultItem(),
+							this.getBlockEntity().setupRecipe(r.get().getGrinds(), r.get().getResultItem(null),
 									getStackInSlot(1), r.get().count);
 							this.getBlockEntity().updateInventory();
 							return super.insertItem(slot, stack, simulate);
@@ -274,7 +274,7 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+		final IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
 				.orElseGet(this::createHandler);
 		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
 
@@ -286,7 +286,7 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		IItemHandler itemInteractionHandler = getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+		IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
 				.orElseGet(this::createHandler);
 		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
 

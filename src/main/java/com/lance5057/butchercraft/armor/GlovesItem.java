@@ -17,7 +17,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 public class GlovesItem extends ArmorItem {
 	public GlovesItem(ArmorMaterial pMaterial, Properties pProperties) {
-		super(pMaterial, EquipmentSlot.CHEST, pProperties);
+		super(pMaterial, Type.CHESTPLATE, pProperties);
 	}
 
 	@Override

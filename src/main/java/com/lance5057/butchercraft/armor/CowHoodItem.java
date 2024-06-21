@@ -17,7 +17,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 public class CowHoodItem extends ArmorItem {
 	public CowHoodItem(ArmorMaterial pMaterial, Properties pProperties) {
-		super(pMaterial, EquipmentSlot.HEAD, pProperties);
+		super(pMaterial, Type.HELMET, pProperties);
 	}
 
 	@Override

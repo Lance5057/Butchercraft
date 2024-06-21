@@ -34,5 +34,6 @@
     [
       "hat"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

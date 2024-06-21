@@ -1,16 +1,23 @@
 package com.lance5057.butchercraft.data.builders;
 
+import java.util.Collections;
+
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.butchercraft.ButchercraftBlocks;
 
-import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ButchercraftBlockLootTables extends BlockLoot {
+public class ButchercraftBlockLootTables extends BlockLootSubProvider {
+	protected ButchercraftBlockLootTables() {
+		super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags());
+	}
+
 	@Override
-	protected void addTables() {
+	protected void generate() {
 		dropSelf(ButchercraftBlocks.MEAT_HOOK.get());
 
 		dropSelf(ButchercraftBlocks.BUTCHER_BLOCK.get());
@@ -55,11 +62,6 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get());
 		dropSelf(ButchercraftBlocks.TAXIDERMY_WHITE_RABBIT_BLOCK.get());
 
-		dropSelf(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
-		dropSelf(ButchercraftBlocks.BARN_WOOD_DOOR.get());
-		dropSelf(ButchercraftBlocks.BARN_WOOD_SLAB.get());
-		dropSelf(ButchercraftBlocks.BARN_WOOD_STAIRS.get());
-
 		dropSelf(ButchercraftBlocks.COW_HEAD.get());
 		dropSelf(ButchercraftBlocks.COW_SKULL_HEAD.get());
 		dropSelf(ButchercraftBlocks.SHEEP_HEAD.get());
@@ -80,8 +82,8 @@ public class ButchercraftBlockLootTables extends BlockLoot {
 		dropSelf(ButchercraftBlocks.RABBIT_SKULL_HEAD.get());
 
 		dropSelf(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
-		createDoorTable(ButchercraftBlocks.BARN_WOOD_DOOR.get());
-		createSlabItemTable(ButchercraftBlocks.BARN_WOOD_SLAB.get());
+		add(ButchercraftBlocks.BARN_WOOD_DOOR.get(), createDoorTable(ButchercraftBlocks.BARN_WOOD_DOOR.get()));
+		add(ButchercraftBlocks.BARN_WOOD_SLAB.get(), createSlabItemTable(ButchercraftBlocks.BARN_WOOD_SLAB.get()));
 		dropSelf(ButchercraftBlocks.BARN_WOOD_STAIRS.get());
 		dropSelf(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get());
 		dropSelf(ButchercraftBlocks.BARN_WOOD_FENCE.get());

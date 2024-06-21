@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "butchercraft:models/rabbit_white_skinned",
-		"particle": "butchercraft:models/rabbit_white_skinned"
+		"0": "butchercraft:models/meathook/rabbit_white_skinned",
+		"particle": "butchercraft:models/meathook/rabbit_white_skinned"
 	},
 	"elements": [
 		{

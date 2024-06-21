@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:cooked_pork_stew"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

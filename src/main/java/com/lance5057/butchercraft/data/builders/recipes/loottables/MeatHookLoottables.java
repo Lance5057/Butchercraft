@@ -1,13 +1,13 @@
 package com.lance5057.butchercraft.data.builders.recipes.loottables;
 
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -20,7 +20,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
-public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
+public class MeatHookLoottables implements LootTableSubProvider {
 
 	public static final ResourceLocation SKIN_COW = new ResourceLocation(Butchercraft.MOD_ID, "meat_hook/skin_cow");
 	public static final ResourceLocation DISEMBOWEL_COW = new ResourceLocation(Butchercraft.MOD_ID,
@@ -67,7 +67,7 @@ public class MeatHookLoottables implements Consumer<BiConsumer<ResourceLocation,
 			"meat_hook/sheep_leather");
 
 	@Override
-	public void accept(BiConsumer<ResourceLocation, Builder> t) {
+	public void generate(BiConsumer<ResourceLocation, Builder> t) {
 		t.accept(BLOOD_BUCKET,
 				LootTable.lootTable().withPool(createPoolWithItem(ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1)));
 

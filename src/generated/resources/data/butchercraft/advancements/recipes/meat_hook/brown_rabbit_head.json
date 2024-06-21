@@ -17,5 +17,6 @@
     "recipes": [
       "butchercraft:brown_rabbit_head"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

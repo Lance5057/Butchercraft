@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
@@ -13,14 +14,14 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ButchercraftForgeEvents {
 	@SubscribeEvent
-	public static void giveHoodsToUndead(LivingSpawnEvent.SpecialSpawn event) {
+	public static void giveHoodsToUndead(MobSpawnEvent.FinalizeSpawn event) {
 		if (event.getLevel() instanceof ServerLevel level) {
 			if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_SPAWN_CHANCE.get().floatValue()) {
 				Mob e = event.getEntity();
@@ -54,34 +55,34 @@ public class ButchercraftForgeEvents {
 						case 0:
 							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.BLACK_BUNNY_EARS.get()));
 							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.BLACK_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.TYPE_BLACK);
+							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.BLACK);
 							break;
 						case 1:
 							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.BROWN_BUNNY_EARS.get()));
 							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.BROWN_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.TYPE_BROWN);
+							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.BROWN);
 							break;
 						case 2:
 							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.GOLD_BUNNY_EARS.get()));
 							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.GOLD_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.TYPE_GOLD);
+							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.GOLD);
 							break;
 						case 3:
 							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.SALT_BUNNY_EARS.get()));
 							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.SALT_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.TYPE_SALT);
+							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.SALT);
 							break;
 						case 4:
 							e.setItemSlot(EquipmentSlot.HEAD,
 									new ItemStack(ButchercraftItems.SPLOTCHED_BUNNY_EARS.get()));
 							e.setItemSlot(EquipmentSlot.LEGS,
 									new ItemStack(ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.TYPE_WHITE_SPLOTCHED);
+							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.WHITE_SPLOTCHED);
 							break;
 						default:
 							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.WHITE_BUNNY_EARS.get()));
 							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.WHITE_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.TYPE_WHITE);
+							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.WHITE);
 							break;
 						}
 
@@ -98,7 +99,7 @@ public class ButchercraftForgeEvents {
 				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get().floatValue()) {
 					int animalsAmount = level.getRandom().nextInt(4) + 2;
 					for (int i = 0; i < animalsAmount; i++) {
-						Animal ent = (Animal) type.spawn(level, null, null, e.blockPosition()
+						Animal ent = (Animal) type.spawn(level, (CompoundTag) null, null, e.blockPosition()
 								.offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT,
 								false, false);
 						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
@@ -106,23 +107,23 @@ public class ButchercraftForgeEvents {
 				}
 	}
 
-	private static void spawnRabbitArmy(ServerLevel level, Mob e, EntityType<?> type, int skin) {
+	private static void spawnRabbitArmy(ServerLevel level, Mob e, EntityType<?> type, Rabbit.Variant skin) {
 		if (level.dimension() == Level.OVERWORLD)
 			if (level.canSeeSky(e.blockPosition()))
 				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get().floatValue()) {
 					int animalsAmount = level.getRandom().nextInt(4) + 2;
 					for (int i = 0; i < animalsAmount; i++) {
-						Rabbit ent = (Rabbit) type.spawn(level, null, null, e.blockPosition()
+						Rabbit ent = (Rabbit) type.spawn(level, (CompoundTag) null, null, e.blockPosition()
 								.offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT,
 								false, false);
-						ent.setRabbitType(skin);
+						ent.setVariant(skin);
 						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
 					}
 				}
 	}
 
 	@SubscribeEvent
-	public static void bloodyTrail(LivingSpawnEvent.SpecialSpawn event) {
+	public static void bloodyTrail(MobSpawnEvent.FinalizeSpawn event) {
 		if (event.getEntity() instanceof Zombie z) {
 			for (Player p : event.getLevel().players()) {
 				if (p.hasEffect(ButchercraftMobEffects.BLOODTRAIL.get())) {

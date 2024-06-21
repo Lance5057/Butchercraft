@@ -16,7 +16,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 public class BunnyEarsItem extends TemptArmor {
 	public BunnyEarsItem(ArmorMaterial pMaterial, Properties pProperties) { 
-		super(pMaterial, EquipmentSlot.HEAD, pProperties);
+		super(pMaterial, Type.HELMET, pProperties);
 	}
 
 	@Override

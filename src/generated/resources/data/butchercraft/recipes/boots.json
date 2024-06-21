@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "B": {
       "item": "minecraft:leather_boots"
@@ -17,5 +18,6 @@
   ],
   "result": {
     "item": "butchercraft:boots"
-  }
+  },
+  "show_notification": true
 }

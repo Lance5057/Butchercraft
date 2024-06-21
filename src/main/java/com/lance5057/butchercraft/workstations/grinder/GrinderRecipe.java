@@ -3,6 +3,7 @@ package com.lance5057.butchercraft.workstations.grinder;
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -47,7 +48,7 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 	}
 
 	@Override
-	public ItemStack getResultItem() {
+	public ItemStack getResultItem(RegistryAccess registryAccess) {
 		return result;
 	}
 
@@ -67,7 +68,7 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 	}
 
 	@Override
-	public ItemStack assemble(GrinderContainer pContainer) {
+	public ItemStack assemble(GrinderContainer pContainer, RegistryAccess registryAccess) {
 		return this.result.copy();
 	}
 }

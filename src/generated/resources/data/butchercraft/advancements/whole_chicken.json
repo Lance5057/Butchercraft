@@ -122,5 +122,6 @@
     [
       "whole_chicken_ground"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "F": {
       "item": "butchercraft:lard"
@@ -18,5 +19,6 @@
   ],
   "result": {
     "item": "butchercraft:apron"
-  }
+  },
+  "show_notification": true
 }

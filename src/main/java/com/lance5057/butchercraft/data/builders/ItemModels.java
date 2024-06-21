@@ -3,7 +3,7 @@ package com.lance5057.butchercraft.data.builders;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -17,8 +17,8 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemModels extends ModelProvider<ItemModelBuilder> {
 	private final ExistingFileHelper fh;
 
-	public ItemModels(DataGenerator generator, ExistingFileHelper fh) {
-		super(generator, Butchercraft.MOD_ID, ITEM_FOLDER, ItemModelBuilder::new, fh);
+	public ItemModels(PackOutput output, ExistingFileHelper fh) {
+		super(output, Butchercraft.MOD_ID, ITEM_FOLDER, ItemModelBuilder::new, fh);
 		this.fh = fh;
 	}
 
