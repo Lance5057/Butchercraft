@@ -132,21 +132,21 @@ public class ButchercraftBlocks {
 					BlockBehaviour.Properties.copy(Blocks.PLAYER_HEAD).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> COW_HEAD_WALL = BLOCKS.register("cow_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.COW,
-					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(COW_HEAD.get())));
+					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(COW_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> COW_SKULL_HEAD = BLOCKS.register("cow_skull_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.COW_SKULL,
 					BlockBehaviour.Properties.copy(Blocks.SKELETON_SKULL).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> COW_SKULL_HEAD_WALL = BLOCKS.register("cow_skull_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.COW_SKULL,
-					BlockBehaviour.Properties.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).dropsLike(COW_SKULL_HEAD.get())));
+					BlockBehaviour.Properties.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).lootFrom(COW_SKULL_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> CHICKEN_HEAD = BLOCKS.register("chicken_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.CHICKEN,
 					BlockBehaviour.Properties.copy(Blocks.PLAYER_HEAD).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> CHICKEN_HEAD_WALL = BLOCKS.register("chicken_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.CHICKEN,
-					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(CHICKEN_HEAD.get())));
+					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(CHICKEN_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> CHICKEN_SKULL_HEAD = BLOCKS.register("chicken_skull_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.CHICKEN_SKULL,
@@ -154,49 +154,49 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<WallSkullBlock> CHICKEN_SKULL_HEAD_WALL = BLOCKS.register(
 			"chicken_skull_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.CHICKEN_SKULL, BlockBehaviour.Properties
-					.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).dropsLike(CHICKEN_SKULL_HEAD.get())));
+					.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).lootFrom(CHICKEN_SKULL_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> GOAT_HEAD = BLOCKS.register("goat_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.GOAT,
 					BlockBehaviour.Properties.copy(Blocks.PLAYER_HEAD).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> GOAT_HEAD_WALL = BLOCKS.register("goat_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.GOAT,
-					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(GOAT_HEAD.get())));
+					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(GOAT_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> GOAT_SKULL_HEAD = BLOCKS.register("goat_skull_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.GOAT_SKULL,
 					BlockBehaviour.Properties.copy(Blocks.SKELETON_SKULL).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> GOAT_SKULL_HEAD_WALL = BLOCKS.register("goat_skull_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.GOAT_SKULL,
-					BlockBehaviour.Properties.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).dropsLike(GOAT_SKULL_HEAD.get())));
+					BlockBehaviour.Properties.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).lootFrom(GOAT_SKULL_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> PIG_HEAD = BLOCKS.register("pig_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.PIG,
 					BlockBehaviour.Properties.copy(Blocks.PLAYER_HEAD).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> PIG_HEAD_WALL = BLOCKS.register("pig_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.PIG,
-					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(PIG_HEAD.get())));
+					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(PIG_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> PIG_SKULL_HEAD = BLOCKS.register("pig_skull_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.PIG_SKULL,
 					BlockBehaviour.Properties.copy(Blocks.SKELETON_SKULL).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> PIG_SKULL_HEAD_WALL = BLOCKS.register("pig_skull_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.PIG_SKULL,
-					BlockBehaviour.Properties.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).dropsLike(PIG_SKULL_HEAD.get())));
+					BlockBehaviour.Properties.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).lootFrom(PIG_SKULL_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> SHEEP_HEAD = BLOCKS.register("sheep_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.SHEEP,
 					BlockBehaviour.Properties.copy(Blocks.PLAYER_HEAD).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> SHEEP_HEAD_WALL = BLOCKS.register("sheep_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.SHEEP,
-					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(SHEEP_HEAD.get())));
+					BlockBehaviour.Properties.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(SHEEP_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> SHEEP_SKULL_HEAD = BLOCKS.register("sheep_skull_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.SHEEP_SKULL,
 					BlockBehaviour.Properties.copy(Blocks.SKELETON_SKULL).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> SHEEP_SKULL_HEAD_WALL = BLOCKS.register("sheep_skull_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.SHEEP_SKULL, BlockBehaviour.Properties
-					.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).dropsLike(SHEEP_SKULL_HEAD.get())));
+					.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).lootFrom(SHEEP_SKULL_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> RABBIT_BROWN_HEAD = BLOCKS.register("rabbit_brown_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_BROWN,
@@ -204,7 +204,7 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<WallSkullBlock> RABBIT_BROWN_HEAD_WALL = BLOCKS.register(
 			"rabbit_brown_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_BROWN, BlockBehaviour.Properties
-					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(RABBIT_BROWN_HEAD.get())));
+					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(RABBIT_BROWN_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> RABBIT_BLACK_HEAD = BLOCKS.register("rabbit_black_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_BLACK,
@@ -212,21 +212,21 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<WallSkullBlock> RABBIT_BLACK_HEAD_WALL = BLOCKS.register(
 			"rabbit_black_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_BLACK, BlockBehaviour.Properties
-					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(RABBIT_BLACK_HEAD.get())));
+					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(RABBIT_BLACK_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> RABBIT_GOLD_HEAD = BLOCKS.register("rabbit_gold_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_GOLD,
 					BlockBehaviour.Properties.copy(Blocks.PLAYER_HEAD).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> RABBIT_GOLD_HEAD_WALL = BLOCKS.register("rabbit_gold_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_GOLD, BlockBehaviour.Properties
-					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(RABBIT_GOLD_HEAD.get())));
+					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(RABBIT_GOLD_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> RABBIT_SALT_HEAD = BLOCKS.register("rabbit_salt_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_SALT,
 					BlockBehaviour.Properties.copy(Blocks.PLAYER_HEAD).strength(1.0F)));
 	public static final RegistryObject<WallSkullBlock> RABBIT_SALT_HEAD_WALL = BLOCKS.register("rabbit_salt_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_SALT, BlockBehaviour.Properties
-					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(RABBIT_SALT_HEAD.get())));
+					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(RABBIT_SALT_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> RABBIT_SPLOTCHED_HEAD = BLOCKS.register("rabbit_splotched_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_SPLOTCHED,
@@ -234,7 +234,7 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<WallSkullBlock> RABBIT_SPLOTCHED_HEAD_WALL = BLOCKS.register(
 			"rabbit_splotched_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_SPLOTCHED, BlockBehaviour.Properties
-					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(RABBIT_SPLOTCHED_HEAD.get())));
+					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(RABBIT_SPLOTCHED_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> RABBIT_WHITE_HEAD = BLOCKS.register("rabbit_white_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_WHITE,
@@ -242,7 +242,7 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<WallSkullBlock> RABBIT_WHITE_HEAD_WALL = BLOCKS.register(
 			"rabbit_white_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_WHITE, BlockBehaviour.Properties
-					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).dropsLike(RABBIT_WHITE_HEAD.get())));
+					.copy(Blocks.PLAYER_WALL_HEAD).strength(1.0F).lootFrom(RABBIT_WHITE_HEAD)));
 
 	public static final RegistryObject<AnimalHeadBlock> RABBIT_SKULL_HEAD = BLOCKS.register("rabbit_skull_head",
 			() -> new AnimalHeadBlock(AnimalHeadBlock.Types.RABBIT_SKULL,
@@ -250,7 +250,7 @@ public class ButchercraftBlocks {
 	public static final RegistryObject<WallSkullBlock> RABBIT_SKULL_HEAD_WALL = BLOCKS.register(
 			"rabbit_skull_head_wall",
 			() -> new AnimalWallHeadBlock(AnimalHeadBlock.Types.RABBIT_SKULL, BlockBehaviour.Properties
-					.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).dropsLike(RABBIT_SKULL_HEAD.get())));
+					.copy(Blocks.SKELETON_WALL_SKULL).strength(1.0F).lootFrom(RABBIT_SKULL_HEAD)));
 
 	public static final RegistryObject<Block> BARN_WOOD_BLOCK = BLOCKS.register("barn_wood_block", () -> new Block(
 			BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
