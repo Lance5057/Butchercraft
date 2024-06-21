@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#forge:beef/ground/cooked",
+    "#forge:mutton/ground/cooked",
+    "#forge:pork/ground/cooked",
+    "#forge:chicken/ground/cooked",
+    "#forge:rabbit/ground/cooked",
+    "#forge:goat/ground/cooked"
+  ]
+}

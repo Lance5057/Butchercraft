@@ -1390,6 +1390,23 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 		createFoodRecipe(Ingredient.of(ButchercraftItems.STEW_RABBIT.get()), ButchercraftItems.COOKED_STEW_RABBIT.get(),
 				consumer);
 
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CHICKEN_BREAST.get()),
+				ButchercraftItems.COOKED_CHICKEN_BREAST.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CHICKEN_LEG.get()), ButchercraftItems.COOKED_CHICKEN_LEG.get(),
+				consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CHICKEN_SCRAPS.get()),
+				ButchercraftItems.COOKED_CHICKEN_SCRAPS.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CHICKEN_THIGH.get()),
+				ButchercraftItems.COOKED_CHICKEN_THIGH.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CHICKEN_WING.get()),
+				ButchercraftItems.COOKED_CHICKEN_WING.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.STEW_CHICKEN.get()),
+				ButchercraftItems.COOKED_STEW_CHICKEN.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.CUBED_CHICKEN.get()),
+				ButchercraftItems.COOKED_CUBED_CHICKEN.get(), consumer);
+		createFoodRecipe(Ingredient.of(ButchercraftItems.GROUND_CHICKEN.get()),
+				ButchercraftItems.COOKED_GROUND_CHICKEN.get(), consumer);
+
 		createFoodRecipe(Ingredient.of(ButchercraftItems.SAUSAGE.get()), ButchercraftItems.COOKED_SAUSAGE.get(),
 				consumer);
 		createFoodRecipe(Ingredient.of(ButchercraftItems.BLOOD_SAUSAGE.get()),

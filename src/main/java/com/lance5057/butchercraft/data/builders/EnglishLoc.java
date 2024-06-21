@@ -18,6 +18,9 @@ public class EnglishLoc extends LanguageProvider {
 		Butchercraft.logger.info("\tEN_US Localization");
 
 		this.add("itemGroup.butchercraft.items", "Butchercraft Items");
+		this.add("Butchercraft.jei.hook", "Meat Hook");
+		this.add("Butchercraft.jei.butcherblock", "Butcher Block");
+		this.add("Butchercraft.jei.grinder", "Meat Grinder");
 
 		this.add(ButchercraftItems.COOKED_BEEF_SCRAPS.get(), "Cooked Beef Straps");
 		this.add(ButchercraftItems.BEEF_SCRAPS.get(), "Raw Beef Scraps");
@@ -153,9 +156,13 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.COW_HEAD_ITEM.get(), "Cow Head");
 		this.add(ButchercraftItems.COW_SKULL_HEAD_ITEM.get(), "Cow Skull");
 		this.add(ButchercraftItems.SHEEP_HEAD_ITEM.get(), "Sheep Head");
+		this.add(ButchercraftItems.SHEEP_SKULL_HEAD_ITEM.get(), "Sheep Skull");
 		this.add(ButchercraftItems.PIG_HEAD_ITEM.get(), "Pig Head");
+		this.add(ButchercraftItems.PIG_SKULL_HEAD_ITEM.get(), "Pig Skull");
 		this.add(ButchercraftItems.GOAT_HEAD_ITEM.get(), "Goat Head");
+		this.add(ButchercraftItems.GOAT_SKULL_HEAD_ITEM.get(), "Goat Skull");
 		this.add(ButchercraftItems.CHICKEN_HEAD_ITEM.get(), "Chicken Head");
+		this.add(ButchercraftItems.CHICKEN_SKULL_HEAD_ITEM.get(), "Chicken Skull");
 
 		this.add(ButchercraftBlocks.TAXIDERMY_CHICKEN_BLOCK.get(), "Taxidermied Chicken");
 		this.add(ButchercraftBlocks.TAXIDERMY_COW_BLOCK.get(), "Taxidermied Cow");

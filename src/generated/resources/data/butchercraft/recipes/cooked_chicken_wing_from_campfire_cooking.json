@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:chicken_wing"
+  },
+  "result": "butchercraft:cooked_chicken_wing"
+}

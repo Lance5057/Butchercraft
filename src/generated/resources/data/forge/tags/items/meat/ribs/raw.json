@@ -1,8 +1,8 @@
 {
   "values": [
-    "#forge:beef/ribs",
-    "#forge:mutton/ribs",
-    "#forge:pork/ribs",
-    "#forge:goat/ribs"
+    "#forge:beef/ribs/raw",
+    "#forge:mutton/ribs/raw",
+    "#forge:pork/ribs/raw",
+    "#forge:goat/ribs/raw"
   ]
 }

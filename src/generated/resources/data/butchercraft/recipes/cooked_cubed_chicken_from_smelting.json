@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:cubed_chicken"
+  },
+  "result": "butchercraft:cooked_cubed_chicken"
+}

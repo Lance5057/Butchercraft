@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft.items;
 
+import com.lance5057.butchercraft.ButchercraftConfig;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.armor.ApronItem;
 import com.lance5057.butchercraft.armor.BootsItem;
@@ -20,7 +21,7 @@ public class CarcassItem extends Item {
 
 	@Override
 	public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-		if (pLevel.getRandom().nextInt() % 10 == 0)
+		if (pLevel.getRandom().nextInt() % ButchercraftConfig.CARCASS_EFFECT_CHANCE.get() == 0)
 			if (pEntity instanceof Player p) {
 				ItemStack boots = p.getInventory().getArmor(0);
 				if (boots.getItem() instanceof BootsItem)
