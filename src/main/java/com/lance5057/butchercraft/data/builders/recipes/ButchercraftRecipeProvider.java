@@ -15,7 +15,6 @@ import com.lance5057.butchercraft.data.builders.recipes.loottables.MeatHookLoott
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;

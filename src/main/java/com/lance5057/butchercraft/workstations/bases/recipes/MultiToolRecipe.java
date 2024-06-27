@@ -15,16 +15,17 @@ import com.google.gson.JsonSyntaxException;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.crafting.IShapedRecipe;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.crafting.IShapedRecipe;
 
 public class MultiToolRecipe implements IShapedRecipe<WorkstationRecipeWrapper> {
 	static int MAX_WIDTH = 5;
@@ -185,7 +186,7 @@ public class MultiToolRecipe implements IShapedRecipe<WorkstationRecipeWrapper> 
 				throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
 			}
 
-			map.put(entry.getKey(), Ingredient.fromJson(entry.getValue()));
+			map.put(entry.getKey(), Ingredient.fromJson(entry.getValue(), true));
 		}
 
 		map.put(" ", Ingredient.EMPTY);
@@ -216,8 +217,8 @@ public class MultiToolRecipe implements IShapedRecipe<WorkstationRecipeWrapper> 
 
 	public static ItemStack deserializeItem(JsonObject object) {
 		String s = GsonHelper.convertToString(object, "item");
-		Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(s));
-		if (item == null) {
+		Item item = BuiltInRegistries.ITEM.get(new ResourceLocation(s));
+		if (item == Items.AIR) {
 			throw new JsonSyntaxException("Unknown item '" + s + "'");
 		}
 		if (object.has("data")) {

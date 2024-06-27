@@ -3,6 +3,7 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+import com.mojang.serialization.Codec;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
@@ -12,6 +13,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
 public class ButcherBlockSerializer implements RecipeSerializer<ButcherBlockRecipe> {
+	@Override
+	public Codec<ButcherBlockRecipe> codec() {
+		return null; // TODO: ARGHHHH
+	}
 
 	@Override
 	public ButcherBlockRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {

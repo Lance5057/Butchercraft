@@ -2,27 +2,34 @@ package com.lance5057.butchercraft.workstations.grinder;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> {
+	@Override
+	public Codec<GrinderRecipe> codec() {
+		return null; // TODO: ASDFGHJKL
+	}
+
 	@Override
 	public GrinderRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 		String s = GsonHelper.getAsString(pJson, "group", "");
 
 		Ingredient ingredient;
 		if (GsonHelper.isArrayNode(pJson, "ingredient")) {
-			ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(pJson, "ingredient"));
+			ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(pJson, "ingredient"), true);
 		} else {
-			ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "ingredient"));
+			ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "ingredient"), true);
 		}
 
 		Ingredient attachment;
@@ -31,9 +38,9 @@ public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> 
 			if (a.isEmpty())
 				attachment = Ingredient.EMPTY;
 			else
-				attachment = Ingredient.fromJson(a);
+				attachment = Ingredient.fromJson(a, true);
 		} else {
-			attachment = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "attachment"));
+			attachment = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "attachment"), true);
 		}
 
 		if (!pJson.has("result"))
@@ -44,8 +51,8 @@ public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> 
 		else {
 			String s1 = GsonHelper.getAsString(pJson, "result");
 			ResourceLocation resourcelocation = new ResourceLocation(s1);
-			Item item = ForgeRegistries.ITEMS.getValue(resourcelocation);
-			if (item == null) {
+			Item item = BuiltInRegistries.ITEM.get(resourcelocation);
+			if (item == Items.AIR) {
 				throw new IllegalStateException("Item: " + s1 + " does not exist");
 			}
 			itemstack = new ItemStack(item);

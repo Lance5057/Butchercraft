@@ -53,11 +53,6 @@ public class GrinderRecipe implements Recipe<GrinderContainer> {
 	}
 
 	@Override
-	public ResourceLocation getId() {
-		return idIn;
-	}
-
-	@Override
 	public RecipeSerializer<?> getSerializer() {
 		return ButchercraftRecipeSerializers.GRINDER_SERIALIZER.get();
 	}

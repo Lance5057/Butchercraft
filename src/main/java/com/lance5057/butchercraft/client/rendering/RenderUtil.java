@@ -12,14 +12,14 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.model.data.ModelData;
-import net.minecraftforge.client.model.renderable.BakedModelRenderable;
-import net.minecraftforge.client.model.renderable.IRenderable;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.client.model.data.ModelData;
+import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable;
+import net.neoforged.neoforge.client.model.renderable.IRenderable;
 
 public class RenderUtil {
 
@@ -56,7 +56,7 @@ public class RenderUtil {
 		} else
 
 		{
-			Item item = ForgeRegistries.ITEMS.getValue(model.rc);
+			Item item = BuiltInRegistries.ITEM.get(model.rc);
 			itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist,
 					model.transform, timer);
 		}

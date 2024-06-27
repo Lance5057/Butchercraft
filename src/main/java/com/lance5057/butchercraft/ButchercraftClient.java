@@ -25,11 +25,11 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.ModelEvent.RegisterAdditional;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.ModelEvent;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = Butchercraft.MOD_ID)
 public class ButchercraftClient {
@@ -45,7 +45,7 @@ public class ButchercraftClient {
 	}
 
 	@SubscribeEvent
-	public static void RegisterExtraModels(RegisterAdditional event) {
+	public static void RegisterExtraModels(ModelEvent.RegisterAdditional event) {
 		Map<ResourceLocation, Resource> rrs = Minecraft.getInstance().getResourceManager()
 				.listResources("models/meathook", (p_215600_) -> {
 					return p_215600_.getPath().endsWith(".json");

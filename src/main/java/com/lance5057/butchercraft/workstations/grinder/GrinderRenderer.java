@@ -16,12 +16,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraftforge.client.model.data.ModelData;
-import net.minecraftforge.client.model.renderable.BakedModelRenderable;
-import net.minecraftforge.client.model.renderable.IRenderable;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
+import net.neoforged.neoforge.client.model.data.ModelData;
+import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable;
+import net.neoforged.neoforge.client.model.renderable.IRenderable;
+import net.neoforged.neoforge.items.IItemHandler;
 
 public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> {
 	int timer = 0;

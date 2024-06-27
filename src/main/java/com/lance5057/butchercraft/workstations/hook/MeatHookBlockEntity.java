@@ -31,6 +31,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -41,9 +42,9 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 // TODO Track recipe stage and damage tool on use
 public class MeatHookBlockEntity extends BlockEntity {
@@ -110,7 +111,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 	}
 
 	// Attempt to find a recipe that matches the tool and the item in its inventory
-	private Optional<HookRecipe> matchRecipe() {
+	private Optional<RecipeHolder<HookRecipe>> matchRecipe() {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.HOOK.get(),
 					new HookRecipeContainer(getInsertedItem()), level);
@@ -207,9 +208,9 @@ public class MeatHookBlockEntity extends BlockEntity {
 	}
 
 	public InteractionResult butcher(Player p, ItemStack butcheringTool) {
-		Optional<HookRecipe> recipeOptional = matchRecipe();
+		Optional<RecipeHolder<HookRecipe>> recipeOptional = matchRecipe();
 		if (recipeOptional.isPresent()) {
-			HookRecipe recipe = recipeOptional.get();
+			HookRecipe recipe = recipeOptional.get().value();
 			if (this.curTool == null) {
 				setupStage(recipe, stage);
 			}

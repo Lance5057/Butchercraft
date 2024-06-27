@@ -9,10 +9,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlacklistedModel {
 	public boolean isBlock;
@@ -32,7 +32,7 @@ public class BlacklistedModel {
 	
 	public BlacklistedModel(Item item, AnimationFloatTransform anim)
 	{
-		this.rc = ForgeRegistries.ITEMS.getKey(item);
+		this.rc = BuiltInRegistries.ITEM.getKey(item);
 		isBlock = false;
 		this.transform = anim;
 	}

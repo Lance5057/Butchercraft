@@ -16,9 +16,35 @@ public class AnimalHeadBlock extends SkullBlock {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static enum Types implements SkullBlock.Type {
-		COW, COW_SKULL, SHEEP, SHEEP_SKULL, PIG, PIG_SKULL, GOAT, GOAT_SKULL, CHICKEN, CHICKEN_SKULL, RABBIT_BLACK,
-		RABBIT_BROWN, RABBIT_GOLD, RABBIT_SALT, RABBIT_WHITE, RABBIT_SPLOTCHED, RABBIT_SKULL;
+	public enum Types implements SkullBlock.Type {
+		CHICKEN("chicken"),
+		CHICKEN_SKULL("chicken_skull"),
+		COW("cow"),
+		COW_SKULL("cow_skull"),
+		GOAT("goat"),
+		GOAT_SKULL("goat_skull"),
+		PIG("pig"),
+		PIG_SKULL("pig_skull"),
+		RABBIT_BLACK("rabbit_black"),
+		RABBIT_BROWN("rabbit_brown"),
+		RABBIT_GOLD("rabbit_gold"),
+		RABBIT_SALT("rabbit_salt"),
+		RABBIT_SPLOTCHED("rabbit_splotched"),
+		RABBIT_WHITE("rabbit_white"),
+		RABBIT_SKULL("rabbit_skull"),
+		SHEEP("sheep"),
+		SHEEP_SKULL("sheep_skull");
+
+		private final String name;
+
+		Types(String name) {
+			this.name = name;
+		}
+
+		@Override
+		public String getSerializedName() {
+			return this.name;
+		}
 	}
 
 	@Override

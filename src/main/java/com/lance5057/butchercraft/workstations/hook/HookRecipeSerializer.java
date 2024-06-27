@@ -3,6 +3,7 @@ package com.lance5057.butchercraft.workstations.hook;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+import com.mojang.serialization.Codec;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
@@ -12,6 +13,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
 public class HookRecipeSerializer implements RecipeSerializer<HookRecipe> {
+	@Override
+	public Codec<HookRecipe> codec() {
+		return null; // TODO: CODECS SUCK
+	}
 
 	@Override
 	public HookRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {

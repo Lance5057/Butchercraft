@@ -1,7 +1,10 @@
 package com.lance5057.butchercraft.util;
 
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.mojang.serialization.JsonOps;
 
+import net.minecraft.Util;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -32,7 +35,7 @@ public class RecipeItemUse {
 
     public static RecipeItemUse read(JsonObject j) {
         int use = j.get(USES_FIELD).getAsInt();
-        Ingredient i = Ingredient.fromJson(j.getAsJsonObject(TOOL_FIELD));
+        Ingredient i = Ingredient.fromJson(j.getAsJsonObject(TOOL_FIELD), true);
         int c = j.get(COUNT_FIELD).getAsInt();
         // ItemStack stack = ShapedRecipe.deserializeItem(j.getAsJsonObject("tool"));
         boolean b = j.get(DAMAGE_FIELD).getAsBoolean();
@@ -67,7 +70,7 @@ public class RecipeItemUse {
         JsonObject o = new JsonObject();
 
         o.addProperty(USES_FIELD, r.uses);
-        o.add(TOOL_FIELD, r.tool.toJson());
+        o.add(TOOL_FIELD, Util.getOrThrow(Ingredient.CODEC.encodeStart(JsonOps.INSTANCE, r.tool), JsonParseException::new));
         o.addProperty(COUNT_FIELD, r.count);
         o.addProperty(DAMAGE_FIELD, r.damageTool);
         o.addProperty(LOOT_TABLE_FIELD, r.lootTable.toString());

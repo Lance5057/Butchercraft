@@ -63,11 +63,6 @@ public class HookRecipe implements Recipe<HookRecipeContainer> {
 	}
 
 	@Override
-	public ResourceLocation getId() {
-		return idIn;
-	}
-
-	@Override
 	public RecipeSerializer<?> getSerializer() {
 		return ButchercraftRecipeSerializers.HOOK_SERIALIZER.get();
 	}
@@ -84,9 +79,5 @@ public class HookRecipe implements Recipe<HookRecipeContainer> {
 
 	public NonNullList<AnimatedRecipeItemUse> getRecipeToolsIn() {
 		return recipeToolsIn;
-	}
-
-	public boolean matches(ItemStack insertedItem) {
-		return carcassIn.test(insertedItem);
 	}
 }

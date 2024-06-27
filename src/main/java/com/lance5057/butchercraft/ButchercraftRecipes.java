@@ -4,24 +4,24 @@ import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRecipe;
 import com.lance5057.butchercraft.workstations.hook.HookRecipe;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ButchercraftRecipes {
 	public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister
-			.create(ForgeRegistries.RECIPE_TYPES, Butchercraft.MOD_ID);
-	public static final RegistryObject<RecipeType<HookRecipe>> HOOK = createRecipeType("meat_hook");
+			.create(Registries.RECIPE_TYPE, Butchercraft.MOD_ID);
+	public static final DeferredHolder<RecipeType<?>, RecipeType<HookRecipe>> HOOK = createRecipeType("meat_hook");
 
-	public static final RegistryObject<RecipeType<ButcherBlockRecipe>> BUTCHER_BLOCK = createRecipeType(
+	public static final DeferredHolder<RecipeType<?>, RecipeType<ButcherBlockRecipe>> BUTCHER_BLOCK = createRecipeType(
 			"butcher_block");
 
-	public static final RegistryObject<RecipeType<GrinderRecipe>> GRINDER = createRecipeType("grinder");
+	public static final DeferredHolder<RecipeType<?>, RecipeType<GrinderRecipe>> GRINDER = createRecipeType("grinder");
 
-	private static <T extends Recipe<?>> RegistryObject<RecipeType<T>> createRecipeType(String name) {
+	private static <T extends Recipe<?>> DeferredHolder<RecipeType<?>, RecipeType<T>> createRecipeType(String name) {
 		return RECIPE_TYPES.register(name, () -> new RecipeType<T>() {
 			@Override()
 			public String toString() {

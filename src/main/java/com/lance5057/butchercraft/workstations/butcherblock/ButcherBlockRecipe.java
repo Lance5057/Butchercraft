@@ -60,11 +60,6 @@ public class ButcherBlockRecipe implements Recipe<ButcherBlockContainer> {
 	}
 
 	@Override
-	public ResourceLocation getId() {
-		return idIn;
-	}
-
-	@Override
 	public RecipeSerializer<?> getSerializer() {
 		return ButchercraftRecipeSerializers.BUTCHER_BLOCK_SERIALIZER.get();
 	}
@@ -81,9 +76,5 @@ public class ButcherBlockRecipe implements Recipe<ButcherBlockContainer> {
 
 	public NonNullList<AnimatedRecipeItemUse> getRecipeToolsIn() {
 		return recipeToolsIn;
-	}
-
-	public boolean matches(ItemStack insertedItem) {
-		return carcassIn.test(insertedItem);
 	}
 }

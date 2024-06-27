@@ -1,18 +1,16 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.entity.ButchercraftVillagers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.lance5057.butchercraft.entity.ButchercraftVillagers;
-
 import net.minecraft.world.entity.Entity;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(Butchercraft.MOD_ID)
 public class Butchercraft {
@@ -22,13 +20,12 @@ public class Butchercraft {
 
 	public static Logger logger = LogManager.getLogger();
 
-	public Butchercraft() {
-		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+	public Butchercraft(IEventBus modEventBus) {
 		modEventBus.addListener(this::setupClient);
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.spec);
 
-		IEventBus bus = MinecraftForge.EVENT_BUS;
+		IEventBus bus = NeoForge.EVENT_BUS;
 		bus.addListener(ButchercraftModEvents::registerCaps);
 		bus.addGenericListener(Entity.class, ButchercraftModEvents::attachCaps);
 		bus.addListener(ButchercraftModEvents::breedEvent);
