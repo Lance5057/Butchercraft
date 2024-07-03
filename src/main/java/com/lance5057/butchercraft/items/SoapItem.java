@@ -2,6 +2,7 @@ package com.lance5057.butchercraft.items;
 
 import java.util.function.Consumer;
 
+import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -35,7 +36,7 @@ public class SoapItem extends Item {
 
 	public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {
 		if (!pLevel.isClientSide)
-			pEntityLiving.curePotionEffects(pStack); // FORGE - move up so stack.shrink does not turn stack into air
+			pEntityLiving.removeEffectsCuredBy(ButchercraftMobEffects.SOAP); // FORGE - move up so stack.shrink does not turn stack into air
 		if (pEntityLiving instanceof ServerPlayer serverplayer) {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverplayer, pStack);
 			serverplayer.awardStat(Stats.ITEM_USED.get(this));

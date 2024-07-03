@@ -11,16 +11,12 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.hands.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "minecraft:dirt"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.hands.name"
     }

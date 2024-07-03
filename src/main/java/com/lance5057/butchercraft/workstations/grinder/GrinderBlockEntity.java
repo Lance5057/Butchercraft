@@ -3,7 +3,6 @@ package com.lance5057.butchercraft.workstations.grinder;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -30,16 +29,13 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.common.crafting.CraftingHelper;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class GrinderBlockEntity extends BlockEntity {
-	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
-
 	private ItemStack output = ItemStack.EMPTY;
 	private int itemsUsed = 0;
 	private int grinds = 0;
@@ -50,18 +46,15 @@ public class GrinderBlockEntity extends BlockEntity {
 		super(ButchercraftBlockEntities.GRINDER.get(), pPos, pState);
 	}
 
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (side != Direction.DOWN)
-			if (cap == ForgeCapabilities.ITEM_HANDLER) {
-				return handler.cast();
-			}
-		return super.getCapability(cap, side);
+	public Optional<ItemStackHandler> getHandler() {
+		if (this.getLevel() != null) {
+			return Optional.ofNullable((ItemStackHandler) this.getLevel().getCapability(Capabilities.ItemHandler.BLOCK, this.getBlockPos(), this.getBlockState(), this, Direction.NORTH));
+		}
+		return Optional.empty();
 	}
 
-	private IItemHandlerModifiable createHandler() {
-		return new BlockEntityItemHandler<GrinderBlockEntity>(this, 3) {
+	public BlockEntityItemHandler<GrinderBlockEntity> createHandler() {
+		return new BlockEntityItemHandler<>(this, 3) {
 
 			@Override
 			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
@@ -168,7 +161,7 @@ public class GrinderBlockEntity extends BlockEntity {
 		for (int i = 0; i < 3; i++) {
 			if (inventory.isItemValid(i, heldItem)) {
 
-				if (!inventory.insertItem(i, heldItem, true).equals(heldItem, false)) {
+				if (!ItemStack.isSameItemSameTags(inventory.insertItem(i, heldItem, true), heldItem)) {
 
 					heldItem = inventory.insertItem(i, heldItem.copy(), false);
 
@@ -184,13 +177,13 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	// External extract handler
 	public void extractItem(Player playerEntity) {
-		handler.ifPresent(inventory -> this.extractItem(playerEntity, inventory));
+		getHandler().ifPresent(inventory -> this.extractItem(playerEntity, inventory));
 	}
 
 	// External insert handler
 	public ItemStack insertItem(ItemStack heldItem) {
-		if (handler.isPresent()) {
-			Optional<ItemStack> s = handler.map(i -> insertItem(i, heldItem));
+		if (getHandler().isPresent()) {
+			Optional<ItemStack> s = getHandler().map(i -> insertItem(i, heldItem));
 			if (s.isPresent())
 				return s.get();
 		}
@@ -225,15 +218,15 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	public ItemStack getInsertedItem() {
-		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
+		return getHandler().map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
 	}
 
 	public ItemStack getAttachment() {
-		return handler.map(inventory -> inventory.getStackInSlot(1)).orElse(ItemStack.EMPTY);
+		return getHandler().map(inventory -> inventory.getStackInSlot(1)).orElse(ItemStack.EMPTY);
 	}
 
 	public ItemStack getCasing() {
-		return handler.map(inventory -> inventory.getStackInSlot(2)).orElse(ItemStack.EMPTY);
+		return getHandler().map(inventory -> inventory.getStackInSlot(2)).orElse(ItemStack.EMPTY);
 	}
 
 	public int getGrind() {
@@ -275,10 +268,6 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
-				.orElseGet(this::createHandler);
-		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
-
 		this.grinds = nbt.getInt("grinds");
 		this.grindsMax = nbt.getInt("grinds_max");
 
@@ -287,14 +276,10 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
-				.orElseGet(this::createHandler);
-		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
-
 		tag.putInt("grinds", this.grinds);
 		tag.putInt("grinds_max", this.grindsMax);
 
-		tag.put("output", output.serializeNBT());
+		tag.put("output", output.save(new CompoundTag()));
 
 		return tag;
 	}
@@ -311,7 +296,7 @@ public class GrinderBlockEntity extends BlockEntity {
 		nbt = writeNBT(nbt);
 	}
 
-	public Optional<GrinderRecipe> matchRecipe(ItemStack ingredient, ItemStack attachment) {
+	public Optional<RecipeHolder<GrinderRecipe>> matchRecipe(ItemStack ingredient, ItemStack attachment) {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.GRINDER.get(),
 					new GrinderContainer(ingredient, attachment), level);
@@ -343,7 +328,7 @@ public class GrinderBlockEntity extends BlockEntity {
 				level.playSound(Player, worldPosition, SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS, 1, 1);
 
 			} else {
-				this.handler.ifPresent(item -> {
+				getHandler().ifPresent(item -> {
 					ItemStack in = item.getStackInSlot(0);
 					ItemStack casing = item.getStackInSlot(2);
 

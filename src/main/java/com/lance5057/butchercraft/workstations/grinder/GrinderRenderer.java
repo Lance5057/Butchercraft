@@ -1,5 +1,7 @@
 package com.lance5057.butchercraft.workstations.grinder;
 
+import java.util.Optional;
+
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -16,12 +18,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
 import net.neoforged.neoforge.client.model.data.ModelData;
 import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable;
 import net.neoforged.neoforge.client.model.renderable.IRenderable;
-import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> {
 	int timer = 0;
@@ -56,8 +56,7 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 		pPoseStack.popPose();
 
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-		LazyOptional<IItemHandler> itemInteractionHandler = pBlockEntity
-				.getCapability(ForgeCapabilities.ITEM_HANDLER);
+		Optional<ItemStackHandler> itemInteractionHandler = pBlockEntity.getHandler();
 
 		itemInteractionHandler.ifPresent(inv -> {
 			ItemStack input = inv.getStackInSlot(0);

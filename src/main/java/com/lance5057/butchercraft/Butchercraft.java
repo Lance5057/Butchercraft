@@ -25,16 +25,6 @@ public class Butchercraft {
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.spec);
 
-		IEventBus bus = NeoForge.EVENT_BUS;
-		bus.addListener(ButchercraftModEvents::registerCaps);
-		bus.addGenericListener(Entity.class, ButchercraftModEvents::attachCaps);
-		bus.addListener(ButchercraftModEvents::breedEvent);
-		bus.addListener(ButchercraftModEvents::cancelEat);
-		bus.addListener(ButchercraftModEvents::dirtyHands);
-		bus.addListener(ButchercraftModEvents::buffZombie);
-		bus.addListener(ButchercraftModEvents::EntityJoined);
-		bus.addListener(ButchercraftModEvents::cancelInteractions);
-
 		ButchercraftBlocks.register(modEventBus);
 		ButchercraftItems.register(modEventBus);
 		ButchercraftRecipeSerializers.register(modEventBus);

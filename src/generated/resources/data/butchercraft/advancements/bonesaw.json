@@ -15,17 +15,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.bonesaw.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:bone_saw",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.bonesaw.name"
     }

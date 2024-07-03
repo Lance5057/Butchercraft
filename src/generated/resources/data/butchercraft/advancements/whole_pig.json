@@ -63,16 +63,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.whole_pig.desc"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "minecraft:cooked_porkchop"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.whole_pig.name"
     }

@@ -1,13 +1,13 @@
 package com.lance5057.butchercraft.effects;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
-import com.lance5057.butchercraft.ButchercraftItems;
+import com.lance5057.butchercraft.ButchercraftMobEffects;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.neoforged.neoforge.common.EffectCure;
 
 public class SoapableMobEffect extends MobEffect {
 
@@ -16,9 +16,8 @@ public class SoapableMobEffect extends MobEffect {
 	}
 
 	@Override
-	public List<ItemStack> getCurativeItems() {
-		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-		ret.add(new ItemStack(ButchercraftItems.SOAP.get()));
-		return ret;
+	public void fillEffectCures(Set<EffectCure> cures, MobEffectInstance effectInstance) {
+		super.fillEffectCures(cures, effectInstance);
+		cures.add(ButchercraftMobEffects.SOAP);
 	}
 }

@@ -3,7 +3,6 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
@@ -39,16 +38,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class ButcherBlockBlockEntity extends BlockEntity {
-	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
-
 	public int progress;
 	public int maxProgress;
 	private Ingredient curTool;
@@ -59,14 +53,11 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 		super(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), pPos, pState);
 	}
 
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (side != Direction.DOWN)
-			if (cap == ForgeCapabilities.ITEM_HANDLER) {
-				return handler.cast();
-			}
-		return super.getCapability(cap, side);
+	public Optional<ItemStackHandler> getHandler() {
+		if (this.getLevel() != null) {
+			return Optional.ofNullable((ItemStackHandler) this.getLevel().getCapability(Capabilities.ItemHandler.BLOCK, this.getBlockPos(), this.getBlockState(), this, Direction.NORTH));
+		}
+		return Optional.empty();
 	}
 
 	public void setRecipe(Optional<ButcherBlockRecipe> r) {
@@ -117,7 +108,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 
 	}
 
-	private IItemHandlerModifiable createHandler() {
+	public ItemStackHandler createHandler() {
 		return new ItemStackHandler(1) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
@@ -146,11 +137,11 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public ItemStack getInsertedItem() {
-		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
+		return getHandler().map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
 	}
 
 	public void extractInsertItem(Player playerEntity, InteractionHand hand) {
-		handler.ifPresent(inventory -> {
+		getHandler().ifPresent(inventory -> {
 			ItemStack held = playerEntity.getItemInHand(hand);
 			if (!held.isEmpty()) {
 				insertItem(inventory, held);
@@ -171,7 +162,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 
 	public void insertItem(IItemHandler inventory, ItemStack heldItem) {
 		if (inventory.isItemValid(0, heldItem))
-			if (!inventory.insertItem(0, heldItem, true).equals(heldItem, false)) {
+			if (!ItemStack.isSameItemSameTags(inventory.insertItem(0, heldItem, true), heldItem)) {
 				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
 				heldItem.setCount(leftover);
 			}
@@ -179,17 +170,17 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public boolean isEmpty() {
-		return handler.map(inventory -> inventory.getStackInSlot(0).isEmpty()).orElse(false);
+		return getHandler().map(inventory -> inventory.getStackInSlot(0).isEmpty()).orElse(false);
 	}
 
 	// External extract handler
 	public void extractItem(Player playerEntity) {
-		handler.ifPresent(inventory -> this.extractItem(playerEntity, inventory));
+		getHandler().ifPresent(inventory -> this.extractItem(playerEntity, inventory));
 	}
 
 	// External insert handler
 	public void insertItem(ItemStack heldItem) {
-		handler.ifPresent(inventory -> this.insertItem(inventory, heldItem));
+		getHandler().ifPresent(inventory -> this.insertItem(inventory, heldItem));
 	}
 
 	public void updateInventory() {
@@ -206,9 +197,9 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public InteractionResult butcher(Player p, ItemStack butcheringTool) {
-		Optional<ButcherBlockRecipe> recipeOptional = matchRecipe();
+		Optional<RecipeHolder<ButcherBlockRecipe>> recipeOptional = matchRecipe();
 		if (recipeOptional.isPresent()) {
-			ButcherBlockRecipe recipe = recipeOptional.get();
+			ButcherBlockRecipe recipe = recipeOptional.get().value();
 			if (this.curTool == null) {
 				setupStage(recipe, stage);
 			}
@@ -307,7 +298,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 							+ player.getMainHandItem().getEnchantmentLevel(Enchantments.BLOCK_FORTUNE))
 					.create(LootContextParamSets.EMPTY);
 
-			player.getServer().getLootData().getLootTable(recipeToolsIn.lootTable).getRandomItems(pParams)
+			player.getServer().getLootData().getLootTable(recipeToolsIn.lootTable()).getRandomItems(pParams)
 					.forEach(itemStack -> {
 						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
 								getBlockPos().getY() + 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
@@ -317,7 +308,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public void finishRecipe() {
-		handler.ifPresent((h -> h.setStackInSlot(0, ItemStack.EMPTY)));
+		getHandler().ifPresent((h -> h.setStackInSlot(0, ItemStack.EMPTY)));
 	}
 
 	@Override
@@ -351,18 +342,11 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
-				.orElseGet(this::createHandler);
-		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
 
 		this.stage = nbt.getInt("stage");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
-
-		IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
-				.orElseGet(this::createHandler);
-		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
 
 		tag.putInt("stage", stage);
 

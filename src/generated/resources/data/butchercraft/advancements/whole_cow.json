@@ -63,16 +63,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.whole_cow.desc"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "minecraft:cooked_beef"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.whole_cow.name"
     }

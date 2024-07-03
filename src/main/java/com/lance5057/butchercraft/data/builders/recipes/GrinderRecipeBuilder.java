@@ -1,5 +1,8 @@
 package com.lance5057.butchercraft.data.builders.recipes;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import javax.annotation.Nullable;
 
 import com.lance5057.butchercraft.Butchercraft;
@@ -30,7 +33,7 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 	private final Ingredient attachment;
 	private final int resultCount;
 	private final int grinds;
-	private final Advancement.Builder advancement = Advancement.Builder.advancement();
+	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 	@Nullable
 	private String group;
 	private final GrinderRecipeSerializer serializer;
@@ -45,6 +48,7 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 		this.resultCount = count;
 		this.grinds = pGrind;
 		this.serializer = serializer;
+		this.unlockedBy(RecipeBuilderUtil.getHasName(pIngredient.getItems()[0].getItem()), RecipeBuilderUtil.has(pIngredient.getItems()[0].getItem()));
 	}
 
 	public static GrinderRecipeBuilder grind(Ingredient pIngredient, RecipeCategory pCategory, int ingredientCount, Ingredient attachment,
@@ -55,7 +59,7 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 
 	@Override
 	public RecipeBuilder unlockedBy(String pCriterionName, Criterion<?> pCriterionTrigger) {
-		this.advancement.addCriterion(pCriterionName, pCriterionTrigger);
+		this.criteria.put(pCriterionName, pCriterionTrigger);
 		return this;
 	}
 
@@ -77,9 +81,10 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 	@Override
 	public void save(RecipeOutput pFinishedRecipeConsumer, ResourceLocation pRecipeId) {
 		this.validate(pRecipeId);
-		this.advancement.parent(new ResourceLocation("recipes/root"))
+		Advancement.Builder builder = pFinishedRecipeConsumer.advancement()
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId))
 				.rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(AdvancementRequirements.Strategy.OR);
+		this.criteria.forEach(builder::addCriterion);
 
 		ResourceLocation r = new ResourceLocation(pRecipeId.getNamespace(),
 				"recipes/" + this.category.getFolderName() + "/" + pRecipeId.getPath());
@@ -88,7 +93,7 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 				pRecipeId,
 				new GrinderRecipe(this.group == null ? "" : this.group, this.ingredient,
 						this.ingredientCount, this.attachment, new ItemStack(this.result, this.resultCount), this.grinds),
-				this.advancement.build(r)
+				builder.build(r)
 		);
 	}
 
@@ -96,8 +101,8 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 	 * Makes sure that this obtainable.
 	 */
 	private void validate(ResourceLocation pId) {
-//		if (this.advancement.getCriteria().isEmpty()) {
-//			throw new IllegalStateException("No way of obtaining recipe " + pId);
-//		}
+		if (this.criteria.isEmpty()) {
+			throw new IllegalStateException("No way of obtaining recipe " + pId);
+		}
 	}
 }

@@ -15,16 +15,12 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.blood.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:blood_fluid_bucket"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.blood.name"
     }

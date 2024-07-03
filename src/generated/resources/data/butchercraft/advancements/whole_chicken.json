@@ -83,16 +83,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.whole_chicken.desc"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "minecraft:cooked_chicken"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.whole_chicken.name"
     }

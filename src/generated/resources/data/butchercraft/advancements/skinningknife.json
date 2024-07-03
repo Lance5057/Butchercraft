@@ -15,17 +15,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.skinningknife.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:skinning_knife",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.skinningknife.name"
     }
