@@ -1,6 +1,7 @@
 package com.lance5057.butchercraft.data.builders;
 
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -9,7 +10,7 @@ import com.lance5057.butchercraft.ButchercraftBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ButchercraftBlockLootTables extends BlockLootSubProvider {
 	protected ButchercraftBlockLootTables() {
@@ -94,6 +95,6 @@ public class ButchercraftBlockLootTables extends BlockLootSubProvider {
 
 	@Override
 	protected @NotNull Iterable<Block> getKnownBlocks() {
-		return ButchercraftBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList();
+		return ButchercraftBlocks.BLOCKS.getEntries().stream().map(DeferredHolder::get).collect(Collectors.toList());
 	}
 }

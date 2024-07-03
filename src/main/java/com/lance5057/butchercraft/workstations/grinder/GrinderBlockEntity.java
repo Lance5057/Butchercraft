@@ -26,15 +26,16 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
 
 public class GrinderBlockEntity extends BlockEntity {
 	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
@@ -99,12 +100,12 @@ public class GrinderBlockEntity extends BlockEntity {
 			public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
 				if (this.getStackInSlot(slot) == ItemStack.EMPTY) {
 					if (slot == 0) {
-						Optional<GrinderRecipe> r = level.getRecipeManager().getRecipeFor(
+						Optional<RecipeHolder<GrinderRecipe>> r = level.getRecipeManager().getRecipeFor(
 								ButchercraftRecipes.GRINDER.get(), new GrinderContainer(stack, getStackInSlot(1)),
 								level);
 						if (r.isPresent()) {
-							this.getBlockEntity().setupRecipe(r.get().getGrinds(), r.get().getResultItem(null),
-									getStackInSlot(1), r.get().count);
+							this.getBlockEntity().setupRecipe(r.get().value().grinds(), r.get().value().getResultItem(null),
+									getStackInSlot(1), r.get().value().count());
 							this.getBlockEntity().updateInventory();
 							return super.insertItem(slot, stack, simulate);
 						}

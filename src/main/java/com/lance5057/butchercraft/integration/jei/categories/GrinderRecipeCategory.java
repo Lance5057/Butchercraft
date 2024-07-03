@@ -60,8 +60,8 @@ public class GrinderRecipeCategory implements IRecipeCategory<GrinderRecipe> {
 
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, GrinderRecipe recipe, IFocusGroup focuses) {
-		Ingredient input = recipe.ingredient;
-		Ingredient attachment = recipe.attachment;
+		Ingredient input = recipe.ingredient();
+		Ingredient attachment = recipe.attachment();
 		ItemStack output = recipe.getResultItem(null);
 
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getBackground().getWidth() / 2 - 17, 11)
@@ -82,7 +82,7 @@ public class GrinderRecipeCategory implements IRecipeCategory<GrinderRecipe> {
 
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		guiGraphics.drawString(fontRenderer, "" + recipe.getGrinds(), this.getBackground().getWidth() / 2 - 56, 66, 0);
+		guiGraphics.drawString(fontRenderer, "" + recipe.grinds(), this.getBackground().getWidth() / 2 - 56, 66, 0);
 
 		RenderSystem.disableBlend();
 	}

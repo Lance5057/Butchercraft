@@ -1,16 +1,27 @@
 package com.lance5057.butchercraft.client.rendering.animation.floats;
 
 import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.network.FriendlyByteBuf;
 
 public class AnimatedFloat {
-	float i;
-	float iMax;
+	public static final Codec<AnimatedFloat> CODEC = RecordCodecBuilder.create(
+			inst -> inst.group(
+					Codec.FLOAT.fieldOf("min").forGetter(a -> a.iMin),
+					Codec.FLOAT.fieldOf("max").forGetter(a -> a.iMax),
+					Codec.FLOAT.fieldOf("offset").forGetter(a -> a.offset),
+					Codec.FLOAT.fieldOf("speed").forGetter(a -> a.speed),
+					Codec.BOOL.fieldOf("loop").forGetter(a -> a.loop),
+					Codec.BOOL.fieldOf("pingpong").forGetter(a -> a.pingpong)
+			).apply(inst, AnimatedFloat::new)
+	);
+
 	float iMin;
+	float iMax;
 	float offset;
 	float speed;
-	boolean add = true;
 	boolean loop = false;
 	boolean pingpong = false;
 

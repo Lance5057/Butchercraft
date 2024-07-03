@@ -8,17 +8,28 @@ import java.util.stream.IntStream;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
-public class BlacklistedModel {
-	public boolean isBlock;
-	public ResourceLocation rc;
-	public List<Integer> blacklist;
-	public AnimationFloatTransform transform;
+public record BlacklistedModel(
+		ResourceLocation rc,
+		List<Integer> blacklist,
+		boolean isBlock,
+		AnimationFloatTransform transform
+) {
+	public static final Codec<BlacklistedModel> CODEC = RecordCodecBuilder.create(
+			inst -> inst.group(
+					ResourceLocation.CODEC.fieldOf("location").forGetter(BlacklistedModel::rc),
+					Codec.list(Codec.INT).fieldOf("blacklist").forGetter(BlacklistedModel::blacklist),
+					Codec.BOOL.fieldOf("IsBlock").forGetter(BlacklistedModel::isBlock),
+					AnimationFloatTransform.CODEC.fieldOf("animation").forGetter(BlacklistedModel::transform)
+			).apply(inst, BlacklistedModel::new)
+	);
 
 	public static BlacklistedModel empty = new BlacklistedModel(new ResourceLocation("", ""), new ArrayList<Integer>(),
 			true, AnimationFloatTransform.ZERO);
@@ -32,16 +43,7 @@ public class BlacklistedModel {
 	
 	public BlacklistedModel(Item item, AnimationFloatTransform anim)
 	{
-		this.rc = BuiltInRegistries.ITEM.getKey(item);
-		isBlock = false;
-		this.transform = anim;
-	}
-
-	public BlacklistedModel(ResourceLocation rc, List<Integer> blacklist, boolean block, AnimationFloatTransform anim) {
-		this.rc = rc;
-		this.blacklist = blacklist;
-		this.isBlock = block;
-		this.transform = anim;
+		this(BuiltInRegistries.ITEM.getKey(item), List.of(), false, anim);
 	}
 
 	public static BlacklistedModel read(JsonObject j) {

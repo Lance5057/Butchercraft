@@ -5,13 +5,13 @@ import java.util.function.BiConsumer;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class ButcherKnifeLootTables implements LootTableSubProvider {
 
@@ -57,14 +57,14 @@ public class ButcherKnifeLootTables implements LootTableSubProvider {
 	public static void createButcherKnifeLootTable(BiConsumer<ResourceLocation, LootTable.Builder> consumer,
 			EntityType<?> entityType, LootTable.Builder lootTable) {
 		consumer.accept(new ResourceLocation(Butchercraft.MOD_ID,
-				"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entityType).getPath()), lootTable);
+				"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entityType).getPath()), lootTable);
 	}
 
 	public static void createRabbitButcherKnifeLootTable(BiConsumer<ResourceLocation, LootTable.Builder> consumer,
 			EntityType<?> entityType, LootTable.Builder lootTable, String type) {
 		consumer.accept(
 				new ResourceLocation(Butchercraft.MOD_ID,
-						"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entityType).getPath() + type),
+						"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entityType).getPath() + type),
 				lootTable);
 	}
 }

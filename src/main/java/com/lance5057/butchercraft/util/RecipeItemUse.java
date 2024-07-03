@@ -2,14 +2,32 @@ package com.lance5057.butchercraft.util;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.Util;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class RecipeItemUse {
+public record RecipeItemUse(
+        int uses,
+        Ingredient tool,
+        int count,
+        boolean damageTool,
+        ResourceLocation lootTable
+) {
+
+    public static final Codec<RecipeItemUse> CODEC = RecordCodecBuilder.create(
+            inst -> inst.group(
+                    Codec.INT.fieldOf("uses").forGetter(RecipeItemUse::uses),
+                    Ingredient.CODEC_NONEMPTY.fieldOf("tool").forGetter(RecipeItemUse::tool),
+                    Codec.INT.fieldOf("count").forGetter(RecipeItemUse::count),
+                    Codec.BOOL.fieldOf("damage").forGetter(RecipeItemUse::damageTool),
+                    ResourceLocation.CODEC.fieldOf("loot_table").forGetter(RecipeItemUse::lootTable)
+            ).apply(inst, RecipeItemUse::new)
+    );
 
     public static final String USES_FIELD = "uses";
     public static final String TOOL_FIELD = "tool";
@@ -18,32 +36,9 @@ public class RecipeItemUse {
     public static final String LOOT_TABLE_FIELD = "loot_table";
 
     public static final RecipeItemUse EMPTY = new RecipeItemUse(0, Ingredient.EMPTY, 1, false, new ResourceLocation(""));
-    // TODO Switch to private?
-    public final int uses;
-    public final Ingredient tool;
-    public final int count;
-    public final boolean damageTool;
-    public final ResourceLocation lootTable;
-
-    public RecipeItemUse(int uses, Ingredient tool, int count, boolean damage, ResourceLocation lootTable) {
-        this.uses = uses;
-        this.tool = tool;
-        this.count = count;
-        this.damageTool = damage;
-        this.lootTable = lootTable;
-    }
 
     public static RecipeItemUse read(JsonObject j) {
-        int use = j.get(USES_FIELD).getAsInt();
-        Ingredient i = Ingredient.fromJson(j.getAsJsonObject(TOOL_FIELD), true);
-        int c = j.get(COUNT_FIELD).getAsInt();
-        // ItemStack stack = ShapedRecipe.deserializeItem(j.getAsJsonObject("tool"));
-        boolean b = j.get(DAMAGE_FIELD).getAsBoolean();
-
-        String s = j.get(LOOT_TABLE_FIELD).getAsString();
-        final ResourceLocation result = new ResourceLocation(s);
-
-        return new RecipeItemUse(use, i, c, b, result);
+        return Util.getOrThrow(CODEC.decode(JsonOps.INSTANCE, j), JsonParseException::new).getFirst();
     }
 
     public static RecipeItemUse read(FriendlyByteBuf buffer) {
