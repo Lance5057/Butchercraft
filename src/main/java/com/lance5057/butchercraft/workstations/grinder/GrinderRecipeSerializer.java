@@ -16,7 +16,7 @@ public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> 
 					Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(GrinderRecipe::ingredient),
 					Codec.INT.fieldOf("ingredientCount").forGetter(GrinderRecipe::count),
 					Ingredient.CODEC_NONEMPTY.fieldOf("attachment").forGetter(GrinderRecipe::attachment),
-					ItemStack.CODEC.fieldOf("result").forGetter(GrinderRecipe::result),
+					ItemStack.RESULT_CODEC.fieldOf("result").forGetter(GrinderRecipe::result),
 					Codec.INT.fieldOf("grinds").forGetter(GrinderRecipe::grinds)
 			).apply(inst, GrinderRecipe::new)
 	);
