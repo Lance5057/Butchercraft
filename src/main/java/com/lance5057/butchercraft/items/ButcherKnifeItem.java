@@ -80,7 +80,7 @@ public class ButcherKnifeItem extends KnifeItem {
 	private void killAndDrop(Player player, final ResourceLocation lootTableLocation, Mob mob) {
 		player.level().playSound(null, mob.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F,
 				1.0F);
-		mob.lootTable = lootTableLocation; // TODO: accesswidener
+		mob.lootTable = lootTableLocation;
 		mob.setLastHurtByPlayer(player);
 		mob.hurt(player.damageSources().playerAttack(player), 99999);
 	}

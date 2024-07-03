@@ -89,21 +89,21 @@ public class MeatHookBlockEntity extends BlockEntity {
 	}
 
 	public Optional<AnimatedRecipeItemUse> getCurrentTool() {
-		return matchRecipe().map(hookRecipe -> hookRecipe.getRecipeToolsIn().get(stage));
+		return matchRecipe().map(hookRecipe -> hookRecipe.value().tools().get(stage));
 	}
 
 	protected void setupStage(HookRecipe r, int i) {
 
 		this.progress = 0;
-		this.maxProgress = r.getRecipeToolsIn().get(i).uses;
-		this.curTool = r.getRecipeToolsIn().get(i).tool;
-		this.toolCount = r.getRecipeToolsIn().get(i).count;
+		this.maxProgress = r.tools().get(i).uses();
+		this.curTool = r.tools().get(i).tool();
+		this.toolCount = r.tools().get(i).count();
 
 		this.stage = i;
 	}
 
 	boolean isFinalStage(HookRecipe r) {
-		int i = r.getRecipeToolsIn().size();
+		int i = r.tools().size();
 		if (i - 1 > stage) {
 			return false;
 		}
@@ -139,8 +139,8 @@ public class MeatHookBlockEntity extends BlockEntity {
 				boolean recipeWithInputExists = false;
 				if (level != null) {
 					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
-							.filter(recipe -> recipe instanceof HookRecipe).map(recipe -> (HookRecipe) recipe)
-							.anyMatch(hookRecipe -> hookRecipe.getCarcassIn().test(stack));
+							.filter(recipe -> recipe.value() instanceof HookRecipe).map(recipe -> (HookRecipe) recipe.value())
+							.anyMatch(hookRecipe -> hookRecipe.carcass().test(stack));
 				}
 				return recipeWithInputExists && super.isItemValid(slot, stack);
 			}
@@ -226,10 +226,10 @@ public class MeatHookBlockEntity extends BlockEntity {
 							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 						if (isFinalStage(recipe)) {
 
-							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
+							dropLoot(recipe.tools().get(stage), p);
 							this.finishRecipe();
 						} else {
-							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
+							dropLoot(recipe.tools().get(stage), p);
 							setupStage(recipe, stage + 1);
 						}
 

@@ -44,14 +44,14 @@ public class ButcherBlockSerializer implements RecipeSerializer<ButcherBlockReci
 	public void toNetwork(FriendlyByteBuf buffer, ButcherBlockRecipe recipe) {
 		buffer.writeUtf(recipe.getGroup());
 
-		recipe.getCarcassIn().toNetwork(buffer);
+		recipe.carcass().toNetwork(buffer);
 
-		buffer.writeVarInt(recipe.getRecipeToolsIn().size());
+		buffer.writeVarInt(recipe.tools().size());
 
-		recipe.getRecipeToolsIn().forEach(riu -> AnimatedRecipeItemUse.write(riu, buffer));
+		recipe.tools().forEach(riu -> AnimatedRecipeItemUse.write(riu, buffer));
 
-		buffer.writeVarInt(recipe.getDummyList().size());
+		buffer.writeVarInt(recipe.jei().size());
 
-		recipe.getDummyList().forEach(i -> i.toNetwork(buffer));
+		recipe.jei().forEach(i -> i.toNetwork(buffer));
 	}
 }

@@ -19,15 +19,6 @@ public record ButcherBlockRecipe(
 		NonNullList<AnimatedRecipeItemUse> tools,
 		NonNullList<Ingredient> jei
 ) implements Recipe<ButcherBlockContainer> {
-
-	public NonNullList<Ingredient> getDummyList() {
-		return jei;
-	}
-
-	public Ingredient getCarcassIn() {
-		return carcass;
-	}
-
 	@Override
 	public boolean matches(ButcherBlockContainer pContainer, Level pLevel) {
 		return carcass.test(pContainer.getInsertedItem());
@@ -61,9 +52,5 @@ public record ButcherBlockRecipe(
 	@Override
 	public RecipeType<?> getType() {
 		return ButchercraftRecipes.BUTCHER_BLOCK.get();
-	}
-
-	public NonNullList<AnimatedRecipeItemUse> getRecipeToolsIn() {
-		return tools;
 	}
 }

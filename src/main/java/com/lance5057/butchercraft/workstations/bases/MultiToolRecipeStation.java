@@ -29,6 +29,8 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
 
 public abstract class MultiToolRecipeStation<V extends MultiToolRecipe> extends BlockEntity {
 	protected final LazyOptional<IItemHandlerModifiable> InteractionHandler = LazyOptional
@@ -139,9 +141,9 @@ public abstract class MultiToolRecipeStation<V extends MultiToolRecipe> extends 
 	protected void setupStage(V r, int i) {
 
 		this.progress = 0;
-		this.maxProgress = r.getToolList().get(i).uses;
-		this.curTool = r.getToolList().get(i).tool;
-		this.toolCount = r.getToolList().get(i).count;
+		this.maxProgress = r.getToolList().get(i).uses();
+		this.curTool = r.getToolList().get(i).tool();
+		this.toolCount = r.getToolList().get(i).count();
 
 		this.stage = i;
 	}

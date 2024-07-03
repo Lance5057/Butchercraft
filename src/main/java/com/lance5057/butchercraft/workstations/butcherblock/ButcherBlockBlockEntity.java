@@ -31,6 +31,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -85,21 +86,21 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public Optional<AnimatedRecipeItemUse> getCurrentTool() {
-		return matchRecipe().map(ButcherBlockRecipe -> ButcherBlockRecipe.getRecipeToolsIn().get(stage));
+		return matchRecipe().map(ButcherBlockRecipe -> ButcherBlockRecipe.value().tools().get(stage));
 	}
 
 	protected void setupStage(ButcherBlockRecipe r, int i) {
 
 		this.progress = 0;
-		this.maxProgress = r.getRecipeToolsIn().get(i).uses;
-		this.curTool = r.getRecipeToolsIn().get(i).tool;
-		this.toolCount = r.getRecipeToolsIn().get(i).count;
+		this.maxProgress = r.tools().get(i).uses();
+		this.curTool = r.tools().get(i).tool();
+		this.toolCount = r.tools().get(i).count();
 
 		this.stage = i;
 	}
 
 	boolean isFinalStage(ButcherBlockRecipe r) {
-		int i = r.getRecipeToolsIn().size();
+		int i = r.tools().size();
 		if (i - 1 > stage) {
 			return false;
 		}
@@ -107,7 +108,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	// Attempt to find a recipe that matches the tool and the item in its inventory
-	private Optional<ButcherBlockRecipe> matchRecipe() {
+	private Optional<RecipeHolder<ButcherBlockRecipe>> matchRecipe() {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.BUTCHER_BLOCK.get(),
 					new ButcherBlockContainer(getInsertedItem()), level);
@@ -135,9 +136,9 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 				boolean recipeWithInputExists = false;
 				if (level != null) {
 					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
-							.filter(recipe -> recipe instanceof ButcherBlockRecipe)
-							.map(recipe -> (ButcherBlockRecipe) recipe)
-							.anyMatch(ButcherBlockRecipe -> ButcherBlockRecipe.getCarcassIn().test(stack));
+							.filter(recipe -> recipe.value() instanceof ButcherBlockRecipe)
+							.map(recipe -> (ButcherBlockRecipe) recipe.value())
+							.anyMatch(ButcherBlockRecipe -> ButcherBlockRecipe.carcass().test(stack));
 				}
 				return recipeWithInputExists && super.isItemValid(slot, stack);
 			}
@@ -226,10 +227,10 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 						if (isFinalStage(recipe)) {
 
 //
-							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
+							dropLoot(recipe.tools().get(stage), p);
 							this.finishRecipe();
 						} else {
-							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
+							dropLoot(recipe.tools().get(stage), p);
 							setupStage(recipe, stage + 1);
 						}
 

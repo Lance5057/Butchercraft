@@ -19,14 +19,6 @@ public record HookRecipe(
 		NonNullList<AnimatedRecipeItemUse> tools,
 		NonNullList<Ingredient> jei
 ) implements Recipe<HookRecipeContainer> {
-	public NonNullList<Ingredient> getDummyList() {
-		return jei;
-	}
-
-	public Ingredient getCarcassIn() {
-		return carcass;
-	}
-
 	@Override
 	public boolean matches(HookRecipeContainer pContainer, Level pLevel) {
 		return carcass.test(pContainer.getInsertedItem());
@@ -60,9 +52,5 @@ public record HookRecipe(
 	@Override
 	public RecipeType<?> getType() {
 		return ButchercraftRecipes.HOOK.get();
-	}
-
-	public NonNullList<AnimatedRecipeItemUse> getRecipeToolsIn() {
-		return tools;
 	}
 }

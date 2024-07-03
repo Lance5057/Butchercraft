@@ -54,7 +54,7 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, HookRecipe recipe, IFocusGroup focuses) {
-		int count = recipe.getRecipeToolsIn().size();
+		int count = recipe.tools().size();
 		int offset = 2;
 		int width = (16 + offset);
 
@@ -64,10 +64,10 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 		int placementW = 0;
 
 		builder.addSlot(RecipeIngredientRole.INPUT, (this.getBackground().getWidth() / 2 - 8), 65)
-				.addIngredients(recipe.getCarcassIn());
+				.addIngredients(recipe.carcass());
 
-		for (AnimatedRecipeItemUse a : recipe.getRecipeToolsIn()) {
-			builder.addSlot(RecipeIngredientRole.CATALYST, 1 + placementW, 1 + placementH).addIngredients(a.tool);
+		for (AnimatedRecipeItemUse a : recipe.tools()) {
+			builder.addSlot(RecipeIngredientRole.CATALYST, 1 + placementW, 1 + placementH).addIngredients(a.tool());
 
 			placementW += width;
 		}
@@ -76,7 +76,7 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 		placementW = 0;
 		placementH = 0;
 		
-		for (Ingredient i : recipe.getDummyList()) { 
+		for (Ingredient i : recipe.jei()) { 
 			builder.addSlot(RecipeIngredientRole.OUTPUT, 1 + placementW, 73 + placementH+18).addIngredients(i);
 			placementW += width;
 			c++;

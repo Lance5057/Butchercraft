@@ -32,7 +32,7 @@ public class MeatHookRenderer implements BlockEntityRenderer<MeatHookBlockEntity
 			
 			pPoseStack.translate(-0.5f, 0, -0.5f);
 			
-			pBlockEntity.getCurrentTool().ifPresent(animatedRecipeItemUse -> animatedRecipeItemUse.model.forEach(
+			pBlockEntity.getCurrentTool().ifPresent(animatedRecipeItemUse -> animatedRecipeItemUse.model().forEach(
 					b -> RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer)));
 			pPoseStack.popPose();
 			timer++;

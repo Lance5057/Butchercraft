@@ -48,17 +48,17 @@ public class RenderUtil {
 	public static void loadModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,
 			int combinedOverlayIn, BlacklistedModel model, float timer) {
 
-		if (model.isBlock) {
-			IRenderable<ModelData> bm = BakedModelRenderable.of(model.rc).withModelDataContext();
-			blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist,
-					model.transform, timer);
+		if (model.isBlock()) {
+			IRenderable<ModelData> bm = BakedModelRenderable.of(model.rc()).withModelDataContext();
+			blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist(),
+					model.transform(), timer);
 
 		} else
 
 		{
-			Item item = BuiltInRegistries.ITEM.get(model.rc);
-			itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist,
-					model.transform, timer);
+			Item item = BuiltInRegistries.ITEM.get(model.rc());
+			itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist(),
+					model.transform(), timer);
 		}
 	}
 
