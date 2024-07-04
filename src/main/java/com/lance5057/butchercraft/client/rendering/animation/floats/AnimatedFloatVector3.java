@@ -9,9 +9,9 @@ import net.minecraft.network.FriendlyByteBuf;
 public class AnimatedFloatVector3 {
 	public static final Codec<AnimatedFloatVector3> CODEC = RecordCodecBuilder.create(
 			inst -> inst.group(
-					AnimatedFloat.CODEC.fieldOf("x").forGetter(a -> a.x),
-					AnimatedFloat.CODEC.fieldOf("y").forGetter(a -> a.y),
-					AnimatedFloat.CODEC.fieldOf("z").forGetter(a -> a.z)
+					AnimatedFloat.CODEC.optionalFieldOf("x", AnimatedFloat.ZERO).forGetter(a -> a.x),
+					AnimatedFloat.CODEC.optionalFieldOf("y", AnimatedFloat.ZERO).forGetter(a -> a.y),
+					AnimatedFloat.CODEC.optionalFieldOf("z", AnimatedFloat.ZERO).forGetter(a -> a.z)
 			).apply(inst, AnimatedFloatVector3::new)
 	);
 	

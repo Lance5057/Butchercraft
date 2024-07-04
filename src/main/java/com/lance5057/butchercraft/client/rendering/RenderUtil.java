@@ -50,20 +50,20 @@ public class RenderUtil {
 
 		if (model.isBlock()) {
 			IRenderable<ModelData> bm = BakedModelRenderable.of(model.rc()).withModelDataContext();
-			blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm, model.blacklist(),
+			blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm,
 					model.transform(), timer);
 
 		} else
 
 		{
 			Item item = BuiltInRegistries.ITEM.get(model.rc());
-			itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item, model.blacklist(),
+			itemModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, item,
 					model.transform(), timer);
 		}
 	}
 
 	public static void blockModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,
-			int combinedOverlayIn, IRenderable<ModelData> bm, List<Integer> blacklist,
+			int combinedOverlayIn, IRenderable<ModelData> bm,
 			AnimationFloatTransform transform, float timer) {
 		matrixStackIn.pushPose();
 		{
@@ -86,7 +86,7 @@ public class RenderUtil {
 	}
 
 	public static void itemModel(PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn,
-			int combinedOverlayIn, Item item, List<Integer> blacklist, AnimationFloatTransform transform, float timer) {
+			int combinedOverlayIn, Item item, AnimationFloatTransform transform, float timer) {
 		matrixStackIn.pushPose();
 		{
 			ItemStack stack = new ItemStack(item);

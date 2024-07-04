@@ -9,12 +9,12 @@ import net.minecraft.network.FriendlyByteBuf;
 public class AnimatedFloat {
 	public static final Codec<AnimatedFloat> CODEC = RecordCodecBuilder.create(
 			inst -> inst.group(
-					Codec.FLOAT.fieldOf("min").forGetter(a -> a.iMin),
-					Codec.FLOAT.fieldOf("max").forGetter(a -> a.iMax),
-					Codec.FLOAT.fieldOf("offset").forGetter(a -> a.offset),
-					Codec.FLOAT.fieldOf("speed").forGetter(a -> a.speed),
-					Codec.BOOL.fieldOf("loop").forGetter(a -> a.loop),
-					Codec.BOOL.fieldOf("pingpong").forGetter(a -> a.pingpong)
+					Codec.FLOAT.optionalFieldOf("min", 0F).forGetter(a -> a.iMin),
+					Codec.FLOAT.optionalFieldOf("max", 0F).forGetter(a -> a.iMax),
+					Codec.FLOAT.optionalFieldOf("offset", 0F).forGetter(a -> a.offset),
+					Codec.FLOAT.optionalFieldOf("speed", 0F).forGetter(a -> a.speed),
+					Codec.BOOL.optionalFieldOf("loop", false).forGetter(a -> a.loop),
+					Codec.BOOL.optionalFieldOf("pingpong", false).forGetter(a -> a.pingpong)
 			).apply(inst, AnimatedFloat::new)
 	);
 
@@ -22,18 +22,18 @@ public class AnimatedFloat {
 	float iMax;
 	float offset;
 	float speed;
-	boolean loop = false;
-	boolean pingpong = false;
+	boolean loop;
+	boolean pingpong;
 
 	public static AnimatedFloat ZERO = new AnimatedFloat(0, 0, 0);
 	public static AnimatedFloat ONE = new AnimatedFloat(1,1,1);
 
 	public AnimatedFloat(float iMax) {
-		this(-iMax, iMax, 1);
+		this(iMax == 0 ? 0 : -iMax, iMax, 1);
 	}
 
 	public AnimatedFloat(float iMax, float speed) {
-		this(-iMax, iMax, speed);
+		this(iMax == 0 ? 0 : -iMax, iMax, speed);
 	}
 
 	public AnimatedFloat(float iMin, float iMax, float speed) {

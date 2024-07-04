@@ -30,7 +30,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	BlacklistedModel standardModel(ResourceLocation rl) {
-		return new BlacklistedModel(rl, null, true,
+		return new BlacklistedModel(rl, true,
 				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(0))));
 	}
 
@@ -43,7 +43,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	BlacklistedModel hideModel(ResourceLocation rl) {
-		return new BlacklistedModel(rl, null, true,
+		return new BlacklistedModel(rl, true,
 				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setY(new AnimatedFloat(12, 0))));
 	}
 
@@ -56,7 +56,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	BlacklistedModel standardButcherBlockModel(ResourceLocation rl) {
-		return new BlacklistedModel(rl, null, true,
+		return new BlacklistedModel(rl, true,
 				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(0))));
 	}
 
