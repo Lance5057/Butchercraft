@@ -1,7 +1,5 @@
 package com.lance5057.butchercraft.workstations.grinder;
 
-import java.util.Optional;
-
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -56,21 +54,19 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 		pPoseStack.popPose();
 
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-		Optional<ItemStackHandler> itemInteractionHandler = pBlockEntity.getHandler();
+		ItemStackHandler inv = pBlockEntity.getHandler();
 
-		itemInteractionHandler.ifPresent(inv -> {
-			ItemStack input = inv.getStackInSlot(0);
-			ItemStack tip = inv.getStackInSlot(1);
-			ItemStack casing = inv.getStackInSlot(2);
+		ItemStack input = inv.getStackInSlot(0);
+		ItemStack tip = inv.getStackInSlot(1);
+		ItemStack casing = inv.getStackInSlot(2);
 
-			float t = mg == 0 ? 1 : -0.3f / (mg);
-			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					input, 0.5, 1.5 + (g * t), 0.175, 0, 90, 0, 1, 1, 1);
-			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					tip, 0.5, 1.22, 0.925, 90, 0, 0, 1, 1, 1);
-			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					casing, 0.5, 1.11, 0.9 - (g * t), 0, 90, 0, 1, 1, 2.1f);
-		});
+		float t = mg == 0 ? 1 : -0.3f / (mg);
+		renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+				input, 0.5, 1.5 + (g * t), 0.175, 0, 90, 0, 1, 1, 1);
+		renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+				tip, 0.5, 1.22, 0.925, 90, 0, 0, 1, 1, 1);
+		renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+				casing, 0.5, 1.11, 0.9 - (g * t), 0, 90, 0, 1, 1, 2.1f);
 
 		timer++;
 	}

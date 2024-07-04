@@ -29,13 +29,13 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.common.crafting.CraftingHelper;
-import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class GrinderBlockEntity extends BlockEntity {
+	private final ItemStackHandler inventory = createHandler();
+	private final Lazy<ItemStackHandler> itemHandler = Lazy.of(() -> inventory);
+
 	private ItemStack output = ItemStack.EMPTY;
 	private int itemsUsed = 0;
 	private int grinds = 0;
@@ -46,14 +46,11 @@ public class GrinderBlockEntity extends BlockEntity {
 		super(ButchercraftBlockEntities.GRINDER.get(), pPos, pState);
 	}
 
-	public Optional<ItemStackHandler> getHandler() {
-		if (this.getLevel() != null) {
-			return Optional.ofNullable((ItemStackHandler) this.getLevel().getCapability(Capabilities.ItemHandler.BLOCK, this.getBlockPos(), this.getBlockState(), this, Direction.NORTH));
-		}
-		return Optional.empty();
+	public ItemStackHandler getHandler() {
+		return itemHandler.get();
 	}
 
-	public BlockEntityItemHandler<GrinderBlockEntity> createHandler() {
+	private ItemStackHandler createHandler() {
 		return new BlockEntityItemHandler<>(this, 3) {
 
 			@Override
@@ -122,7 +119,8 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	}
 
-	public void extractItem(Player playerEntity, IItemHandlerModifiable inventory) {
+	// External extract handler
+	public void extractItem(Player playerEntity) {
 		if (!inventory.getStackInSlot(0).isEmpty()) {
 			ItemStack itemStack = inventory.getStackInSlot(0).copy();
 			playerEntity.addItem(itemStack);
@@ -156,8 +154,8 @@ public class GrinderBlockEntity extends BlockEntity {
 		updateInventory();
 	}
 
-	public ItemStack insertItem(IItemHandler inventory, ItemStack heldItem) {
-
+	// External insert handler
+	public ItemStack insertItem(ItemStack heldItem) {
 		for (int i = 0; i < 3; i++) {
 			if (inventory.isItemValid(i, heldItem)) {
 
@@ -172,21 +170,6 @@ public class GrinderBlockEntity extends BlockEntity {
 		}
 
 		updateInventory();
-		return heldItem;
-	}
-
-	// External extract handler
-	public void extractItem(Player playerEntity) {
-		getHandler().ifPresent(inventory -> this.extractItem(playerEntity, inventory));
-	}
-
-	// External insert handler
-	public ItemStack insertItem(ItemStack heldItem) {
-		if (getHandler().isPresent()) {
-			Optional<ItemStack> s = getHandler().map(i -> insertItem(i, heldItem));
-			if (s.isPresent())
-				return s.get();
-		}
 		return heldItem;
 	}
 
@@ -218,15 +201,15 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	public ItemStack getInsertedItem() {
-		return getHandler().map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
+		return inventory.getStackInSlot(0);
 	}
 
 	public ItemStack getAttachment() {
-		return getHandler().map(inventory -> inventory.getStackInSlot(1)).orElse(ItemStack.EMPTY);
+		return inventory.getStackInSlot(1);
 	}
 
 	public ItemStack getCasing() {
-		return getHandler().map(inventory -> inventory.getStackInSlot(2)).orElse(ItemStack.EMPTY);
+		return inventory.getStackInSlot(2);
 	}
 
 	public int getGrind() {
@@ -268,6 +251,10 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
+		if (nbt.contains("inventory")) {
+			inventory.deserializeNBT(nbt.getCompound("inventory"));
+		}
+
 		this.grinds = nbt.getInt("grinds");
 		this.grindsMax = nbt.getInt("grinds_max");
 
@@ -275,6 +262,8 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
+
+		tag.put("inventory", inventory.serializeNBT());
 
 		tag.putInt("grinds", this.grinds);
 		tag.putInt("grinds_max", this.grindsMax);
@@ -328,34 +317,31 @@ public class GrinderBlockEntity extends BlockEntity {
 				level.playSound(Player, worldPosition, SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS, 1, 1);
 
 			} else {
-				getHandler().ifPresent(item -> {
-					ItemStack in = item.getStackInSlot(0);
-					ItemStack casing = item.getStackInSlot(2);
+				ItemStack in = inventory.getStackInSlot(0);
+				ItemStack casing = inventory.getStackInSlot(2);
 
-					if (casing != ItemStack.EMPTY) {
-						for (int i = 0; i < casing.getCount(); i++) {
+				if (casing != ItemStack.EMPTY) {
+					for (int i = 0; i < casing.getCount(); i++) {
 
-							ItemStack r = output.copy();
+						ItemStack r = output.copy();
 
-							dropLoot(blockState, r);
-						}
-					} else {
-							ItemStack r = output.copy();
-
-							dropLoot(blockState, r);
+						dropLoot(blockState, r);
 					}
+				} else {
+					ItemStack r = output.copy();
 
-					ItemStack s = in.copy();
-					s.setCount(in.getCount() - this.itemsUsed);
+					dropLoot(blockState, r);
+				}
 
-					item.setStackInSlot(0, ItemStack.EMPTY);
-					item.setStackInSlot(2, ItemStack.EMPTY);
+				ItemStack s = in.copy();
+				s.setCount(in.getCount() - this.itemsUsed);
 
-					if (item.isItemValid(0, s)) {
-						dropLoot(blockState, item.insertItem(0, s, false));
-					}
+				inventory.setStackInSlot(0, ItemStack.EMPTY);
+				inventory.setStackInSlot(2, ItemStack.EMPTY);
 
-				});
+				if (inventory.isItemValid(0, s)) {
+					dropLoot(blockState, inventory.insertItem(0, s, false));
+				}
 
 			}
 			updateInventory();
