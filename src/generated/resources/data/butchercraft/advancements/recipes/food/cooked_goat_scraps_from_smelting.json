@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_goat_scraps",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_goat_scraps"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_goat_scraps_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

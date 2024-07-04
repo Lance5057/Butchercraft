@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_lamb_ribs",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_lamb_ribs"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_lamb_ribs_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

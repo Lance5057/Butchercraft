@@ -9,6 +9,7 @@
   },
   "ingredientCount": 8,
   "result": {
-    "item": "butchercraft:sausage_linked"
+    "count": 1,
+    "result": "butchercraft:sausage_linked"
   }
 }

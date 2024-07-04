@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_goat",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_goat"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:taxidermy_goat"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

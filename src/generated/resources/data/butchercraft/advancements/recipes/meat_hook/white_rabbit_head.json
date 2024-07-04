@@ -1,6 +1,18 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_rabbit_white_head_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:rabbit_white_head_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "butchercraft:white_rabbit_head"
@@ -10,13 +22,13 @@
   },
   "requirements": [
     [
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit_white_head_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:white_rabbit_head"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }

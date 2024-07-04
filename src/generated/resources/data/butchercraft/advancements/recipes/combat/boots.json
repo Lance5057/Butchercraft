@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_boots",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_boots"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:boots"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_rabbit_leg",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit_leg"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_rabbit_leg_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

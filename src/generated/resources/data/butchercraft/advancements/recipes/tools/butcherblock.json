@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_wood",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wood"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:butcherblock"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

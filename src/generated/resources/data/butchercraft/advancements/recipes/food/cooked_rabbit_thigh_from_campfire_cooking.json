@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_rabbit_thigh",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit_thigh"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_rabbit_thigh_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

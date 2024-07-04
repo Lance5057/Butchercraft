@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_scrap",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_scrap"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:leather_cord"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

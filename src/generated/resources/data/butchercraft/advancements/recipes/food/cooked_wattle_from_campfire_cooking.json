@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_wattle",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wattle"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_wattle_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

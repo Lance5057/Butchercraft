@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_sinew",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sinew"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:sinew_gelatin_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -10,6 +10,6 @@
   "ingredientCount": 1,
   "result": {
     "count": 2,
-    "item": "butchercraft:ground_lamb"
+    "result": "butchercraft:ground_lamb"
   }
 }

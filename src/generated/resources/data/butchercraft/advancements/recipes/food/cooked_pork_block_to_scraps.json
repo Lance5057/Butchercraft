@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_pork_cooked",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pork_cooked"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_pork_block_to_scraps"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

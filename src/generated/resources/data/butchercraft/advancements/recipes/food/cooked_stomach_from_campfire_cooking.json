@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_stomach",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_stomach"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_stomach_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

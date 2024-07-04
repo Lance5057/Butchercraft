@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_pork_ribs",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pork_ribs"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_pork_ribs_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

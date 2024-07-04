@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_cubed_pork",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_cubed_pork"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_cubed_pork_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

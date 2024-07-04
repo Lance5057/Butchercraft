@@ -6,17 +6,29 @@
         "recipe": "butchercraft:butcher_white_rabbit"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_rabbit_carcass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:white_rabbit_carcass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_white_rabbit_carcass"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:butcher_white_rabbit"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }

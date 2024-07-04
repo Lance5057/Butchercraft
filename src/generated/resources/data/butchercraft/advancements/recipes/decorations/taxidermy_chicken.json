@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_chicken",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chicken"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:taxidermy_chicken"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

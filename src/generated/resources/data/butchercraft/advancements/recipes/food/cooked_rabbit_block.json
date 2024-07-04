@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_rabbit_cooked",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit_cooked"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_rabbit_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

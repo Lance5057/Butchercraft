@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_barn_wood",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_barn_wood"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:barn_wood_trapdoor"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

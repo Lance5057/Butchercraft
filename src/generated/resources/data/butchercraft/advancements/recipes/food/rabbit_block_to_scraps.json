@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_rabbit",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:rabbit_block_to_scraps"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

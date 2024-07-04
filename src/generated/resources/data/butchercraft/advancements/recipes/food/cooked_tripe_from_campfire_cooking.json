@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_tripe",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_tripe"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_tripe_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

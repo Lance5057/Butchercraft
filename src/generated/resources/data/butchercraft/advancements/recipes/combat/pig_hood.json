@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_head",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_head"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:pig_hood"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

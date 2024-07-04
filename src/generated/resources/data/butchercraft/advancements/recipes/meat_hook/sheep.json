@@ -1,6 +1,18 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_sheep_carcass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:sheep_carcass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "butchercraft:sheep"
@@ -10,13 +22,13 @@
   },
   "requirements": [
     [
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sheep_carcass"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:sheep"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }

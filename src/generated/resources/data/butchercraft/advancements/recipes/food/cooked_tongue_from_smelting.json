@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_tongue",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_tongue"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_tongue_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

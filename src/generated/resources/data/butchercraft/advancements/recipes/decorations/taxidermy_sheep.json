@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_sheep",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sheep"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:taxidermy_sheep"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

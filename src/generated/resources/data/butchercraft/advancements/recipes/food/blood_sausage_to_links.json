@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_blood_sausage_mix",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_blood_sausage_mix"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:blood_sausage_to_links"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }
