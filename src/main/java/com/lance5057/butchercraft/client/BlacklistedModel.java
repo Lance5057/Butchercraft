@@ -5,7 +5,8 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
@@ -22,6 +23,8 @@ public record BlacklistedModel(
 			).apply(inst, BlacklistedModel::new)
 	);
 
+	public static final StreamCodec<RegistryFriendlyByteBuf, BlacklistedModel> STREAM_CODEC = StreamCodec.of(BlacklistedModel::write, BlacklistedModel::read);
+
 	public static BlacklistedModel empty = new BlacklistedModel(ResourceLocation.fromNamespaceAndPath("", ""),
 			true, AnimationFloatTransform.ZERO);
 	
@@ -37,19 +40,19 @@ public record BlacklistedModel(
 		this(BuiltInRegistries.ITEM.getKey(item), false, anim);
 	}
 
-	public static BlacklistedModel read(FriendlyByteBuf buffer) {
-		ResourceLocation rc = ResourceLocation.parse(buffer.readUtf());
+	private static BlacklistedModel read(RegistryFriendlyByteBuf buffer) {
+		ResourceLocation rc = buffer.readResourceLocation();
 
 		boolean block = buffer.readBoolean();
-		
-		AnimationFloatTransform t = AnimationFloatTransform.read(buffer);
+
+		AnimationFloatTransform t = AnimationFloatTransform.STREAM_CODEC.decode(buffer);
 
 		return new BlacklistedModel(rc, block, t);
 	}
 
-	public static void write(BlacklistedModel bm, FriendlyByteBuf buffer) {
-		buffer.writeUtf(bm.rc.toString());
+	private static void write(RegistryFriendlyByteBuf buffer, BlacklistedModel bm) {
+		buffer.writeResourceLocation(bm.rc);
 		buffer.writeBoolean(bm.isBlock);
-		AnimationFloatTransform.write(bm.transform, buffer);
+		AnimationFloatTransform.STREAM_CODEC.encode(buffer, bm.transform);
 	}
 }

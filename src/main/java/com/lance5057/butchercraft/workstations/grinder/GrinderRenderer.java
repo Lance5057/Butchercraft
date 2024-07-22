@@ -25,7 +25,7 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> {
 	int timer = 0;
 
-	ModelResourceLocation rc = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/grinder_handle"), null); // TODO: not null
+	ModelResourceLocation rc = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/grinder_handle"));
 	IRenderable<ModelData> model;
 
 	public GrinderRenderer(BlockEntityRendererProvider.Context cxt) {

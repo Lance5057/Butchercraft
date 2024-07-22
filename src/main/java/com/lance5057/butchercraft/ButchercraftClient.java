@@ -58,7 +58,7 @@ public class ButchercraftClient {
 
 			s = s.substring(s.indexOf('/') + 1, s.indexOf('.'));
 
-			ModelResourceLocation rl2 = new ModelResourceLocation(rl, s);
+			ModelResourceLocation rl2 = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(rl.getNamespace(), s));
 
 			event.register(rl2);
 		});

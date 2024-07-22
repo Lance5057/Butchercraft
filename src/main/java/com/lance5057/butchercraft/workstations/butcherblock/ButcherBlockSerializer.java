@@ -43,7 +43,7 @@ public class ButcherBlockSerializer implements RecipeSerializer<ButcherBlockReci
 		int listSize = buffer.readVarInt();
 
 		NonNullList<AnimatedRecipeItemUse> tools = NonNullList.withSize(listSize, AnimatedRecipeItemUse.EMPTY);
-		tools.replaceAll(ignored -> AnimatedRecipeItemUse.read(buffer));
+		tools.replaceAll(ignored -> AnimatedRecipeItemUse.STREAM_CODEC.decode(buffer));
 
 		int jeiSize = buffer.readVarInt();
 		NonNullList<Ingredient> jei = NonNullList.withSize(jeiSize, Ingredient.EMPTY);
@@ -58,7 +58,7 @@ public class ButcherBlockSerializer implements RecipeSerializer<ButcherBlockReci
 
 		buffer.writeVarInt(recipe.tools().size());
 
-		recipe.tools().forEach(riu -> AnimatedRecipeItemUse.write(riu, buffer));
+		recipe.tools().forEach(riu -> AnimatedRecipeItemUse.STREAM_CODEC.encode(buffer, riu));
 
 		buffer.writeVarInt(recipe.jei().size());
 

@@ -190,9 +190,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 					if (this.progress >= this.maxProgress) {
 
 						if (butcheringTool.isDamageableItem())
-							butcheringTool.hurtAndBreak(1, p, (x) -> {
-								x.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-							});
+							butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
 						else
 							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 
@@ -209,9 +207,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1, 1);
 					} else {
 						if (butcheringTool.isDamageableItem())
-							butcheringTool.hurtAndBreak(1, p, (x) -> {
-								x.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-							});
+							butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
 						else
 							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 
@@ -228,35 +224,27 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 
 				ItemStack boots = p.getInventory().getArmor(0);
 				if (boots.getItem() instanceof BootsItem)
-					boots.hurtAndBreak(1, p, (x) -> {
-						x.broadcastBreakEvent(EquipmentSlot.FEET);
-					});
+					boots.hurtAndBreak(1, p, EquipmentSlot.FEET);
 				else
 					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.getDelegate(), 3600, 0, false, false,
 							true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
 				if (apron.getItem() instanceof ApronItem)
-					apron.hurtAndBreak(1, p, (x) -> {
-						x.broadcastBreakEvent(EquipmentSlot.LEGS);
-					});
+					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
 				else
 					p.addEffect(
 							new MobEffectInstance(ButchercraftMobEffects.BLOODY.getDelegate(), 3600, 0, false, false, true));
 
 				ItemStack gloves = p.getInventory().getArmor(2);
 				if (gloves.getItem() instanceof GlovesItem)
-					gloves.hurtAndBreak(1, p, (x) -> {
-						x.broadcastBreakEvent(EquipmentSlot.CHEST);
-					});
+					gloves.hurtAndBreak(1, p, EquipmentSlot.CHEST);
 				else
 					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY.getDelegate(), 3600, 0, false, false, true));
 
 				ItemStack mask = p.getInventory().getArmor(3);
 				if (mask.getItem() instanceof MaskItem)
-					mask.hurtAndBreak(1, p, (x) -> {
-						x.broadcastBreakEvent(EquipmentSlot.HEAD);
-					});
+					mask.hurtAndBreak(1, p, EquipmentSlot.HEAD);
 				else
 					p.addEffect(
 							new MobEffectInstance(ButchercraftMobEffects.STINKY.getDelegate(), 3600, 0, false, false, true));

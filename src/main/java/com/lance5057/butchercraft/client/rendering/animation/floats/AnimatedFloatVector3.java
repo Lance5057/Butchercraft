@@ -1,10 +1,10 @@
 package com.lance5057.butchercraft.client.rendering.animation.floats;
 
-import com.google.gson.JsonObject;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 
 public class AnimatedFloatVector3 {
 	public static final Codec<AnimatedFloatVector3> CODEC = RecordCodecBuilder.create(
@@ -14,7 +14,9 @@ public class AnimatedFloatVector3 {
 					AnimatedFloat.CODEC.optionalFieldOf("z", AnimatedFloat.ZERO).forGetter(a -> a.z)
 			).apply(inst, AnimatedFloatVector3::new)
 	);
-	
+
+	public static final StreamCodec<RegistryFriendlyByteBuf, AnimatedFloatVector3> STREAM_CODEC = StreamCodec.of(AnimatedFloatVector3::write, AnimatedFloatVector3::read);
+
 	AnimatedFloat x, y, z;
 
 	public static AnimatedFloatVector3 ZERO = new AnimatedFloatVector3(AnimatedFloat.ZERO, AnimatedFloat.ZERO,
@@ -93,40 +95,17 @@ public class AnimatedFloatVector3 {
 		this.getZ().setSpeed(speed);
 	}
 
-	public static AnimatedFloatVector3 read(JsonObject j) {
-		AnimatedFloat x = j.get("x") != null ? AnimatedFloat.read(j.get("x").getAsJsonObject()) : AnimatedFloat.ZERO;
-
-		AnimatedFloat y = j.get("y") != null ? AnimatedFloat.read(j.get("y").getAsJsonObject()) : AnimatedFloat.ZERO;
-
-		AnimatedFloat z = j.get("z") != null ? AnimatedFloat.read(j.get("z").getAsJsonObject()) : AnimatedFloat.ZERO;
+	private static AnimatedFloatVector3 read(RegistryFriendlyByteBuf buffer) {
+		AnimatedFloat x = AnimatedFloat.STREAM_CODEC.decode(buffer);
+		AnimatedFloat y = AnimatedFloat.STREAM_CODEC.decode(buffer);
+		AnimatedFloat z = AnimatedFloat.STREAM_CODEC.decode(buffer);
 
 		return new AnimatedFloatVector3(x, y, z);
 	}
 
-	public static AnimatedFloatVector3 read(FriendlyByteBuf buffer) {
-		AnimatedFloat x = AnimatedFloat.read(buffer);
-		AnimatedFloat y = AnimatedFloat.read(buffer);
-		AnimatedFloat z = AnimatedFloat.read(buffer);
-
-		return new AnimatedFloatVector3(x, y, z);
-	}
-
-	public static void write(AnimatedFloatVector3 af, FriendlyByteBuf buffer) {
-		AnimatedFloat.write(af.x, buffer);
-		AnimatedFloat.write(af.y, buffer);
-		AnimatedFloat.write(af.z, buffer);
-	}
-
-	public static JsonObject addProperty(AnimatedFloatVector3 af) {
-		JsonObject jo = new JsonObject();
-
-		if (af.x != AnimatedFloat.ZERO)
-			jo.add("x", AnimatedFloat.addProperty(af.x));
-		if (af.y != AnimatedFloat.ZERO)
-			jo.add("y", AnimatedFloat.addProperty(af.y));
-		if (af.z != AnimatedFloat.ZERO)
-			jo.add("z", AnimatedFloat.addProperty(af.z));
-
-		return jo;
+	private static void write(RegistryFriendlyByteBuf buffer, AnimatedFloatVector3 af) {
+		AnimatedFloat.STREAM_CODEC.encode(buffer, af.x);
+		AnimatedFloat.STREAM_CODEC.encode(buffer, af.y);
+		AnimatedFloat.STREAM_CODEC.encode(buffer, af.z);
 	}
 }

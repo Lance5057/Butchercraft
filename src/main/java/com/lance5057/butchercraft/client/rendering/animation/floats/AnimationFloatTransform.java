@@ -1,10 +1,10 @@
 package com.lance5057.butchercraft.client.rendering.animation.floats;
 
-import com.google.gson.JsonObject;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 
 public class AnimationFloatTransform {
 	public static final Codec<AnimationFloatTransform> CODEC = RecordCodecBuilder.create(
@@ -14,6 +14,8 @@ public class AnimationFloatTransform {
 					AnimatedFloatVector3.CODEC.fieldOf("rotation").forGetter(a -> a.rot)
 			).apply(inst, AnimationFloatTransform::new)
 	);
+
+	public static final StreamCodec<RegistryFriendlyByteBuf, AnimationFloatTransform> STREAM_CODEC = StreamCodec.of(AnimationFloatTransform::write, AnimationFloatTransform::read);
 
 	AnimatedFloatVector3 loc, scale, rot;
 
@@ -71,34 +73,17 @@ public class AnimationFloatTransform {
 		return rot;
 	}
 
-	public static AnimationFloatTransform read(JsonObject j) {
-		AnimatedFloatVector3 location = AnimatedFloatVector3.read(j.get("location").getAsJsonObject());
-		AnimatedFloatVector3 rotation = AnimatedFloatVector3.read(j.get("rotation").getAsJsonObject());
-		AnimatedFloatVector3 scale = AnimatedFloatVector3.read(j.get("scale").getAsJsonObject());
-
-		return new AnimationFloatTransform(location,scale, rotation);
-	}
-
-	public static AnimationFloatTransform read(FriendlyByteBuf buffer) {
-		AnimatedFloatVector3 l = AnimatedFloatVector3.read(buffer);
-		AnimatedFloatVector3 r = AnimatedFloatVector3.read(buffer);
-		AnimatedFloatVector3 s = AnimatedFloatVector3.read(buffer);
+	private static AnimationFloatTransform read(RegistryFriendlyByteBuf buffer) {
+		AnimatedFloatVector3 l = AnimatedFloatVector3.STREAM_CODEC.decode(buffer);
+		AnimatedFloatVector3 r = AnimatedFloatVector3.STREAM_CODEC.decode(buffer);
+		AnimatedFloatVector3 s = AnimatedFloatVector3.STREAM_CODEC.decode(buffer);
 
 		return new AnimationFloatTransform(l, s, r);
 	}
 
-	public static void write(AnimationFloatTransform af, FriendlyByteBuf buffer) {
-		AnimatedFloatVector3.write(af.loc, buffer);
-		AnimatedFloatVector3.write(af.rot, buffer);
-		AnimatedFloatVector3.write(af.scale, buffer);
-	}
-
-	public static JsonObject addProperty(AnimationFloatTransform af) {
-		JsonObject jo = new JsonObject();
-		jo.add("location", AnimatedFloatVector3.addProperty(af.loc));
-		jo.add("rotation", AnimatedFloatVector3.addProperty(af.rot));
-		jo.add("scale", AnimatedFloatVector3.addProperty(af.scale));
-
-		return jo;
+	private static void write(RegistryFriendlyByteBuf buffer, AnimationFloatTransform af) {
+		AnimatedFloatVector3.STREAM_CODEC.encode(buffer, af.loc);
+		AnimatedFloatVector3.STREAM_CODEC.encode(buffer, af.rot);
+		AnimatedFloatVector3.STREAM_CODEC.encode(buffer, af.scale);
 	}
 }

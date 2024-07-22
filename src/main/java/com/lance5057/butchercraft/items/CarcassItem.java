@@ -26,18 +26,14 @@ public class CarcassItem extends Item {
 				ItemStack boots = p.getInventory().getArmor(0);
 				if (boots.getItem() instanceof BootsItem)
 
-					boots.hurtAndBreak(1, p, (x) -> {
-						x.broadcastBreakEvent(EquipmentSlot.FEET);
-					});
+					boots.hurtAndBreak(1,  p, EquipmentSlot.FEET);
 				else
 					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.getDelegate(), 3600, 0, false, false,
 							true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
 				if (apron.getItem() instanceof ApronItem)
-					apron.hurtAndBreak(1, p, (x) -> {
-						x.broadcastBreakEvent(EquipmentSlot.LEGS);
-					});
+					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
 				else
 					p.addEffect(
 							new MobEffectInstance(ButchercraftMobEffects.BLOODY.getDelegate(), 3600, 0, false, false, true));
