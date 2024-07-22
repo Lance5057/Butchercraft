@@ -266,10 +266,10 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> TAXIDERMY = butcherTag("taxidermy");
 
 	public static TagKey<Item> forgeTag(String tag) {
-		return ItemTags.create(new ResourceLocation("forge", tag));
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", tag));
 	}
 
 	public static TagKey<Item> butcherTag(String tag) {
-		return ItemTags.create(new ResourceLocation(Butchercraft.MOD_ID, tag));
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, tag));
 	}
 }

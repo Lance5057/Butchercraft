@@ -23,7 +23,7 @@ public class ChickenSkullHeadModel extends BCSkullModel {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
-			new ResourceLocation(Butchercraft.MOD_ID, "chickenskull"), "main");
+			ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "chickenskull"), "main");
 
 	public ChickenSkullHeadModel(ModelPart root) {
 		super(root);
@@ -49,13 +49,12 @@ public class ChickenSkullHeadModel extends BCSkullModel {
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay,
-			float pRed, float pGreen, float pBlue, float pAlpha) {
-		pPoseStack.pushPose();
-		pPoseStack.translate(0.0D, 0, 0.0D);
-//	      pPoseStack.scale(0.75F, 0.75F, 0.75F);
-		this.head.render(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, pRed, pGreen, pBlue, pAlpha);
-		pPoseStack.popPose();
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int color) {
+		poseStack.pushPose();
+		poseStack.translate(0.0D, 0, 0.0D);
+//	      poseStack.scale(0.75F, 0.75F, 0.75F);
+		this.head.render(poseStack, buffer, packedLight, packedOverlay, color);
+		poseStack.popPose();
 	}
 
 }

@@ -26,7 +26,7 @@ public class ButcherBlockRecipeCategory implements IRecipeCategory<ButcherBlockR
 	private final IDrawable icon;
 
 	public ButcherBlockRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(Butchercraft.MOD_ID, "textures/gui/jei.png"), 108,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 108,
 				78, 144, 144);
 		localizedName = Component.translatable("Butchercraft.jei.butcherblock");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

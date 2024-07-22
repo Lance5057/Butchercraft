@@ -14,6 +14,7 @@ import com.lance5057.butchercraft.workstations.BlockEntityItemHandler;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -22,6 +23,7 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -159,7 +161,7 @@ public class GrinderBlockEntity extends BlockEntity {
 		for (int i = 0; i < 3; i++) {
 			if (inventory.isItemValid(i, heldItem)) {
 
-				if (!ItemStack.isSameItemSameTags(inventory.insertItem(i, heldItem, true), heldItem)) {
+				if (!ItemStack.isSameItemSameComponents(inventory.insertItem(i, heldItem, true), heldItem)) {
 
 					heldItem = inventory.insertItem(i, heldItem.copy(), false);
 
@@ -221,68 +223,69 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	@Override
-	public CompoundTag getUpdateTag() {
-		CompoundTag nbt = super.getUpdateTag();
+	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+		CompoundTag nbt = super.getUpdateTag(registries);
 
-		nbt = writeNBT(nbt);
+		nbt = writeNBT(nbt, registries);
 
 		return nbt;
 	}
 
 	@Override
-	public void handleUpdateTag(CompoundTag tag) {
-		readNBT(tag);
+	public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+		readNBT(tag, registries);
 	}
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		CompoundTag tag = new CompoundTag();
-
-		tag = writeNBT(tag);
+		// TODO: is this necessary?
+//		CompoundTag tag = new CompoundTag();
+//
+//		tag = writeNBT(tag);
 
 		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
 	@Override
-	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
 		CompoundTag tag = pkt.getTag();
 
-		readNBT(tag);
+		readNBT(tag, registries);
 	}
 
-	void readNBT(CompoundTag nbt) {
+	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
 		if (nbt.contains("inventory")) {
-			inventory.deserializeNBT(nbt.getCompound("inventory"));
+			inventory.deserializeNBT(registries, nbt.getCompound("inventory"));
 		}
 
 		this.grinds = nbt.getInt("grinds");
 		this.grindsMax = nbt.getInt("grinds_max");
 
-		this.output = ItemStack.of(nbt.getCompound("output"));
+		this.output = ItemStack.parseOptional(registries, nbt.getCompound("output"));
 	}
 
-	CompoundTag writeNBT(CompoundTag tag) {
+	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 
-		tag.put("inventory", inventory.serializeNBT());
+		tag.put("inventory", inventory.serializeNBT(registries));
 
 		tag.putInt("grinds", this.grinds);
 		tag.putInt("grinds_max", this.grindsMax);
 
-		tag.put("output", output.save(new CompoundTag()));
+		tag.put("output", output.save(registries, new CompoundTag()));
 
 		return tag;
 	}
 
 	@Override
-	public void load(@Nonnull CompoundTag nbt) {
-		super.load(nbt);
-		readNBT(nbt);
+	protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+		super.loadAdditional(tag, registries);
+		readNBT(tag, registries);
 	}
 
 	@Override
-	public void saveAdditional(@Nonnull CompoundTag nbt) {
-		super.saveAdditional(nbt);
-		nbt = writeNBT(nbt);
+	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.saveAdditional(nbt, registries);
+		nbt = writeNBT(nbt, registries);
 	}
 
 	public Optional<RecipeHolder<GrinderRecipe>> matchRecipe(ItemStack ingredient, ItemStack attachment) {
@@ -294,16 +297,16 @@ public class GrinderBlockEntity extends BlockEntity {
 
 	}
 
-	public InteractionResult grind(Player Player, BlockState blockState) {
+	public ItemInteractionResult grind(Player Player, BlockState blockState) {
 		if (!this.output.isEmpty()) {
 
 			if (this.isExtruder) {
 				if (this.getCasing().isEmpty())
-					return InteractionResult.PASS;
+					return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 			}
 
 			if (this.getInsertedItem().getCount() < this.itemsUsed) {
-				return InteractionResult.PASS;
+				return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 			}
 
 			if (this.grinds < this.grindsMax) {
@@ -345,10 +348,10 @@ public class GrinderBlockEntity extends BlockEntity {
 
 			}
 			updateInventory();
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
 	}
 

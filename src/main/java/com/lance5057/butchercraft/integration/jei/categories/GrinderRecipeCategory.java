@@ -31,7 +31,7 @@ public class GrinderRecipeCategory implements IRecipeCategory<GrinderRecipe> {
 	private final IDrawable icon;
 
 	public GrinderRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 0,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 0,
 				138, 77);
 		localizedName = Component.translatable("Butchercraft.jei.grinder");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

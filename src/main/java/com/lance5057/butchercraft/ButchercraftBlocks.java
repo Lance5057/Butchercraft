@@ -119,7 +119,7 @@ public class ButchercraftBlocks {
 			.register("taxidermy_salt_rabbit_block", () -> new TaxidermyBlock());
 
 	public static final DeferredBlock<LiquidBlock> BLOOD_FLUID_BLOCK = ButchercraftBlocks.BLOCKS
-			.register("blood_fluid_block", () -> new LiquidBlock(ButchercraftFluids.BLOOD_FLUID,
+			.register("blood_fluid_block", () -> new LiquidBlock(ButchercraftFluids.BLOOD_FLUID.get(),
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noCollission().strength(100.0F).noLootTable()));
 //	public static final DeferredBlock<LiquidBlock> TANNING_FLUID_BLOCK = ButchercraftBlocks.BLOCKS
 //			.register("tanning_fluid_block", () -> new LiquidBlock(ButchercraftFluids.TANNING_FLUID,
@@ -256,7 +256,7 @@ public class ButchercraftBlocks {
 	public static final DeferredBlock<Block> BARN_WOOD_BLOCK = BLOCKS.register("barn_wood_block", () -> new Block(
 			BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
 	public static final DeferredBlock<StairBlock> BARN_WOOD_STAIRS = BLOCKS.register("barn_wood_stairs",
-			() -> new StairBlock(() -> BARN_WOOD_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties
+			() -> new StairBlock(BARN_WOOD_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties
 					.ofFullCopy(Blocks.OAK_STAIRS).mapColor(MapColor.COLOR_RED).sound(SoundType.WOOD).strength(3.0F)));
 	public static final DeferredBlock<SlabBlock> BARN_WOOD_SLAB = BLOCKS.register("barn_wood_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB).mapColor(MapColor.COLOR_RED)

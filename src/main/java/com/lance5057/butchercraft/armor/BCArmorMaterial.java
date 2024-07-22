@@ -13,7 +13,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public enum BCArmorMaterial implements ArmorMaterial {
+public enum BCArmorMaterial {
 
 	WOOL("butchercraft:wool", 5, new int[] { 1, 1, 1, 1 }, 5, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () ->
 

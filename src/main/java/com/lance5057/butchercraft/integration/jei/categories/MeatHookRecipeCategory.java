@@ -25,7 +25,7 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 	private final IDrawable icon;
 
 	public MeatHookRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(new ResourceLocation(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 78,
+		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 78,
 				144, 144);
 		localizedName = Component.translatable("Butchercraft.jei.hook");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,

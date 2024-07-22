@@ -30,7 +30,7 @@ public class CarcassItem extends Item {
 						x.broadcastBreakEvent(EquipmentSlot.FEET);
 					});
 				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.get(), 3600, 0, false, false,
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.getDelegate(), 3600, 0, false, false,
 							true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
@@ -40,7 +40,7 @@ public class CarcassItem extends Item {
 					});
 				else
 					p.addEffect(
-							new MobEffectInstance(ButchercraftMobEffects.BLOODY.get(), 3600, 0, false, false, true));
+							new MobEffectInstance(ButchercraftMobEffects.BLOODY.getDelegate(), 3600, 0, false, false, true));
 			}
 	}
 }

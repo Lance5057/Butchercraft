@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "BUTCHERCRAFT_SOAP",
+      "constructor": "(ZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": [
+        false,
+        {
+          "class": "com/lance5057/butchercraft/items/SoapItem",
+          "field": "SOAP_TRANSFORMER"
+        }
+      ]
+    }
+  ]
+}

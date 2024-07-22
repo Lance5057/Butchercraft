@@ -23,15 +23,17 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.SkullModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = Butchercraft.MOD_ID)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = Butchercraft.MOD_ID)
 public class ButchercraftClient {
 
 	// @SubscribeEvent
@@ -56,7 +58,7 @@ public class ButchercraftClient {
 
 			s = s.substring(s.indexOf('/') + 1, s.indexOf('.'));
 
-			ResourceLocation rl2 = new ResourceLocation(rl.getNamespace(), s);
+			ModelResourceLocation rl2 = new ModelResourceLocation(rl, s);
 
 			event.register(rl2);
 		});
@@ -101,40 +103,40 @@ public class ButchercraftClient {
 				new SkullModel(event.getEntityModelSet().bakeLayer(RabbitHeadModel.LAYER_LOCATION)));
 
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.COW,
-				new ResourceLocation("textures/entity/cow/cow.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/cow/cow.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.CHICKEN,
-				new ResourceLocation("textures/entity/chicken.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/chicken.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.GOAT,
-				new ResourceLocation("textures/entity/goat/goat.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/goat/goat.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.PIG,
-				new ResourceLocation("textures/entity/pig/pig.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/pig/pig.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.SHEEP,
-				new ResourceLocation("textures/entity/sheep/sheep.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/sheep/sheep.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.COW_SKULL,
-				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/cow.png"));
+				ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/entity/cow.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.CHICKEN_SKULL,
-				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/chicken.png"));
+				ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/entity/chicken.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.GOAT_SKULL,
-				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/goat.png"));
+				ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/entity/goat.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.PIG_SKULL,
-				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/pig.png"));
+				ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/entity/pig.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_SKULL,
-				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/rabbit.png"));
+				ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/entity/rabbit.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.SHEEP_SKULL,
-				new ResourceLocation(Butchercraft.MOD_ID, "textures/entity/sheep.png"));
+				ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/entity/sheep.png"));
 
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_BLACK,
-				new ResourceLocation("textures/entity/rabbit/black.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/rabbit/black.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_BROWN,
-				new ResourceLocation("textures/entity/rabbit/brown.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/rabbit/brown.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_GOLD,
-				new ResourceLocation("textures/entity/rabbit/gold.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/rabbit/gold.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_SALT,
-				new ResourceLocation("textures/entity/rabbit/salt.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/rabbit/salt.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_SPLOTCHED,
-				new ResourceLocation("textures/entity/rabbit/white_splotched.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/rabbit/white_splotched.png"));
 		SkullBlockRenderer.SKIN_BY_TYPE.put(AnimalHeadBlock.Types.RABBIT_WHITE,
-				new ResourceLocation("textures/entity/rabbit/white.png"));
+				ResourceLocation.withDefaultNamespace("textures/entity/rabbit/white.png"));
 	}
 
 	

@@ -15,7 +15,7 @@ public class AngryAnimalTargetGoal extends NearestAttackableTargetGoal<Player> {
 
 	@Override
 	public boolean canUse() {
-		if (this.mob.hasEffect(ButchercraftMobEffects.BLOODLUST.get())) {
+		if (this.mob.hasEffect(ButchercraftMobEffects.BLOODLUST.getDelegate())) {
 			if (this.randomInterval > 0 && this.mob.getRandom().nextInt(this.randomInterval) != 0) {
 				return false;
 			} else {

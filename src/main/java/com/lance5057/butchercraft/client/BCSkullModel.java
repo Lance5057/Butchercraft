@@ -34,9 +34,8 @@ public class BCSkullModel extends SkullModelBase {
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay,
-			float pRed, float pGreen, float pBlue, float pAlpha) {
-		this.root.render(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, pRed, pGreen, pBlue, pAlpha);
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int color) {
+		this.root.render(poseStack, buffer, packedLight, packedOverlay, color);
 	}
 
 }

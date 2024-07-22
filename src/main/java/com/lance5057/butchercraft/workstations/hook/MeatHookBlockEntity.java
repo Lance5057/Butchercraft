@@ -14,14 +14,18 @@ import com.lance5057.butchercraft.armor.MaskItem;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -155,7 +159,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 	// External insert handler
 	public void insertItem(ItemStack heldItem) {
 		if (inventory.isItemValid(0, heldItem))
-			if (!ItemStack.isSameItemSameTags(inventory.insertItem(0, heldItem, true), heldItem)) {
+			if (!ItemStack.isSameItemSameComponents(inventory.insertItem(0, heldItem, true), heldItem)) {
 				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
 				heldItem.setCount(leftover);
 			}
@@ -175,7 +179,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 		}
 	}
 
-	public InteractionResult butcher(Player p, ItemStack butcheringTool) {
+	public ItemInteractionResult butcher(Player p, ItemStack butcheringTool) {
 		Optional<RecipeHolder<HookRecipe>> recipeOptional = matchRecipe();
 		if (recipeOptional.isPresent()) {
 			HookRecipe recipe = recipeOptional.get().value();
@@ -227,7 +231,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 						x.broadcastBreakEvent(EquipmentSlot.FEET);
 					});
 				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.get(), 3600, 0, false, false,
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.getDelegate(), 3600, 0, false, false,
 							true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
@@ -237,7 +241,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 					});
 				else
 					p.addEffect(
-							new MobEffectInstance(ButchercraftMobEffects.BLOODY.get(), 3600, 0, false, false, true));
+							new MobEffectInstance(ButchercraftMobEffects.BLOODY.getDelegate(), 3600, 0, false, false, true));
 
 				ItemStack gloves = p.getInventory().getArmor(2);
 				if (gloves.getItem() instanceof GlovesItem)
@@ -245,7 +249,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 						x.broadcastBreakEvent(EquipmentSlot.CHEST);
 					});
 				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY.get(), 3600, 0, false, false, true));
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY.getDelegate(), 3600, 0, false, false, true));
 
 				ItemStack mask = p.getInventory().getArmor(3);
 				if (mask.getItem() instanceof MaskItem)
@@ -254,15 +258,15 @@ public class MeatHookBlockEntity extends BlockEntity {
 					});
 				else
 					p.addEffect(
-							new MobEffectInstance(ButchercraftMobEffects.STINKY.get(), 3600, 0, false, false, true));
+							new MobEffectInstance(ButchercraftMobEffects.STINKY.getDelegate(), 3600, 0, false, false, true));
 
 				this.updateInventory();
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			}
 
 		}
 
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 
 	private void dropLoot(AnimatedRecipeItemUse recipeToolsIn, Player player) {
@@ -271,9 +275,9 @@ public class MeatHookBlockEntity extends BlockEntity {
 					.withParameter(LootContextParams.TOOL, player.getMainHandItem())
 					.withParameter(LootContextParams.THIS_ENTITY, player)
 					.withLuck(
-							player.getLuck() + player.getMainHandItem().getEnchantmentLevel(Enchantments.BLOCK_FORTUNE))
+							player.getLuck() + player.getMainHandItem().getEnchantmentLevel(player.registryAccess().holderOrThrow(Enchantments.FORTUNE)))
 					.create(LootContextParamSets.EMPTY);
-			player.getServer().getLootData().getLootTable(recipeToolsIn.lootTable()).getRandomItems(pParams)
+			player.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, recipeToolsIn.lootTable())).getRandomItems(pParams)
 					.forEach(itemStack -> {
 //						if (player.isCrouching())
 						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
@@ -293,46 +297,47 @@ public class MeatHookBlockEntity extends BlockEntity {
 	}
 
 	@Override
-	public CompoundTag getUpdateTag() {
-		CompoundTag nbt = super.getUpdateTag();
+	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+		CompoundTag nbt = super.getUpdateTag(registries);
 
-		writeNBT(nbt);
+		writeNBT(nbt, registries);
 
 		return nbt;
 	}
 
 	@Override
-	public void handleUpdateTag(CompoundTag tag) {
-		readNBT(tag);
+	public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+		readNBT(tag, registries);
 	}
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		CompoundTag tag = new CompoundTag();
-
-		writeNBT(tag);
+		// TODO: is this necessary?
+//		CompoundTag tag = new CompoundTag();
+//
+//		writeNBT(tag);
 
 		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
 	@Override
-	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
+	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
 		CompoundTag tag = pkt.getTag();
 		// InteractionHandle your Data
-		readNBT(tag);
+		readNBT(tag, registries);
 	}
 
-	void readNBT(CompoundTag nbt) {
+	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
 		if (nbt.contains("inventory")) {
-			inventory.deserializeNBT(nbt.getCompound("inventory"));
+			inventory.deserializeNBT(registries, nbt.getCompound("inventory"));
 		}
 
 		this.stage = nbt.getInt("stage");
 	}
 
-	CompoundTag writeNBT(CompoundTag tag) {
+	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 
-		tag.put("inventory", inventory.serializeNBT());
+		tag.put("inventory", inventory.serializeNBT(registries));
 
 		tag.putInt("stage", stage);
 
@@ -340,14 +345,14 @@ public class MeatHookBlockEntity extends BlockEntity {
 	}
 
 	@Override
-	public void load(@Nonnull CompoundTag nbt) {
-		super.load(nbt);
-		readNBT(nbt);
+	public void loadAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.loadAdditional(nbt, registries);
+		readNBT(nbt, registries);
 	}
 
 	@Override
-	public void saveAdditional(@Nonnull CompoundTag nbt) {
-		super.saveAdditional(nbt);
-		writeNBT(nbt);
+	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+		super.saveAdditional(nbt, registries);
+		writeNBT(nbt, registries);
 	}
 }

@@ -1,12 +1,8 @@
 package com.lance5057.butchercraft.util;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.Util;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -37,10 +33,6 @@ public record RecipeItemUse(
 
     public static final RecipeItemUse EMPTY = new RecipeItemUse(0, Ingredient.EMPTY, 1, false, new ResourceLocation(""));
 
-    public static RecipeItemUse read(JsonObject j) {
-        return Util.getOrThrow(CODEC.decode(JsonOps.INSTANCE, j), JsonParseException::new).getFirst();
-    }
-
     public static RecipeItemUse read(FriendlyByteBuf buffer) {
         int u = buffer.readVarInt();
         //ItemStack stack = buffer.readItemStack();
@@ -59,18 +51,5 @@ public record RecipeItemUse(
         buffer.writeVarInt(r.count);
         buffer.writeBoolean(r.damageTool);
         buffer.writeResourceLocation(r.lootTable);
-    }
-
-    public static JsonObject addProperty(RecipeItemUse r) {
-        JsonObject o = new JsonObject();
-
-        o.addProperty(USES_FIELD, r.uses);
-        o.add(TOOL_FIELD, Util.getOrThrow(Ingredient.CODEC.encodeStart(JsonOps.INSTANCE, r.tool), JsonParseException::new));
-        o.addProperty(COUNT_FIELD, r.count);
-        o.addProperty(DAMAGE_FIELD, r.damageTool);
-        o.addProperty(LOOT_TABLE_FIELD, r.lootTable.toString());
-
-
-        return o;
     }
 }

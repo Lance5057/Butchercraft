@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraft.world.entity.Entity;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -20,10 +21,10 @@ public class Butchercraft {
 
 	public static Logger logger = LogManager.getLogger();
 
-	public Butchercraft(IEventBus modEventBus) {
+	public Butchercraft(IEventBus modEventBus, ModContainer container) {
 		modEventBus.addListener(this::setupClient);
 
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.spec);
+		container.registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.spec);
 
 		ButchercraftBlocks.register(modEventBus);
 		ButchercraftItems.register(modEventBus);

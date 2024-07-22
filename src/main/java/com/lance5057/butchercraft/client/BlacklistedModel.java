@@ -1,6 +1,5 @@
 package com.lance5057.butchercraft.client;
 
-import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -23,7 +22,7 @@ public record BlacklistedModel(
 			).apply(inst, BlacklistedModel::new)
 	);
 
-	public static BlacklistedModel empty = new BlacklistedModel(new ResourceLocation("", ""),
+	public static BlacklistedModel empty = new BlacklistedModel(ResourceLocation.fromNamespaceAndPath("", ""),
 			true, AnimationFloatTransform.ZERO);
 	
 //	public BlacklistedModel(BlockState block)
@@ -38,18 +37,8 @@ public record BlacklistedModel(
 		this(BuiltInRegistries.ITEM.getKey(item), false, anim);
 	}
 
-	public static BlacklistedModel read(JsonObject j) {
-		ResourceLocation rc = j.get("location") != null ? new ResourceLocation(j.get("location").getAsString())
-				: new ResourceLocation("", "");
-
-		boolean block = j.get("IsBlock") != null ? j.get("IsBlock").getAsBoolean() : false;
-		AnimationFloatTransform t = AnimationFloatTransform.read(j.getAsJsonObject("animation"));
-
-		return new BlacklistedModel(rc, block, t);
-	}
-
 	public static BlacklistedModel read(FriendlyByteBuf buffer) {
-		ResourceLocation rc = new ResourceLocation(buffer.readUtf());
+		ResourceLocation rc = ResourceLocation.parse(buffer.readUtf());
 
 		boolean block = buffer.readBoolean();
 		
@@ -62,19 +51,5 @@ public record BlacklistedModel(
 		buffer.writeUtf(bm.rc.toString());
 		buffer.writeBoolean(bm.isBlock);
 		AnimationFloatTransform.write(bm.transform, buffer);
-	}
-
-	public static JsonObject addProperty(BlacklistedModel bm) {
-		JsonObject jo = new JsonObject();
-
-		if(!bm.rc.equals(new ResourceLocation("", "")))
-			jo.addProperty("location", bm.rc.toString());
-		
-		if(bm.isBlock)
-			jo.addProperty("IsBlock", bm.isBlock);
-		
-		jo.add("animation", AnimationFloatTransform.addProperty(bm.transform));
-
-		return jo;
 	}
 }

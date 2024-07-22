@@ -13,7 +13,9 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.Util;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public record AnimatedRecipeItemUse(
@@ -42,28 +44,7 @@ public record AnimatedRecipeItemUse(
 		this(riu.uses(), riu.tool(), riu.count(), riu.damageTool(), riu.lootTable(), List.of(model));
 	}
 
-	public static AnimatedRecipeItemUse read(JsonObject j) {
-		RecipeItemUse riu = RecipeItemUse.read(j);
-
-		BlacklistedModel[] b = null;
-		if (j.get("models") != null) {
-			JsonArray ja = j.get("models").getAsJsonArray();
-
-			b = new BlacklistedModel[ja.size()];
-
-			if (ja != null) {
-				for (int i = 0; i < ja.size(); i++) {
-					b[i] = BlacklistedModel.read(ja.get(i).getAsJsonObject());
-				}
-			}
-		}
-
-		// BlacklistedModel b = BlacklistedModel.read(j.getAsJsonObject("model"));
-
-		return new AnimatedRecipeItemUse(riu, b);
-	}
-
-	public static AnimatedRecipeItemUse read(FriendlyByteBuf buffer) {
+	public static AnimatedRecipeItemUse read(RegistryFriendlyByteBuf buffer) {
 		RecipeItemUse riu = RecipeItemUse.read(buffer);
 
 		int size = buffer.readInt();
@@ -76,9 +57,9 @@ public record AnimatedRecipeItemUse(
 		return new AnimatedRecipeItemUse(riu, b);
 	}
 
-	public static void write(AnimatedRecipeItemUse r, FriendlyByteBuf buffer) {
+	public static void write(AnimatedRecipeItemUse r, RegistryFriendlyByteBuf buffer) {
 		buffer.writeVarInt(r.uses);
-		r.tool.toNetwork(buffer);
+		Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, r.tool);
 		buffer.writeVarInt(r.count);
 		buffer.writeBoolean(r.damageTool);
 		buffer.writeResourceLocation(r.lootTable);
@@ -87,25 +68,5 @@ public record AnimatedRecipeItemUse(
 
 		for (int i = 0; i < r.model.size(); i++)
 			BlacklistedModel.write(r.model.get(i), buffer);
-	}
-
-	public static JsonObject addProperty(AnimatedRecipeItemUse recipeItemUse) {
-		JsonObject o = new JsonObject();
-
-		o.addProperty(RecipeItemUse.USES_FIELD, recipeItemUse.uses);
-		o.add(RecipeItemUse.TOOL_FIELD, Util.getOrThrow(Ingredient.CODEC.encodeStart(JsonOps.INSTANCE, recipeItemUse.tool), JsonParseException::new));
-		o.addProperty(RecipeItemUse.COUNT_FIELD, recipeItemUse.count);
-		o.addProperty(RecipeItemUse.DAMAGE_FIELD, recipeItemUse.damageTool);
-		o.addProperty(RecipeItemUse.LOOT_TABLE_FIELD, recipeItemUse.lootTable.toString());
-
-		if (recipeItemUse.model != null && !recipeItemUse.model.isEmpty()) {
-			JsonArray ja = new JsonArray();
-			for (int i = 0; i < recipeItemUse.model.size(); i++)
-				ja.add(BlacklistedModel.addProperty(recipeItemUse.model.get(i)));
-
-			o.add("models", ja);
-		}
-
-		return o;
 	}
 }

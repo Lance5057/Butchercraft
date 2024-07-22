@@ -2,33 +2,44 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.Packet;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
 public class ButcherBlockSerializer implements RecipeSerializer<ButcherBlockRecipe> {
-	public static final Codec<ButcherBlockRecipe> CODEC = RecordCodecBuilder.create(
+	public static final MapCodec<ButcherBlockRecipe> CODEC = RecordCodecBuilder.mapCodec(
 			inst -> inst.group(
-					ExtraCodecs.strictOptionalField(Codec.STRING, "group", "").forGetter(ButcherBlockRecipe::group),
+					Codec.STRING.optionalFieldOf("group", "").forGetter(ButcherBlockRecipe::group),
 					Ingredient.CODEC_NONEMPTY.fieldOf("carcass").forGetter(ButcherBlockRecipe::carcass),
 					NonNullList.codecOf(AnimatedRecipeItemUse.CODEC).fieldOf("tools").forGetter(ButcherBlockRecipe::tools),
 					NonNullList.codecOf(Ingredient.CODEC_NONEMPTY).fieldOf("jei").forGetter(ButcherBlockRecipe::jei)
 			).apply(inst, ButcherBlockRecipe::new)
 	);
 
+	public static final StreamCodec<RegistryFriendlyByteBuf, ButcherBlockRecipe> STREAM_CODEC = StreamCodec.of(ButcherBlockSerializer::write, ButcherBlockSerializer::read);
+
 	@Override
-	public Codec<ButcherBlockRecipe> codec() {
+	public MapCodec<ButcherBlockRecipe> codec() {
 		return CODEC;
 	}
 
 	@Override
-	public ButcherBlockRecipe fromNetwork(FriendlyByteBuf buffer) {
+	public StreamCodec<RegistryFriendlyByteBuf, ButcherBlockRecipe> streamCodec() {
+		return STREAM_CODEC;
+	}
+
+	private static ButcherBlockRecipe read(RegistryFriendlyByteBuf buffer) {
 		String group = buffer.readUtf();
-		Ingredient carcassIn = Ingredient.fromNetwork(buffer);
+		Ingredient carcassIn = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
 		int listSize = buffer.readVarInt();
 
 		NonNullList<AnimatedRecipeItemUse> tools = NonNullList.withSize(listSize, AnimatedRecipeItemUse.EMPTY);
@@ -36,15 +47,14 @@ public class ButcherBlockSerializer implements RecipeSerializer<ButcherBlockReci
 
 		int jeiSize = buffer.readVarInt();
 		NonNullList<Ingredient> jei = NonNullList.withSize(jeiSize, Ingredient.EMPTY);
-		jei.replaceAll(ignored -> Ingredient.fromNetwork(buffer));
+		jei.replaceAll(ignored -> Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
 		return new ButcherBlockRecipe(group, carcassIn, tools, jei);
 	}
 
-	@Override
-	public void toNetwork(FriendlyByteBuf buffer, ButcherBlockRecipe recipe) {
+	private static void write(RegistryFriendlyByteBuf buffer, ButcherBlockRecipe recipe) {
 		buffer.writeUtf(recipe.getGroup());
 
-		recipe.carcass().toNetwork(buffer);
+		Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.carcass());
 
 		buffer.writeVarInt(recipe.tools().size());
 
@@ -52,6 +62,6 @@ public class ButcherBlockSerializer implements RecipeSerializer<ButcherBlockReci
 
 		buffer.writeVarInt(recipe.jei().size());
 
-		recipe.jei().forEach(i -> i.toNetwork(buffer));
+		recipe.jei().forEach(i -> Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, i));
 	}
 }

@@ -11,7 +11,9 @@ import com.lance5057.butchercraft.tags.ButchercraftEntityTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -23,6 +25,8 @@ import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.neoforged.neoforge.common.IShearable;
@@ -37,16 +41,14 @@ public class ButcherKnifeItem extends KnifeItem {
 	public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
 			InteractionHand hand) {
 
-		if (entity.hasEffect(ButchercraftMobEffects.BLOODLUST.get()))
+		if (entity.hasEffect(ButchercraftMobEffects.BLOODLUST.getDelegate()))
 			return InteractionResult.FAIL;
 		if (entity instanceof IShearable target) {
 			if (entity.level().isClientSide)
 				return net.minecraft.world.InteractionResult.SUCCESS;
 			BlockPos pos = new BlockPos(entity.getBlockX(), entity.getBlockY(), entity.getBlockZ());
-			if (target.isShearable(stack, entity.level(), pos)) {
-				java.util.List<ItemStack> drops = target.onSheared(player, stack, entity.level(), pos,
-						net.minecraft.world.item.enchantment.EnchantmentHelper.getItemEnchantmentLevel(
-								net.minecraft.world.item.enchantment.Enchantments.BLOCK_FORTUNE, stack));
+			if (target.isShearable(player, stack, entity.level(), pos)) {
+				java.util.List<ItemStack> drops = target.onSheared(player, stack, entity.level(), pos);
 				java.util.Random rand = new java.util.Random();
 				drops.forEach(d -> {
 					net.minecraft.world.entity.item.ItemEntity ent = entity.spawnAtLocation(d, 1.0F);
@@ -62,9 +64,9 @@ public class ButcherKnifeItem extends KnifeItem {
 
 			if (entity.getType().is(ButchercraftEntityTags.CARCASSES) && entity instanceof Mob mob) {
 				if (!specialCases(player, mob)) {
-					final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
-							"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).getPath());
-					final LootTable lootTable = player.getServer().getLootData().getLootTable(lootTableLocation);
+					final ResourceKey<LootTable> lootTableLocation = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID,
+							"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).getPath()));
+					final LootTable lootTable = player.getServer().reloadableRegistries().getLootTable(lootTableLocation);
 
 					if (lootTable != LootTable.EMPTY) {
 						killAndDrop(player, lootTableLocation, mob);
@@ -77,7 +79,7 @@ public class ButcherKnifeItem extends KnifeItem {
 		return InteractionResult.PASS;
 	}
 
-	private void killAndDrop(Player player, final ResourceLocation lootTableLocation, Mob mob) {
+	private void killAndDrop(Player player, final ResourceKey<LootTable> lootTableLocation, Mob mob) {
 		player.level().playSound(null, mob.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F,
 				1.0F);
 		mob.lootTable = lootTableLocation;
@@ -115,9 +117,9 @@ public class ButcherKnifeItem extends KnifeItem {
 	}
 
 	private void rabbitDrop(Player player, Mob mob, String type) {
-		final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
-				"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()).getPath() + type);
-		final LootTable lootTable = player.getServer().getLootData().getLootTable(lootTableLocation);
+		final ResourceKey<LootTable> lootTableLocation = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID,
+				"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()).getPath() + type));
+		final LootTable lootTable = player.getServer().reloadableRegistries().getLootTable(lootTableLocation);
 
 		if (lootTable != LootTable.EMPTY) {
 			killAndDrop(player, lootTableLocation, mob);
@@ -125,9 +127,8 @@ public class ButcherKnifeItem extends KnifeItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
-			TooltipFlag pIsAdvanced) {
-		pTooltipComponents.add(
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+		tooltipComponents.add(
 				Component.literal("  ").append(Component.translatable(Butchercraft.MOD_ID + ".butcherknife.rightclick"))
 						.withStyle(ChatFormatting.DARK_PURPLE));
 	}

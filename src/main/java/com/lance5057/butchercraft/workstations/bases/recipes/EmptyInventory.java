@@ -3,8 +3,9 @@ package com.lance5057.butchercraft.workstations.bases.recipes;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeInput;
 
-public class EmptyInventory implements Container {
+public class EmptyInventory implements Container, RecipeInput {
     @Override
     public int getContainerSize() {
         return 0;
@@ -48,5 +49,10 @@ public class EmptyInventory implements Container {
     @Override
     public void clearContent() {
 
+    }
+
+    @Override
+    public int size() {
+        return getContainerSize();
     }
 }

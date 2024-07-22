@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -74,29 +75,27 @@ public class GrinderBlock extends Block implements EntityBlock, SimpleWaterlogge
 		builder.add(FACING, WATERLOGGED);
 	}
 
-	@Nonnull
 	@Override
-	public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
-			@Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
+	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState blockState, Level world, BlockPos blockPos, Player playerEntity, InteractionHand hand, BlockHitResult hitResult) {
 		BlockEntity blockentity = world.getBlockEntity(blockPos);
 		if (blockentity instanceof GrinderBlockEntity be) {
 
 			if (playerEntity.isCrouching()) {
 				be.extractItem(playerEntity);
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			} else {
 
 				ItemStack itemstack = playerEntity.getItemInHand(hand);
 				if (!itemstack.isEmpty()) {
 					playerEntity.setItemInHand(hand, be.insertItem(itemstack));
-					return InteractionResult.SUCCESS;
+					return ItemInteractionResult.SUCCESS;
 				} else {
 					return be.grind(playerEntity, blockState);
 				}
 			}
 		}
 
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 
 	@Override

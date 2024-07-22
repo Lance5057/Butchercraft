@@ -11,6 +11,7 @@ displayURL="https://github.com/Lance5057/Butchercraft"
 credits="${mod_credits}"
 authors="${mod_authors}"
 description='''${mod_description}'''
+enumExtensions="META-INF/enumextensions.json"
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 #[[mixins]]

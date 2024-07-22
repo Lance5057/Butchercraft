@@ -11,14 +11,13 @@ public class BloodSplatteredEffect extends SoapableMobEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
-		super.applyEffectTick(pLivingEntity, pAmplifier);
-
+	public boolean applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
 		if (pLivingEntity.level().random.nextInt() % 5 == 0)
 			pLivingEntity.level().addParticle(ParticleTypes.FALLING_LAVA,
 					pLivingEntity.position().x - 0.5f + pLivingEntity.level().random.nextDouble(),
 					pLivingEntity.position().y + 1.5f - pLivingEntity.level().random.nextDouble(),
 					pLivingEntity.position().z - 0.25f + pLivingEntity.level().random.nextDouble() / 2, 0, 0, 0);
+		return super.applyEffectTick(pLivingEntity, pAmplifier);
 	}
 
 	@Override
