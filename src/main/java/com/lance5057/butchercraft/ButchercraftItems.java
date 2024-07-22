@@ -498,7 +498,7 @@ public class ButchercraftItems {
 			() -> new SoapItem(new Item.Properties()));
 
 	public static final DeferredItem<Item> BLOOD_FLUID_BUCKET = ITEMS.register("blood_fluid_bucket",
-			() -> new BucketItem(ButchercraftFluids.BLOOD_FLUID,
+			() -> new BucketItem(ButchercraftFluids.BLOOD_FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final DeferredItem<Item> BLOOD_FLUID_BOTTLE = ITEMS.register("blood_fluid_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));

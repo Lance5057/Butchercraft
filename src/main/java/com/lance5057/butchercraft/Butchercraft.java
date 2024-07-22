@@ -1,17 +1,15 @@
 package com.lance5057.butchercraft;
 
+import com.lance5057.butchercraft.armor.BCArmorMaterial;
 import com.lance5057.butchercraft.entity.ButchercraftVillagers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.world.entity.Entity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(Butchercraft.MOD_ID)
 public class Butchercraft {
@@ -26,6 +24,7 @@ public class Butchercraft {
 
 		container.registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.spec);
 
+		BCArmorMaterial.register(modEventBus);
 		ButchercraftBlocks.register(modEventBus);
 		ButchercraftItems.register(modEventBus);
 		ButchercraftRecipeSerializers.register(modEventBus);
