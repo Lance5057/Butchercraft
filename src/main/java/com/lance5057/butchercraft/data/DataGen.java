@@ -19,12 +19,12 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@Mod.EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGen {
 
 	@SubscribeEvent
@@ -47,7 +47,7 @@ public class DataGen {
 		generator.addProvider(true, new ItemTagGenerator(output, lookupProvider, btg.contentsGetter(), existingFileHelper));
 
 		generator.addProvider(true, new ButchercraftRecipeProvider(output));
-		generator.addProvider(true, new ButchercraftLootTableProvider(output));
+		generator.addProvider(true, new ButchercraftLootTableProvider(output, lookupProvider));
 		generator.addProvider(true, new ButchercraftEntityTypeTagsProvider(output, lookupProvider, existingFileHelper));
 		generator.addProvider(true, new PoiTagGenerator(output, lookupProvider, existingFileHelper));
 	}

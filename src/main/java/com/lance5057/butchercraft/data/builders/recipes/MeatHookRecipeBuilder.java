@@ -93,6 +93,6 @@ public class MeatHookRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(builder::addCriterion);
 		consumerIn.accept(pRecipeId, new HookRecipe(this.group == null ? "" : this.group, Ingredient.of(this.result),
-				NonNullList.copyOf(this.tools), NonNullList.copyOf(this.jei)), builder.build(new ResourceLocation(pRecipeId.getNamespace(), "recipes/meat_hook/" + pRecipeId.getPath())));
+				NonNullList.copyOf(this.tools), NonNullList.copyOf(this.jei)), builder.build(ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(), "recipes/meat_hook/" + pRecipeId.getPath())));
 	}
 }

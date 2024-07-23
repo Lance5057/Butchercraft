@@ -94,6 +94,6 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 		this.criteria.forEach(builder::addCriterion);
 		consumerIn.accept(pRecipeId, new ButcherBlockRecipe(this.group == null ? "" : this.group,
 				Ingredient.of(this.result), NonNullList.copyOf(this.tools), NonNullList.copyOf(jei)),
-				builder.build(new ResourceLocation(pRecipeId.getNamespace(), "recipes/meat_hook/" + pRecipeId.getPath())));
+				builder.build(ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(), "recipes/meat_hook/" + pRecipeId.getPath())));
 	}
 }
