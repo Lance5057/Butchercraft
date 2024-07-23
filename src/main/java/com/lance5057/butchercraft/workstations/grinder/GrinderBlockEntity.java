@@ -270,7 +270,9 @@ public class GrinderBlockEntity extends BlockEntity {
 		tag.putInt("grinds", this.grinds);
 		tag.putInt("grinds_max", this.grindsMax);
 
-		tag.put("output", output.save(registries, new CompoundTag()));
+		if (!output.isEmpty()) {
+			tag.put("output", output.save(registries, new CompoundTag()));
+		}
 
 		return tag;
 	}
