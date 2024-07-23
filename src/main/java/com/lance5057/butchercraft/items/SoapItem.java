@@ -1,5 +1,7 @@
 package com.lance5057.butchercraft.items;
 
+import java.util.List;
+
 import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -23,6 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.neoforged.fml.common.asm.enumextension.EnumProxy;
 import net.neoforged.neoforge.client.IArmPoseTransformer;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
@@ -107,12 +110,16 @@ public class SoapItem extends Item implements IClientItemExtensions {
 		}
 	};
 
+	public static final EnumProxy<HumanoidModel.ArmPose> SOAP_ENUM_PROXY = new EnumProxy<>(
+			HumanoidModel.ArmPose.class, List.of(false, SOAP_TRANSFORMER)
+	);
+
 	@Override
 	public HumanoidModel.ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand,
 											ItemStack itemStack) {
 		if (!itemStack.isEmpty()) {
 			if (entityLiving.getUsedItemHand() == hand && entityLiving.getUseItemRemainingTicks() > 0) {
-				return HumanoidModel.ArmPose.valueOf("BUTCHERCRAFT_SOAP");
+				return SOAP_ENUM_PROXY.getValue();
 			}
 		}
 		return HumanoidModel.ArmPose.ITEM;
