@@ -46,7 +46,7 @@ public class DataGen {
 		generator.addProvider(true, btg);
 		generator.addProvider(true, new ItemTagGenerator(output, lookupProvider, btg.contentsGetter(), existingFileHelper));
 
-		generator.addProvider(true, new ButchercraftRecipeProvider(output));
+		generator.addProvider(true, new ButchercraftRecipeProvider(output, lookupProvider));
 		generator.addProvider(true, new ButchercraftLootTableProvider(output, lookupProvider));
 		generator.addProvider(true, new ButchercraftEntityTypeTagsProvider(output, lookupProvider, existingFileHelper));
 		generator.addProvider(true, new PoiTagGenerator(output, lookupProvider, existingFileHelper));

@@ -16,9 +16,11 @@ import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.NonNullList;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.storage.loot.LootTable;
 
 public class MeatHookRecipeBuilder implements RecipeBuilder {
 	private final Item result;
@@ -36,15 +38,15 @@ public class MeatHookRecipeBuilder implements RecipeBuilder {
 		return new MeatHookRecipeBuilder(resultIn);
 	}
 
-	public MeatHookRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage, ResourceLocation table,
+	public MeatHookRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage, ResourceKey<LootTable> table,
 			BlacklistedModel... model) {
-		this.tools.add(new AnimatedRecipeItemUse(uses, tool, count, damage, table, List.of(model)));
+		this.tools.add(new AnimatedRecipeItemUse(uses, tool, count, damage, table.location(), List.of(model)));
 		return this;
 	}
 
-	public MeatHookRecipeBuilder tool(Ingredient tool, int uses, boolean damage, ResourceLocation table,
+	public MeatHookRecipeBuilder tool(Ingredient tool, int uses, boolean damage, ResourceKey<LootTable> table,
 			BlacklistedModel... model) {
-		this.tools.add(new AnimatedRecipeItemUse(uses, tool, 1, damage, table, List.of(model)));
+		this.tools.add(new AnimatedRecipeItemUse(uses, tool, 1, damage, table.location(), List.of(model)));
 		return this;
 	}
 
