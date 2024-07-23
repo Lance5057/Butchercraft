@@ -3,8 +3,6 @@ package com.lance5057.butchercraft.capabilities;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import org.jetbrains.annotations.UnknownNullability;
-
 import com.lance5057.butchercraft.Butchercraft;
 
 import net.minecraft.core.HolderLookup;
