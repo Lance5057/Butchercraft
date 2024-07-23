@@ -1,0 +1,15 @@
+{
+  "type": "butchercraft:grinder",
+  "attachment": {
+    "item": "butchercraft:extruder_tip"
+  },
+  "grinds": 16,
+  "ingredient": {
+    "item": "butchercraft:blood_sausage_mix"
+  },
+  "ingredientCount": 8,
+  "result": {
+    "count": 1,
+    "id": "butchercraft:blood_sausage_linked"
+  }
+}

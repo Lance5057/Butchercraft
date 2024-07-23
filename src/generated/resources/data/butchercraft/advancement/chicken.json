@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:butcherblock",
+  "criteria": {
+    "chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:chicken_carcass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.chicken.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:chicken_carcass"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.chicken.name"
+    }
+  },
+  "requirements": [
+    [
+      "chicken"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

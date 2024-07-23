@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cooked_cubed_lamb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:cooked_cubed_lamb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_mutton_stew"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cooked_cubed_lamb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_mutton_stew"
+    ]
+  }
+}

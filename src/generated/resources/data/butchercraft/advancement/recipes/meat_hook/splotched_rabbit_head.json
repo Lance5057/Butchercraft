@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rabbit_splotched_head_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:rabbit_splotched_head_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:splotched_rabbit_head"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rabbit_splotched_head_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:splotched_rabbit_head"
+    ]
+  }
+}

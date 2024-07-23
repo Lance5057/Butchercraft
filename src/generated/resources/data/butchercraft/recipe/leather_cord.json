@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "butchercraft:leather_scrap"
+    },
+    {
+      "item": "butchercraft:leather_scrap"
+    },
+    {
+      "item": "butchercraft:leather_scrap"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "butchercraft:leather_cord"
+  }
+}

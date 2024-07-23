@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pork_stewmeat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:pork_stewmeat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_pork_stewmeat_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pork_stewmeat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_pork_stewmeat_from_campfire_cooking"
+    ]
+  }
+}

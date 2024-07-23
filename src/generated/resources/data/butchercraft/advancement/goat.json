@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:hook",
+  "criteria": {
+    "goat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:goat_carcass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.goat.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:goat_carcass"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.goat.name"
+    }
+  },
+  "requirements": [
+    [
+      "goat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

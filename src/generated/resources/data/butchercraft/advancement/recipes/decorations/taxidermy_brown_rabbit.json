@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rabbit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:brown_rabbit_carcass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:taxidermy_brown_rabbit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rabbit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:taxidermy_brown_rabbit"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:grinder",
+  "criteria": {
+    "grinder_tip": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:grinder_tip"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.grinder_tip.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:grinder_tip"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.grinder_tip.name"
+    }
+  },
+  "requirements": [
+    [
+      "grinder_tip"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

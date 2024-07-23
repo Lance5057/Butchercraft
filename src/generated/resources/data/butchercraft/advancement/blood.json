@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:butcherknife",
+  "criteria": {
+    "blood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:blood_fluid_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.blood.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:blood_fluid_bucket"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.blood.name"
+    }
+  },
+  "requirements": [
+    [
+      "blood"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

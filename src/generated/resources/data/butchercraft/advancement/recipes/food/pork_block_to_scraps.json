@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pork": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#forge:pork/raw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:pork_block_to_scraps"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pork"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:pork_block_to_scraps"
+    ]
+  }
+}

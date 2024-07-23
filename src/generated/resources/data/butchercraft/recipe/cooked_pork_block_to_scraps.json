@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "butchercraft:cooked_pork_block_item"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "butchercraft:cooked_pork_scraps"
+  }
+}

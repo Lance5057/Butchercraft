@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cooked_cubed_pork": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:cooked_cubed_pork"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_pork_stew"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cooked_cubed_pork"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_pork_stew"
+    ]
+  }
+}

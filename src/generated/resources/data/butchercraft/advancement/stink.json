@@ -1,0 +1,31 @@
+{
+  "parent": "butchercraft:blood",
+  "criteria": {
+    "stink": {
+      "conditions": {
+        "effects": {
+          "butchercraft:pungent_reek": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.stink.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:beak"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.stink.name"
+    }
+  },
+  "requirements": [
+    [
+      "stink"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

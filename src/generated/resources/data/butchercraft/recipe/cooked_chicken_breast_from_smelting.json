@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:chicken_breast"
+  },
+  "result": {
+    "count": 1,
+    "id": "butchercraft:cooked_chicken_breast"
+  }
+}

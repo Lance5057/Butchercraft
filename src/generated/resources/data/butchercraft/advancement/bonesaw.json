@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:root",
+  "criteria": {
+    "bonesaw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:bone_saw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.bonesaw.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:bone_saw"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.bonesaw.name"
+    }
+  },
+  "requirements": [
+    [
+      "bonesaw"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

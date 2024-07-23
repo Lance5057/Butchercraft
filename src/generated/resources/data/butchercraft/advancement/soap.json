@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:blood",
+  "criteria": {
+    "soap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:soap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.soap.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:soap"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.soap.name"
+    }
+  },
+  "requirements": [
+    [
+      "soap"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:stink",
+  "criteria": {
+    "mask": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:mask"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.mask.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:mask"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.mask.name"
+    }
+  },
+  "requirements": [
+    [
+      "mask"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

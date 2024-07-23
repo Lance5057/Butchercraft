@@ -1,0 +1,109 @@
+{
+  "parent": "butchercraft:chicken",
+  "criteria": {
+    "whole_chicken_breast": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_chicken_breast"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_chicken_cubed": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_cubed_chicken"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_chicken_ground": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_ground_chicken"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_chicken_leg": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_chicken_leg"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_chicken_scraps": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_chicken_scraps"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_chicken_stew": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_chicken_stewmeat"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_chicken_thigh": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_chicken_thigh"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_chicken_wing": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_chicken_wing"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.whole_chicken.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:cooked_chicken"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.whole_chicken.name"
+    }
+  },
+  "requirements": [
+    [
+      "whole_chicken_breast"
+    ],
+    [
+      "whole_chicken_leg"
+    ],
+    [
+      "whole_chicken_scraps"
+    ],
+    [
+      "whole_chicken_thigh"
+    ],
+    [
+      "whole_chicken_wing"
+    ],
+    [
+      "whole_chicken_cubed"
+    ],
+    [
+      "whole_chicken_stew"
+    ],
+    [
+      "whole_chicken_ground"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

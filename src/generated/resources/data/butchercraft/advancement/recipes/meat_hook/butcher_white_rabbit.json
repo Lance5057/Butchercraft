@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:butcher_white_rabbit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_rabbit_carcass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:white_rabbit_carcass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_rabbit_carcass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:butcher_white_rabbit"
+    ]
+  }
+}

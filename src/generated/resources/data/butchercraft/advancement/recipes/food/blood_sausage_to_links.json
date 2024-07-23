@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blood_sausage_mix": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:blood_sausage_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:blood_sausage_to_links"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blood_sausage_mix"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:blood_sausage_to_links"
+    ]
+  }
+}

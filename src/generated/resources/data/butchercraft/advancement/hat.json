@@ -1,0 +1,35 @@
+{
+  "parent": "butchercraft:root",
+  "criteria": {
+    "hat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:paper_hat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.hat.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:paper_hat"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.hat.name"
+    }
+  },
+  "requirements": [
+    [
+      "hat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,15 @@
+{
+  "type": "butchercraft:grinder",
+  "attachment": {
+    "item": "butchercraft:grinder_tip"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "item": "butchercraft:rabbit_scraps"
+  },
+  "ingredientCount": 1,
+  "result": {
+    "count": 2,
+    "id": "butchercraft:ground_rabbit"
+  }
+}

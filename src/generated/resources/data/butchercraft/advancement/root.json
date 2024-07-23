@@ -1,0 +1,36 @@
+{
+  "criteria": {
+    "tick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:butcher_knife"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "butchercraft:textures/background.png",
+    "description": {
+      "translate": "butchercraft.advancement.root.desc"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:butcher_knife"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "butchercraft.advancement.root.name"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

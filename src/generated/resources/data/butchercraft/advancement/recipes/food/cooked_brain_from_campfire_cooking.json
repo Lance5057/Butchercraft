@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brain": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:brain"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_brain_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brain"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_brain_from_campfire_cooking"
+    ]
+  }
+}

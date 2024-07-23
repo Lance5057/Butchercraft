@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:leather"
+    },
+    "F": {
+      "item": "butchercraft:lard"
+    },
+    "W": {
+      "item": "minecraft:light_blue_wool"
+    }
+  },
+  "pattern": [
+    "W W",
+    "BFB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:gloves"
+  }
+}

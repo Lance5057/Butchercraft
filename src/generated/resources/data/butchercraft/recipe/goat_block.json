@@ -1,0 +1,91 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:goat/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_goat"
+      }
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:goat_block_item"
+  }
+}

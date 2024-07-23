@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "H": {
+      "item": "butchercraft:chicken_head_item"
+    }
+  },
+  "pattern": [
+    "F F",
+    "FHF",
+    "F F"
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:chicken_mask"
+  }
+}

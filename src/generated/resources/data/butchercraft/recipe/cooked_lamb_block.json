@@ -1,0 +1,91 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:mutton/cooked"
+      },
+      "subtracted": {
+        "item": "butchercraft:cooked_ground_lamb"
+      }
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:cooked_lamb_block_item"
+  }
+}

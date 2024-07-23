@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": {
+      "item": "butchercraft:pig_head_item"
+    },
+    "L": {
+      "item": "butchercraft:pig_hide"
+    },
+    "S": {
+      "tag": "c:strings"
+    }
+  },
+  "pattern": [
+    " H ",
+    "SLS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:pig_hood"
+  }
+}

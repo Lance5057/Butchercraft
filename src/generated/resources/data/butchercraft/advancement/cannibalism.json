@@ -1,0 +1,42 @@
+{
+  "parent": "butchercraft:root",
+  "criteria": {
+    "cannibalism": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:player"
+            }
+          }
+        ],
+        "item": {
+          "items": "butchercraft:butcher_knife"
+        }
+      },
+      "trigger": "minecraft:player_interacted_with_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.cannibalism.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:player_head"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.cannibalism.name"
+    }
+  },
+  "requirements": [
+    [
+      "cannibalism"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
