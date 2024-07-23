@@ -21,7 +21,7 @@ public class ChickenMaskModel extends HumanoidModel<LivingEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
-			new ResourceLocation(Butchercraft.MOD_ID, "chicken_mask"), "main");
+			ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "chicken_mask"), "main");
 
 	public ChickenMaskModel(ModelPart root) {
 		super(root);
