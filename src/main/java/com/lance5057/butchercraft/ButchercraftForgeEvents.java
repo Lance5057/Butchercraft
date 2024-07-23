@@ -125,7 +125,7 @@ public class ButchercraftForgeEvents {
 					int animalsAmount = level.getRandom().nextInt(4) + 2;
 					for (int i = 0; i < animalsAmount; i++) {
 						Animal ent = (Animal) type.spawn(level, e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT);
-						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.getDelegate(), 3600));
+						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST, 3600));
 					}
 				}
 	}
@@ -138,7 +138,7 @@ public class ButchercraftForgeEvents {
 					for (int i = 0; i < animalsAmount; i++) {
 						Rabbit ent = (Rabbit) type.spawn(level, e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT);
 						ent.setVariant(skin);
-						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.getDelegate(), 3600));
+						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST, 3600));
 					}
 				}
 	}
@@ -147,7 +147,7 @@ public class ButchercraftForgeEvents {
 	public static void bloodyTrail(FinalizeSpawnEvent event) {
 		if (event.getEntity() instanceof Zombie z) {
 			for (Player p : event.getLevel().players()) {
-				if (p.hasEffect(ButchercraftMobEffects.BLOODTRAIL.getDelegate())) {
+				if (p.hasEffect(ButchercraftMobEffects.BLOODTRAIL)) {
 					z.setTarget(p);
 				}
 			}
@@ -193,8 +193,8 @@ public class ButchercraftForgeEvents {
 	@SubscribeEvent
 	public static void cancelInteractions(PlayerInteractEvent.EntityInteractSpecific event) {
 		if (event.getTarget() instanceof Villager v) {
-			if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.getDelegate())
-					|| event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY.getDelegate())) {
+			if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY)
+					|| event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY)) {
 				v.setUnhappyCounter(40);
 				if (!v.level().isClientSide()) {
 					v.playSound(SoundEvents.VILLAGER_NO, 1, v.getVoicePitch());
@@ -207,7 +207,7 @@ public class ButchercraftForgeEvents {
 
 	@SubscribeEvent
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
-		if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.getDelegate())) {
+		if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY)) {
 			ItemStack stack = event.getItem();
 			if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
 					|| stack.getItem() instanceof MilkBucketItem) {
@@ -219,7 +219,7 @@ public class ButchercraftForgeEvents {
 
 	@SubscribeEvent
 	public static void dirtyHands(LivingEntityUseItemEvent.Finish event) {
-		if (event.getEntity().hasEffect(ButchercraftMobEffects.DIRTY.getDelegate())) {
+		if (event.getEntity().hasEffect(ButchercraftMobEffects.DIRTY)) {
 			ItemStack stack = event.getItem();
 			if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
 					|| stack.getItem() instanceof MilkBucketItem) {
@@ -241,7 +241,7 @@ public class ButchercraftForgeEvents {
 	@SubscribeEvent
 	public static void buffZombie(LivingDamageEvent.Pre event) {
 		if (event.getSource().getDirectEntity() instanceof Zombie z) {
-			if (event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY.getDelegate())) {
+			if (event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY)) {
 				z.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0));
 				z.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 0));
 			}

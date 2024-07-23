@@ -225,7 +225,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 				if (boots.getItem() instanceof BootsItem)
 					boots.hurtAndBreak(1, p, EquipmentSlot.FEET);
 				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.getDelegate(), 3600, 0, false, false,
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL, 3600, 0, false, false,
 							true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
@@ -233,20 +233,20 @@ public class MeatHookBlockEntity extends BlockEntity {
 					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
 				else
 					p.addEffect(
-							new MobEffectInstance(ButchercraftMobEffects.BLOODY.getDelegate(), 3600, 0, false, false, true));
+							new MobEffectInstance(ButchercraftMobEffects.BLOODY, 3600, 0, false, false, true));
 
 				ItemStack gloves = p.getInventory().getArmor(2);
 				if (gloves.getItem() instanceof GlovesItem)
 					gloves.hurtAndBreak(1, p, EquipmentSlot.CHEST);
 				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY.getDelegate(), 3600, 0, false, false, true));
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY, 3600, 0, false, false, true));
 
 				ItemStack mask = p.getInventory().getArmor(3);
 				if (mask.getItem() instanceof MaskItem)
 					mask.hurtAndBreak(1, p, EquipmentSlot.HEAD);
 				else
 					p.addEffect(
-							new MobEffectInstance(ButchercraftMobEffects.STINKY.getDelegate(), 3600, 0, false, false, true));
+							new MobEffectInstance(ButchercraftMobEffects.STINKY, 3600, 0, false, false, true));
 
 				this.updateInventory();
 				return ItemInteractionResult.SUCCESS;

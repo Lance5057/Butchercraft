@@ -14,8 +14,8 @@ public class ButchercraftForgeClientEvents {
 	public static void cancelTrade(ScreenEvent.Opening event) {
 		if (event.getNewScreen() instanceof MerchantScreen m) {
 			Minecraft mine = Minecraft.getInstance();
-			if (mine.player.hasEffect(ButchercraftMobEffects.STINKY.getDelegate())
-					|| mine.player.hasEffect(ButchercraftMobEffects.BLOODY.getDelegate())) {
+			if (mine.player.hasEffect(ButchercraftMobEffects.STINKY)
+					|| mine.player.hasEffect(ButchercraftMobEffects.BLOODY)) {
 				event.setCanceled(true);
 			}
 		}

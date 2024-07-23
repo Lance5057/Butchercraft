@@ -12,7 +12,7 @@ public class AngryAnimalAttackGoal extends MeleeAttackGoal {
 
 	@Override
 	public boolean canUse() {
-		if (this.mob.hasEffect(ButchercraftMobEffects.BLOODLUST.getDelegate()))
+		if (this.mob.hasEffect(ButchercraftMobEffects.BLOODLUST))
 			return super.canUse();
 		return false;
 

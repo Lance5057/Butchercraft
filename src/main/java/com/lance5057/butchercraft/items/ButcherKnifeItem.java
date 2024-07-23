@@ -41,7 +41,7 @@ public class ButcherKnifeItem extends KnifeItem {
 	public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
 			InteractionHand hand) {
 
-		if (entity.hasEffect(ButchercraftMobEffects.BLOODLUST.getDelegate()))
+		if (entity.hasEffect(ButchercraftMobEffects.BLOODLUST))
 			return InteractionResult.FAIL;
 		if (entity instanceof IShearable target) {
 			if (entity.level().isClientSide)

@@ -28,7 +28,7 @@ public class CarcassItem extends Item {
 
 					boots.hurtAndBreak(1,  p, EquipmentSlot.FEET);
 				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL.getDelegate(), 3600, 0, false, false,
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL, 3600, 0, false, false,
 							true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
@@ -36,7 +36,7 @@ public class CarcassItem extends Item {
 					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
 				else
 					p.addEffect(
-							new MobEffectInstance(ButchercraftMobEffects.BLOODY.getDelegate(), 3600, 0, false, false, true));
+							new MobEffectInstance(ButchercraftMobEffects.BLOODY, 3600, 0, false, false, true));
 			}
 	}
 }
