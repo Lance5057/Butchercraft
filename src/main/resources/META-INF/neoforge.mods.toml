@@ -1,37 +1,32 @@
 modLoader="javafml"
-loaderVersion="${loader_version_range}"
-license="${mod_license}"
+loaderVersion="47"
+license="CC BY-NC-SA 4.0 Deed "
 issueTrackerURL="https://github.com/Lance5057/Butchercraft/issues"
 
 [[mods]]
-modId="${mod_id}"
-version="${mod_version}"
-displayName="${mod_name}"
+modId="butchercraft"
+version="2.6.0"
+displayName="Butchercraft"
 displayURL="https://github.com/Lance5057/Butchercraft"
-credits="${mod_credits}"
-authors="${mod_authors}"
-description='''${mod_description}'''
+authors="Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly, ParadigmOne, unilock"
+description='''Killing an animal nets barely a few bits, maybe some meat and a few leathers, and then the rest just disappears. Such a waste!'''
 enumExtensions="META-INF/enumextensions.json"
-
-# The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
-#[[mixins]]
-#config="${mod_id}.mixins.json"
 
 [[accessTransformers]]
 file="META-INF/accesstransformer.cfg"
 
 # The coremods config file path is not configurable and is always loaded from META-INF/coremods.json
 
-[[dependencies.${mod_id}]]
+[[dependencies.butchercraft]]
     modId="neoforge"
     type="required"
-    versionRange="${neo_version_range}"
+    versionRange="[21,)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.${mod_id}]]
+[[dependencies.butchercraft]]
     modId="minecraft"
     type="required"
-    versionRange="${minecraft_version_range}"
+    versionRange="[1.21,)"
     ordering="NONE"
     side="BOTH"
