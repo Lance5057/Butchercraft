@@ -159,7 +159,7 @@ public class GrinderBlockEntity extends BlockEntity {
 		for (int i = 0; i < 3; i++) {
 			if (inventory.isItemValid(i, heldItem)) {
 
-				if (!ItemStack.isSameItemSameTags(inventory.insertItem(i, heldItem, true), heldItem)) {
+				if (!ItemStack.matches(inventory.insertItem(i, heldItem, true), heldItem)) {
 
 					heldItem = inventory.insertItem(i, heldItem.copy(), false);
 
