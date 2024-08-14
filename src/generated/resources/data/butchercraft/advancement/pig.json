@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:hook",
+  "criteria": {
+    "pig": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:pig_carcass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.pig.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:pig_carcass"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.pig.name"
+    }
+  },
+  "requirements": [
+    [
+      "pig"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

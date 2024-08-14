@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_tongue_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tongue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:tongue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tongue"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_tongue_from_campfire_cooking"
+    ]
+  }
+}

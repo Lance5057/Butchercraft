@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:root",
+  "criteria": {
+    "skinningknife": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:skinning_knife"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.skinningknife.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:skinning_knife"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.skinningknife.name"
+    }
+  },
+  "requirements": [
+    [
+      "skinningknife"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

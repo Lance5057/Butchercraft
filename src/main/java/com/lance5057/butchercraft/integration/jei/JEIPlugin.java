@@ -21,7 +21,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
-	private static final ResourceLocation ID = new ResourceLocation(Butchercraft.MOD_ID, "main");
+	private static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "main");
 
 	@Override
 	public ResourceLocation getPluginUid() {

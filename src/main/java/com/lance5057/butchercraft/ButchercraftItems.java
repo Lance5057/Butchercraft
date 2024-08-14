@@ -27,6 +27,7 @@ import com.lance5057.butchercraft.items.SoapItem;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -301,41 +302,41 @@ public class ButchercraftItems {
 			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
 
 	public static final DeferredItem<BunnyTailItem> BLACK_BUNNY_TAIL = ITEMS.register("black_bunny_tail",
-			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_BLACK, new Item.Properties()));
+			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_BLACK, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(3))));
 	public static final DeferredItem<BunnyTailItem> BROWN_BUNNY_TAIL = ITEMS.register("brown_bunny_tail",
-			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_BROWN, new Item.Properties()));
+			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_BROWN, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(3))));
 	public static final DeferredItem<BunnyTailItem> SPLOTCHED_BUNNY_TAIL = ITEMS.register("splotched_bunny_tail",
-			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_SPLOTCHED, new Item.Properties()));
+			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_SPLOTCHED, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(3))));
 	public static final DeferredItem<BunnyTailItem> GOLD_BUNNY_TAIL = ITEMS.register("gold_bunny_tail",
-			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_GOLD, new Item.Properties()));
+			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_GOLD, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(3))));
 	public static final DeferredItem<BunnyTailItem> SALT_BUNNY_TAIL = ITEMS.register("salt_bunny_tail",
-			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_SALT, new Item.Properties()));
+			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_SALT, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(3))));
 	public static final DeferredItem<BunnyTailItem> WHITE_BUNNY_TAIL = ITEMS.register("white_bunny_tail",
-			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_WHITE, new Item.Properties()));
+			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_WHITE, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(3))));
 
 	public static final DeferredItem<BunnyEarsItem> BLACK_BUNNY_EARS = ITEMS.register("black_bunny_ears",
-			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_BLACK, new Item.Properties()));
+			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_BLACK, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<BunnyEarsItem> BROWN_BUNNY_EARS = ITEMS.register("brown_bunny_ears",
-			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_BROWN, new Item.Properties()));
+			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_BROWN, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<BunnyEarsItem> SPLOTCHED_BUNNY_EARS = ITEMS.register("splotched_bunny_ears",
-			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_SPLOTCHED, new Item.Properties()));
+			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_SPLOTCHED, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<BunnyEarsItem> GOLD_BUNNY_EARS = ITEMS.register("gold_bunny_ears",
-			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_GOLD, new Item.Properties()));
+			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_GOLD, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<BunnyEarsItem> SALT_BUNNY_EARS = ITEMS.register("salt_bunny_ears",
-			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_SALT, new Item.Properties()));
+			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_SALT, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<BunnyEarsItem> WHITE_BUNNY_EARS = ITEMS.register("white_bunny_ears",
-			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_WHITE, new Item.Properties()));
+			() -> new BunnyEarsItem(BCArmorMaterial.BUNNY_WHITE, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 
 	public static final DeferredItem<PigHoodItem> PIG_HOOD = ITEMS.register("pig_hood",
-			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties()));
+			() -> new PigHoodItem(BCArmorMaterial.PIG_HOOD, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<CowHoodItem> COW_HOOD = ITEMS.register("cow_hood",
-			() -> new CowHoodItem(BCArmorMaterial.COW_HOOD, new Item.Properties()));
+			() -> new CowHoodItem(BCArmorMaterial.COW_HOOD, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<SheepHoodItem> SHEEP_HOOD = ITEMS.register("sheep_hood",
-			() -> new SheepHoodItem(BCArmorMaterial.SHEEP_HOOD, new Item.Properties()));
+			() -> new SheepHoodItem(BCArmorMaterial.SHEEP_HOOD, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<GoatHoodItem> GOAT_HOOD = ITEMS.register("goat_hood",
-			() -> new GoatHoodItem(BCArmorMaterial.GOAT_HOOD, new Item.Properties()));
+			() -> new GoatHoodItem(BCArmorMaterial.GOAT_HOOD, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 	public static final DeferredItem<ChickenMaskItem> CHICKEN_MASK = ITEMS.register("chicken_mask",
-			() -> new ChickenMaskItem(BCArmorMaterial.CHICKEN_MASK, new Item.Properties()));
+			() -> new ChickenMaskItem(BCArmorMaterial.CHICKEN_MASK, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(3))));
 
 	public static final DeferredItem<BlockItem> COW_HIDE = ITEMS.register("cow_hide",
 			() -> new BlockItem(ButchercraftBlocks.COW_HIDE_CARPET.get(), new Item.Properties()));
@@ -479,15 +480,15 @@ public class ButchercraftItems {
 
 	// Armor
 	public static final DeferredItem<Item> MASK = ITEMS.register("mask",
-			() -> new MaskItem(BCArmorMaterial.WOOL, new Item.Properties()));
+			() -> new MaskItem(BCArmorMaterial.WOOL, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(5))));
 	public static final DeferredItem<Item> PAPER_HAT = ITEMS.register("paper_hat",
-			() -> new PaperHatItem(BCArmorMaterial.PAPER, new Item.Properties()));
+			() -> new PaperHatItem(BCArmorMaterial.PAPER, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(5))));
 	public static final DeferredItem<Item> APRON = ITEMS.register("apron",
-			() -> new ApronItem(BCArmorMaterial.WOOL, new Item.Properties()));
+			() -> new ApronItem(BCArmorMaterial.WOOL, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(5))));
 	public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves",
-			() -> new GlovesItem(BCArmorMaterial.WOOL, new Item.Properties()));
+			() -> new GlovesItem(BCArmorMaterial.WOOL, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(3))));
 	public static final DeferredItem<Item> BOOTS = ITEMS.register("boots",
-			() -> new BootsItem(BCArmorMaterial.WOOL, new Item.Properties()));
+			() -> new BootsItem(BCArmorMaterial.WOOL, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(3))));
 
 	public static final DeferredItem<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
 			() -> new Item(new Item.Properties()));
@@ -498,7 +499,7 @@ public class ButchercraftItems {
 			() -> new SoapItem(new Item.Properties()));
 
 	public static final DeferredItem<Item> BLOOD_FLUID_BUCKET = ITEMS.register("blood_fluid_bucket",
-			() -> new BucketItem(ButchercraftFluids.BLOOD_FLUID,
+			() -> new BucketItem(ButchercraftFluids.BLOOD_FLUID.get(),
 					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 	public static final DeferredItem<Item> BLOOD_FLUID_BOTTLE = ITEMS.register("blood_fluid_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));

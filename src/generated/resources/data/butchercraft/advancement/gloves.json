@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:hands",
+  "criteria": {
+    "gloves": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:gloves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.gloves.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:gloves"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.gloves.name"
+    }
+  },
+  "requirements": [
+    [
+      "gloves"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

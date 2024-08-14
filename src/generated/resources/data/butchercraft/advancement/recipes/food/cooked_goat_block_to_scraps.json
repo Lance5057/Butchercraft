@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_goat_cooked": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#forge:mutton/cooked"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_goat_block_to_scraps"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_goat_cooked"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_goat_block_to_scraps"
+    ]
+  }
+}

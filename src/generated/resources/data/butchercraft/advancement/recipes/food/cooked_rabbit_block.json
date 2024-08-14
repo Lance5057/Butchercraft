@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rabbit_cooked": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#forge:rabbit/cooked"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_rabbit_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rabbit_cooked"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_rabbit_block"
+    ]
+  }
+}

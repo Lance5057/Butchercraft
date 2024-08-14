@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -24,7 +25,7 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> {
 	int timer = 0;
 
-	ResourceLocation rc = new ResourceLocation(Butchercraft.MOD_ID, "meathook/grinder_handle");
+	ModelResourceLocation rc = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/grinder_handle"));
 	IRenderable<ModelData> model;
 
 	public GrinderRenderer(BlockEntityRendererProvider.Context cxt) {

@@ -86,7 +86,7 @@ public class GrinderRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(builder::addCriterion);
 
-		ResourceLocation r = new ResourceLocation(pRecipeId.getNamespace(),
+		ResourceLocation r = ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 				"recipes/" + this.category.getFolderName() + "/" + pRecipeId.getPath());
 
 		pFinishedRecipeConsumer.accept(

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "butchercraft:cubed_goat"
+  },
+  "result": {
+    "count": 1,
+    "id": "butchercraft:cooked_cubed_goat"
+  }
+}

@@ -7,7 +7,6 @@ import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
 
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionResult;
@@ -36,18 +35,18 @@ import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.BabyEntitySpawnEvent;
+import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
-import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
-import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-@Mod.EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class ButchercraftForgeEvents {
 	@SubscribeEvent
-	public static void giveHoodsToUndead(MobSpawnEvent.FinalizeSpawn event) {
+	public static void giveHoodsToUndead(FinalizeSpawnEvent event) {
 		if (event.getLevel() instanceof ServerLevel level) {
 			if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_SPAWN_CHANCE.get().floatValue()) {
 				Mob e = event.getEntity();
@@ -125,10 +124,8 @@ public class ButchercraftForgeEvents {
 				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get().floatValue()) {
 					int animalsAmount = level.getRandom().nextInt(4) + 2;
 					for (int i = 0; i < animalsAmount; i++) {
-						Animal ent = (Animal) type.spawn(level, (CompoundTag) null, null, e.blockPosition()
-								.offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT,
-								false, false);
-						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+						Animal ent = (Animal) type.spawn(level, e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT);
+						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST, 3600));
 					}
 				}
 	}
@@ -139,20 +136,18 @@ public class ButchercraftForgeEvents {
 				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get().floatValue()) {
 					int animalsAmount = level.getRandom().nextInt(4) + 2;
 					for (int i = 0; i < animalsAmount; i++) {
-						Rabbit ent = (Rabbit) type.spawn(level, (CompoundTag) null, null, e.blockPosition()
-								.offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT,
-								false, false);
+						Rabbit ent = (Rabbit) type.spawn(level, e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT);
 						ent.setVariant(skin);
-						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 3600));
+						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST, 3600));
 					}
 				}
 	}
 
 	@SubscribeEvent
-	public static void bloodyTrail(MobSpawnEvent.FinalizeSpawn event) {
+	public static void bloodyTrail(FinalizeSpawnEvent event) {
 		if (event.getEntity() instanceof Zombie z) {
 			for (Player p : event.getLevel().players()) {
-				if (p.hasEffect(ButchercraftMobEffects.BLOODTRAIL.get())) {
+				if (p.hasEffect(ButchercraftMobEffects.BLOODTRAIL)) {
 					z.setTarget(p);
 				}
 			}
@@ -198,8 +193,8 @@ public class ButchercraftForgeEvents {
 	@SubscribeEvent
 	public static void cancelInteractions(PlayerInteractEvent.EntityInteractSpecific event) {
 		if (event.getTarget() instanceof Villager v) {
-			if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.get())
-					|| event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY.get())) {
+			if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY)
+					|| event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY)) {
 				v.setUnhappyCounter(40);
 				if (!v.level().isClientSide()) {
 					v.playSound(SoundEvents.VILLAGER_NO, 1, v.getVoicePitch());
@@ -212,7 +207,7 @@ public class ButchercraftForgeEvents {
 
 	@SubscribeEvent
 	public static void cancelEat(LivingEntityUseItemEvent.Start event) {
-		if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY.get())) {
+		if (event.getEntity().hasEffect(ButchercraftMobEffects.STINKY)) {
 			ItemStack stack = event.getItem();
 			if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
 					|| stack.getItem() instanceof MilkBucketItem) {
@@ -224,7 +219,7 @@ public class ButchercraftForgeEvents {
 
 	@SubscribeEvent
 	public static void dirtyHands(LivingEntityUseItemEvent.Finish event) {
-		if (event.getEntity().hasEffect(ButchercraftMobEffects.DIRTY.get())) {
+		if (event.getEntity().hasEffect(ButchercraftMobEffects.DIRTY)) {
 			ItemStack stack = event.getItem();
 			if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
 					|| stack.getItem() instanceof MilkBucketItem) {
@@ -244,9 +239,9 @@ public class ButchercraftForgeEvents {
 	}
 
 	@SubscribeEvent
-	public static void buffZombie(LivingHurtEvent event) {
+	public static void buffZombie(LivingDamageEvent.Pre event) {
 		if (event.getSource().getDirectEntity() instanceof Zombie z) {
-			if (event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY.get())) {
+			if (event.getEntity().hasEffect(ButchercraftMobEffects.BLOODY)) {
 				z.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0));
 				z.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 0));
 			}

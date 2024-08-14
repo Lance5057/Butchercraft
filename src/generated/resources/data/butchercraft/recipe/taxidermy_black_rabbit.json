@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "butchercraft:black_rabbit_carcass"
+    },
+    {
+      "item": "minecraft:hay_block"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:taxidermy_black_rabbit_item_block"
+  }
+}

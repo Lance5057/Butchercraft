@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:root",
+  "criteria": {
+    "gutknife": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:gut_knife"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.gutknife.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:gut_knife"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.gutknife.name"
+    }
+  },
+  "requirements": [
+    [
+      "gutknife"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

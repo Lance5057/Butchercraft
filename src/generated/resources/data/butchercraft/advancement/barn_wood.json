@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:blood",
+  "criteria": {
+    "barn_wood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:barn_wood_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.barn_wood.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:barn_wood_block_item"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.barn_wood.name"
+    }
+  },
+  "requirements": [
+    [
+      "barn_wood"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

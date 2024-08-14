@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_wattle_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wattle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:wattle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wattle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_wattle_from_smoking"
+    ]
+  }
+}

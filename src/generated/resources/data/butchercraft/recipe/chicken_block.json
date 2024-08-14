@@ -1,0 +1,91 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:chicken/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_chicken"
+      }
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:chicken_block_item"
+  }
+}

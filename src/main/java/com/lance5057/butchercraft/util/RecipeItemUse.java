@@ -1,13 +1,10 @@
 package com.lance5057.butchercraft.util;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.Util;
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -29,22 +26,14 @@ public record RecipeItemUse(
             ).apply(inst, RecipeItemUse::new)
     );
 
-    public static final String USES_FIELD = "uses";
-    public static final String TOOL_FIELD = "tool";
-    public static final String COUNT_FIELD = "count";
-    public static final String DAMAGE_FIELD = "damage";
-    public static final String LOOT_TABLE_FIELD = "loot_table";
+    public static final StreamCodec<RegistryFriendlyByteBuf, RecipeItemUse> STREAM_CODEC = StreamCodec.of(RecipeItemUse::write, RecipeItemUse::read);
 
-    public static final RecipeItemUse EMPTY = new RecipeItemUse(0, Ingredient.EMPTY, 1, false, new ResourceLocation(""));
+    public static final RecipeItemUse EMPTY = new RecipeItemUse(0, Ingredient.EMPTY, 1, false, ResourceLocation.fromNamespaceAndPath("", ""));
 
-    public static RecipeItemUse read(JsonObject j) {
-        return Util.getOrThrow(CODEC.decode(JsonOps.INSTANCE, j), JsonParseException::new).getFirst();
-    }
-
-    public static RecipeItemUse read(FriendlyByteBuf buffer) {
+    private static RecipeItemUse read(RegistryFriendlyByteBuf buffer) {
         int u = buffer.readVarInt();
         //ItemStack stack = buffer.readItemStack();
-        Ingredient i = Ingredient.fromNetwork(buffer);
+        Ingredient i = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
         int c = buffer.readVarInt();
         boolean b = buffer.readBoolean();
 
@@ -53,24 +42,11 @@ public record RecipeItemUse(
         return new RecipeItemUse(u, i, c, b, s);
     }
 
-    public static void write(RecipeItemUse r, FriendlyByteBuf buffer) {
+    private static void write(RegistryFriendlyByteBuf buffer, RecipeItemUse r) {
         buffer.writeVarInt(r.uses);
-        r.tool.toNetwork(buffer);
+        Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, r.tool);
         buffer.writeVarInt(r.count);
         buffer.writeBoolean(r.damageTool);
         buffer.writeResourceLocation(r.lootTable);
-    }
-
-    public static JsonObject addProperty(RecipeItemUse r) {
-        JsonObject o = new JsonObject();
-
-        o.addProperty(USES_FIELD, r.uses);
-        o.add(TOOL_FIELD, Util.getOrThrow(Ingredient.CODEC.encodeStart(JsonOps.INSTANCE, r.tool), JsonParseException::new));
-        o.addProperty(COUNT_FIELD, r.count);
-        o.addProperty(DAMAGE_FIELD, r.damageTool);
-        o.addProperty(LOOT_TABLE_FIELD, r.lootTable.toString());
-
-
-        return o;
     }
 }

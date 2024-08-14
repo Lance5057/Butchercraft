@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "butchercraft:chicken_block_item"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "butchercraft:chicken_scraps"
+  }
+}

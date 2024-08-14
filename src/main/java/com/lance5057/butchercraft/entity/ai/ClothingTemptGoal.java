@@ -22,7 +22,7 @@ public class ClothingTemptGoal extends LivingTemptGoal {
 			for (ItemStack i : living.getArmorSlots()) {
 				if (this.items.test(i)) {
 					if (living instanceof Monster) {
-						this.mob.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST.get(), 60));
+						this.mob.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST, 60));
 //						return false;
 					}
 					return true;

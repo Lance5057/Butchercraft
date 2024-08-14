@@ -4,8 +4,8 @@ import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -25,7 +25,7 @@ public record HookRecipe(
 	}
 
 	@Override
-	public ItemStack assemble(HookRecipeContainer pContainer, RegistryAccess registryAccess) {
+	public ItemStack assemble(HookRecipeContainer pContainer, HolderLookup.Provider registryAccess) {
 		return ItemStack.EMPTY;
 	}
 
@@ -35,7 +35,7 @@ public record HookRecipe(
 	}
 
 	@Override
-	public ItemStack getResultItem(RegistryAccess registryAccess) {
+	public ItemStack getResultItem(HolderLookup.Provider registryAccess) {
 		return ItemStack.EMPTY;
 	}
 

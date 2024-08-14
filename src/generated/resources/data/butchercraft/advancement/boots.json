@@ -1,0 +1,33 @@
+{
+  "parent": "butchercraft:trail",
+  "criteria": {
+    "boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.boots.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:boots"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.boots.name"
+    }
+  },
+  "requirements": [
+    [
+      "boots"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

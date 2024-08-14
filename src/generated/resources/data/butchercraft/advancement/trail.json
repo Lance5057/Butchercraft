@@ -1,0 +1,31 @@
+{
+  "parent": "butchercraft:blood",
+  "criteria": {
+    "trail": {
+      "conditions": {
+        "effects": {
+          "butchercraft:blood_trail": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.trail.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "butchercraft:blood_sausage_linked"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.trail.name"
+    }
+  },
+  "requirements": [
+    [
+      "trail"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

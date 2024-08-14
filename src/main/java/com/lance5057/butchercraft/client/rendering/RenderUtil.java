@@ -1,7 +1,5 @@
 package com.lance5057.butchercraft.client.rendering;
 
-import java.util.List;
-
 import com.lance5057.butchercraft.client.BlacklistedModel;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -12,6 +10,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;
@@ -49,7 +48,7 @@ public class RenderUtil {
 			int combinedOverlayIn, BlacklistedModel model, float timer) {
 
 		if (model.isBlock()) {
-			IRenderable<ModelData> bm = BakedModelRenderable.of(model.rc()).withModelDataContext();
+			IRenderable<ModelData> bm = BakedModelRenderable.of(ModelResourceLocation.standalone(model.rc())).withModelDataContext();
 			blockModel(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, bm,
 					model.transform(), timer);
 

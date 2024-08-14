@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "butchercraft:goat_block_item"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "butchercraft:goat_scraps"
+  }
+}

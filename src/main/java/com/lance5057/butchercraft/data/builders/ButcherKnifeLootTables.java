@@ -5,8 +5,11 @@ import java.util.function.BiConsumer;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -14,9 +17,11 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 
 public class ButcherKnifeLootTables implements LootTableSubProvider {
+	public ButcherKnifeLootTables(HolderLookup.Provider provider) {
+	}
 
 	@Override
-	public void generate(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
+	public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> consumer) {
 		createButcherKnifeLootTable(consumer, EntityType.COW, new LootTable.Builder()
 				.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ButchercraftItems.COW_CARCASS.get()))));
 		createButcherKnifeLootTable(consumer, EntityType.SHEEP, new LootTable.Builder()
@@ -54,17 +59,13 @@ public class ButcherKnifeLootTables implements LootTableSubProvider {
 
 	}
 
-	public static void createButcherKnifeLootTable(BiConsumer<ResourceLocation, LootTable.Builder> consumer,
+	public static void createButcherKnifeLootTable(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> consumer,
 			EntityType<?> entityType, LootTable.Builder lootTable) {
-		consumer.accept(new ResourceLocation(Butchercraft.MOD_ID,
-				"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entityType).getPath()), lootTable);
+		consumer.accept(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entityType).getPath())), lootTable);
 	}
 
-	public static void createRabbitButcherKnifeLootTable(BiConsumer<ResourceLocation, LootTable.Builder> consumer,
+	public static void createRabbitButcherKnifeLootTable(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> consumer,
 			EntityType<?> entityType, LootTable.Builder lootTable, String type) {
-		consumer.accept(
-				new ResourceLocation(Butchercraft.MOD_ID,
-						"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entityType).getPath() + type),
-				lootTable);
+		consumer.accept(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entityType).getPath() + type)), lootTable);
 	}
 }

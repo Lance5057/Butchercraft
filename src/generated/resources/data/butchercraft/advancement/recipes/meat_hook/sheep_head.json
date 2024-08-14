@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sheep_head_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:sheep_head_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:sheep_head"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sheep_head_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:sheep_head"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "parent": "butchercraft:sheep",
+  "criteria": {
+    "whole_sheep_cubed": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_cubed_lamb"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_ground": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_ground_lamb"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_ribs": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_lamb_ribs"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_roast": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_lamb_roast"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_scraps": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_lamb_scraps"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "whole_sheep_stew": {
+      "conditions": {
+        "item": {
+          "items": "butchercraft:cooked_lamb_stewmeat"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "butchercraft.advancement.whole_sheep.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:cooked_mutton"
+    },
+    "title": {
+      "translate": "butchercraft.advancement.whole_sheep.name"
+    }
+  },
+  "requirements": [
+    [
+      "whole_sheep_ribs"
+    ],
+    [
+      "whole_sheep_roast"
+    ],
+    [
+      "whole_sheep_scraps"
+    ],
+    [
+      "whole_sheep_stew"
+    ],
+    [
+      "whole_sheep_cubed"
+    ],
+    [
+      "whole_sheep_ground"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

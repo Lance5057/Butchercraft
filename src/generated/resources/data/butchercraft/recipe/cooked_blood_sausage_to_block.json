@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    },
+    {
+      "item": "butchercraft:cooked_blood_sausage"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:cooked_blood_sausage_block_item"
+  }
+}

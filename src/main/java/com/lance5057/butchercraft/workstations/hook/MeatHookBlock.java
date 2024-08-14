@@ -1,11 +1,9 @@
 package com.lance5057.butchercraft.workstations.hook;
 
-import javax.annotation.Nonnull;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -70,27 +68,24 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 		return !state.getValue(WATERLOGGED);
 	}
 
-	@Nonnull
 	@Override
-	public InteractionResult use(@Nonnull BlockState blockState, Level world, @Nonnull BlockPos blockPos,
-			@Nonnull Player playerEntity, @Nonnull InteractionHand hand, @Nonnull BlockHitResult blockRayTraceResult) {
+	protected ItemInteractionResult useItemOn(ItemStack heldMain, BlockState state, Level world, BlockPos blockPos, Player playerEntity, InteractionHand hand, BlockHitResult hitResult) {
 		BlockEntity entity = world.getBlockEntity(blockPos);
 		if (entity instanceof MeatHookBlockEntity te) {
-			ItemStack heldMain = playerEntity.getItemInHand(hand);
 			if (playerEntity.isCrouching()) {
 				if (te.stage == 0 && te.progress == 0) {
 					te.extractItem(playerEntity);
-					return InteractionResult.SUCCESS;
+					return ItemInteractionResult.SUCCESS;
 				}
 			} else if (te.getInsertedItem().isEmpty()) {
 				te.insertItem(heldMain); 
-				return InteractionResult.SUCCESS;
+				return ItemInteractionResult.SUCCESS;
 			} else {
 				return te.butcher(playerEntity, heldMain);
 			}
 		}
 
-		return InteractionResult.CONSUME;
+		return ItemInteractionResult.CONSUME;
 
 	}
 

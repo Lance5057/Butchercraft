@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lamb_ribs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "butchercraft:lamb_ribs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "butchercraft:cooked_lamb_ribs_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lamb_ribs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "butchercraft:cooked_lamb_ribs_from_campfire_cooking"
+    ]
+  }
+}

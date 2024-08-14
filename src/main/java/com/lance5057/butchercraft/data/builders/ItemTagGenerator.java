@@ -11,6 +11,7 @@ import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
@@ -358,7 +359,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.RIBS).addTag(ButchercraftItemTags.RIBS_COOKED).addTag(ButchercraftItemTags.RIBS_RAW);
 
 		tag(Tags.Items.SLIMEBALLS).add(ButchercraftItems.FAT.get());
-		tag(Tags.Items.STRING).add(ButchercraftItems.SINEW.get()).add(ButchercraftItems.LEATHER_CORD.get());
+		tag(Tags.Items.STRINGS).add(ButchercraftItems.SINEW.get()).add(ButchercraftItems.LEATHER_CORD.get());
 
 		tag(ButchercraftItemTags.HEART_RAW).add(ButchercraftItems.HEART.get());
 		tag(ButchercraftItemTags.HEART_COOKED).add(ButchercraftItems.COOKED_HEART.get());
@@ -440,6 +441,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 						ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(), ButchercraftItems.WHITE_RABBIT_CARCASS.get())
 				.add(Items.RABBIT);
 		tag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.SHEEP_CARCASS.get());
-		tag(Tags.Items.STRING).add(ButchercraftItems.SINEW.get());
+		tag(Tags.Items.STRINGS).add(ButchercraftItems.SINEW.get());
+		tag(ItemTags.DYEABLE).add(ButchercraftItems.SHEEP_HOOD.get());
 	}
 }

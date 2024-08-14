@@ -1,0 +1,91 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    },
+    {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "forge:beef/raw"
+      },
+      "subtracted": {
+        "item": "butchercraft:ground_beef"
+      }
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:beef_block_item"
+  }
+}

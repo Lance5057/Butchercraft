@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": {
+      "item": "butchercraft:lard"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "W": {
+      "item": "minecraft:white_carpet"
+    }
+  },
+  "pattern": [
+    " S ",
+    "WWW",
+    "SFS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "butchercraft:apron"
+  }
+}

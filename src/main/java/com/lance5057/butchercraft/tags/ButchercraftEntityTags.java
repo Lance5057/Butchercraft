@@ -11,6 +11,6 @@ public class ButchercraftEntityTags {
     public static final TagKey<EntityType<?>> CARCASSES = create("butcher_knife_animals");
 
     private static TagKey<EntityType<?>> create(String pName) {
-        return TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(Butchercraft.MOD_ID, pName));
+        return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, pName));
     }
 }

@@ -1,10 +1,10 @@
 package com.lance5057.butchercraft.client.rendering.animation.floats;
 
-import com.google.gson.JsonObject;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 
 public class AnimatedFloat {
 	public static final Codec<AnimatedFloat> CODEC = RecordCodecBuilder.create(
@@ -17,6 +17,8 @@ public class AnimatedFloat {
 					Codec.BOOL.optionalFieldOf("pingpong", false).forGetter(a -> a.pingpong)
 			).apply(inst, AnimatedFloat::new)
 	);
+
+	public static final StreamCodec<RegistryFriendlyByteBuf, AnimatedFloat> STREAM_CODEC = StreamCodec.of(AnimatedFloat::write, AnimatedFloat::read);
 
 	float iMin;
 	float iMax;
@@ -116,18 +118,7 @@ public class AnimatedFloat {
 		this.speed = s;
 	}
 
-	public static AnimatedFloat read(JsonObject j) {
-		float min = j.get("min") != null ? j.get("min").getAsFloat() : 0;
-		float max = j.get("max") != null ? j.get("max").getAsFloat() : 0;
-		float offset = j.get("offset") != null ? j.get("offset").getAsFloat() : 0;
-		float speed = j.get("speed") != null ? j.get("speed").getAsFloat() : 0;
-		boolean loop = j.get("loop") != null ? j.get("loop").getAsBoolean() : false;
-		boolean pingpong = j.get("pingpong") != null ? j.get("pingpong").getAsBoolean() : false;
-
-		return new AnimatedFloat(min, max, offset, speed, loop, pingpong);
-	}
-
-	public static AnimatedFloat read(FriendlyByteBuf buffer) {
+	private static AnimatedFloat read(RegistryFriendlyByteBuf buffer) {
 		float min = buffer.readFloat();
 		float max = buffer.readFloat();
 		float offset = buffer.readFloat();
@@ -138,31 +129,12 @@ public class AnimatedFloat {
 		return new AnimatedFloat(min, max, offset, speed, loop, pingpong);
 	}
 
-	public static void write(AnimatedFloat af, FriendlyByteBuf buffer) {
+	private static void write(RegistryFriendlyByteBuf buffer, AnimatedFloat af) {
 		buffer.writeFloat(af.iMin);
 		buffer.writeFloat(af.iMax);
 		buffer.writeFloat(af.offset);
 		buffer.writeFloat(af.speed);
 		buffer.writeBoolean(af.loop);
 		buffer.writeBoolean(af.pingpong);
-	}
-
-	public static JsonObject addProperty(AnimatedFloat af) {
-		JsonObject jo = new JsonObject();
-
-		if (af.iMin != 0)
-			jo.addProperty("min", af.iMin);
-		if (af.iMax != 0)
-			jo.addProperty("max", af.iMax);
-		if (af.offset != 0)
-			jo.addProperty("offset", af.offset);
-		if (af.speed != 0)
-			jo.addProperty("speed", af.speed);
-		if (af.loop)
-			jo.addProperty("loop", af.loop);
-		if (af.pingpong)
-			jo.addProperty("pingpong", af.pingpong);
-
-		return jo;
 	}
 }

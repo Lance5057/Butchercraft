@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "item": "butchercraft:barn_wood_block_item"
+    }
+  },
+  "pattern": [
+    "xx ",
+    "xx ",
+    "xx "
+  ],
+  "result": {
+    "count": 3,
+    "id": "butchercraft:barn_wood_door_item"
+  }
+}

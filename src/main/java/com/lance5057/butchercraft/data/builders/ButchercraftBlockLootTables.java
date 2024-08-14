@@ -7,14 +7,15 @@ import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.butchercraft.ButchercraftBlocks;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ButchercraftBlockLootTables extends BlockLootSubProvider {
-	protected ButchercraftBlockLootTables() {
-		super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags());
+	protected ButchercraftBlockLootTables(HolderLookup.Provider provider) {
+		super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(), provider);
 	}
 
 	@Override

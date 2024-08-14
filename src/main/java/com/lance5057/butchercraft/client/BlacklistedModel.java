@@ -1,12 +1,12 @@
 package com.lance5057.butchercraft.client;
 
-import com.google.gson.JsonObject;
 import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
@@ -23,7 +23,9 @@ public record BlacklistedModel(
 			).apply(inst, BlacklistedModel::new)
 	);
 
-	public static BlacklistedModel empty = new BlacklistedModel(new ResourceLocation("", ""),
+	public static final StreamCodec<RegistryFriendlyByteBuf, BlacklistedModel> STREAM_CODEC = StreamCodec.of(BlacklistedModel::write, BlacklistedModel::read);
+
+	public static BlacklistedModel empty = new BlacklistedModel(ResourceLocation.fromNamespaceAndPath("", ""),
 			true, AnimationFloatTransform.ZERO);
 	
 //	public BlacklistedModel(BlockState block)
@@ -38,43 +40,19 @@ public record BlacklistedModel(
 		this(BuiltInRegistries.ITEM.getKey(item), false, anim);
 	}
 
-	public static BlacklistedModel read(JsonObject j) {
-		ResourceLocation rc = j.get("location") != null ? new ResourceLocation(j.get("location").getAsString())
-				: new ResourceLocation("", "");
-
-		boolean block = j.get("IsBlock") != null ? j.get("IsBlock").getAsBoolean() : false;
-		AnimationFloatTransform t = AnimationFloatTransform.read(j.getAsJsonObject("animation"));
-
-		return new BlacklistedModel(rc, block, t);
-	}
-
-	public static BlacklistedModel read(FriendlyByteBuf buffer) {
-		ResourceLocation rc = new ResourceLocation(buffer.readUtf());
+	private static BlacklistedModel read(RegistryFriendlyByteBuf buffer) {
+		ResourceLocation rc = buffer.readResourceLocation();
 
 		boolean block = buffer.readBoolean();
-		
-		AnimationFloatTransform t = AnimationFloatTransform.read(buffer);
+
+		AnimationFloatTransform t = AnimationFloatTransform.STREAM_CODEC.decode(buffer);
 
 		return new BlacklistedModel(rc, block, t);
 	}
 
-	public static void write(BlacklistedModel bm, FriendlyByteBuf buffer) {
-		buffer.writeUtf(bm.rc.toString());
+	private static void write(RegistryFriendlyByteBuf buffer, BlacklistedModel bm) {
+		buffer.writeResourceLocation(bm.rc);
 		buffer.writeBoolean(bm.isBlock);
-		AnimationFloatTransform.write(bm.transform, buffer);
-	}
-
-	public static JsonObject addProperty(BlacklistedModel bm) {
-		JsonObject jo = new JsonObject();
-
-		if(!bm.rc.equals(new ResourceLocation("", "")))
-			jo.addProperty("location", bm.rc.toString());
-		
-		if(bm.isBlock)
-			jo.addProperty("IsBlock", bm.isBlock);
-		
-		jo.add("animation", AnimationFloatTransform.addProperty(bm.transform));
-
-		return jo;
+		AnimationFloatTransform.STREAM_CODEC.encode(buffer, bm.transform);
 	}
 }

@@ -1,47 +1,55 @@
 package com.lance5057.butchercraft.workstations.grinder;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.util.ExtraCodecs;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
 public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> {
-	private static final Codec<GrinderRecipe> CODEC = RecordCodecBuilder.create(
+	private static final MapCodec<GrinderRecipe> CODEC = RecordCodecBuilder.mapCodec(
 			inst -> inst.group(
-					ExtraCodecs.strictOptionalField(Codec.STRING, "group", "").forGetter(GrinderRecipe::group),
+					Codec.STRING.optionalFieldOf("group", "").forGetter(GrinderRecipe::group),
 					Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(GrinderRecipe::ingredient),
 					Codec.INT.fieldOf("ingredientCount").forGetter(GrinderRecipe::count),
 					Ingredient.CODEC_NONEMPTY.fieldOf("attachment").forGetter(GrinderRecipe::attachment),
-					ItemStack.RESULT_CODEC.fieldOf("result").forGetter(GrinderRecipe::result),
+					ItemStack.CODEC.fieldOf("result").forGetter(GrinderRecipe::result),
 					Codec.INT.fieldOf("grinds").forGetter(GrinderRecipe::grinds)
 			).apply(inst, GrinderRecipe::new)
 	);
 
+	public static final StreamCodec<RegistryFriendlyByteBuf, GrinderRecipe> STREAM_CODEC = StreamCodec.of(GrinderRecipeSerializer::write, GrinderRecipeSerializer::read);
+
 	@Override
-	public Codec<GrinderRecipe> codec() {
+	public MapCodec<GrinderRecipe> codec() {
 		return CODEC;
 	}
 
-	public GrinderRecipe fromNetwork(FriendlyByteBuf pBuffer) {
+	@Override
+	public StreamCodec<RegistryFriendlyByteBuf, GrinderRecipe> streamCodec() {
+		return STREAM_CODEC;
+	}
+
+	private static GrinderRecipe read(RegistryFriendlyByteBuf pBuffer) {
 		String s = pBuffer.readUtf();
-		Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
+		Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer);
 		int c = pBuffer.readInt();
-		Ingredient attachment = Ingredient.fromNetwork(pBuffer);
-		ItemStack itemstack = pBuffer.readItem();
+		Ingredient attachment = Ingredient.CONTENTS_STREAM_CODEC.decode(pBuffer);
+		ItemStack itemstack = ItemStack.STREAM_CODEC.decode(pBuffer);
 		int g = pBuffer.readInt();
 		return new GrinderRecipe(s, ingredient, c, attachment, itemstack, g);
 	}
 
-	public void toNetwork(FriendlyByteBuf pBuffer, GrinderRecipe pRecipe) {
+	private static void write(RegistryFriendlyByteBuf pBuffer, GrinderRecipe pRecipe) {
 		pBuffer.writeUtf(pRecipe.getGroup());
-		pRecipe.ingredient().toNetwork(pBuffer);
+		Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, pRecipe.ingredient());
 		pBuffer.writeInt(pRecipe.count());
-		pRecipe.attachment().toNetwork(pBuffer);
-		pBuffer.writeItem(pRecipe.result());
+		Ingredient.CONTENTS_STREAM_CODEC.encode(pBuffer, pRecipe.attachment());
+		ItemStack.STREAM_CODEC.encode(pBuffer, pRecipe.result());
 		pBuffer.writeInt(pRecipe.grinds());
 	}
 }
