@@ -3,16 +3,16 @@ package com.lance5057.butchercraft.data.builders;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.client.model.generators.ModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.ModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class ItemModels extends ModelProvider<ItemModelBuilder> {
 	private final ExistingFileHelper fh;
@@ -347,26 +347,26 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 
 	}
 
-	public void forItem(RegistryObject<? extends Item> item, String name) {
+	public void forItem(DeferredItem<? extends Item> item, String name) {
 		this.singleTexture(item.getId().getPath(), mcLoc("item/handheld"), "layer0", modLoc("item/" + name));
 	}
 
-	public void forMaterialItem(RegistryObject<? extends Item> item, String name) {
+	public void forMaterialItem(DeferredItem<? extends Item> item, String name) {
 		this.singleTexture(item.getId().getPath(), mcLoc("item/handheld"), "layer0",
 				modLoc("item/material/" + name + "/" + item.getId().getPath()));
 	}
 
-	public void forBlockItem(RegistryObject<? extends BlockItem> item, String name) {
+	public void forBlockItem(DeferredItem<? extends BlockItem> item, String name) {
 		getBuilder(item.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Butchercraft.MOD_ID,
-						"block/" + ForgeRegistries.BLOCKS.getKey(item.get().getBlock()).getPath())));
+						"block/" + BuiltInRegistries.BLOCK.getKey(item.get().getBlock()).getPath())));
 	}
 
-	public void forBlockItem(RegistryObject<? extends BlockItem> item, ResourceLocation modelLocation) {
+	public void forBlockItem(DeferredItem<? extends BlockItem> item, ResourceLocation modelLocation) {
 		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation));
 	}
 
-	public void forBlockItem(RegistryObject<? extends BlockItem> item, ResourceLocation modelLocation, String key,
+	public void forBlockItem(DeferredItem<? extends BlockItem> item, ResourceLocation modelLocation, String key,
 			ResourceLocation texture) {
 		getBuilder(item.getId().getPath()).parent(new ModelFile.UncheckedModelFile(modelLocation)).texture(key,
 				texture);

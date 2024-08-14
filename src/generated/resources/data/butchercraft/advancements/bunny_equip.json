@@ -23,7 +23,6 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.bunny_equip.desc"
     },
@@ -33,7 +32,6 @@
       "item": "butchercraft:white_bunny_tail",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.bunny_equip.name"
     }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_rabbit_stewmeat",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit_stewmeat"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_rabbit_stewmeat_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

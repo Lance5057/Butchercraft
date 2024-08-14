@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_goat_scraps": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:goat_scraps"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "butchercraft:goat_scrap_to_ground_goat"
@@ -22,14 +34,14 @@
   },
   "requirements": [
     [
-      "has_goat_scrap",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_goat_scraps",
+      "has_goat_scrap"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:goat_scrap_to_ground_goat"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_cow",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_cow"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:taxidermy_cow"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

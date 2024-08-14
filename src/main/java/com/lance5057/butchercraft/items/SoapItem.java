@@ -1,5 +1,8 @@
 package com.lance5057.butchercraft.items;
 
+import java.util.function.Consumer;
+
+import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -22,7 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 public class SoapItem extends Item {
 
@@ -33,7 +36,7 @@ public class SoapItem extends Item {
 
 	public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {
 		if (!pLevel.isClientSide)
-			pEntityLiving.curePotionEffects(pStack); // FORGE - move up so stack.shrink does not turn stack into air
+			pEntityLiving.removeEffectsCuredBy(ButchercraftMobEffects.SOAP); // FORGE - move up so stack.shrink does not turn stack into air
 		if (pEntityLiving instanceof ServerPlayer serverplayer) {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverplayer, pStack);
 			serverplayer.awardStat(Stats.ITEM_USED.get(this));
@@ -92,9 +95,7 @@ public class SoapItem extends Item {
 	}
 
 	@Override
-	public void initializeClient(
-			java.util.function.Consumer<net.minecraftforge.client.extensions.common.IClientItemExtensions> consumer) {
-
+	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
 		consumer.accept(new IClientItemExtensions() {
 
 			private static final HumanoidModel.ArmPose EXAMPLE_POSE = HumanoidModel.ArmPose.create("EXAMPLE", false,

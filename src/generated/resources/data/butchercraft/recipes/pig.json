@@ -3,7 +3,6 @@
   "carcass": {
     "item": "butchercraft:pig_carcass"
   },
-  "group": "",
   "jei": [
     {
       "item": "butchercraft:blood_fluid_bucket"

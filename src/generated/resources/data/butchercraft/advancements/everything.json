@@ -183,16 +183,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.everything.desc"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:sausage"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.everything.name"
     }

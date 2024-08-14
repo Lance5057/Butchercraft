@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_ground_lamb",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ground_lamb"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_ground_lamb_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

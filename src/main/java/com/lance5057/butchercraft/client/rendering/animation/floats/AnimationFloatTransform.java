@@ -1,10 +1,20 @@
 package com.lance5057.butchercraft.client.rendering.animation.floats;
 
 import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.network.FriendlyByteBuf;
 
 public class AnimationFloatTransform {
+	public static final Codec<AnimationFloatTransform> CODEC = RecordCodecBuilder.create(
+			inst -> inst.group(
+					AnimatedFloatVector3.CODEC.fieldOf("location").forGetter(a -> a.loc),
+					AnimatedFloatVector3.CODEC.fieldOf("scale").forGetter(a -> a.scale),
+					AnimatedFloatVector3.CODEC.fieldOf("rotation").forGetter(a -> a.rot)
+			).apply(inst, AnimationFloatTransform::new)
+	);
+
 	AnimatedFloatVector3 loc, scale, rot;
 
 

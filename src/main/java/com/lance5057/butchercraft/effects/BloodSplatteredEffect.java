@@ -22,7 +22,7 @@ public class BloodSplatteredEffect extends SoapableMobEffect {
 	}
 
 	@Override
-	public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
+	public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
 		return true;
 	}
 }

@@ -15,16 +15,12 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.barn_wood.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:barn_wood_block_item"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.barn_wood.name"
     }

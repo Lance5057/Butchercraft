@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_chicken_cooked",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chicken_cooked"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_chicken_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

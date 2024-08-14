@@ -1,9 +1,5 @@
 package com.lance5057.butchercraft.data.builders.recipes;
 
-import java.util.function.Consumer;
-
-import javax.annotation.Nonnull;
-
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.client.BlacklistedModel;
@@ -14,22 +10,17 @@ import com.lance5057.butchercraft.data.builders.recipes.loottables.ButcherBlockL
 import com.lance5057.butchercraft.data.builders.recipes.loottables.MeatHookLoottables;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.crafting.DifferenceIngredient;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 
 public class ButchercraftRecipeProvider extends RecipeProvider {
 
@@ -39,7 +30,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	BlacklistedModel standardModel(ResourceLocation rl) {
-		return new BlacklistedModel(rl, null, true,
+		return new BlacklistedModel(rl, true,
 				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(0))));
 	}
 
@@ -52,7 +43,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	BlacklistedModel hideModel(ResourceLocation rl) {
-		return new BlacklistedModel(rl, null, true,
+		return new BlacklistedModel(rl, true,
 				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setY(new AnimatedFloat(12, 0))));
 	}
 
@@ -65,7 +56,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	BlacklistedModel standardButcherBlockModel(ResourceLocation rl) {
-		return new BlacklistedModel(rl, null, true,
+		return new BlacklistedModel(rl, true,
 				new AnimationFloatTransform().setLocation(new AnimatedFloatVector3().setX(new AnimatedFloat(0))));
 	}
 
@@ -79,7 +70,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 	}
 
 	@Override
-	protected void buildRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
+	protected void buildRecipes(RecipeOutput consumer) {
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_CARCASS.get())
 				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET,
 						standardModel(new ResourceLocation(Butchercraft.MOD_ID, "meathook/cow")),
@@ -1476,22 +1467,22 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, "blood_sausage_to_links"));
 	}
 
-	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer) {
-		createFoodRecipe(pIngredient, pResult, consumer, ForgeRegistries.ITEMS.getKey(pResult.asItem()).getPath());
+	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, RecipeOutput consumer) {
+		createFoodRecipe(pIngredient, pResult, consumer, BuiltInRegistries.ITEM.getKey(pResult.asItem()).getPath());
 	}
 
-	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, Consumer<FinishedRecipe> consumer,
+	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, RecipeOutput consumer,
 			String id) {
 		SimpleCookingRecipeBuilder.smoking(pIngredient, RecipeCategory.FOOD, pResult, .35F, 100)
-				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
+				.unlockedBy("has_" + BuiltInRegistries.ITEM.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, id + "_from_smoking"));
 		SimpleCookingRecipeBuilder.campfireCooking(pIngredient, RecipeCategory.FOOD, pResult, .35F, 600)
-				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
+				.unlockedBy("has_" + BuiltInRegistries.ITEM.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, id + "_from_campfire_cooking"));
 		SimpleCookingRecipeBuilder.smelting(pIngredient, RecipeCategory.FOOD, pResult, .35F, 200)
-				.unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(pIngredient.getItems()[0].getItem()).getPath(),
+				.unlockedBy("has_" + BuiltInRegistries.ITEM.getKey(pIngredient.getItems()[0].getItem()).getPath(),
 						has(pIngredient.getItems()[0].getItem()))
 				.save(consumer, new ResourceLocation(Butchercraft.MOD_ID, id + "_from_smelting"));
 	}

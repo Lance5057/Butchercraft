@@ -3,7 +3,6 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
@@ -15,7 +14,6 @@ import com.lance5057.butchercraft.armor.MaskItem;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
@@ -23,7 +21,6 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -31,6 +28,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -38,15 +36,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class ButcherBlockBlockEntity extends BlockEntity {
-	private final LazyOptional<IItemHandlerModifiable> handler = LazyOptional.of(this::createHandler);
+	private final ItemStackHandler inventory = createHandler();
+	private final Lazy<ItemStackHandler> itemHandler = Lazy.of(() -> inventory);
 
 	public int progress;
 	public int maxProgress;
@@ -58,14 +53,8 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 		super(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), pPos, pState);
 	}
 
-	@Nonnull
-	@Override
-	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if (side != Direction.DOWN)
-			if (cap == ForgeCapabilities.ITEM_HANDLER) {
-				return handler.cast();
-			}
-		return super.getCapability(cap, side);
+	public ItemStackHandler getHandler() {
+		return itemHandler.get();
 	}
 
 	public void setRecipe(Optional<ButcherBlockRecipe> r) {
@@ -85,21 +74,21 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public Optional<AnimatedRecipeItemUse> getCurrentTool() {
-		return matchRecipe().map(ButcherBlockRecipe -> ButcherBlockRecipe.getRecipeToolsIn().get(stage));
+		return matchRecipe().map(ButcherBlockRecipe -> ButcherBlockRecipe.value().tools().get(stage));
 	}
 
 	protected void setupStage(ButcherBlockRecipe r, int i) {
 
 		this.progress = 0;
-		this.maxProgress = r.getRecipeToolsIn().get(i).uses;
-		this.curTool = r.getRecipeToolsIn().get(i).tool;
-		this.toolCount = r.getRecipeToolsIn().get(i).count;
+		this.maxProgress = r.tools().get(i).uses();
+		this.curTool = r.tools().get(i).tool();
+		this.toolCount = r.tools().get(i).count();
 
 		this.stage = i;
 	}
 
 	boolean isFinalStage(ButcherBlockRecipe r) {
-		int i = r.getRecipeToolsIn().size();
+		int i = r.tools().size();
 		if (i - 1 > stage) {
 			return false;
 		}
@@ -107,7 +96,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	// Attempt to find a recipe that matches the tool and the item in its inventory
-	private Optional<ButcherBlockRecipe> matchRecipe() {
+	private Optional<RecipeHolder<ButcherBlockRecipe>> matchRecipe() {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.BUTCHER_BLOCK.get(),
 					new ButcherBlockContainer(getInsertedItem()), level);
@@ -116,7 +105,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 
 	}
 
-	private IItemHandlerModifiable createHandler() {
+	private ItemStackHandler createHandler() {
 		return new ItemStackHandler(1) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
@@ -135,9 +124,9 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 				boolean recipeWithInputExists = false;
 				if (level != null) {
 					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
-							.filter(recipe -> recipe instanceof ButcherBlockRecipe)
-							.map(recipe -> (ButcherBlockRecipe) recipe)
-							.anyMatch(ButcherBlockRecipe -> ButcherBlockRecipe.getCarcassIn().test(stack));
+							.filter(recipe -> recipe.value() instanceof ButcherBlockRecipe)
+							.map(recipe -> (ButcherBlockRecipe) recipe.value())
+							.anyMatch(ButcherBlockRecipe -> ButcherBlockRecipe.carcass().test(stack));
 				}
 				return recipeWithInputExists && super.isItemValid(slot, stack);
 			}
@@ -145,22 +134,15 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public ItemStack getInsertedItem() {
-		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
+		return inventory.getStackInSlot(0);
 	}
 
-	public void extractInsertItem(Player playerEntity, InteractionHand hand) {
-		handler.ifPresent(inventory -> {
-			ItemStack held = playerEntity.getItemInHand(hand);
-			if (!held.isEmpty()) {
-				insertItem(inventory, held);
-			} else {
-				extractItem(playerEntity, inventory);
-			}
-		});
-		updateInventory();
+	public boolean isEmpty() {
+		return inventory.getStackInSlot(0).isEmpty();
 	}
 
-	public void extractItem(Player playerEntity, IItemHandler inventory) {
+	// External extract handler
+	public void extractItem(Player playerEntity) {
 		if (!inventory.getStackInSlot(0).isEmpty()) {
 			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
 			playerEntity.addItem(itemStack);
@@ -168,27 +150,14 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 		updateInventory();
 	}
 
-	public void insertItem(IItemHandler inventory, ItemStack heldItem) {
+	// External insert handler
+	public void insertItem(ItemStack heldItem) {
 		if (inventory.isItemValid(0, heldItem))
-			if (!inventory.insertItem(0, heldItem, true).equals(heldItem, false)) {
+			if (!ItemStack.isSameItemSameTags(inventory.insertItem(0, heldItem, true), heldItem)) {
 				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
 				heldItem.setCount(leftover);
 			}
 		updateInventory();
-	}
-
-	public boolean isEmpty() {
-		return handler.map(inventory -> inventory.getStackInSlot(0).isEmpty()).orElse(false);
-	}
-
-	// External extract handler
-	public void extractItem(Player playerEntity) {
-		handler.ifPresent(inventory -> this.extractItem(playerEntity, inventory));
-	}
-
-	// External insert handler
-	public void insertItem(ItemStack heldItem) {
-		handler.ifPresent(inventory -> this.insertItem(inventory, heldItem));
 	}
 
 	public void updateInventory() {
@@ -205,9 +174,9 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public InteractionResult butcher(Player p, ItemStack butcheringTool) {
-		Optional<ButcherBlockRecipe> recipeOptional = matchRecipe();
+		Optional<RecipeHolder<ButcherBlockRecipe>> recipeOptional = matchRecipe();
 		if (recipeOptional.isPresent()) {
-			ButcherBlockRecipe recipe = recipeOptional.get();
+			ButcherBlockRecipe recipe = recipeOptional.get().value();
 			if (this.curTool == null) {
 				setupStage(recipe, stage);
 			}
@@ -226,10 +195,10 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 						if (isFinalStage(recipe)) {
 
 //
-							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
+							dropLoot(recipe.tools().get(stage), p);
 							this.finishRecipe();
 						} else {
-							dropLoot(recipe.getRecipeToolsIn().get(stage), p);
+							dropLoot(recipe.tools().get(stage), p);
 							setupStage(recipe, stage + 1);
 						}
 
@@ -306,7 +275,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 							+ player.getMainHandItem().getEnchantmentLevel(Enchantments.BLOCK_FORTUNE))
 					.create(LootContextParamSets.EMPTY);
 
-			player.getServer().getLootData().getLootTable(recipeToolsIn.lootTable).getRandomItems(pParams)
+			player.getServer().getLootData().getLootTable(recipeToolsIn.lootTable()).getRandomItems(pParams)
 					.forEach(itemStack -> {
 						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
 								getBlockPos().getY() + 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
@@ -316,7 +285,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	public void finishRecipe() {
-		handler.ifPresent((h -> h.setStackInSlot(0, ItemStack.EMPTY)));
+		inventory.setStackInSlot(0, ItemStack.EMPTY);
 	}
 
 	@Override
@@ -350,18 +319,16 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	void readNBT(CompoundTag nbt) {
-		final IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
-				.orElseGet(this::createHandler);
-		((ItemStackHandler) itemInteractionHandler).deserializeNBT(nbt.getCompound("inventory"));
+		if (nbt.contains("inventory")) {
+			inventory.deserializeNBT(nbt.getCompound("inventory"));
+		}
 
 		this.stage = nbt.getInt("stage");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag) {
 
-		IItemHandler itemInteractionHandler = getCapability(ForgeCapabilities.ITEM_HANDLER)
-				.orElseGet(this::createHandler);
-		tag.put("inventory", ((ItemStackHandler) itemInteractionHandler).serializeNBT());
+		tag.put("inventory", inventory.serializeNBT());
 
 		tag.putInt("stage", stage);
 

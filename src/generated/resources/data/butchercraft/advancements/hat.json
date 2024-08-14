@@ -15,7 +15,6 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.hat.desc"
     },
@@ -25,7 +24,6 @@
       "item": "butchercraft:paper_hat",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.hat.name"
     }

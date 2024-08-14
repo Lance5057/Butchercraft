@@ -16,12 +16,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraftforge.client.model.data.ModelData;
-import net.minecraftforge.client.model.renderable.BakedModelRenderable;
-import net.minecraftforge.client.model.renderable.IRenderable;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
+import net.neoforged.neoforge.client.model.data.ModelData;
+import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable;
+import net.neoforged.neoforge.client.model.renderable.IRenderable;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> {
 	int timer = 0;
@@ -56,22 +54,19 @@ public class GrinderRenderer implements BlockEntityRenderer<GrinderBlockEntity> 
 		pPoseStack.popPose();
 
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-		LazyOptional<IItemHandler> itemInteractionHandler = pBlockEntity
-				.getCapability(ForgeCapabilities.ITEM_HANDLER);
+		ItemStackHandler inv = pBlockEntity.getHandler();
 
-		itemInteractionHandler.ifPresent(inv -> {
-			ItemStack input = inv.getStackInSlot(0);
-			ItemStack tip = inv.getStackInSlot(1);
-			ItemStack casing = inv.getStackInSlot(2);
+		ItemStack input = inv.getStackInSlot(0);
+		ItemStack tip = inv.getStackInSlot(1);
+		ItemStack casing = inv.getStackInSlot(2);
 
-			float t = mg == 0 ? 1 : -0.3f / (mg);
-			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					input, 0.5, 1.5 + (g * t), 0.175, 0, 90, 0, 1, 1, 1);
-			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					tip, 0.5, 1.22, 0.925, 90, 0, 0, 1, 1, 1);
-			renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
-					casing, 0.5, 1.11, 0.9 - (g * t), 0, 90, 0, 1, 1, 2.1f);
-		});
+		float t = mg == 0 ? 1 : -0.3f / (mg);
+		renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+				input, 0.5, 1.5 + (g * t), 0.175, 0, 90, 0, 1, 1, 1);
+		renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+				tip, 0.5, 1.22, 0.925, 90, 0, 0, 1, 1, 1);
+		renderRotatedItem(pBlockEntity, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, q, itemRenderer,
+				casing, 0.5, 1.11, 0.9 - (g * t), 0, 90, 0, 1, 1, 2.1f);
 
 		timer++;
 	}

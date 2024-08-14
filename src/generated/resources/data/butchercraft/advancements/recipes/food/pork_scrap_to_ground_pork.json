@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_pork_scraps": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:pork_scraps"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "butchercraft:pork_scrap_to_ground_pork"
@@ -22,14 +34,14 @@
   },
   "requirements": [
     [
-      "has_pork_scrap",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pork_scraps",
+      "has_pork_scrap"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:pork_scrap_to_ground_pork"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_heart",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_heart"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_heart_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

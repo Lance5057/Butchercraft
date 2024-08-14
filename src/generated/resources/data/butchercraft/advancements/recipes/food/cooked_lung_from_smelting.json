@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_lung",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_lung"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_lung_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

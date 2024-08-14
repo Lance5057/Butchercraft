@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_horn",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_horn"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:horn_gelatin_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

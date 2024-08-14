@@ -13,7 +13,6 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.heart.desc"
     },
@@ -22,7 +21,6 @@
     "icon": {
       "item": "butchercraft:heart"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.heart.name"
     }

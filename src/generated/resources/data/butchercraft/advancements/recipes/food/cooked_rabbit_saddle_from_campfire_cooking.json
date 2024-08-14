@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_rabbit_saddle",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit_saddle"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_rabbit_saddle_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

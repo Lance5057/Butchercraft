@@ -38,7 +38,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	protected static final VoxelShape AABB = Block.box(0.0D, -32.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 	public MeatHookBlock() {
-		super(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3, 4).noOcclusion());
+		super(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(3, 4).noOcclusion());
 		this.registerDefaultState(
 				this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(CARCASS_HOOKED, false));
 	}

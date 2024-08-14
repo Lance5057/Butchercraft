@@ -12,25 +12,25 @@ import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fluids.FluidType;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.fluids.BaseFlowingFluid;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class ButchercraftFluids {
 	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister
-			.create(ForgeRegistries.Keys.FLUID_TYPES, Butchercraft.MOD_ID);
-	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS,
+			.create(NeoForgeRegistries.Keys.FLUID_TYPES, Butchercraft.MOD_ID);
+	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID,
 			Butchercraft.MOD_ID);
 
-	private static ForgeFlowingFluid.Properties blood() {
-		return new ForgeFlowingFluid.Properties(BLOOD_FLUID_TYPE, BLOOD_FLUID, BLOOD_FLUID_FLOWING)
+	private static BaseFlowingFluid.Properties blood() {
+		return new BaseFlowingFluid.Properties(BLOOD_FLUID_TYPE, BLOOD_FLUID, BLOOD_FLUID_FLOWING)
 				.block(ButchercraftBlocks.BLOOD_FLUID_BLOCK).bucket(ButchercraftItems.BLOOD_FLUID_BUCKET);
 	}
 
@@ -39,7 +39,7 @@ public class ButchercraftFluids {
 //				.block(ButchercraftBlocks.TANNING_FLUID_BLOCK).bucket(ButchercraftItems.TANNING_FLUID_BUCKET);
 //	}
 
-	public static final RegistryObject<FluidType> BLOOD_FLUID_TYPE = FLUID_TYPES.register("blood_fluid",
+	public static final DeferredHolder<FluidType, FluidType> BLOOD_FLUID_TYPE = FLUID_TYPES.register("blood_fluid",
 			() -> new FluidType(FluidType.Properties.create().supportsBoating(true).canHydrate(true).density(2000)
 					.viscosity(3000).fallDistanceModifier(0F).canExtinguish(true)) {
 				@Override
@@ -102,10 +102,10 @@ public class ButchercraftFluids {
 				}
 			});
 
-	public static final RegistryObject<FlowingFluid> BLOOD_FLUID = FLUIDS.register("blood_fluid",
-			() -> new ForgeFlowingFluid.Source(blood()));
-	public static final RegistryObject<Fluid> BLOOD_FLUID_FLOWING = FLUIDS.register("blood_fluid_flowing",
-			() -> new ForgeFlowingFluid.Flowing(blood()));
+	public static final DeferredHolder<Fluid, BaseFlowingFluid.Source> BLOOD_FLUID = FLUIDS.register("blood_fluid",
+			() -> new BaseFlowingFluid.Source(blood()));
+	public static final DeferredHolder<Fluid, BaseFlowingFluid.Flowing> BLOOD_FLUID_FLOWING = FLUIDS.register("blood_fluid_flowing",
+			() -> new BaseFlowingFluid.Flowing(blood()));
 
 //	public static final RegistryObject<FluidType> TANNING_FLUID_TYPE = FLUID_TYPES.register("tanning_fluid",
 //			() -> new FluidType(FluidType.Properties.create().supportsBoating(true).canHydrate(true).density(2000)

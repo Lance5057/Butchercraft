@@ -22,7 +22,6 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.cannibalism.desc"
     },
@@ -31,7 +30,6 @@
     "icon": {
       "item": "minecraft:player_head"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.cannibalism.name"
     }

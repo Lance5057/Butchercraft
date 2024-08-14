@@ -3,21 +3,29 @@ package com.lance5057.butchercraft.capabilities;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import net.minecraft.core.Direction;
+import com.lance5057.butchercraft.Butchercraft;
+
 import net.minecraft.nbt.CompoundTag;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.CapabilityManager;
-import net.minecraftforge.common.capabilities.CapabilityToken;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.INBTSerializable;
-import net.minecraftforge.common.util.LazyOptional;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.animal.Cow;
+import net.neoforged.neoforge.capabilities.EntityCapability;
+import net.neoforged.neoforge.capabilities.ICapabilityProvider;
+import net.neoforged.neoforge.common.util.INBTSerializable;
 
-public class AnimalCareProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
+public class AnimalCareProvider implements ICapabilityProvider<Cow, Void, AnimalCare>, INBTSerializable<CompoundTag> {
 
-	public static Capability<AnimalCare> CARE = CapabilityManager.get(new CapabilityToken<>(){});
+    public static final EntityCapability<AnimalCare, Void> CARE = EntityCapability.createVoid(
+            new ResourceLocation(Butchercraft.MOD_ID, "animalcare"),
+            AnimalCare.class
+    );
 
     private AnimalCare AnimalCare = null;
-    private final LazyOptional<AnimalCare> opt = LazyOptional.of(this::createAnimalCare);
+
+    @Nullable
+    @Override
+    public AnimalCare getCapability(Cow cow, Void ctx) {
+        return createAnimalCare();
+    }
 
     @Nonnull
     private AnimalCare createAnimalCare() {
@@ -25,21 +33,6 @@ public class AnimalCareProvider implements ICapabilityProvider, INBTSerializable
             AnimalCare = new AnimalCare();
         }
         return AnimalCare;
-    }
-    
-    @Nonnull
-    @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap) {
-        if (cap == CARE) {
-            return opt.cast();
-        }
-        return LazyOptional.empty();
-    }
-    
-    @Nonnull
-    @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        return getCapability(cap);
     }
 
     @Override

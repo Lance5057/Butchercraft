@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_kidney",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_kidney"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_kidney_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_goat",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_goat"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:goat_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

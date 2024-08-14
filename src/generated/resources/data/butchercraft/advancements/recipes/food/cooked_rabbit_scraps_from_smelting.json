@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_rabbit_scraps",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit_scraps"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_rabbit_scraps_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

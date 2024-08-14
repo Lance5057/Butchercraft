@@ -17,6 +17,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
@@ -38,11 +39,11 @@ public class JEIPlugin implements IModPlugin {
 	@Override
 	public void registerRecipes(@NotNull IRecipeRegistration registry) {
 		registry.addRecipes(GrinderRecipeCategory.TYPE,
-				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ButchercraftRecipes.GRINDER.get()));
+				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ButchercraftRecipes.GRINDER.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(MeatHookRecipeCategory.TYPE,
-				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ButchercraftRecipes.HOOK.get()));
+				Minecraft.getInstance().level.getRecipeManager().getAllRecipesFor(ButchercraftRecipes.HOOK.get()).stream().map(RecipeHolder::value).toList());
 		registry.addRecipes(ButcherBlockRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
-				.getAllRecipesFor(ButchercraftRecipes.BUTCHER_BLOCK.get()));
+				.getAllRecipesFor(ButchercraftRecipes.BUTCHER_BLOCK.get()).stream().map(RecipeHolder::value).toList());
 	}
 
 	@Override

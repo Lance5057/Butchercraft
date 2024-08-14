@@ -20,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_beef",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_beef"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:beef_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

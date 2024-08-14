@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_fat",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_fat"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:lard_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

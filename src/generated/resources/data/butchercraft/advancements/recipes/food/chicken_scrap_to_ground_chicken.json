@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_chicken_scraps": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:chicken_scraps"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "butchercraft:chicken_scrap_to_ground_chicken"
@@ -22,14 +34,14 @@
   },
   "requirements": [
     [
-      "has_chicken_scrap",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chicken_scraps",
+      "has_chicken_scrap"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:chicken_scrap_to_ground_chicken"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }

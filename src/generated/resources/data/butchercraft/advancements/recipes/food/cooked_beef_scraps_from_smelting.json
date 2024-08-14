@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_beef_scraps",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_beef_scraps"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_beef_scraps_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

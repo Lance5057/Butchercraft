@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_liver",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_liver"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_liver_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

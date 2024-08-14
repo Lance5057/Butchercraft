@@ -1,10 +1,20 @@
 package com.lance5057.butchercraft.client.rendering.animation.floats;
 
 import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.network.FriendlyByteBuf;
 
 public class AnimatedFloatVector3 {
+	public static final Codec<AnimatedFloatVector3> CODEC = RecordCodecBuilder.create(
+			inst -> inst.group(
+					AnimatedFloat.CODEC.optionalFieldOf("x", AnimatedFloat.ZERO).forGetter(a -> a.x),
+					AnimatedFloat.CODEC.optionalFieldOf("y", AnimatedFloat.ZERO).forGetter(a -> a.y),
+					AnimatedFloat.CODEC.optionalFieldOf("z", AnimatedFloat.ZERO).forGetter(a -> a.z)
+			).apply(inst, AnimatedFloatVector3::new)
+	);
+	
 	AnimatedFloat x, y, z;
 
 	public static AnimatedFloatVector3 ZERO = new AnimatedFloatVector3(AnimatedFloat.ZERO, AnimatedFloat.ZERO,

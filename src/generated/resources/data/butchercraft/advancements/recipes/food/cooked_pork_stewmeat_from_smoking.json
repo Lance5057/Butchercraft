@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_pork_stewmeat",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pork_stewmeat"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_pork_stewmeat_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

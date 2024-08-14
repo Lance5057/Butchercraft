@@ -18,11 +18,11 @@ import com.lance5057.butchercraft.data.builders.recipes.ButchercraftRecipeProvid
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeAdvancementProvider;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.data.AdvancementProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGen {
@@ -37,7 +37,7 @@ public class DataGen {
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
 		final Advancements advancements = new Advancements();
-		generator.addProvider(event.includeServer(), new ForgeAdvancementProvider(output, lookupProvider, existingFileHelper, List.of(advancements)));
+		generator.addProvider(event.includeServer(), new AdvancementProvider(output, lookupProvider, existingFileHelper, List.of(advancements)));
 		generator.addProvider(true, new ItemModels(output, existingFileHelper));
 		generator.addProvider(true, new BlockModels(output, existingFileHelper));
 		generator.addProvider(true, new EnglishLoc(output));

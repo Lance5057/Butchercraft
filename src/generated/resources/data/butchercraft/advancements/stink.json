@@ -11,16 +11,12 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.stink.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:beak"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.stink.name"
     }

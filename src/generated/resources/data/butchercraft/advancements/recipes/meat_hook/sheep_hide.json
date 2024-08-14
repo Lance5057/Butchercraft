@@ -1,6 +1,18 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_sheep_hide": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:sheep_hide"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "butchercraft:sheep_hide"
@@ -10,13 +22,13 @@
   },
   "requirements": [
     [
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sheep_hide"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:sheep_hide"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }

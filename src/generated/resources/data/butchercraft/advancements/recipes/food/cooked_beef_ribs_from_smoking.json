@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_beef_ribs",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_beef_ribs"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_beef_ribs_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

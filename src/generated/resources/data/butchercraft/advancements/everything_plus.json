@@ -253,16 +253,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.everything_plus.desc"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:cooked_tripe"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.everything_plus.name"
     }

@@ -19,7 +19,6 @@
     "description": {
       "translate": "butchercraft.advancement.root.desc"
     },
-    "frame": "task",
     "hidden": true,
     "icon": {
       "item": "butchercraft:butcher_knife",

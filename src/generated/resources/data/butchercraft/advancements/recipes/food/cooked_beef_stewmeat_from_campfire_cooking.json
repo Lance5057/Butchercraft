@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_beef_stewmeat",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_beef_stewmeat"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_beef_stewmeat_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

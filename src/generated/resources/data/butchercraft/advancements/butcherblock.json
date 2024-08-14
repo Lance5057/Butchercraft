@@ -15,16 +15,12 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.butcherblock.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:butcher_block_block_item"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.butcherblock.name"
     }

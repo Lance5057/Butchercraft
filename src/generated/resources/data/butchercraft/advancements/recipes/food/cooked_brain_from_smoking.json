@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_brain",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_brain"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_brain_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -10,30 +10,30 @@ import com.lance5057.butchercraft.ButchercraftItems;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ButchercraftVillagers {
-	public static DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES,
+	public static DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(Registries.POINT_OF_INTEREST_TYPE,
 			Butchercraft.MOD_ID);
 	public static DeferredRegister<VillagerProfession> PROFESSIONS = DeferredRegister
-			.create(ForgeRegistries.VILLAGER_PROFESSIONS, Butchercraft.MOD_ID);
+			.create(Registries.VILLAGER_PROFESSION, Butchercraft.MOD_ID);
 
-	public static final RegistryObject<PoiType> SLAUGHTER_POI = POI_TYPES.register("slaughter_poi", () -> {
+	public static final DeferredHolder<PoiType, PoiType> SLAUGHTER_POI = POI_TYPES.register("slaughter_poi", () -> {
 		HashSet<BlockState> s = new HashSet<BlockState>();
 		s.addAll(ButchercraftBlocks.MEAT_HOOK.get().getStateDefinition().getPossibleStates());
 		s.addAll(ButchercraftBlocks.MEAT_HOOK.get().getStateDefinition().getPossibleStates());
 		return new PoiType(s, 1, 1);
 	});
 
-	public static final RegistryObject<VillagerProfession> SLAUGHTER_PROFESSION = PROFESSIONS.register(
+	public static final DeferredHolder<VillagerProfession, VillagerProfession> SLAUGHTER_PROFESSION = PROFESSIONS.register(
 			"slaughter_profession",
 			() -> new VillagerProfession("slaugther",
 					holder -> holder.value().equals(ButchercraftVillagers.SLAUGHTER_POI.get()),

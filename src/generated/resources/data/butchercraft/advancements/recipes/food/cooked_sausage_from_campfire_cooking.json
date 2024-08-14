@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_sausage",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sausage"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_sausage_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

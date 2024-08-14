@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_cubed_lamb",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_cubed_lamb"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_cubed_lamb_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

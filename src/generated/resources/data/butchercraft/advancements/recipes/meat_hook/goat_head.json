@@ -1,6 +1,18 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_goat_head_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "butchercraft:goat_head_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "butchercraft:goat_head"
@@ -10,13 +22,13 @@
   },
   "requirements": [
     [
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_goat_head_item"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:goat_head"
     ]
-  },
-  "sends_telemetry_event": true
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_rabbit",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rabbit"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:taxidermy_gold_rabbit"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

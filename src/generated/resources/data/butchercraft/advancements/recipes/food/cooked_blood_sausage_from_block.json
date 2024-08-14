@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_blood_sausage_block",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_blood_sausage_block"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_blood_sausage_from_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

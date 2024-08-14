@@ -4,8 +4,8 @@ import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
 
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class BlockModels extends BlockStateProvider {
 

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_chicken_thigh",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chicken_thigh"
     ]
   ],
   "rewards": {

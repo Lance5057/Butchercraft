@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_pig",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pig"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:taxidermy_pig"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

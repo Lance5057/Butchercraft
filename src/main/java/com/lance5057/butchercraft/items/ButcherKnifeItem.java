@@ -10,6 +10,7 @@ import com.lance5057.butchercraft.tags.ButchercraftEntityTags;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -24,7 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.IShearable;
 
 public class ButcherKnifeItem extends KnifeItem {
 
@@ -38,7 +39,7 @@ public class ButcherKnifeItem extends KnifeItem {
 
 		if (entity.hasEffect(ButchercraftMobEffects.BLOODLUST.get()))
 			return InteractionResult.FAIL;
-		if (entity instanceof net.minecraftforge.common.IForgeShearable target) {
+		if (entity instanceof IShearable target) {
 			if (entity.level().isClientSide)
 				return net.minecraft.world.InteractionResult.SUCCESS;
 			BlockPos pos = new BlockPos(entity.getBlockX(), entity.getBlockY(), entity.getBlockZ());
@@ -62,7 +63,7 @@ public class ButcherKnifeItem extends KnifeItem {
 			if (entity.getType().is(ButchercraftEntityTags.CARCASSES) && entity instanceof Mob mob) {
 				if (!specialCases(player, mob)) {
 					final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
-							"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).getPath());
+							"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).getPath());
 					final LootTable lootTable = player.getServer().getLootData().getLootTable(lootTableLocation);
 
 					if (lootTable != LootTable.EMPTY) {
@@ -115,7 +116,7 @@ public class ButcherKnifeItem extends KnifeItem {
 
 	private void rabbitDrop(Player player, Mob mob, String type) {
 		final ResourceLocation lootTableLocation = new ResourceLocation(Butchercraft.MOD_ID,
-				"butcher_knife/" + ForgeRegistries.ENTITY_TYPES.getKey(mob.getType()).getPath() + type);
+				"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()).getPath() + type);
 		final LootTable lootTable = player.getServer().getLootData().getLootTable(lootTableLocation);
 
 		if (lootTable != LootTable.EMPTY) {

@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },
@@ -12,7 +12,7 @@
       }
     },
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },
@@ -21,7 +21,7 @@
       }
     },
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },
@@ -30,7 +30,7 @@
       }
     },
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },
@@ -39,7 +39,7 @@
       }
     },
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },
@@ -48,7 +48,7 @@
       }
     },
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },
@@ -57,7 +57,7 @@
       }
     },
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },
@@ -66,7 +66,7 @@
       }
     },
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },
@@ -75,7 +75,7 @@
       }
     },
     {
-      "type": "forge:difference",
+      "type": "neoforge:difference",
       "base": {
         "tag": "forge:chicken/cooked"
       },

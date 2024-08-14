@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_cubed_rabbit",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_cubed_rabbit"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_cubed_rabbit_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

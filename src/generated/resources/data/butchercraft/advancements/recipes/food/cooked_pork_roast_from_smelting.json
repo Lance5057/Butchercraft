@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_pork_roast",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pork_roast"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_pork_roast_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

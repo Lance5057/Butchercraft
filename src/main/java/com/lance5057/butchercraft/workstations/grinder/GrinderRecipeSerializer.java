@@ -1,77 +1,47 @@
 package com.lance5057.butchercraft.workstations.grinder;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.world.item.Item;
+import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.ShapedRecipe;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class GrinderRecipeSerializer implements RecipeSerializer<GrinderRecipe> {
+	private static final Codec<GrinderRecipe> CODEC = RecordCodecBuilder.create(
+			inst -> inst.group(
+					ExtraCodecs.strictOptionalField(Codec.STRING, "group", "").forGetter(GrinderRecipe::group),
+					Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(GrinderRecipe::ingredient),
+					Codec.INT.fieldOf("ingredientCount").forGetter(GrinderRecipe::count),
+					Ingredient.CODEC_NONEMPTY.fieldOf("attachment").forGetter(GrinderRecipe::attachment),
+					ItemStack.RESULT_CODEC.fieldOf("result").forGetter(GrinderRecipe::result),
+					Codec.INT.fieldOf("grinds").forGetter(GrinderRecipe::grinds)
+			).apply(inst, GrinderRecipe::new)
+	);
+
 	@Override
-	public GrinderRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
-		String s = GsonHelper.getAsString(pJson, "group", "");
-
-		Ingredient ingredient;
-		if (GsonHelper.isArrayNode(pJson, "ingredient")) {
-			ingredient = Ingredient.fromJson(GsonHelper.getAsJsonArray(pJson, "ingredient"));
-		} else {
-			ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "ingredient"));
-		}
-
-		Ingredient attachment;
-		if (GsonHelper.isArrayNode(pJson, "attachment")) {
-			JsonArray a = GsonHelper.getAsJsonArray(pJson, "attachment");
-			if (a.isEmpty())
-				attachment = Ingredient.EMPTY;
-			else
-				attachment = Ingredient.fromJson(a);
-		} else {
-			attachment = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "attachment"));
-		}
-
-		if (!pJson.has("result"))
-			throw new com.google.gson.JsonSyntaxException("Missing result, expected to find a string or object");
-		ItemStack itemstack;
-		if (pJson.get("result").isJsonObject())
-			itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
-		else {
-			String s1 = GsonHelper.getAsString(pJson, "result");
-			ResourceLocation resourcelocation = new ResourceLocation(s1);
-			Item item = ForgeRegistries.ITEMS.getValue(resourcelocation);
-			if (item == null) {
-				throw new IllegalStateException("Item: " + s1 + " does not exist");
-			}
-			itemstack = new ItemStack(item);
-		}
-
-		int g = GsonHelper.getAsInt(pJson, "grinds");
-		int c = GsonHelper.getAsInt(pJson, "ingredientCount");
-		return new GrinderRecipe(pRecipeId, s, ingredient, c, attachment, itemstack, g);
+	public Codec<GrinderRecipe> codec() {
+		return CODEC;
 	}
 
-	public GrinderRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+	public GrinderRecipe fromNetwork(FriendlyByteBuf pBuffer) {
 		String s = pBuffer.readUtf();
 		Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
 		int c = pBuffer.readInt();
 		Ingredient attachment = Ingredient.fromNetwork(pBuffer);
 		ItemStack itemstack = pBuffer.readItem();
 		int g = pBuffer.readInt();
-		return new GrinderRecipe(pRecipeId, s, ingredient, c, attachment, itemstack, g);
+		return new GrinderRecipe(s, ingredient, c, attachment, itemstack, g);
 	}
 
 	public void toNetwork(FriendlyByteBuf pBuffer, GrinderRecipe pRecipe) {
 		pBuffer.writeUtf(pRecipe.getGroup());
-		pRecipe.ingredient.toNetwork(pBuffer);
-		pBuffer.writeInt(pRecipe.count);
-		pRecipe.attachment.toNetwork(pBuffer);
-		pBuffer.writeItem(pRecipe.result);
-		pBuffer.writeInt(pRecipe.grinds);
+		pRecipe.ingredient().toNetwork(pBuffer);
+		pBuffer.writeInt(pRecipe.count());
+		pRecipe.attachment().toNetwork(pBuffer);
+		pBuffer.writeItem(pRecipe.result());
+		pBuffer.writeInt(pRecipe.grinds());
 	}
 }

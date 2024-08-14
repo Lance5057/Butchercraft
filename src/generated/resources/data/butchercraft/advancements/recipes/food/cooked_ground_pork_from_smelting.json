@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_ground_pork",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ground_pork"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_ground_pork_from_smelting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

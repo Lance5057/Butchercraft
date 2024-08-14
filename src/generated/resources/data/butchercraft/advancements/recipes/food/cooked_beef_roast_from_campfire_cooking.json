@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_beef_roast",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_beef_roast"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_beef_roast_from_campfire_cooking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

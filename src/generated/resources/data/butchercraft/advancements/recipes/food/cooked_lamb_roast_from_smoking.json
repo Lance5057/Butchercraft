@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_lamb_roast",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_lamb_roast"
     ]
   ],
   "rewards": {
     "recipes": [
       "butchercraft:cooked_lamb_roast_from_smoking"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

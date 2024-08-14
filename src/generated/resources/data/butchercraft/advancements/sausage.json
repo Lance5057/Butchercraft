@@ -27,16 +27,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.sausage.desc"
     },
     "frame": "goal",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:sausage"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.sausage.name"
     }

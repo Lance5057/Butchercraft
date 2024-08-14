@@ -15,17 +15,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "butchercraft.advancement.gutknife.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "butchercraft:gut_knife",
       "nbt": "{Damage:0}"
     },
-    "show_toast": true,
     "title": {
       "translate": "butchercraft.advancement.gutknife.name"
     }
