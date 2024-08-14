@@ -28,14 +28,14 @@ public class BootsModel extends HumanoidModel<LivingEntity> {
 	}
 
 	public static MeshDefinition createLayer(CubeDeformation deformation) {
-		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0);
+		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0.5f);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		//partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.ZERO);
 		partdefinition.addOrReplaceChild("left_leg", CubeListBuilder.create().texOffs(0, 0).addBox(-2.0F, 0.0F, -2.0F,
-				4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+				4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 		partdefinition.addOrReplaceChild("right_leg", CubeListBuilder.create().mirror().texOffs(0, 0).addBox(-2.0F,
-				0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+				0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		return meshdefinition;
 	}

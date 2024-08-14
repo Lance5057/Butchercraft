@@ -28,7 +28,7 @@ public class ApronModel extends HumanoidModel<LivingEntity> {
 	}
 
 	public static MeshDefinition createLayer(CubeDeformation deformation) {
-		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0);
+		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0.5f);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, 0.0F, -2.0F, 8.0F,

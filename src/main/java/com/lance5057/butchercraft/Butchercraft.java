@@ -1,9 +1,10 @@
 package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.armor.BCArmorMaterial;
-import com.lance5057.butchercraft.entity.ButchercraftVillagers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.lance5057.butchercraft.armor.BCArmorMaterial;
+import com.lance5057.butchercraft.entity.ButchercraftVillagers;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
