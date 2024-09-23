@@ -28,10 +28,10 @@ public class SheepHoodModel extends HumanoidModel<LivingEntity> {
 	}
 
 	public static MeshDefinition createLayer(CubeDeformation deformation) {
-		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0);
+		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0.5f);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition bb_main = partdefinition.addOrReplaceChild("head",
+		PartDefinition bb_main = partdefinition.addOrReplaceChild("hat",
 				CubeListBuilder.create().texOffs(0, 0)
 						.addBox(-3.0F, -7.0F, -6.0F, 6.0F, 6.0F, 8.0F, new CubeDeformation(0.35F)).texOffs(32, 0)
 						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.6F)),

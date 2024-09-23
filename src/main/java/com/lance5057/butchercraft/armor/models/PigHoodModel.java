@@ -58,10 +58,4 @@ public class PigHoodModel extends HumanoidModel<LivingEntity> {
 
 		return meshdefinition;
 	}
-
-	@Override
-	public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
-			float netHeadYaw, float headPitch) {
-
-	}
 }

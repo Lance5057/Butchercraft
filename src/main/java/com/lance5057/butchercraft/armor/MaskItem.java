@@ -1,5 +1,7 @@
 package com.lance5057.butchercraft.armor;
 
+import java.util.function.Consumer;
+
 import com.lance5057.butchercraft.armor.models.MaskModel;
 
 import net.minecraft.client.Minecraft;
@@ -20,10 +22,16 @@ public class MaskItem extends ArmorItem implements IClientItemExtensions {
 	}
 
 	@Override
-	public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-		EntityModelSet models = Minecraft.getInstance().getEntityModels();
-		ModelPart root = models.bakeLayer(MaskModel.LAYER_LOCATION);
-		return new MaskModel(root);
+	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+		consumer.accept(new IClientItemExtensions() {
+			@Override
+			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+				EntityModelSet models = Minecraft.getInstance().getEntityModels();
+				ModelPart root = models.bakeLayer(MaskModel.LAYER_LOCATION);
+				return new MaskModel(root);
+			}
+		});
 	}
 
 }

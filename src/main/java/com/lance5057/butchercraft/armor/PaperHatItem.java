@@ -1,5 +1,7 @@
 package com.lance5057.butchercraft.armor;
 
+import java.util.function.Consumer;
+
 import com.lance5057.butchercraft.armor.models.PaperHatModel;
 
 import net.minecraft.client.Minecraft;
@@ -20,9 +22,15 @@ public class PaperHatItem extends ArmorItem implements IClientItemExtensions {
 	}
 
 	@Override
-	public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-		EntityModelSet models = Minecraft.getInstance().getEntityModels();
-		ModelPart root = models.bakeLayer(PaperHatModel.LAYER_LOCATION);
-		return new PaperHatModel(root);
+	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+		consumer.accept(new IClientItemExtensions() {
+			@Override
+			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+				EntityModelSet models = Minecraft.getInstance().getEntityModels();
+				ModelPart root = models.bakeLayer(PaperHatModel.LAYER_LOCATION);
+				return new PaperHatModel(root);
+			}
+		});
 	}
 }

@@ -28,7 +28,7 @@ public class GoatHoodModel extends HumanoidModel<LivingEntity> {
 	}
 
 	public static MeshDefinition createLayer(CubeDeformation deformation) {
-		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0);
+		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0.5f);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		PartDefinition Head2 = partdefinition.addOrReplaceChild("head",

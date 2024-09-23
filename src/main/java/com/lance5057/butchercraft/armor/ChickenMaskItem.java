@@ -1,5 +1,7 @@
 package com.lance5057.butchercraft.armor;
 
+import java.util.function.Consumer;
+
 import com.lance5057.butchercraft.armor.models.ChickenMaskModel;
 
 import net.minecraft.client.Minecraft;
@@ -20,12 +22,18 @@ public class ChickenMaskItem extends ArmorItem implements IClientItemExtensions 
 	}
 
 	@Override
-	public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-		EntityModelSet models = Minecraft.getInstance().getEntityModels();
-		ModelPart root = models.bakeLayer(ChickenMaskModel.LAYER_LOCATION);
-		original.body.visible = true;
+	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+		consumer.accept(new IClientItemExtensions() {
+			@Override
+			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+				EntityModelSet models = Minecraft.getInstance().getEntityModels();
+				ModelPart root = models.bakeLayer(ChickenMaskModel.LAYER_LOCATION);
+				original.body.visible = true;
 
-		return new ChickenMaskModel(root);
+				return new ChickenMaskModel(root);
+			}
+		});
 	}
 
 }

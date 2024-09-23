@@ -1,5 +1,7 @@
 package com.lance5057.butchercraft.armor;
 
+import java.util.function.Consumer;
+
 import com.lance5057.butchercraft.armor.models.CowHoodModel;
 
 import net.minecraft.client.Minecraft;
@@ -20,12 +22,18 @@ public class CowHoodItem extends ArmorItem implements IClientItemExtensions {
 	}
 
 	@Override
-	public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-		EntityModelSet models = Minecraft.getInstance().getEntityModels();
-		ModelPart root = models.bakeLayer(CowHoodModel.LAYER_LOCATION);
-		original.body.visible = true;
+	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+		consumer.accept(new IClientItemExtensions() {
+			@Override
+			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+				EntityModelSet models = Minecraft.getInstance().getEntityModels();
+				ModelPart root = models.bakeLayer(CowHoodModel.LAYER_LOCATION);
+				original.body.visible = true;
 
-		return new CowHoodModel(root);
+				return new CowHoodModel(root);
+			}
+		});
 	}
 
 }

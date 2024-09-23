@@ -1,5 +1,7 @@
 package com.lance5057.butchercraft.armor;
 
+import java.util.function.Consumer;
+
 import com.lance5057.butchercraft.armor.models.BunnyEarsModel;
 
 import net.minecraft.client.Minecraft;
@@ -14,15 +16,21 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 public class BunnyEarsItem extends TemptArmor implements IClientItemExtensions {
-	public BunnyEarsItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) { 
+	public BunnyEarsItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) {
 		super(pMaterial, Type.HELMET, pProperties);
 	}
 
 	@Override
-	public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-		EntityModelSet models = Minecraft.getInstance().getEntityModels();
-		ModelPart root = models.bakeLayer(BunnyEarsModel.LAYER_LOCATION);
-		return new BunnyEarsModel(root);
+	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+		consumer.accept(new IClientItemExtensions() {
+			@Override
+			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+				EntityModelSet models = Minecraft.getInstance().getEntityModels();
+				ModelPart root = models.bakeLayer(BunnyEarsModel.LAYER_LOCATION);
+				return new BunnyEarsModel(root);
+			}
+		});
 	}
 
 }

@@ -153,6 +153,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.RABBIT_SALT_HEAD_ITEM.get(), "Salt Rabbit Head");
 		this.add(ButchercraftItems.RABBIT_SPLOTCHED_HEAD_ITEM.get(), "Splotched Rabbit Head");
 		this.add(ButchercraftItems.RABBIT_WHITE_HEAD_ITEM.get(), "White Rabbit Head");
+		this.add(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM.get(), "Rabbit Skull");
 		this.add(ButchercraftItems.COW_HEAD_ITEM.get(), "Cow Head");
 		this.add(ButchercraftItems.COW_SKULL_HEAD_ITEM.get(), "Cow Skull");
 		this.add(ButchercraftItems.SHEEP_HEAD_ITEM.get(), "Sheep Head");
