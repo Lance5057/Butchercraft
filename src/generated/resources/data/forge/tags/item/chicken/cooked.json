@@ -6,6 +6,7 @@
     "#forge:chicken/wing/cooked",
     "#forge:chicken/cubed/cooked",
     "#forge:chicken/scrap/cooked",
-    "#forge:chicken/stew/cooked"
+    "#forge:chicken/stew/cooked",
+    "minecraft:cooked_chicken"
   ]
 }

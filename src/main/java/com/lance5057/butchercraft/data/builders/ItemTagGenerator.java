@@ -19,7 +19,8 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class ItemTagGenerator extends ItemTagsProvider {
 
-	public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper) {
+	public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider,
+			CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper) {
 		super(pOutput, pLookupProvider, pBlockTags, Butchercraft.MOD_ID, existingFileHelper);
 	}
 
@@ -58,11 +59,13 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		tag(ButchercraftItemTags.GOAT_RAW).addTag(ButchercraftItemTags.GOAT_RIBS_RAW)
 				.addTag(ButchercraftItemTags.GOAT_ROAST_RAW).addTag(ButchercraftItemTags.CUBED_GOAT_RAW)
-				.addTag(ButchercraftItemTags.SCRAP_GOAT_RAW).addTag(ButchercraftItemTags.STEW_GOAT_RAW);
+				.addTag(ButchercraftItemTags.SCRAP_GOAT_RAW).addTag(ButchercraftItemTags.STEW_GOAT_RAW)
+				.add(ButchercraftItems.GOAT_CHOP.get());
 
 		tag(ButchercraftItemTags.GOAT_COOKED).addTag(ButchercraftItemTags.GOAT_RIBS_COOKED)
 				.addTag(ButchercraftItemTags.GOAT_ROAST_COOKED).addTag(ButchercraftItemTags.CUBED_GOAT_COOKED)
-				.addTag(ButchercraftItemTags.SCRAP_GOAT_COOKED).addTag(ButchercraftItemTags.STEW_GOAT_COOKED);
+				.addTag(ButchercraftItemTags.SCRAP_GOAT_COOKED).addTag(ButchercraftItemTags.STEW_GOAT_COOKED)
+				.add(ButchercraftItems.COOKED_GOAT_CHOP.get());
 
 		tag(ButchercraftItemTags.GOAT).addTag(ButchercraftItemTags.GOAT_COOKED).addTag(ButchercraftItemTags.GOAT_RAW);
 
@@ -99,11 +102,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		tag(ButchercraftItemTags.BEEF_RAW).addTag(ButchercraftItemTags.BEEF_RIBS_RAW)
 				.addTag(ButchercraftItemTags.BEEF_ROAST_RAW).addTag(ButchercraftItemTags.CUBED_BEEF_RAW)
-				.addTag(ButchercraftItemTags.SCRAP_BEEF_RAW).addTag(ButchercraftItemTags.STEW_BEEF_RAW);
+				.addTag(ButchercraftItemTags.SCRAP_BEEF_RAW).addTag(ButchercraftItemTags.STEW_BEEF_RAW).add(Items.BEEF);
 
 		tag(ButchercraftItemTags.BEEF_COOKED).addTag(ButchercraftItemTags.BEEF_RIBS_COOKED)
 				.addTag(ButchercraftItemTags.BEEF_ROAST_COOKED).addTag(ButchercraftItemTags.CUBED_BEEF_COOKED)
-				.addTag(ButchercraftItemTags.SCRAP_BEEF_COOKED).addTag(ButchercraftItemTags.STEW_BEEF_COOKED);
+				.addTag(ButchercraftItemTags.SCRAP_BEEF_COOKED).addTag(ButchercraftItemTags.STEW_BEEF_COOKED)
+				.add(Items.COOKED_BEEF);
 
 		tag(ButchercraftItemTags.BEEF).addTag(ButchercraftItemTags.BEEF_COOKED).addTag(ButchercraftItemTags.BEEF_RAW);
 
@@ -140,11 +144,13 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		tag(ButchercraftItemTags.MUTTON_RAW).addTag(ButchercraftItemTags.MUTTON_RIBS_RAW)
 				.addTag(ButchercraftItemTags.MUTTON_ROAST_RAW).addTag(ButchercraftItemTags.CUBED_MUTTON_RAW)
-				.addTag(ButchercraftItemTags.SCRAP_MUTTON_RAW).addTag(ButchercraftItemTags.STEW_MUTTON_RAW);
+				.addTag(ButchercraftItemTags.SCRAP_MUTTON_RAW).addTag(ButchercraftItemTags.STEW_MUTTON_RAW)
+				.add(Items.MUTTON);
 
 		tag(ButchercraftItemTags.MUTTON_COOKED).addTag(ButchercraftItemTags.MUTTON_RIBS_COOKED)
 				.addTag(ButchercraftItemTags.MUTTON_ROAST_COOKED).addTag(ButchercraftItemTags.CUBED_MUTTON_COOKED)
-				.addTag(ButchercraftItemTags.SCRAP_MUTTON_COOKED).addTag(ButchercraftItemTags.STEW_MUTTON_COOKED);
+				.addTag(ButchercraftItemTags.SCRAP_MUTTON_COOKED).addTag(ButchercraftItemTags.STEW_MUTTON_COOKED)
+				.add(Items.COOKED_MUTTON);
 
 		tag(ButchercraftItemTags.MUTTON).addTag(ButchercraftItemTags.MUTTON_COOKED)
 				.addTag(ButchercraftItemTags.MUTTON_RAW);
@@ -182,11 +188,13 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		tag(ButchercraftItemTags.PORK_RAW).addTag(ButchercraftItemTags.PORK_RIBS_RAW)
 				.addTag(ButchercraftItemTags.PORK_ROAST_RAW).addTag(ButchercraftItemTags.CUBED_PORK_RAW)
-				.addTag(ButchercraftItemTags.SCRAP_PORK_RAW).addTag(ButchercraftItemTags.STEW_PORK_RAW);
+				.addTag(ButchercraftItemTags.SCRAP_PORK_RAW).addTag(ButchercraftItemTags.STEW_PORK_RAW)
+				.add(Items.PORKCHOP);
 
 		tag(ButchercraftItemTags.PORK_COOKED).addTag(ButchercraftItemTags.PORK_RIBS_COOKED)
 				.addTag(ButchercraftItemTags.PORK_ROAST_COOKED).addTag(ButchercraftItemTags.CUBED_PORK_COOKED)
-				.addTag(ButchercraftItemTags.SCRAP_PORK_COOKED).addTag(ButchercraftItemTags.STEW_PORK_COOKED);
+				.addTag(ButchercraftItemTags.SCRAP_PORK_COOKED).addTag(ButchercraftItemTags.STEW_PORK_COOKED)
+				.add(Items.COOKED_PORKCHOP);
 
 		tag(ButchercraftItemTags.PORK).addTag(ButchercraftItemTags.PORK_COOKED).addTag(ButchercraftItemTags.PORK_RAW);
 
@@ -234,12 +242,14 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.CHICKEN_RAW).addTag(ButchercraftItemTags.CHICKEN_BREAST_RAW)
 				.addTag(ButchercraftItemTags.CHICKEN_THIGH_RAW).addTag(ButchercraftItemTags.CHICKEN_LEG_RAW)
 				.addTag(ButchercraftItemTags.CHICKEN_WING_RAW).addTag(ButchercraftItemTags.CUBED_CHICKEN_RAW)
-				.addTag(ButchercraftItemTags.SCRAP_CHICKEN_RAW).addTag(ButchercraftItemTags.STEW_CHICKEN_RAW);
+				.addTag(ButchercraftItemTags.SCRAP_CHICKEN_RAW).addTag(ButchercraftItemTags.STEW_CHICKEN_RAW)
+				.add(Items.CHICKEN);
 
 		tag(ButchercraftItemTags.CHICKEN_COOKED).addTag(ButchercraftItemTags.CHICKEN_BREAST_COOKED)
 				.addTag(ButchercraftItemTags.CHICKEN_THIGH_COOKED).addTag(ButchercraftItemTags.CHICKEN_LEG_COOKED)
 				.addTag(ButchercraftItemTags.CHICKEN_WING_COOKED).addTag(ButchercraftItemTags.CUBED_CHICKEN_COOKED)
-				.addTag(ButchercraftItemTags.SCRAP_CHICKEN_COOKED).addTag(ButchercraftItemTags.STEW_CHICKEN_COOKED);
+				.addTag(ButchercraftItemTags.SCRAP_CHICKEN_COOKED).addTag(ButchercraftItemTags.STEW_CHICKEN_COOKED)
+				.add(Items.COOKED_CHICKEN);
 
 		tag(ButchercraftItemTags.CHICKEN).addTag(ButchercraftItemTags.CHICKEN_COOKED)
 				.addTag(ButchercraftItemTags.CHICKEN_RAW);
@@ -283,12 +293,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.RABBIT_RAW).addTag(ButchercraftItemTags.RABBIT_SADDLE_RAW)
 				.addTag(ButchercraftItemTags.RABBIT_THIGH_RAW).addTag(ButchercraftItemTags.RABBIT_LEG_RAW)
 				.addTag(ButchercraftItemTags.CUBED_RABBIT_RAW).addTag(ButchercraftItemTags.SCRAP_RABBIT_RAW)
-				.addTag(ButchercraftItemTags.STEW_RABBIT_RAW);
+				.addTag(ButchercraftItemTags.STEW_RABBIT_RAW).add(Items.RABBIT);
 
 		tag(ButchercraftItemTags.RABBIT_COOKED).addTag(ButchercraftItemTags.RABBIT_SADDLE_COOKED)
 				.addTag(ButchercraftItemTags.RABBIT_THIGH_COOKED).addTag(ButchercraftItemTags.RABBIT_LEG_COOKED)
 				.addTag(ButchercraftItemTags.CUBED_RABBIT_COOKED).addTag(ButchercraftItemTags.SCRAP_RABBIT_COOKED)
-				.addTag(ButchercraftItemTags.STEW_RABBIT_COOKED);
+				.addTag(ButchercraftItemTags.STEW_RABBIT_COOKED).add(Items.COOKED_RABBIT);
 
 		tag(ButchercraftItemTags.RABBIT).addTag(ButchercraftItemTags.RABBIT_COOKED)
 				.addTag(ButchercraftItemTags.RABBIT_RAW);

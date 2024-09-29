@@ -5,6 +5,7 @@
     "#forge:rabbit/leg/cooked",
     "#forge:rabbit/cubed/cooked",
     "#forge:rabbit/scrap/cooked",
-    "#forge:rabbit/stew/cooked"
+    "#forge:rabbit/stew/cooked",
+    "minecraft:cooked_rabbit"
   ]
 }

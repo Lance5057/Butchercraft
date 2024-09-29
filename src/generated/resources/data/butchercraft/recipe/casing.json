@@ -6,6 +6,12 @@
   "jei": [
     {
       "item": "butchercraft:casing"
+    },
+    {
+      "item": "butchercraft:fat"
+    },
+    {
+      "item": "butchercraft:sinew"
     }
   ],
   "tools": [

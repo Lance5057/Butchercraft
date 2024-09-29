@@ -82,7 +82,8 @@ public class GrinderRecipeCategory implements IRecipeCategory<GrinderRecipe> {
 
 		Minecraft minecraft = Minecraft.getInstance();
 		Font fontRenderer = minecraft.font;
-		guiGraphics.drawString(fontRenderer, "" + recipe.grinds(), this.getBackground().getWidth() / 2 - 56, 66, 0);
+		guiGraphics.drawString(fontRenderer, "x" + recipe.grinds(), this.getBackground().getWidth() / 2 - 56, 66, 0xffffff);
+		guiGraphics.drawString(fontRenderer, "x" + recipe.count(), this.getBackground().getWidth() / 2 + 2, 19, 0xffffff);
 
 		RenderSystem.disableBlend();
 	}

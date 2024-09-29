@@ -4,6 +4,7 @@
     "#forge:goat/roast/cooked",
     "#forge:goat/cubed/cooked",
     "#forge:goat/scrap/cooked",
-    "#forge:goat/stew/cooked"
+    "#forge:goat/stew/cooked",
+    "butchercraft:cooked_goat_chop"
   ]
 }

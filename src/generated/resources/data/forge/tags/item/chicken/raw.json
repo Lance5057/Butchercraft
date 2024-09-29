@@ -6,6 +6,7 @@
     "#forge:chicken/wing/raw",
     "#forge:chicken/cubed/raw",
     "#forge:chicken/scrap/raw",
-    "#forge:chicken/stew/raw"
+    "#forge:chicken/stew/raw",
+    "minecraft:chicken"
   ]
 }

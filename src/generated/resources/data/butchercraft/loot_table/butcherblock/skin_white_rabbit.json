@@ -25,6 +25,16 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "butchercraft:white_bunny_tail"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "name": "minecraft:rabbit_foot"
         }
       ],

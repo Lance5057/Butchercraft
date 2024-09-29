@@ -23,6 +23,7 @@ import com.lance5057.butchercraft.items.ButcherKnifeItem;
 import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.items.KnifeItem;
 import com.lance5057.butchercraft.items.SoapItem;
+import com.lance5057.butchercraft.items.ToolTipItem;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -50,6 +51,15 @@ public class ButchercraftItems {
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BUTCHER_TAB = CREATIVE_MODE_TABS.register(
 			"items", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.butchercraft.items"))
 					.icon(() -> new ItemStack(ButchercraftItems.BUTCHER_KNIFE.get())).build());
+
+	public static final DeferredItem<Item> BUTCHER_KNIFE = ITEMS.register("butcher_knife",
+			() -> new ButcherKnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
+	public static final DeferredItem<Item> SKINNING_KNIFE = ITEMS.register("skinning_knife",
+			() -> new KnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
+	public static final DeferredItem<Item> BONE_SAW = ITEMS.register("bone_saw",
+			() -> new KnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
+	public static final DeferredItem<Item> GUT_KNIFE = ITEMS.register("gut_knife",
+			() -> new KnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
 
 	// BEEF
 	public static final DeferredItem<Item> COOKED_BEEF_SCRAPS = ITEMS.register("cooked_beef_scraps",
@@ -392,15 +402,6 @@ public class ButchercraftItems {
 			"taxidermy_splotched_rabbit_item_block",
 			() -> new BlockItem(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get(), new Item.Properties()));
 
-	public static final DeferredItem<Item> BUTCHER_KNIFE = ITEMS.register("butcher_knife",
-			() -> new ButcherKnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
-	public static final DeferredItem<Item> SKINNING_KNIFE = ITEMS.register("skinning_knife",
-			() -> new KnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
-	public static final DeferredItem<Item> BONE_SAW = ITEMS.register("bone_saw",
-			() -> new KnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
-	public static final DeferredItem<Item> GUT_KNIFE = ITEMS.register("gut_knife",
-			() -> new KnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
-
 	public static final DeferredItem<Item> LEATHER_SCRAP = ITEMS.register("leather_scrap",
 			() -> new Item(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */));
 	public static final DeferredItem<Item> LEATHER_CORD = ITEMS.register("leather_cord",
@@ -496,11 +497,12 @@ public class ButchercraftItems {
 			new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(3))));
 
 	public static final DeferredItem<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
-			() -> new Item(new Item.Properties()));
+			() -> new ToolTipItem(new Item.Properties(), Butchercraft.MOD_ID + ".tooltip.grinder_tip"));
 	public static final DeferredItem<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
-			() -> new Item(new Item.Properties()));
+			() -> new ToolTipItem(new Item.Properties(), Butchercraft.MOD_ID + ".tooltip.grinder_tip"));
 
-	public static final DeferredItem<SoapItem> SOAP = ITEMS.register("soap", () -> new SoapItem(new Item.Properties()));
+	public static final DeferredItem<SoapItem> SOAP = ITEMS.register("soap",
+			() -> new SoapItem(new Item.Properties().durability(16)));
 
 	public static final DeferredItem<Item> BLOOD_FLUID_BUCKET = ITEMS.register("blood_fluid_bucket",
 			() -> new BucketItem(ButchercraftFluids.BLOOD.FLUID.get(),

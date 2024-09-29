@@ -21,8 +21,10 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("Butchercraft.jei.hook", "Meat Hook");
 		this.add("Butchercraft.jei.butcherblock", "Butcher Block");
 		this.add("Butchercraft.jei.grinder", "Meat Grinder");
+		
+		this.add(Butchercraft.MOD_ID + ".tooltip.grinder_tip", "For the Meat Grinder");
 
-		this.add(ButchercraftItems.COOKED_BEEF_SCRAPS.get(), "Cooked Beef Straps");
+		this.add(ButchercraftItems.COOKED_BEEF_SCRAPS.get(), "Cooked Beef Scraps");
 		this.add(ButchercraftItems.BEEF_SCRAPS.get(), "Raw Beef Scraps");
 		this.add(ButchercraftItems.COOKED_GROUND_BEEF.get(), "Cooked Ground Beef");
 		this.add(ButchercraftItems.GROUND_BEEF.get(), "Raw Ground Beef");
@@ -38,7 +40,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.OXTAIL.get(), "Raw Oxtail");
 		this.add(ButchercraftItems.COOKED_OXTAIL.get(), "Cooked Oxtail");
 
-		this.add(ButchercraftItems.COOKED_PORK_SCRAPS.get(), "Cooked Pork Straps");
+		this.add(ButchercraftItems.COOKED_PORK_SCRAPS.get(), "Cooked Pork Scraps");
 		this.add(ButchercraftItems.PORK_SCRAPS.get(), "Raw Pork Scraps");
 		this.add(ButchercraftItems.COOKED_GROUND_PORK.get(), "Cooked Ground Pork");
 		this.add(ButchercraftItems.GROUND_PORK.get(), "Raw Ground Pork");
@@ -51,7 +53,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.PORK_STEW_MEAT.get(), "Raw Pork Stew Meat");
 		this.add(ButchercraftItems.COOKED_PORK_STEW_MEAT.get(), "Cooked Pork Stew Meat");
 
-		this.add(ButchercraftItems.COOKED_MUTTON_SCRAPS.get(), "Cooked Mutton Straps");
+		this.add(ButchercraftItems.COOKED_MUTTON_SCRAPS.get(), "Cooked Mutton Scraps");
 		this.add(ButchercraftItems.MUTTON_SCRAPS.get(), "Raw Mutton Scraps");
 		this.add(ButchercraftItems.COOKED_GROUND_MUTTON.get(), "Cooked Ground Mutton");
 		this.add(ButchercraftItems.GROUND_MUTTON.get(), "Raw Ground Mutton");
@@ -96,7 +98,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.BUTCHER_KNIFE.get(), "Butcher Knife");
 		this.add(ButchercraftItems.SKINNING_KNIFE.get(), "Skinning Knife");
 		this.add(ButchercraftItems.BONE_SAW.get(), "Bone Saw");
-		this.add(ButchercraftItems.GUT_KNIFE.get(), "Gut Knife");
+		this.add(ButchercraftItems.GUT_KNIFE.get(), "Gutting Knife");
 
 		this.add(ButchercraftItems.COW_HIDE.get(), "Cow Hide");
 		this.add(ButchercraftItems.PIG_HIDE.get(), "Pig Hide");

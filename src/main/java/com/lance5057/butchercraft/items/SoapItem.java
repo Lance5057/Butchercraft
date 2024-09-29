@@ -6,12 +6,11 @@ import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -38,14 +37,11 @@ public class SoapItem extends Item implements IClientItemExtensions {
 
 	public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving) {
 		if (!pLevel.isClientSide)
-			pEntityLiving.removeEffectsCuredBy(ButchercraftMobEffects.SOAP); // FORGE - move up so stack.shrink does not turn stack into air
+			pEntityLiving.removeEffectsCuredBy(ButchercraftMobEffects.SOAP); // FORGE - move up so stack.shrink does not
+																				// turn stack into air
 		if (pEntityLiving instanceof ServerPlayer serverplayer) {
-			CriteriaTriggers.CONSUME_ITEM.trigger(serverplayer, pStack);
-			serverplayer.awardStat(Stats.ITEM_USED.get(this));
-		}
-
-		if (pEntityLiving instanceof Player && !((Player) pEntityLiving).getAbilities().instabuild) {
-			pStack.shrink(1);
+			pStack.hurtAndBreak(1, (ServerLevel) pLevel, serverplayer, r -> {
+			});
 		}
 
 		return pStack;
@@ -110,13 +106,11 @@ public class SoapItem extends Item implements IClientItemExtensions {
 		}
 	};
 
-	public static final EnumProxy<HumanoidModel.ArmPose> SOAP_ENUM_PROXY = new EnumProxy<>(
-			HumanoidModel.ArmPose.class, List.of(false, SOAP_TRANSFORMER)
-	);
+	public static final EnumProxy<HumanoidModel.ArmPose> SOAP_ENUM_PROXY = new EnumProxy<>(HumanoidModel.ArmPose.class,
+			List.of(false, SOAP_TRANSFORMER));
 
 	@Override
-	public HumanoidModel.ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand,
-											ItemStack itemStack) {
+	public HumanoidModel.ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
 		if (!itemStack.isEmpty()) {
 			if (entityLiving.getUsedItemHand() == hand && entityLiving.getUseItemRemainingTicks() > 0) {
 				return SOAP_ENUM_PROXY.getValue();
@@ -127,7 +121,7 @@ public class SoapItem extends Item implements IClientItemExtensions {
 
 	@Override
 	public boolean applyForgeHandTransform(PoseStack poseStack, LocalPlayer player, HumanoidArm arm,
-										   ItemStack itemInHand, float partialTick, float equipProcess, float swingProcess) {
+			ItemStack itemInHand, float partialTick, float equipProcess, float swingProcess) {
 		float f = player.getUseItemRemainingTicks() - partialTick + 1.0F;
 		int i = arm == HumanoidArm.RIGHT ? 1 : -1;
 		float i2 = arm == HumanoidArm.RIGHT ? -0.5f : 0.5f;

@@ -14,7 +14,8 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class BlockTagGenerator extends BlockTagsProvider {
-	public BlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+	public BlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+			@Nullable ExistingFileHelper existingFileHelper) {
 		super(output, lookupProvider, Butchercraft.MOD_ID, existingFileHelper);
 	}
 
@@ -35,5 +36,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				.add(ButchercraftBlocks.BARN_WOOD_SLAB.get()).add(ButchercraftBlocks.BARN_WOOD_STAIRS.get())
 				.add(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get()).add(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get());
 
+		tag(BlockTags.FENCES).add(ButchercraftBlocks.BARN_WOOD_FENCE.get());
+		tag(BlockTags.FENCE_GATES).add(ButchercraftBlocks.BARN_WOOD_FENCE_GATE.get());
+		tag(BlockTags.WOODEN_FENCES).add(ButchercraftBlocks.BARN_WOOD_FENCE.get());
 	}
 }

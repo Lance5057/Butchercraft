@@ -15,16 +15,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "butchercraft:black_bunny_tail"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
           "name": "butchercraft:eyeball"
         }
       ],

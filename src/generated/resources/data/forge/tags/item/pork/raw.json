@@ -4,6 +4,7 @@
     "#forge:pork/roast/raw",
     "#forge:pork/cubed/raw",
     "#forge:pork/scrap/raw",
-    "#forge:pork/stew/raw"
+    "#forge:pork/stew/raw",
+    "minecraft:porkchop"
   ]
 }

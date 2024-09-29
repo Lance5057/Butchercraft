@@ -4,6 +4,7 @@
     "#forge:pork/roast/cooked",
     "#forge:pork/cubed/cooked",
     "#forge:pork/scrap/cooked",
-    "#forge:pork/stew/cooked"
+    "#forge:pork/stew/cooked",
+    "minecraft:cooked_porkchop"
   ]
 }

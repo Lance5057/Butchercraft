@@ -5,22 +5,14 @@
       "conditions": {
         "items": [
           {
-            "items": "butchercraft:brown_rabbit_carcass"
-          },
-          {
-            "items": "butchercraft:black_rabbit_carcass"
-          },
-          {
-            "items": "butchercraft:gold_rabbit_carcass"
-          },
-          {
-            "items": "butchercraft:salt_rabbit_carcass"
-          },
-          {
-            "items": "butchercraft:splotched_rabbit_carcass"
-          },
-          {
-            "items": "butchercraft:white_rabbit_carcass"
+            "items": [
+              "butchercraft:brown_rabbit_carcass",
+              "butchercraft:black_rabbit_carcass",
+              "butchercraft:gold_rabbit_carcass",
+              "butchercraft:salt_rabbit_carcass",
+              "butchercraft:splotched_rabbit_carcass",
+              "butchercraft:white_rabbit_carcass"
+            ]
           }
         ]
       },

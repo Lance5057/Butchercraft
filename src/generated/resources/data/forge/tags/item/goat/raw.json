@@ -4,6 +4,7 @@
     "#forge:goat/roast/raw",
     "#forge:goat/cubed/raw",
     "#forge:goat/scrap/raw",
-    "#forge:goat/stew/raw"
+    "#forge:goat/stew/raw",
+    "butchercraft:goat_chop"
   ]
 }

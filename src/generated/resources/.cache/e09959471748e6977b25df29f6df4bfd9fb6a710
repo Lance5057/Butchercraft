@@ -1,3 +1,6 @@
-// 1.21	2024-07-22T20:34:07.370492906	Tags for minecraft:block mod id butchercraft
+// 1.21	2024-09-29T02:54:00.8201209	Tags for minecraft:block mod id butchercraft
+a089d5992025b0974ebd98d25ac2ce361e8eb46d data/minecraft/tags/block/fences.json
+4626f8576b33f96c6945c98187a9f59294557fbe data/minecraft/tags/block/fence_gates.json
 61224ef52ac3a88113bdc76ab7ed8240e281399f data/minecraft/tags/block/mineable/axe.json
 7e5eb8fefcb0447266327250e93ec4efc81a3d3d data/minecraft/tags/block/mineable/pickaxe.json
+a089d5992025b0974ebd98d25ac2ce361e8eb46d data/minecraft/tags/block/wooden_fences.json

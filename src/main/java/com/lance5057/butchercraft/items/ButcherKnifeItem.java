@@ -124,7 +124,7 @@ public class ButcherKnifeItem extends KnifeItem {
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
 		tooltipComponents.add(
-				Component.literal("  ").append(Component.translatable(Butchercraft.MOD_ID + ".butcherknife.rightclick"))
+				Component.literal("").append(Component.translatable(Butchercraft.MOD_ID + ".butcherknife.rightclick"))
 						.withStyle(ChatFormatting.DARK_PURPLE));
 	}
 }

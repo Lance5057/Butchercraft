@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "butchercraft:meat_hook_item"
+            "items": "butchercraft:butcher_block_block_item"
           }
         ]
       },

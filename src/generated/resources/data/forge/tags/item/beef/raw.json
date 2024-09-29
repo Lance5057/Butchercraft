@@ -4,6 +4,7 @@
     "#forge:beef/roast/raw",
     "#forge:beef/cubed/raw",
     "#forge:beef/scrap/raw",
-    "#forge:beef/stew/raw"
+    "#forge:beef/stew/raw",
+    "minecraft:beef"
   ]
 }

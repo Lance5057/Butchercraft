@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -26,6 +27,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.items.IItemHandler;
 
 public class GrinderBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -73,7 +75,8 @@ public class GrinderBlock extends Block implements EntityBlock, SimpleWaterlogge
 	}
 
 	@Override
-	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState blockState, Level world, BlockPos blockPos, Player playerEntity, InteractionHand hand, BlockHitResult hitResult) {
+	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState blockState, Level world, BlockPos blockPos,
+			Player playerEntity, InteractionHand hand, BlockHitResult hitResult) {
 		BlockEntity blockentity = world.getBlockEntity(blockPos);
 		if (blockentity instanceof GrinderBlockEntity be) {
 
@@ -108,4 +111,20 @@ public class GrinderBlock extends Block implements EntityBlock, SimpleWaterlogge
 				.setValue(WATERLOGGED, ifluidstate.getType() == Fluids.WATER);
 	}
 
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity tileEntity = level.getBlockEntity(pos);
+			if (tileEntity instanceof GrinderBlockEntity te) {
+				IItemHandler items = te.getHandler();
+				for (int i = 0; i < te.getHandler().getSlots(); i++) {
+					level.addFreshEntity(
+							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				}
+				level.updateNeighbourForOutputSignal(pos, this);
+			}
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
+	}
 }

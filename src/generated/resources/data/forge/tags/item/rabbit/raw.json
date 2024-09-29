@@ -5,6 +5,7 @@
     "#forge:rabbit/leg/raw",
     "#forge:rabbit/cubed/raw",
     "#forge:rabbit/scrap/raw",
-    "#forge:rabbit/stew/raw"
+    "#forge:rabbit/stew/raw",
+    "minecraft:rabbit"
   ]
 }

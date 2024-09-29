@@ -4,6 +4,7 @@
     "#forge:mutton/roast/cooked",
     "#forge:mutton/cubed/cooked",
     "#forge:mutton/scrap/cooked",
-    "#forge:mutton/stew/cooked"
+    "#forge:mutton/stew/cooked",
+    "minecraft:cooked_mutton"
   ]
 }
