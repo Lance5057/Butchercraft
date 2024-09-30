@@ -19,8 +19,6 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class BCArmorMaterial {
-	private static final Map<ArmorItem.Type, Integer> ZERO = Map.of(ArmorItem.Type.HELMET, 0, ArmorItem.Type.CHESTPLATE,
-			0, ArmorItem.Type.LEGGINGS, 0, ArmorItem.Type.BOOTS, 0, ArmorItem.Type.BODY, 0);
 	private static final Map<ArmorItem.Type, Integer> ONE = Map.of(ArmorItem.Type.HELMET, 1, ArmorItem.Type.CHESTPLATE,
 			1, ArmorItem.Type.LEGGINGS, 1, ArmorItem.Type.BOOTS, 1, ArmorItem.Type.BODY, 1);
 
@@ -43,40 +41,40 @@ public class BCArmorMaterial {
 
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BUNNY_BLACK = ARMOR_MATERIALS.register(
 			"bunny_black",
-			() -> new ArmorMaterial(ZERO, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
+			() -> new ArmorMaterial(ONE, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
 					List.of(new ArmorMaterial.Layer(
 							ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "bunny_black"), "", true)),
 					0.0F, 0.0F));
 
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BUNNY_BROWN = ARMOR_MATERIALS.register(
 			"bunny_brown",
-			() -> new ArmorMaterial(ZERO, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
+			() -> new ArmorMaterial(ONE, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
 					List.of(new ArmorMaterial.Layer(
 							ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "bunny_brown"), "", true)),
 					0.0F, 0.0F));
 
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BUNNY_SPLOTCHED = ARMOR_MATERIALS.register(
 			"bunny_splotched",
-			() -> new ArmorMaterial(ZERO, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
+			() -> new ArmorMaterial(ONE, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
 					List.of(new ArmorMaterial.Layer(
 							ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "bunny_splotched"), "", true)),
 					0.0F, 0.0F));
 
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BUNNY_GOLD = ARMOR_MATERIALS.register("bunny_gold",
-			() -> new ArmorMaterial(ZERO, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
+			() -> new ArmorMaterial(ONE, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
 					List.of(new ArmorMaterial.Layer(
 							ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "bunny_gold"), "", true)),
 					0.0F, 0.0F));
 
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BUNNY_SALT = ARMOR_MATERIALS.register("bunny_salt",
-			() -> new ArmorMaterial(ZERO, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
+			() -> new ArmorMaterial(ONE, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
 					List.of(new ArmorMaterial.Layer(
 							ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "bunny_salt"), "", true)),
 					0.0F, 0.0F));
 
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BUNNY_WHITE = ARMOR_MATERIALS.register(
 			"bunny_white",
-			() -> new ArmorMaterial(ZERO, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
+			() -> new ArmorMaterial(ONE, 10, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(Items.RABBIT_HIDE),
 					List.of(new ArmorMaterial.Layer(
 							ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "bunny_white"), "", true)),
 					0.0F, 0.0F));

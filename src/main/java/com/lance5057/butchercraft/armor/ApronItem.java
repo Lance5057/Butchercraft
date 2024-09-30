@@ -19,6 +19,8 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 public class ApronItem extends ArmorItem implements IClientItemExtensions {
 	public ApronItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) {
 		super(pMaterial, Type.LEGGINGS, pProperties);
+		
+		
 	}
 
 	@Override

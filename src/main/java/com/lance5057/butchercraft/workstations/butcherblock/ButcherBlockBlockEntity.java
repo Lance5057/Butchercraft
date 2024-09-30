@@ -156,7 +156,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	// External insert handler
 	public void insertItem(ItemStack heldItem) {
 		if (inventory.isItemValid(0, heldItem))
-			if (!ItemStack.isSameItemSameComponents(inventory.insertItem(0, heldItem, true), heldItem)) {
+			if (!ItemStack.matches(inventory.insertItem(0, heldItem, true), heldItem)) {
 				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
 				heldItem.setCount(leftover);
 			}
