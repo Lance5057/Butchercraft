@@ -16,7 +16,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
-public class BootsItem extends ArmorItem implements IClientItemExtensions {
+public class BootsItem extends ArmorItem {
 	public BootsItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) {
 		super(pMaterial, Type.BOOTS, pProperties);
 	}

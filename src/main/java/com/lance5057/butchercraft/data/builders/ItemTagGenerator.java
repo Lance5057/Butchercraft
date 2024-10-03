@@ -370,6 +370,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 		tag(Tags.Items.SLIMEBALLS).add(ButchercraftItems.FAT.get());
 		tag(Tags.Items.STRINGS).add(ButchercraftItems.SINEW.get()).add(ButchercraftItems.LEATHER_CORD.get());
+		tag(ButchercraftItemTags.FAT).add(ButchercraftItems.FAT.get());
 
 		tag(ButchercraftItemTags.HEART_RAW).add(ButchercraftItems.HEART.get());
 		tag(ButchercraftItemTags.HEART_COOKED).add(ButchercraftItems.COOKED_HEART.get());
@@ -421,6 +422,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				ButchercraftItems.PIG_HIDE.get(), ButchercraftItems.SHEEP_HIDE.get(), Items.BONE,
 				ButchercraftItems.SINEW.get(), Items.RABBIT_HIDE);
 
+		tag(ButchercraftItemTags.GELATIN).add(ButchercraftItems.GELATIN.get());
+
 		tag(ButchercraftItemTags.GRINDER_ATTACHMENT).add(ButchercraftItems.EXTRUDER_TIP.get())
 				.add(ButchercraftItems.GRINDER_TIP.get());
 
@@ -451,7 +454,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 						ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(), ButchercraftItems.WHITE_RABBIT_CARCASS.get())
 				.add(Items.RABBIT);
 		tag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.SHEEP_CARCASS.get());
-		tag(Tags.Items.STRINGS).add(ButchercraftItems.SINEW.get());
+		tag(Tags.Items.STRINGS).add(ButchercraftItems.SINEW.get(), ButchercraftItems.LEATHER_CORD.get());
 		tag(ItemTags.DYEABLE).add(ButchercraftItems.SHEEP_HOOD.get());
 	}
 }

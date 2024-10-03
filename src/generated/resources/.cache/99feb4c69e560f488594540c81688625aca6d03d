@@ -1,4 +1,4 @@
-// 1.21	2024-09-29T02:45:08.8914904	Tags for minecraft:item mod id butchercraft
+// 1.21	2024-10-03T12:40:29.0084616	Tags for minecraft:item mod id butchercraft
 30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/item/chicken_carcass.json
 ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/item/cow_carcass.json
 66da3e39032bb6edf49b68f597c0d5f9b7cb5166 data/butchercraft/tags/item/gelatin_provider.json
@@ -9,7 +9,7 @@ ba91febf26e7f478d42fd17fe7cdb3313be8f1c2 data/butchercraft/tags/item/rabbit_carc
 0e3627197ab0855eec5ca3eaee114fd6aed5ef68 data/butchercraft/tags/item/sausage_casing.json
 08ddda1e7c354e6560543656eaf127f5d0a55af0 data/butchercraft/tags/item/sheep_carcass.json
 cd09d0bd2502f17520be606eac462355e2cedb8d data/c/tags/item/slimeballs.json
-03707a6b20761eda068121dc7b842aead0bbeebc data/c/tags/item/strings.json
+c67f57f80b8d9192f9f4b901ee868ead87fbe3cb data/c/tags/item/strings.json
 4d14da7bfe744c1214acbc992e7c84590b6bae0c data/forge/tags/item/beef.json
 7c34feb7999db0080e990e60acb78469847f4027 data/forge/tags/item/beef/cooked.json
 74979ec88b7a8386f80fe37dd9fe1d275e7f6668 data/forge/tags/item/beef/cubed.json
@@ -66,6 +66,8 @@ f8c21306d13555a9183e44a2b38e740e2390b46c data/forge/tags/item/chicken/thigh/raw.
 e085719176ec93767abf014f4c304cfea279668e data/forge/tags/item/chicken/wing.json
 387a597b5fa4b822a93ba60687c0254c1a6e55f8 data/forge/tags/item/chicken/wing/cooked.json
 a1b0f316cb8185f0967a2976f9f9251b71c82306 data/forge/tags/item/chicken/wing/raw.json
+cd09d0bd2502f17520be606eac462355e2cedb8d data/forge/tags/item/fat.json
+91107a7a1edc1c44bc0f55123d9c0fb3cb132104 data/forge/tags/item/gelatin.json
 1ad4c8db62378a31c21184f40190b477673673a8 data/forge/tags/item/goat.json
 08735afac2cef1f92bb31363ca51cd6482ca531f data/forge/tags/item/goat/cooked.json
 8cee75627771a6b98e8515e9d86515fac3d65827 data/forge/tags/item/goat/cubed.json

@@ -20,6 +20,7 @@ import com.lance5057.butchercraft.workstations.grinder.GrinderRenderer;
 import com.lance5057.butchercraft.workstations.hook.MeatHookRenderer;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.inventory.MerchantScreen;
 import net.minecraft.client.model.SkullModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
@@ -31,6 +32,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.neoforge.client.event.ScreenEvent;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = Butchercraft.MOD_ID)
 public class ButchercraftClient {
@@ -57,7 +59,8 @@ public class ButchercraftClient {
 
 			s = s.substring(s.indexOf('/') + 1, s.indexOf('.'));
 
-			ModelResourceLocation rl2 = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(rl.getNamespace(), s));
+			ModelResourceLocation rl2 = ModelResourceLocation
+					.standalone(ResourceLocation.fromNamespaceAndPath(rl.getNamespace(), s));
 
 			event.register(rl2);
 		});
@@ -138,5 +141,4 @@ public class ButchercraftClient {
 				ResourceLocation.withDefaultNamespace("textures/entity/rabbit/white.png"));
 	}
 
-	
 }

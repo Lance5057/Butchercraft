@@ -1,9 +1,10 @@
 package com.lance5057.butchercraft.workstations.grinder;
 
+import org.joml.Quaternionf;
+
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.client.rendering.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
-import org.joml.Quaternionf;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;

@@ -7,7 +7,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT, modid = Butchercraft.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Butchercraft.MOD_ID)
 public class ButchercraftForgeClientEvents {
 	@SubscribeEvent
 	public static void cancelTrade(ScreenEvent.Opening event) {
@@ -19,4 +19,5 @@ public class ButchercraftForgeClientEvents {
 			}
 		}
 	}
+
 }

@@ -41,7 +41,7 @@ public class ButchercraftConfig {
 				.defineInRange("armyHoodChanceMultiplier", 0.1, 0, 1);
 		Builder.pop();
 
-		Builder.comment("Mobs").push(CATEGORY_MOBS);
+		Builder.comment("Gear").push(CATEGORY_GEAR);
 		CARCASS_EFFECT_CHANCE = Builder.comment(
 				"Chance that a carcass applies its bloody effects per inventory tick. (Default 1/1000) Raising this can decrease server lag.")
 				.defineInRange("armyHoodChanceMultiplier", 1000, 1, Integer.MAX_VALUE);

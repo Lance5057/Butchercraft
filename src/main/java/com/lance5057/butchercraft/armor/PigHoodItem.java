@@ -16,7 +16,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
-public class PigHoodItem extends ArmorItem implements IClientItemExtensions {
+public class PigHoodItem extends ArmorItem {
 	public PigHoodItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) {
 		super(pMaterial, Type.HELMET, pProperties);
 	}

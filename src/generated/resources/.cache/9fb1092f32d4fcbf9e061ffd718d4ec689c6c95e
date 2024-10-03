@@ -1,4 +1,4 @@
-// 1.21	2024-09-29T02:45:08.8984968	Recipes
+// 1.21	2024-10-03T12:35:58.8770856	Recipes
 009b90db535ceb2eb701ac7cd86c302fc39a939a data/butchercraft/advancement/recipes/building_blocks/barn_wood.json
 7cb5335ac1b376a042395aa3747785dd553fd1a5 data/butchercraft/advancement/recipes/building_blocks/barn_wood_door.json
 f19c8abd45dff40239f68fe75e34d1cdd278976f data/butchercraft/advancement/recipes/building_blocks/barn_wood_fence.json
@@ -6,6 +6,7 @@ f19c8abd45dff40239f68fe75e34d1cdd278976f data/butchercraft/advancement/recipes/b
 3f817b92b73f5450705550e5a42cae1f2c7504ba data/butchercraft/advancement/recipes/building_blocks/barn_wood_slab.json
 1d873a8d47944757e92d6dce3788a082db495b49 data/butchercraft/advancement/recipes/building_blocks/barn_wood_stairs.json
 35511fbea06158001fba7547eb4529778f3daf7f data/butchercraft/advancement/recipes/building_blocks/barn_wood_trapdoor.json
+b0d1dba977d2b347fbeaa361307a6a2f5869671b data/butchercraft/advancement/recipes/building_blocks/fat_candle.json
 8163540318252c0856ae8f9552199db15bc8c50b data/butchercraft/advancement/recipes/building_blocks/trimmed_barn_wood.json
 d6018078f76a278e7a4419ad0f7764716300e978 data/butchercraft/advancement/recipes/combat/apron.json
 a37638afbc10526e1888b8f4508906d86dad5d0a data/butchercraft/advancement/recipes/combat/boots.json
@@ -305,6 +306,7 @@ a4bb6a85383b33bbd0145a9cc8582bc65c6053a8 data/butchercraft/advancement/recipes/m
 415762ace39c94faa03f9579f0e19704176599c2 data/butchercraft/advancement/recipes/meat_hook/white_rabbit_head.json
 9b35f16cf1177a02d0749d5477394c8415f770c8 data/butchercraft/advancement/recipes/misc/blood_dye.json
 8de5d9875569d77256355a6afda6086e5b3c9dfb data/butchercraft/advancement/recipes/misc/leather_cord.json
+387c0571fa998e29d1e419dbc50bf52ca26a3c56 data/butchercraft/advancement/recipes/misc/leather_from_scrap.json
 15aa6bbb18b8b3812e7a39b8542ecfc9afca65d9 data/butchercraft/advancement/recipes/tools/blood_bottle.json
 c8978bea7386f0eef311af474bf51f837e4206fa data/butchercraft/advancement/recipes/tools/blood_bucket.json
 a4df493fbda458ce39c4ad129b592044ff9a282c data/butchercraft/advancement/recipes/tools/bone_saw.json
@@ -561,6 +563,7 @@ a7162c782ea32af4161c9eee7dfb5c65049e17a9 data/butchercraft/recipe/cooked_tripe_f
 b36065a699f13e7605d574532da3f5397b4add7a data/butchercraft/recipe/cow_hide.json
 76e1ba708706cba9fc1d826f6def6af454ffd131 data/butchercraft/recipe/cow_hood.json
 4dee398bf56e88eeaf5650ea22ef955168a4ead2 data/butchercraft/recipe/extruder_tip.json
+cd3991e944b3f78484852f78c55c9f78763e8e4b data/butchercraft/recipe/fat_candle.json
 c9f5120de1084b9a4bcb235907811257bae60d56 data/butchercraft/recipe/gloves.json
 06efec4bd9f785d5d2456dc41505652079d9e868 data/butchercraft/recipe/goat.json
 9b8f7151ee1548bf9b19d987256e8097e613f7f0 data/butchercraft/recipe/goat_block.json
@@ -586,6 +589,7 @@ faf485517cdfbeed44a28eebfba6e7e5e0916ddd data/butchercraft/recipe/lard_from_camp
 fc73cef59cc37178ab9bdef2d24f0ad57cb2620d data/butchercraft/recipe/lard_from_smelting.json
 8cf41fc2521b4689b9c8db0c97e970268794d40b data/butchercraft/recipe/lard_from_smoking.json
 eb4c752d9a0ab8dfc869e05094aea22890697593 data/butchercraft/recipe/leather_cord.json
+1ee249214b4b491ab06755e8c8d5729844f59021 data/butchercraft/recipe/leather_from_scrap.json
 28e8018c66cb919cec97be114faa946876a69837 data/butchercraft/recipe/mask.json
 bb2f9fbd7b2f19bd3bdce5821fd0cb3acd5b3ea4 data/butchercraft/recipe/meat_hook.json
 be0a1e06f922c63cdda4fdaf82e481aa0b6e2588 data/butchercraft/recipe/mutton_cubes.json

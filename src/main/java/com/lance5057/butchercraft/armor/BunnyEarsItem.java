@@ -15,7 +15,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
-public class BunnyEarsItem extends TemptArmor implements IClientItemExtensions {
+public class BunnyEarsItem extends TemptArmor {
 	public BunnyEarsItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) {
 		super(pMaterial, Type.HELMET, pProperties);
 	}

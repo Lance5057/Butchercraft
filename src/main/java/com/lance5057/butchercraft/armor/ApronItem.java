@@ -16,7 +16,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
-public class ApronItem extends ArmorItem implements IClientItemExtensions {
+public class ApronItem extends ArmorItem {
 	public ApronItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) {
 		super(pMaterial, Type.LEGGINGS, pProperties);
 		
