@@ -61,6 +61,36 @@ public class ButchercraftItems {
 	public static final DeferredItem<Item> GUT_KNIFE = ITEMS.register("gut_knife",
 			() -> new KnifeItem(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */.durability(250)));
 
+	public static final DeferredItem<BlockItem> HOOK_BLOCK_ITEM = ITEMS.register("meat_hook_item",
+			() -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> BUTCHER_BLOCK_BLOCK_ITEM = ITEMS.register("butcher_block_block_item",
+			() -> new BlockItem(ButchercraftBlocks.BUTCHER_BLOCK.get(), new Item.Properties()));
+
+	public static final DeferredItem<BlockItem> GRINDER_BLOCK_ITEM = ITEMS.register("grinder_block_item",
+			() -> new BlockItem(ButchercraftBlocks.GRINDER.get(), new Item.Properties()));
+
+	// Armor
+	public static final DeferredItem<Item> MASK = ITEMS.register("mask", () -> new MaskItem(BCArmorMaterial.WOOL,
+			new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(5))));
+	public static final DeferredItem<Item> PAPER_HAT = ITEMS.register("paper_hat",
+			() -> new PaperHatItem(BCArmorMaterial.PAPER,
+					new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(5))));
+	public static final DeferredItem<Item> APRON = ITEMS.register("apron", () -> new ApronItem(BCArmorMaterial.WOOL,
+			new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(5))));
+	public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves", () -> new GlovesItem(BCArmorMaterial.WOOL,
+			new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(3))));
+	public static final DeferredItem<Item> BOOTS = ITEMS.register("boots", () -> new BootsItem(BCArmorMaterial.WOOL,
+			new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(3))));
+
+	public static final DeferredItem<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
+			() -> new ToolTipItem(new Item.Properties(), Butchercraft.MOD_ID + ".tooltip.grinder_tip"));
+	public static final DeferredItem<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
+			() -> new ToolTipItem(new Item.Properties(), Butchercraft.MOD_ID + ".tooltip.grinder_tip"));
+
+	public static final DeferredItem<SoapItem> SOAP = ITEMS.register("soap",
+			() -> new SoapItem(new Item.Properties().durability(16)));
+
 	// BEEF
 	public static final DeferredItem<Item> COOKED_BEEF_SCRAPS = ITEMS.register("cooked_beef_scraps",
 			() -> new Item(new Item.Properties().food(FoodsCow.COOKED_BEEF_SCRAPS)));
@@ -417,15 +447,6 @@ public class ButchercraftItems {
 	public static final DeferredItem<Item> GELATIN = ITEMS.register("gelatin",
 			() -> new Item(new Item.Properties()/* .tab(ButchercraftItems.BUTCHER_TAB) */));
 
-	public static final DeferredItem<BlockItem> HOOK_BLOCK_ITEM = ITEMS.register("meat_hook_item",
-			() -> new BlockItem(ButchercraftBlocks.MEAT_HOOK.get(), new Item.Properties()));
-
-	public static final DeferredItem<BlockItem> BUTCHER_BLOCK_BLOCK_ITEM = ITEMS.register("butcher_block_block_item",
-			() -> new BlockItem(ButchercraftBlocks.BUTCHER_BLOCK.get(), new Item.Properties()));
-
-	public static final DeferredItem<BlockItem> GRINDER_BLOCK_ITEM = ITEMS.register("grinder_block_item",
-			() -> new BlockItem(ButchercraftBlocks.GRINDER.get(), new Item.Properties()));
-
 	public static final DeferredItem<BlockItem> BEEF_BLOCK_ITEM = ITEMS.register("beef_block_item",
 			() -> new BlockItem(ButchercraftBlocks.BEEF_BLOCK.get(), new Item.Properties()));
 	public static final DeferredItem<BlockItem> COOKED_BEEF_BLOCK_ITEM = ITEMS.register("cooked_beef_block_item",
@@ -482,27 +503,6 @@ public class ButchercraftItems {
 			() -> new Item(new Item.Properties().food(FoodsGeneric.SAUSAGE)));
 	public static final DeferredItem<Item> COOKED_BLOOD_SAUSAGE = ITEMS.register("cooked_blood_sausage",
 			() -> new Item(new Item.Properties().food(FoodsGeneric.COOKED_BLOOD_SAUSAGE)));
-
-	// Armor
-	public static final DeferredItem<Item> MASK = ITEMS.register("mask", () -> new MaskItem(BCArmorMaterial.WOOL,
-			new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(5))));
-	public static final DeferredItem<Item> PAPER_HAT = ITEMS.register("paper_hat",
-			() -> new PaperHatItem(BCArmorMaterial.PAPER,
-					new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(5))));
-	public static final DeferredItem<Item> APRON = ITEMS.register("apron", () -> new ApronItem(BCArmorMaterial.WOOL,
-			new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(5))));
-	public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves", () -> new GlovesItem(BCArmorMaterial.WOOL,
-			new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(3))));
-	public static final DeferredItem<Item> BOOTS = ITEMS.register("boots", () -> new BootsItem(BCArmorMaterial.WOOL,
-			new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(3))));
-
-	public static final DeferredItem<Item> EXTRUDER_TIP = ITEMS.register("extruder_tip",
-			() -> new ToolTipItem(new Item.Properties(), Butchercraft.MOD_ID + ".tooltip.grinder_tip"));
-	public static final DeferredItem<Item> GRINDER_TIP = ITEMS.register("grinder_tip",
-			() -> new ToolTipItem(new Item.Properties(), Butchercraft.MOD_ID + ".tooltip.grinder_tip"));
-
-	public static final DeferredItem<SoapItem> SOAP = ITEMS.register("soap",
-			() -> new SoapItem(new Item.Properties().durability(16)));
 
 	public static final DeferredItem<Item> BLOOD_FLUID_BUCKET = ITEMS.register("blood_fluid_bucket",
 			() -> new BucketItem(ButchercraftFluids.BLOOD.FLUID.get(),

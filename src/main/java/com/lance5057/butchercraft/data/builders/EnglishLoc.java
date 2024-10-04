@@ -288,11 +288,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(Butchercraft.MOD_ID + ".advancement.butcherknife.name", "Baker and Candlestick maker.");
 		this.add(Butchercraft.MOD_ID + ".advancement.butcherknife.desc", "Craft a Butcher Knife");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.skinningknife.desc", "A very close shave.");
-		this.add(Butchercraft.MOD_ID + ".advancement.skinningknife.name", "Craft a Skinning Knife");
+		this.add(Butchercraft.MOD_ID + ".advancement.skinningknife.name", "A very close shave.");
+		this.add(Butchercraft.MOD_ID + ".advancement.skinningknife.desc", "Craft a Skinning Knife");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.gutknife.name", "You've got guts kid.");
-		this.add(Butchercraft.MOD_ID + ".advancement.gutknife.desc", "Craft a Gut Knife");
+		this.add(Butchercraft.MOD_ID + ".advancement.gutknife.desc", "Craft a Gutting Knife");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.bonesaw.name", "Skeleton's Nightmare.");
 		this.add(Butchercraft.MOD_ID + ".advancement.bonesaw.desc", "Craft a Bone Saw");

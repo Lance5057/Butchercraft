@@ -31,10 +31,11 @@ public class SheepHoodModel extends HumanoidModel<LivingEntity> {
 		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0.5f);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition bb_main = partdefinition.addOrReplaceChild("hat",
+		PartDefinition head = partdefinition.addOrReplaceChild("head",
 				CubeListBuilder.create().texOffs(0, 0)
 						.addBox(-3.0F, -7.0F, -6.0F, 6.0F, 6.0F, 8.0F, new CubeDeformation(0.35F)).texOffs(32, 0)
-						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.6F)),
+						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.6F))
+						.addBox(-3.0F, -6.0F, -3.0F, 6.0F, 6.0F, 6.0F, new CubeDeformation(0.6F)),
 				PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));

@@ -455,6 +455,6 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				.add(Items.RABBIT);
 		tag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.SHEEP_CARCASS.get());
 		tag(Tags.Items.STRINGS).add(ButchercraftItems.SINEW.get(), ButchercraftItems.LEATHER_CORD.get());
-		tag(ItemTags.DYEABLE).add(ButchercraftItems.SHEEP_HOOD.get());
+//		tag(ItemTags.DYEABLE).add(ButchercraftItems.SHEEP_HOOD.get());
 	}
 }
