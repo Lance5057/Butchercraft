@@ -293,7 +293,7 @@
         }
       ],
       "tool": {
-        "item": "butchercraft:skinning_knife"
+        "item": "butchercraft:gut_knife"
       },
       "uses": 6
     },
@@ -329,7 +329,7 @@
               }
             }
           },
-          "location": "butchercraft:meathook/rabbit_brown_gutted"
+          "location": "butchercraft:meathook/rabbit_skinned"
         },
         {
           "animation": {
@@ -378,7 +378,7 @@
         }
       ],
       "tool": {
-        "item": "butchercraft:gut_knife"
+        "item": "butchercraft:skinning_knife"
       },
       "uses": 6
     }
