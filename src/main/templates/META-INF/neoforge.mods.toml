@@ -40,3 +40,10 @@ type="optional"
 versionRange="${jei_version_range}"
 ordering="AFTER"
 side="CLIENT"
+
+[[dependencies.${mod_id}]]
+modId="emi"
+type="optional"
+versionRange="${emi_version_range}"
+ordering="AFTER"
+side="CLIENT"
