@@ -1,7 +1,5 @@
 package com.lance5057.butchercraft.armor;
 
-import java.util.function.Consumer;
-
 import com.lance5057.butchercraft.armor.models.GoatHoodModel;
 
 import net.minecraft.client.Minecraft;
@@ -16,24 +14,18 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
-public class GoatHoodItem extends ArmorItem {
+public class GoatHoodItem extends ArmorItem implements IClientItemExtensions {
 	public GoatHoodItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) {
 		super(pMaterial, Type.HELMET, pProperties);
 	}
 
 	@Override
-	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-		consumer.accept(new IClientItemExtensions() {
-			@Override
-			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
-					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-				EntityModelSet models = Minecraft.getInstance().getEntityModels();
-				ModelPart root = models.bakeLayer(GoatHoodModel.LAYER_LOCATION);
-				original.body.visible = true;
+	public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+		EntityModelSet models = Minecraft.getInstance().getEntityModels();
+		ModelPart root = models.bakeLayer(GoatHoodModel.LAYER_LOCATION);
+		original.body.visible = true;
 
-				return new GoatHoodModel(root);
-			}
-		});
+		return new GoatHoodModel(root);
 	}
 
 }

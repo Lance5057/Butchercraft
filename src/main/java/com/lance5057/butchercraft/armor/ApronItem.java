@@ -1,7 +1,5 @@
 package com.lance5057.butchercraft.armor;
 
-import java.util.function.Consumer;
-
 import com.lance5057.butchercraft.armor.models.ApronModel;
 
 import net.minecraft.client.Minecraft;
@@ -16,7 +14,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
-public class ApronItem extends ArmorItem {
+public class ApronItem extends ArmorItem implements IClientItemExtensions {
 	public ApronItem(Holder<ArmorMaterial> pMaterial, Properties pProperties) {
 		super(pMaterial, Type.LEGGINGS, pProperties);
 		
@@ -24,18 +22,10 @@ public class ApronItem extends ArmorItem {
 	}
 
 	@Override
-	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-		consumer.accept(new IClientItemExtensions() {
-
-			@Override
-			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
-					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-				EntityModelSet models = Minecraft.getInstance().getEntityModels();
-				ModelPart root = models.bakeLayer(ApronModel.LAYER_LOCATION);
-				return new ApronModel(root);
-			}
-
-		});
+	public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+		EntityModelSet models = Minecraft.getInstance().getEntityModels();
+		ModelPart root = models.bakeLayer(ApronModel.LAYER_LOCATION);
+		return new ApronModel(root);
 	}
 
 }
