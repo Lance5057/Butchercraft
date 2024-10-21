@@ -79,8 +79,8 @@ public class GrinderEmiRecipe implements EmiRecipe {
 	@Override
 	public void addWidgets(WidgetHolder widgets) {
 		widgets.addTexture(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 0, 138, 77, 0, 0);
-		widgets.addText(Component.literal("x" + this.grinds), this.getDisplayWidth() / 2 - 57, 65, 0xFFFFFF, false);
-		widgets.addText(Component.literal("x" + this.count), this.getDisplayWidth() / 2 + 1, 18, 0xFFFFFF, false);
+		widgets.addText(Component.literal("x" + this.grinds), this.getDisplayWidth() / 2 - 57, 65, 0xFFFFFF, true);
+		widgets.addText(Component.literal("x" + this.count), this.getDisplayWidth() / 2 + 1, 18, 0xFFFFFF, true);
 
 		widgets.addSlot(this.inputs.getFirst(), this.getDisplayWidth() / 2 - 18, 10).drawBack(false);
 		widgets.addSlot(this.catalysts.getFirst(), this.getDisplayWidth() / 2 + 26, 49).drawBack(false);
