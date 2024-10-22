@@ -8,11 +8,13 @@ import com.lance5057.butchercraft.workstations.hook.HookRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -20,13 +22,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 	public static final RecipeType<HookRecipe> TYPE = RecipeType.create(Butchercraft.MOD_ID, "hook", HookRecipe.class);
-	private final IDrawable background;
 	private final Component localizedName;
 	private final IDrawable icon;
 
 	public MeatHookRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 78,
-				144, 144);
 		localizedName = Component.translatable("Butchercraft.jei.hook");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ButchercraftItems.HOOK_BLOCK_ITEM.get()));
@@ -43,8 +42,13 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 	}
 
 	@Override
-	public IDrawable getBackground() {
-		return background;
+	public int getWidth() {
+		return 144;
+	}
+
+	@Override
+	public int getHeight() {
+		return 144;
 	}
 
 	@Override
@@ -63,7 +67,7 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 		int c = 0;
 		int placementW = 0;
 
-		builder.addSlot(RecipeIngredientRole.INPUT, (this.getBackground().getWidth() / 2 - 8), 65)
+		builder.addSlot(RecipeIngredientRole.INPUT, (this.getWidth() / 2 - 8), 65)
 				.addIngredients(recipe.carcass());
 
 		for (AnimatedRecipeItemUse a : recipe.tools()) {
@@ -86,5 +90,10 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 				c = 0;
 			}
 		}
+	}
+
+	@Override
+	public void draw(HookRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+		guiGraphics.blit(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 0, 0, 78, 144, 144);
 	}
 }

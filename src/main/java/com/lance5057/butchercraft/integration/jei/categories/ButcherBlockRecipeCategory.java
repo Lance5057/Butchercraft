@@ -8,11 +8,13 @@ import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -21,13 +23,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 public class ButcherBlockRecipeCategory implements IRecipeCategory<ButcherBlockRecipe> {
 	public static final RecipeType<ButcherBlockRecipe> TYPE = RecipeType.create(Butchercraft.MOD_ID, "butcher_block",
 			ButcherBlockRecipe.class);
-	private final IDrawable background;
 	private final Component localizedName;
 	private final IDrawable icon;
 
 	public ButcherBlockRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createDrawable(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 108,
-				78, 144, 144);
 		localizedName = Component.translatable("Butchercraft.jei.butcherblock");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get()));
@@ -44,8 +43,13 @@ public class ButcherBlockRecipeCategory implements IRecipeCategory<ButcherBlockR
 	}
 
 	@Override
-	public IDrawable getBackground() {
-		return background;
+	public int getWidth() {
+		return 144;
+	}
+
+	@Override
+	public int getHeight() {
+		return 144;
 	}
 
 	@Override
@@ -63,7 +67,7 @@ public class ButcherBlockRecipeCategory implements IRecipeCategory<ButcherBlockR
 		int placementW = 0;
 		int c = 0;
 
-		builder.addSlot(RecipeIngredientRole.INPUT, (this.getBackground().getWidth() / 2 - 8), 40)
+		builder.addSlot(RecipeIngredientRole.INPUT, (this.getWidth() / 2 - 8), 40)
 				.addIngredients(recipe.carcass());
 
 		for (AnimatedRecipeItemUse a : recipe.tools()) {
@@ -92,5 +96,10 @@ public class ButcherBlockRecipeCategory implements IRecipeCategory<ButcherBlockR
 				c = 0;
 			}
 		}
+	}
+
+	@Override
+	public void draw(ButcherBlockRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+		guiGraphics.blit(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 0, 108, 78, 144, 144);
 	}
 }
