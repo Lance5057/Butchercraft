@@ -33,16 +33,10 @@ public class GlovesModel extends HumanoidModel<LivingEntity> {
 
 		partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.ZERO);
 		partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(16, 0).addBox(-1.5F, -2.0F, -2.0F,
-				4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+				4.0F, 12.0F, 4.0F, new CubeDeformation(0.65F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 		partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create().mirror().texOffs(16, 0).addBox(-2.5F,
-				-2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+				-2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.65F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		return meshdefinition;
-	}
-
-	@Override
-	public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
-			float netHeadYaw, float headPitch) {
-		rightLeg.visible = true;
 	}
 }

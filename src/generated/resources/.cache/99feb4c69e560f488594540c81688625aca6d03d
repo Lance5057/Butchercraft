@@ -1,4 +1,4 @@
-// 1.21	2024-10-04T11:36:19.3867079	Tags for minecraft:item mod id butchercraft
+// 1.21.1	2024-10-22T20:32:09.8100865	Tags for minecraft:item mod id butchercraft
 30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/item/chicken_carcass.json
 ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/item/cow_carcass.json
 66da3e39032bb6edf49b68f597c0d5f9b7cb5166 data/butchercraft/tags/item/gelatin_provider.json
@@ -8,7 +8,7 @@ ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/item/cow_carcass
 ba91febf26e7f478d42fd17fe7cdb3313be8f1c2 data/butchercraft/tags/item/rabbit_carcass.json
 0e3627197ab0855eec5ca3eaee114fd6aed5ef68 data/butchercraft/tags/item/sausage_casing.json
 08ddda1e7c354e6560543656eaf127f5d0a55af0 data/butchercraft/tags/item/sheep_carcass.json
-cd09d0bd2502f17520be606eac462355e2cedb8d data/c/tags/item/slimeballs.json
+cd09d0bd2502f17520be606eac462355e2cedb8d data/c/tags/item/slime_balls.json
 c67f57f80b8d9192f9f4b901ee868ead87fbe3cb data/c/tags/item/strings.json
 4d14da7bfe744c1214acbc992e7c84590b6bae0c data/forge/tags/item/beef.json
 7c34feb7999db0080e990e60acb78469847f4027 data/forge/tags/item/beef/cooked.json

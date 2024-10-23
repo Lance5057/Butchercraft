@@ -203,6 +203,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 							setupStage(recipe, stage + 1);
 						}
 
+						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
 						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1, 1);
 					} else {
 						if (butcheringTool.isDamageableItem())
@@ -216,6 +217,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 									worldPosition.getY() - 0.5f - level.random.nextDouble(),
 									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
+						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
 						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1, 1);
 
 					}

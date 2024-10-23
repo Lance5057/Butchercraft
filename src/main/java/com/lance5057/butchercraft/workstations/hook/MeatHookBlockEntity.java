@@ -130,7 +130,8 @@ public class MeatHookBlockEntity extends BlockEntity {
 				boolean recipeWithInputExists = false;
 				if (level != null) {
 					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
-							.filter(recipe -> recipe.value() instanceof HookRecipe).map(recipe -> (HookRecipe) recipe.value())
+							.filter(recipe -> recipe.value() instanceof HookRecipe)
+							.map(recipe -> (HookRecipe) recipe.value())
 							.anyMatch(hookRecipe -> hookRecipe.carcass().test(stack));
 				}
 				return recipeWithInputExists && super.isItemValid(slot, stack);
@@ -202,6 +203,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 							setupStage(recipe, stage + 1);
 						}
 
+						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
 						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1, 1);
 					} else {
 						if (butcheringTool.isDamageableItem())
@@ -215,6 +217,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 									worldPosition.getY() - 0.5f - level.random.nextDouble(),
 									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
+						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
 						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1, 1);
 
 					}
@@ -224,15 +227,13 @@ public class MeatHookBlockEntity extends BlockEntity {
 				if (boots.getItem() instanceof BootsItem)
 					boots.hurtAndBreak(1, p, EquipmentSlot.FEET);
 				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL, 3600, 0, false, false,
-							true));
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL, 3600, 0, false, false, true));
 
 				ItemStack apron = p.getInventory().getArmor(1);
 				if (apron.getItem() instanceof ApronItem)
 					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
 				else
-					p.addEffect(
-							new MobEffectInstance(ButchercraftMobEffects.BLOODY, 3600, 0, false, false, true));
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODY, 3600, 0, false, false, true));
 
 				ItemStack gloves = p.getInventory().getArmor(2);
 				if (gloves.getItem() instanceof GlovesItem)
@@ -244,8 +245,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 				if (mask.getItem() instanceof MaskItem)
 					mask.hurtAndBreak(1, p, EquipmentSlot.HEAD);
 				else
-					p.addEffect(
-							new MobEffectInstance(ButchercraftMobEffects.STINKY, 3600, 0, false, false, true));
+					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.STINKY, 3600, 0, false, false, true));
 
 				this.updateInventory();
 				return ItemInteractionResult.SUCCESS;
@@ -261,11 +261,12 @@ public class MeatHookBlockEntity extends BlockEntity {
 			final LootParams pParams = new LootParams.Builder((ServerLevel) level)
 					.withParameter(LootContextParams.TOOL, player.getMainHandItem())
 					.withParameter(LootContextParams.THIS_ENTITY, player)
-					.withLuck(
-							player.getLuck() + player.getMainHandItem().getEnchantmentLevel(player.registryAccess().holderOrThrow(Enchantments.FORTUNE)))
+					.withLuck(player.getLuck() + player.getMainHandItem()
+							.getEnchantmentLevel(player.registryAccess().holderOrThrow(Enchantments.FORTUNE)))
 					.create(LootContextParamSets.EMPTY);
-			player.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, recipeToolsIn.lootTable())).getRandomItems(pParams)
-					.forEach(itemStack -> {
+			player.getServer().reloadableRegistries()
+					.getLootTable(ResourceKey.create(Registries.LOOT_TABLE, recipeToolsIn.lootTable()))
+					.getRandomItems(pParams).forEach(itemStack -> {
 //						if (player.isCrouching())
 						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
 								getBlockPos().getY() - 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
