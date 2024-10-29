@@ -5,7 +5,7 @@
   },
   "grinds": 16,
   "ingredient": {
-    "tag": "forge:ground_meat/raw"
+    "tag": "c:ground_meat/raw"
   },
   "ingredientCount": 8,
   "result": {

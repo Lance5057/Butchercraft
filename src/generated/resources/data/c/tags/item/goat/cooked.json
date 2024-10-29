@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:goat/ribs/cooked",
+    "#c:goat/roast/cooked",
+    "#c:goat/cubed/cooked",
+    "#c:goat/scrap/cooked",
+    "#c:goat/stew/cooked",
+    "butchercraft:cooked_goat_chop"
+  ]
+}

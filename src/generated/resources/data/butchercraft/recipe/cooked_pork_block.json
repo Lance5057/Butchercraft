@@ -5,7 +5,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"
@@ -14,7 +14,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"
@@ -23,7 +23,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"
@@ -32,7 +32,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"
@@ -41,7 +41,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"
@@ -50,7 +50,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"
@@ -59,7 +59,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"
@@ -68,7 +68,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"
@@ -77,7 +77,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:pork/cooked"
+        "tag": "c:pork/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_pork"

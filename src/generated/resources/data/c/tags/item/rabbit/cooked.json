@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#c:rabbit/saddle/cooked",
+    "#c:rabbit/thigh/cooked",
+    "#c:rabbit/leg/cooked",
+    "#c:rabbit/cubed/cooked",
+    "#c:rabbit/scrap/cooked",
+    "#c:rabbit/stew/cooked",
+    "minecraft:cooked_rabbit"
+  ]
+}

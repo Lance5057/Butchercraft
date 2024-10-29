@@ -3,22 +3,22 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
-      "tag": "forge:ground_meat/raw"
+      "tag": "c:ground_meat/raw"
     },
     {
       "item": "butchercraft:fat"

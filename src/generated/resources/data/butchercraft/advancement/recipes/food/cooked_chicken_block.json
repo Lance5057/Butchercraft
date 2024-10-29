@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:chicken/cooked"
+            "items": "#c:chicken/cooked"
           }
         ]
       },

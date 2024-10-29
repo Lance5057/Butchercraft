@@ -5,7 +5,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"
@@ -14,7 +14,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"
@@ -23,7 +23,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"
@@ -32,7 +32,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"
@@ -41,7 +41,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"
@@ -50,7 +50,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"
@@ -59,7 +59,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"
@@ -68,7 +68,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"
@@ -77,7 +77,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:rabbit/raw"
+        "tag": "c:rabbit/raw"
       },
       "subtracted": {
         "item": "butchercraft:ground_rabbit"

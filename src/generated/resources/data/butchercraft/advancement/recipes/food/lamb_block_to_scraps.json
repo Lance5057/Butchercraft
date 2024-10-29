@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:mutton/raw"
+            "items": "#c:mutton/raw"
           }
         ]
       },

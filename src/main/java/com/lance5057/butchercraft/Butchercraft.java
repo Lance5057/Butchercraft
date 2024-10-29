@@ -16,7 +16,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 public class Butchercraft {
 
 	public final static String MOD_ID = "butchercraft";
-	public static final String VERSION = "2.6.1";
+	public static final String VERSION = "2.6.2";
 
 	public static Logger logger = LogManager.getLogger();
 

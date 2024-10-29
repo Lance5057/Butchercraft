@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#c:rabbit/saddle/raw",
+    "#c:rabbit/thigh/raw",
+    "#c:rabbit/leg/raw",
+    "#c:rabbit/cubed/raw",
+    "#c:rabbit/scrap/raw",
+    "#c:rabbit/stew/raw",
+    "minecraft:rabbit"
+  ]
+}

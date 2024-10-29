@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#c:chicken/breast/cooked",
+    "#c:chicken/thigh/cooked",
+    "#c:chicken/leg/cooked",
+    "#c:chicken/wing/cooked",
+    "#c:chicken/cubed/cooked",
+    "#c:chicken/scrap/cooked",
+    "#c:chicken/stew/cooked",
+    "minecraft:cooked_chicken"
+  ]
+}

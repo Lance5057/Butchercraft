@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:pork/ribs/raw",
+    "#c:pork/roast/raw",
+    "#c:pork/cubed/raw",
+    "#c:pork/scrap/raw",
+    "#c:pork/stew/raw",
+    "minecraft:porkchop"
+  ]
+}

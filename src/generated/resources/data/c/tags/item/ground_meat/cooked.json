@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:beef/ground/cooked",
+    "#c:mutton/ground/cooked",
+    "#c:pork/ground/cooked",
+    "#c:chicken/ground/cooked",
+    "#c:rabbit/ground/cooked",
+    "#c:goat/ground/cooked"
+  ]
+}

@@ -5,7 +5,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"
@@ -14,7 +14,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"
@@ -23,7 +23,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"
@@ -32,7 +32,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"
@@ -41,7 +41,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"
@@ -50,7 +50,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"
@@ -59,7 +59,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"
@@ -68,7 +68,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"
@@ -77,7 +77,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:goat/cooked"
+        "tag": "c:goat/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_goat"

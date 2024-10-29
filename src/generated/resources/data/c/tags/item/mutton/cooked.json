@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:mutton/ribs/cooked",
+    "#c:mutton/roast/cooked",
+    "#c:mutton/cubed/cooked",
+    "#c:mutton/scrap/cooked",
+    "#c:mutton/stew/cooked",
+    "minecraft:cooked_mutton"
+  ]
+}

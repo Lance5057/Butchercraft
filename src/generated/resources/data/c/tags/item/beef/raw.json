@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:beef/ribs/raw",
+    "#c:beef/roast/raw",
+    "#c:beef/cubed/raw",
+    "#c:beef/scrap/raw",
+    "#c:beef/stew/raw",
+    "minecraft:beef"
+  ]
+}

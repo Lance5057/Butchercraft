@@ -5,7 +5,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"
@@ -14,7 +14,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"
@@ -23,7 +23,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"
@@ -32,7 +32,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"
@@ -41,7 +41,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"
@@ -50,7 +50,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"
@@ -59,7 +59,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"
@@ -68,7 +68,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"
@@ -77,7 +77,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:beef/cooked"
+        "tag": "c:beef/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_beef"

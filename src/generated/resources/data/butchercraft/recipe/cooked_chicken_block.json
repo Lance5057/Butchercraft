@@ -5,7 +5,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"
@@ -14,7 +14,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"
@@ -23,7 +23,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"
@@ -32,7 +32,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"
@@ -41,7 +41,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"
@@ -50,7 +50,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"
@@ -59,7 +59,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"
@@ -68,7 +68,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"
@@ -77,7 +77,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:chicken/cooked"
+        "tag": "c:chicken/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_chicken"

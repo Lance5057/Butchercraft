@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#c:chicken/breast/raw",
+    "#c:chicken/thigh/raw",
+    "#c:chicken/leg/raw",
+    "#c:chicken/wing/raw",
+    "#c:chicken/cubed/raw",
+    "#c:chicken/scrap/raw",
+    "#c:chicken/stew/raw",
+    "minecraft:chicken"
+  ]
+}

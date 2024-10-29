@@ -5,7 +5,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"
@@ -14,7 +14,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"
@@ -23,7 +23,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"
@@ -32,7 +32,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"
@@ -41,7 +41,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"
@@ -50,7 +50,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"
@@ -59,7 +59,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"
@@ -68,7 +68,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"
@@ -77,7 +77,7 @@
     {
       "type": "neoforge:difference",
       "base": {
-        "tag": "forge:mutton/cooked"
+        "tag": "c:mutton/cooked"
       },
       "subtracted": {
         "item": "butchercraft:cooked_ground_lamb"

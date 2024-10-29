@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#forge:beef/raw"
+            "items": "#c:beef/raw"
           }
         ]
       },
