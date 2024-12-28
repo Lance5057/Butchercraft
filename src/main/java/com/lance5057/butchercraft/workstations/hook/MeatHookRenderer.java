@@ -27,12 +27,12 @@ public class MeatHookRenderer implements BlockEntityRenderer<MeatHookBlockEntity
 			pPoseStack.pushPose();
 			pPoseStack.translate(0.5f, -1, 0.5f);
 			Quaternionf q = pBlockEntity.getBlockState().getValue(HorizontalDirectionalBlock.FACING).getRotation();
-			
+
 			pPoseStack.mulPose(q);
-			pPoseStack.mulPose(RenderUtil.createQuaternion(-90,0,0,true));
-			
+			pPoseStack.mulPose(RenderUtil.createQuaternion(-90, 0, 0, true));
+
 			pPoseStack.translate(-0.5f, 0, -0.5f);
-			
+
 			pBlockEntity.getCurrentTool().ifPresent(animatedRecipeItemUse -> animatedRecipeItemUse.model().forEach(
 					b -> RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer)));
 			pPoseStack.popPose();
@@ -52,9 +52,14 @@ public class MeatHookRenderer implements BlockEntityRenderer<MeatHookBlockEntity
 
 	@Override
 	public boolean shouldRender(MeatHookBlockEntity pBlockEntity, Vec3 pCameraPos) {
-		// return Vec3.atCenterOf(pBlockEntity.getBlockPos()).closerThan(pCameraPos,
-		// (double) this.getViewDistance());
 		return true;
+	}
+
+	@Override
+	public net.minecraft.world.phys.AABB getRenderBoundingBox(MeatHookBlockEntity blockEntity) {
+		net.minecraft.core.BlockPos pos = blockEntity.getBlockPos();
+		return new net.minecraft.world.phys.AABB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1.0, pos.getY() - 3,
+				pos.getZ() + 1.0);
 	}
 
 }

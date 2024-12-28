@@ -75,22 +75,28 @@ public class BlockModels extends BlockStateProvider {
 
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_BLACK_RABBIT_BLOCK.get(),
 				models().withExistingParent("taxidermy_black_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/black")));
+						mcLoc("entity/rabbit/black")).texture("particle",
+								mcLoc("entity/rabbit/black")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_BROWN_RABBIT_BLOCK.get(),
 				models().withExistingParent("taxidermy_brown_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/brown")));
+						mcLoc("entity/rabbit/brown")).texture("particle",
+								mcLoc("entity/rabbit/brown")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_GOLD_RABBIT_BLOCK.get(),
 				models().withExistingParent("taxidermy_gold_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/gold")));
+						mcLoc("entity/rabbit/gold")).texture("particle",
+								mcLoc("entity/rabbit/gold")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_SALT_RABBIT_BLOCK.get(),
 				models().withExistingParent("taxidermy_salt_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/salt")));
+						mcLoc("entity/rabbit/salt")).texture("particle",
+								mcLoc("entity/rabbit/salt")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get(),
 				models().withExistingParent("taxidermy_splotched_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/white_splotched")));
+						mcLoc("entity/rabbit/white_splotched")).texture("particle",
+								mcLoc("entity/rabbit/white_splotched")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_WHITE_RABBIT_BLOCK.get(),
 				models().withExistingParent("taxidermy_white_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/white")));
+						mcLoc("entity/rabbit/white")).texture("particle",
+								mcLoc("entity/rabbit/white")));
 
 		this.simpleBlock(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get());

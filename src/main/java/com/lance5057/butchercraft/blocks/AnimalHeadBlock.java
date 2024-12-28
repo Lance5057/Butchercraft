@@ -1,7 +1,5 @@
 package com.lance5057.butchercraft.blocks;
 
-import com.lance5057.butchercraft.ButchercraftBlockEntities;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.SkullBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -47,14 +45,14 @@ public class AnimalHeadBlock extends SkullBlock {
 		}
 	}
 
-	@Override
-	public BlockEntity newBlockEntity(final BlockPos blockPos, final BlockState blockState) {
-		return new SkullBlockEntity(blockPos, blockState) {
-
-			@Override
-			public BlockEntityType<?> getType() {
-				return ButchercraftBlockEntities.SKULL.get();
-			}
-		};
-	}
+//	@Override
+//	public BlockEntity newBlockEntity(final BlockPos blockPos, final BlockState blockState) {
+//		return new SkullBlockEntity(blockPos, blockState) {
+//
+//			@Override
+//			public BlockEntityType<?> getType() {
+//				return BlockEntityType.SKULL;
+//			}
+//		};
+//	}
 }

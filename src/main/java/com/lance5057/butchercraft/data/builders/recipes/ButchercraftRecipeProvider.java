@@ -1379,6 +1379,46 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_leather", has(ButchercraftItems.LEATHER_SCRAP.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "leather_from_scrap"));
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL)
+				.requires(Ingredient.of(ButchercraftItemTags.GELATIN), 1).requires(Ingredient.of(Items.WATER_BUCKET), 1)
+				.unlockedBy("has_leather", has(ButchercraftItemTags.GELATIN))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "slimeball_from_gelatin"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL, 2)
+				.requires(Ingredient.of(ButchercraftItemTags.GELATIN), 2).requires(Ingredient.of(Items.WATER_BUCKET), 1)
+				.unlockedBy("has_leather", has(ButchercraftItemTags.GELATIN))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "slimeball_from_gelatin_2"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL, 3)
+				.requires(Ingredient.of(ButchercraftItemTags.GELATIN), 3).requires(Ingredient.of(Items.WATER_BUCKET), 1)
+				.unlockedBy("has_leather", has(ButchercraftItemTags.GELATIN))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "slimeball_from_gelatin_3"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL, 4)
+				.requires(Ingredient.of(ButchercraftItemTags.GELATIN), 4).requires(Ingredient.of(Items.WATER_BUCKET), 1)
+				.unlockedBy("has_leather", has(ButchercraftItemTags.GELATIN))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "slimeball_from_gelatin_4"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL, 5)
+				.requires(Ingredient.of(ButchercraftItemTags.GELATIN), 5).requires(Ingredient.of(Items.WATER_BUCKET), 1)
+				.unlockedBy("has_leather", has(ButchercraftItemTags.GELATIN))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "slimeball_from_gelatin_5"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL, 6)
+				.requires(Ingredient.of(ButchercraftItemTags.GELATIN), 6).requires(Ingredient.of(Items.WATER_BUCKET), 1)
+				.unlockedBy("has_leather", has(ButchercraftItemTags.GELATIN))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "slimeball_from_gelatin_6"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL, 7)
+				.requires(Ingredient.of(ButchercraftItemTags.GELATIN), 7).requires(Ingredient.of(Items.WATER_BUCKET), 1)
+				.unlockedBy("has_leather", has(ButchercraftItemTags.GELATIN))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "slimeball_from_gelatin_7"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL, 8)
+				.requires(Ingredient.of(ButchercraftItemTags.GELATIN), 8).requires(Ingredient.of(Items.WATER_BUCKET), 1)
+				.unlockedBy("has_leather", has(ButchercraftItemTags.GELATIN))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "slimeball_from_gelatin_8"));
+
 		createFoodRecipe(Ingredient.of(ButchercraftItems.BRAIN.get()), ButchercraftItems.COOKED_BRAIN.get(), consumer);
 		createFoodRecipe(Ingredient.of(ButchercraftItems.HEART.get()), ButchercraftItems.COOKED_HEART.get(), consumer);
 		createFoodRecipe(Ingredient.of(ButchercraftItems.KIDNEY.get()), ButchercraftItems.COOKED_KIDNEY.get(),

@@ -8,6 +8,7 @@ import com.lance5057.butchercraft.data.builders.Advancements;
 import com.lance5057.butchercraft.data.builders.BlockModels;
 import com.lance5057.butchercraft.data.builders.BlockTagGenerator;
 import com.lance5057.butchercraft.data.builders.ButchercraftEntityTypeTagsProvider;
+import com.lance5057.butchercraft.data.builders.ButchercraftFluidTagGenerator;
 import com.lance5057.butchercraft.data.builders.ButchercraftLootTableProvider;
 import com.lance5057.butchercraft.data.builders.EnglishLoc;
 import com.lance5057.butchercraft.data.builders.ItemModels;
@@ -45,6 +46,7 @@ public class DataGen {
 		BlockTagGenerator btg = new BlockTagGenerator(output, lookupProvider, existingFileHelper);
 		generator.addProvider(true, btg);
 		generator.addProvider(true, new ItemTagGenerator(output, lookupProvider, btg.contentsGetter(), existingFileHelper));
+		generator.addProvider(true, new ButchercraftFluidTagGenerator(output, lookupProvider, existingFileHelper));
 
 		generator.addProvider(true, new ButchercraftRecipeProvider(output, lookupProvider));
 		generator.addProvider(true, new ButchercraftLootTableProvider(output, lookupProvider));

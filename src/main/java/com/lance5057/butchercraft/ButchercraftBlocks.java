@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -29,6 +30,19 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ButchercraftBlocks {
+
+	public static void setup() {
+		FireBlock fire = (FireBlock) Blocks.FIRE;
+
+		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_BLOCK.get(), 5, 20);
+//		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_DOOR.get(), 5, 20);
+		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_FENCE.get(), 5, 20);
+		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_FENCE_GATE.get(), 5, 20);
+		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_SLAB.get(), 5, 20);
+		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_STAIRS.get(), 5, 20);
+		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_TRAPDOOR.get(), 5, 20);
+		fire.setFlammable(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(), 5, 20);
+	}
 
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Butchercraft.MOD_ID);
 

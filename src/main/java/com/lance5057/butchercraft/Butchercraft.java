@@ -11,19 +11,23 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod(Butchercraft.MOD_ID)
 public class Butchercraft {
 
 	public final static String MOD_ID = "butchercraft";
-	public static final String VERSION = "2.6.2";
+	public static final String VERSION = "2.6.3";
 
 	public static Logger logger = LogManager.getLogger();
 
 	public Butchercraft(IEventBus modEventBus, ModContainer container) {
 		modEventBus.addListener(this::setupClient);
+		modEventBus.addListener(this::setupCommon);
 
 		container.registerConfig(ModConfig.Type.COMMON, ButchercraftConfig.spec);
+
+		modEventBus.addListener(ButchercraftBlockEntities::addSkulls);
 
 		BCArmorMaterial.register(modEventBus);
 		ButchercraftBlocks.register(modEventBus);
@@ -43,6 +47,10 @@ public class Butchercraft {
 			ButchercraftVillagers.fillTradeData();
 
 		});
+	}
+
+	public void setupCommon(FMLCommonSetupEvent event) {
+		ButchercraftBlocks.setup();
 	}
 
 }

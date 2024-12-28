@@ -1,6 +1,7 @@
 {
   "parent": "butchercraft:block/rabbit",
   "textures": {
-    "0": "minecraft:entity/rabbit/white_splotched"
+    "0": "minecraft:entity/rabbit/white_splotched",
+    "particle": "minecraft:entity/rabbit/white_splotched"
   }
 }

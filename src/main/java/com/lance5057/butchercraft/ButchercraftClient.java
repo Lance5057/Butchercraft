@@ -43,8 +43,8 @@ public class ButchercraftClient {
 		BlockEntityRenderers.register(ButchercraftBlockEntities.GRINDER.get(), GrinderRenderer::new);
 		BlockEntityRenderers.register(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), ButcherBlockRenderer::new);
 
-		BlockEntityRenderers.register(ButchercraftBlockEntities.SKULL.get(), SkullBlockRenderer::new);
-		BlockEntityRenderers.register(ButchercraftBlockEntities.WALL_SKULL.get(), SkullBlockRenderer::new);
+//		BlockEntityRenderers.register(ButchercraftBlockEntities.SKULL.get(), SkullBlockRenderer::new);
+//		BlockEntityRenderers.register(ButchercraftBlockEntities.WALL_SKULL.get(), SkullBlockRenderer::new);
 	}
 
 	@SubscribeEvent
