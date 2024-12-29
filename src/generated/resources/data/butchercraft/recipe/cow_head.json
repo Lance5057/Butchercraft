@@ -30,6 +30,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/cow_head",
       "models": [
         {

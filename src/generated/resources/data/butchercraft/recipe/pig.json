@@ -66,6 +66,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/blood_bucket",
       "models": [
         {
@@ -151,6 +152,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/blood_bucket",
       "models": [
         {
@@ -236,6 +238,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/skin_pig",
       "models": [
         {
@@ -321,6 +324,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/bisect_pig",
       "models": [
         {
@@ -406,6 +410,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/disembowel_pig",
       "models": [
         {
@@ -491,6 +496,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/butcher_pig",
       "models": [
         {

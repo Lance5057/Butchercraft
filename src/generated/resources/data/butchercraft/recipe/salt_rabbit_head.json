@@ -27,6 +27,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/salt_rabbit_head",
       "models": [
         {

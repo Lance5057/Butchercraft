@@ -5,17 +5,15 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
-import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.ButchercraftRecipes;
-import com.lance5057.butchercraft.armor.ApronItem;
-import com.lance5057.butchercraft.armor.BootsItem;
-import com.lance5057.butchercraft.armor.GlovesItem;
-import com.lance5057.butchercraft.armor.MaskItem;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder.Reference;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
@@ -25,6 +23,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -169,14 +168,6 @@ public class MeatHookBlockEntity extends BlockEntity {
 	public void updateInventory() {
 		requestModelDataUpdate();
 		this.setChanged();
-		if (this.getLevel() != null) {
-			getLevel().setBlock(getBlockPos(),
-					getBlockState().setValue(MeatHookBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
-					Block.UPDATE_ALL);
-			this.getLevel().sendBlockUpdated(this.worldPosition, this.getBlockState(),
-					this.getBlockState().setValue(MeatHookBlock.CARCASS_HOOKED, !getInsertedItem().isEmpty()),
-					Block.UPDATE_ALL);
-		}
 	}
 
 	public ItemInteractionResult butcher(Player p, ItemStack butcheringTool) {
@@ -197,9 +188,11 @@ public class MeatHookBlockEntity extends BlockEntity {
 						if (isFinalStage(recipe)) {
 
 							dropLoot(recipe.tools().get(stage), p);
+							this.inflictEffects(p, recipe.tools().get(stage));
 							this.finishRecipe();
 						} else {
 							dropLoot(recipe.tools().get(stage), p);
+							this.inflictEffects(p, recipe.tools().get(stage));
 							setupStage(recipe, stage + 1);
 						}
 
@@ -223,29 +216,29 @@ public class MeatHookBlockEntity extends BlockEntity {
 					}
 				}
 
-				ItemStack boots = p.getInventory().getArmor(0);
-				if (boots.getItem() instanceof BootsItem)
-					boots.hurtAndBreak(1, p, EquipmentSlot.FEET);
-				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL, 3600, 0, false, false, true));
-
-				ItemStack apron = p.getInventory().getArmor(1);
-				if (apron.getItem() instanceof ApronItem)
-					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
-				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODY, 3600, 0, false, false, true));
-
-				ItemStack gloves = p.getInventory().getArmor(2);
-				if (gloves.getItem() instanceof GlovesItem)
-					gloves.hurtAndBreak(1, p, EquipmentSlot.CHEST);
-				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY, 3600, 0, false, false, true));
-
-				ItemStack mask = p.getInventory().getArmor(3);
-				if (mask.getItem() instanceof MaskItem)
-					mask.hurtAndBreak(1, p, EquipmentSlot.HEAD);
-				else
-					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.STINKY, 3600, 0, false, false, true));
+//				ItemStack boots = p.getInventory().getArmor(0);
+//				if (boots.getItem() instanceof BootsItem)
+//					boots.hurtAndBreak(1, p, EquipmentSlot.FEET);
+//				else
+//					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL, 3600, 0, false, false, true));
+//
+//				ItemStack apron = p.getInventory().getArmor(1);
+//				if (apron.getItem() instanceof ApronItem)
+//					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
+//				else
+//					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODY, 3600, 0, false, false, true));
+//
+//				ItemStack gloves = p.getInventory().getArmor(2);
+//				if (gloves.getItem() instanceof GlovesItem)
+//					gloves.hurtAndBreak(1, p, EquipmentSlot.CHEST);
+//				else
+//					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY, 3600, 0, false, false, true));
+//
+//				ItemStack mask = p.getInventory().getArmor(3);
+//				if (mask.getItem() instanceof MaskItem)
+//					mask.hurtAndBreak(1, p, EquipmentSlot.HEAD);
+//				else
+//					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.STINKY, 3600, 0, false, false, true));
 
 				this.updateInventory();
 				return ItemInteractionResult.SUCCESS;
@@ -280,8 +273,20 @@ public class MeatHookBlockEntity extends BlockEntity {
 		}
 	}
 
+	private void inflictEffects(Player player, AnimatedRecipeItemUse recipeToolsIn) {
+		for (RecipeMobEffect r : recipeToolsIn.effects()) {
+			Optional<Reference<MobEffect>> e = BuiltInRegistries.MOB_EFFECT.getHolder(r.rc());
+			if (e.isPresent()) {
+				player.addEffect(new MobEffectInstance(e.get(), r.duration(), r.amplify()));
+			}
+		}
+	}
+
 	public void finishRecipe() {
 		inventory.setStackInSlot(0, ItemStack.EMPTY);
+		if (this.level.getBlockState(worldPosition).getBlock() instanceof MeatHookBlock b) {
+			b.removeBelow(level, worldPosition);
+		}
 	}
 
 	@Override
@@ -300,11 +305,6 @@ public class MeatHookBlockEntity extends BlockEntity {
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		// TODO: is this necessary?
-//		CompoundTag tag = new CompoundTag();
-//
-//		writeNBT(tag);
-
 		return ClientboundBlockEntityDataPacket.create(this);
 	}
 

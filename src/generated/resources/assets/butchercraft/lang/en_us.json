@@ -144,6 +144,8 @@
   "butchercraft.advancement.whole_rabbit.name": "Everything but the Squeak.",
   "butchercraft.advancement.whole_sheep.desc": "Eat every edible Cooked Mutton item.",
   "butchercraft.advancement.whole_sheep.name": "Everything but the Bleat.",
+  "butchercraft.block.butcherblock.no_space": "There isn't enough space to place this...",
+  "butchercraft.block.meathook.no_space": "There isn't enough space to hang this...",
   "butchercraft.butcherknife.rightclick": "Right click to slaughter.",
   "butchercraft.tooltip.grinder_tip": "For the Meat Grinder",
   "effect.butchercraft.blood_splatter": "Bloody",

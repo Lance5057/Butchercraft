@@ -45,6 +45,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/blood_bottle",
       "models": [
         {
@@ -130,6 +131,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/blood_bottle",
       "models": [
         {
@@ -215,6 +217,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -300,6 +303,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -385,6 +389,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -470,6 +475,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -555,6 +561,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -640,6 +647,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -725,6 +733,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/deoffal_chicken",
       "models": [
         {

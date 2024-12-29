@@ -69,6 +69,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/blood_bucket",
       "models": [
         {
@@ -154,6 +155,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/blood_bucket",
       "models": [
         {
@@ -239,6 +241,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/blood_bucket",
       "models": [
         {
@@ -324,6 +327,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/skin_cow",
       "models": [
         {
@@ -409,6 +413,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/delimb_cow",
       "models": [
         {
@@ -494,6 +499,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/deoffal_cow",
       "models": [
         {
@@ -579,6 +585,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/butcher_cow",
       "models": [
         {

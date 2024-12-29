@@ -1,7 +1,52 @@
 {
   "variants": {
-    "": {
+    "dummy=false,facing=east,waterlogged=false": {
       "model": "butchercraft:block/butcher_block"
+    },
+    "dummy=false,facing=east,waterlogged=true": {
+      "model": "butchercraft:block/butcher_block"
+    },
+    "dummy=false,facing=north,waterlogged=false": {
+      "model": "butchercraft:block/butcher_block"
+    },
+    "dummy=false,facing=north,waterlogged=true": {
+      "model": "butchercraft:block/butcher_block"
+    },
+    "dummy=false,facing=south,waterlogged=false": {
+      "model": "butchercraft:block/butcher_block"
+    },
+    "dummy=false,facing=south,waterlogged=true": {
+      "model": "butchercraft:block/butcher_block"
+    },
+    "dummy=false,facing=west,waterlogged=false": {
+      "model": "butchercraft:block/butcher_block"
+    },
+    "dummy=false,facing=west,waterlogged=true": {
+      "model": "butchercraft:block/butcher_block"
+    },
+    "dummy=true,facing=east,waterlogged=false": {
+      "model": "minecraft:block/air"
+    },
+    "dummy=true,facing=east,waterlogged=true": {
+      "model": "minecraft:block/air"
+    },
+    "dummy=true,facing=north,waterlogged=false": {
+      "model": "minecraft:block/air"
+    },
+    "dummy=true,facing=north,waterlogged=true": {
+      "model": "minecraft:block/air"
+    },
+    "dummy=true,facing=south,waterlogged=false": {
+      "model": "minecraft:block/air"
+    },
+    "dummy=true,facing=south,waterlogged=true": {
+      "model": "minecraft:block/air"
+    },
+    "dummy=true,facing=west,waterlogged=false": {
+      "model": "minecraft:block/air"
+    },
+    "dummy=true,facing=west,waterlogged=true": {
+      "model": "minecraft:block/air"
     }
   }
 }

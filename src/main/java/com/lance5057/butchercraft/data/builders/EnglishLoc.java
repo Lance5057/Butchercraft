@@ -21,7 +21,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("Butchercraft.jei.hook", "Meat Hook");
 		this.add("Butchercraft.jei.butcherblock", "Butcher Block");
 		this.add("Butchercraft.jei.grinder", "Meat Grinder");
-		
+		this.add("butchercraft.block.meathook.no_space", "There isn't enough space to hang this...");
+		this.add("butchercraft.block.butcherblock.no_space", "There isn't enough space to place this...");
+
 		this.add(Butchercraft.MOD_ID + ".tooltip.grinder_tip", "For the Meat Grinder");
 
 		this.add(ButchercraftItems.COOKED_BEEF_SCRAPS.get(), "Cooked Beef Scraps");
@@ -400,12 +402,12 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(Butchercraft.MOD_ID + ".advancement.blood.name", "For the Blood God!");
 		this.add(Butchercraft.MOD_ID + ".advancement.blood.desc", "Aquire a Bucket of Blood");
-		
+
 		this.add(Butchercraft.MOD_ID + ".advancement.barn_wood.name", "Target Practice");
 		this.add(Butchercraft.MOD_ID + ".advancement.barn_wood.desc", "Make some Barn Wood");
 
 		this.add(Butchercraft.MOD_ID + ".butcherknife.rightclick", "Right click to slaughter.");
-		
+
 		this.add("effect." + Butchercraft.MOD_ID + ".pungent_reek", "Pungent Reek");
 		this.add("effect." + Butchercraft.MOD_ID + ".dirty_hands", "Dirty Hands");
 		this.add("effect." + Butchercraft.MOD_ID + ".blood_splatter", "Bloody");

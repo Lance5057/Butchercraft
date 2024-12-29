@@ -2,6 +2,7 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -25,36 +26,22 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	public static final BooleanProperty CARCASS_HOOKED = BooleanProperty.create("carcass_hooked");
-	// TODO Maybe use double plant logic so that you can interact with bottom thirds
-	// of the block
-	protected static final VoxelShape AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	public static final BooleanProperty DUMMY = BooleanProperty.create("dummy");
 
 	public ButcherBlockBlock() {
 		super(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(3, 4).noOcclusion());
-		this.registerDefaultState(
-				this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(CARCASS_HOOKED, false));
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-		return state.getValue(CARCASS_HOOKED) ? AABB : super.getShape(state, worldIn, pos, context);
-	}
-
-	@Override
-	public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos,
-			CollisionContext pContext) {
-		return pState.getValue(CARCASS_HOOKED) ? AABB : super.getCollisionShape(pState, pLevel, pPos, pContext);
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(DUMMY, false));
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, WATERLOGGED, CARCASS_HOOKED);
+		builder.add(FACING, WATERLOGGED, DUMMY);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -69,20 +56,41 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 	}
 
 	@Override
-	protected ItemInteractionResult useItemOn(ItemStack heldMain, BlockState state, Level world, BlockPos blockPos, Player playerEntity, InteractionHand hand, BlockHitResult hitResult) {
-		BlockEntity entity = world.getBlockEntity(blockPos);
-		if (entity instanceof ButcherBlockBlockEntity te) {
-			if (playerEntity.isCrouching()) {
-				if (te.stage == 0 && te.progress == 0) {
-					te.extractItem(playerEntity);
-					return ItemInteractionResult.SUCCESS;
+	protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos,
+			CollisionContext context) {
+		return !state.getValue(DUMMY) ? state.getShape(level, pos) : Shapes.empty();
+	}
+
+	@Override
+	protected ItemInteractionResult useItemOn(ItemStack heldMain, BlockState state, Level world, BlockPos blockPos,
+			Player playerEntity, InteractionHand hand, BlockHitResult hitResult) {
+		if (!state.getValue(DUMMY)) {
+			BlockEntity entity = world.getBlockEntity(blockPos);
+			if (entity instanceof ButcherBlockBlockEntity te) {
+				if (playerEntity.isCrouching()) {
+					if (te.stage == 0 && te.progress == 0) {
+						te.extractItem(playerEntity);
+						removeAbove(world, blockPos);
+						return ItemInteractionResult.SUCCESS;
+					}
+				} else if (te.isEmpty()) {
+					if (isEmptyAbove(world, blockPos)) {
+						te.insertItem(heldMain);
+						placeAbove(world, state, blockPos);
+						return ItemInteractionResult.SUCCESS;
+					} else {
+						playerEntity.displayClientMessage(
+								Component.translatable("butchercraft.block.butcherblock.no_space"), true);
+						return ItemInteractionResult.CONSUME;
+					}
+
+				} else {
+					return te.butcher(playerEntity, heldMain);
 				}
-			} else if (te.getInsertedItem().isEmpty()) {
-				te.insertItem(heldMain);
-				return ItemInteractionResult.SUCCESS;
-			} else {
-				return te.butcher(playerEntity, heldMain);
 			}
+		} else {
+			return world.getBlockState(blockPos.below()).useItemOn(heldMain, world, playerEntity, hand,
+					hitResult.withPosition(blockPos.below()));
 		}
 
 		return ItemInteractionResult.CONSUME;
@@ -90,8 +98,42 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 	}
 
 	@Override
+	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock,
+			BlockPos neighborPos, boolean movedByPiston) {
+		super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);
+		if (!state.getValue(DUMMY)) {
+			BlockEntity entity = level.getBlockEntity(pos);
+			if (entity instanceof ButcherBlockBlockEntity te) {
+				if (!te.isEmpty())
+					placeAbove(level, state, pos);
+			}
+		} else {
+			level.getBlockState(pos.above()).handleNeighborChanged(level, neighborPos, neighborBlock, pos.above(),
+					movedByPiston);
+		}
+	}
+
+	boolean isEmptyAbove(Level level, BlockPos pos) {
+		if (!level.isEmptyBlock(pos.above()))
+			return false;
+		return true;
+	}
+
+	void placeAbove(Level level, BlockState state, BlockPos pos) {
+		if (level.isEmptyBlock(pos.above()))
+			level.setBlock(pos.above(), state.setValue(DUMMY, true), UPDATE_ALL);
+	}
+
+	void removeAbove(Level level, BlockPos pos) {
+		if (level.getBlockState(pos.above()).getBlock() instanceof ButcherBlockBlock)
+			level.destroyBlock(pos.above(), false);
+	}
+
+	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-		return new ButcherBlockBlockEntity(pPos, pState);
+		if (!pState.getValue(DUMMY))
+			return new ButcherBlockBlockEntity(pPos, pState);
+		return null;
 	}
 
 	@Override
@@ -100,6 +142,16 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()).setValue(WATERLOGGED,
 				ifluidstate.getType() == Fluids.WATER);
+	}
+
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+
+			removeAbove(level, pos);
+
+			super.onRemove(state, level, pos, newState, isMoving);
+		}
 	}
 
 }

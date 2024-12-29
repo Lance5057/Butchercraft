@@ -48,6 +48,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/blood_bottle",
       "models": [
         {
@@ -133,6 +134,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/blood_bottle",
       "models": [
         {
@@ -218,6 +220,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/skin_salt_rabbit",
       "models": [
         {
@@ -303,6 +306,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/gut_rabbit",
       "models": [
         {

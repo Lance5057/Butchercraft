@@ -21,6 +21,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/scrape_hide",
       "models": [
         {
@@ -107,6 +108,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:meat_hook/pig_leather",
       "models": [
         {

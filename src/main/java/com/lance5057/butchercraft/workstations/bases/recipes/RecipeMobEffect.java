@@ -1,0 +1,37 @@
+package com.lance5057.butchercraft.workstations.bases.recipes;
+
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.resources.ResourceLocation;
+
+public record RecipeMobEffect(ResourceLocation rc, int duration, int amplify) {
+
+	public static final Codec<RecipeMobEffect> CODEC = RecordCodecBuilder.create(inst -> inst
+			.group(ResourceLocation.CODEC.fieldOf("location").forGetter(RecipeMobEffect::rc),
+					Codec.INT.optionalFieldOf("duration", 100).forGetter(RecipeMobEffect::duration),
+					Codec.INT.optionalFieldOf("amplification", 1).forGetter(RecipeMobEffect::amplify))
+			.apply(inst, RecipeMobEffect::new));
+
+	public static final StreamCodec<RegistryFriendlyByteBuf, RecipeMobEffect> STREAM_CODEC = StreamCodec
+			.of(RecipeMobEffect::write, RecipeMobEffect::read);
+
+	public static RecipeMobEffect EMPTY = new RecipeMobEffect(ResourceLocation.fromNamespaceAndPath("", ""), 0, 0);
+
+	private static RecipeMobEffect read(RegistryFriendlyByteBuf buffer) {
+		ResourceLocation rc = buffer.readResourceLocation();
+
+		int dur = buffer.readInt();
+		int amp = buffer.readInt();
+
+		return new RecipeMobEffect(rc, dur, amp);
+	}
+
+	private static void write(RegistryFriendlyByteBuf buffer, RecipeMobEffect bm) {
+		buffer.writeResourceLocation(bm.rc);
+		buffer.writeInt(bm.duration);
+		buffer.writeInt(bm.amplify);
+	}
+}

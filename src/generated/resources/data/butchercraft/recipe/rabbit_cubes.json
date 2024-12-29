@@ -12,6 +12,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/rabbit_cubes",
       "models": [
         {

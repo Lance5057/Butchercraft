@@ -2,9 +2,12 @@ package com.lance5057.butchercraft.data.builders;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftBlocks;
+import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockBlock;
+import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
 
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class BlockModels extends BlockStateProvider {
@@ -17,10 +20,9 @@ public class BlockModels extends BlockStateProvider {
 	@Override
 	protected void registerStatesAndModels() {
 		// TODO Auto-generated method stub
-		this.horizontalBlock(ButchercraftBlocks.MEAT_HOOK.get(), models().getExistingFile(modLoc("block/meat_hook")));
+		this.meathookBlock(ButchercraftBlocks.MEAT_HOOK.get());
 
-		this.simpleBlock(ButchercraftBlocks.BUTCHER_BLOCK.get(),
-				models().getExistingFile(modLoc("block/butcher_block")));
+		this.butcherblockBlock(ButchercraftBlocks.BUTCHER_BLOCK.get());
 		this.horizontalBlock(ButchercraftBlocks.GRINDER.get(), models().getExistingFile(modLoc("block/grinder")));
 
 		this.simpleBlock(ButchercraftBlocks.BEEF_BLOCK.get());
@@ -74,29 +76,24 @@ public class BlockModels extends BlockStateProvider {
 				models().getExistingFile(modLoc("block/chicken")));
 
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_BLACK_RABBIT_BLOCK.get(),
-				models().withExistingParent("taxidermy_black_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/black")).texture("particle",
-								mcLoc("entity/rabbit/black")));
+				models().withExistingParent("taxidermy_black_rabbit", modLoc("block/rabbit"))
+						.texture("0", mcLoc("entity/rabbit/black")).texture("particle", mcLoc("entity/rabbit/black")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_BROWN_RABBIT_BLOCK.get(),
-				models().withExistingParent("taxidermy_brown_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/brown")).texture("particle",
-								mcLoc("entity/rabbit/brown")));
+				models().withExistingParent("taxidermy_brown_rabbit", modLoc("block/rabbit"))
+						.texture("0", mcLoc("entity/rabbit/brown")).texture("particle", mcLoc("entity/rabbit/brown")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_GOLD_RABBIT_BLOCK.get(),
-				models().withExistingParent("taxidermy_gold_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/gold")).texture("particle",
-								mcLoc("entity/rabbit/gold")));
+				models().withExistingParent("taxidermy_gold_rabbit", modLoc("block/rabbit"))
+						.texture("0", mcLoc("entity/rabbit/gold")).texture("particle", mcLoc("entity/rabbit/gold")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_SALT_RABBIT_BLOCK.get(),
-				models().withExistingParent("taxidermy_salt_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/salt")).texture("particle",
-								mcLoc("entity/rabbit/salt")));
+				models().withExistingParent("taxidermy_salt_rabbit", modLoc("block/rabbit"))
+						.texture("0", mcLoc("entity/rabbit/salt")).texture("particle", mcLoc("entity/rabbit/salt")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_SPLOTCHED_RABBIT_BLOCK.get(),
-				models().withExistingParent("taxidermy_splotched_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/white_splotched")).texture("particle",
-								mcLoc("entity/rabbit/white_splotched")));
+				models().withExistingParent("taxidermy_splotched_rabbit", modLoc("block/rabbit"))
+						.texture("0", mcLoc("entity/rabbit/white_splotched"))
+						.texture("particle", mcLoc("entity/rabbit/white_splotched")));
 		this.horizontalBlock(ButchercraftBlocks.TAXIDERMY_WHITE_RABBIT_BLOCK.get(),
-				models().withExistingParent("taxidermy_white_rabbit", modLoc("block/rabbit")).texture("0",
-						mcLoc("entity/rabbit/white")).texture("particle",
-								mcLoc("entity/rabbit/white")));
+				models().withExistingParent("taxidermy_white_rabbit", modLoc("block/rabbit"))
+						.texture("0", mcLoc("entity/rabbit/white")).texture("particle", mcLoc("entity/rabbit/white")));
 
 		this.simpleBlock(ButchercraftBlocks.BARN_WOOD_BLOCK.get());
 		this.simpleBlock(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get());
@@ -126,86 +123,74 @@ public class BlockModels extends BlockStateProvider {
 //						modLoc("block/t_trimmed_barn_wood_block")));
 //
 //		this.simpleBlock(ButchercraftBlocks.INNER_TRIMMED_BARN_WOOD_BLOCK.get());
-		
-		this.simpleBlock(ButchercraftBlocks.CHICKEN_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.CHICKEN_HEAD_WALL.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.CHICKEN_SKULL_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
+
+		this.simpleBlock(ButchercraftBlocks.CHICKEN_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.CHICKEN_HEAD_WALL.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.CHICKEN_SKULL_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.CHICKEN_SKULL_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.COW_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.COW_HEAD_WALL.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.COW_SKULL_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.COW_SKULL_HEAD_WALL.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.GOAT_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.GOAT_HEAD_WALL.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.GOAT_SKULL_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.GOAT_SKULL_HEAD_WALL.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.PIG_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.PIG_HEAD_WALL.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.PIG_SKULL_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.PIG_SKULL_HEAD_WALL.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.RABBIT_BLACK_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.COW_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.COW_HEAD_WALL.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.COW_SKULL_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.COW_SKULL_HEAD_WALL.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.GOAT_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.GOAT_HEAD_WALL.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.GOAT_SKULL_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.GOAT_SKULL_HEAD_WALL.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.PIG_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.PIG_HEAD_WALL.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.PIG_SKULL_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.PIG_SKULL_HEAD_WALL.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.RABBIT_BLACK_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.RABBIT_BLACK_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.RABBIT_BROWN_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.RABBIT_BROWN_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.RABBIT_BROWN_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.RABBIT_GOLD_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.RABBIT_GOLD_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.RABBIT_GOLD_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.RABBIT_SALT_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.RABBIT_SALT_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.RABBIT_SALT_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.RABBIT_SKULL_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.RABBIT_SKULL_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.RABBIT_SKULL_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.RABBIT_SPLOTCHED_HEAD.get(),
 				models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.RABBIT_SPLOTCHED_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.RABBIT_WHITE_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.RABBIT_WHITE_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.RABBIT_WHITE_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.SHEEP_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.SHEEP_HEAD_WALL.get(),
-				models().getExistingFile(mcLoc("block/skull")));
-		this.simpleBlock(ButchercraftBlocks.SHEEP_SKULL_HEAD.get(),
-				models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.SHEEP_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.SHEEP_HEAD_WALL.get(), models().getExistingFile(mcLoc("block/skull")));
+		this.simpleBlock(ButchercraftBlocks.SHEEP_SKULL_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.SHEEP_SKULL_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
 	}
 
-//	private void trimmedBlock(Block block, ResourceLocation rc) {
-//		getVariantBuilder(block).forAllStates(state -> {
-//			Direction dir = state.getValue(BlockStateProperties.FACING);
-//			return ConfiguredModel.builder()
-//					.modelFile(models()
-//							.getExistingFile(modLoc("block/barn_wood/trimmed_barn_wood_block_" + dir.toString())))
-//					.build();
-//
-//		});
-//
-//	}
+	public void meathookBlock(MeatHookBlock block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int dummy = state.getValue(MeatHookBlock.DUMMY);
+
+			if (dummy == 0)
+				return ConfiguredModel.builder().modelFile(models().getExistingFile(modLoc("block/meat_hook")))
+						.rotationY(((int) state.getValue(MeatHookBlock.FACING).toYRot() + 180) % 360).build();
+			else
+				return ConfiguredModel.builder().modelFile(models().getExistingFile(mcLoc("block/air"))).build();
+		});
+	}
+
+	public void butcherblockBlock(ButcherBlockBlock block) {
+		getVariantBuilder(block).forAllStates(state -> {
+			boolean dummy = state.getValue(ButcherBlockBlock.DUMMY);
+
+			if (!dummy)
+				return ConfiguredModel.builder().modelFile(models().getExistingFile(modLoc("block/butcher_block")))
+						.build();
+			else
+				return ConfiguredModel.builder().modelFile(models().getExistingFile(mcLoc("block/air"))).build();
+		});
+	}
 }

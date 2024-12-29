@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.lance5057.butchercraft.client.BlacklistedModel;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
 
 import net.minecraft.advancements.Advancement;
@@ -38,15 +39,15 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 		return new ButcherBlockRecipeBuilder(resultIn);
 	}
 
-	public ButcherBlockRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage, ResourceKey<LootTable> table,
-			BlacklistedModel... model) {
-		this.tools.add(new AnimatedRecipeItemUse(uses, tool, count, damage, table.location(), List.of(model)));
+	public ButcherBlockRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage,
+			ResourceKey<LootTable> table, List<RecipeMobEffect> effect, BlacklistedModel... model) {
+		this.tools.add(new AnimatedRecipeItemUse(uses, tool, count, damage, table.location(), effect, List.of(model)));
 		return this;
 	}
 
 	public ButcherBlockRecipeBuilder tool(Ingredient tool, int uses, boolean damage, ResourceKey<LootTable> table,
-			BlacklistedModel... model) {
-		this.tools.add(new AnimatedRecipeItemUse(uses, tool, 1, damage, table.location(), List.of(model)));
+			List<RecipeMobEffect> effect, BlacklistedModel... model) {
+		this.tools.add(new AnimatedRecipeItemUse(uses, tool, 1, damage, table.location(), effect, List.of(model)));
 		return this;
 	}
 
@@ -59,9 +60,9 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 	 * Makes sure that this recipe is valid and obtainable.
 	 */
 	private void validate(ResourceLocation id) {
-        if (this.criteria.isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + id);
-        }
+		if (this.criteria.isEmpty()) {
+			throw new IllegalStateException("No way of obtaining recipe " + id);
+		}
 		if (this.tools.isEmpty()) {
 			throw new IllegalStateException("No toolset is defined for shaped recipe %s!".formatted(id));
 		}
@@ -92,10 +93,13 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 		this.validate(pRecipeId);
 		Advancement.Builder builder = consumerIn.advancement()
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(pRecipeId))
-				.rewards(AdvancementRewards.Builder.recipe(pRecipeId)).requirements(AdvancementRequirements.Strategy.OR);
+				.rewards(AdvancementRewards.Builder.recipe(pRecipeId))
+				.requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(builder::addCriterion);
-		consumerIn.accept(pRecipeId, new ButcherBlockRecipe(this.group == null ? "" : this.group,
-				Ingredient.of(this.result), NonNullList.copyOf(this.tools), NonNullList.copyOf(jei)),
-				builder.build(ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(), "recipes/meat_hook/" + pRecipeId.getPath())));
+		consumerIn.accept(pRecipeId,
+				new ButcherBlockRecipe(this.group == null ? "" : this.group, Ingredient.of(this.result),
+						NonNullList.copyOf(this.tools), NonNullList.copyOf(jei)),
+				builder.build(ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
+						"recipes/meat_hook/" + pRecipeId.getPath())));
 	}
 }

@@ -18,6 +18,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:empty",
       "models": [
         {
@@ -120,6 +121,7 @@
     {
       "count": 1,
       "damage": true,
+      "effects": [],
       "loot_table": "butchercraft:butcherblock/casing",
       "models": [
         {
