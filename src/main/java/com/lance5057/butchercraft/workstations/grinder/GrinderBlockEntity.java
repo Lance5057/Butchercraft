@@ -324,7 +324,7 @@ public class GrinderBlockEntity extends BlockEntity {
 				ItemStack in = inventory.getStackInSlot(0);
 				ItemStack casing = inventory.getStackInSlot(2);
 
-				if (casing != ItemStack.EMPTY) {
+				if (!casing.isEmpty() && !in.isEmpty()) {
 					for (int i = 0; i < casing.getCount(); i++) {
 
 						ItemStack r = output.copy();
@@ -342,6 +342,7 @@ public class GrinderBlockEntity extends BlockEntity {
 
 				inventory.setStackInSlot(0, ItemStack.EMPTY);
 				inventory.setStackInSlot(2, ItemStack.EMPTY);
+				output = ItemStack.EMPTY;
 
 				if (inventory.isItemValid(0, s)) {
 					dropLoot(blockState, inventory.insertItem(0, s, false));

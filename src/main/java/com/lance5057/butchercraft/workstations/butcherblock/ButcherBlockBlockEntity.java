@@ -270,7 +270,8 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 		for (RecipeMobEffect r : recipeToolsIn.effects()) {
 			Optional<Reference<MobEffect>> e = BuiltInRegistries.MOB_EFFECT.getHolder(r.rc());
 			if (e.isPresent()) {
-				player.addEffect(new MobEffectInstance(e.get(), r.duration(), r.amplify()));
+				if (player.level().random.nextFloat() >= r.chance())
+					player.addEffect(new MobEffectInstance(e.get(), r.duration(), r.amplify()));
 			}
 		}
 	}
