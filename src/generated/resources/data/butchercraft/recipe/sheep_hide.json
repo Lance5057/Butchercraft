@@ -21,7 +21,18 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.5,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.25,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        }
+      ],
       "loot_table": "butchercraft:meat_hook/scrape_hide",
       "models": [
         {
@@ -108,7 +119,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:meat_hook/sheep_leather",
       "models": [
         {

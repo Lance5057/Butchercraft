@@ -24,7 +24,18 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.5,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.25,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/butcher_rabbit",
       "models": [
         {

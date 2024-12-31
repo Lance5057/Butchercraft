@@ -10,6 +10,7 @@ import com.lance5057.butchercraft.data.builders.BlockTagGenerator;
 import com.lance5057.butchercraft.data.builders.ButchercraftEntityTypeTagsProvider;
 import com.lance5057.butchercraft.data.builders.ButchercraftFluidTagGenerator;
 import com.lance5057.butchercraft.data.builders.ButchercraftLootTableProvider;
+import com.lance5057.butchercraft.data.builders.DataMapGen;
 import com.lance5057.butchercraft.data.builders.EnglishLoc;
 import com.lance5057.butchercraft.data.builders.ItemModels;
 import com.lance5057.butchercraft.data.builders.ItemTagGenerator;
@@ -52,5 +53,7 @@ public class DataGen {
 		generator.addProvider(true, new ButchercraftLootTableProvider(output, lookupProvider));
 		generator.addProvider(true, new ButchercraftEntityTypeTagsProvider(output, lookupProvider, existingFileHelper));
 		generator.addProvider(true, new PoiTagGenerator(output, lookupProvider, existingFileHelper));
+		
+		generator.addProvider(event.includeServer(), new DataMapGen(output, lookupProvider));
 	}
 }

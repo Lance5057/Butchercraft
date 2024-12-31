@@ -11,6 +11,7 @@ import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
@@ -454,6 +455,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 				.add(Items.RABBIT);
 		tag(ButchercraftItemTags.SHEEP_CARCASS).add(ButchercraftItems.SHEEP_CARCASS.get());
 		tag(Tags.Items.STRINGS).add(ButchercraftItems.SINEW.get(), ButchercraftItems.LEATHER_CORD.get());
-//		tag(ItemTags.DYEABLE).add(ButchercraftItems.SHEEP_HOOD.get());
+		
+		tag(ItemTags.WOLF_FOOD).addTag(ButchercraftItemTags.MEAT);
+		tag(ItemTags.PIGLIN_FOOD).addTag(ButchercraftItemTags.MEAT_COOKED);
 	}
 }

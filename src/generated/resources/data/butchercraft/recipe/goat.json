@@ -66,7 +66,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:meat_hook/blood_bucket",
       "models": [
         {
@@ -152,7 +173,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:meat_hook/skin_goat",
       "models": [
         {
@@ -238,7 +280,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:meat_hook/bisect_goat",
       "models": [
         {
@@ -324,7 +387,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:meat_hook/disembowel_goat",
       "models": [
         {
@@ -410,7 +494,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:meat_hook/butcher_goat",
       "models": [
         {

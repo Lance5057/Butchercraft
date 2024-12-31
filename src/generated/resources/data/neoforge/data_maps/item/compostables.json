@@ -1,0 +1,40 @@
+{
+  "values": {
+    "butchercraft:brain": {
+      "chance": 0.8
+    },
+    "butchercraft:cooked_brain": {
+      "chance": 0.8
+    },
+    "butchercraft:cooked_heart": {
+      "chance": 0.8
+    },
+    "butchercraft:cooked_kidney": {
+      "chance": 0.8
+    },
+    "butchercraft:cooked_liver": {
+      "chance": 0.8
+    },
+    "butchercraft:cooked_stomach": {
+      "chance": 0.8
+    },
+    "butchercraft:cooked_tripe": {
+      "chance": 0.8
+    },
+    "butchercraft:heart": {
+      "chance": 0.8
+    },
+    "butchercraft:kidney": {
+      "chance": 0.8
+    },
+    "butchercraft:liver": {
+      "chance": 0.8
+    },
+    "butchercraft:stomach": {
+      "chance": 0.8
+    },
+    "butchercraft:tripe": {
+      "chance": 0.8
+    }
+  }
+}

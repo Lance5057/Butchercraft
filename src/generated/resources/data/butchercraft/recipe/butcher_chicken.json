@@ -45,7 +45,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/blood_bottle",
       "models": [
         {
@@ -131,7 +152,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/blood_bottle",
       "models": [
         {
@@ -217,7 +259,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -303,7 +366,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -389,7 +473,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -475,7 +580,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -561,7 +687,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -647,7 +794,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/pluck_chicken",
       "models": [
         {
@@ -733,7 +901,28 @@
     {
       "count": 1,
       "damage": true,
-      "effects": [],
+      "effects": [
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:dirty_hands"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_trail"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:pungent_reek"
+        },
+        {
+          "chance": 0.8,
+          "duration": 3600,
+          "location": "butchercraft:blood_splatter"
+        }
+      ],
       "loot_table": "butchercraft:butcherblock/deoffal_chicken",
       "models": [
         {
