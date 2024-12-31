@@ -24,10 +24,12 @@ import com.lance5057.butchercraft.items.CarcassItem;
 import com.lance5057.butchercraft.items.KnifeItem;
 import com.lance5057.butchercraft.items.SoapItem;
 import com.lance5057.butchercraft.items.ToolTipItem;
+import com.lance5057.butchercraft.items.WolfFoodSpecialItem;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
@@ -43,9 +45,9 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ButchercraftItems {
-	
+
 	public static void setup() {
-		
+
 	}
 
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister
@@ -616,12 +618,14 @@ public class ButchercraftItems {
 	public static final DeferredItem<BlockItem> TRIMMED_BARN_WOOD_ITEM = ITEMS.register("trimmed_barn_wood_item",
 			() -> new BlockItem(ButchercraftBlocks.TRIMMED_BARN_WOOD_BLOCK.get(), new Item.Properties()));
 
-//	public static final DeferredItem<Item> RAWHIDE = ITEMS.register("rawhide",
-//			() -> new Item(new Item.Properties()));
-//	public static final DeferredItem<Item> SOAKED_HIDE = ITEMS.register("soaked_hide",
-//			() -> new Item(new Item.Properties()));
-//	public static final DeferredItem<Item> TANNING_SOLUTION = ITEMS.register("tanning_solution",
-//			() -> new Item(new Item.Properties()));
+	public static final DeferredItem<Item> EAR = ITEMS.register("ear",
+			() -> new WolfFoodSpecialItem(new Item.Properties(), MobEffects.DAMAGE_BOOST));
+	public static final DeferredItem<Item> HOOF = ITEMS.register("hoof",
+			() -> new WolfFoodSpecialItem(new Item.Properties(), MobEffects.MOVEMENT_SPEED));
+	public static final DeferredItem<Item> SNOUT = ITEMS.register("snout",
+			() -> new WolfFoodSpecialItem(new Item.Properties(), MobEffects.ABSORPTION));
+	public static final DeferredItem<Item> CHICKEN_FOOT = ITEMS.register("chicken_foot",
+			() -> new WolfFoodSpecialItem(new Item.Properties(), MobEffects.SLOW_FALLING));
 
 	public static void register(IEventBus modBus) {
 		CREATIVE_MODE_TABS.register(modBus);

@@ -344,7 +344,11 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 				new ModelFile.ExistingModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/goat_hood_model"), fh));
 		getBuilder(ButchercraftItems.SHEEP_HOOD.getId().getPath()).parent(
 				new ModelFile.ExistingModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/sheep_hood_model"), fh));
-
+		
+		forItem(ButchercraftItems.CHICKEN_FOOT, "chicken_foot");
+		forItem(ButchercraftItems.HOOF, "hoof");
+		forItem(ButchercraftItems.SNOUT, "snout");
+		forItem(ButchercraftItems.EAR, "ear");
 	}
 
 	public void forItem(DeferredItem<? extends Item> item, String name) {

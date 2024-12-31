@@ -1,6 +1,12 @@
 {
   "values": {
+    "butchercraft:beef_scraps": {
+      "chance": 0.8
+    },
     "butchercraft:brain": {
+      "chance": 0.8
+    },
+    "butchercraft:chicken_scraps": {
       "chance": 0.8
     },
     "butchercraft:cooked_brain": {
@@ -21,13 +27,25 @@
     "butchercraft:cooked_tripe": {
       "chance": 0.8
     },
+    "butchercraft:goat_scraps": {
+      "chance": 0.8
+    },
     "butchercraft:heart": {
       "chance": 0.8
     },
     "butchercraft:kidney": {
       "chance": 0.8
     },
+    "butchercraft:lamb_scraps": {
+      "chance": 0.8
+    },
     "butchercraft:liver": {
+      "chance": 0.8
+    },
+    "butchercraft:pork_scraps": {
+      "chance": 0.8
+    },
+    "butchercraft:rabbit_scraps": {
       "chance": 0.8
     },
     "butchercraft:stomach": {
