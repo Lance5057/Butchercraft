@@ -126,7 +126,9 @@ public class ButchercraftForgeEvents {
 				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get().floatValue()) {
 					int animalsAmount = level.getRandom().nextInt(4) + 2;
 					for (int i = 0; i < animalsAmount; i++) {
-						Animal ent = (Animal) type.spawn(level, e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT);
+						Animal ent = (Animal) type.spawn(level, e.blockPosition()
+								.offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3),
+								MobSpawnType.EVENT);
 						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST, 3600));
 					}
 				}
@@ -138,7 +140,9 @@ public class ButchercraftForgeEvents {
 				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_ARMY_CHANCE.get().floatValue()) {
 					int animalsAmount = level.getRandom().nextInt(4) + 2;
 					for (int i = 0; i < animalsAmount; i++) {
-						Rabbit ent = (Rabbit) type.spawn(level, e.blockPosition().offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3), MobSpawnType.EVENT);
+						Rabbit ent = (Rabbit) type.spawn(level, e.blockPosition()
+								.offset(level.getRandom().nextInt(6) - 3, 0, level.getRandom().nextInt(6) - 3),
+								MobSpawnType.EVENT);
 						ent.setVariant(skin);
 						ent.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODLUST, 3600));
 					}
@@ -179,14 +183,17 @@ public class ButchercraftForgeEvents {
 						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get().floatValue());
 
 				if (pAN + pBN >= 2) {
-					Optional.ofNullable(baby.getCapability(AnimalCareProvider.CARE)).ifPresent(i -> i.setNutrition(0.9f));
+					Optional.ofNullable(baby.getCapability(AnimalCareProvider.CARE))
+							.ifPresent(i -> i.setNutrition(0.9f));
 					Cow baby2 = (Cow) baby.getType().spawn(server, null, event.getCausedByPlayer(), pA.blockPosition(),
 							MobSpawnType.BREEDING, true, false);
 					baby2.setBaby(true);
-					Optional.ofNullable(baby2.getCapability(AnimalCareProvider.CARE)).ifPresent(i -> i.setNutrition(0.9f));
+					Optional.ofNullable(baby2.getCapability(AnimalCareProvider.CARE))
+							.ifPresent(i -> i.setNutrition(0.9f));
 				} else {
 					float bred = Math.max(pAN, pBN) + Math.min(pAN, pBN) / 2;
-					Optional.ofNullable(baby.getCapability(AnimalCareProvider.CARE)).ifPresent(i -> i.setNutrition(bred));
+					Optional.ofNullable(baby.getCapability(AnimalCareProvider.CARE))
+							.ifPresent(i -> i.setNutrition(bred));
 				}
 			}
 		}
@@ -226,16 +233,16 @@ public class ButchercraftForgeEvents {
 			if (stack.getFoodProperties(event.getEntity()) != null || stack.getItem() instanceof PotionItem
 					|| stack.getItem() instanceof MilkBucketItem) {
 				switch (event.getEntity().level().random.nextInt(3)) {
-					case 0:
-						event.getEntity().addEffect(new MobEffectInstance(MobEffects.POISON, 600));
-					case 1:
-						event.getEntity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600));
-					default:
-						event.getEntity().addEffect(new MobEffectInstance(MobEffects.HUNGER, 600));
+				case 0:
+					event.getEntity().addEffect(new MobEffectInstance(MobEffects.POISON, 600));
+				case 1:
+					event.getEntity().addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600));
+				default:
+					event.getEntity().addEffect(new MobEffectInstance(MobEffects.HUNGER, 600));
 				}
 
 				// TODO?
-				//event.setCanceled(true);
+				// event.setCanceled(true);
 			}
 		}
 	}
@@ -296,12 +303,12 @@ public class ButchercraftForgeEvents {
 			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
 		}
 	}
-	
+
 	@SubscribeEvent
 	public static void wolfInteract(PlayerInteractEvent.EntityInteractSpecific event) {
 		if (event.getItemStack().getItem() instanceof WolfFoodSpecialItem item)
 			if (event.getTarget() instanceof Wolf w) {
-				w.addEffect(new MobEffectInstance(item.getEffect(), 12000, 1));
+				w.addEffect(new MobEffectInstance(item.getEffect(), 1200, 1));
 				event.getItemStack().shrink(1);
 				w.isShaking = true;
 			}

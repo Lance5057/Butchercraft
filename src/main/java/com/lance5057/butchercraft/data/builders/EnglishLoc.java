@@ -278,6 +278,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.BARN_WOOD_TRAPDOOR_ITEM.get(), "Barn Wood Trapdoor");
 		this.add(ButchercraftItems.TRIMMED_BARN_WOOD_ITEM.get(), "Trimmed Barn Wood (CTM)");
 
+		this.add(ButchercraftItems.HOOF.get(), "Hoof");
+		this.add(ButchercraftItems.SNOUT.get(), "Snout");
+		this.add(ButchercraftItems.CHICKEN_FOOT.get(), "Chicken Foot");
+		this.add(ButchercraftItems.EAR.get(), "Ear");
+
 		this.add(ButchercraftBlocks.BLOOD_FLUID_BLOCK.get(), "Blood");
 
 		// Advancements
@@ -412,6 +417,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("effect." + Butchercraft.MOD_ID + ".dirty_hands", "Dirty Hands");
 		this.add("effect." + Butchercraft.MOD_ID + ".blood_splatter", "Bloody");
 		this.add("effect." + Butchercraft.MOD_ID + ".blood_trail", "Blood Trail");
+
+		this.add("fluid_type." + Butchercraft.MOD_ID + ".blood_fluid", "Blood");
 	}
 
 }
