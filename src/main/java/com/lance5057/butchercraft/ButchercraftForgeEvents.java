@@ -6,6 +6,7 @@ import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
+import com.lance5057.butchercraft.items.WolfFoodSpecialItem;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -24,6 +25,7 @@ import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
@@ -293,5 +295,15 @@ public class ButchercraftForgeEvents {
 					false));
 			p.targetSelector.addGoal(2, new AngryAnimalTargetGoal(p));
 		}
+	}
+	
+	@SubscribeEvent
+	public static void wolfInteract(PlayerInteractEvent.EntityInteractSpecific event) {
+		if (event.getItemStack().getItem() instanceof WolfFoodSpecialItem item)
+			if (event.getTarget() instanceof Wolf w) {
+				w.addEffect(new MobEffectInstance(item.getEffect(), 12000, 1));
+				event.getItemStack().shrink(1);
+				w.isShaking = true;
+			}
 	}
 }
