@@ -39,6 +39,9 @@
     },
     {
       "item": "butchercraft:chicken_head_item"
+    },
+    {
+      "item": "butchercraft:chicken_foot"
     }
   ],
   "tools": [

@@ -31,52 +31,52 @@
       "y": 270
     },
     "dummy=1,facing=east,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=1,facing=east,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=1,facing=north,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=1,facing=north,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=1,facing=south,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=1,facing=south,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=1,facing=west,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=1,facing=west,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=2,facing=east,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=2,facing=east,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=2,facing=north,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=2,facing=north,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=2,facing=south,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=2,facing=south,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=2,facing=west,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     },
     "dummy=2,facing=west,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_hook"
     }
   }
 }

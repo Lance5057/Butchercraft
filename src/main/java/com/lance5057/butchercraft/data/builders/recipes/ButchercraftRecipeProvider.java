@@ -146,7 +146,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.BEEF_RIBS.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.BEEF_ROAST.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.CUBED_BEEF.get()))
-				.JEIIngredient(Ingredient.of(Items.BEEF)).JEIIngredient(Ingredient.of(Items.BONE))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.HOOF.get())).JEIIngredient(Ingredient.of(Items.BEEF))
+				.JEIIngredient(Ingredient.of(Items.BONE))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cow"));
 
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.SHEEP_CARCASS.get())
@@ -190,7 +191,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.MUTTON_RIBS.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.MUTTON_ROAST.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.CUBED_MUTTON.get()))
-				.JEIIngredient(Ingredient.of(Items.MUTTON))
+				.JEIIngredient(Ingredient.of(Items.MUTTON)).JEIIngredient(Ingredient.of(ButchercraftItems.HOOF.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "sheep"));
 
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.PIG_CARCASS.get())
@@ -236,7 +237,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.PORK_RIBS.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.PORK_ROAST.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.CUBED_PORK.get()))
-				.JEIIngredient(Ingredient.of(Items.PORKCHOP)).JEIIngredient(Ingredient.of(Items.BONE))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.HOOF.get())).JEIIngredient(Ingredient.of(Items.PORKCHOP))
+				.JEIIngredient(Ingredient.of(Items.BONE))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "pig"));
 
 		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.GOAT_CARCASS.get())
@@ -280,7 +282,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.GOAT_ROAST.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.CUBED_GOAT.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.GOAT_CHOP.get()))
-				.JEIIngredient(Ingredient.of(Items.BONE))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.HOOF.get())).JEIIngredient(Ingredient.of(Items.BONE))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "goat"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.CHICKEN_CARCASS.get())
@@ -338,6 +340,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.FAT.get())).JEIIngredient(Ingredient.of(Items.CHICKEN))
 				.JEIIngredient(Ingredient.of(Items.FEATHER))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.CHICKEN_HEAD_ITEM.get()))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.CHICKEN_FOOT.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_chicken"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(Items.CHICKEN)
@@ -1001,6 +1004,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.COW_SKULL_HEAD_ITEM.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.BEEF_SCRAPS.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.LEATHER_SCRAP.get()))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.EAR.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cow_head"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.SHEEP_HEAD_ITEM.get())
@@ -1015,7 +1019,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.SHEEP_SKULL_HEAD_ITEM.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.MUTTON_SCRAPS.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.LEATHER_SCRAP.get()))
-				.JEIIngredient(Ingredient.of(Items.STRING))
+				.JEIIngredient(Ingredient.of(Items.STRING)).JEIIngredient(Ingredient.of(ButchercraftItems.EAR.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "sheep_head"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.PIG_HEAD_ITEM.get())
@@ -1029,6 +1033,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.PIG_SKULL_HEAD_ITEM.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.PORK_SCRAPS.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.LEATHER_SCRAP.get()))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.EAR.get()))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.SNOUT.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "pig_head"));
 
 		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.GOAT_HEAD_ITEM.get())
@@ -1042,6 +1048,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.GOAT_SKULL_HEAD_ITEM.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.GOAT_SCRAPS.get()))
 				.JEIIngredient(Ingredient.of(ButchercraftItems.LEATHER_SCRAP.get()))
+				.JEIIngredient(Ingredient.of(ButchercraftItems.EAR.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "goat_head"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ButchercraftItems.BONE_SAW.get()).define('I', Items.IRON_INGOT)

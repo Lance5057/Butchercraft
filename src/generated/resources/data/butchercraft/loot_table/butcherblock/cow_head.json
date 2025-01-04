@@ -99,6 +99,23 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "butchercraft:ear"
+        }
+      ],
+      "functions": [
+        {
+          "add": false,
+          "count": 2.0,
+          "function": "minecraft:set_count"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "name": "butchercraft:leather_scrap"
         }
       ],

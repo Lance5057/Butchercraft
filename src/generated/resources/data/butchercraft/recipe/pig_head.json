@@ -21,6 +21,12 @@
     },
     {
       "item": "butchercraft:leather_scrap"
+    },
+    {
+      "item": "butchercraft:ear"
+    },
+    {
+      "item": "butchercraft:snout"
     }
   ],
   "tools": [

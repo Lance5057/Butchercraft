@@ -24,6 +24,9 @@
     },
     {
       "item": "minecraft:string"
+    },
+    {
+      "item": "butchercraft:ear"
     }
   ],
   "tools": [

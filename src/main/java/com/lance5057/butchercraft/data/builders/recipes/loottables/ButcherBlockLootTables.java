@@ -180,6 +180,7 @@ public class ButcherBlockLootTables implements LootTableSubProvider {
 				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.TRIPE.get(), 1))
 				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SINEW.get(), 4, 8, 0, 1, provider))
 				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.FAT.get(), 2, 6, 0, 1, provider))
+				.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CHICKEN_FOOT.get(), 2))
 				.withPool(MeatHookLoottables.createPoolWithItem(Items.CHICKEN, 1)));
 
 		t.accept(BUTCHER_CHICKEN,
@@ -414,6 +415,7 @@ public class ButcherBlockLootTables implements LootTableSubProvider {
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.COW_SKULL_HEAD_ITEM.get()))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.BEEF_SCRAPS.get(), 4, 8, 0, 1,
 								provider))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EAR.get(), 2))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0,
 								1, provider)));
 
@@ -424,6 +426,8 @@ public class ButcherBlockLootTables implements LootTableSubProvider {
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.PIG_SKULL_HEAD_ITEM.get()))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.PORK_SCRAPS.get(), 4, 8, 0, 1,
 								provider))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EAR.get(), 2))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SNOUT.get()))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0,
 								1, provider)));
 
@@ -436,6 +440,7 @@ public class ButcherBlockLootTables implements LootTableSubProvider {
 								1, provider))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0,
 								1, provider))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EAR.get(), 2))
 						.withPool(MeatHookLoottables.createPoolWithItem(Items.STRING, 1, 3)));
 
 		t.accept(GOAT_HEAD,
@@ -445,6 +450,7 @@ public class ButcherBlockLootTables implements LootTableSubProvider {
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOAT_SKULL_HEAD_ITEM.get()))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.GOAT_SCRAPS.get(), 4, 8, 0, 1,
 								provider))
+						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.EAR.get(), 2))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.LEATHER_SCRAP.get(), 2, 4, 0,
 								1, provider)));
 	}

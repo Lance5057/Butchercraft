@@ -178,7 +178,8 @@ public class BlockModels extends BlockStateProvider {
 				return ConfiguredModel.builder().modelFile(models().getExistingFile(modLoc("block/meat_hook")))
 						.rotationY(((int) state.getValue(MeatHookBlock.FACING).toYRot() + 180) % 360).build();
 			else
-				return ConfiguredModel.builder().modelFile(models().getExistingFile(mcLoc("block/air"))).build();
+				return ConfiguredModel.builder().modelFile(models().withExistingParent("dummy_hook", mcLoc("block/air"))
+						.texture("particle", modLoc("block/beef_block"))).build();
 		});
 	}
 
@@ -190,7 +191,8 @@ public class BlockModels extends BlockStateProvider {
 				return ConfiguredModel.builder().modelFile(models().getExistingFile(modLoc("block/butcher_block")))
 						.build();
 			else
-				return ConfiguredModel.builder().modelFile(models().getExistingFile(mcLoc("block/air"))).build();
+				return ConfiguredModel.builder().modelFile(models().withExistingParent("dummy_butcher_block", mcLoc("block/air"))
+						.texture("particle", modLoc("block/beef_block"))).build();
 		});
 	}
 }

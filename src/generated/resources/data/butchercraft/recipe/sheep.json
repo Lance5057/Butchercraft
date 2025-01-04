@@ -60,6 +60,9 @@
     },
     {
       "item": "minecraft:mutton"
+    },
+    {
+      "item": "butchercraft:hoof"
     }
   ],
   "tools": [

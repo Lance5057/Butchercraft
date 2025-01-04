@@ -25,28 +25,28 @@
       "model": "butchercraft:block/butcher_block"
     },
     "dummy=true,facing=east,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_butcher_block"
     },
     "dummy=true,facing=east,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_butcher_block"
     },
     "dummy=true,facing=north,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_butcher_block"
     },
     "dummy=true,facing=north,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_butcher_block"
     },
     "dummy=true,facing=south,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_butcher_block"
     },
     "dummy=true,facing=south,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_butcher_block"
     },
     "dummy=true,facing=west,waterlogged=false": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_butcher_block"
     },
     "dummy=true,facing=west,waterlogged=true": {
-      "model": "minecraft:block/air"
+      "model": "butchercraft:block/dummy_butcher_block"
     }
   }
 }
