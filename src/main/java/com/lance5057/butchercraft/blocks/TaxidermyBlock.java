@@ -17,11 +17,13 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class TaxidermyBlock extends HorizontalDirectionalBlock {
-	public static final MapCodec<TaxidermyBlock> CODEC = simpleCodec(properties -> new TaxidermyBlock());
-	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+	public static final MapCodec<TaxidermyBlock> CODEC = simpleCodec(
+			properties -> new TaxidermyBlock(Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D)));
+	protected final VoxelShape SHAPE;
 
-	public TaxidermyBlock() {
+	public TaxidermyBlock(VoxelShape shape) {
 		super(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion());
+		this.SHAPE = shape;
 	}
 
 	@Override
@@ -33,7 +35,7 @@ public class TaxidermyBlock extends HorizontalDirectionalBlock {
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
 		pBuilder.add(FACING);
 	}
-	
+
 	@Override
 	public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
 			CollisionContext p_152920_) {
@@ -49,15 +51,15 @@ public class TaxidermyBlock extends HorizontalDirectionalBlock {
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return false;
 	}
-	
+
 	@Override
 	public RenderShape getRenderShape(BlockState pState) {
 		return RenderShape.MODEL;
 	}
 
 	@Override
-    protected VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
-        return Shapes.empty();
-    }
+	protected VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
+		return Shapes.empty();
+	}
 
 }
