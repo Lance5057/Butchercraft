@@ -8,6 +8,7 @@ import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
+import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder.Reference;
@@ -148,6 +149,10 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 		if (!inventory.getStackInSlot(0).isEmpty()) {
 			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
 			playerEntity.addItem(itemStack);
+			if (this.level.getBlockState(this.worldPosition).getBlock() instanceof ButcherBlockBlock m) {
+				m.removeAbove(level, worldPosition);
+			}
+			
 		}
 		updateInventory();
 	}
@@ -158,6 +163,9 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 			if (!ItemStack.matches(inventory.insertItem(0, heldItem, true), heldItem)) {
 				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
 				heldItem.setCount(leftover);
+				if (this.level.getBlockState(this.worldPosition).getBlock() instanceof ButcherBlockBlock m) {
+					m.placeAbove(level, getBlockState(), this.worldPosition);
+				}
 			}
 		updateInventory();
 	}

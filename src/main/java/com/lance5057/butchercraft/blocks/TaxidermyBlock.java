@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class TaxidermyBlock extends HorizontalDirectionalBlock {
 	public static final MapCodec<TaxidermyBlock> CODEC = simpleCodec(properties -> new TaxidermyBlock());
-	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
+	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 4.0D, 12.0D);
 
 	public TaxidermyBlock() {
 		super(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion());

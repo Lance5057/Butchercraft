@@ -70,13 +70,12 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 				if (playerEntity.isCrouching()) {
 					if (te.stage == 0 && te.progress == 0) {
 						te.extractItem(playerEntity);
-						removeAbove(world, blockPos);
+						
 						return ItemInteractionResult.SUCCESS;
 					}
 				} else if (te.isEmpty()) {
 					if (isEmptyAbove(world, blockPos)) {
 						te.insertItem(heldMain);
-						placeAbove(world, state, blockPos);
 						return ItemInteractionResult.SUCCESS;
 					} else {
 						playerEntity.displayClientMessage(
