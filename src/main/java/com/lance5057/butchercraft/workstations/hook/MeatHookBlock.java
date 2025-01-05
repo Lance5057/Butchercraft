@@ -70,13 +70,11 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 				if (playerEntity.isCrouching()) {
 					if (te.stage == 0 && te.progress == 0) {
 						te.extractItem(playerEntity);
-						removeBelow(world, blockPos);
 						return ItemInteractionResult.SUCCESS;
 					}
 				} else if (te.isEmpty()) {
 					if (isEmptyBelow(world, blockPos)) {
 						te.insertItem(heldMain);
-						placeBelow(world, state, blockPos);
 						return ItemInteractionResult.SUCCESS;
 					} else {
 						playerEntity.displayClientMessage(
@@ -109,10 +107,10 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 					placeBelow(level, state, pos);
 			}
 		} else if (state.getValue(DUMMY) == 1) {
-			level.getBlockState(pos.above()).handleNeighborChanged(level, neighborPos, neighborBlock, pos.above(),
+			level.getBlockState(pos.above()).handleNeighborChanged(level, pos.above(), neighborBlock, neighborPos,
 					movedByPiston);
 		} else {
-			level.getBlockState(pos.above(2)).handleNeighborChanged(level, neighborPos, neighborBlock, pos.above(2),
+			level.getBlockState(pos.above(2)).handleNeighborChanged(level, pos.above(2), neighborBlock, neighborPos,
 					movedByPiston);
 		}
 	}
@@ -162,12 +160,13 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 				removeBelow(level, pos);
 
 			}
-		} else if (state.getValue(DUMMY) == 1) {
-
-			this.placeBelow(level, state, pos.above());
-		} else {
-			this.placeBelow(level, state, pos.above(2));
 		}
+//		else if (state.getValue(DUMMY) == 1) {
+//
+//			this.removeBelow(level, pos.above());
+//		} else {
+//			this.removeBelow(level, pos.above());
+//		}
 
 		super.onRemove(state, level, pos, newState, isMoving);
 	}

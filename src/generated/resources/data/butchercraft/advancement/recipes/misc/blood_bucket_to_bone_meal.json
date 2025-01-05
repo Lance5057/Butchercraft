@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blood_bucket": {
+    "has_blood": {
       "conditions": {
         "items": [
           {
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "butchercraft:blood_bottle_to_bone_meal"
+        "recipe": "butchercraft:blood_bucket_to_bone_meal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blood_bucket"
+      "has_blood"
     ]
   ],
   "rewards": {
     "recipes": [
-      "butchercraft:blood_bottle_to_bone_meal"
+      "butchercraft:blood_bucket_to_bone_meal"
     ]
   }
 }

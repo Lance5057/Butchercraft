@@ -151,6 +151,9 @@ public class MeatHookBlockEntity extends BlockEntity {
 		if (!inventory.getStackInSlot(0).isEmpty()) {
 			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
 			playerEntity.addItem(itemStack);
+			if (this.level.getBlockState(this.worldPosition).getBlock() instanceof MeatHookBlock m) {
+				m.removeBelow(level, worldPosition);
+			}
 		}
 		updateInventory();
 	}
@@ -161,6 +164,9 @@ public class MeatHookBlockEntity extends BlockEntity {
 			if (!ItemStack.isSameItemSameComponents(inventory.insertItem(0, heldItem, true), heldItem)) {
 				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
 				heldItem.setCount(leftover);
+				if (this.level.getBlockState(this.worldPosition).getBlock() instanceof MeatHookBlock m) {
+					m.placeBelow(level, getBlockState(), this.worldPosition);
+				}
 			}
 		updateInventory();
 	}
@@ -205,9 +211,9 @@ public class MeatHookBlockEntity extends BlockEntity {
 							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
 
 						for (int i = 0; i < 1 + level.random.nextInt(4); i++)
-							level.addParticle(ParticleTypes.FALLING_DRIPSTONE_LAVA,
+							level.addParticle(ParticleTypes.FALLING_LAVA,
 									worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-									worldPosition.getY() - 0.5f - level.random.nextDouble(),
+									worldPosition.getY() - 1.5f,
 									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
 
 						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);

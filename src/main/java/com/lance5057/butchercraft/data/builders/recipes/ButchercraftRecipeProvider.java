@@ -27,7 +27,6 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -1657,16 +1656,28 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_blood_sausage_mix", has(ButchercraftItems.BLOOD_SAUSAGE_MIX.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "blood_sausage_to_links"));
 
-		SimpleCookingRecipeBuilder
-				.smelting(Ingredient.of(ButchercraftItems.BLOOD_FLUID_BUCKET), RecipeCategory.FOOD,
-						new ItemStack(Items.BONE_MEAL, 8), .35F, 200)
-				.unlockedBy("has_blood_bucket", has(ButchercraftItems.BLOOD_FLUID_BUCKET)).save(consumer,
+//		SimpleCookingRecipeBuilder
+//				.smelting(Ingredient.of(ButchercraftItems.BLOOD_FLUID_BUCKET), RecipeCategory.FOOD,
+//						new ItemStack(Items.BONE_MEAL, 8), .35F, 200)
+//				.unlockedBy("has_blood_bucket", has(ButchercraftItems.BLOOD_FLUID_BUCKET)).save(consumer,
+//						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "blood_bucket_to_bone_meal"));
+//
+//		SimpleCookingRecipeBuilder
+//				.smelting(Ingredient.of(ButchercraftItems.BLOOD_FLUID_BOTTLE), RecipeCategory.FOOD,
+//						new ItemStack(Items.BONE_MEAL, 2), .35F, 200)
+//				.unlockedBy("has_blood_bucket", has(ButchercraftItems.BLOOD_FLUID_BUCKET)).save(consumer,
+//						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "blood_bottle_to_bone_meal"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 9)
+				.requires(Ingredient.of(Items.BONE_MEAL))
+				.requires(Ingredient.of(ButchercraftItems.BLOOD_FLUID_BUCKET), 1)
+				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BUCKET)).save(consumer,
 						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "blood_bucket_to_bone_meal"));
 
-		SimpleCookingRecipeBuilder
-				.smelting(Ingredient.of(ButchercraftItems.BLOOD_FLUID_BOTTLE), RecipeCategory.FOOD,
-						new ItemStack(Items.BONE_MEAL, 2), .35F, 200)
-				.unlockedBy("has_blood_bucket", has(ButchercraftItems.BLOOD_FLUID_BUCKET)).save(consumer,
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
+				.requires(Ingredient.of(Items.BONE_MEAL))
+				.requires(Ingredient.of(ButchercraftItems.BLOOD_FLUID_BOTTLE), 1)
+				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BOTTLE)).save(consumer,
 						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "blood_bottle_to_bone_meal"));
 	}
 

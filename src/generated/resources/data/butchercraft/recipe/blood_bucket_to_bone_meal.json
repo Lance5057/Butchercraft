@@ -1,13 +1,16 @@
 {
-  "type": "minecraft:smelting",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "cookingtime": 200,
-  "experience": 0.35,
-  "ingredient": {
-    "item": "butchercraft:blood_fluid_bucket"
-  },
+  "ingredients": [
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "item": "butchercraft:blood_fluid_bucket"
+    }
+  ],
   "result": {
-    "count": 8,
+    "count": 9,
     "id": "minecraft:bone_meal"
   }
 }
