@@ -1,5 +1,5 @@
 name: Bug report
-description: 'Bug:'
+description: 'Something broke!'
 body:
   - type: dropdown
     id: mcversion
