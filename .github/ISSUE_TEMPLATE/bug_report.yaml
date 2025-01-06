@@ -18,6 +18,8 @@ body:
     id: modversion
     attributes:
       label: Butchercraft Version
+    validations:
+      required: true
   - type: textarea
     id: report
     attributes:
