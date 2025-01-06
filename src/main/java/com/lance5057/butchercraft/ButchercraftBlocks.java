@@ -9,6 +9,7 @@ import com.lance5057.butchercraft.workstations.grinder.GrinderBlock;
 import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -129,40 +130,66 @@ public class ButchercraftBlocks {
 			() -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST || p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(0.0D, 0.0D, 2.0D, 16.0D, 16.0D, 14.0D);
+					return Block.box(2.0D, 0.0D, 0.0D, 14.0D, 16.0D, 16.0D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_PIG_BLOCK = BLOCKS.register("taxidermy_pig_block",
 			() -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(0.0D, 0.0D, 3.0D, 15.0D, 14.0D, 13.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(1.0D, 0.0D, 3.0D, 16.0D, 14.0D, 13.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(3.0D, 0.0D, 1.0D, 13.0D, 14.0D, 16.0D);
+					return Block.box(3.0D, 0.0D, 0.0D, 13.0D, 14.0D, 15.0D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_SHEEP_BLOCK = BLOCKS.register("taxidermy_sheep_block",
 			() -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(0.0D, 0.0D, 3.0D, 15.0D, 16.0D, 13.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(1.0D, 0.0D, 3.0D, 16.0D, 16.0D, 13.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(3.0D, 0.0D, 1.0D, 13.0D, 16.0D, 16.0D);
+					return Block.box(3.0D, 0.0D, 0.0D, 13.0D, 16.0D, 15.0D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_GOAT_BLOCK = BLOCKS.register("taxidermy_goat_block",
 			() -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(0.0D, 0.0D, 2.0D, 14.0D, 16.0D, 13.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(2.0D, 0.0D, 3.0D, 16.0D, 16.0D, 14.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(2.0D, 0.0D, 2.0D, 13.0D, 16.0D, 16.0D);
+					return Block.box(3.0D, 0.0D, 0.0D, 14.0D, 16.0D, 14.0D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_CHICKEN_BLOCK = BLOCKS
 			.register("taxidermy_chicken_block", () -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(3.0D, 0.0D, 4.0D, 11.0D, 9.0D, 12.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(5.0D, 0.0D, 4.0D, 13.0D, 9.0D, 12.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(4.0D, 0.0D, 5.0D, 12.0D, 9.0D, 13.0D);
+					return Block.box(4.0D, 0.0D, 3.0D, 12.0D, 9.0D, 11.0D);
 				}
 			});
 
@@ -170,48 +197,84 @@ public class ButchercraftBlocks {
 			.register("taxidermy_black_rabbit_block", () -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(3.0D, 0.0D, 6.0D, 9.5D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(6.5D, 0.0D, 6.0D, 13.0D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(6.0D, 0.0D, 6.5D, 10.0D, 7.5D, 13.0D);
+					return Block.box(6.0D, 0.0D, 3.0D, 10.0D, 7.5D, 9.5D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_BROWN_RABBIT_BLOCK = BLOCKS
 			.register("taxidermy_brown_rabbit_block", () -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(3.0D, 0.0D, 6.0D, 9.5D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(6.5D, 0.0D, 6.0D, 13.0D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(6.0D, 0.0D, 6.5D, 10.0D, 7.5D, 13.0D);
+					return Block.box(6.0D, 0.0D, 3.0D, 10.0D, 7.5D, 9.5D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_WHITE_RABBIT_BLOCK = BLOCKS
 			.register("taxidermy_white_rabbit_block", () -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(3.0D, 0.0D, 6.0D, 9.5D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(6.5D, 0.0D, 6.0D, 13.0D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(6.0D, 0.0D, 6.5D, 10.0D, 7.5D, 13.0D);
+					return Block.box(6.0D, 0.0D, 3.0D, 10.0D, 7.5D, 9.5D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_GOLD_RABBIT_BLOCK = BLOCKS
 			.register("taxidermy_gold_rabbit_block", () -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(3.0D, 0.0D, 6.0D, 9.5D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(6.5D, 0.0D, 6.0D, 13.0D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(6.0D, 0.0D, 6.5D, 10.0D, 7.5D, 13.0D);
+					return Block.box(6.0D, 0.0D, 3.0D, 10.0D, 7.5D, 9.5D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_SPLOTCHED_RABBIT_BLOCK = BLOCKS
 			.register("taxidermy_splotched_rabbit_block", () -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(3.0D, 0.0D, 6.0D, 9.5D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(6.5D, 0.0D, 6.0D, 13.0D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(6.0D, 0.0D, 6.5D, 10.0D, 7.5D, 13.0D);
+					return Block.box(6.0D, 0.0D, 3.0D, 10.0D, 7.5D, 9.5D);
 				}
 			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_SALT_RABBIT_BLOCK = BLOCKS
 			.register("taxidermy_salt_rabbit_block", () -> new TaxidermyBlock() {
 				@Override
 				public VoxelShape getShape(BlockState p_152917_, BlockGetter p_152918_, BlockPos p_152919_,
-						CollisionContext p_152920_) {
-					return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
+										   CollisionContext p_152920_) {
+					if (p_152917_.getValue(FACING) == Direction.EAST)
+						return Block.box(3.0D, 0.0D, 6.0D, 9.5D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.WEST)
+						return Block.box(6.5D, 0.0D, 6.0D, 13.0D, 7.5D, 10.0D);
+					if (p_152917_.getValue(FACING) == Direction.NORTH)
+						return Block.box(6.0D, 0.0D, 6.5D, 10.0D, 7.5D, 13.0D);
+					return Block.box(6.0D, 0.0D, 3.0D, 10.0D, 7.5D, 9.5D);
 				}
 			});
 
