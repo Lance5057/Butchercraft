@@ -1,5 +1,5 @@
 name: Bug report
-description: 'Something broke!'
+description: Something Broke!
 body:
   - type: dropdown
     id: mcversion
@@ -32,6 +32,13 @@ body:
       placeholder: >-
         Typically found in *game instance*/logs/latest.log - Not what is found
         in the crash reports folder!
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 'Confirmation:'
+      options:
+        - label: I have tested this issue without other mods.
+          required: true
   - type: markdown
     attributes:
       value: >-
