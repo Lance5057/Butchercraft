@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -70,7 +71,7 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 				if (playerEntity.isCrouching()) {
 					if (te.stage == 0 && te.progress == 0) {
 						te.extractItem(playerEntity);
-						
+
 						return ItemInteractionResult.SUCCESS;
 					}
 				} else if (te.isEmpty()) {
@@ -84,7 +85,11 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 					}
 
 				} else {
-					return te.butcher(playerEntity, heldMain);
+					if (heldMain.is(Items.PAPER)) {
+						te.displayTools = !te.displayTools;
+						return ItemInteractionResult.SUCCESS;
+					} else
+						return te.butcher(playerEntity, heldMain);
 				}
 			}
 		} else {

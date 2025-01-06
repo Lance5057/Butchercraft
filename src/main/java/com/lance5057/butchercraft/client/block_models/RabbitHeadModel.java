@@ -1,6 +1,8 @@
 package com.lance5057.butchercraft.client.block_models;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import net.minecraft.client.model.SkullModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -50,6 +52,7 @@ public class RabbitHeadModel extends SkullModel {
 				CubeListBuilder.create().texOffs(32, 9).mirror()
 						.addBox(-0.5F, -2.5F, -5.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false),
 				PartPose.offset(0.0F, 0.0F, 3.0F));
+		
 
 		return LayerDefinition.create(meshdefinition, 64, 32);
 	}

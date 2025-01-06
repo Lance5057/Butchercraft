@@ -556,7 +556,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 		ButcherBlockRecipeBuilder.shapedRecipe(Items.RABBIT)
 				.tool(Ingredient.of(ButchercraftItems.BUTCHER_KNIFE.get()), 12, true,
-						ButcherBlockLootTables.BUTCHER_RABBIT, RAW_MEAT_DEFAULT,
+						ButcherBlockLootTables.BUTCHER_RABBIT, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_gutted")),
 						standardButcherBlockToolModel(ButchercraftItems.BUTCHER_KNIFE.get(), 0))

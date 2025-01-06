@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -58,7 +59,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	@Override
 	protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos,
 			CollisionContext context) {
-		return state.getValue(DUMMY)== 0 ? state.getShape(level, pos) : Shapes.empty();
+		return state.getValue(DUMMY) == 0 ? state.getShape(level, pos) : Shapes.empty();
 	}
 
 	@Override
@@ -82,7 +83,13 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 						return ItemInteractionResult.CONSUME;
 					}
 				} else {
-					return te.butcher(playerEntity, heldMain);
+					if (heldMain.is(Items.PAPER))
+					{
+						te.displayTools = !te.displayTools;
+						return ItemInteractionResult.SUCCESS;
+					}
+					else
+						return te.butcher(playerEntity, heldMain);
 				}
 			}
 		} else if (state.getValue(DUMMY) == 1) {

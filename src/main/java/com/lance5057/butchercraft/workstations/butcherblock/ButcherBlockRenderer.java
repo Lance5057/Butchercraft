@@ -33,8 +33,14 @@ public class ButcherBlockRenderer implements BlockEntityRenderer<ButcherBlockBlo
 
 			pPoseStack.translate(-0.5f, 0, -0.5f);
 
-			pBlockEntity.getCurrentTool().ifPresent(animatedRecipeItemUse -> animatedRecipeItemUse.model().forEach(
-					b -> RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer)));
+			pBlockEntity.getCurrentTool()
+					.ifPresent(animatedRecipeItemUse -> animatedRecipeItemUse.model().forEach(b -> {
+						if (!pBlockEntity.displayTools) {
+							if (b.isBlock())
+								RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer);
+						} else
+							RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer);
+					}));
 			pPoseStack.popPose();
 			timer++;
 		}

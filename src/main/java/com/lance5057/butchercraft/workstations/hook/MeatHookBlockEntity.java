@@ -53,6 +53,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 	private Ingredient curTool;
 	public int toolCount;
 	public int stage = 0;
+	public boolean displayTools = true;
 
 	public MeatHookBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ButchercraftBlockEntities.MEAT_HOOK.get(), pPos, pState);

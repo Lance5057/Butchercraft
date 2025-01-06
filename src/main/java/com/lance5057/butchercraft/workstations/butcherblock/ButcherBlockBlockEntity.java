@@ -50,6 +50,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	private Ingredient curTool;
 	public int toolCount;
 	public int stage = 0;
+	public boolean displayTools = true;
 
 	public ButcherBlockBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ButchercraftBlockEntities.BUTCHER_BLOCK.get(), pPos, pState);
@@ -193,11 +194,12 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 						}
 						if (isFinalStage(recipe)) {
 
-//
 							dropLoot(recipe.tools().get(stage), p);
+							this.inflictEffects(p, recipe.tools().get(stage));
 							this.finishRecipe();
 						} else {
 							dropLoot(recipe.tools().get(stage), p);
+							this.inflictEffects(p, recipe.tools().get(stage));
 							setupStage(recipe, stage + 1);
 						}
 

@@ -362,7 +362,7 @@
         }
       ],
       "tool": {
-        "item": "butchercraft:gut_knife"
+        "item": "butchercraft:skinning_knife"
       },
       "uses": 6
     },
@@ -469,7 +469,7 @@
         }
       ],
       "tool": {
-        "item": "butchercraft:skinning_knife"
+        "item": "butchercraft:gut_knife"
       },
       "uses": 6
     }
