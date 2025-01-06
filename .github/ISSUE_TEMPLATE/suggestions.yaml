@@ -1,0 +1,16 @@
+name: Suggestion
+description: I have a suggestion!
+title: '[Suggestion: Other]'
+body:
+  - type: textarea
+    id: etc
+    attributes:
+      label: Description
+      description: Include any relevant info, including images, links, etc.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: >-
+        This template was generated with [Issue Forms
+        Creator](https://issue-forms-creator.netlify.app)
