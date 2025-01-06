@@ -334,7 +334,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(Butchercraft.MOD_ID + ".advancement.cannibalism.name", "This isn't RimWorld...");
 		this.add(Butchercraft.MOD_ID + ".advancement.cannibalism.desc", "Try to butcher a human.");
 
-		this.add(Butchercraft.MOD_ID + ".advancement.bunny_equip.name", "Leotard and Hosery not included!");
+		this.add(Butchercraft.MOD_ID + ".advancement.bunny_equip.name", "Leotard and Hosiery not included!");
 		this.add(Butchercraft.MOD_ID + ".advancement.bunny_equip.desc", "Equip Bunny Ears and a Tail.");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.taxadermy.name", "No thanks, I'm stuffed.");
@@ -359,13 +359,13 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(Butchercraft.MOD_ID + ".advancement.goat.desc", "Use a Butcher Knife on a Goat (Right Click)");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.whole_goat.name", "Everything but the Scream.");
-		this.add(Butchercraft.MOD_ID + ".advancement.whole_goat.desc", "Eat every edible cooked chevon item.");
+		this.add(Butchercraft.MOD_ID + ".advancement.whole_goat.desc", "Eat every edible Cooked Chevon item.");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.hands.name", "Ya Filthy Animal");
 		this.add(Butchercraft.MOD_ID + ".advancement.hands.desc", "Get the Dirty Hands Effect");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.bloody.name", "Blood On Your Hands");
-		this.add(Butchercraft.MOD_ID + ".advancement.bloody.desc", "Get the Blood Splattered Effect");
+		this.add(Butchercraft.MOD_ID + ".advancement.bloody.desc", "Get the Bloody Effect");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.trail.name", "You Can't Hide");
 		this.add(Butchercraft.MOD_ID + ".advancement.trail.desc", "Get the Bloody Trail Effect");
@@ -378,7 +378,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(Butchercraft.MOD_ID + ".advancement.apron.name", "Kiss the Cook!");
 		this.add(Butchercraft.MOD_ID + ".advancement.apron.desc",
-				"Make an Apron to prevent the Blood Splattered Effect");
+				"Make an Apron to prevent the Bloody Effect");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.boots.name", "Made for Walking");
 		this.add(Butchercraft.MOD_ID + ".advancement.boots.desc",
@@ -406,7 +406,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(Butchercraft.MOD_ID + ".advancement.butcherblock.desc", "Make a Butcher Block.");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.blood.name", "For the Blood God!");
-		this.add(Butchercraft.MOD_ID + ".advancement.blood.desc", "Aquire a Bucket of Blood");
+		this.add(Butchercraft.MOD_ID + ".advancement.blood.desc", "Acquire a Bucket of Blood");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.barn_wood.name", "Target Practice");
 		this.add(Butchercraft.MOD_ID + ".advancement.barn_wood.desc", "Make some Barn Wood");
