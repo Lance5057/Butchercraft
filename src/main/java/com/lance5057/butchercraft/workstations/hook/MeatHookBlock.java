@@ -55,11 +55,11 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 		return !state.getValue(WATERLOGGED);
 	}
 
-//	@Override
-//	protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos,
-//			CollisionContext context) {
-//		return state.getValue(DUMMY)== 0 ? state.getShape(level, pos) : Shapes.empty();
-//	}
+	@Override
+	protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos,
+			CollisionContext context) {
+		return state.getValue(DUMMY)== 0 ? state.getShape(level, pos) : Shapes.empty();
+	}
 
 	@Override
 	protected ItemInteractionResult useItemOn(ItemStack heldMain, BlockState state, Level world, BlockPos blockPos,

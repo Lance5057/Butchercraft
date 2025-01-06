@@ -187,10 +187,12 @@ public class MeatHookBlockEntity extends BlockEntity {
 				if (butcheringTool.getCount() >= this.toolCount) {
 					progress++;
 					if (this.progress >= this.maxProgress) {
-						if (butcheringTool.isDamageableItem())
-							butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
-						else
-							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
+						if (!p.isCreative()) {
+							if (butcheringTool.isDamageableItem())
+								butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
+							else
+								butcheringTool.shrink(1);
+						}
 						if (isFinalStage(recipe)) {
 
 							dropLoot(recipe.tools().get(stage), p);

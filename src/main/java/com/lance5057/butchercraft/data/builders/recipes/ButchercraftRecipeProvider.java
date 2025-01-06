@@ -398,12 +398,12 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_brown")),
 						standardButcherBlockToolModel(Items.GLASS_BOTTLE, 0))
-				.tool(Ingredient.of(ButchercraftItems.GUT_KNIFE.get()), 6, true,
+				.tool(Ingredient.of(ButchercraftItems.SKINNING_KNIFE.get()), 6, true,
 						ButcherBlockLootTables.SKIN_BROWN_RABBIT, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_brown")),
 						standardButcherBlockToolModel(ButchercraftItems.SKINNING_KNIFE.get(), 0))
-				.tool(Ingredient.of(ButchercraftItems.SKINNING_KNIFE.get()), 6, true,
+				.tool(Ingredient.of(ButchercraftItems.GUT_KNIFE.get()), 6, true,
 						ButcherBlockLootTables.DEOFFAL_RABBIT, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_skinned")),
@@ -1679,6 +1679,36 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.requires(Ingredient.of(ButchercraftItems.BLOOD_FLUID_BOTTLE), 1)
 				.unlockedBy("has_blood", has(ButchercraftItems.BLOOD_FLUID_BOTTLE)).save(consumer,
 						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "blood_bottle_to_bone_meal"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
+				.requires(Ingredient.of(ButchercraftItems.CHICKEN_SKULL_HEAD_ITEM), 1)
+				.unlockedBy("has_chicken_skull", has(ButchercraftItems.CHICKEN_SKULL_HEAD_ITEM)).save(consumer,
+						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "chicken_skull_to_bone_meal"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 6)
+				.requires(Ingredient.of(ButchercraftItems.COW_SKULL_HEAD_ITEM), 1)
+				.unlockedBy("has_cow_skull", has(ButchercraftItems.COW_SKULL_HEAD_ITEM))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cow_skull_to_bone_meal"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 6)
+				.requires(Ingredient.of(ButchercraftItems.GOAT_SKULL_HEAD_ITEM), 1)
+				.unlockedBy("has_goat_skull", has(ButchercraftItems.GOAT_SKULL_HEAD_ITEM))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "goat_skull_to_bone_meal"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 6)
+				.requires(Ingredient.of(ButchercraftItems.PIG_SKULL_HEAD_ITEM), 1)
+				.unlockedBy("has_pig_skull", has(ButchercraftItems.PIG_SKULL_HEAD_ITEM))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "pig_skull_to_bone_meal"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
+				.requires(Ingredient.of(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM), 1)
+				.unlockedBy("has_rabbit_skull", has(ButchercraftItems.RABBIT_SKULL_HEAD_ITEM)).save(consumer,
+						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "rabbit_skull_to_bone_meal"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 6)
+				.requires(Ingredient.of(ButchercraftItems.SHEEP_SKULL_HEAD_ITEM), 1)
+				.unlockedBy("has_sheep_skull", has(ButchercraftItems.SHEEP_SKULL_HEAD_ITEM))
+				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "sheep_skull_to_bone_meal"));
 	}
 
 	private void createFoodRecipe(Ingredient pIngredient, ItemLike pResult, RecipeOutput consumer) {
