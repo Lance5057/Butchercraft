@@ -35,7 +35,6 @@ public class ButchercraftBlocks {
 		FireBlock fire = (FireBlock) Blocks.FIRE;
 
 		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_BLOCK.get(), 5, 20);
-//		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_DOOR.get(), 5, 20);
 		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_FENCE.get(), 5, 20);
 		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_FENCE_GATE.get(), 5, 20);
 		fire.setFlammable(ButchercraftBlocks.BARN_WOOD_SLAB.get(), 5, 20);
@@ -122,7 +121,10 @@ public class ButchercraftBlocks {
 					BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_WHITE)));
 
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_COW_BLOCK = BLOCKS.register("taxidermy_cow_block",
-			() -> new TaxidermyBlock());
+			() -> new TaxidermyBlock()
+			{
+				
+			});
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_PIG_BLOCK = BLOCKS.register("taxidermy_pig_block",
 			() -> new TaxidermyBlock());
 	public static final DeferredBlock<TaxidermyBlock> TAXIDERMY_SHEEP_BLOCK = BLOCKS.register("taxidermy_sheep_block",

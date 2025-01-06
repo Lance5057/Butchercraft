@@ -1,0 +1,39 @@
+name: Bug report
+description: 'Bug:'
+body:
+  - type: dropdown
+    id: mcversion
+    attributes:
+      label: Minecraft Version
+      description: >-
+        Current active development is on 1.21+, previous version bugs will only
+        be considered if game breaking.
+      options:
+        - 1.19.2
+        - 1.20.1
+        - 1.21+
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Report
+      description: >-
+        Describe the issue here. Please include what you were doing at the time
+        the bug happened. If the bug caused a game crash, please include your
+        crash log below.
+    validations:
+      required: true
+  - type: textarea
+    id: crashlog
+    attributes:
+      label: Crash Log
+      description: '(If applicable) '
+      placeholder: >-
+        Typically found in *game instance*/logs/latest.log - Not what is found
+        in the crash reports folder!
+  - type: markdown
+    attributes:
+      value: >-
+        This template was generated with [Issue Forms
+        Creator](https://issue-forms-creator.netlify.app)
