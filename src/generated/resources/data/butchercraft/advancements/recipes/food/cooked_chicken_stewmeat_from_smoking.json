@@ -30,5 +30,6 @@
     "recipes": [
       "butchercraft:cooked_chicken_stewmeat_from_smoking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

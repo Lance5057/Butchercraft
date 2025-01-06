@@ -34,7 +34,7 @@ public class MaskModel extends HumanoidModel<LivingEntity> {
 
 		partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 		partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 16).addBox(
-				-4F, -8.0F, -4F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+				-4F, -8.0F, -4F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		return meshdefinition;
 	}

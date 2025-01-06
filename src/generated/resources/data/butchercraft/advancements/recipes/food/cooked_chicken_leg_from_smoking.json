@@ -30,5 +30,6 @@
     "recipes": [
       "butchercraft:cooked_chicken_leg_from_smoking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
