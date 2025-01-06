@@ -8,7 +8,6 @@ import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
-import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder.Reference;
@@ -152,7 +151,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 			if (this.level.getBlockState(this.worldPosition).getBlock() instanceof ButcherBlockBlock m) {
 				m.removeAbove(level, worldPosition);
 			}
-			
+
 		}
 		updateInventory();
 	}
@@ -186,12 +185,12 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 				if (butcheringTool.getCount() >= this.toolCount) {
 					progress++;
 					if (this.progress >= this.maxProgress) {
-
-						if (butcheringTool.isDamageableItem())
-							butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
-						else
-							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
-
+						if (!p.isCreative()) {
+							if (butcheringTool.isDamageableItem())
+								butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
+							else
+								butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
+						}
 						if (isFinalStage(recipe)) {
 
 //
