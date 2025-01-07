@@ -1,4 +1,4 @@
-// 1.21.1	2025-01-06T01:04:05.5108904	Recipes
+// 1.21.1	2025-01-06T03:50:25.9266762	Recipes
 009b90db535ceb2eb701ac7cd86c302fc39a939a data/butchercraft/advancement/recipes/building_blocks/barn_wood.json
 7cb5335ac1b376a042395aa3747785dd553fd1a5 data/butchercraft/advancement/recipes/building_blocks/barn_wood_door.json
 f19c8abd45dff40239f68fe75e34d1cdd278976f data/butchercraft/advancement/recipes/building_blocks/barn_wood_fence.json
@@ -376,7 +376,7 @@ c954696b0fc2bfe1a319228406e4f135b10c94e4 data/butchercraft/recipe/butcher_chicke
 3aaab2606698a577ffebc2b73e5907a20c7fa9f9 data/butchercraft/recipe/butcher_splotched_rabbit.json
 fb3af9e7dd02f2e79e5daf54aed2cfe56d72f425 data/butchercraft/recipe/butcher_white_rabbit.json
 a600976b730b37617e298eddc51949722cd2bade data/butchercraft/recipe/butcher_whole_chicken.json
-4efda1f9e04edf16938ac55e34ac53a11b6a9bdc data/butchercraft/recipe/butcher_whole_rabbit.json
+74cc5dd2f576f03d2ae4ff98ca152f035efbd079 data/butchercraft/recipe/butcher_whole_rabbit.json
 b6dcfacde1a999f82b29bc3c9c5c989195888b6e data/butchercraft/recipe/casing.json
 361e5b36ab07490ed5b76f54d1c37780a123321b data/butchercraft/recipe/chicken_block.json
 74aa9702dcef0198cabadb53b4a6203827c87397 data/butchercraft/recipe/chicken_block_to_scraps.json
