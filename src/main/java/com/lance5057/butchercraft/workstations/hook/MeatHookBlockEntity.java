@@ -29,8 +29,9 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.RecipeManager.CachedCheck;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -50,10 +51,13 @@ public class MeatHookBlockEntity extends BlockEntity {
 	// public NonNullList<RecipeItemUse> toolList;
 	public int progress;
 	public int maxProgress;
-	private Ingredient curTool;
-	public int toolCount;
+//	private Ingredient curTool;
+//	public int toolCount;
 	public int stage = 0;
 	public boolean displayTools = true;
+
+	private final CachedCheck<HookRecipeContainer, HookRecipe> quickCheck = RecipeManager
+			.createCheck(ButchercraftRecipes.HOOK.get());
 
 	public MeatHookBlockEntity(BlockPos pPos, BlockState pState) {
 		super(ButchercraftBlockEntities.MEAT_HOOK.get(), pPos, pState);
@@ -74,8 +78,8 @@ public class MeatHookBlockEntity extends BlockEntity {
 	public void zeroProgress() {
 		this.progress = 0;
 		this.maxProgress = 0;
-		this.curTool = null;
-		this.toolCount = 0;
+//		this.curTool = null;
+//		this.toolCount = 0;
 		this.stage = 0;
 	}
 
@@ -87,8 +91,8 @@ public class MeatHookBlockEntity extends BlockEntity {
 
 		this.progress = 0;
 		this.maxProgress = r.tools().get(i).uses();
-		this.curTool = r.tools().get(i).tool();
-		this.toolCount = r.tools().get(i).count();
+//		this.curTool = r.tools().get(i).tool();
+//		this.toolCount = r.tools().get(i).count();
 
 		this.stage = i;
 	}
@@ -104,8 +108,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 	// Attempt to find a recipe that matches the tool and the item in its inventory
 	private Optional<RecipeHolder<HookRecipe>> matchRecipe() {
 		if (this.level != null) {
-			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.HOOK.get(),
-					new HookRecipeContainer(getInsertedItem()), level);
+			return quickCheck.getRecipeFor(new HookRecipeContainer(getInsertedItem()), level);
 		}
 		return Optional.empty();
 
@@ -168,6 +171,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 				if (this.level.getBlockState(this.worldPosition).getBlock() instanceof MeatHookBlock m) {
 					m.placeBelow(level, getBlockState(), this.worldPosition);
 				}
+				this.setupStage(this.matchRecipe().get().value(), 0);
 			}
 		updateInventory();
 	}
@@ -181,11 +185,11 @@ public class MeatHookBlockEntity extends BlockEntity {
 		Optional<RecipeHolder<HookRecipe>> recipeOptional = matchRecipe();
 		if (recipeOptional.isPresent()) {
 			HookRecipe recipe = recipeOptional.get().value();
-			if (this.curTool == null) {
+			if (recipe.tools().get(stage) == null) {
 				setupStage(recipe, stage);
 			}
-			if (this.curTool.test(butcheringTool)) {
-				if (butcheringTool.getCount() >= this.toolCount) {
+			if (recipe.tools().get(stage).tool().test(butcheringTool)) {
+				if (butcheringTool.getCount() >= recipe.tools().get(stage).count()) {
 					progress++;
 					if (this.progress >= this.maxProgress) {
 						if (!p.isCreative()) {
@@ -211,7 +215,7 @@ public class MeatHookBlockEntity extends BlockEntity {
 						if (butcheringTool.isDamageableItem())
 							butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
 						else
-							butcheringTool.setCount(butcheringTool.getCount() - this.toolCount);
+							butcheringTool.setCount(butcheringTool.getCount() - recipe.tools().get(stage).uses());
 
 						for (int i = 0; i < 1 + level.random.nextInt(4); i++)
 							level.addParticle(ParticleTypes.FALLING_LAVA,
@@ -329,14 +333,19 @@ public class MeatHookBlockEntity extends BlockEntity {
 		if (nbt.contains("inventory")) {
 			inventory.deserializeNBT(registries, nbt.getCompound("inventory"));
 		}
-
-		this.stage = nbt.getInt("stage");
+		progress = nbt.getInt("progress");
+		maxProgress = nbt.getInt("max_progress");
+		displayTools = nbt.getBoolean("display_tools");
+		stage = nbt.getInt("stage");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 
 		tag.put("inventory", inventory.serializeNBT(registries));
 
+		tag.putInt("progress", progress);
+		tag.putInt("max_progress", maxProgress);
+		tag.putBoolean("display_tools", displayTools);
 		tag.putInt("stage", stage);
 
 		return tag;
