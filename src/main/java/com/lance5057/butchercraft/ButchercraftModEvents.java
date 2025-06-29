@@ -204,7 +204,9 @@ public class ButchercraftModEvents {
 					event.getEntity().addEffect(new MobEffectInstance(MobEffects.HUNGER, 600));
 				}
 
-				event.setCanceled(true);
+				if (event.isCancelable()) {
+					event.setCanceled(true);
+				}
 			}
 		}
 	}
