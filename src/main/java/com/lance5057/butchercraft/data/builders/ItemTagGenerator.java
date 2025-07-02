@@ -2,6 +2,8 @@ package com.lance5057.butchercraft.data.builders;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.butchercraft.ButchercraftBlocks;
+import com.lance5057.butchercraft.tags.ButchercraftBlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.butchercraft.Butchercraft;
@@ -303,6 +305,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		tag(ButchercraftItemTags.RABBIT).addTag(ButchercraftItemTags.RABBIT_COOKED)
 				.addTag(ButchercraftItemTags.RABBIT_RAW);
 
+		// Meat
 		tag(ButchercraftItemTags.MEAT_RAW).addTag(ButchercraftItemTags.GOAT_RAW).addTag(ButchercraftItemTags.BEEF_RAW)
 				.addTag(ButchercraftItemTags.MUTTON_RAW).addTag(ButchercraftItemTags.PORK_RAW)
 				.addTag(ButchercraftItemTags.CHICKEN_RAW).addTag(ButchercraftItemTags.RABBIT_RAW);
@@ -458,5 +461,12 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		
 		tag(ItemTags.WOLF_FOOD).addTag(ButchercraftItemTags.MEAT);
 		tag(ItemTags.PIGLIN_FOOD).addTag(ButchercraftItemTags.MEAT_COOKED);
+
+		tag(ButchercraftItemTags.LEATHER_SCRAP).add(ButchercraftItems.LEATHER_SCRAP.get());
+		tag(ButchercraftItemTags.KNIFE).add(ButchercraftItems.BUTCHER_KNIFE.get(),
+				ButchercraftItems.SKINNING_KNIFE.get(), ButchercraftItems.GUT_KNIFE.get(),
+				ButchercraftItems.BONE_SAW.get());
+		tag(ButchercraftItemTags.VILLAGER_JOB_SITES).add(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get(),
+				ButchercraftItems.GRINDER_BLOCK_ITEM.get());
 	}
 }

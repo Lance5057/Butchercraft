@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ButchercraftItemTags {
 	public static final TagKey<Item> COW_CARCASS = butcherTag("cow_carcass");
@@ -264,6 +265,9 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> BUNNY_EARS = butcherTag("bunny_ears");
 	public static final TagKey<Item> BUNNY_TAILS = butcherTag("bunny_tails");
 	public static final TagKey<Item> TAXIDERMY = butcherTag("taxidermy");
+
+	public static final TagKey<Item> KNIFE = neoforgeItemTag("tools/knife");
+	public static final TagKey<Item> VILLAGER_JOB_SITES = neoforgeItemTag("villager_job_sites");
 
 	public static TagKey<Item> neoforgeItemTag(String tag) {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", tag));
