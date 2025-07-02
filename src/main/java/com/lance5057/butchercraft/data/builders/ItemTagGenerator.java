@@ -2,8 +2,6 @@ package com.lance5057.butchercraft.data.builders;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.lance5057.butchercraft.ButchercraftBlocks;
-import com.lance5057.butchercraft.tags.ButchercraftBlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.butchercraft.Butchercraft;
