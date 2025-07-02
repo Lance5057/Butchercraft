@@ -2,6 +2,7 @@ package com.lance5057.butchercraft.data.builders;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.lance5057.butchercraft.tags.ButchercraftBlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.butchercraft.Butchercraft;
@@ -39,5 +40,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		tag(BlockTags.FENCES).add(ButchercraftBlocks.BARN_WOOD_FENCE.get());
 		tag(BlockTags.FENCE_GATES).add(ButchercraftBlocks.BARN_WOOD_FENCE_GATE.get());
 		tag(BlockTags.WOODEN_FENCES).add(ButchercraftBlocks.BARN_WOOD_FENCE.get());
+
+		tag(ButchercraftBlockTags.VILLAGER_JOB_SITES).add(ButchercraftBlocks.BUTCHER_BLOCK.get(),
+				ButchercraftBlocks.GRINDER.get());
 	}
 }

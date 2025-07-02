@@ -265,6 +265,9 @@ public class ButchercraftItemTags {
 	public static final TagKey<Item> BUNNY_TAILS = butcherTag("bunny_tails");
 	public static final TagKey<Item> TAXIDERMY = butcherTag("taxidermy");
 
+	public static final TagKey<Item> KNIFE = neoforgeItemTag("tools/knife");
+	public static final TagKey<Item> VILLAGER_JOB_SITES = neoforgeItemTag("villager_job_sites");
+
 	public static TagKey<Item> neoforgeItemTag(String tag) {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", tag));
 	}
