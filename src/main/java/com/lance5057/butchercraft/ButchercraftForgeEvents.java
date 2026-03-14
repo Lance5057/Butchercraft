@@ -162,38 +162,42 @@ public class ButchercraftForgeEvents {
 
 	@SubscribeEvent
 	public static void breedEvent(BabyEntitySpawnEvent event) {
-		Level level = event.getChild().level();
+		if (event.getChild() != null) {
+			Level level = event.getChild().level();
 
-		if (level instanceof ServerLevel) {
-			ServerLevel server = (ServerLevel) level;
+			if (level instanceof ServerLevel) {
+				ServerLevel server = (ServerLevel) level;
 
-			if (event.getChild() instanceof Cow) {
-				Cow baby = (Cow) event.getChild();
-				Cow pA = (Cow) event.getParentA();
-				Cow pB = (Cow) event.getParentB();
+				if (event.getChild() instanceof Cow) {
+					Cow baby = (Cow) event.getChild();
+					Cow pA = (Cow) event.getParentA();
+					Cow pB = (Cow) event.getParentB();
 
-				baby.setAge((int) (AgeableMob.BABY_START_AGE * ButchercraftConfig.AGE_MULTIPLIER.get()));
-				pA.setAge((int) (6000 * ButchercraftConfig.BREEDING_MULTIPLIER.get()));
-				pB.setAge((int) (6000 * ButchercraftConfig.BREEDING_MULTIPLIER.get()));
+					baby.setAge((int) (AgeableMob.BABY_START_AGE * ButchercraftConfig.AGE_MULTIPLIER.get()));
+					pA.setAge((int) (6000 * ButchercraftConfig.BREEDING_MULTIPLIER.get()));
+					pB.setAge((int) (6000 * ButchercraftConfig.BREEDING_MULTIPLIER.get()));
 
-				float pAN = Optional.ofNullable(pA.getCapability(AnimalCareProvider.CARE)).map(i -> i.getNutrition())
-						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get().floatValue()); // TODO
-				// config
-				float pBN = Optional.ofNullable(pB.getCapability(AnimalCareProvider.CARE)).map(i -> i.getNutrition())
-						.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get().floatValue());
+					float pAN = Optional.ofNullable(pA.getCapability(AnimalCareProvider.CARE))
+							.map(i -> i.getNutrition())
+							.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get().floatValue()); // TODO
+					// config
+					float pBN = Optional.ofNullable(pB.getCapability(AnimalCareProvider.CARE))
+							.map(i -> i.getNutrition())
+							.orElse(ButchercraftConfig.WILDLIFE_NUTRITION.get().floatValue());
 
-				if (pAN + pBN >= 2) {
-					Optional.ofNullable(baby.getCapability(AnimalCareProvider.CARE))
-							.ifPresent(i -> i.setNutrition(0.9f));
-					Cow baby2 = (Cow) baby.getType().spawn(server, null, event.getCausedByPlayer(), pA.blockPosition(),
-							MobSpawnType.BREEDING, true, false);
-					baby2.setBaby(true);
-					Optional.ofNullable(baby2.getCapability(AnimalCareProvider.CARE))
-							.ifPresent(i -> i.setNutrition(0.9f));
-				} else {
-					float bred = Math.max(pAN, pBN) + Math.min(pAN, pBN) / 2;
-					Optional.ofNullable(baby.getCapability(AnimalCareProvider.CARE))
-							.ifPresent(i -> i.setNutrition(bred));
+					if (pAN + pBN >= 2) {
+						Optional.ofNullable(baby.getCapability(AnimalCareProvider.CARE))
+								.ifPresent(i -> i.setNutrition(0.9f));
+						Cow baby2 = (Cow) baby.getType().spawn(server, null, event.getCausedByPlayer(),
+								pA.blockPosition(), MobSpawnType.BREEDING, true, false);
+						baby2.setBaby(true);
+						Optional.ofNullable(baby2.getCapability(AnimalCareProvider.CARE))
+								.ifPresent(i -> i.setNutrition(0.9f));
+					} else {
+						float bred = Math.max(pAN, pBN) + Math.min(pAN, pBN) / 2;
+						Optional.ofNullable(baby.getCapability(AnimalCareProvider.CARE))
+								.ifPresent(i -> i.setNutrition(bred));
+					}
 				}
 			}
 		}

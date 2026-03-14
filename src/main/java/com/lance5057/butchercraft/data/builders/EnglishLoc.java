@@ -24,6 +24,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("butchercraft.block.meathook.no_space", "There isn't enough space to hang this...");
 		this.add("butchercraft.block.butcherblock.no_space", "There isn't enough space to place this...");
 
+		this.add("entity.minecraft.villager.slaugther", "Slaughterer");
+		this.add("entity.minecraft.villager.butchercraft.slaughter_profession", "Slaughterer");
+
 		this.add(Butchercraft.MOD_ID + ".tooltip.grinder_tip", "For the Meat Grinder");
 
 		this.add(ButchercraftItems.COOKED_BEEF_SCRAPS.get(), "Cooked Beef Scraps");
@@ -377,8 +380,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(Butchercraft.MOD_ID + ".advancement.gloves.desc", "Make Gloves to prevent the Dirty Hands Effect");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.apron.name", "Kiss the Cook!");
-		this.add(Butchercraft.MOD_ID + ".advancement.apron.desc",
-				"Make an Apron to prevent the Bloody Effect");
+		this.add(Butchercraft.MOD_ID + ".advancement.apron.desc", "Make an Apron to prevent the Bloody Effect");
 
 		this.add(Butchercraft.MOD_ID + ".advancement.boots.name", "Made for Walking");
 		this.add(Butchercraft.MOD_ID + ".advancement.boots.desc",

@@ -17,7 +17,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 public class Butchercraft {
 
 	public final static String MOD_ID = "butchercraft";
-	public static final String VERSION = "2.6.3";
+	public static final String VERSION = "2.6.5";
 
 	public static Logger logger = LogManager.getLogger();
 
@@ -50,7 +50,9 @@ public class Butchercraft {
 	}
 
 	public void setupCommon(FMLCommonSetupEvent event) {
-		ButchercraftBlocks.setup();
+		event.enqueueWork(() -> {
+			ButchercraftBlocks.setup();
+		});
 	}
 
 }
