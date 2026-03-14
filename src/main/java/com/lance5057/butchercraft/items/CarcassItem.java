@@ -21,7 +21,7 @@ public class CarcassItem extends Item {
 
 	@Override
 	public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-		if (pLevel.getRandom().nextInt() % ButchercraftConfig.CARCASS_EFFECT_CHANCE.get() == 0)
+		if (!pLevel.isClientSide && pLevel.getRandom().nextInt() % ButchercraftConfig.CARCASS_EFFECT_CHANCE.get() == 0)
 			if (pEntity instanceof Player p) {
 				ItemStack boots = p.getInventory().getArmor(0);
 				if (boots.getItem() instanceof BootsItem)
