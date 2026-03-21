@@ -1,5 +1,8 @@
 package com.lance5057.butchercraft.workstations.butcherblock;
 
+import java.util.Collections;
+import java.util.List;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -25,6 +28,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -129,8 +133,11 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 	}
 
 	void removeAbove(Level level, BlockPos pos) {
-		if (level.getBlockState(pos.above()).getBlock() instanceof ButcherBlockBlock)
-			level.destroyBlock(pos.above(), false);
+		if (level.getBlockState(pos.above()).getBlock() instanceof ButcherBlockBlock) {
+			if (level.getBlockState(pos.above()).getValue(DUMMY)) {
+				level.destroyBlock(pos.above(), false);
+			}
+		}
 	}
 
 	@Override
@@ -151,11 +158,18 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 	@Override
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
-
-			removeAbove(level, pos);
-
+			if (!state.getValue(DUMMY)) {
+				removeAbove(level, pos);
+			}
 			super.onRemove(state, level, pos, newState, isMoving);
 		}
 	}
 
+	@Override
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+		if (state.getValue(DUMMY)) {
+			return Collections.emptyList();
+		}
+		return super.getDrops(state, params);
+	}
 }

@@ -1,5 +1,8 @@
 package com.lance5057.butchercraft.workstations.hook;
 
+import java.util.Collections;
+import java.util.List;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -26,6 +29,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -138,10 +142,16 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 	}
 
 	void removeBelow(Level level, BlockPos pos) {
-		if (level.getBlockState(pos.below()).getBlock() instanceof MeatHookBlock)
-			level.destroyBlock(pos.below(), false);
-		if (level.getBlockState(pos.below(2)).getBlock() instanceof MeatHookBlock)
-			level.destroyBlock(pos.below(2), false);
+		if (level.getBlockState(pos.below()).getBlock() instanceof MeatHookBlock) {
+			if (level.getBlockState(pos.below()).getValue(DUMMY) != 0) {
+				level.destroyBlock(pos.below(), false);
+			}
+		}
+		if (level.getBlockState(pos.below(2)).getBlock() instanceof MeatHookBlock) {
+			if (level.getBlockState(pos.below(2)).getValue(DUMMY) != 0) {
+				level.destroyBlock(pos.below(2), false);
+			}
+		}
 	}
 
 	@Override
@@ -176,5 +186,13 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 //		}
 
 		super.onRemove(state, level, pos, newState, isMoving);
+	}
+
+	@Override
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+		if (state.getValue(DUMMY) != 0) {
+			return Collections.emptyList();
+		}
+		return super.getDrops(state, params);
 	}
 }
