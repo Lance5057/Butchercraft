@@ -27,6 +27,7 @@ import com.lance5057.butchercraft.items.ToolTipItem;
 import com.lance5057.butchercraft.items.WolfFoodSpecialItem;
 
 import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
@@ -39,6 +40,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.StandingAndWallBlockItem;
+import net.minecraft.world.item.component.CustomData;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -342,6 +344,10 @@ public class ButchercraftItems {
 			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<CarcassItem> WHITE_RABBIT_CARCASS = ITEMS.register("white_rabbit_carcass",
 			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+
+	public static final DeferredItem<CarcassItem> CARCASS = ITEMS.register("carcass",
+			() -> new CarcassItem(
+					new Item.Properties().stacksTo(1).component(DataComponents.ENTITY_DATA, CustomData.EMPTY)));
 
 	public static final DeferredItem<BunnyTailItem> BLACK_BUNNY_TAIL = ITEMS.register("black_bunny_tail",
 			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_BLACK,

@@ -29,7 +29,7 @@ public class ButchercraftVillagers {
 	public static final DeferredHolder<PoiType, PoiType> SLAUGHTER_POI = POI_TYPES.register("slaughter_poi", () -> {
 		HashSet<BlockState> s = new HashSet<BlockState>();
 		s.addAll(ButchercraftBlocks.MEAT_HOOK.get().getStateDefinition().getPossibleStates());
-		s.addAll(ButchercraftBlocks.MEAT_HOOK.get().getStateDefinition().getPossibleStates());
+		s.addAll(ButchercraftBlocks.BUTCHER_BLOCK.get().getStateDefinition().getPossibleStates());
 		return new PoiType(s, 1, 1);
 	});
 
