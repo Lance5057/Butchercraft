@@ -6,6 +6,7 @@ import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemU
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -13,12 +14,23 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-public record HookRecipe(
-		String group,
-		Ingredient carcass,
-		NonNullList<AnimatedRecipeItemUse> tools,
-		NonNullList<Ingredient> jei
-) implements Recipe<HookRecipeContainer> {
+public class HookRecipe implements Recipe<HookRecipeContainer> {
+
+	String group;
+	Ingredient carcass;
+	ResourceLocation entity;
+	NonNullList<AnimatedRecipeItemUse> tools;
+	NonNullList<Ingredient> jei;
+
+	public HookRecipe(String group, Ingredient carcass, ResourceLocation entity,
+			NonNullList<AnimatedRecipeItemUse> tools, NonNullList<Ingredient> jei) {
+		this.group = group;
+		this.carcass = carcass;
+		this.entity = entity;
+		this.tools = tools;
+		this.jei = jei;
+	}
+
 	@Override
 	public boolean matches(HookRecipeContainer pContainer, Level pLevel) {
 		return carcass.test(pContainer.getInsertedItem());

@@ -5,6 +5,11 @@
     "minecraft:pig",
     "minecraft:goat",
     "minecraft:rabbit",
-    "minecraft:chicken"
+    "minecraft:chicken",
+    "minecraft:horse",
+    "minecraft:camel",
+    "minecraft:donkey",
+    "minecraft:hoglin",
+    "minecraft:llama"
   ]
 }

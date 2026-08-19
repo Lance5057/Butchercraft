@@ -24,19 +24,21 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.storage.loot.LootTable;
 
 public class MeatHookRecipeBuilder implements RecipeBuilder {
-	private final Item result;
+	private final Item carcass;
+	private final ResourceLocation entity;
 	private final List<AnimatedRecipeItemUse> tools = NonNullList.create();
 	private final List<Ingredient> jei = NonNullList.create();
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 	private String group;
 
-	public MeatHookRecipeBuilder(Item carcassIn) {
-		this.result = carcassIn;
+	public MeatHookRecipeBuilder(Item carcassIn, ResourceLocation entity) {
+		this.carcass = carcassIn;
+		this.entity = entity;
 		this.unlockedBy(RecipeBuilderUtil.getHasName(carcassIn), RecipeBuilderUtil.has(carcassIn));
 	}
 
-	public static MeatHookRecipeBuilder shapedRecipe(Item resultIn) {
-		return new MeatHookRecipeBuilder(resultIn);
+	public static MeatHookRecipeBuilder recipe(Item carcassIn, ResourceLocation entity) {
+		return new MeatHookRecipeBuilder(carcassIn, entity);
 	}
 
 	public MeatHookRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage,
@@ -85,7 +87,7 @@ public class MeatHookRecipeBuilder implements RecipeBuilder {
 
 	@Override
 	public Item getResult() {
-		return this.result;
+		return this.carcass;
 	}
 
 	@Override
@@ -97,7 +99,7 @@ public class MeatHookRecipeBuilder implements RecipeBuilder {
 				.requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(builder::addCriterion);
 		consumerIn.accept(pRecipeId,
-				new HookRecipe(this.group == null ? "" : this.group, Ingredient.of(this.result),
+				new HookRecipe(this.group == null ? "" : this.group, Ingredient.of(this.carcass), entity,
 						NonNullList.copyOf(this.tools), NonNullList.copyOf(this.jei)),
 				builder.build(ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 						"recipes/meat_hook/" + pRecipeId.getPath())));

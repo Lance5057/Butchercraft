@@ -1,2 +1,3 @@
-// 1.21.1	2024-10-22T20:32:09.8321068	Tags for minecraft:entity_type mod id butchercraft
-59ba58b664b9954543aac1e0671e30cc9c71a8b1 data/butchercraft/tags/entity_type/butcher_knife_animals.json
+// 1.21.1	2026-08-19T12:46:10.7786685	Tags for minecraft:entity_type mod id butchercraft
+b87c8d351dfb076e5bf1b541ecd2f386c494ef5d data/butchercraft/tags/entity_type/butcher_knife_animals.json
+f7cc9e720867f2fea58d5b0840bdce7a253ca3fe data/butchercraft/tags/entity_type/hostile_animals.json

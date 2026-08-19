@@ -3,6 +3,7 @@ package com.lance5057.butchercraft;
 import java.util.Map;
 
 import com.lance5057.butchercraft.blocks.AnimalHeadBlock;
+import com.lance5057.butchercraft.client.CarcassItemRenderer;
 import com.lance5057.butchercraft.client.block_models.ChickenHeadModel;
 import com.lance5057.butchercraft.client.block_models.ChickenSkullHeadModel;
 import com.lance5057.butchercraft.client.block_models.CowHeadModel;
@@ -20,8 +21,8 @@ import com.lance5057.butchercraft.workstations.grinder.GrinderRenderer;
 import com.lance5057.butchercraft.workstations.hook.MeatHookRenderer;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.inventory.MerchantScreen;
 import net.minecraft.client.model.SkullModel;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -32,7 +33,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
-import net.neoforged.neoforge.client.event.ScreenEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = Butchercraft.MOD_ID)
 public class ButchercraftClient {
@@ -64,6 +66,17 @@ public class ButchercraftClient {
 
 			event.register(rl2);
 		});
+	}
+
+	@SubscribeEvent
+	public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+		event.registerItem(new IClientItemExtensions() {
+
+			@Override
+			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+				return CarcassItemRenderer.getInstance();
+			}
+		}, ButchercraftItems.CARCASS);
 	}
 
 	@SubscribeEvent

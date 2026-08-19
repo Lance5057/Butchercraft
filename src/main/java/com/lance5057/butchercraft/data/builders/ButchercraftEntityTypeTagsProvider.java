@@ -15,14 +15,18 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class ButchercraftEntityTypeTagsProvider extends EntityTypeTagsProvider {
 
-	public ButchercraftEntityTypeTagsProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, ExistingFileHelper existingFileHelper) {
+	public ButchercraftEntityTypeTagsProvider(PackOutput pOutput,
+			CompletableFuture<HolderLookup.Provider> pLookupProvider, ExistingFileHelper existingFileHelper) {
 		super(pOutput, pLookupProvider, Butchercraft.MOD_ID, existingFileHelper);
 	}
 
 	@Override
 	protected void addTags(@NotNull HolderLookup.Provider pProvider) {
 		tag(ButchercraftEntityTags.CARCASSES).add(EntityType.COW, EntityType.SHEEP, EntityType.PIG, EntityType.GOAT,
-				EntityType.RABBIT, EntityType.CHICKEN);
+				EntityType.RABBIT, EntityType.CHICKEN, EntityType.HORSE, EntityType.CAMEL, EntityType.DONKEY,
+				EntityType.HOGLIN, EntityType.LLAMA);
+
+		tag(ButchercraftEntityTags.HOSTILE).add(EntityType.HOGLIN);
 	}
 
 }

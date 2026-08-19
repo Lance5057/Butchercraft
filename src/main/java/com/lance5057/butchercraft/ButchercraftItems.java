@@ -321,33 +321,32 @@ public class ButchercraftItems {
 
 	public static final DeferredItem<Item> BEAK = ITEMS.register("beak", () -> new Item(new Item.Properties()));
 
-	public static final DeferredItem<CarcassItem> COW_CARCASS = ITEMS.register("cow_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> SHEEP_CARCASS = ITEMS.register("sheep_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> PIG_CARCASS = ITEMS.register("pig_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> CHICKEN_CARCASS = ITEMS.register("chicken_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> GOAT_CARCASS = ITEMS.register("goat_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> COW_CARCASS = ITEMS.register("cow_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> SHEEP_CARCASS = ITEMS.register("sheep_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> PIG_CARCASS = ITEMS.register("pig_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> CHICKEN_CARCASS = ITEMS.register("chicken_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> GOAT_CARCASS = ITEMS.register("goat_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//
+//	public static final DeferredItem<CarcassItem> BLACK_RABBIT_CARCASS = ITEMS.register("black_rabbit_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> BROWN_RABBIT_CARCASS = ITEMS.register("brown_rabbit_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> SPLOTCHED_RABBIT_CARCASS = ITEMS.register("splotched_rabbit_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> GOLD_RABBIT_CARCASS = ITEMS.register("gold_rabbit_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> SALT_RABBIT_CARCASS = ITEMS.register("salt_rabbit_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
+//	public static final DeferredItem<CarcassItem> WHITE_RABBIT_CARCASS = ITEMS.register("white_rabbit_carcass",
+//			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
 
-	public static final DeferredItem<CarcassItem> BLACK_RABBIT_CARCASS = ITEMS.register("black_rabbit_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> BROWN_RABBIT_CARCASS = ITEMS.register("brown_rabbit_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> SPLOTCHED_RABBIT_CARCASS = ITEMS.register("splotched_rabbit_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> GOLD_RABBIT_CARCASS = ITEMS.register("gold_rabbit_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> SALT_RABBIT_CARCASS = ITEMS.register("salt_rabbit_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-	public static final DeferredItem<CarcassItem> WHITE_RABBIT_CARCASS = ITEMS.register("white_rabbit_carcass",
-			() -> new CarcassItem(new Item.Properties().stacksTo(1)));
-
-	public static final DeferredItem<CarcassItem> CARCASS = ITEMS.register("carcass",
-			() -> new CarcassItem(
-					new Item.Properties().stacksTo(1).component(DataComponents.ENTITY_DATA, CustomData.EMPTY)));
+	public static final DeferredItem<CarcassItem> CARCASS = ITEMS.register("carcass", () -> new CarcassItem(
+			new Item.Properties().stacksTo(1).component(DataComponents.ENTITY_DATA, CustomData.EMPTY)));
 
 	public static final DeferredItem<BunnyTailItem> BLACK_BUNNY_TAIL = ITEMS.register("black_bunny_tail",
 			() -> new BunnyTailItem(BCArmorMaterial.BUNNY_BLACK,

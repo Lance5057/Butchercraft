@@ -16,6 +16,7 @@ public class ButchercraftConfig {
 
 	public static final String CATEGORY_GEAR = "gear";
 	public static final ModConfigSpec.IntValue CARCASS_EFFECT_CHANCE;
+	public static final ModConfigSpec.IntValue HOSTILE_HEALTH;
 
 	static {
 		ModConfigSpec.Builder Builder = new ModConfigSpec.Builder();
@@ -24,20 +25,18 @@ public class ButchercraftConfig {
 		BREEDING_MULTIPLIER = Builder.comment("How much longer should it take for a baby animal to age?")
 				.defineInRange("breeding_mulitplier", 0.1, 0, 1);
 
-		AGE_MULTIPLIER = Builder
-				.comment("How much longer should it take for an animal to be able to breed again?")
+		AGE_MULTIPLIER = Builder.comment("How much longer should it take for an animal to be able to breed again?")
 				.defineInRange("age_multiplier", 4, 1, Double.MAX_VALUE);
 
-		WILDLIFE_NUTRITION = Builder.comment("Nutrition of wild animals.")
-				.defineInRange("nutrition_multiplier", 0.3, 0, 1);
+		WILDLIFE_NUTRITION = Builder.comment("Nutrition of wild animals.").defineInRange("nutrition_multiplier", 0.3, 0,
+				1);
 		Builder.pop();
 
 		Builder.comment("Mobs").push(CATEGORY_MOBS);
 		HOOD_SPAWN_CHANCE = Builder.comment("Chance that an undead mob will spawn with an animal hood.")
 				.defineInRange("hoodChanceMultiplier", 0.1, 0, 1);
 
-		HOOD_ARMY_CHANCE = Builder
-				.comment("Chance that an undead with a hood spawns with an army of matching animals.")
+		HOOD_ARMY_CHANCE = Builder.comment("Chance that an undead with a hood spawns with an army of matching animals.")
 				.defineInRange("armyHoodChanceMultiplier", 0.1, 0, 1);
 		Builder.pop();
 
@@ -45,6 +44,8 @@ public class ButchercraftConfig {
 		CARCASS_EFFECT_CHANCE = Builder.comment(
 				"Chance that a carcass applies its bloody effects per inventory tick. (Default 1/1000) Raising this can decrease server lag.")
 				.defineInRange("armyHoodChanceMultiplier", 1000, 1, Integer.MAX_VALUE);
+
+		HOSTILE_HEALTH = Builder.comment("").defineInRange("hostileHealthInstakill", 3, 1, 10);
 		Builder.pop();
 
 		spec = Builder.build();

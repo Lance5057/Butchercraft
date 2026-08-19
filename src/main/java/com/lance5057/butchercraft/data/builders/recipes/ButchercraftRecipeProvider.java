@@ -93,7 +93,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 	@Override
 	protected void buildRecipes(RecipeOutput consumer) {
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_CARCASS.get())
+		MeatHookRecipeBuilder.recipe(ButchercraftItems.CARCASS.get(), ResourceLocation.withDefaultNamespace("cow"))
 				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET, CARCASS_DEFAULT,
 						standardModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/cow")),
 						standardHookToolModel(Items.BUCKET))
@@ -149,7 +149,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.BONE))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cow"));
 
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.SHEEP_CARCASS.get())
+		MeatHookRecipeBuilder.recipe(ButchercraftItems.CARCASS.get(), ResourceLocation.withDefaultNamespace("sheep"))
 				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET, CARCASS_DEFAULT,
 						standardModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/sheep")),
 						standardHookToolModel(Items.BUCKET))
@@ -193,7 +193,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.MUTTON)).JEIIngredient(Ingredient.of(ButchercraftItems.HOOF.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "sheep"));
 
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.PIG_CARCASS.get())
+		MeatHookRecipeBuilder.recipe(ButchercraftItems.CARCASS.get(), ResourceLocation.withDefaultNamespace("pig"))
 				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET, CARCASS_DEFAULT,
 						standardModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/pig")),
 						standardHookToolModel(Items.BUCKET))
@@ -240,7 +240,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.BONE))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "pig"));
 
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.GOAT_CARCASS.get())
+		MeatHookRecipeBuilder.recipe(ButchercraftItems.CARCASS.get(), ResourceLocation.withDefaultNamespace("goat"))
 				.tool(Ingredient.of(Items.BUCKET), 1, true, MeatHookLoottables.BLOOD_BUCKET, CARCASS_DEFAULT,
 						standardModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/goat")),
 						standardHookToolModel(Items.BUCKET))
@@ -284,7 +284,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(ButchercraftItems.HOOF.get())).JEIIngredient(Ingredient.of(Items.BONE))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "goat"));
 
-		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.CHICKEN_CARCASS.get())
+		ButcherBlockRecipeBuilder.recipe(ButchercraftItems.CARCASS.get(), ResourceLocation.withDefaultNamespace("chicken"))
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/chicken")),
@@ -356,7 +356,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.BONE_MEAL))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_whole_chicken"));
 
-		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.BLACK_RABBIT_CARCASS.get())
+		ButcherBlockRecipeBuilder.recipe(ButchercraftItems.CARCASS.get(), ResourceLocation.withDefaultNamespace("rabbit"))
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_black")),
@@ -389,7 +389,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.RABBIT))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_black_rabbit"));
 
-		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.BROWN_RABBIT_CARCASS.get())
+		ButcherBlockRecipeBuilder.recipe(ButchercraftItems.BROWN_RABBIT_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_brown")),
@@ -403,8 +403,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_brown")),
 						standardButcherBlockToolModel(ButchercraftItems.SKINNING_KNIFE.get(), 0))
-				.tool(Ingredient.of(ButchercraftItems.GUT_KNIFE.get()), 6, true,
-						ButcherBlockLootTables.DEOFFAL_RABBIT, CARCASS_DEFAULT,
+				.tool(Ingredient.of(ButchercraftItems.GUT_KNIFE.get()), 6, true, ButcherBlockLootTables.DEOFFAL_RABBIT,
+						CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_skinned")),
 						standardButcherBlockToolModel(ButchercraftItems.GUT_KNIFE.get(), 0))
@@ -422,7 +422,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.RABBIT))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_brown_rabbit"));
 
-		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get())
+		ButcherBlockRecipeBuilder.recipe(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE, CARCASS_DEFAULT,
 						standardButcherBlockModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID,
 								"meathook/rabbit_splotched")),
@@ -455,7 +455,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.RABBIT))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_splotched_rabbit"));
 
-		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.GOLD_RABBIT_CARCASS.get())
+		ButcherBlockRecipeBuilder.recipe(ButchercraftItems.GOLD_RABBIT_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_gold")),
@@ -488,7 +488,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.RABBIT))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_gold_rabbit"));
 
-		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.SALT_RABBIT_CARCASS.get())
+		ButcherBlockRecipeBuilder.recipe(ButchercraftItems.SALT_RABBIT_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_salt")),
@@ -521,7 +521,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.RABBIT))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_salt_rabbit"));
 
-		ButcherBlockRecipeBuilder.shapedRecipe(ButchercraftItems.WHITE_RABBIT_CARCASS.get())
+		ButcherBlockRecipeBuilder.recipe(ButchercraftItems.WHITE_RABBIT_CARCASS.get())
 				.tool(Ingredient.of(Items.GLASS_BOTTLE), 1, true, ButcherBlockLootTables.BLOOD_BOTTLE, CARCASS_DEFAULT,
 						standardButcherBlockModel(
 								ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/rabbit_white")),
@@ -567,7 +567,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.BONE_MEAL))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcher_whole_rabbit"));
 
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.COW_HIDE.get())
+		MeatHookRecipeBuilder.recipe(ButchercraftItems.COW_HIDE.get())
 				.tool(Ingredient.of(ButchercraftItems.SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
 						RAW_MEAT_DEFAULT,
 						hideModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/cow_hide")),
@@ -581,7 +581,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.LEATHER))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cow_hide"));
 
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.GOAT_HIDE.get())
+		MeatHookRecipeBuilder.recipe(ButchercraftItems.GOAT_HIDE.get())
 				.tool(Ingredient.of(ButchercraftItems.SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
 						RAW_MEAT_DEFAULT,
 						hideModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/goat_hide")),
@@ -595,7 +595,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.LEATHER))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "goat_hide"));
 
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.PIG_HIDE.get())
+		MeatHookRecipeBuilder.recipe(ButchercraftItems.PIG_HIDE.get())
 				.tool(Ingredient.of(ButchercraftItems.SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
 						RAW_MEAT_DEFAULT,
 						hideModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/pig_hide")),
@@ -609,7 +609,7 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.JEIIngredient(Ingredient.of(Items.LEATHER))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "pig_hide"));
 
-		MeatHookRecipeBuilder.shapedRecipe(ButchercraftItems.SHEEP_HIDE.get())
+		MeatHookRecipeBuilder.recipe(ButchercraftItems.SHEEP_HIDE.get())
 				.tool(Ingredient.of(ButchercraftItems.SKINNING_KNIFE.get()), 6, true, MeatHookLoottables.SCRAPE_HIDE,
 						RAW_MEAT_DEFAULT,
 						hideModel(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "meathook/sheep_hide")),
@@ -1360,8 +1360,8 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 
 		ShapelessRecipeBuilder
 				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_COW_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.COW_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_cow", has(ButchercraftItems.COW_CARCASS.get()))
+				.requires(ButchercraftItems.CARCASS.get()).requires(Items.HAY_BLOCK)
+				.unlockedBy("has_cow", has(ButchercraftItems.CARCASS.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_cow"));
 
 		ShapelessRecipeBuilder

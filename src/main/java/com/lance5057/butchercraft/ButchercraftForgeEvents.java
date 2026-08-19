@@ -6,6 +6,7 @@ import com.lance5057.butchercraft.capabilities.AnimalCareProvider;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalAttackGoal;
 import com.lance5057.butchercraft.entity.ai.AngryAnimalTargetGoal;
 import com.lance5057.butchercraft.entity.ai.ClothingTemptGoal;
+import com.lance5057.butchercraft.items.ButcherKnifeItem;
 import com.lance5057.butchercraft.items.WolfFoodSpecialItem;
 
 import net.minecraft.server.level.ServerLevel;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.animal.Animal;
@@ -27,6 +29,7 @@ import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.animal.goat.Goat;
+import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.npc.Villager;
@@ -47,76 +50,103 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 @EventBusSubscriber(modid = Butchercraft.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class ButchercraftForgeEvents {
+	// Some animals are dumb so we gotta do it this way
+	@SubscribeEvent
+	public static void animalInteract(PlayerInteractEvent.EntityInteractSpecific event) {
+		if (event.getItemStack().is(ButchercraftItems.BUTCHER_KNIFE)) {
+			ButcherKnifeItem knife = (ButcherKnifeItem) event.getItemStack().getItem();
+			if (event.getTarget() instanceof AbstractHorse) {
+//				knife.interactLivingEntity(event.getItemStack(), event.getEntity(), (LivingEntity) event.getTarget(),
+//						event.getHand());
+				knife.killAndDrop(event.getEntity(), (Mob) event.getTarget());
+				event.setCancellationResult(InteractionResult.SUCCESS);
+				event.setCanceled(true);
+
+			}
+		}
+	}
+
 	@SubscribeEvent
 	public static void giveHoodsToUndead(FinalizeSpawnEvent event) {
 		if (event.getLevel() instanceof ServerLevel level) {
-			if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_SPAWN_CHANCE.get().floatValue()) {
-				Mob e = event.getEntity();
-				if (e instanceof Zombie || e instanceof Skeleton) {
-					int choice = event.getLevel().getRandom().nextInt(6);
+			if (event.getEntity().getItemBySlot(EquipmentSlot.HEAD).isEmpty())
+				if (level.getRandom().nextFloat() <= ButchercraftConfig.HOOD_SPAWN_CHANCE.get().floatValue()) {
+					Mob e = event.getEntity();
+					if (e instanceof Zombie || e instanceof Skeleton) {
+						int choice = event.getLevel().getRandom().nextInt(6);
 
-					switch (choice) {
-					case 0:
-						e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.COW_HOOD.get()));
-						spawnArmy(level, e, EntityType.COW);
-						break;
-					case 1:
-						e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.GOAT_HOOD.get()));
-						spawnArmy(level, e, EntityType.GOAT);
-						break;
-					case 2:
-						e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.PIG_HOOD.get()));
-						spawnArmy(level, e, EntityType.PIG);
-						break;
-					case 3:
-						e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.SHEEP_HOOD.get()));
-						spawnArmy(level, e, EntityType.SHEEP);
-						break;
-					case 4:
-						e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.CHICKEN_MASK.get()));
-						spawnArmy(level, e, EntityType.CHICKEN);
-						break;
-					default: {
-						int rabbit = event.getLevel().getRandom().nextInt(6);
-						switch (rabbit) {
+						switch (choice) {
 						case 0:
-							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.BLACK_BUNNY_EARS.get()));
-							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.BLACK_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.BLACK);
+							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.COW_HOOD.get()));
+							spawnArmy(level, e, EntityType.COW);
 							break;
 						case 1:
-							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.BROWN_BUNNY_EARS.get()));
-							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.BROWN_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.BROWN);
+							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.GOAT_HOOD.get()));
+							spawnArmy(level, e, EntityType.GOAT);
 							break;
 						case 2:
-							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.GOLD_BUNNY_EARS.get()));
-							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.GOLD_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.GOLD);
+							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.PIG_HOOD.get()));
+							spawnArmy(level, e, EntityType.PIG);
 							break;
 						case 3:
-							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.SALT_BUNNY_EARS.get()));
-							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.SALT_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.SALT);
+							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.SHEEP_HOOD.get()));
+							spawnArmy(level, e, EntityType.SHEEP);
 							break;
 						case 4:
-							e.setItemSlot(EquipmentSlot.HEAD,
-									new ItemStack(ButchercraftItems.SPLOTCHED_BUNNY_EARS.get()));
-							e.setItemSlot(EquipmentSlot.LEGS,
-									new ItemStack(ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.WHITE_SPLOTCHED);
+							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.CHICKEN_MASK.get()));
+							spawnArmy(level, e, EntityType.CHICKEN);
 							break;
-						default:
-							e.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ButchercraftItems.WHITE_BUNNY_EARS.get()));
-							e.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ButchercraftItems.WHITE_BUNNY_TAIL.get()));
-							spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.WHITE);
-							break;
-						}
+						default: {
+							int rabbit = event.getLevel().getRandom().nextInt(6);
+							switch (rabbit) {
+							case 0:
+								e.setItemSlot(EquipmentSlot.HEAD,
+										new ItemStack(ButchercraftItems.BLACK_BUNNY_EARS.get()));
+								e.setItemSlot(EquipmentSlot.LEGS,
+										new ItemStack(ButchercraftItems.BLACK_BUNNY_TAIL.get()));
+								spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.BLACK);
+								break;
+							case 1:
+								e.setItemSlot(EquipmentSlot.HEAD,
+										new ItemStack(ButchercraftItems.BROWN_BUNNY_EARS.get()));
+								e.setItemSlot(EquipmentSlot.LEGS,
+										new ItemStack(ButchercraftItems.BROWN_BUNNY_TAIL.get()));
+								spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.BROWN);
+								break;
+							case 2:
+								e.setItemSlot(EquipmentSlot.HEAD,
+										new ItemStack(ButchercraftItems.GOLD_BUNNY_EARS.get()));
+								e.setItemSlot(EquipmentSlot.LEGS,
+										new ItemStack(ButchercraftItems.GOLD_BUNNY_TAIL.get()));
+								spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.GOLD);
+								break;
+							case 3:
+								e.setItemSlot(EquipmentSlot.HEAD,
+										new ItemStack(ButchercraftItems.SALT_BUNNY_EARS.get()));
+								e.setItemSlot(EquipmentSlot.LEGS,
+										new ItemStack(ButchercraftItems.SALT_BUNNY_TAIL.get()));
+								spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.SALT);
+								break;
+							case 4:
+								e.setItemSlot(EquipmentSlot.HEAD,
+										new ItemStack(ButchercraftItems.SPLOTCHED_BUNNY_EARS.get()));
+								e.setItemSlot(EquipmentSlot.LEGS,
+										new ItemStack(ButchercraftItems.SPLOTCHED_BUNNY_TAIL.get()));
+								spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.WHITE_SPLOTCHED);
+								break;
+							default:
+								e.setItemSlot(EquipmentSlot.HEAD,
+										new ItemStack(ButchercraftItems.WHITE_BUNNY_EARS.get()));
+								e.setItemSlot(EquipmentSlot.LEGS,
+										new ItemStack(ButchercraftItems.WHITE_BUNNY_TAIL.get()));
+								spawnRabbitArmy(level, e, EntityType.RABBIT, Rabbit.Variant.WHITE);
+								break;
+							}
 
-					}
+						}
+						}
 					}
 				}
-			}
 		}
 	}
 
@@ -317,4 +347,5 @@ public class ButchercraftForgeEvents {
 				w.isShaking = true;
 			}
 	}
+
 }

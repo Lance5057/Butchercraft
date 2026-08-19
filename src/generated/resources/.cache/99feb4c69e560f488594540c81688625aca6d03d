@@ -1,4 +1,4 @@
-// 1.21.1	2024-12-30T23:37:30.6738616	Tags for minecraft:item mod id butchercraft
+// 1.21.1	2026-08-19T11:02:15.7293345	Tags for minecraft:item mod id butchercraft
 30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/item/chicken_carcass.json
 ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/item/cow_carcass.json
 66da3e39032bb6edf49b68f597c0d5f9b7cb5166 data/butchercraft/tags/item/gelatin_provider.json
@@ -96,6 +96,7 @@ b93d3462406f0ce1062a5b32042f4f44363677a2 data/c/tags/item/heart/cooked.json
 6254e87314f3643bc2026bd0adf521aee0d6aea9 data/c/tags/item/kidney.json
 f9751787afb1f2cd4bef7eac049ec97aa2996fcc data/c/tags/item/kidney/cooked.json
 019e0df6cc19b1240f8f018b2cd6f553ec135851 data/c/tags/item/kidney/raw.json
+495d99062b6efd0f540621b20a5e89c44ce9bfa3 data/c/tags/item/leather_scrap.json
 70144db85aa3d8c4b648db6b9482ec35799c0948 data/c/tags/item/liver.json
 e1d32097dbd15ea11961bee370273e09ab47a660 data/c/tags/item/liver/cooked.json
 ddd6dfafcb104cc214d9cc3ea4deb83d2af5673c data/c/tags/item/liver/raw.json
@@ -192,8 +193,10 @@ cd09d0bd2502f17520be606eac462355e2cedb8d data/c/tags/item/slime_balls.json
 7254e07a6db626a376d59b9fea92afbd80906e95 data/c/tags/item/stomach/cooked.json
 76bb35b63c283b0f9a98dc97c550b78c753d54c3 data/c/tags/item/stomach/raw.json
 c67f57f80b8d9192f9f4b901ee868ead87fbe3cb data/c/tags/item/strings.json
+1aa79871d284539f531a6fc851dc6972b4712456 data/c/tags/item/tools/knife.json
 92533caf1be2d987460eb4261e3fea2ee8f33a2c data/c/tags/item/tripe.json
 f826a746873f047e45d29c16212dd811fb6ee3ae data/c/tags/item/tripe/cooked.json
 dd4a57bc2f37aac7fa54049c3b26180591a464ed data/c/tags/item/tripe/raw.json
+94bbc2f68f0ec6eb447bd1efe207e0a7316a64b9 data/c/tags/item/villager_job_sites.json
 a8fa9b430c3d7a534d06981f1cccb0ef373fb204 data/minecraft/tags/item/piglin_food.json
 26a9c3289921312f29e6c1a4bc3dc6343f166770 data/minecraft/tags/item/wolf_food.json

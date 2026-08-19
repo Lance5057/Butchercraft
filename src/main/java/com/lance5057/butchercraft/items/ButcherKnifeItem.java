@@ -3,6 +3,7 @@ package com.lance5057.butchercraft.items;
 import java.util.List;
 
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.ButchercraftConfig;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.tags.ButchercraftEntityTags;
@@ -54,41 +55,42 @@ public class ButcherKnifeItem extends KnifeItem {
 			}
 		}
 
-		if (player.getServer() != null) {
+		if (!entity.level().isClientSide) {
 
 			if (entity.getType().is(ButchercraftEntityTags.CARCASSES) && entity instanceof Mob mob) {
-//				if (!specialCases(player, mob)) {
-//					final ResourceKey<LootTable> lootTableLocation = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID,
-//							"butcher_knife/" + BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).getPath()));
-//					final LootTable lootTable = player.getServer().reloadableRegistries().getLootTable(lootTableLocation);
-//
-//					if (lootTable != LootTable.EMPTY) {
-				killAndDrop(player, mob);
-//					}
-//				}
-
-				return InteractionResult.SUCCESS;
+				if (entity.getType().is(ButchercraftEntityTags.HOSTILE)) {
+					if (mob.getHealth() < ButchercraftConfig.HOSTILE_HEALTH.get()) {
+						return killAndDrop(player, mob);
+					}
+				} else
+					return killAndDrop(player, mob);
 			}
 		}
 
-		return InteractionResult.PASS;
+		return InteractionResult.CONSUME;
 	}
 
-	private void killAndDrop(Player player, Mob mob) {
-		player.level().playSound(null, mob.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F,
-				1.0F);
-		mob.lootTable = BuiltInLootTables.EMPTY;
+	public InteractionResult killAndDrop(Player player, Mob mob) {
+		if (!mob.isBaby()) {
+			if (!mob.isDeadOrDying()) {
+				player.level().playSound(null, mob.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP,
+						SoundSource.PLAYERS, 1.0F, 1.0F);
+				mob.lootTable = BuiltInLootTables.EMPTY;
 
-		ItemStack carcass = new ItemStack(ButchercraftItems.CARCASS.get());
+				ItemStack carcass = new ItemStack(ButchercraftItems.CARCASS.get());
 
-		CompoundTag tag = new CompoundTag();
-		mob.save(tag);
+				CompoundTag tag = new CompoundTag();
+				mob.save(tag);
 
-		carcass.set(DataComponents.ENTITY_DATA, CustomData.of(tag));
+				carcass.set(DataComponents.ENTITY_DATA, CustomData.of(tag));
 
-		mob.spawnAtLocation(carcass);
-		mob.setLastHurtByPlayer(player);
-		mob.hurt(player.damageSources().playerAttack(player), mob.getMaxHealth());
+				mob.spawnAtLocation(carcass);
+				mob.setLastHurtByPlayer(player);
+				mob.hurt(player.damageSources().playerAttack(player), 99999);
+				return InteractionResult.SUCCESS;
+			}
+		}
+		return InteractionResult.CONSUME;
 	}
 
 //	boolean specialCases(Player player, Mob mob) {

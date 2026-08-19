@@ -152,6 +152,8 @@
   "effect.butchercraft.blood_trail": "Blood Trail",
   "effect.butchercraft.dirty_hands": "Dirty Hands",
   "effect.butchercraft.pungent_reek": "Pungent Reek",
+  "entity.minecraft.villager.butchercraft.slaughter_profession": "Slaughterer",
+  "entity.minecraft.villager.slaugther": "Slaughterer",
   "fluid_type.butchercraft.blood_fluid": "Blood",
   "item.butchercraft.apron": "Butcher's Apron",
   "item.butchercraft.beak": "Beak",

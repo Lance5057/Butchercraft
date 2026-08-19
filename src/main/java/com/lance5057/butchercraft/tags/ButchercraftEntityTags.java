@@ -9,6 +9,7 @@ import net.minecraft.world.entity.EntityType;
 
 public class ButchercraftEntityTags {
     public static final TagKey<EntityType<?>> CARCASSES = create("butcher_knife_animals");
+    public static final TagKey<EntityType<?>> HOSTILE = create("hostile_animals");
 
     private static TagKey<EntityType<?>> create(String pName) {
         return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, pName));
