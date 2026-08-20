@@ -10,7 +10,6 @@ import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
-import com.lance5057.butchercraft.workstations.BlockEntityItemHandler;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

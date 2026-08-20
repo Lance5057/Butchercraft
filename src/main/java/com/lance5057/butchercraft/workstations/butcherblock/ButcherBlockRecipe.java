@@ -2,9 +2,9 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
-import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.lance5057.butchercraft.workstations.bases.recipes.ProcessingContainer;
 
+import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;

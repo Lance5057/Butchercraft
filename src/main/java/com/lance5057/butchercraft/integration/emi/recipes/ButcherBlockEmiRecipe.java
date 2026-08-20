@@ -1,19 +1,21 @@
 package com.lance5057.butchercraft.integration.emi.recipes;
 
+import java.util.List;
+
+import org.apache.commons.compress.utils.Lists;
+import org.jetbrains.annotations.Nullable;
+
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.integration.emi.EMIPlugin;
-import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
+
+import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiIngredient;
 import dev.emi.emi.api.stack.EmiStack;
 import dev.emi.emi.api.widget.WidgetHolder;
 import net.minecraft.resources.ResourceLocation;
-import org.apache.commons.compress.utils.Lists;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class ButcherBlockEmiRecipe implements EmiRecipe {
 	private final List<EmiIngredient> inputs;

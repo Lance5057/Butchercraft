@@ -2,9 +2,9 @@ package com.lance5057.butchercraft.integration.jei.categories;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
-import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
 
+import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;

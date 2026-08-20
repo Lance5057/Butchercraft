@@ -88,9 +88,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ButchercraftItems.COOKED_TONGUE.get(), "Cooked Tongue");
 		this.add(ButchercraftItems.TONGUE.get(), "Raw Tongue");
 
-		this.add(ButchercraftItems.COW_CARCASS.get(), "Cow Carcass");
-		this.add(ButchercraftItems.PIG_CARCASS.get(), "Pig Carcass");
-		this.add(ButchercraftItems.SHEEP_CARCASS.get(), "Sheep Carcass");
+//		this.add(ButchercraftItems.COW_CARCASS.get(), "Cow Carcass");
+//		this.add(ButchercraftItems.PIG_CARCASS.get(), "Pig Carcass");
+//		this.add(ButchercraftItems.SHEEP_CARCASS.get(), "Sheep Carcass");
 
 		this.add(ButchercraftItems.BEEF_BLOCK_ITEM.get(), "Raw Beef Block");
 		this.add(ButchercraftItems.PORK_BLOCK_ITEM.get(), "Raw Pork Block");
@@ -127,14 +127,14 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ButchercraftItems.BUTCHER_BLOCK_BLOCK_ITEM.get(), "Butcher Block");
 
-		this.add(ButchercraftItems.GOAT_CARCASS.get(), "Goat Carcass");
-		this.add(ButchercraftItems.CHICKEN_CARCASS.get(), "Chicken Carcass");
-		this.add(ButchercraftItems.BLACK_RABBIT_CARCASS.get(), "Black Rabbit Carcass");
-		this.add(ButchercraftItems.BROWN_RABBIT_CARCASS.get(), "Brown Rabbit Carcass");
-		this.add(ButchercraftItems.GOLD_RABBIT_CARCASS.get(), "Gold Rabbit Carcass");
-		this.add(ButchercraftItems.SALT_RABBIT_CARCASS.get(), "Salt Rabbit Carcass");
-		this.add(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(), "Splotched Rabbit Carcass");
-		this.add(ButchercraftItems.WHITE_RABBIT_CARCASS.get(), "White Rabbit Carcass");
+//		this.add(ButchercraftItems.GOAT_CARCASS.get(), "Goat Carcass");
+//		this.add(ButchercraftItems.CHICKEN_CARCASS.get(), "Chicken Carcass");
+//		this.add(ButchercraftItems.BLACK_RABBIT_CARCASS.get(), "Black Rabbit Carcass");
+//		this.add(ButchercraftItems.BROWN_RABBIT_CARCASS.get(), "Brown Rabbit Carcass");
+//		this.add(ButchercraftItems.GOLD_RABBIT_CARCASS.get(), "Gold Rabbit Carcass");
+//		this.add(ButchercraftItems.SALT_RABBIT_CARCASS.get(), "Salt Rabbit Carcass");
+//		this.add(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(), "Splotched Rabbit Carcass");
+//		this.add(ButchercraftItems.WHITE_RABBIT_CARCASS.get(), "White Rabbit Carcass");
 
 		this.add(ButchercraftBlocks.SAUSAGE_BLOCK.get(), "Sausage Block");
 		this.add(ButchercraftBlocks.COOKED_SAUSAGE_BLOCK.get(), "Cooked Sausage Block");

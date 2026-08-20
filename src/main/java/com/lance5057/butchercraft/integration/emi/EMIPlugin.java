@@ -5,6 +5,7 @@ import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.integration.emi.recipes.ButcherBlockEmiRecipe;
 import com.lance5057.butchercraft.integration.emi.recipes.GrinderEmiRecipe;
 import com.lance5057.butchercraft.integration.emi.recipes.MeatHookEmiRecipe;
+
 import dev.emi.emi.api.EmiEntrypoint;
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;

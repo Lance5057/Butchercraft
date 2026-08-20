@@ -80,26 +80,26 @@ public class ButchercraftVillagers {
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.GLOVES.get(), 12, 1, 16, 10),
 				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.BOOTS.get(), 12, 1, 16, 10) };
 
-		VillagerTrades.ItemListing[] slaughterLevel4 = new VillagerTrades.ItemListing[] {
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.CHICKEN_CARCASS.get(), 8, 8, 5),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.COW_CARCASS.get(), 24, 4, 15),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.GOAT_CARCASS.get(), 16, 4, 10),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.SHEEP_CARCASS.get(), 16, 4, 10),
-				new VillagerTrades.EmeraldForItems(ButchercraftItems.PIG_CARCASS.get(), 16, 4, 10),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.BUTCHER_KNIFE.get(), 24, 1, 16, 10),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.GUT_KNIFE.get(), 24, 1, 16, 10),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.SKINNING_KNIFE.get(), 24, 1, 16, 10),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.BONE_SAW.get(), 24, 1, 16, 10) };
+//		VillagerTrades.ItemListing[] slaughterLevel4 = new VillagerTrades.ItemListing[] {
+//				new VillagerTrades.EmeraldForItems(ButchercraftItems.CHICKEN_CARCASS.get(), 8, 8, 5),
+//				new VillagerTrades.EmeraldForItems(ButchercraftItems.COW_CARCASS.get(), 24, 4, 15),
+//				new VillagerTrades.EmeraldForItems(ButchercraftItems.GOAT_CARCASS.get(), 16, 4, 10),
+//				new VillagerTrades.EmeraldForItems(ButchercraftItems.SHEEP_CARCASS.get(), 16, 4, 10),
+//				new VillagerTrades.EmeraldForItems(ButchercraftItems.PIG_CARCASS.get(), 16, 4, 10),
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.BUTCHER_KNIFE.get(), 24, 1, 16, 10),
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.GUT_KNIFE.get(), 24, 1, 16, 10),
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.SKINNING_KNIFE.get(), 24, 1, 16, 10),
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.BONE_SAW.get(), 24, 1, 16, 10) };
+//
+//		VillagerTrades.ItemListing[] slaughterLevel5 = new VillagerTrades.ItemListing[] {
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.CHICKEN_CARCASS.get(), 8, 1, 8, 5),
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.COW_CARCASS.get(), 24, 1, 4, 15),
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.GOAT_CARCASS.get(), 16, 1, 4, 10),
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.SHEEP_CARCASS.get(), 16, 1, 4, 10),
+//				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.PIG_CARCASS.get(), 16, 1, 4, 10) };
 
-		VillagerTrades.ItemListing[] slaughterLevel5 = new VillagerTrades.ItemListing[] {
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.CHICKEN_CARCASS.get(), 8, 1, 8, 5),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.COW_CARCASS.get(), 24, 1, 4, 15),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.GOAT_CARCASS.get(), 16, 1, 4, 10),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.SHEEP_CARCASS.get(), 16, 1, 4, 10),
-				new VillagerTrades.ItemsForEmeralds(ButchercraftItems.PIG_CARCASS.get(), 16, 1, 4, 10) };
-
-		VillagerTrades.TRADES.put(SLAUGHTER_PROFESSION.get(), toIntMap(ImmutableMap.of(1, slaughterLevel1, 2,
-				slaughterLevel2, 3, slaughterLevel3, 4, slaughterLevel4, 5, slaughterLevel5)));
+//		VillagerTrades.TRADES.put(SLAUGHTER_PROFESSION.get(), toIntMap(ImmutableMap.of(1, slaughterLevel1, 2,
+//				slaughterLevel2, 3, slaughterLevel3, 4, slaughterLevel4, 5, slaughterLevel5)));
 	}
 
 	private static Int2ObjectMap<VillagerTrades.ItemListing[]> toIntMap(

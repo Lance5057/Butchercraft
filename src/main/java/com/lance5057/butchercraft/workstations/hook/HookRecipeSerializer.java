@@ -1,10 +1,10 @@
 package com.lance5057.butchercraft.workstations.hook;
 
-import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
+import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
@@ -12,16 +12,16 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
 public class HookRecipeSerializer implements RecipeSerializer<CarcassHookRecipe> {
-	public static final MapCodec<CarcassHookRecipe> CODEC = RecordCodecBuilder.mapCodec(
-			inst -> inst.group(
-					Codec.STRING.optionalFieldOf("group", "").forGetter(CarcassHookRecipe::group),
+	public static final MapCodec<CarcassHookRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst
+			.group(Codec.STRING.optionalFieldOf("group", "").forGetter(CarcassHookRecipe::group),
 					Ingredient.CODEC_NONEMPTY.fieldOf("carcass").forGetter(CarcassHookRecipe::carcass),
-					NonNullList.codecOf(AnimatedRecipeItemUse.CODEC).fieldOf("tools").forGetter(CarcassHookRecipe::tools),
-					NonNullList.codecOf(Ingredient.CODEC_NONEMPTY).fieldOf("jei").forGetter(CarcassHookRecipe::jei)
-			).apply(inst, CarcassHookRecipe::new)
-	);
+					NonNullList.codecOf(AnimatedRecipeItemUse.CODEC).fieldOf("tools")
+							.forGetter(CarcassHookRecipe::tools),
+					NonNullList.codecOf(Ingredient.CODEC_NONEMPTY).fieldOf("jei").forGetter(CarcassHookRecipe::jei))
+			.apply(inst, CarcassHookRecipe::new));
 
-	public static final StreamCodec<RegistryFriendlyByteBuf, CarcassHookRecipe> STREAM_CODEC = StreamCodec.of(HookRecipeSerializer::write, HookRecipeSerializer::read);
+	public static final StreamCodec<RegistryFriendlyByteBuf, CarcassHookRecipe> STREAM_CODEC = StreamCodec
+			.of(HookRecipeSerializer::write, HookRecipeSerializer::read);
 
 	@Override
 	public MapCodec<CarcassHookRecipe> codec() {

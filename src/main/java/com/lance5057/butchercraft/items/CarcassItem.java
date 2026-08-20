@@ -2,7 +2,6 @@ package com.lance5057.butchercraft.items;
 
 import java.util.List;
 
-import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftConfig;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
 import com.lance5057.butchercraft.armor.ApronItem;

@@ -6,15 +6,15 @@ import java.util.concurrent.CompletableFuture;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.ButchercraftMobEffects;
-import com.lance5057.butchercraft.client.BlacklistedModel;
-import com.lance5057.butchercraft.client.rendering.animation.floats.AnimatedFloat;
-import com.lance5057.butchercraft.client.rendering.animation.floats.AnimatedFloatVector3;
-import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.lance5057.butchercraft.data.builders.recipes.loottables.ButcherBlockLootTables;
 import com.lance5057.butchercraft.data.builders.recipes.loottables.MeatHookLoottables;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
 
+import api.LanceNestAPI.src.client.BlacklistedModel;
+import api.LanceNestAPI.src.util.rendering.animation.floats.AnimatedFloat;
+import api.LanceNestAPI.src.util.rendering.animation.floats.AnimatedFloatVector3;
+import api.LanceNestAPI.src.util.rendering.animation.floats.AnimationFloatTransform;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -1316,71 +1316,71 @@ public class ButchercraftRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_scrap", has(ButchercraftItems.LEATHER_SCRAP.get()))
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "leather_cord"));
 
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_BLACK_RABBIT_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.BLACK_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_rabbit", has(ButchercraftItems.BLACK_RABBIT_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_black_rabbit"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_BROWN_RABBIT_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.BROWN_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_rabbit", has(ButchercraftItems.BROWN_RABBIT_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_brown_rabbit"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_GOLD_RABBIT_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.GOLD_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_rabbit", has(ButchercraftItems.GOLD_RABBIT_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_gold_rabbit"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SALT_RABBIT_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.SALT_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_rabbit", has(ButchercraftItems.SALT_RABBIT_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_salt_rabbit"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SPLOTCHED_RABBIT_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_rabbit", has(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get())).save(consumer,
-						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_splotched_rabbit"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_WHITE_RABBIT_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.WHITE_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_rabbit", has(ButchercraftItems.WHITE_RABBIT_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_white_rabbit"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_GOAT_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.GOAT_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_goat", has(ButchercraftItems.GOAT_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_goat"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_COW_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_cow", has(ButchercraftItems.CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_cow"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SHEEP_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.SHEEP_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_sheep", has(ButchercraftItems.SHEEP_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_sheep"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_PIG_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.PIG_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_pig", has(ButchercraftItems.PIG_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_pig"));
-
-		ShapelessRecipeBuilder
-				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_CHICKEN_ITEM_BLOCK.get(), 1)
-				.requires(ButchercraftItems.CHICKEN_CARCASS.get()).requires(Items.HAY_BLOCK)
-				.unlockedBy("has_chicken", has(ButchercraftItems.CHICKEN_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_chicken"));
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_BLACK_RABBIT_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.BLACK_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_rabbit", has(ButchercraftItems.BLACK_RABBIT_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_black_rabbit"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_BROWN_RABBIT_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.BROWN_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_rabbit", has(ButchercraftItems.BROWN_RABBIT_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_brown_rabbit"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_GOLD_RABBIT_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.GOLD_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_rabbit", has(ButchercraftItems.GOLD_RABBIT_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_gold_rabbit"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SALT_RABBIT_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.SALT_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_rabbit", has(ButchercraftItems.SALT_RABBIT_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_salt_rabbit"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SPLOTCHED_RABBIT_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_rabbit", has(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get())).save(consumer,
+//						ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_splotched_rabbit"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_WHITE_RABBIT_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.WHITE_RABBIT_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_rabbit", has(ButchercraftItems.WHITE_RABBIT_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_white_rabbit"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_GOAT_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.GOAT_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_goat", has(ButchercraftItems.GOAT_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_goat"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_COW_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_cow", has(ButchercraftItems.CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_cow"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_SHEEP_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.SHEEP_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_sheep", has(ButchercraftItems.SHEEP_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_sheep"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_PIG_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.PIG_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_pig", has(ButchercraftItems.PIG_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_pig"));
+//
+//		ShapelessRecipeBuilder
+//				.shapeless(RecipeCategory.DECORATIONS, ButchercraftItems.TAXIDERMY_CHICKEN_ITEM_BLOCK.get(), 1)
+//				.requires(ButchercraftItems.CHICKEN_CARCASS.get()).requires(Items.HAY_BLOCK)
+//				.unlockedBy("has_chicken", has(ButchercraftItems.CHICKEN_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxidermy_chicken"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ButchercraftItems.BLOOD_FLUID_BUCKET.get(), 1)
 				.requires(ButchercraftItems.BLOOD_FLUID_BOTTLE.get(), 4).requires(Items.BUCKET)

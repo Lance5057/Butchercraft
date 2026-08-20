@@ -4,11 +4,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.lance5057.butchercraft.client.BlacklistedModel;
-import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
 import com.lance5057.butchercraft.workstations.hook.CarcassHookRecipe;
 
+import api.LanceNestAPI.src.client.BlacklistedModel;
+import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;

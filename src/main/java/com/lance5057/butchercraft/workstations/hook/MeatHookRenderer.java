@@ -2,10 +2,10 @@ package com.lance5057.butchercraft.workstations.hook;
 
 import org.joml.Quaternionf;
 
-import com.lance5057.butchercraft.client.rendering.RenderUtil;
-import com.lance5057.butchercraft.client.rendering.animation.floats.AnimationFloatTransform;
 import com.mojang.blaze3d.vertex.PoseStack;
 
+import api.LanceNestAPI.src.util.rendering.RenderUtil;
+import api.LanceNestAPI.src.util.rendering.animation.floats.AnimationFloatTransform;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
