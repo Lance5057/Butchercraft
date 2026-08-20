@@ -3,7 +3,7 @@ package com.lance5057.butchercraft.integration.jei.categories;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
-import com.lance5057.butchercraft.workstations.hook.HookRecipe;
+import com.lance5057.butchercraft.workstations.hook.CarcassHookRecipe;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -20,8 +20,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
-	public static final RecipeType<HookRecipe> TYPE = RecipeType.create(Butchercraft.MOD_ID, "hook", HookRecipe.class);
+public class MeatHookRecipeCategory implements IRecipeCategory<CarcassHookRecipe> {
+	public static final RecipeType<CarcassHookRecipe> TYPE = RecipeType.create(Butchercraft.MOD_ID, "hook", CarcassHookRecipe.class);
 	private final Component localizedName;
 	private final IDrawable icon;
 
@@ -32,7 +32,7 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 	}
 
 	@Override
-	public RecipeType<HookRecipe> getRecipeType() {
+	public RecipeType<CarcassHookRecipe> getRecipeType() {
 		return TYPE;
 	}
 
@@ -57,7 +57,7 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayoutBuilder builder, HookRecipe recipe, IFocusGroup focuses) {
+	public void setRecipe(IRecipeLayoutBuilder builder, CarcassHookRecipe recipe, IFocusGroup focuses) {
 		int count = recipe.tools().size();
 		int offset = 2;
 		int width = (16 + offset);
@@ -93,7 +93,7 @@ public class MeatHookRecipeCategory implements IRecipeCategory<HookRecipe> {
 	}
 
 	@Override
-	public void draw(HookRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+	public void draw(CarcassHookRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 		guiGraphics.blit(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "textures/gui/jei.png"), 0, 0, 0, 78, 144, 144);
 	}
 }

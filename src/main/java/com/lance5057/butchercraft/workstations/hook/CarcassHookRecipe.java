@@ -14,7 +14,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-public class HookRecipe implements Recipe<HookRecipeContainer> {
+public class CarcassHookRecipe implements Recipe<HookRecipeContainer> {
 
 	String group;
 	Ingredient carcass;
@@ -22,7 +22,7 @@ public class HookRecipe implements Recipe<HookRecipeContainer> {
 	NonNullList<AnimatedRecipeItemUse> tools;
 	NonNullList<Ingredient> jei;
 
-	public HookRecipe(String group, Ingredient carcass, ResourceLocation entity,
+	public CarcassHookRecipe(String group, Ingredient carcass, ResourceLocation entity,
 			NonNullList<AnimatedRecipeItemUse> tools, NonNullList<Ingredient> jei) {
 		this.group = group;
 		this.carcass = carcass;

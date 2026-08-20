@@ -3,6 +3,7 @@ package com.lance5057.butchercraft.workstations.butcherblock;
 import com.lance5057.butchercraft.ButchercraftRecipeSerializers;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+import com.lance5057.butchercraft.workstations.bases.recipes.ProcessingContainer;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
@@ -18,14 +19,14 @@ public record ButcherBlockRecipe(
 		Ingredient carcass,
 		NonNullList<AnimatedRecipeItemUse> tools,
 		NonNullList<Ingredient> jei
-) implements Recipe<ButcherBlockContainer> {
+) implements Recipe<ProcessingContainer> {
 	@Override
-	public boolean matches(ButcherBlockContainer pContainer, Level pLevel) {
+	public boolean matches(ProcessingContainer pContainer, Level pLevel) {
 		return carcass.test(pContainer.getInsertedItem());
 	}
 
 	@Override
-	public ItemStack assemble(ButcherBlockContainer pContainer, HolderLookup.Provider registryAccess) {
+	public ItemStack assemble(ProcessingContainer pContainer, HolderLookup.Provider registryAccess) {
 		return ItemStack.EMPTY;
 	}
 

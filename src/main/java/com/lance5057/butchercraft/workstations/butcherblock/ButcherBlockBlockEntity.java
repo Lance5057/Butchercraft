@@ -7,6 +7,7 @@ import javax.annotation.Nonnull;
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
+import com.lance5057.butchercraft.workstations.bases.recipes.ProcessingContainer;
 import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
 
 import net.minecraft.core.BlockPos;
@@ -102,7 +103,7 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	private Optional<RecipeHolder<ButcherBlockRecipe>> matchRecipe() {
 		if (this.level != null) {
 			return level.getRecipeManager().getRecipeFor(ButchercraftRecipes.BUTCHER_BLOCK.get(),
-					new ButcherBlockContainer(getInsertedItem()), level);
+					new ProcessingContainer(getInsertedItem()), level);
 		}
 		return Optional.empty();
 

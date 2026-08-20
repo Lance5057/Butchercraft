@@ -3,7 +3,7 @@ package com.lance5057.butchercraft.integration.emi.recipes;
 import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.integration.emi.EMIPlugin;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
-import com.lance5057.butchercraft.workstations.hook.HookRecipe;
+import com.lance5057.butchercraft.workstations.hook.CarcassHookRecipe;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiIngredient;
@@ -21,7 +21,7 @@ public class MeatHookEmiRecipe implements EmiRecipe {
 	private final List<EmiStack> outputs;
 	private final ResourceLocation id;
 
-	public MeatHookEmiRecipe(HookRecipe recipe, ResourceLocation id) {
+	public MeatHookEmiRecipe(CarcassHookRecipe recipe, ResourceLocation id) {
 		this.inputs = List.of(EmiIngredient.of(recipe.carcass()));
 		this.catalysts = recipe.tools().stream().map(AnimatedRecipeItemUse::tool).map(EmiIngredient::of).toList();
 		List<EmiStack> outputs = Lists.newArrayList();

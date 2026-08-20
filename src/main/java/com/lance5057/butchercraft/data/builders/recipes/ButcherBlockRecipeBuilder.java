@@ -25,6 +25,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 
 public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 	private final Item result;
+	private final ResourceLocation entity;
 	private final List<AnimatedRecipeItemUse> tools = NonNullList.create();
 	private final List<Ingredient> jei = NonNullList.create();
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();

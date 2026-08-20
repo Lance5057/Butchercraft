@@ -7,7 +7,7 @@ import java.util.Map;
 import com.lance5057.butchercraft.client.BlacklistedModel;
 import com.lance5057.butchercraft.workstations.bases.recipes.AnimatedRecipeItemUse;
 import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
-import com.lance5057.butchercraft.workstations.hook.HookRecipe;
+import com.lance5057.butchercraft.workstations.hook.CarcassHookRecipe;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
@@ -99,7 +99,7 @@ public class MeatHookRecipeBuilder implements RecipeBuilder {
 				.requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(builder::addCriterion);
 		consumerIn.accept(pRecipeId,
-				new HookRecipe(this.group == null ? "" : this.group, Ingredient.of(this.carcass), entity,
+				new CarcassHookRecipe(this.group == null ? "" : this.group, Ingredient.of(this.carcass), entity,
 						NonNullList.copyOf(this.tools), NonNullList.copyOf(this.jei)),
 				builder.build(ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 						"recipes/meat_hook/" + pRecipeId.getPath())));
