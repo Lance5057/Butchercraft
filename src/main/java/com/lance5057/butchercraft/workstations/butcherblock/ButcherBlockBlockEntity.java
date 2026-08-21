@@ -7,9 +7,9 @@ import javax.annotation.Nonnull;
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.ProcessingContainer;
-import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
 
 import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
+import api.LanceNestAPI.src.recipes.RecipeMobEffect;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder.Reference;
 import net.minecraft.core.HolderLookup;

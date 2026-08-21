@@ -11,6 +11,7 @@ import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 
+import api.LanceNestAPI.src.blocks.RecipeToolSupplier.components.item.BlockEntityItemHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -51,7 +52,7 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	private ItemStackHandler createHandler() {
-		return new BlockEntityItemHandler<>(this, 3) {
+		return new BlockEntityItemHandler<GrinderBlockEntity>(this, 3) {
 
 			@Override
 			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
@@ -89,13 +90,15 @@ public class GrinderBlockEntity extends BlockEntity {
 			@NotNull
 			public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
 				if (this.getStackInSlot(slot) == ItemStack.EMPTY) {
+
 					if (slot == 0) {
 						Optional<RecipeHolder<GrinderRecipe>> r = level.getRecipeManager().getRecipeFor(
 								ButchercraftRecipes.GRINDER.get(), new GrinderContainer(stack, getStackInSlot(1)),
 								level);
+
 						if (r.isPresent()) {
-							this.getBlockEntity().setupRecipe(r.get().value().grinds(), r.get().value().getResultItem(null),
-									getStackInSlot(1), r.get().value().count());
+							this.getBlockEntity().setupRecipe(r.get().value().grinds(),
+									r.get().value().getResultItem(null), getStackInSlot(1), r.get().value().count());
 							this.getBlockEntity().updateInventory();
 							return super.insertItem(slot, stack, simulate);
 						}

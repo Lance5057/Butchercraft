@@ -11,29 +11,29 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
-public class HookRecipeSerializer implements RecipeSerializer<CarcassHookRecipe> {
-	public static final MapCodec<CarcassHookRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst
-			.group(Codec.STRING.optionalFieldOf("group", "").forGetter(CarcassHookRecipe::group),
-					Ingredient.CODEC_NONEMPTY.fieldOf("carcass").forGetter(CarcassHookRecipe::carcass),
+public class HookRecipeSerializer implements RecipeSerializer<HookRecipe> {
+	public static final MapCodec<HookRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst
+			.group(Codec.STRING.optionalFieldOf("group", "").forGetter(HookRecipe::group),
+					Ingredient.CODEC_NONEMPTY.fieldOf("carcass").forGetter(HookRecipe::carcass),
 					NonNullList.codecOf(AnimatedRecipeItemUse.CODEC).fieldOf("tools")
-							.forGetter(CarcassHookRecipe::tools),
-					NonNullList.codecOf(Ingredient.CODEC_NONEMPTY).fieldOf("jei").forGetter(CarcassHookRecipe::jei))
-			.apply(inst, CarcassHookRecipe::new));
+							.forGetter(HookRecipe::tools),
+					NonNullList.codecOf(Ingredient.CODEC_NONEMPTY).fieldOf("jei").forGetter(HookRecipe::jei))
+			.apply(inst, HookRecipe::new));
 
-	public static final StreamCodec<RegistryFriendlyByteBuf, CarcassHookRecipe> STREAM_CODEC = StreamCodec
+	public static final StreamCodec<RegistryFriendlyByteBuf, HookRecipe> STREAM_CODEC = StreamCodec
 			.of(HookRecipeSerializer::write, HookRecipeSerializer::read);
 
 	@Override
-	public MapCodec<CarcassHookRecipe> codec() {
+	public MapCodec<HookRecipe> codec() {
 		return CODEC;
 	}
 
 	@Override
-	public StreamCodec<RegistryFriendlyByteBuf, CarcassHookRecipe> streamCodec() {
+	public StreamCodec<RegistryFriendlyByteBuf, HookRecipe> streamCodec() {
 		return STREAM_CODEC;
 	}
 
-	private static CarcassHookRecipe read(RegistryFriendlyByteBuf buffer) {
+	private static HookRecipe read(RegistryFriendlyByteBuf buffer) {
 		String group = buffer.readUtf();
 		Ingredient carcass = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
 		int listSize = buffer.readVarInt();
@@ -44,10 +44,10 @@ public class HookRecipeSerializer implements RecipeSerializer<CarcassHookRecipe>
 		int jeiSize = buffer.readVarInt();
 		NonNullList<Ingredient> jei = NonNullList.withSize(jeiSize, Ingredient.EMPTY);
 		jei.replaceAll(ignored -> Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
-		return new CarcassHookRecipe(group, carcass, tools, jei);
+		return new HookRecipe(group, carcass, tools, jei);
 	}
 
-	private static void write(RegistryFriendlyByteBuf buffer, CarcassHookRecipe recipe) {
+	private static void write(RegistryFriendlyByteBuf buffer, HookRecipe recipe) {
 		buffer.writeUtf(recipe.getGroup());
 
 		Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.carcass());
