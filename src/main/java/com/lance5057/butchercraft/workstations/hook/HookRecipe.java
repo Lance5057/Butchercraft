@@ -13,11 +13,9 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
 public class HookRecipe extends AbstractProcessingRecipe {
-	
-	
-	public HookRecipe(NonNullList<AnimatedRecipeItemUse> tools) {
-		super(tools);
-		// TODO Auto-generated constructor stub
+
+	public HookRecipe(String group, Ingredient itemIn, NonNullList<AnimatedRecipeItemUse> tools) {
+		super(group, itemIn, tools);
 	}
 
 	@Override

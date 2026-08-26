@@ -52,7 +52,7 @@ public class GrinderBlockEntity extends BlockEntity {
 	}
 
 	private ItemStackHandler createHandler() {
-		return new BlockEntityItemHandler<GrinderBlockEntity>(this, 3) {
+		return new BlockEntityItemHandler(this, 3) {
 
 			@Override
 			public boolean isItemValid(int slot, @NotNull ItemStack stack) {
@@ -89,6 +89,7 @@ public class GrinderBlockEntity extends BlockEntity {
 			@Override
 			@NotNull
 			public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
+				GrinderBlockEntity be = ((GrinderBlockEntity) this.getBlockEntity());
 				if (this.getStackInSlot(slot) == ItemStack.EMPTY) {
 
 					if (slot == 0) {
@@ -97,14 +98,14 @@ public class GrinderBlockEntity extends BlockEntity {
 								level);
 
 						if (r.isPresent()) {
-							this.getBlockEntity().setupRecipe(r.get().value().grinds(),
-									r.get().value().getResultItem(null), getStackInSlot(1), r.get().value().count());
-							this.getBlockEntity().updateInventory();
+							be.setupRecipe(r.get().value().grinds(), r.get().value().getResultItem(null),
+									getStackInSlot(1), r.get().value().count());
+							be.updateInventory();
 							return super.insertItem(slot, stack, simulate);
 						}
 					} else {
 
-						this.getBlockEntity().updateInventory();
+						be.updateInventory();
 						return super.insertItem(slot, stack, simulate);
 					}
 				}
@@ -114,7 +115,7 @@ public class GrinderBlockEntity extends BlockEntity {
 			@Override
 			@NotNull
 			public ItemStack extractItem(int slot, int amount, boolean simulate) {
-				this.getBlockEntity().zeroProgress();
+				((GrinderBlockEntity) this.getBlockEntity()).zeroProgress();
 				return super.extractItem(slot, amount, simulate);
 
 			}

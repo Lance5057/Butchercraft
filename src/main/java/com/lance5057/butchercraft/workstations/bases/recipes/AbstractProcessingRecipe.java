@@ -13,8 +13,10 @@ public abstract class AbstractProcessingRecipe extends MultiToolRecipe implement
 	Ingredient itemIn;
 	NonNullList<Ingredient> jei;
 
-	public AbstractProcessingRecipe(NonNullList<AnimatedRecipeItemUse> tools) {
+	public AbstractProcessingRecipe(String group, Ingredient itemIn, NonNullList<AnimatedRecipeItemUse> tools) {
 		super(tools);
+		this.group = group;
+		this.itemIn = itemIn;
 	}
 
 	@Override
