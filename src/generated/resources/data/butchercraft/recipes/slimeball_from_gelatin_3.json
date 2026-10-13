@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "butchercraft:gelatin"
+    },
+    {
+      "item": "butchercraft:gelatin"
+    },
+    {
+      "item": "butchercraft:gelatin"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:slime_ball"
+  }
+}
