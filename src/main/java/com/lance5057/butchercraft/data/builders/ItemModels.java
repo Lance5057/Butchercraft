@@ -50,35 +50,35 @@ public class ItemModels extends ModelProvider<ItemModelBuilder> {
 		forItem(ButchercraftItems.BLOOD_FLUID_BOTTLE, "blood_bottle");
 
 		// forItem(ButchercraftItems.COW_CARCASS, "cow_carcass");
-		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/cow")));
-		getBuilder(ButchercraftItems.PIG_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/pig")));
-		getBuilder(ButchercraftItems.SHEEP_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/sheep")));
-		getBuilder(ButchercraftItems.GOAT_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/goat")));
-		getBuilder(ButchercraftItems.CHICKEN_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/chicken")));
-
-		getBuilder(ButchercraftItems.BLACK_RABBIT_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
-				.texture("0", mcLoc("entity/rabbit/black"));
-		getBuilder(ButchercraftItems.BROWN_RABBIT_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
-				.texture("0", mcLoc("entity/rabbit/brown"));
-		getBuilder(ButchercraftItems.GOLD_RABBIT_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
-				.texture("0", mcLoc("entity/rabbit/gold"));
-		getBuilder(ButchercraftItems.SALT_RABBIT_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
-				.texture("0", mcLoc("entity/rabbit/salt"));
-		getBuilder(ButchercraftItems.WHITE_RABBIT_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
-				.texture("0", mcLoc("entity/rabbit/white"));
-		getBuilder(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
-				.texture("0", mcLoc("entity/rabbit/white_splotched"));
+//		getBuilder(ButchercraftItems.COW_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/cow")));
+//		getBuilder(ButchercraftItems.PIG_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/pig")));
+//		getBuilder(ButchercraftItems.SHEEP_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/sheep")));
+//		getBuilder(ButchercraftItems.GOAT_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/goat")));
+//		getBuilder(ButchercraftItems.CHICKEN_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/chicken")));
+//
+//		getBuilder(ButchercraftItems.BLACK_RABBIT_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
+//				.texture("0", mcLoc("entity/rabbit/black"));
+//		getBuilder(ButchercraftItems.BROWN_RABBIT_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
+//				.texture("0", mcLoc("entity/rabbit/brown"));
+//		getBuilder(ButchercraftItems.GOLD_RABBIT_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
+//				.texture("0", mcLoc("entity/rabbit/gold"));
+//		getBuilder(ButchercraftItems.SALT_RABBIT_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
+//				.texture("0", mcLoc("entity/rabbit/salt"));
+//		getBuilder(ButchercraftItems.WHITE_RABBIT_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
+//				.texture("0", mcLoc("entity/rabbit/white"));
+//		getBuilder(ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/rabbit")))
+//				.texture("0", mcLoc("entity/rabbit/white_splotched"));
 
 		getBuilder(ButchercraftItems.TAXIDERMY_COW_ITEM_BLOCK.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "item/cow")));

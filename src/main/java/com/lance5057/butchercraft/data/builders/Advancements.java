@@ -276,65 +276,65 @@ public class Advancements implements AdvancementProvider.AdvancementGenerator {
 				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "butcherblock"),
 						existingFileHelper);
 
-		cow = Advancement.Builder.advancement().parent(hook)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.COW_CARCASS.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.cow.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.cow.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("cow",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.COW_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cow"), existingFileHelper);
-
-		pig = Advancement.Builder.advancement().parent(hook)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.PIG_CARCASS.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.pig.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.pig.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("pig",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.PIG_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "pig"), existingFileHelper);
-
-		sheep = Advancement.Builder.advancement().parent(hook)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SHEEP_CARCASS.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.sheep.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.sheep.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("sheep",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.SHEEP_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "sheep"),
-						existingFileHelper);
-
-		goat = Advancement.Builder.advancement().parent(hook)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GOAT_CARCASS.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.goat.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.goat.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("goat",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GOAT_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "goat"), existingFileHelper);
-
-		rabbit = Advancement.Builder.advancement().parent(butcher_block)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.BROWN_RABBIT_CARCASS.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.rabbit.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.rabbit.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("rabbit", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(
-						ButchercraftItems.BROWN_RABBIT_CARCASS.get(), ButchercraftItems.BLACK_RABBIT_CARCASS.get(),
-						ButchercraftItems.GOLD_RABBIT_CARCASS.get(), ButchercraftItems.SALT_RABBIT_CARCASS.get(),
-						ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(),
-						ButchercraftItems.WHITE_RABBIT_CARCASS.get())))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "rabbit"),
-						existingFileHelper);
-
-		chicken = Advancement.Builder.advancement().parent(butcher_block)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.CHICKEN_CARCASS.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.chicken.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.chicken.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("chicken",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.CHICKEN_CARCASS.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "chicken"),
-						existingFileHelper);
+//		cow = Advancement.Builder.advancement().parent(hook)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.COW_CARCASS.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.cow.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.cow.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("cow",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.COW_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cow"), existingFileHelper);
+//
+//		pig = Advancement.Builder.advancement().parent(hook)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.PIG_CARCASS.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.pig.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.pig.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("pig",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.PIG_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "pig"), existingFileHelper);
+//
+//		sheep = Advancement.Builder.advancement().parent(hook)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SHEEP_CARCASS.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.sheep.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.sheep.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("sheep",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.SHEEP_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "sheep"),
+//						existingFileHelper);
+//
+//		goat = Advancement.Builder.advancement().parent(hook)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GOAT_CARCASS.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.goat.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.goat.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("goat",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GOAT_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "goat"), existingFileHelper);
+//
+//		rabbit = Advancement.Builder.advancement().parent(butcher_block)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.BROWN_RABBIT_CARCASS.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.rabbit.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.rabbit.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("rabbit", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(
+//						ButchercraftItems.BROWN_RABBIT_CARCASS.get(), ButchercraftItems.BLACK_RABBIT_CARCASS.get(),
+//						ButchercraftItems.GOLD_RABBIT_CARCASS.get(), ButchercraftItems.SALT_RABBIT_CARCASS.get(),
+//						ButchercraftItems.SPLOTCHED_RABBIT_CARCASS.get(),
+//						ButchercraftItems.WHITE_RABBIT_CARCASS.get())))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "rabbit"),
+//						existingFileHelper);
+//
+//		chicken = Advancement.Builder.advancement().parent(butcher_block)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.CHICKEN_CARCASS.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.chicken.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.chicken.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("chicken",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.CHICKEN_CARCASS.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "chicken"),
+//						existingFileHelper);
 
 		grinder = Advancement.Builder.advancement().parent(root)
 				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GRINDER_BLOCK_ITEM.get()),

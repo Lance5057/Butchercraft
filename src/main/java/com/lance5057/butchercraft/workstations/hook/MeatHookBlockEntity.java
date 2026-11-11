@@ -6,6 +6,7 @@ import javax.annotation.Nonnull;
 
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
+import com.lance5057.butchercraft.workstations.hook.recipes.HookRecipe;
 
 import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import api.LanceNestAPI.src.recipes.RecipeMobEffect;

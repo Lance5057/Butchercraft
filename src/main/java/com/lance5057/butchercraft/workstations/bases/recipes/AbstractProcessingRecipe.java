@@ -3,12 +3,14 @@ package com.lance5057.butchercraft.workstations.bases.recipes;
 import api.LanceNestAPI.src.interfaces.ingredient.io.single.StationIngredientIn;
 import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import api.LanceNestAPI.src.recipes.multitoolrecipe.MultiToolRecipe;
+import api.LanceNestAPI.src.util.recipes.MultiToolRecipeWrapper;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public abstract class AbstractProcessingRecipe extends MultiToolRecipe implements StationIngredientIn {
+public abstract class AbstractProcessingRecipe<T extends MultiToolRecipeWrapper> extends MultiToolRecipe<T>
+		implements StationIngredientIn {
 	String group;
 	Ingredient itemIn;
 	NonNullList<Ingredient> jei;
@@ -33,5 +35,10 @@ public abstract class AbstractProcessingRecipe extends MultiToolRecipe implement
 	@Override
 	public void setIngredientIn(Ingredient ing) {
 		this.itemIn = ing;
+	}
+
+	@Override
+	public Ingredient getIngredientIn() {
+		return itemIn;
 	}
 }

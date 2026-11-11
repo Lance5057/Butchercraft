@@ -1,4 +1,4 @@
-package com.lance5057.butchercraft.workstations.hook;
+package com.lance5057.butchercraft.workstations.hook.recipes;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;

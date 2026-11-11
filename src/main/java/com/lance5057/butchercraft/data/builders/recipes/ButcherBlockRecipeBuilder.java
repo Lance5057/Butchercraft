@@ -4,11 +4,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.lance5057.butchercraft.workstations.bases.recipes.RecipeMobEffect;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
 
 import api.LanceNestAPI.src.client.BlacklistedModel;
 import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
+import api.LanceNestAPI.src.recipes.RecipeMobEffect;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementRewards;
@@ -31,13 +31,14 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 	private String group;
 
-	public ButcherBlockRecipeBuilder(Item carcassIn) {
+	public ButcherBlockRecipeBuilder(Item carcassIn, ResourceLocation entity) {
 		this.result = carcassIn;
+		this.entity = entity;
 		this.unlockedBy(RecipeBuilderUtil.getHasName(carcassIn), RecipeBuilderUtil.has(carcassIn));
 	}
 
-	public static ButcherBlockRecipeBuilder shapedRecipe(Item resultIn) {
-		return new ButcherBlockRecipeBuilder(resultIn);
+	public static ButcherBlockRecipeBuilder shapedRecipe(Item resultIn, ResourceLocation entity) {
+		return new ButcherBlockRecipeBuilder(resultIn, entity);
 	}
 
 	public ButcherBlockRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage,
