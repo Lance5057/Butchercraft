@@ -8,11 +8,14 @@ import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.ProcessingContainer;
 
+import api.LanceNestAPI.src.blockentities.MultiToolRecipeStation;
+import api.LanceNestAPI.src.blocks.RecipeToolSupplier.components.item.BlockEntityItemHandler;
 import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import api.LanceNestAPI.src.recipes.RecipeMobEffect;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder.Reference;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -34,7 +37,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -42,7 +44,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-public class ButcherBlockBlockEntity extends BlockEntity {
+public class ButcherBlockBlockEntity extends MultiToolRecipeStation<ButcherBlockRecipe> {
 	private final ItemStackHandler inventory = createHandler();
 	private final Lazy<ItemStackHandler> itemHandler = Lazy.of(() -> inventory);
 
@@ -146,30 +148,30 @@ public class ButcherBlockBlockEntity extends BlockEntity {
 	}
 
 	// External extract handler
-	public void extractItem(Player playerEntity) {
-		if (!inventory.getStackInSlot(0).isEmpty()) {
-			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
-			playerEntity.addItem(itemStack);
-			if (this.level.getBlockState(this.worldPosition).getBlock() instanceof ButcherBlockBlock m) {
-				m.removeAbove(level, worldPosition);
-			}
-
-		}
-		updateInventory();
-	}
-
-	// External insert handler
-	public void insertItem(ItemStack heldItem) {
-		if (inventory.isItemValid(0, heldItem))
-			if (!ItemStack.matches(inventory.insertItem(0, heldItem, true), heldItem)) {
-				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
-				heldItem.setCount(leftover);
-				if (this.level.getBlockState(this.worldPosition).getBlock() instanceof ButcherBlockBlock m) {
-					m.placeAbove(level, getBlockState(), this.worldPosition);
-				}
-			}
-		updateInventory();
-	}
+//	public void extractItem(Player playerEntity) {
+//		if (!inventory.getStackInSlot(0).isEmpty()) {
+//			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
+//			playerEntity.addItem(itemStack);
+//			if (this.level.getBlockState(this.worldPosition).getBlock() instanceof ButcherBlockBlock m) {
+//				m.removeAbove(level, worldPosition);
+//			}
+//
+//		}
+//		updateInventory();
+//	}
+//
+//	// External insert handler
+//	public ItemStack insertItem(ItemStack heldItem) {
+//		if (inventory.isItemValid(0, heldItem))
+//			if (!ItemStack.matches(inventory.insertItem(0, heldItem, true), heldItem)) {
+//				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
+//				heldItem.setCount(leftover);
+//				if (this.level.getBlockState(this.worldPosition).getBlock() instanceof ButcherBlockBlock m) {
+//					m.placeAbove(level, getBlockState(), this.worldPosition);
+//				}
+//			}
+//		updateInventory();
+//	}
 
 	public void updateInventory() {
 		requestModelDataUpdate();

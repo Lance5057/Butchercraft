@@ -8,44 +8,23 @@ import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.hook.recipes.HookRecipe;
 
-import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
-import api.LanceNestAPI.src.recipes.RecipeMobEffect;
+import api.LanceNestAPI.src.blockentities.MultiToolRecipeStation;
+import api.LanceNestAPI.src.blocks.RecipeToolSupplier.components.item.BlockEntityItemHandler;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder.Reference;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.ItemInteractionResult;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeManager.CachedCheck;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 // TODO Track recipe stage and damage tool on use
-public class MeatHookBlockEntity extends BlockEntity {
-	private final ItemStackHandler inventory = createHandler();
+public class MeatHookBlockEntity extends MultiToolRecipeStation<HookRecipeContainer, HookRecipe> {
+	private final ItemStackHandler inventory = createItemHandler();
 	private final Lazy<ItemStackHandler> itemHandler = Lazy.of(() -> inventory);
 
 	public boolean recipeLocked = false;
@@ -61,62 +40,28 @@ public class MeatHookBlockEntity extends BlockEntity {
 			.createCheck(ButchercraftRecipes.HOOK.get());
 
 	public MeatHookBlockEntity(BlockPos pPos, BlockState pState) {
-		super(ButchercraftBlockEntities.MEAT_HOOK.get(), pPos, pState);
+		super(1, 1, 1, ButchercraftBlockEntities.MEAT_HOOK.get(), pPos, pState);
 	}
 
-	public ItemStackHandler getHandler() {
-		return itemHandler.get();
+	@Override
+	public Optional<RecipeHolder<HookRecipe>> matchRecipe() {
+		// TODO Auto-generated method stub
+		return Optional.empty();
 	}
 
-	public void setRecipe(Optional<HookRecipe> r) {
-
-		if (r.isPresent()) {
-			this.setupStage(r.get(), 0);
-		} else
-			this.zeroProgress();
-	}
-
-	public void zeroProgress() {
-		this.progress = 0;
-		this.maxProgress = 0;
-//		this.curTool = null;
-//		this.toolCount = 0;
-		this.stage = 0;
-	}
-
-	public Optional<AnimatedRecipeItemUse> getCurrentTool() {
-		return matchRecipe().map(hookRecipe -> hookRecipe.value().tools().get(stage));
-	}
-
-	protected void setupStage(HookRecipe r, int i) {
-
-		this.progress = 0;
-		this.maxProgress = r.tools().get(i).uses();
+	@Override
+	protected void setupRecipe() {
+//		this.progress = 0;
+//		this.maxProgress = r.tools().get(i).uses();
 //		this.curTool = r.tools().get(i).tool();
 //		this.toolCount = r.tools().get(i).count();
 
-		this.stage = i;
+//		this.stage = i;
 	}
 
-	boolean isFinalStage(HookRecipe r) {
-		int i = r.tools().size();
-		if (i - 1 > stage) {
-			return false;
-		}
-		return true;
-	}
-
-	// Attempt to find a recipe that matches the tool and the item in its inventory
-	private Optional<RecipeHolder<HookRecipe>> matchRecipe() {
-		if (this.level != null) {
-			return quickCheck.getRecipeFor(new HookRecipeContainer(getInsertedItem()), level);
-		}
-		return Optional.empty();
-
-	}
-
-	private ItemStackHandler createHandler() {
-		return new ItemStackHandler(1) {
+	@Override
+	protected BlockEntityItemHandler createItemHandler() {
+		return new BlockEntityItemHandler(this, 1) {
 			@Override
 			protected int getStackLimit(int slot, @Nonnull ItemStack stack) {
 				return 1;
@@ -136,231 +81,304 @@ public class MeatHookBlockEntity extends BlockEntity {
 					recipeWithInputExists = level.getRecipeManager().getRecipes().stream()
 							.filter(recipe -> recipe.value() instanceof HookRecipe)
 							.map(recipe -> (HookRecipe) recipe.value())
-							.anyMatch(hookRecipe -> hookRecipe.carcass().test(stack));
+							.anyMatch(hookRecipe -> hookRecipe.getIngredientIn().test(stack));
 				}
 				return recipeWithInputExists && super.isItemValid(slot, stack);
 			}
 		};
 	}
 
-	public ItemStack getInsertedItem() {
-		return inventory.getStackInSlot(0);
+	@Override
+	public void addParticle() {
+		// TODO Auto-generated method stub
+
 	}
 
-	public boolean isEmpty() {
-		return inventory.getStackInSlot(0).isEmpty();
+	@Override
+	public void finishRecipe(Player Player, HookRecipe recipe) {
+		// TODO Auto-generated method stub
+
 	}
 
-	// External extract handler
-	public void extractItem(Player playerEntity) {
-		if (!inventory.getStackInSlot(0).isEmpty()) {
-			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
-			playerEntity.addItem(itemStack);
-			if (this.level.getBlockState(this.worldPosition).getBlock() instanceof MeatHookBlock m) {
-				m.removeBelow(level, worldPosition);
-			}
-		}
-		updateInventory();
+	@Override
+	protected void readNBTExtra(CompoundTag nbt, Provider registries) {
+		// TODO Auto-generated method stub
+
 	}
 
-	// External insert handler
-	public void insertItem(ItemStack heldItem) {
-		if (inventory.isItemValid(0, heldItem))
-			if (!ItemStack.matches(inventory.insertItem(0, heldItem, true), heldItem)) {
-				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
-				heldItem.setCount(leftover);
-				if (this.level.getBlockState(this.worldPosition).getBlock() instanceof MeatHookBlock m) {
-					m.placeBelow(level, getBlockState(), this.worldPosition);
-				}
-				this.setupStage(this.matchRecipe().get().value(), 0);
-			}
-		updateInventory();
+	@Override
+	protected void writeNBTExtra(CompoundTag nbt, Provider registries) {
+		// TODO Auto-generated method stub
+
 	}
 
-	public void updateInventory() {
-		requestModelDataUpdate();
-		this.setChanged();
-	}
-
-	public ItemInteractionResult butcher(Player p, ItemStack butcheringTool) {
-		Optional<RecipeHolder<HookRecipe>> recipeOptional = matchRecipe();
-		if (recipeOptional.isPresent()) {
-			HookRecipe recipe = recipeOptional.get().value();
-			if (recipe.tools().get(stage) == null) {
-				setupStage(recipe, stage);
-			}
-			if (recipe.tools().get(stage).tool().test(butcheringTool)) {
-				if (butcheringTool.getCount() >= recipe.tools().get(stage).count()) {
-					progress++;
-					if (this.progress >= this.maxProgress) {
-						if (!p.isCreative()) {
-							if (butcheringTool.isDamageableItem())
-								butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
-							else
-								butcheringTool.shrink(1);
-						}
-						if (isFinalStage(recipe)) {
-
-							dropLoot(recipe.tools().get(stage), p);
-							this.inflictEffects(p, recipe.tools().get(stage));
-							this.finishRecipe();
-						} else {
-							dropLoot(recipe.tools().get(stage), p);
-							this.inflictEffects(p, recipe.tools().get(stage));
-							setupStage(recipe, stage + 1);
-						}
-
-						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
-						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1, 1);
-					} else {
-						if (butcheringTool.isDamageableItem())
-							butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
-						else
-							butcheringTool.setCount(butcheringTool.getCount() - recipe.tools().get(stage).uses());
-
-						for (int i = 0; i < 1 + level.random.nextInt(4); i++)
-							level.addParticle(ParticleTypes.FALLING_LAVA,
-									worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
-									worldPosition.getY() - 1.5f,
-									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
-
-						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
-						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1, 1);
-
-					}
-				}
-
-//				ItemStack boots = p.getInventory().getArmor(0);
-//				if (boots.getItem() instanceof BootsItem)
-//					boots.hurtAndBreak(1, p, EquipmentSlot.FEET);
-//				else
-//					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL, 3600, 0, false, false, true));
+//	public ItemStackHandler getHandler() {
+//		return itemHandler.get();
+//	}
 //
-//				ItemStack apron = p.getInventory().getArmor(1);
-//				if (apron.getItem() instanceof ApronItem)
-//					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
-//				else
-//					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODY, 3600, 0, false, false, true));
+//	public void setRecipe(Optional<HookRecipe> r) {
 //
-//				ItemStack gloves = p.getInventory().getArmor(2);
-//				if (gloves.getItem() instanceof GlovesItem)
-//					gloves.hurtAndBreak(1, p, EquipmentSlot.CHEST);
-//				else
-//					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY, 3600, 0, false, false, true));
+//		if (r.isPresent()) {
+//			this.setupStage(r.get(), 0);
+//		} else
+//			this.zeroProgress();
+//	}
 //
-//				ItemStack mask = p.getInventory().getArmor(3);
-//				if (mask.getItem() instanceof MaskItem)
-//					mask.hurtAndBreak(1, p, EquipmentSlot.HEAD);
-//				else
-//					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.STINKY, 3600, 0, false, false, true));
 
-				this.updateInventory();
-				return ItemInteractionResult.SUCCESS;
-			}
-
-		}
-
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-	}
-
-	private void dropLoot(AnimatedRecipeItemUse recipeToolsIn, Player player) {
-		if (level != null && !level.isClientSide()) {
-			final LootParams pParams = new LootParams.Builder((ServerLevel) level)
-					.withParameter(LootContextParams.TOOL, player.getMainHandItem())
-					.withParameter(LootContextParams.THIS_ENTITY, player)
-					.withLuck(player.getLuck() + player.getMainHandItem()
-							.getEnchantmentLevel(player.registryAccess().holderOrThrow(Enchantments.FORTUNE)))
-					.create(LootContextParamSets.EMPTY);
-			player.getServer().reloadableRegistries()
-					.getLootTable(ResourceKey.create(Registries.LOOT_TABLE, recipeToolsIn.lootTable()))
-					.getRandomItems(pParams).forEach(itemStack -> {
-//						if (player.isCrouching())
-						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
-								getBlockPos().getY() - 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
-//						else {
-//							if (!player.getInventory().add(itemStack)) {
-//								player.drop(itemStack, false);
-//							}
+//
+//	public Optional<AnimatedRecipeItemUse> getCurrentTool() {
+//		return matchRecipe().map(hookRecipe -> hookRecipe.value().tools().get(stage));
+//	}
+//
+//	protected void setupStage(HookRecipe r, int i) {
+//
+//		this.progress = 0;
+//		this.maxProgress = r.tools().get(i).uses();
+////		this.curTool = r.tools().get(i).tool();
+////		this.toolCount = r.tools().get(i).count();
+//
+//		this.stage = i;
+//	}
+//
+//	boolean isFinalStage(HookRecipe r) {
+//		int i = r.tools().size();
+//		if (i - 1 > stage) {
+//			return false;
+//		}
+//		return true;
+//	}
+//
+//	// Attempt to find a recipe that matches the tool and the item in its inventory
+//	private Optional<RecipeHolder<HookRecipe>> matchRecipe() {
+//		if (this.level != null) {
+//			return quickCheck.getRecipeFor(new HookRecipeContainer(getInsertedItem()), level);
+//		}
+//		return Optional.empty();
+//
+//	}
+//
+//	private ItemStackHandler createHandler() {
+//		
+//	}
+//
+//	public ItemStack getInsertedItem() {
+//		return inventory.getStackInSlot(0);
+//	}
+//
+//	public boolean isEmpty() {
+//		return inventory.getStackInSlot(0).isEmpty();
+//	}
+//
+//	// External extract handler
+//	public void extractItem(Player playerEntity) {
+//		if (!inventory.getStackInSlot(0).isEmpty()) {
+//			ItemStack itemStack = inventory.extractItem(0, inventory.getStackInSlot(0).getCount(), false);
+//			playerEntity.addItem(itemStack);
+//			if (this.level.getBlockState(this.worldPosition).getBlock() instanceof MeatHookBlock m) {
+//				m.removeBelow(level, worldPosition);
+//			}
+//		}
+//		updateInventory();
+//	}
+//
+//	// External insert handler
+//	public void insertItem(ItemStack heldItem) {
+//		if (inventory.isItemValid(0, heldItem))
+//			if (!ItemStack.matches(inventory.insertItem(0, heldItem, true), heldItem)) {
+//				final int leftover = inventory.insertItem(0, heldItem.copy(), false).getCount();
+//				heldItem.setCount(leftover);
+//				if (this.level.getBlockState(this.worldPosition).getBlock() instanceof MeatHookBlock m) {
+//					m.placeBelow(level, getBlockState(), this.worldPosition);
+//				}
+//				this.setupStage(this.matchRecipe().get().value(), 0);
+//			}
+//		updateInventory();
+//	}
+//
+//	public void updateInventory() {
+//		requestModelDataUpdate();
+//		this.setChanged();
+//	}
+//
+//	public ItemInteractionResult butcher(Player p, ItemStack butcheringTool) {
+//		Optional<RecipeHolder<HookRecipe>> recipeOptional = matchRecipe();
+//		if (recipeOptional.isPresent()) {
+//			HookRecipe recipe = recipeOptional.get().value();
+//			if (recipe.tools().get(stage) == null) {
+//				setupStage(recipe, stage);
+//			}
+//			if (recipe.tools().get(stage).tool().test(butcheringTool)) {
+//				if (butcheringTool.getCount() >= recipe.tools().get(stage).count()) {
+//					progress++;
+//					if (this.progress >= this.maxProgress) {
+//						if (!p.isCreative()) {
+//							if (butcheringTool.isDamageableItem())
+//								butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
+//							else
+//								butcheringTool.shrink(1);
 //						}
-					});
-
-		}
-	}
-
-	private void inflictEffects(Player player, AnimatedRecipeItemUse recipeToolsIn) {
-		for (RecipeMobEffect r : recipeToolsIn.effects()) {
-			Optional<Reference<MobEffect>> e = BuiltInRegistries.MOB_EFFECT.getHolder(r.rc());
-			if (e.isPresent()) {
-				if (player.level().random.nextFloat() >= r.chance())
-					player.addEffect(new MobEffectInstance(e.get(), r.duration(), r.amplify()));
-			}
-		}
-	}
-
-	public void finishRecipe() {
-		inventory.setStackInSlot(0, ItemStack.EMPTY);
-		if (this.level.getBlockState(worldPosition).getBlock() instanceof MeatHookBlock b) {
-			b.removeBelow(level, worldPosition);
-		}
-	}
-
-	@Override
-	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-		CompoundTag nbt = super.getUpdateTag(registries);
-
-		writeNBT(nbt, registries);
-
-		return nbt;
-	}
-
-	@Override
-	public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
-		readNBT(tag, registries);
-	}
-
-	@Override
-	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		return ClientboundBlockEntityDataPacket.create(this);
-	}
-
-	@Override
-	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
-		CompoundTag tag = pkt.getTag();
-		// InteractionHandle your Data
-		readNBT(tag, registries);
-	}
-
-	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
-		if (nbt.contains("inventory")) {
-			inventory.deserializeNBT(registries, nbt.getCompound("inventory"));
-		}
-		progress = nbt.getInt("progress");
-		maxProgress = nbt.getInt("max_progress");
-		displayTools = nbt.getBoolean("display_tools");
-		stage = nbt.getInt("stage");
-	}
-
-	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
-
-		tag.put("inventory", inventory.serializeNBT(registries));
-
-		tag.putInt("progress", progress);
-		tag.putInt("max_progress", maxProgress);
-		tag.putBoolean("display_tools", displayTools);
-		tag.putInt("stage", stage);
-
-		return tag;
-	}
-
-	@Override
-	public void loadAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
-		super.loadAdditional(nbt, registries);
-		readNBT(nbt, registries);
-	}
-
-	@Override
-	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
-		super.saveAdditional(nbt, registries);
-		writeNBT(nbt, registries);
-	}
+//						if (isFinalStage(recipe)) {
+//
+//							dropLoot(recipe.tools().get(stage), p);
+//							this.inflictEffects(p, recipe.tools().get(stage));
+//							this.finishRecipe();
+//						} else {
+//							dropLoot(recipe.tools().get(stage), p);
+//							this.inflictEffects(p, recipe.tools().get(stage));
+//							setupStage(recipe, stage + 1);
+//						}
+//
+//						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
+//						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1, 1);
+//					} else {
+//						if (butcheringTool.isDamageableItem())
+//							butcheringTool.hurtAndBreak(1, p, EquipmentSlot.MAINHAND);
+//						else
+//							butcheringTool.setCount(butcheringTool.getCount() - recipe.tools().get(stage).uses());
+//
+//						for (int i = 0; i < 1 + level.random.nextInt(4); i++)
+//							level.addParticle(ParticleTypes.FALLING_LAVA,
+//									worldPosition.getX() + 0.25f + level.random.nextDouble() / 2,
+//									worldPosition.getY() - 1.5f,
+//									worldPosition.getZ() + 0.25f + level.random.nextDouble() / 2, 0, 0, 0);
+//
+//						level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
+//						level.playSound(p, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 1, 1);
+//
+//					}
+//				}
+//
+////				ItemStack boots = p.getInventory().getArmor(0);
+////				if (boots.getItem() instanceof BootsItem)
+////					boots.hurtAndBreak(1, p, EquipmentSlot.FEET);
+////				else
+////					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODTRAIL, 3600, 0, false, false, true));
+////
+////				ItemStack apron = p.getInventory().getArmor(1);
+////				if (apron.getItem() instanceof ApronItem)
+////					apron.hurtAndBreak(1, p, EquipmentSlot.LEGS);
+////				else
+////					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.BLOODY, 3600, 0, false, false, true));
+////
+////				ItemStack gloves = p.getInventory().getArmor(2);
+////				if (gloves.getItem() instanceof GlovesItem)
+////					gloves.hurtAndBreak(1, p, EquipmentSlot.CHEST);
+////				else
+////					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.DIRTY, 3600, 0, false, false, true));
+////
+////				ItemStack mask = p.getInventory().getArmor(3);
+////				if (mask.getItem() instanceof MaskItem)
+////					mask.hurtAndBreak(1, p, EquipmentSlot.HEAD);
+////				else
+////					p.addEffect(new MobEffectInstance(ButchercraftMobEffects.STINKY, 3600, 0, false, false, true));
+//
+//				this.updateInventory();
+//				return ItemInteractionResult.SUCCESS;
+//			}
+//
+//		}
+//
+//		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+//	}
+//
+//	private void dropLoot(AnimatedRecipeItemUse recipeToolsIn, Player player) {
+//		if (level != null && !level.isClientSide()) {
+//			final LootParams pParams = new LootParams.Builder((ServerLevel) level)
+//					.withParameter(LootContextParams.TOOL, player.getMainHandItem())
+//					.withParameter(LootContextParams.THIS_ENTITY, player)
+//					.withLuck(player.getLuck() + player.getMainHandItem()
+//							.getEnchantmentLevel(player.registryAccess().holderOrThrow(Enchantments.FORTUNE)))
+//					.create(LootContextParamSets.EMPTY);
+//			player.getServer().reloadableRegistries()
+//					.getLootTable(ResourceKey.create(Registries.LOOT_TABLE, recipeToolsIn.lootTable()))
+//					.getRandomItems(pParams).forEach(itemStack -> {
+////						if (player.isCrouching())
+//						level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f,
+//								getBlockPos().getY() - 1.5f, getBlockPos().getZ() + 0.5f, itemStack, 0, 0, 0));
+////						else {
+////							if (!player.getInventory().add(itemStack)) {
+////								player.drop(itemStack, false);
+////							}
+////						}
+//					});
+//
+//		}
+//	}
+//
+//	private void inflictEffects(Player player, AnimatedRecipeItemUse recipeToolsIn) {
+//		for (RecipeMobEffect r : recipeToolsIn.effects()) {
+//			Optional<Reference<MobEffect>> e = BuiltInRegistries.MOB_EFFECT.getHolder(r.rc());
+//			if (e.isPresent()) {
+//				if (player.level().random.nextFloat() >= r.chance())
+//					player.addEffect(new MobEffectInstance(e.get(), r.duration(), r.amplify()));
+//			}
+//		}
+//	}
+//
+//	public void finishRecipe() {
+//		inventory.setStackInSlot(0, ItemStack.EMPTY);
+//		if (this.level.getBlockState(worldPosition).getBlock() instanceof MeatHookBlock b) {
+//			b.removeBelow(level, worldPosition);
+//		}
+//	}
+//
+//	@Override
+//	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+//		CompoundTag nbt = super.getUpdateTag(registries);
+//
+//		writeNBT(nbt, registries);
+//
+//		return nbt;
+//	}
+//
+//	@Override
+//	public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+//		readNBT(tag, registries);
+//	}
+//
+//	@Override
+//	public ClientboundBlockEntityDataPacket getUpdatePacket() {
+//		return ClientboundBlockEntityDataPacket.create(this);
+//	}
+//
+//	@Override
+//	public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider registries) {
+//		CompoundTag tag = pkt.getTag();
+//		// InteractionHandle your Data
+//		readNBT(tag, registries);
+//	}
+//
+//	void readNBT(CompoundTag nbt, HolderLookup.Provider registries) {
+//		if (nbt.contains("inventory")) {
+//			inventory.deserializeNBT(registries, nbt.getCompound("inventory"));
+//		}
+//		progress = nbt.getInt("progress");
+//		maxProgress = nbt.getInt("max_progress");
+//		displayTools = nbt.getBoolean("display_tools");
+//		stage = nbt.getInt("stage");
+//	}
+//
+//	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
+//
+//		tag.put("inventory", inventory.serializeNBT(registries));
+//
+//		tag.putInt("progress", progress);
+//		tag.putInt("max_progress", maxProgress);
+//		tag.putBoolean("display_tools", displayTools);
+//		tag.putInt("stage", stage);
+//
+//		return tag;
+//	}
+//
+//	@Override
+//	public void loadAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+//		super.loadAdditional(nbt, registries);
+//		readNBT(nbt, registries);
+//	}
+//
+//	@Override
+//	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
+//		super.saveAdditional(nbt, registries);
+//		writeNBT(nbt, registries);
+//	}
 }
