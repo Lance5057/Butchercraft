@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft.workstations.butcherblock;
 
+import com.lance5057.butchercraft.workstations.butcherblock.recipes.ButcherBlockRecipe;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

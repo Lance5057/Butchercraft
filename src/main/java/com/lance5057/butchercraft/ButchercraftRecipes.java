@@ -1,6 +1,6 @@
 package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
+import com.lance5057.butchercraft.workstations.butcherblock.recipes.ButcherBlockRecipe;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRecipe;
 import com.lance5057.butchercraft.workstations.hook.recipes.HookRecipe;
 

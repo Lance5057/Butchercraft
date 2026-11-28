@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockRecipe;
+import com.lance5057.butchercraft.workstations.butcherblock.recipes.ButcherBlockRecipe;
 
 import api.LanceNestAPI.src.client.BlacklistedModel;
 import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;

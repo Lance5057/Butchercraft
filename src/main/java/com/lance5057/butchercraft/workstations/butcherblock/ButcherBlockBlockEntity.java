@@ -7,10 +7,12 @@ import javax.annotation.Nonnull;
 import com.lance5057.butchercraft.ButchercraftBlockEntities;
 import com.lance5057.butchercraft.ButchercraftRecipes;
 import com.lance5057.butchercraft.workstations.bases.recipes.ProcessingContainer;
+import com.lance5057.butchercraft.workstations.butcherblock.recipes.ButcherBlockRecipe;
 
 import api.LanceNestAPI.src.blockentities.MultiToolRecipeStation;
 import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import api.LanceNestAPI.src.recipes.RecipeMobEffect;
+import api.LanceNestAPI.src.util.recipes.MultiToolRecipeWrapper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder.Reference;
 import net.minecraft.core.HolderLookup;
@@ -42,7 +44,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.neoforged.neoforge.common.util.Lazy;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-public class ButcherBlockBlockEntity extends MultiToolRecipeStation<ButcherBlockRecipe> {
+public class ButcherBlockBlockEntity extends MultiToolRecipeStation<MultiToolRecipeWrapper, ButcherBlockRecipe> {
 	private final ItemStackHandler inventory = createHandler();
 	private final Lazy<ItemStackHandler> itemHandler = Lazy.of(() -> inventory);
 
