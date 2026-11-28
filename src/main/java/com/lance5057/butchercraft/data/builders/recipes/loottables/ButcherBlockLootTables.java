@@ -160,7 +160,7 @@ public class ButcherBlockLootTables implements LootTableSubProvider {
 		t.accept(EMPTY, LootTable.lootTable());
 
 		t.accept(CASING,
-				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CASING.get(), 1))
+				LootTable.lootTable().withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.CASING.get(), 2))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.FAT.get(), 0, 2))
 						.withPool(MeatHookLoottables.createPoolWithItem(ButchercraftItems.SINEW.get(), 0, 2))
 						.withPool(MeatHookLoottables.createPoolWithItem(Items.BUCKET, 1)));

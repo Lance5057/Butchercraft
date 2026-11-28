@@ -416,9 +416,15 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(Butchercraft.MOD_ID + ".butcherknife.rightclick", "Right click to slaughter.");
 
 		this.add("effect." + Butchercraft.MOD_ID + ".pungent_reek", "Pungent Reek");
+		this.add("effect." + Butchercraft.MOD_ID + ".pungent_reek.description", "Villagers will not trade with you until you have a wash. Can be prevented by wearing a Butcher's Mask when butchering an animal.");
 		this.add("effect." + Butchercraft.MOD_ID + ".dirty_hands", "Dirty Hands");
+		this.add("effect." + Butchercraft.MOD_ID + ".dirty_hands.description", "Not washing your hands before you eat can make you sick. Can be prevented by wearing some Butcher's Gloves when butchering an animal.");
 		this.add("effect." + Butchercraft.MOD_ID + ".blood_splatter", "Bloody");
+		this.add("effect." + Butchercraft.MOD_ID + ".blood_splatter.description", "Zombies find you extra-tasty and so will hit you harder. Can be prevented by wearing a Butcher's Apron when butchering an animal.");
 		this.add("effect." + Butchercraft.MOD_ID + ".blood_trail", "Blood Trail");
+		this.add("effect." + Butchercraft.MOD_ID + ".blood_trail.description", "Zombies will auto-detect you. Can be prevented by wearing some Butcher's Boots when butchering an animal.");
+		this.add("effect." + Butchercraft.MOD_ID + ".blood_lust", "Blood Lust");
+		this.add("effect." + Butchercraft.MOD_ID + ".blood_lust.description", "Animals following a hooded mob will attack any player.");
 
 		this.add("fluid_type." + Butchercraft.MOD_ID + ".blood_fluid", "Blood");
 	}

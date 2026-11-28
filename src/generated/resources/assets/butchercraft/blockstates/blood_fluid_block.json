@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "level=0": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=1": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=10": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=11": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=12": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=13": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=14": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=15": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=2": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=3": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=4": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=5": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=6": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=7": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=8": {
+      "model": "butchercraft:block/blood_fluid_block"
+    },
+    "level=9": {
+      "model": "butchercraft:block/blood_fluid_block"
+    }
+  }
+}

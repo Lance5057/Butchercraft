@@ -5,7 +5,9 @@ import com.lance5057.butchercraft.ButchercraftBlocks;
 import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockBlock;
 import com.lance5057.butchercraft.workstations.hook.MeatHookBlock;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -168,6 +170,18 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleBlock(ButchercraftBlocks.SHEEP_SKULL_HEAD.get(), models().getExistingFile(mcLoc("block/skull")));
 		this.simpleBlock(ButchercraftBlocks.SHEEP_SKULL_HEAD_WALL.get(),
 				models().getExistingFile(mcLoc("block/skull")));
+
+		fluid(this, ButchercraftBlocks.BLOOD_FLUID_BLOCK.get());
+	}
+
+	public static void fluid(BlockStateProvider bsp, LiquidBlock block) {
+		bsp.getVariantBuilder(block).forAllStates(state -> {
+			return ConfiguredModel.builder()
+					.modelFile(bsp.models().getBuilder(BuiltInRegistries.BLOCK.getKey(block).getPath())
+							.texture("texture", "minecraft:block/water_still")
+							.renderType("translucent"))
+					.build();
+		});
 	}
 
 	public void meathookBlock(MeatHookBlock block) {
