@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.lance5057.butchercraft.armor.BCArmorMaterial;
 import com.lance5057.butchercraft.entity.ButchercraftVillagers;
 
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -18,6 +19,8 @@ public class Butchercraft {
 
 	public final static String MOD_ID = "butchercraft";
 	public static final String VERSION = "2.6.5";
+
+	public static final ResourceLocation NONE = ResourceLocation.fromNamespaceAndPath(MOD_ID, "none");
 
 	public static Logger logger = LogManager.getLogger();
 

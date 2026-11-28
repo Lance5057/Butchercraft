@@ -1,49 +1,9 @@
 {
   "type": "butchercraft:butcher_block",
   "carcass": {
-    "item": "butchercraft:chicken_carcass"
+    "item": "butchercraft:carcass"
   },
-  "jei": [
-    {
-      "item": "butchercraft:blood_fluid_bottle"
-    },
-    {
-      "item": "butchercraft:heart"
-    },
-    {
-      "item": "butchercraft:kidney"
-    },
-    {
-      "item": "butchercraft:liver"
-    },
-    {
-      "item": "butchercraft:stomach"
-    },
-    {
-      "item": "butchercraft:lung"
-    },
-    {
-      "item": "butchercraft:tripe"
-    },
-    {
-      "item": "butchercraft:sinew"
-    },
-    {
-      "item": "butchercraft:fat"
-    },
-    {
-      "item": "minecraft:chicken"
-    },
-    {
-      "item": "minecraft:feather"
-    },
-    {
-      "item": "butchercraft:chicken_head_item"
-    },
-    {
-      "item": "butchercraft:chicken_foot"
-    }
-  ],
+  "entity": "minecraft:chicken",
   "tools": [
     {
       "count": 1,
@@ -80,24 +40,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken"
         },
@@ -117,6 +62,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -129,17 +75,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -187,24 +133,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken"
         },
@@ -224,6 +155,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -236,17 +168,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -294,24 +226,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken"
         },
@@ -331,6 +248,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -343,17 +261,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -401,24 +319,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken"
         },
@@ -438,6 +341,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -450,17 +354,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -508,24 +412,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken"
         },
@@ -545,6 +434,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -557,17 +447,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -615,24 +505,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken"
         },
@@ -652,6 +527,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -664,17 +540,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -722,24 +598,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken"
         },
@@ -759,6 +620,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -771,17 +633,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -829,24 +691,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken"
         },
@@ -866,6 +713,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -878,17 +726,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -936,24 +784,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken_plucked"
         },
@@ -973,6 +806,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -985,17 +819,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }

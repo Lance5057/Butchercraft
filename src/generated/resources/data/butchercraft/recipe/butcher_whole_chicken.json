@@ -3,26 +3,6 @@
   "carcass": {
     "item": "minecraft:chicken"
   },
-  "jei": [
-    {
-      "item": "butchercraft:chicken_breast"
-    },
-    {
-      "item": "butchercraft:chicken_leg"
-    },
-    {
-      "item": "butchercraft:chicken_thigh"
-    },
-    {
-      "item": "butchercraft:chicken_wing"
-    },
-    {
-      "item": "butchercraft:chicken_scraps"
-    },
-    {
-      "item": "minecraft:bone_meal"
-    }
-  ],
   "tools": [
     {
       "count": 1,
@@ -59,24 +39,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/chicken_gutted"
         },
@@ -96,6 +61,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -108,17 +74,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }

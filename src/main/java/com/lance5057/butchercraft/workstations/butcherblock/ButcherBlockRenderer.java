@@ -4,6 +4,7 @@ import org.joml.Quaternionf;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
+import api.LanceNestAPI.src.recipes.AnimatedRecipeItemUse;
 import api.LanceNestAPI.src.util.rendering.RenderUtil;
 import api.LanceNestAPI.src.util.rendering.animation.floats.AnimationFloatTransform;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -33,14 +34,15 @@ public class ButcherBlockRenderer implements BlockEntityRenderer<ButcherBlockBlo
 
 			pPoseStack.translate(-0.5f, 0, -0.5f);
 
-			pBlockEntity.getCurrentTool()
-					.ifPresent(animatedRecipeItemUse -> animatedRecipeItemUse.model().forEach(b -> {
-						if (!pBlockEntity.displayTools) {
-							if (b.isBlock())
-								RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer);
-						} else
+			AnimatedRecipeItemUse animatedRecipeItemUse = pBlockEntity.getCurrentTool();
+			if (animatedRecipeItemUse != null)
+				animatedRecipeItemUse.model().forEach(b -> {
+					if (!pBlockEntity.displayTools) {
+						if (b.isBlock())
 							RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer);
-					}));
+					} else
+						RenderUtil.loadModel(pPoseStack, pBufferSource, pPackedLight, pPackedOverlay, b, timer);
+				});
 			pPoseStack.popPose();
 			timer++;
 		}

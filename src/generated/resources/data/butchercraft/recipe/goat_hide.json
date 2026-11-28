@@ -3,20 +3,6 @@
   "carcass": {
     "item": "butchercraft:goat_hide"
   },
-  "jei": [
-    {
-      "item": "butchercraft:sinew"
-    },
-    {
-      "item": "butchercraft:fat"
-    },
-    {
-      "item": "butchercraft:leather_scrap"
-    },
-    {
-      "item": "minecraft:leather"
-    }
-  ],
   "tools": [
     {
       "count": 1,
@@ -44,24 +30,9 @@
                 "min": -12.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/goat_hide"
         },
@@ -81,6 +52,7 @@
                 "min": -12.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -93,17 +65,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -152,24 +124,9 @@
                 "min": -12.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/goat_hide"
         },
@@ -189,6 +146,7 @@
                 "min": -12.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -201,17 +159,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }

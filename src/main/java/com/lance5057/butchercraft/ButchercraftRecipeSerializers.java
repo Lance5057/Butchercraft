@@ -1,6 +1,6 @@
 package com.lance5057.butchercraft;
 
-import com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockSerializer;
+import com.lance5057.butchercraft.workstations.butcherblock.recipes.ButcherBlockSerializer;
 import com.lance5057.butchercraft.workstations.grinder.GrinderRecipeSerializer;
 import com.lance5057.butchercraft.workstations.hook.recipes.HookRecipe;
 import com.lance5057.butchercraft.workstations.hook.recipes.HookRecipeSerializer;

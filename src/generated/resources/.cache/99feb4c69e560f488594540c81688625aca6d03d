@@ -1,13 +1,7 @@
-// 1.21.1	2026-08-19T11:02:15.7293345	Tags for minecraft:item mod id butchercraft
-30a75bd3037b0669d289c837537799f29679938f data/butchercraft/tags/item/chicken_carcass.json
-ad32ce5cf7c36e45d2d8fa6e09ca02427ef9d21a data/butchercraft/tags/item/cow_carcass.json
+// 1.21.1	2026-11-28T02:50:30.824213891	Tags for minecraft:item mod id butchercraft
 66da3e39032bb6edf49b68f597c0d5f9b7cb5166 data/butchercraft/tags/item/gelatin_provider.json
-243fc5ac734a989f45ba17b74854127c36a1b65e data/butchercraft/tags/item/goat_carcass.json
 4657f9eae59e6658aeba5f711978b48e03ad9715 data/butchercraft/tags/item/grinder_attachment.json
-6af88c7bc1893f0c693c10ae1ee148aefe1ed6ad data/butchercraft/tags/item/pig_carcass.json
-ba91febf26e7f478d42fd17fe7cdb3313be8f1c2 data/butchercraft/tags/item/rabbit_carcass.json
 0e3627197ab0855eec5ca3eaee114fd6aed5ef68 data/butchercraft/tags/item/sausage_casing.json
-08ddda1e7c354e6560543656eaf127f5d0a55af0 data/butchercraft/tags/item/sheep_carcass.json
 53a5b806819618471d2707b854087328e5dd9bdf data/c/tags/item/beef.json
 53444c1d580f4a0e6b8d363afd025dbb8dbf4f53 data/c/tags/item/beef/cooked.json
 4bfe420ce0b9a059dece4d40dcce618ef8cc18ad data/c/tags/item/beef/cubed.json
@@ -32,6 +26,7 @@ bf718d49b16fa80674c3e91ad9f36d8349f523c5 data/c/tags/item/beef/scrap/raw.json
 ed1937933f336d37d5afdde9eea7f83fdf3cf2ee data/c/tags/item/beef/stew.json
 b24efb7be1c976b275c79ff1829816cc9fc1d84d data/c/tags/item/beef/stew/cooked.json
 e0b73bc02eaca32ce57d0d5a162d866a45bfee92 data/c/tags/item/beef/stew/raw.json
+ba03f70a72a2cd308b0504800b6e50ba6c509832 data/c/tags/item/blood_sausage.json
 3e32c4db724623b757d0305ad4f5ff5323a8e538 data/c/tags/item/blood_sausage/cooked.json
 fbac1bb99ff4776269d03a65ec61573365cba002 data/c/tags/item/blood_sausage/raw.json
 d1e4d08424cf2bac233039580af3e65d0dd5e614 data/c/tags/item/brain.json
@@ -65,6 +60,16 @@ fe519e4221f8324fbdd9a80f9299f77ac888b065 data/c/tags/item/chicken/wing.json
 387a597b5fa4b822a93ba60687c0254c1a6e55f8 data/c/tags/item/chicken/wing/cooked.json
 a1b0f316cb8185f0967a2976f9f9251b71c82306 data/c/tags/item/chicken/wing/raw.json
 cd09d0bd2502f17520be606eac462355e2cedb8d data/c/tags/item/fat.json
+2a5ecb9910a7d4a5d5a3b1f570f3b572fb014313 data/c/tags/item/foods/cooked_beef.json
+95cba14a2194e6a72a7eeed7b55ccc78f86ece44 data/c/tags/item/foods/cooked_chicken.json
+a8fa9b430c3d7a534d06981f1cccb0ef373fb204 data/c/tags/item/foods/cooked_meat.json
+3b96752ec26ac067fc912d9f6993655a1974e152 data/c/tags/item/foods/cooked_mutton.json
+85fc025d07aa5ed58e088fce150c9ae43d286d7f data/c/tags/item/foods/cooked_pork.json
+81a72eaab20062dd3481a3cad4f6d2d627da5d03 data/c/tags/item/foods/raw_beef.json
+ea33a0874c5c41be5bc411a40dada1760c614e06 data/c/tags/item/foods/raw_chicken.json
+21ef9a5ed8cd22ebc73bf14edd1c238a5b2de789 data/c/tags/item/foods/raw_meat.json
+ea18ade6c1cbe80decc4966117b2e969b343afca data/c/tags/item/foods/raw_mutton.json
+b028f4750b061373398d1260e3119b1e497c5377 data/c/tags/item/foods/raw_pork.json
 91107a7a1edc1c44bc0f55123d9c0fb3cb132104 data/c/tags/item/gelatin.json
 c06f4ce001958de23a8bb92e954368459c3dd1c7 data/c/tags/item/goat.json
 229d4559eba26faf4f235bb01ecffa2106d02663 data/c/tags/item/goat/cooked.json
@@ -93,6 +98,7 @@ f345542f51367a3aafa3c211c1e0b276bae41fd3 data/c/tags/item/ground_meat/cooked.jso
 b93e388eb36f3b7240d4d39f9c69eef4c3847e32 data/c/tags/item/heart.json
 b93d3462406f0ce1062a5b32042f4f44363677a2 data/c/tags/item/heart/cooked.json
 5fa2b4ddf835e740777ae952e1e72d5e3056c6cd data/c/tags/item/heart/raw.json
+a6430dd2207a4afba8ce40dbd6060203b841e974 data/c/tags/item/horn.json
 6254e87314f3643bc2026bd0adf521aee0d6aea9 data/c/tags/item/kidney.json
 f9751787afb1f2cd4bef7eac049ec97aa2996fcc data/c/tags/item/kidney/cooked.json
 019e0df6cc19b1240f8f018b2cd6f553ec135851 data/c/tags/item/kidney/raw.json
@@ -105,7 +111,9 @@ ced07293c2f3697604db17b7f60133180f7a0d2a data/c/tags/item/lung.json
 c027047d7f0bbffe19d519eb02a7232b6b7708ae data/c/tags/item/lung/raw.json
 b144d4d0beae8abf0043b8dc57660c475f412c5a data/c/tags/item/meat.json
 4521d09ad20f3fbf05c53139a1480515c93d5b7e data/c/tags/item/meat/cooked.json
-6dacbb49bd1b64ad6a532fadebbbcb8c28302ffa data/c/tags/item/meat/cubed/raw.json
+e4af17956ab6eda76f06869422b418103233c135 data/c/tags/item/meat/cubed.json
+02f9d70a96baaad7866b92e834c5018f6d47001a data/c/tags/item/meat/cubed/cooked.json
+8418ac35907e1ef68e523961c68e15cabd48d620 data/c/tags/item/meat/cubed/raw.json
 698b617edae1ae33aa775534e6c233554c751aec data/c/tags/item/meat/raw.json
 6089e404674904929fa02e043ebaf46af64a6373 data/c/tags/item/meat/ribs.json
 e54840c24ac0e1588972d2bfcf494faaae1a478a data/c/tags/item/meat/ribs/cooked.json
@@ -116,6 +124,9 @@ dfc704681596946f1a6b0a459c820d3bc093498e data/c/tags/item/meat/roast/raw.json
 4925a1a35183570fc56e01175d434cca1984f378 data/c/tags/item/meat/scrap.json
 50029f91721be263c980dae5bc9758d8b3a69e73 data/c/tags/item/meat/scrap/cooked.json
 314a2e9eef19364a0863d9296551d057285f5503 data/c/tags/item/meat/scrap/raw.json
+937818cfd91292c3f7a8b8f90e1161ce77554803 data/c/tags/item/meat/stew.json
+ed87401217b885bef822bb3f9460bc2342334dbf data/c/tags/item/meat/stew/cooked.json
+bc0afb400aae5d4b92296e4ca8036ff74417cd03 data/c/tags/item/meat/stew/raw.json
 d21358f96c3a7e73520be419e12dad289ca34d83 data/c/tags/item/mutton.json
 0f3e78ae559f70a7f21c38fd0bc9d65d6b6cbce4 data/c/tags/item/mutton/cooked.json
 d627e9665c3fe4ccf02bde87b0fea3ca3c92adfa data/c/tags/item/mutton/cubed.json
@@ -193,6 +204,9 @@ cd09d0bd2502f17520be606eac462355e2cedb8d data/c/tags/item/slime_balls.json
 7254e07a6db626a376d59b9fea92afbd80906e95 data/c/tags/item/stomach/cooked.json
 76bb35b63c283b0f9a98dc97c550b78c753d54c3 data/c/tags/item/stomach/raw.json
 c67f57f80b8d9192f9f4b901ee868ead87fbe3cb data/c/tags/item/strings.json
+8b4ae6a100aa6aa98586c974619250eebd440a6c data/c/tags/item/tongue.json
+2da65714f06952da8a87b08f51e8d35561c66bbe data/c/tags/item/tongue/cooked.json
+08ca2ef80f6ddbbe11402b4405ad7d1dcaa0870b data/c/tags/item/tongue/raw.json
 1aa79871d284539f531a6fc851dc6972b4712456 data/c/tags/item/tools/knife.json
 92533caf1be2d987460eb4261e3fea2ee8f33a2c data/c/tags/item/tripe.json
 f826a746873f047e45d29c16212dd811fb6ee3ae data/c/tags/item/tripe/cooked.json

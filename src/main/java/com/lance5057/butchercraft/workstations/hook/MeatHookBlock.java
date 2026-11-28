@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft.workstations.hook;
 
+import api.LanceNestAPI.src.util.ItemUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -70,10 +71,10 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 			if (entity instanceof MeatHookBlockEntity te) {
 				if (playerEntity.isCrouching()) {
 					if (te.stage == 0 && te.progress == 0) {
-						te.extractItem(playerEntity);
+						ItemUtil.giveOrDrop(te.extractItem(), playerEntity);
 						return ItemInteractionResult.SUCCESS;
 					}
-				} else if (te.isEmpty()) {
+				} else if (te.getInventory().isEmpty()) {
 					if (isEmptyBelow(world, blockPos)) {
 						te.insertItem(heldMain);
 						return ItemInteractionResult.SUCCESS;
@@ -83,13 +84,13 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 						return ItemInteractionResult.CONSUME;
 					}
 				} else {
-					if (heldMain.is(Items.PAPER))
-					{
+					if (heldMain.is(Items.PAPER)) {
 						te.displayTools = !te.displayTools;
 						return ItemInteractionResult.SUCCESS;
-					}
+					} else if (te.use(world, playerEntity, hand, heldMain))
+						return ItemInteractionResult.SUCCESS;
 					else
-						return te.butcher(playerEntity, heldMain);
+						return ItemInteractionResult.CONSUME;
 				}
 			}
 		} else if (state.getValue(DUMMY) == 1) {
@@ -110,7 +111,7 @@ public class MeatHookBlock extends Block implements EntityBlock, SimpleWaterlogg
 		if (state.getValue(DUMMY) == 0) {
 			BlockEntity entity = level.getBlockEntity(pos);
 			if (entity instanceof MeatHookBlockEntity te) {
-				if (!te.isEmpty())
+				if (!te.getInventory().isEmpty())
 					placeBelow(level, state, pos);
 			}
 		} else if (state.getValue(DUMMY) == 1) {

@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.workstations.butcherblock.recipes.ButcherBlockRecipe;
 
 import api.LanceNestAPI.src.client.BlacklistedModel;
@@ -19,26 +20,26 @@ import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.storage.loot.LootTable;
 
 public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 	private final Item result;
-	private final ResourceLocation entity;
+	private ResourceLocation entity = Butchercraft.NONE;
 	private final List<AnimatedRecipeItemUse> tools = NonNullList.create();
 	private final List<Ingredient> jei = NonNullList.create();
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 	private String group;
 
-	public ButcherBlockRecipeBuilder(Item carcassIn, ResourceLocation entity) {
+	public ButcherBlockRecipeBuilder(Item carcassIn) {
 		this.result = carcassIn;
-		this.entity = entity;
 		this.unlockedBy(RecipeBuilderUtil.getHasName(carcassIn), RecipeBuilderUtil.has(carcassIn));
 	}
 
-	public static ButcherBlockRecipeBuilder shapedRecipe(Item resultIn, ResourceLocation entity) {
-		return new ButcherBlockRecipeBuilder(resultIn, entity);
+	public static ButcherBlockRecipeBuilder shapedRecipe(Item resultIn) {
+		return new ButcherBlockRecipeBuilder(resultIn);
 	}
 
 	public ButcherBlockRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage,
@@ -55,6 +56,11 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 
 	public ButcherBlockRecipeBuilder JEIIngredient(Ingredient i) {
 		this.jei.add(i);
+		return this;
+	}
+	
+	public ButcherBlockRecipeBuilder entity(EntityType<?> e) {
+		this.entity = EntityType.getKey(e);
 		return this;
 	}
 
@@ -99,8 +105,8 @@ public class ButcherBlockRecipeBuilder implements RecipeBuilder {
 				.requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(builder::addCriterion);
 		consumerIn.accept(pRecipeId,
-				new ButcherBlockRecipe(this.group == null ? "" : this.group, Ingredient.of(this.result),
-						NonNullList.copyOf(this.tools), NonNullList.copyOf(jei)),
+				new ButcherBlockRecipe(this.group == null ? "" : this.group, Ingredient.of(this.result), entity,
+						NonNullList.copyOf(this.tools)),
 				builder.build(ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 						"recipes/meat_hook/" + pRecipeId.getPath())));
 	}

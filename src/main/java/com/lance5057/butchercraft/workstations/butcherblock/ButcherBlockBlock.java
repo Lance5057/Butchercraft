@@ -1,5 +1,6 @@
 package com.lance5057.butchercraft.workstations.butcherblock;
 
+import api.LanceNestAPI.src.util.ItemUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -70,11 +71,11 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 			if (entity instanceof ButcherBlockBlockEntity te) {
 				if (playerEntity.isCrouching()) {
 					if (te.stage == 0 && te.progress == 0) {
-						te.extractItem(playerEntity);
+						ItemUtil.giveOrDrop(te.extractItem(), playerEntity);
 
 						return ItemInteractionResult.SUCCESS;
 					}
-				} else if (te.isEmpty()) {
+				} else if (te.getInventory().isEmpty()) {
 					if (isEmptyAbove(world, blockPos)) {
 						te.insertItem(heldMain);
 						return ItemInteractionResult.SUCCESS;
@@ -88,8 +89,10 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 					if (heldMain.is(Items.PAPER)) {
 						te.displayTools = !te.displayTools;
 						return ItemInteractionResult.SUCCESS;
-					} else
-						return te.butcher(playerEntity, heldMain);
+					} else if (te.use(world, playerEntity, hand, heldMain))
+						return ItemInteractionResult.SUCCESS;
+					else
+						return ItemInteractionResult.CONSUME;
 				}
 			}
 		} else {
@@ -108,7 +111,7 @@ public class ButcherBlockBlock extends Block implements EntityBlock, SimpleWater
 		if (!state.getValue(DUMMY)) {
 			BlockEntity entity = level.getBlockEntity(pos);
 			if (entity instanceof ButcherBlockBlockEntity te) {
-				if (!te.isEmpty())
+				if (!te.getInventory().isEmpty())
 					placeAbove(level, state, pos);
 			}
 		} else {

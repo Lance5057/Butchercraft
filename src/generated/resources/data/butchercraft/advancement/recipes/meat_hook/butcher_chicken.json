@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chicken_carcass": {
+    "has_carcass": {
       "conditions": {
         "items": [
           {
-            "items": "butchercraft:chicken_carcass"
+            "items": "butchercraft:carcass"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_chicken_carcass"
+      "has_carcass"
     ]
   ],
   "rewards": {

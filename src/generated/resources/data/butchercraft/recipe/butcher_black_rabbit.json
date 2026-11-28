@@ -1,49 +1,8 @@
 {
   "type": "butchercraft:butcher_block",
   "carcass": {
-    "item": "butchercraft:black_rabbit_carcass"
+    "item": "butchercraft:carcass"
   },
-  "jei": [
-    {
-      "item": "butchercraft:blood_fluid_bottle"
-    },
-    {
-      "item": "minecraft:rabbit_hide"
-    },
-    {
-      "item": "minecraft:rabbit_foot"
-    },
-    {
-      "item": "butchercraft:kidney"
-    },
-    {
-      "item": "butchercraft:liver"
-    },
-    {
-      "item": "butchercraft:stomach"
-    },
-    {
-      "item": "butchercraft:lung"
-    },
-    {
-      "item": "butchercraft:tripe"
-    },
-    {
-      "item": "butchercraft:sinew"
-    },
-    {
-      "item": "butchercraft:fat"
-    },
-    {
-      "item": "butchercraft:black_bunny_tail"
-    },
-    {
-      "item": "butchercraft:rabbit_black_head_item"
-    },
-    {
-      "item": "minecraft:rabbit"
-    }
-  ],
   "tools": [
     {
       "count": 1,
@@ -80,24 +39,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/rabbit_black"
         },
@@ -117,6 +61,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -129,17 +74,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -187,24 +132,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/rabbit_black"
         },
@@ -224,6 +154,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -236,17 +167,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -294,24 +225,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/rabbit_black"
         },
@@ -331,6 +247,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -343,17 +260,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }
@@ -401,24 +318,9 @@
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {},
-            "scale": {
-              "x": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "y": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              },
-              "z": {
-                "max": 1.0,
-                "min": 1.0,
-                "speed": 1.0
-              }
-            }
+            "scale": {}
           },
           "location": "butchercraft:meathook/rabbit_skinned"
         },
@@ -438,6 +340,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -450,17 +353,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }

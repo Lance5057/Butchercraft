@@ -24,6 +24,14 @@ public class HookRecipe extends AbstractProcessingRecipe<HookRecipeContainer> {
 		this.entity = entity;
 	}
 
+	public ResourceLocation getEntity() { 
+		return entity;
+	}
+
+	public void setEntity(ResourceLocation entity) {
+		this.entity = entity;
+	}
+
 	@Override
 	public boolean matches(HookRecipeContainer input, Level level) {
 		return this.getIngredientIn().test(input.getItem(0).copy());

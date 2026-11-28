@@ -18,11 +18,11 @@ public class ButchercraftModEvents {
 	@SubscribeEvent
 	public static void registerCaps(RegisterCapabilitiesEvent event) {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ButchercraftBlockEntities.BUTCHER_BLOCK.get(),
-				(object, context) -> object.getHandler());
+				(object, context) -> object.getInventory());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ButchercraftBlockEntities.GRINDER.get(),
 				(object, context) -> object.getHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ButchercraftBlockEntities.MEAT_HOOK.get(),
-				(object, context) -> object.getHandler());
+				(object, context) -> object.getInventory());
 		event.registerEntity(AnimalCareProvider.CARE, EntityType.COW, new AnimalCareProvider());
 	}
 

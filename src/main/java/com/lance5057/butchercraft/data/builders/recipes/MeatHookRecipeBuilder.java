@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.lance5057.butchercraft.Butchercraft;
 import com.lance5057.butchercraft.workstations.hook.recipes.HookRecipe;
 
 import api.LanceNestAPI.src.client.BlacklistedModel;
@@ -19,26 +20,27 @@ import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.storage.loot.LootTable;
 
 public class MeatHookRecipeBuilder implements RecipeBuilder {
 	private final Item carcass;
-	private final ResourceLocation entity;
+	private ResourceLocation entity = Butchercraft.NONE;
 	private final List<AnimatedRecipeItemUse> tools = NonNullList.create();
 	private final List<Ingredient> jei = NonNullList.create();
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 	private String group;
 
-	public MeatHookRecipeBuilder(Item carcassIn, ResourceLocation entity) {
+	public MeatHookRecipeBuilder(Item carcassIn) {
 		this.carcass = carcassIn;
-		this.entity = entity;
 		this.unlockedBy(RecipeBuilderUtil.getHasName(carcassIn), RecipeBuilderUtil.has(carcassIn));
 	}
 
-	public static MeatHookRecipeBuilder recipe(Item carcassIn, ResourceLocation entity) {
-		return new MeatHookRecipeBuilder(carcassIn, entity);
+	public static MeatHookRecipeBuilder recipe(Item carcassIn) {
+		return new MeatHookRecipeBuilder(carcassIn);
 	}
 
 	public MeatHookRecipeBuilder tool(Ingredient tool, int count, int uses, boolean damage,
@@ -50,6 +52,11 @@ public class MeatHookRecipeBuilder implements RecipeBuilder {
 	public MeatHookRecipeBuilder tool(Ingredient tool, int uses, boolean damage, ResourceKey<LootTable> table,
 			List<RecipeMobEffect> effect, BlacklistedModel... model) {
 		this.tools.add(new AnimatedRecipeItemUse(uses, tool, 1, damage, table.location(), effect, List.of(model)));
+		return this;
+	}
+
+	public MeatHookRecipeBuilder entity(EntityType<?> e) {
+		this.entity = EntityType.getKey(e);
 		return this;
 	}
 
@@ -99,7 +106,8 @@ public class MeatHookRecipeBuilder implements RecipeBuilder {
 				.requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(builder::addCriterion);
 		consumerIn.accept(pRecipeId,
-				new HookRecipe(this.group == null ? "" : this.group, Ingredient.of(this.carcass), NonNullList.copyOf(this.tools)),
+				new HookRecipe(this.group == null ? "" : this.group, Ingredient.of(this.carcass), entity,
+						NonNullList.copyOf(this.tools)),
 				builder.build(ResourceLocation.fromNamespaceAndPath(pRecipeId.getNamespace(),
 						"recipes/meat_hook/" + pRecipeId.getPath())));
 	}

@@ -3,11 +3,6 @@
   "carcass": {
     "item": "butchercraft:cooked_lamb_roast"
   },
-  "jei": [
-    {
-      "item": "minecraft:cooked_mutton"
-    }
-  ],
   "tools": [
     {
       "count": 1,
@@ -20,41 +15,42 @@
             "location": {
               "x": {
                 "max": 8.0,
-                "min": -8.0,
+                "min": 8.0,
                 "speed": 1.0
               },
               "y": {
                 "max": 1.0,
-                "min": -1.0,
+                "min": 1.0,
                 "speed": 1.0
               },
               "z": {
                 "max": 8.0,
-                "min": -8.0,
+                "min": 8.0,
                 "speed": 1.0
               }
             },
+            "pivot": {},
             "rotation": {
               "x": {
                 "max": -90.0,
-                "min": 90.0,
+                "min": -90.0,
                 "speed": 1.0
               }
             },
             "scale": {
               "x": {
                 "max": 1.0,
-                "min": -1.0,
+                "min": 1.0,
                 "speed": 1.0
               },
               "y": {
                 "max": 1.0,
-                "min": -1.0,
+                "min": 1.0,
                 "speed": 1.0
               },
               "z": {
                 "max": 1.0,
-                "min": -1.0,
+                "min": 1.0,
                 "speed": 1.0
               }
             }
@@ -77,6 +73,7 @@
                 "min": -8.0
               }
             },
+            "pivot": {},
             "rotation": {
               "z": {
                 "loop": true,
@@ -89,17 +86,17 @@
             "scale": {
               "x": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "y": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               },
               "z": {
                 "max": 0.5,
-                "min": -0.5,
+                "min": 0.5,
                 "speed": 1.0
               }
             }

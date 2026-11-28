@@ -335,323 +335,323 @@ public class Advancements implements AdvancementProvider.AdvancementGenerator {
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.CHICKEN_CARCASS.get()))
 //				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "chicken"),
 //						existingFileHelper);
-
-		grinder = Advancement.Builder.advancement().parent(root)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GRINDER_BLOCK_ITEM.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("grinder",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GRINDER_BLOCK_ITEM.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "grinder"),
-						existingFileHelper);
-
-		grinder_tip = Advancement.Builder.advancement().parent(grinder)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GRINDER_TIP.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder_tip.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder_tip.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("grinder_tip",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GRINDER_TIP.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "grinder_tip"),
-						existingFileHelper);
-
-		extruder = Advancement.Builder.advancement().parent(grinder)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.EXTRUDER_TIP.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.extruder.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.extruder.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("extruder",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.EXTRUDER_TIP.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "extruder"),
-						existingFileHelper);
-
-		sausage = Advancement.Builder.advancement().parent(extruder)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SAUSAGE.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.sausage.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.sausage.desc"), Optional.empty(),
-						AdvancementType.GOAL, true, true, false))
-				.addCriterion("blood_sausage",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.BLOOD_SAUSAGE_LINKED.get()))
-				.addCriterion("sausage",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.SAUSAGE_LINKED.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "sausage"),
-						existingFileHelper);
-
-		bunny_equip = Advancement.Builder.advancement().parent(rabbit)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.WHITE_BUNNY_TAIL.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.bunny_equip.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.bunny_equip.desc"), Optional.empty(),
-						AdvancementType.GOAL, true, true, true))
-				.addCriterion("bunny_equip_ears",
-						InventoryChangeTrigger.TriggerInstance
-								.hasItems(ItemPredicate.Builder.item().of(ButchercraftItemTags.BUNNY_EARS).build()))
-				.addCriterion("bunny_equip_tail",
-						InventoryChangeTrigger.TriggerInstance
-								.hasItems(ItemPredicate.Builder.item().of(ButchercraftItemTags.BUNNY_TAILS).build()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "bunny_equip"),
-						existingFileHelper);
-
-		taxadermy = Advancement.Builder.advancement().parent(root)
-				.display(new DisplayInfo(new ItemStack(Items.HAY_BLOCK),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.taxadermy.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.taxadermy.desc"), Optional.empty(),
-						AdvancementType.TASK, true, true, false))
-				.addCriterion("taxadermy",
-						InventoryChangeTrigger.TriggerInstance
-								.hasItems(ItemPredicate.Builder.item().of(ButchercraftItemTags.TAXIDERMY).build()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxadermy"),
-						existingFileHelper);
-
-		whole_cow = Advancement.Builder.advancement().parent(cow)
-				.display(new DisplayInfo(new ItemStack(Items.COOKED_BEEF),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_cow.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_cow.desc"), Optional.empty(),
-						AdvancementType.CHALLENGE, true, true, false))
-				.addCriterion("whole_cow_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_RIBS.get()))
-				.addCriterion("whole_cow_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_ROAST.get()))
-				.addCriterion("whole_cow_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_SCRAPS.get()))
-				.addCriterion("whole_cow_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT.get()))
-				.addCriterion("whole_cow_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_BEEF.get()))
-				.addCriterion("whole_cow_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_BEEF.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_cow"),
-						existingFileHelper);
-
-		whole_pig = Advancement.Builder.advancement().parent(pig)
-				.display(new DisplayInfo(new ItemStack(Items.COOKED_PORKCHOP),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_pig.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_pig.desc"), Optional.empty(),
-						AdvancementType.CHALLENGE, true, true, false))
-				.addCriterion("whole_pig_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_RIBS.get()))
-				.addCriterion("whole_pig_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_ROAST.get()))
-				.addCriterion("whole_pig_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_SCRAPS.get()))
-				.addCriterion("whole_pig_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_STEW_MEAT.get()))
-				.addCriterion("whole_pig_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_PORK.get()))
-				.addCriterion("whole_pig_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_pig"),
-						existingFileHelper);
-
-		whole_sheep = Advancement.Builder.advancement().parent(sheep)
-				.display(new DisplayInfo(new ItemStack(Items.COOKED_MUTTON),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_sheep.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_sheep.desc"), Optional.empty(),
-						AdvancementType.CHALLENGE, true, true, false))
-				.addCriterion("whole_sheep_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
-				.addCriterion("whole_sheep_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
-				.addCriterion("whole_sheep_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
-				.addCriterion("whole_sheep_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
-				.addCriterion("whole_sheep_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
-				.addCriterion("whole_sheep_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_sheep"),
-						existingFileHelper);
-
-		whole_rabbit = Advancement.Builder.advancement().parent(rabbit)
-				.display(new DisplayInfo(new ItemStack(Items.COOKED_RABBIT),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_rabbit.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_rabbit.desc"),
-						Optional.empty(), AdvancementType.CHALLENGE, true, true, false))
-				.addCriterion("whole_rabbit_leg",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_RABBIT_LEG.get()))
-				.addCriterion("whole_rabbit_saddle",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_RABBIT_SADDLE.get()))
-				.addCriterion("whole_rabbit_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_RABBIT.get()))
-				.addCriterion("whole_rabbit_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_RABBIT_SCRAPS.get()))
-				.addCriterion("whole_rabbit_thigh",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_RABBIT_THIGH.get()))
-				.addCriterion("whole_rabbit_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_STEW_RABBIT.get()))
-				.addCriterion("whole_rabbit_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_RABBIT.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_rabbit"),
-						existingFileHelper);
-
-		whole_chicken = Advancement.Builder.advancement().parent(chicken)
-				.display(new DisplayInfo(new ItemStack(Items.COOKED_CHICKEN),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_chicken.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_chicken.desc"),
-						Optional.empty(), AdvancementType.CHALLENGE, true, true, false))
-				.addCriterion("whole_chicken_breast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_BREAST.get()))
-				.addCriterion("whole_chicken_leg",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_LEG.get()))
-				.addCriterion("whole_chicken_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_SCRAPS.get()))
-				.addCriterion("whole_chicken_thigh",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_THIGH.get()))
-				.addCriterion("whole_chicken_wing",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_WING.get()))
-				.addCriterion("whole_chicken_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_CHICKEN.get()))
-				.addCriterion("whole_chicken_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_STEW_CHICKEN.get()))
-				.addCriterion("whole_chicken_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_CHICKEN.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_chicken"),
-						existingFileHelper);
-
-		whole_goat = Advancement.Builder.advancement().parent(goat)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.COOKED_GOAT_CHOP.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_goat.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_goat.desc"), Optional.empty(),
-						AdvancementType.CHALLENGE, true, true, false))
-				.addCriterion("whole_goat_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
-				.addCriterion("whole_goat_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
-				.addCriterion("whole_goat_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
-				.addCriterion("whole_goat_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
-				.addCriterion("whole_goat_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
-				.addCriterion("whole_goat_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_goat"),
-						existingFileHelper);
-
-		everything = Advancement.Builder.advancement().parent(butcherknife)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SAUSAGE.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything.desc"), Optional.empty(),
-						AdvancementType.CHALLENGE, true, true, false))
-				.addCriterion("whole_cow_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_RIBS.get()))
-				.addCriterion("whole_cow_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_ROAST.get()))
-				.addCriterion("whole_cow_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_SCRAPS.get()))
-				.addCriterion("whole_cow_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT.get()))
-				.addCriterion("whole_cow_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_BEEF.get()))
-				.addCriterion("whole_cow_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_BEEF.get()))
-				.addCriterion("whole_pig_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_RIBS.get()))
-				.addCriterion("whole_pig_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_ROAST.get()))
-				.addCriterion("whole_pig_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_SCRAPS.get()))
-				.addCriterion("whole_pig_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_STEW_MEAT.get()))
-				.addCriterion("whole_pig_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_PORK.get()))
-				.addCriterion("whole_pig_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
-				.addCriterion("whole_sheep_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
-				.addCriterion("whole_sheep_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
-				.addCriterion("whole_sheep_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
-				.addCriterion("whole_sheep_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
-				.addCriterion("whole_sheep_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
-				.addCriterion("whole_sheep_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "everything"),
-						existingFileHelper);
-
-		everything_plus = Advancement.Builder.advancement().parent(everything)
-				.display(new DisplayInfo(new ItemStack(ButchercraftItems.COOKED_TRIPE.get()),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything_plus.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything_plus.desc"),
-						Optional.empty(), AdvancementType.CHALLENGE, true, true, false))
-				.addCriterion("whole_cow_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_RIBS.get()))
-				.addCriterion("whole_cow_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_ROAST.get()))
-				.addCriterion("whole_cow_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_SCRAPS.get()))
-				.addCriterion("whole_cow_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT.get()))
-				.addCriterion("whole_cow_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_BEEF.get()))
-				.addCriterion("whole_cow_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_BEEF.get()))
-				.addCriterion("whole_pig_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_RIBS.get()))
-				.addCriterion("whole_pig_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_ROAST.get()))
-				.addCriterion("whole_pig_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_SCRAPS.get()))
-				.addCriterion("whole_pig_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_STEW_MEAT.get()))
-				.addCriterion("whole_pig_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_PORK.get()))
-				.addCriterion("whole_pig_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
-				.addCriterion("whole_sheep_ribs",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
-				.addCriterion("whole_sheep_roast",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
-				.addCriterion("whole_sheep_scraps",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
-				.addCriterion("whole_sheep_stew",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
-				.addCriterion("whole_sheep_cubed",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
-				.addCriterion("whole_sheep_ground",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
-				.addCriterion("everything_plus_brain",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BRAIN.get()))
-				.addCriterion("everything_plus_heart",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_HEART.get()))
-				.addCriterion("everything_plus_kidney",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_KIDNEY.get()))
-				.addCriterion("everything_plus_liver",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LIVER.get()))
-				.addCriterion("everything_plus_lung",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LUNG.get()))
-				.addCriterion("everything_plus_stomach",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_STOMACH.get()))
-				.addCriterion("everything_plus_tripe",
-						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_TRIPE.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "everything_plus"),
-						existingFileHelper);
-
-		DisplayInfo dheart = new DisplayInfo(new ItemStack(ButchercraftItems.HEART.get()),
-				Component.translatable(Butchercraft.MOD_ID + ".advancement.heart.name"),
-				Component.translatable(Butchercraft.MOD_ID + ".advancement.heart.desc"), Optional.empty(),
-				AdvancementType.CHALLENGE, true, true, true);
-
-		// Challenges
-		heart = Advancement.Builder.advancement().parent(root).display(dheart)
-				.addCriterion("heart", ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.HEART.get()))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "heart"),
-						existingFileHelper);
-
-		cannibalism = Advancement.Builder.advancement().parent(root)
-				.display(new DisplayInfo(new ItemStack(Items.PLAYER_HEAD),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.cannibalism.name"),
-						Component.translatable(Butchercraft.MOD_ID + ".advancement.cannibalism.desc"), Optional.empty(),
-						AdvancementType.CHALLENGE, true, true, true))
-				.addCriterion("cannibalism", PlayerInteractTrigger.TriggerInstance.itemUsedOnEntity(Optional.empty(),
-						ItemPredicate.Builder.item().of(ButchercraftItems.BUTCHER_KNIFE.get()),
-						Optional.of(
-								EntityPredicate.wrap(EntityPredicate.Builder.entity().of(EntityType.PLAYER).build()))))
-				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cannibalism"),
-						existingFileHelper);
+//
+//		grinder = Advancement.Builder.advancement().parent(root)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GRINDER_BLOCK_ITEM.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("grinder",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GRINDER_BLOCK_ITEM.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "grinder"),
+//						existingFileHelper);
+//
+//		grinder_tip = Advancement.Builder.advancement().parent(grinder)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.GRINDER_TIP.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder_tip.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.grinder_tip.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("grinder_tip",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.GRINDER_TIP.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "grinder_tip"),
+//						existingFileHelper);
+//
+//		extruder = Advancement.Builder.advancement().parent(grinder)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.EXTRUDER_TIP.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.extruder.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.extruder.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("extruder",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.EXTRUDER_TIP.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "extruder"),
+//						existingFileHelper);
+//
+//		sausage = Advancement.Builder.advancement().parent(extruder)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SAUSAGE.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.sausage.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.sausage.desc"), Optional.empty(),
+//						AdvancementType.GOAL, true, true, false))
+//				.addCriterion("blood_sausage",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.BLOOD_SAUSAGE_LINKED.get()))
+//				.addCriterion("sausage",
+//						InventoryChangeTrigger.TriggerInstance.hasItems(ButchercraftItems.SAUSAGE_LINKED.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "sausage"),
+//						existingFileHelper);
+//
+//		bunny_equip = Advancement.Builder.advancement().parent(rabbit)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.WHITE_BUNNY_TAIL.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.bunny_equip.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.bunny_equip.desc"), Optional.empty(),
+//						AdvancementType.GOAL, true, true, true))
+//				.addCriterion("bunny_equip_ears",
+//						InventoryChangeTrigger.TriggerInstance
+//								.hasItems(ItemPredicate.Builder.item().of(ButchercraftItemTags.BUNNY_EARS).build()))
+//				.addCriterion("bunny_equip_tail",
+//						InventoryChangeTrigger.TriggerInstance
+//								.hasItems(ItemPredicate.Builder.item().of(ButchercraftItemTags.BUNNY_TAILS).build()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "bunny_equip"),
+//						existingFileHelper);
+//
+//		taxadermy = Advancement.Builder.advancement().parent(root)
+//				.display(new DisplayInfo(new ItemStack(Items.HAY_BLOCK),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.taxadermy.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.taxadermy.desc"), Optional.empty(),
+//						AdvancementType.TASK, true, true, false))
+//				.addCriterion("taxadermy",
+//						InventoryChangeTrigger.TriggerInstance
+//								.hasItems(ItemPredicate.Builder.item().of(ButchercraftItemTags.TAXIDERMY).build()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "taxadermy"),
+//						existingFileHelper);
+//
+//		whole_cow = Advancement.Builder.advancement().parent(cow)
+//				.display(new DisplayInfo(new ItemStack(Items.COOKED_BEEF),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_cow.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_cow.desc"), Optional.empty(),
+//						AdvancementType.CHALLENGE, true, true, false))
+//				.addCriterion("whole_cow_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_RIBS.get()))
+//				.addCriterion("whole_cow_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_ROAST.get()))
+//				.addCriterion("whole_cow_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_SCRAPS.get()))
+//				.addCriterion("whole_cow_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT.get()))
+//				.addCriterion("whole_cow_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_BEEF.get()))
+//				.addCriterion("whole_cow_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_BEEF.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_cow"),
+//						existingFileHelper);
+//
+//		whole_pig = Advancement.Builder.advancement().parent(pig)
+//				.display(new DisplayInfo(new ItemStack(Items.COOKED_PORKCHOP),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_pig.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_pig.desc"), Optional.empty(),
+//						AdvancementType.CHALLENGE, true, true, false))
+//				.addCriterion("whole_pig_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_RIBS.get()))
+//				.addCriterion("whole_pig_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_ROAST.get()))
+//				.addCriterion("whole_pig_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_SCRAPS.get()))
+//				.addCriterion("whole_pig_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_STEW_MEAT.get()))
+//				.addCriterion("whole_pig_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_PORK.get()))
+//				.addCriterion("whole_pig_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_pig"),
+//						existingFileHelper);
+//
+//		whole_sheep = Advancement.Builder.advancement().parent(sheep)
+//				.display(new DisplayInfo(new ItemStack(Items.COOKED_MUTTON),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_sheep.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_sheep.desc"), Optional.empty(),
+//						AdvancementType.CHALLENGE, true, true, false))
+//				.addCriterion("whole_sheep_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
+//				.addCriterion("whole_sheep_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
+//				.addCriterion("whole_sheep_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
+//				.addCriterion("whole_sheep_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
+//				.addCriterion("whole_sheep_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
+//				.addCriterion("whole_sheep_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_sheep"),
+//						existingFileHelper);
+//
+//		whole_rabbit = Advancement.Builder.advancement().parent(rabbit)
+//				.display(new DisplayInfo(new ItemStack(Items.COOKED_RABBIT),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_rabbit.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_rabbit.desc"),
+//						Optional.empty(), AdvancementType.CHALLENGE, true, true, false))
+//				.addCriterion("whole_rabbit_leg",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_RABBIT_LEG.get()))
+//				.addCriterion("whole_rabbit_saddle",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_RABBIT_SADDLE.get()))
+//				.addCriterion("whole_rabbit_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_RABBIT.get()))
+//				.addCriterion("whole_rabbit_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_RABBIT_SCRAPS.get()))
+//				.addCriterion("whole_rabbit_thigh",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_RABBIT_THIGH.get()))
+//				.addCriterion("whole_rabbit_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_STEW_RABBIT.get()))
+//				.addCriterion("whole_rabbit_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_RABBIT.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_rabbit"),
+//						existingFileHelper);
+//
+//		whole_chicken = Advancement.Builder.advancement().parent(chicken)
+//				.display(new DisplayInfo(new ItemStack(Items.COOKED_CHICKEN),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_chicken.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_chicken.desc"),
+//						Optional.empty(), AdvancementType.CHALLENGE, true, true, false))
+//				.addCriterion("whole_chicken_breast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_BREAST.get()))
+//				.addCriterion("whole_chicken_leg",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_LEG.get()))
+//				.addCriterion("whole_chicken_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_SCRAPS.get()))
+//				.addCriterion("whole_chicken_thigh",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_THIGH.get()))
+//				.addCriterion("whole_chicken_wing",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CHICKEN_WING.get()))
+//				.addCriterion("whole_chicken_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_CHICKEN.get()))
+//				.addCriterion("whole_chicken_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_STEW_CHICKEN.get()))
+//				.addCriterion("whole_chicken_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_CHICKEN.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_chicken"),
+//						existingFileHelper);
+//
+//		whole_goat = Advancement.Builder.advancement().parent(goat)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.COOKED_GOAT_CHOP.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_goat.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.whole_goat.desc"), Optional.empty(),
+//						AdvancementType.CHALLENGE, true, true, false))
+//				.addCriterion("whole_goat_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
+//				.addCriterion("whole_goat_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
+//				.addCriterion("whole_goat_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
+//				.addCriterion("whole_goat_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
+//				.addCriterion("whole_goat_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
+//				.addCriterion("whole_goat_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "whole_goat"),
+//						existingFileHelper);
+//
+//		everything = Advancement.Builder.advancement().parent(butcherknife)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.SAUSAGE.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything.desc"), Optional.empty(),
+//						AdvancementType.CHALLENGE, true, true, false))
+//				.addCriterion("whole_cow_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_RIBS.get()))
+//				.addCriterion("whole_cow_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_ROAST.get()))
+//				.addCriterion("whole_cow_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_SCRAPS.get()))
+//				.addCriterion("whole_cow_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT.get()))
+//				.addCriterion("whole_cow_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_BEEF.get()))
+//				.addCriterion("whole_cow_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_BEEF.get()))
+//				.addCriterion("whole_pig_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_RIBS.get()))
+//				.addCriterion("whole_pig_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_ROAST.get()))
+//				.addCriterion("whole_pig_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_SCRAPS.get()))
+//				.addCriterion("whole_pig_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_STEW_MEAT.get()))
+//				.addCriterion("whole_pig_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_PORK.get()))
+//				.addCriterion("whole_pig_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
+//				.addCriterion("whole_sheep_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
+//				.addCriterion("whole_sheep_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
+//				.addCriterion("whole_sheep_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
+//				.addCriterion("whole_sheep_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
+//				.addCriterion("whole_sheep_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
+//				.addCriterion("whole_sheep_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "everything"),
+//						existingFileHelper);
+//
+//		everything_plus = Advancement.Builder.advancement().parent(everything)
+//				.display(new DisplayInfo(new ItemStack(ButchercraftItems.COOKED_TRIPE.get()),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything_plus.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.everything_plus.desc"),
+//						Optional.empty(), AdvancementType.CHALLENGE, true, true, false))
+//				.addCriterion("whole_cow_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_RIBS.get()))
+//				.addCriterion("whole_cow_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_ROAST.get()))
+//				.addCriterion("whole_cow_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_SCRAPS.get()))
+//				.addCriterion("whole_cow_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BEEF_STEW_MEAT.get()))
+//				.addCriterion("whole_cow_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_BEEF.get()))
+//				.addCriterion("whole_cow_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_BEEF.get()))
+//				.addCriterion("whole_pig_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_RIBS.get()))
+//				.addCriterion("whole_pig_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_ROAST.get()))
+//				.addCriterion("whole_pig_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_SCRAPS.get()))
+//				.addCriterion("whole_pig_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_PORK_STEW_MEAT.get()))
+//				.addCriterion("whole_pig_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_PORK.get()))
+//				.addCriterion("whole_pig_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_PORK.get()))
+//				.addCriterion("whole_sheep_ribs",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_RIBS.get()))
+//				.addCriterion("whole_sheep_roast",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_ROAST.get()))
+//				.addCriterion("whole_sheep_scraps",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_SCRAPS.get()))
+//				.addCriterion("whole_sheep_stew",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_MUTTON_STEW_MEAT.get()))
+//				.addCriterion("whole_sheep_cubed",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_CUBED_MUTTON.get()))
+//				.addCriterion("whole_sheep_ground",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_GROUND_MUTTON.get()))
+//				.addCriterion("everything_plus_brain",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_BRAIN.get()))
+//				.addCriterion("everything_plus_heart",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_HEART.get()))
+//				.addCriterion("everything_plus_kidney",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_KIDNEY.get()))
+//				.addCriterion("everything_plus_liver",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LIVER.get()))
+//				.addCriterion("everything_plus_lung",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_LUNG.get()))
+//				.addCriterion("everything_plus_stomach",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_STOMACH.get()))
+//				.addCriterion("everything_plus_tripe",
+//						ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.COOKED_TRIPE.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "everything_plus"),
+//						existingFileHelper);
+//
+//		DisplayInfo dheart = new DisplayInfo(new ItemStack(ButchercraftItems.HEART.get()),
+//				Component.translatable(Butchercraft.MOD_ID + ".advancement.heart.name"),
+//				Component.translatable(Butchercraft.MOD_ID + ".advancement.heart.desc"), Optional.empty(),
+//				AdvancementType.CHALLENGE, true, true, true);
+//
+//		// Challenges
+//		heart = Advancement.Builder.advancement().parent(root).display(dheart)
+//				.addCriterion("heart", ConsumeItemTrigger.TriggerInstance.usedItem(ButchercraftItems.HEART.get()))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "heart"),
+//						existingFileHelper);
+//
+//		cannibalism = Advancement.Builder.advancement().parent(root)
+//				.display(new DisplayInfo(new ItemStack(Items.PLAYER_HEAD),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.cannibalism.name"),
+//						Component.translatable(Butchercraft.MOD_ID + ".advancement.cannibalism.desc"), Optional.empty(),
+//						AdvancementType.CHALLENGE, true, true, true))
+//				.addCriterion("cannibalism", PlayerInteractTrigger.TriggerInstance.itemUsedOnEntity(Optional.empty(),
+//						ItemPredicate.Builder.item().of(ButchercraftItems.BUTCHER_KNIFE.get()),
+//						Optional.of(
+//								EntityPredicate.wrap(EntityPredicate.Builder.entity().of(EntityType.PLAYER).build()))))
+//				.save(consumer, ResourceLocation.fromNamespaceAndPath(Butchercraft.MOD_ID, "cannibalism"),
+//						existingFileHelper);
 	}
 }

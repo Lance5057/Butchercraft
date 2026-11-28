@@ -1,10 +1,10 @@
 {
   "values": [
-    "#c:beef/cubed",
-    "#c:mutton/cubed",
-    "#c:pork/cubed",
-    "#c:chicken/cubed",
-    "#c:rabbit/cubed",
-    "#c:goat/cubed"
+    "#c:beef/cubed/raw",
+    "#c:mutton/cubed/raw",
+    "#c:pork/cubed/raw",
+    "#c:chicken/cubed/raw",
+    "#c:rabbit/cubed/raw",
+    "#c:goat/cubed/raw"
   ]
 }

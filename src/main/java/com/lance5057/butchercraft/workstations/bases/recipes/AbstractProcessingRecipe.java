@@ -41,4 +41,20 @@ public abstract class AbstractProcessingRecipe<T extends MultiToolRecipeWrapper>
 	public Ingredient getIngredientIn() {
 		return itemIn;
 	}
+
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
+	public NonNullList<Ingredient> getJei() {
+		return jei;
+	}
+
+	public void setJei(NonNullList<Ingredient> jei) {
+		this.jei = jei;
+	}
 }

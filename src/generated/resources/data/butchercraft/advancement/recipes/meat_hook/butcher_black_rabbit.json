@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_black_rabbit_carcass": {
+    "has_carcass": {
       "conditions": {
         "items": [
           {
-            "items": "butchercraft:black_rabbit_carcass"
+            "items": "butchercraft:carcass"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_black_rabbit_carcass"
+      "has_carcass"
     ]
   ],
   "rewards": {
